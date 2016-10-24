@@ -1,0 +1,230 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-size: 14px;
+}
+input.search{
+  margin:0;
+  background:#fff url("https://i.snag.gy/4foasV.jpg") no-repeat scroll 97% center
+}
+.first-floor{
+  height:70px;
+}
+
+
+/*-------------------------margin-----------------*/
+.mr-15{
+  margin-right:15px;
+}
+.mr-30{
+  margin-right:30px;
+}
+.ml-20{
+  margin-left:20px; 
+}
+.ml-30{
+  margin-left:30px;  
+}
+.ml-50{
+  margin-left:50px;  
+}
+.ml-70{
+  margin-left:70px;  
+}
+.mb-20{
+  margin-bottom: 20px;
+}
+.mb-30{
+  margin-bottom: 40px;
+}
+.no-margin{
+  margin:0;
+}
+/*-------------------------paddind-----------------*/
+
+.pt-20{
+ padding-top: 20px;
+} 
+.pb-30{
+  padding-bottom: 30px;
+
+}
+.pt-30{
+padding-top: 30px;
+}
+.pa-15{
+  padding: 15px;
+}
+
+
+/*-------------------------font-color-----------------*/
+.clr-bl{
+  color: #000000;
+}
+.clr-grey{
+  color: #666;
+}
+
+/*-------------------------font-size-----------------*/
+.fz-12{
+  font-size: 12px;
+}
+
+.fz-13{
+  font-size: 13px;
+}
+
+.fz-15{
+  font-size: 15px;
+}
+
+/*-------------------------line-hieght-----------------*/
+
+.lh-16{
+  line-height: 16px;
+}
+
+.second-floor{
+  height:90px;
+}
+.warp{
+  position: relative;
+}
+.warp-flex{
+  display: flex;
+}
+.Rounded {
+  border-width: 1px;
+  border-color: rgb(205, 81, 38);
+  border-style: solid;
+  border-radius: 3px;
+  background-color: rgb(237, 131, 60);
+  height: 38px;
+  color:#fff;
+  display:flex;
+}
+.Rounded>svg{
+  height:15px;
+    margin:0 10px;
+}
+.triangle{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 20px;
+  transform:rotate(45deg) translate(-15px, -15px);
+}
+.whitebg{
+ background-color:#ffffff; 
+}
+.greybg{ 
+  background-color:#f7f7f7;
+}
+.bluebg{
+  background-color:#deeaf4
+}
+.yellowbg{
+  background-color: #ffedb2; 
+}
+
+.global-nav .active {
+  background-color: #fff;
+}
+
+.item {
+  padding: 0 20px;
+  float:left;
+  height: 40px;
+  align-items: center;
+  display: flex;
+}
+
+.circle-80{
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+}
+.circle-30{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  border: 1px solid #cccccc;
+}
+
+
+
+
+
+
+#watch {
+  width: 110px;
+  height: 38px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: #000;
+  border-radius: 3px;
+}
+
+#watch ol {
+  float: left;
+  list-style: none;
+  width: 25px;
+  padding: 0;
+  margin: 0 1px 0 0;
+  background: #000;
+  color: #fff;
+  font-size: 18px;
+
+}
+
+#watch li {
+  line-height: 40px;
+}
+
+@-webkit-keyframes rotate-ms {
+  from {
+    -webkit-transform: translate(0, 0px);
+  }
+  to {
+    -webkit-transform: translate(0, -380px);
+  }
+}
+@-webkit-keyframes rotate-s-m {
+  from {
+    -webkit-transform: translate(0, 0px);
+  }
+  to {
+    -webkit-transform: translate(0, -380px);
+  }
+}
+@-webkit-keyframes rotate-h {
+  from {
+    -webkit-transform: translate(0, 0px);
+  }
+  to {
+    -webkit-transform: translate(0, -380px);
+  }
+}
+
+#dial1 {
+  -webkit-animation: rotate-ms 400s linear infinite;
+}
+
+#dial2 {
+  -webkit-animation: rotate-s-m 4000s linear infinite;
+}
+
+#dial3 {
+  -webkit-animation: rotate-s-m 40000s linear infinite;
+}
+
+#dial4 {
+  -webkit-animation: rotate 400000s linear infinite;
+}
+
+
