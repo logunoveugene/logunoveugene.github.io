@@ -32,7 +32,7 @@
       background: #299ec1; }
 
 .tabs-title {
-  padding: 1rem 1rem 0.6rem;
+  padding: 0.8rem 1rem 0.6rem;
   background-color: #ffffff;
   border-radius: 3px;
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.05); 
@@ -45,8 +45,8 @@
     border-radius: 3px 3px 0 0;
     padding-bottom: 26px;
     margin: 1rem 0 0;
-    max-height: 85px;
-    min-height: 85px;
+    max-height: 82px;
+    min-height: 82px;
       }
   .tabs-title > img{
     height: 40px;
