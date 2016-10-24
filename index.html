@@ -64,7 +64,7 @@
         </div>
         <div class="small-4 medium-10 large-10 small-offset-1 columns hide-for-small-only">
            <div class="input-group no-margin">
-             <input class="search no-margin" type="text" placeholder="Поиск по каталогу"/>
+             <input class="hsearch no-margin" type="text" placeholder="Поиск по каталогу"/>
              <span class="input-group-label"><small>По товарам</small></span>
            </div>
         </div>
@@ -310,39 +310,41 @@
               </div>  
             </div> 
             <div class="row">
-              <div class="small-20 columns">
-                <label>Бренд
-                  <input type="text" placeholder="Большинство гарантийных центров обслуживает ограниченное число брендов">
-                </label>
-              </div>
-              <div class="small-24 columns">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Бренд</th>
-                      <th>Телефон сервиса</th>
-                      <th>Название и адррес</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Bosh, Siemens, Pantech, Nokia, LG, Motorola</td>
-                      <td>+7 (423) 220-66-00, +7 (423) 220-77-00</td>
-                      <td>«Сервисный центр Bosch-Siemens» Народный пр-т, 11</td>
-                     </tr>
-                    <tr>
-                      <td>LG, Samsung, ЕВГО</td>
-                      <td>+7 (423) 226-80-25, +7 (423) 226-51-48</td>
-                      <td>«Гранд Прим Сервис» Пушкинская, 48</td>
-                    </tr>
-                    <tr>
-                      <td>Sony, Philips, Tefal, Rowenta, Moulinex, Braun, Samsung, Thomas, Remington, Olympus</td>
-                      <td>+7 (423) 220-77-00</td>
-                      <td>«Владинтерсервис» Океанский проспект, 87</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <div class="brand-sort">
+                <div class="small-20 columns">
+                  <label>Бренд
+                    <input type="text" class="search" placeholder="Большинство гарантийных центров обслуживает ограниченное число брендов">
+                  </label>
+                </div>
+                <div class="small-24 columns">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Бренд</th>
+                        <th>Телефон сервиса</th>
+                        <th>Название и адррес</th>
+                      </tr>
+                    </thead>
+                    <tbody class="list">
+                      <tr>
+                        <td class="brand">Bosh, Siemens, Pantech, Nokia, LG, Motorola</td>
+                        <td>+7 (423) 220-66-00, +7 (423) 220-77-00</td>
+                        <td>«Сервисный центр Bosch-Siemens» Народный пр-т, 11</td>
+                       </tr>
+                      <tr>
+                        <td class="brand">LG, Samsung, ЕВГО</td>
+                        <td>+7 (423) 226-80-25, +7 (423) 226-51-48</td>
+                        <td>«Гранд Прим Сервис» Пушкинская, 48</td>
+                      </tr>
+                      <tr>
+                        <td class="brand">Sony, Philips, Tefal, Rowenta, Moulinex, Braun, Samsung, Thomas, Remington, Olympus</td>
+                        <td>+7 (423) 220-77-00</td>
+                        <td>«Владинтерсервис» Океанский проспект, 87</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>  
             </div>
           </div>
           <div class="tabs-panel pt-30" id="panel4">
@@ -519,6 +521,7 @@
   <script src="js/vendor/jquery.js"></script>
   <script src="js/vendor/what-input.js"></script>
   <script src="js/vendor/foundation.js"></script>
+  <script src="http://listjs.com/assets/javascripts/list.min.js"></script>
   <script src="js/app.js"></script>
 
   </body>

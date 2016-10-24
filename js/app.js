@@ -6,3 +6,9 @@ $(".custom-tab-open").on("click",function(){
   $(".tabs-content>div"+a).addClass("active");
   return false;
 });
+
+var options = {
+  valueNames: [ 'brand' ]
+};
+
+var userList = new List('brand-sort', options);
