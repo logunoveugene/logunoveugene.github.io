@@ -157,6 +157,7 @@ padding-top: 30px;
 .circle-30{
   border-radius: 50%;
   width: 30px;
+  min-width: 30px;
   height: 30px;
   display: flex;
   border: 1px solid #cccccc;
