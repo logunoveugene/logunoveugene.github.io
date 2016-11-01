@@ -7,8 +7,18 @@ body{
 }
 input.hsearch{
   margin:0;
-  background:#fff url("https://i.snag.gy/4foasV.jpg") no-repeat scroll 97% center
+  background:#fff url("https://i.snag.gy/4foasV.jpg") no-repeat scroll 97% center;
+  border:1px solid rgb(221, 221, 221);
+  box-shadow: inset 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+  height: 38px;
+
 }
+input.hsearch::-moz-placeholder {
+    color: #999;
+    font-size: 13px;
+}
+
+
 .first-floor{
   height:70px;
 }
@@ -69,6 +79,9 @@ input.hsearch{
 .pb-20{
  padding-bottom: 20px;
 }
+.pl-15{
+ padding-left: 15px;
+} 
 .pl-20{
  padding-left: 20px;
 } 
@@ -297,6 +310,10 @@ padding-top: 5px;
 
 
 
+
+
+
+
 /*выпадайка лк*/
 button.cabinet:hover{
 	box-shadow:0 0px 15px 0 rgba(0, 0, 0, 0.07);
@@ -305,9 +322,8 @@ button.cabinet:hover{
 button.cabinet:hover .cabinet-link{
 	color: #f4793b;
 }
-
 .dropdown-pane .list-submenu{
-line-height: 1.5;
+	line-height: 1.5;
 }
 
 .profile-drop{
@@ -318,21 +334,16 @@ line-height: 1.5;
 .cabinet[aria-expanded="false"]{
 	box-shadow:0 6px 5px 0 rgba(0, 0, 0, 0.0);
 }
-
 .cabinet[aria-expanded="true"]{
 	box-shadow:0 6px 15px 0 rgba(0, 0, 0, 0.07);
 	transition: box-shadow 0.3s ease 0.2s;
-
 }
-
-
 .dropdown-pane.profile-drop{
 	opacity: 0;
 	height: 0;
     box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
     background: white url("https://i.snag.gy/zGApWO.jpg") no-repeat scroll 230% 260%;
     transition: visible 0s ease 0s, opacity 0s ease 0s, height 0s ease 0s, box-shadow 0s ease 0s, background 0s ease 0s;
-
  }
 
  .dropdown-pane.profile-drop.is-open  {
@@ -342,25 +353,28 @@ line-height: 1.5;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     background: white url("https://i.snag.gy/zGApWO.jpg") no-repeat scroll right bottom;
     transition: visible 0.3s ease 0.2s, opacity 0.3s ease 0.2s, box-shadow 0.3s ease 0.2s, height 0.3s ease 0.2s, background 0.3s ease 0.2s;
-    
 }
-
-.dropdown-pane .row  {
+.dropdown-pane.profile-drop .row  {
 	opacity: 0;
     transition: opacity 0s ease 0s;
     transform: translateX(40px);
 }
-.dropdown-pane.is-open .row {
+.dropdown-pane.profile-drop.is-open .row {
     opacity: 1;
     transform: translateX(0px);
     transition: transform 0.3s ease 0.2s, opacity 0.3s ease 0.2s, -webkit-transform 0.3s ease 0.2s;
 }
-.dropdown-pane .row:nth-of-type(2) {
+.dropdown-pane.profile-drop .row:nth-of-type(2) {
     transition-duration: 0.4s;
 }
-.dropdown-pane .row:nth-of-type(3) {
+.dropdown-pane.profile-drop .row:nth-of-type(3) {
     transition-duration: 0.5s;
 }
-.dropdown-pane .row:nth-of-type(4){
+.dropdown-pane.profile-drop .row:nth-of-type(4){
     transition-duration: 0.55s;
 }
+
+.cart{
+	white-space: nowrap;
+}
+

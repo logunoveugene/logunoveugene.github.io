@@ -1532,13 +1532,20 @@ select {
   .menu > li {
     -webkit-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
-            flex: 0 0 auto; }
+            flex: 0 0 auto;
+            padding: 0.7rem 1rem; }
+      .menu > li:first-child {
+      padding-left: 0; }
+      .menu > li:last-child {
+      padding-right: 0;  }
     [data-whatinput='mouse'] .menu > li {
       outline: 0; }
   .menu > li > a {
     display: block;
-    padding: 0.7rem 1rem;
+    
     line-height: 1; }
+      
+
   .menu input,
   .menu a,
   .menu button {
