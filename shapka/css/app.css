@@ -97,6 +97,9 @@ padding-top: 5px;
 .clr-grey{
   color: #666;
 }
+.clr-dark-grey{
+  color: #333;
+}
 
 
 /*-------------------------font-size-----------------*/
@@ -299,6 +302,13 @@ button.cabinet:hover{
 	box-shadow:0 0px 15px 0 rgba(0, 0, 0, 0.07);
 	transition: box-shadow 0.3s ease;
 }
+button.cabinet:hover .cabinet-link{
+	color: #f4793b;
+}
+
+.dropdown-pane .list-submenu{
+line-height: 1.5;
+}
 
 .profile-drop{
     border-top: 1px solid #e46b2e;
@@ -320,16 +330,18 @@ button.cabinet:hover{
 	opacity: 0;
 	height: 0;
     box-shadow: 0 10px 5px rgba(0, 0, 0, 0.1);
-    transition: visible 0s ease 0s, opacity 0s ease 0s, height 0s ease 0s, box-shadow 0s ease 0s;
+    background: white url("https://i.snag.gy/zGApWO.jpg") no-repeat scroll 230% 260%;
+    transition: visible 0s ease 0s, opacity 0s ease 0s, height 0s ease 0s, box-shadow 0s ease 0s, background 0s ease 0s;
 
  }
 
  .dropdown-pane.profile-drop.is-open  {
     opacity: 1;
     z-index: 2;
-    height: 193px;
+    height: 320px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    transition: visible 0.3s ease 0.2s, opacity 0.3s ease 0.2s, box-shadow 0.3s ease 0.2s, height 0.3s ease 0.2s;
+    background: white url("https://i.snag.gy/zGApWO.jpg") no-repeat scroll right bottom;
+    transition: visible 0.3s ease 0.2s, opacity 0.3s ease 0.2s, box-shadow 0.3s ease 0.2s, height 0.3s ease 0.2s, background 0.3s ease 0.2s;
     
 }
 
