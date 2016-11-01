@@ -417,7 +417,6 @@ button {
   background: transparent;
   padding: 0;
   border: 0;
-  border-radius: 3px;
   line-height: 1; }
   [data-whatinput='mouse'] button {
     outline: 0; }
@@ -1069,7 +1068,7 @@ select {
   vertical-align: middle;
   border: 1px solid transparent;
   border-radius: 3px;
-  padding: 0.85em 1em;
+  padding: 10px 12px;
   margin: 0 0 1rem 0;
   font-size: 0.9rem;
   background-color: #2ba6cb;
@@ -1082,7 +1081,7 @@ select {
   .button.tiny {
     font-size: 0.6rem; }
   .button.small {
-    font-size: 0.75rem; }
+    }
   .button.large {
     font-size: 1.25rem; }
   .button.expanded {
@@ -1133,13 +1132,14 @@ select {
       background-color: #1b1b1b;
       color: #fefefe; }
   .button.hollow {
-    border: 1px solid #2ba6cb;
-    color: #2ba6cb; }
+    border: 1px solid #cccccc;
+    color: #355b99;
+    box-shadow: 0px 2px 2px 0px rgba(57, 32, 0, 0.03);
+     }
     .button.hollow, .button.hollow:hover, .button.hollow:focus {
       background-color: transparent; }
     .button.hollow:hover, .button.hollow:focus {
-      border-color: #165366;
-      color: #165366; }
+      box-shadow: 0px 2px 4px 0px rgba(57, 32, 0, 0.08); }
     .button.hollow.primary {
       border: 1px solid #2ba6cb;
       color: #2ba6cb; }
@@ -2267,13 +2267,13 @@ select {
 .dropdown-pane {
   background-color: #ffffff;
   display: block;
-  font-size: 1rem;
   position: absolute;
   visibility: hidden;
   width: 300px;
   z-index: 10; }
   .dropdown-pane.is-open {
-    visibility: visible; }
+    visibility: visible;
+    }
 
 .dropdown-pane.tiny {
   width: 100px; }
