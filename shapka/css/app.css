@@ -343,12 +343,12 @@ button.cabinet:hover .cabinet-link{
 @media (min-width: 0px) {
 	.main-layout{width:1240px;}
 	.information-link{display: none;}
+	.header-mobile{display: none;}
 }  
 @media (max-width: 1240px) {
 	.main-layout{width:1024px;}
 	.information-menu{display: none;}
 	.information-link{display: inline-block;}
-
 }
 @media (max-width: 1024px) {
 	.main-layout{width:auto;}
@@ -356,4 +356,9 @@ button.cabinet:hover .cabinet-link{
 @media screen and (max-width: 767px) {
 	.main-layout{width:auto;}
 	.header-desktop{display: none;}
+	.header-mobile{display: block;}
+}
+
+.first-floor-mob{
+	height: 50px;
 }
