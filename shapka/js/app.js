@@ -7,8 +7,5 @@ $(".custom-tab-open").on("click",function(){
   return false;
 });
 
-var options = {
-  valueNames: [ 'brand' ]
-};
 
-var userList = new List('brand-sort', options);
+

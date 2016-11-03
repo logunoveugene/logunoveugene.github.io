@@ -2273,9 +2273,9 @@ select {
 
 .dropdown-pane {
   background-color: #ffffff;
-  display: block;
+  display: inline-block;
   position: absolute;
-  visibility: hidden;
+  visibility: collapse;
   width: 300px;
   z-index: 10; }
   .dropdown-pane.is-open {
