@@ -368,3 +368,7 @@ button.cabinet:hover .cabinet-link{
 .first-floor-mob{
 	height: 50px;
 }
+
+:focus {
+outline: 0;
+}
