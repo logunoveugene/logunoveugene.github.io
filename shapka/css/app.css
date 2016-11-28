@@ -64,6 +64,9 @@ input.hsearch::-moz-placeholder {
 }
 /*-------------------------paddind-----------------*/
 
+.pt-10{
+	padding-top: 10px;
+}
 .pt-20{
 	padding-top: 20px;
 }
