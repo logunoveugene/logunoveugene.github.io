@@ -2503,7 +2503,6 @@ html.is-reveal-open body {
 .reveal {
   display: none;
   z-index: 1006;
-  padding: 1rem;
   border: 1px solid #cacaca;
   background-color: #fefefe;
   border-radius: 3px;

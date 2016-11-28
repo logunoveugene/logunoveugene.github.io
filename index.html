@@ -10,93 +10,147 @@
     <link rel="stylesheet" href="css/tabs.css">
   </head>
   <body>
-    <div class="header">
-      <div class="greybg hide-for-small-only">
-        <div class="row align-middle first-line ">
-          <div class="global-nav small-15 ">
-            <div class="item active">Интернет-магазин</div>
-            <div class="item "><a href="">Домотехника сервис</a></div>
+    <div class="header-desktop">
+    <div class="greybg">
+      <div class="row align-middle first-line main-layout">
+        <div class="small-5 columns">
+          <div>
+            <a class="fz-13" href="">Интернет-магазин <img src="img/arrow-down.svg" alt=""></a>
           </div>
-        </div>  
-      </div>
-      <div class="row align-middle first-floor">
-        <div class="small-12 medium-7 large-5 columns">
-          <img src="https://i.snag.gy/jpPkiD.jpg" alt="" />
         </div>
-        <div class="medium-4 large-3 columns small-offset-1 hide-for-small-only">
-           <a href="#"> Владивосток </a>
+        <div class="small-2 ">
+          <a class="fz-13 mr-30" href="">Владивосток</a>
         </div>
-        <div class="columns medium-6 large-7 hide-for-small-only">
-          <h5 class="mr-15 float-left">8 800 596 54 54</h5>
-          <span class="clr-grey fz-13 mg-r hide-for-medium-only hide-for-small-only ">(звонок бесплатный)</span>
+        <div class="columns ml-30 ">
+          <div class="row align-middle">
+            <div class="shrink mr-15 clr-dark-grey"><b>8-800-333-33-66</b></div>
+            <div class="shrink mr-15 fz-12 clr-grey warp-flex"><img class="mr-5" src="img/time-h.svg" alt="">с 9:00 до 20:00</div>
+            <div class="fz-12 columns clr-grey mr-30 warp-flex "><img class="mr-5" src="img/chat.svg" alt="">Обратная связь</div>
+          </div> 
         </div>
-        <div class="small-11 columns small-offset-1 show-for-small-only">   
-            <div class="s float-right mr-15">
-                <img src="https://i.snag.gy/MEbVIR.jpg" alt="" />
-            </div>
-        </div>
-        <div class="small-7 medium-5 large-7 columns small-offset-1 hide-for-small-only">
-          <ul class="menu simple expanded fz-13">
-            <li><a  class="subheader hide-for-medium-only " href="">Оплата  </a></li>
-            <li><a class="subheader hide-for-medium-only" href=""> Доставка</a></li>
-            <li><a class="subheader hide-for-medium-only" href="">Как купить</a></li>
-            <li><a class="subheader " href="">Магазины</a></li>
+        <div class="columns shrink ">
+          <ul class="menu fz-12 show-for-large information-menu">
+            <li><a class="clr-grey" href="">Доставка</a></li>
+            <li><a class="clr-grey" href="">Гарантинйный ремонт</a></li>
+            <li><a class="clr-grey" href="">Сервисные центры</a></li>
           </ul>
+          <a class="information-link fz-12 clr-grey" href="">Информация <img src="img/arrow-down.svg" alt=""></a></a>
+        </div>
+      </div>  
+    </div>
+    <div class="header-bottom">
+      <div class="row first-floor main-layout">
+        <div class="shrink columns pr-20 warp-flex">
+          <div class="align-self-middle">
+            <img src="https://i.snag.gy/trlpI1.jpg" alt="" />
+          </div>
+        </div>
+        <div class="pr-20 pl-20 shrink warp-flex b-l columns">
+          <div class="align-self-middle pt-5">
+           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 24 24" style="width:15px; height:12px;">
+            <g>
+             <path d="M24,3c0-0.6-0.4-1-1-1H1C0.4,2,0,2.4,0,3v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V3z" style="fill: rgb(119, 119, 119);"/>
+             <path d="M24,11c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V11z" style="fill: rgb(119, 119, 119);"/>
+             <path d="M24,19c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V19z" style="fill: rgb(119, 119, 119);"/>
+           </g>
+         </svg>
+         <span class="fz-18 clr-grey">Каталог</span>
+       </div>
+     </div>
+     <div class="warp-flex b-l columns pr-20 pl-20">
+      <div class="align-self-middle small-24 ">
+       <input class="hsearch no-margin" type="text" placeholder="Поиск по каталогу"/>
+     </div>
+   </div>
+   <div class="shrink b-l b-r warp-flex ">
+    <button class="cabinet pr-20 pl-20 float-right" data-toggle="example-dropdown">
+      <div class="align-self-middle ">
+        <div class="float-left pt-5">
+          <span class="float-left">
+            <img class="hidden-sm " src="https://i.snag.gy/DYJ2BI.jpg" alt=""/>
+          </span>
+          <div class="lh-16 float-left pl-15 hide-for-medium-only hide-for-small-only">
+            <a class="cabinet-link float-left" href="">Моя Домотехника </a>
+          </br>
+          <a class="fz-12 clr-grey mr-15 float-left" href="">Вход </a>
+          <a class="fz-12 clr-grey float-left" href="">Регистрация</a>
         </div>
       </div>
-      <div class="row">
-        <div class="small-24 columns">
-          <hr class="columns"/>
-        </div>
+    </div>
+  </button>
+  <div class="dropdown-pane profile-drop large" id="example-dropdown" data-dropdown>
+    <div class="row pa-25 b-b">
+      <div class="shrink mr-15 columns align-self-middle">
+        <button class="button hollow  small no-margin">Войти</button> 
+      </div>       
+      <div class="columns align-self-middle">    
+        <img src="https://i.snag.gy/R6OsEU.jpg" alt="">
       </div>
-      <div class="row align-middle second-floor">
-        <div class="small-10 medium-7 large-5 columns">
-          <div class="Rounded align-middle">
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 24 24" style="fill: rgb(255, 255, 255);">
-              <g style="fill: rgb(255, 255, 255);">
-                 <path d="M24,3c0-0.6-0.4-1-1-1H1C0.4,2,0,2.4,0,3v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V3z" style="fill: rgb(255, 255, 255);"/>
-                 <path d="M24,11c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V11z" style="fill: rgb(255, 255, 255);"/>
-                 <path d="M24,19c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V19z" style="fill: rgb(255, 255, 255);"/>
-              </g>
-            </svg>
-            <h5>Каталог <span class="hide-for-small-only"> товаров</span></h5>
-          </div>
-        </div>
-        <div class="small-4 medium-10 large-10 small-offset-1 columns hide-for-small-only">
-           <div class="input-group no-margin">
-             <input class="hsearch no-margin" type="text" placeholder="Поиск по каталогу"/>
-             <span class="input-group-label"><small>По товарам</small></span>
-           </div>
-        </div>
-        <div class="small-13 medium-5 large-7 small-offset-1 columns">
-          <div class="show-for-small-only float-left mr-30">
-            <span class="float-left">
-              <img class="mr-15 " src="https://i.snag.gy/vh6J4d.jpg" alt="" />
-            </span>
-          </div>
-          <div class="cabinet float-left mr-30">
-              <span class="float-left">
-                <img class="hidden-sm mr-15 " src="https://i.snag.gy/DYJ2BI.jpg" alt=""/>
-              </span>
-              <h5 class="lh-16 float-left  hide-for-medium-only hide-for-small-only">
-                <a href="">Моя Домотехника </a>
-                </br>
-                <a  class="fz-12 clr-grey mr-15" href="">Вход </a><a class="fz-12 clr-grey" href="">Регистрация</a>
-              </h5>
-          </div>
-          <div class="cart float-left">
-            <span class="float-left mr-15"><img src="https://i.snag.gy/ByTiZG.jpg" alt="" /></span>
-            <h5 class="lh-16 hidden-sm float-left hide-for-medium-only hide-for-small-only">
-              <a href="">Корзина</a>
-              </br>
-              <span class="fz-12 clr-grey">0 товаров</span>
-            </h5>
-          </div>
+      <div class="small-24 columns mt-10">
+        Впервые на сайте? <a href="">Зарегистрироваться</a>
+      </div> 
+    </div>
+    
+  </div>
+</div>
+</div>
+
+</div>
+</div>
+</div> 
+<div class="header-mobile">
+  <div class="row b-b expanded align-right first-floor-mob main-layout">
+    <div class=" columns pr-20 warp-flex">
+      <div class="align-self-middle">
+        <img src="https://i.snag.gy/b6qagX.jpg" alt="" />
       </div>
     </div> 
-    </div>  
+    
+    <div class="shrink warp-flex">
+      <button class="cabinet pr-20 pl-20 float-right" data-toggle="example-dropdown2">
+        <div class="align-self-middle ">
+          <div class="float-left">
+            <span class="float-left">
+              <img class="hidden-sm " src="https://i.snag.gy/p0uaKG.jpg" alt=""/>
+            </span>
+          </div>
+        </div>
+      </button>
+      
+    </div>
+  </div>
+
+
+  <div class="row b-b expanded greybg first-floor-mob main-layout">
+    <div class=" shrink b-r warp-flex">
+      <button class="cabinet pr-20 pl-20 float-right" data-toggle="example-dropdown3">
+        <div class="align-self-middle ">
+          <div class="float-left">
+            <span class="float-left">
+             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 24 24" style="width:15px; height:12px;">
+               <g>
+                <path d="M24,3c0-0.6-0.4-1-1-1H1C0.4,2,0,2.4,0,3v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V3z" style="fill: rgb(119, 119, 119);"/>
+                <path d="M24,11c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V11z" style="fill: rgb(119, 119, 119);"/>
+                <path d="M24,19c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V19z" style="fill: rgb(119, 119, 119);"/>
+              </g>
+            </svg>
+            <span class="fz-17 clr-grey">Каталог</span>
+            </span>
+          </div>
+        </div>
+      </button>
+    </div>
+    <div class="warp-flex columns pr-20 pl-10">
+      <div class="align-self-middle small-24 ">
+       <input class="hsearch no-margin" type="text" placeholder="Поиск по каталогу"/>
+     </div>
+   </div>
+  </div>
+  
+</div>
+    
     <div class="bluebg"> 
-      <div class="row uncollapse align-top" data-tabs id="example-tabs">
+      <div class="row uncollapse align-top main-layout" data-tabs id="example-tabs">
         <div class="columns small-6">
           <div class="tabs-title warp-flex is-active">
             <img class="hide-for-medium-only m-auto" src="img/service.svg" alt=""><a href="#panel1" class="ml-20 align-self-middle show-for-medium" aria-selected="true">Настройка и установка техники</a>
@@ -121,7 +175,7 @@
     </div>
         <div class="tabs-content" data-tabs-content="example-tabs">
           <div class="tabs-panel pt-30 is-active" id="panel1">
-            <div class="row mb-30">
+            <div class="row main-layout mb-30">
               <div class="small-24 columns">
                 <h1>Каталог услуг</h1>
                 <h5 class="mb-20">Оказываем услуги как часным лицам, так и организациям</h5>
@@ -199,7 +253,7 @@
             </div>
             <div class="greybg mb-20">
                 <div class="pt-30">
-                  <div class="row">
+                  <div class="row main-layout">
                     <div class="large-15 columns">
                       <div class="row align-middle"> 
                         <div class="small-24 columns">
@@ -404,7 +458,7 @@
           </div> 
         </div>
         <div class="reviews-promo">
-          <div class="row align-middle pt-30">
+          <div class="row main-layout align-middle pt-30">
             <div class="shrink columns">
               <h3>Мы оказали </h3>  
             </div>
@@ -470,7 +524,7 @@
               <a href="">Добавить отзыв</a> 
             </div> 
           </div>
-          <div class="row pt-30">
+          <div class="row main-layout pt-30">
             <div class="large-8 medium-12 small-24 columns mb-20">
               <img class="float-left mr-15" src="img/avatar-1.png" alt="">
                   <div class="ml-70">
@@ -500,19 +554,7 @@
             </div>
           </div>
         </div>
-        <div class="support pt-30 mb-20">
-          <div class="yellowbg pt-30 pb-30">
-            <div class="row whitebg pa-15 pb-30">
-              <div class="small-24 columns">
-                <h3 class="pt-20 mb-20">Получить бесплатную консультацию</h3>
-              </div>
-              <div class="small-24 medium-8 columns"><input type="text" placeholder="Ваше имя"></div>
-              <div class="small-24 medium-8 columns"><input type="text" placeholder="Номер телефона"></div>
-              <div class="small-24 medium-20 columns"><textarea placeholder="Сообщение"></textarea></div>
-              <div class="small-24 columns"><a href="#" class="button warning">Заказать обратный звонок</a></div>
-            </div>
-          </div>
-        </div>
+        
       </div>
 
 
