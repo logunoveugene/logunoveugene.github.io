@@ -4143,8 +4143,8 @@ table.hover tr:nth-of-type(even):hover {
           transform: translateY(0); }
 
 .slide-in-right.mui-enter {
-  transition-duration: 250ms;
-  transition-timing-function: ease-in;
+  transition-duration: 200ms;
+  transition-timing-function: linear;
   -webkit-transform: translateX(100%);
       -ms-transform: translateX(100%);
           transform: translateX(100%);
@@ -4178,7 +4178,7 @@ table.hover tr:nth-of-type(even):hover {
 
 .slide-out-right.mui-leave {
   transition-duration: 250ms;
-  transition-timing-function: ease-out;
+  transition-timing-function: linear;
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
           transform: translateX(0);
