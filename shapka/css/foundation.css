@@ -4143,20 +4143,22 @@ table.hover tr:nth-of-type(even):hover {
           transform: translateY(0); }
 
 .slide-in-right.mui-enter {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in;
   -webkit-transform: translateX(100%);
       -ms-transform: translateX(100%);
           transform: translateX(100%);
   transition-property: -webkit-transform, opacity;
   transition-property: transform, opacity;
   -webkit-backface-visibility: hidden;
-          backface-visibility: hidden; }
+          backface-visibility: hidden;
+          }
 
 .slide-in-right.mui-enter.mui-enter-active {
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
-          transform: translateX(0); }
+          transform: translateX(0);
+          }
 
 .slide-out-down.mui-leave {
   transition-duration: 500ms;
@@ -4175,8 +4177,8 @@ table.hover tr:nth-of-type(even):hover {
           transform: translateY(100%); }
 
 .slide-out-right.mui-leave {
-  transition-duration: 500ms;
-  transition-timing-function: linear;
+  transition-duration: 250ms;
+  transition-timing-function: ease-out;
   -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
           transform: translateX(0);
