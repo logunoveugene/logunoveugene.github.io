@@ -312,7 +312,9 @@ button.cabinet:hover .cabinet-link{
 	background: white url("https://i.snag.gy/zGApWO.jpg") no-repeat scroll 230% 260%;
 	transition: visible 0s ease 0s, opacity 0s ease 0s, height 0s ease 0s, box-shadow 0s ease 0s, background 0s ease 0s;
 }
-
+.bonus-menu{
+	background: white url("https://i.snag.gy/zGApWO.jpg") no-repeat scroll right bottom;
+}
 .dropdown-pane.profile-drop.is-open  {
 	opacity: 1;
 	z-index: 2;
