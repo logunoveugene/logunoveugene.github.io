@@ -6,3 +6,11 @@ html {
     font-size: 13px;
 
 }
+i.medium{
+	font-size: 18px;
+}
+
+.reviw-buttons{
+	    margin: 0 1rem 0 0;
+    padding: 0.25em 0.6em;
+}
