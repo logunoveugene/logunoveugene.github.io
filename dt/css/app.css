@@ -44,7 +44,7 @@ input[type="checkbox"]:checked + label span {
 	font-size: 1.1rem;
 }
 .checkbox-subtitle{
-	font-size: 0.8rem;
+	font-size: 0.9rem;
 	color: #666666;
 	margin-left: 34px;
 	margin-bottom: 10px;
