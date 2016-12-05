@@ -49,3 +49,6 @@ input[type="checkbox"]:checked + label span {
 	margin-left: 34px;
 	margin-bottom: 10px;
 }
+.site-register-check{
+	margin-left: 34px;
+}
