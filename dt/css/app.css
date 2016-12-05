@@ -41,7 +41,7 @@ input[type="checkbox"]:checked + label span {
     border: none;
 }
 .checkbox-title{
-	font-size: 1.1rem;
+	font-size: 1rem;
 }
 .checkbox-subtitle{
 	font-size: 0.9rem;
