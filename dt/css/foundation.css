@@ -1517,7 +1517,7 @@ kbd {
       color: #fefefe; }
   .button.warning {
     background-color: #ffae00;
-    color: #fefefe; }
+    color: #000; }
     .button.warning:hover, .button.warning:focus {
       background-color: #cc8b00;
       color: #fefefe; }
