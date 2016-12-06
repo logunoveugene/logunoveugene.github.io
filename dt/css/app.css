@@ -58,7 +58,10 @@ input[type="checkbox"]:checked + label span {
   display: none;
 }
 
-.select-range input:checked + label,
-.select-range input:checked + label:active {
-  background-color: orange;
+.select-range input:checked + label.button.hollow,
+.select-range input:checked + label.button.hollow:active  {
+  background-color: #0055a6;
+  border: 1px solid #0055a6 ;
+  color: white;
+
 }
