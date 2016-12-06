@@ -52,3 +52,13 @@ input[type="checkbox"]:checked + label span {
 .site-register-check{
 	margin-left: 34px;
 }
+
+
+.select-range input {
+  display: none;
+}
+
+.select-range input:checked + label,
+.select-range input:checked + label:active {
+  background-color: orange;
+}
