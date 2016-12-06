@@ -2344,7 +2344,7 @@ body {
 
 .off-canvas {
   position: absolute;
-  background: #e6e6e6;
+  background: white;
   z-index: -1;
   max-height: 100%;
   overflow-y: auto;
@@ -2362,13 +2362,13 @@ body {
           -ms-transform: translateX(250px);
               transform: translateX(250px); }
   .off-canvas.position-right {
-    right: -250px;
+    right: -320px;
     top: 0;
-    width: 250px; }
+    width: 320px; }
     .is-open-right {
-      -webkit-transform: translateX(-250px);
-          -ms-transform: translateX(-250px);
-              transform: translateX(-250px); }
+      -webkit-transform: translateX(-320px);
+          -ms-transform: translateX(-320px);
+              transform: translateX(-320px); }
 
 @media screen and (min-width: 40em) {
   .position-left.reveal-for-medium {
@@ -2376,13 +2376,13 @@ body {
     z-index: auto;
     position: fixed; }
     .position-left.reveal-for-medium ~ .off-canvas-content {
-      margin-left: 250px; }
+      margin-left: 320px; }
   .position-right.reveal-for-medium {
     right: 0;
     z-index: auto;
     position: fixed; }
     .position-right.reveal-for-medium ~ .off-canvas-content {
-      margin-right: 250px; } }
+      margin-right: 320px; } }
 
 @media screen and (min-width: 64em) {
   .position-left.reveal-for-large {
@@ -2390,13 +2390,13 @@ body {
     z-index: auto;
     position: fixed; }
     .position-left.reveal-for-large ~ .off-canvas-content {
-      margin-left: 250px; }
+      margin-left: 320px; }
   .position-right.reveal-for-large {
     right: 0;
     z-index: auto;
     position: fixed; }
     .position-right.reveal-for-large ~ .off-canvas-content {
-      margin-right: 250px; } }
+      margin-right: 320px; } }
 
 
 .callout {
