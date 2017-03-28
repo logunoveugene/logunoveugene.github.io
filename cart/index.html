@@ -7,11 +7,11 @@
   <style>
     html{
       font-size: 15px;
-  }
+    }
     body{
       background-color:#f4f4f4;
       font-family:arial;
-   }
+    }
     .logo{
       max-width: 150px;
     }
@@ -97,26 +97,26 @@
    }
    .bb-1{
     border-bottom:1px solid #eee;  
-    }
-    .bb-2{
-      border-bottom:2px solid #eee;  
-    }
+  }
+  .bb-2{
+    border-bottom:2px solid #eee;  
+  }
 
-    .mb-7{
-      margin-bottom:6rem;
-    }
-    /*-------------группа кнопок---------------*/
-    .btn-cst{
-      font-size: 0.9rem;
-      text-align: left;
-      padding: .5rem;
-      color:#355b99;
-    }
-    .btn-cst.active{
-      background-color:#ffedb2;
-      border-color:#ccc;
-    }
-  </style>
+  .mb-7{
+    margin-bottom:6rem;
+  }
+  /*-------------группа кнопок---------------*/
+  .btn-cst{
+    font-size: 0.9rem;
+    text-align: left;
+    padding: .5rem;
+    color:#355b99;
+  }
+  .btn-cst.active{
+    background-color:#ffedb2;
+    border-color:#ccc;
+  }
+</style>
 </head>
 <body>
   <div class="container">
@@ -139,7 +139,7 @@
            <div class="form-group clearfix">
             <label class="field-label" for="exampleInputEmail1">ФИО</label>
             <small id="emailHelp" class="field-sub-text text-muted">для гарантийного талона</small>
-            <a rel="nofollow" href="">
+            <a rel="nofollow" href="" data-toggle="modal" data-target="#company">
               <small id="emailHelp" class="field-sub-text float-right">Юрлицо?</small>
             </a>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Фамилия Имя Отчество">
@@ -151,7 +151,7 @@
           </div>
           <div class="clearfix">
             <label class="field-label" for="exampleInputEmail1">Бонусная карта</label>
-            <a rel="nofollow" href="">
+            <a rel="nofollow" href="" data-toggle="modal" data-target="#bonuscard">
               <small id="emailHelp" class="field-sub-text float-right">Получить карту</small>
             </a>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="№ 3550 ________">
@@ -257,6 +257,69 @@
 </div>
 </div>
 </div>
+<div class="modal fade" id="company" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Добавление компании</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="https://i.snag.gy/zu5RO4.jpg" alt="" />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="bonuscard" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-0">
+      <div class="modal-body">
+        <div class="row mb-3 bg-faded">
+          <div class="col-10">
+            <h5 class="modal-title" id="exampleModalLabel">Анкета бонусного клиента</h5>
+          </div>
+          <div class="col-2">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="col-12">
+            <small class="text-muted">Чтобы стать участником бонусной программы, заполните необходимые поля.</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <form>
+              <div class="form-group">
+                <label class="field-label" for="exampleInputEmail1">ФИО</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+              </div>
+              <div class="form-group">
+                <label class="field-label" for="exampleInputEmail1">Телефон</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+              </div>
+              <div class="form-group">
+                <label class="field-label" for="exampleInputEmail1">Дата рождения</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+              </div>
+              <div class="form-group">
+                <label class="field-label" for="exampleInputEmail1">Адрес</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+              </div>
+              <button type="submit" class="btn btn-warning">Сохранить</button><button type="submit" class="btn btn-link">Отмена</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 <script>
