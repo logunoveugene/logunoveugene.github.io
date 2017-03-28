@@ -1,11 +1,11 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-<link href="https://file.myfontastic.com/wjZRGVSBFtwBwzFfpqQDpi/icons.css" rel="stylesheet">
-<style>
-body{
+<html><head>
+  <meta charset="UTF-8">
+ 
+  
+  <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+  <link href="https://file.myfontastic.com/wjZRGVSBFtwBwzFfpqQDpi/icons.css" rel="stylesheet">
+      <style>
+      body{
   background-color:#f4f4f4;
   font-family:arial;
 }
@@ -83,11 +83,19 @@ input[type=number]
      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     z-index: 2; 
 }
+.block-shadow-4{
+     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+
+}
 .bb-1{
   border-bottom:1px solid #eee;  
 }
-bb-2{
+.bb-2{
     border-bottom:2px solid #eee;  
+}
+
+.mb-7{
+  margin-bottom:6rem;
 }
 /*-------------группа кнопок---------------*/
 .btn-cst{
@@ -100,26 +108,35 @@ bb-2{
   background-color:#ffedb2;
   border-color:#ccc;
 }
+    </style>
 
-</style>
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
 
 </head>
 
+<body translate="no">
 
 
-
-
-<body>
-  <div class="container">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-sm-12 p-0">
+    <div class="col-12 p-0">
       <div class="card border-0 rounded-0 mb-2">
         <div class="card-block">
          <h5>1. Введите данные покупателя</h5>
          <div class="form-group clearfix">
           <label class="field-label" for="exampleInputEmail1">ФИО</label>
           <small id="emailHelp" class="field-sub-text text-muted">для гарантийного талона</small>
-          <a href="">
+          <a rel="nofollow" href="">
             <small id="emailHelp" class="field-sub-text float-right">Юрлицо?</small>
           </a>
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Фамилия Имя Отчество">
@@ -131,7 +148,7 @@ bb-2{
         </div>
         <div class="clearfix">
           <label class="field-label" for="exampleInputEmail1">Бонусная карта</label>
-          <a href="">
+          <a rel="nofollow" href="">
             <small id="emailHelp" class="field-sub-text float-right">Получить карту</small>
           </a>
           <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="№ 3550 ________">
@@ -143,23 +160,23 @@ bb-2{
         <h5>2. Проверьте Ваш заказ</h5>
         <div class="row mb-2">
           <div class="col-2 d-flex justify-content-center">
-            <img class="product-photo" src="https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/620/763/catalog_list/30102419_1.jpg" alt="" />
+            <img class="product-photo" src="https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/620/763/catalog_list/30102419_1.jpg" alt="">
           </div>
           <div class="col-8 d-flex align-items-center">
-            <a href="">
+            <a rel="nofollow" href="">
               <span class="text-muted">Смартфон Asus ZenFone 3 Max ZC520TL 16Gb Silver</span>
             </a>
           </div>
           <div class="col-2">
             <button type="button" class="close p-3" aria-label="Close">
-              <span class="" aria-hidden="true">&times;</span>
+              <span class="" aria-hidden="true">×</span>
             </button>
           </div>
         </div>
         <div class="row mb-3">
           <div class="col-12">
            <div class="bg-faded rounded p-3">  
-            <a class="btn-link text-muted service-accordion collapsed" data-toggle="collapse" href="#collapseExample" aria-controls="collapseExample" aria-expanded="false">
+            <a rel="nofollow" class="btn-link text-muted service-accordion collapsed" data-toggle="collapse" href="#collapseExample" aria-controls="collapseExample" aria-expanded="false">
               Услуги по настройке и установке
             </a>
             <div class="mt-2 collapse" id="collapseExample" aria-expanded="false">
@@ -196,14 +213,14 @@ bb-2{
       </div>
     </div>
   </div>
-  <div class="card border-0 rounded-0 mb-2">
+  <div class="card border-0 rounded-0 mb-7">
     <div class="card-block bb-2">
       <div class="row">
         <div class="col-12">
          <h5 class="mb-3">3. Выберите способ получения</h5> 
          <div class="btn-group mb-2" data-toggle="buttons">
           <label class="btn btn-secondary btn-cst active">
-            <input type="radio" name="options" id="option1" autocomplete="off" checked>Самовывоз<br>
+            <input type="radio" name="options" id="option1" autocomplete="off" checked="">Самовывоз<br>
             <small id="emailHelp" class="field-sub-text text-muted">бесплатно</small>
           </label>
           <label class="btn btn-secondary btn-cst">
@@ -217,28 +234,33 @@ bb-2{
           </label>
         </div>
         <div class="">
-          <label class="field-label" for="exampleSelect1">Пункт самовывоза</label>
-          <select class="form-control" id="exampleSelect1">
-            <option>Не выбран</option>
-            <option>Алеутская</option>
-          </select>
-        </div>
+    <label class="field-label" for="exampleSelect1">Пункт самовывоза</label>
+    <select class="form-control" id="exampleSelect1">
+      <option>Не выбран</option>
+      <option>Алеутская</option>
+    </select>
+  </div>
       </div>
     </div>
   </div>
 </div>  
 </div>
-<div class="col-sm-12 p-0 fixed-bottom">
-  <div class="card  border-0 rounded-0">
+<div class="col-12 p-0 fixed-bottom block-shadow-4">
+      <div class="card  border-0 rounded-0">
     <div class="card-block bb-2">
       <button type="button" class="btn btn-lg btn-warning">Продолжить</button>
+      </div>
+        </div>
     </div>
-  </div>
 </div>
 </div>
-</div>
-<script src="//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-<script>    jQuery('.quantity').each(function() {
+    <script src="//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
+    <script>
+        jQuery('.quantity').each(function() {
       var spinner = jQuery(this),
         input = spinner.find('input[type="number"]'),
         btnUp = spinner.find('.quantity-up'),
@@ -269,6 +291,12 @@ bb-2{
       });
 
     });
-</script>
-</body>
-</html>
+  //# sourceURL=pen.js
+  </script>
+
+  
+  
+
+
+
+ </body></html>
