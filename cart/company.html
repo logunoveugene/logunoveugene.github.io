@@ -4,134 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
   <link href="https://file.myfontastic.com/wjZRGVSBFtwBwzFfpqQDpi/icons.css" rel="stylesheet">
-  <style>
-    html{
-      font-size: 15px;
-    }
-    body{
-      background-color:#f4f4f4;
-      font-family:arial;
-    }
-    .logo{
-      max-width: 150px;
-    }
-    .logo-block{
-      margin: 0.75rem 1.25rem
-    }
-    .field-sub-text {
-      display: inline-block;
-      margin-top: 0.25rem;
-    }
+  <link href="c-style.css" rel="stylesheet">
 
-    .field-label{
-      margin-bottom:0px;
-    }
-
-    .product-photo{
-      max-width:60px;
-      max-height:60px;
-    }
-
-    .service-accordion::before{
-      font-family: "untitled-font-1" !important;
-      content: "\61";
-      position:absolute;
-      right:2rem;
-      font-size: 15px;
-    }
-    .service-accordion[aria-expanded="true"]::before{
-      content: "\61";
-      transform: rotate(180deg);
-    }
-    /*------------количество-------------------*/
-
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button
-    {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-
-    input[type=number]
-    {
-      -moz-appearance: textfield;
-    }
-
-    .quantity input {
-      width: 25px;
-      height: 25px;
-      display: inline-block;
-      padding: 0px;
-      margin: 0;
-      padding-left: 10px;
-      border: 1px solid rgba(0,0,0,.15);
-      font-size:.75rem
-    }
-    .quantity-button {
-      display:inline-block;
-      cursor: pointer;
-      width: 25px;
-      height: 25px;
-      text-align: center;
-      color: #333;
-      font-size: 13px;
-      user-select: none;
-      border: 1px solid rgba(0,0,0,.15);
-      padding-top:2px
-    }
-    .quantity-up{
-      border-left:0;
-    }
-    .quantity-down{
-      border-right:0;
-    }
-    /*----------разделение блоков------------------*/
-
-    .block-shadow-5{
-     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-     z-index: 2; 
-   }
-   .block-shadow-4{
-     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-
-   }
-   .bb-1{
-    border-bottom:1px solid #eee;  
-  }
-  .bb-2{
-    border-bottom:2px solid #eee;  
-  }
-
-  .mb-7{
-    margin-bottom:6rem;
-  }
-  /*-------------группа кнопок---------------*/
-  .btn-cst{
-    font-size: 0.9rem;
-    text-align: left;
-    padding: .5rem;
-    color:#355b99;
-  }
-  .btn-cst.active{
-    background-color:#ffedb2;
-    border-color:#ccc;
-  }
-  .bonus-modal-promo{
-    background:#f7f7f7 url(https://i.snag.gy/8Xjl6n.jpg) no-repeat right bottom; 
-    margin-top: -15px;
-    padding-top: 15px;
-  }
-  .company-modal-promo{
-    background:#f7f7f7 url(https://i.snag.gy/GqPtSI.jpg) no-repeat right bottom; 
-    margin-top: -15px;
-    padding-top: 15px;
-  }
-  .promocod-modal-promo{
-    background:#f7f7f7 url(https://i.snag.gy/gaRoms.jpg) no-repeat right bottom; 
-    margin-top: -15px;
-    padding-top: 15px;
-  }
-</style>
 </head>
 <body>
   <div class="container">
@@ -156,11 +30,9 @@
             <a rel="nofollow" href="index.html">
               <small id="emailHelp" class="field-sub-text float-right">Отмена</small>
             </a>
-            <div class="bg-faded rounded p-3">  
-              <a rel="nofollow" class="btn-link text-muted service-accordion collapsed" data-toggle="collapse" href="#collapseExample" aria-controls="collapseExample" aria-expanded="false">
-                ООО "Спектр"
-              </a>
-              <div class="mt-2 collapse" id="collapseExample" aria-expanded="false">
+            <div class="bg-faded rounded accordion-plate">  
+              <a rel="nofollow" class="btn-link text-muted icon-accordion collapsed" data-toggle="collapse" href="#comany-fields" aria-controls="comany-fields" aria-expanded="false">ООО "Спектр"</a>
+              <div class="mt-2 collapse" id="comany-fields" aria-expanded="false">
               <div class="pt-2">
                 Реквизиты компании 
               </div> 
@@ -204,8 +76,8 @@
           </div>
           <div class="row mb-3">
             <div class="col-12">
-             <div class="bg-faded rounded p-3">  
-              <a rel="nofollow" class="btn-link text-muted service-accordion collapsed" data-toggle="collapse" href="#collapseExample" aria-controls="collapseExample" aria-expanded="false">
+             <div class="bg-faded rounded accordion-plate">  
+              <a rel="nofollow" class="btn-link text-muted icon-accordion collapsed" data-toggle="collapse" href="#collapseExample" aria-controls="collapseExample" aria-expanded="false">
                 Услуги по настройке и установке
               </a>
               <div class="mt-2 collapse" id="collapseExample" aria-expanded="false">
