@@ -152,11 +152,23 @@
           <div class="card-block">
            <h5>1. Введите данные покупателя</h5>
            <div class="form-group clearfix">
-            <label class="field-label" for="exampleInputEmail1">ФИО</label>
-            <small id="emailHelp" class="field-sub-text text-muted">для гарантийного талона</small>
-            <a rel="nofollow" href="" data-toggle="modal" data-target="#company">
-              <small id="emailHelp" class="field-sub-text float-right">Юрлицо?</small>
+            <label class="field-label">Заказ будет оформлен на юрлицо</label>
+            <a rel="nofollow" href="">
+              <small id="emailHelp" class="field-sub-text float-right">Отмена</small>
             </a>
+            <div class="bg-faded rounded p-3">  
+              <a rel="nofollow" class="btn-link text-muted service-accordion collapsed" data-toggle="collapse" href="#collapseExample" aria-controls="collapseExample" aria-expanded="false">
+                ООО "Спектр"
+              </a>
+              <div class="mt-2 collapse" id="collapseExample" aria-expanded="false">
+              <div class="pt-2">
+                Реквизиты компании 
+              </div> 
+              </div>
+            </div>
+          </div>
+           <div class="form-group clearfix">
+            <label class="field-label" for="exampleInputEmail1">ФИО представителя</label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Фамилия Имя Отчество">
           </div>
           <div class="form-group">
@@ -164,13 +176,12 @@
             <small id="emailHelp" class="field-sub-text text-muted">для получения SMS о статусе заказа</small>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="+7 ( ___ ) ___ __ __">
           </div>
-          <div class="clearfix">
-            <label class="field-label" for="exampleInputEmail1">Бонусная карта</label>
-            <a rel="nofollow" href="" data-toggle="modal" data-target="#bonuscard">
-              <small id="emailHelp" class="field-sub-text float-right">Получить карту</small>
-            </a>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="№ 3550 ________">
+          <div class="form-group">
+            <label class="field-label" for="exampleInputEmail1">E-mail</label>
+            <small id="emailHelp" class="field-sub-text text-muted">для получения копий счета и договора</small>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="+7 ( ___ ) ___ __ __">
           </div>
+          
         </div>
       </div>
       <div class="card border-0 rounded-0 block-shadow-5">
@@ -300,10 +311,7 @@
             </a>
               <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Начните вводить название, ИНН или адрес">
             </div>
-            <form action="company.html" class="mb-0">
-              <button type="submit" class="btn btn-warning">Продолжить</button><button class="btn btn-link" data-dismiss="modal">Отмена</button>
-            </form>
-
+            <button type="submit" class="btn btn-warning">Продолжить</button><button class="btn btn-link" data-dismiss="modal">Отмена</button>
           </div>
         </div>
       </div>
