@@ -1,6 +1,9 @@
     html{
       font-size: 15px;
     }
+    a{
+      color: #355b99;
+    }
     a:focus, a:hover {
     text-decoration: none;
     }
