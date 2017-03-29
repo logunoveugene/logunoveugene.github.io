@@ -7,7 +7,9 @@
     .btn-link:focus, .btn-link:hover {
     text-decoration: none;
     }
-
+    .card-block {
+    padding: 1rem;
+    }
     body{
       background-color:#f4f4f4;
       font-family:arial;
