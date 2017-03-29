@@ -1,6 +1,13 @@
-html{
+    html{
       font-size: 15px;
     }
+    a:focus, a:hover {
+    text-decoration: none;
+    }
+    .btn-link:focus, .btn-link:hover {
+    text-decoration: none;
+    }
+
     body{
       background-color:#f4f4f4;
       font-family:arial;
