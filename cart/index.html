@@ -121,8 +121,13 @@
     margin-top: -15px;
     padding-top: 15px;
   }
-    .company-modal-promo{
+  .company-modal-promo{
     background:#f7f7f7 url(https://i.snag.gy/GqPtSI.jpg) no-repeat right bottom; 
+    margin-top: -15px;
+    padding-top: 15px;
+  }
+  .promocod-modal-promo{
+    background:#f7f7f7 url(https://i.snag.gy/gaRoms.jpg) no-repeat right bottom; 
     margin-top: -15px;
     padding-top: 15px;
   }
@@ -222,7 +227,7 @@
           </div>
           <div class="col-6 clearfix">
             <div class="float-right font-weight-bold text-right">12 599 р.<br>
-              <small><a href="">Есть помокод?</a></small>
+             <a href="" data-toggle="modal" data-target="#promocod"> <small>Есть помокод?</small></a>
             </div>
           </div>
         </div>
@@ -344,7 +349,36 @@
     </div>
   </div>
 </div>
-
+<div class="modal fade" id="promocod" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-0">
+      <div class="modal-body">
+        <div class="row mb-3 bg-faded promocod-modal-promo">
+          <div class="col-10">
+            <h5 class="modal-title mb-3" id="companyeModalLabel">Активация промокода</h5>
+          </div>
+          <div class="col-2">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="col-8 mb-4">
+            <small class="text-muted">Введите промокод и получите скидку на Ваш заказ</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <label class="field-label" for="exampleInputEmail1">Промокод</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+            </div>
+            <button type="submit" class="btn btn-warning">Применить</button><button class="btn btn-link" data-dismiss="modal">Отмена</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 <script>
