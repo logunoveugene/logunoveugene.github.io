@@ -155,3 +155,12 @@
     -webkit-box-shadow: none;
     box-shadow: none;
 }
+
+/**********************/
+.tooltip-inner{
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+  padding: .75rem 1rem;
+
+}
