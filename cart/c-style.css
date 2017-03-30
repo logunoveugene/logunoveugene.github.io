@@ -148,3 +148,10 @@
   padding: .75rem 1rem .5rem 1rem;
   position: relative;
 }
+
+
+/************Чекбокс *******/
+.custom-control-input:focus~.custom-control-indicator {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
