@@ -176,10 +176,10 @@
           <div class="">
             <label class="field-label" for="exampleSelect1">Пункт самовывоза</label>
             <select class="form-control" onChange="if(this.options[this.selectedIndex].value!=''){window.location=this.options[this.selectedIndex].value}else{this.options[selectedIndex=0];}">
-                <option value="">Выберите раздел</option>
+                <option value="" disabled selected>Выберите раздел</option>
                 <option class="text-success" value="">Гоголя (доступен сегодня)</option>
-                <option  value="">на Вилкова (доступен сегодня)</option>
-                <option  value="">в ТЦ "Максим" (доступен 24 апреля)</option>
+                <option class="text-success" value="">на Вилкова (доступен сегодня)</option>
+                <option value="">в ТЦ "Максим" (доступен 24 апреля)</option>
                 <option class="text-success" value="">на Алеутской (доступен сегодня)</option>
                 <option class="text-success" value="">в ТЦ "Черемушки"(доступен сегодня)</option>
             </select>
