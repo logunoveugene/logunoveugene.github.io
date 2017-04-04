@@ -165,12 +165,15 @@
 
 /**********************/
 .tooltip-inner{
-  width: 100%;
+  width: 96vw;
   max-width: 400px;
   text-align: left;
   padding: .75rem 1rem;
+        margin-left: 2vw;
+      margin-right:2vw;
 
 }
+
 .btn-block+.btn-block {
     margin-top: 0rem;
 }
