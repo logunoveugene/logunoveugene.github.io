@@ -169,9 +169,11 @@
   max-width: 400px;
   text-align: left;
   padding: .75rem 1rem;
-        margin-left: 2vw;
-      margin-right:2vw;
-
+  margin-left: 2vw;
+  margin-right:2vw;
+}
+.tooltip-inner>ul{
+padding-left:1rem; 
 }
 
 .btn-block+.btn-block {
