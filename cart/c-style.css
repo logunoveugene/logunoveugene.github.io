@@ -180,3 +180,8 @@ padding-left:1rem;
     margin-top: 0rem;
 }
 
+/**********select***********/
+
+.custom-select{
+  width: 100%
+}
