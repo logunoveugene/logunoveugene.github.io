@@ -312,16 +312,16 @@
                           <br>Вы хотите получить сразу весь заказ 24 апреля или получать товары по мере готовности?
                         </small>
                       </div>
-                      <form class="mb-0" action="index-order-two-split.html#delivery">
-                        <div class="row">
-                          <div class="col-12 col-md-6">
+                      <div class="row">
+                        <div class="col-12 col-md-6">
+                          <form class="mb-0" action="index-order-two-split.html#delivery">
                             <button type="sumbit" class="btn btn-secondary btn-block">Получить весь заказ целиком</button>
-                          </div>
-                          <div class="col-12 col-md-5">
-                            <button type="button" class="btn btn-link btn-block">Получать товары по мере готовности</button>
-                          </div>
+                          </form>
                         </div>
-                      </form>
+                        <div class="col-12 col-md-5">
+                          <button type="button" class="btn btn-link btn-block">Получать товары по мере готовности</button>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -454,8 +454,12 @@
     </div>
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="js/tether.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
   <script>
+    $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    })
     jQuery('.quantity').each(function() {
       var spinner = jQuery(this)
       , input = spinner.find('input[type="number"]')
@@ -488,6 +492,6 @@
 
     });
             //# sourceURL=pen.js
-  </script>
-</body>
-</html>
+          </script>
+        </body>
+        </html>
