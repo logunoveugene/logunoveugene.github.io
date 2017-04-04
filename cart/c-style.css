@@ -10,6 +10,9 @@
     .btn-link:focus, .btn-link:hover {
     text-decoration: none;
     }
+    .text-black{
+      color: #000;
+    }
     .card-block {
     padding: 1rem;
     }
