@@ -45,11 +45,35 @@
 
     
     $('input[name=radio]').on('change', function(){  
-      if($("#radio4").is(':checked')){
-        $('#collapseExample').collapse('show');
-      }
-      else {
-        $('#collapseExample').collapse('hide');
-      }
-    });
+        if($("#radio1").is(':checked')){
+          $('#collapseExample1').collapse('show');
+        }
+        else {
+          $('#collapseExample1').collapse('hide');
+        }
+        if($("#radio2").is(':checked')){
+          $('#collapseExample2').collapse('show');
+        }
+        else {
+          $('#collapseExample2').collapse('hide');
+        }
+        if($("#radio3").is(':checked')){
+          $('#collapseExample3').collapse('show');
+        }
+        else {
+          $('#collapseExample3').collapse('hide');
+        }
+        if($("#radio4").is(':checked')){
+          $('#collapseExample4').collapse('show');
+        }
+        else {
+          $('#collapseExample4').collapse('hide');
+        }
+        if($("#radio5").is(':checked')){
+          $('#collapseExample5').collapse('show');
+        }
+        else {
+          $('#collapseExample5').collapse('hide');
+        }
+      });
   //# sourceURL=pen.js
