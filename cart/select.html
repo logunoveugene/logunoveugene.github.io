@@ -29,7 +29,7 @@
 					</div>
 					<div class="list-group-item list-group-item-action flex-column align-items-start p-25">
 						<label class="custom-control custom-radio mb-0  w-100 ">
-							<input id="radio1" name="radio" type="radio" class="custom-control-input">
+							<input id="radio2" name="radio" type="radio" class="custom-control-input">
 							<span class="custom-control-indicator"></span>
 							<div class="custom-control-description flex-column align-items-start w-100 ">
 								<div class="d-flex w-100 justify-content-between ">
@@ -45,7 +45,7 @@
 					</div>
 					<div class="list-group-item list-group-item-action flex-column align-items-start p-25">
 						<label class="custom-control custom-radio mb-0  w-100 ">
-							<input id="radio1" name="radio" type="radio" class="custom-control-input">
+							<input id="radio3" name="radio" type="radio" class="custom-control-input">
 							<span class="custom-control-indicator"></span>
 							<div class="custom-control-description flex-column align-items-start w-100 ">
 								<div class="d-flex w-100 justify-content-between ">
@@ -61,7 +61,7 @@
 					</div>
 					<div class="list-group-item list-group-item-action flex-column align-items-start p-25">
 						<label class="custom-control custom-radio mb-0  w-100 ">
-							<input id="radio1" name="radio" type="radio" class="custom-control-input">
+							<input id="radio4" name="radio" type="radio" class="custom-control-input">
 							<span class="custom-control-indicator"></span>
 							<div class="custom-control-description flex-column align-items-start w-100 ">
 								<div class="d-flex w-100 justify-content-between ">
@@ -70,14 +70,23 @@
 										<small>пр-т Красного Знамени, 59</small><br>
 										<small><img class="pb-1 mr-1" src="img/b-market-addr__text_icon_time.png" alt=""> с 10:00 до 20:00</small>
 									</div>
-									<div class="mb-0 text-right"><small>Заказ будет готов</small><br> <span class="text-success">Через 20 минут</span></div>
+									<div class="mb-0 text-right"><small>Заказ будет готов</small><br> <span class="">24 аперля</span><br><small class="text-success">Часть можно забрать раньше</small>
+									</div>
 								</div>
 							</div>
 						</label>
+						<div class="collapse" id="collapseExample">
+								<div class="alert-warning p-25 row mt-2">
+								<small class="mb-2">					
+									Вы хотите забрать сразу весь заказ 24 апреля или получать товары по мере готовности?
+									</small>
+									<button type="sumbit" class="btn btn-secondary btn-block">Весь заказ целиком</button>	
+								</div>
+							</div>
 					</div>
 					<div class="list-group-item list-group-item-action flex-column align-items-start p-25">
 						<label class="custom-control custom-radio mb-0  w-100 ">
-							<input id="radio1" name="radio" type="radio" class="custom-control-input">
+							<input id="radio5" name="radio" type="radio" class="custom-control-input">
 							<span class="custom-control-indicator"></span>
 							<div class="custom-control-description flex-column align-items-start w-100 ">
 								<div class="d-flex w-100 justify-content-between ">
@@ -86,7 +95,8 @@
 										<small>ул. Черемуховая,15</small><br>
 										<small><img class="pb-1 mr-1" src="img/b-market-addr__text_icon_time.png" alt=""> с 10:00 до 20:00</small>
 									</div>
-									<div class="mb-0 text-right"><small>Заказ будет готов</small><br> <span class="text-success">Через 20 минут</span></div>
+									<div class="mb-0 text-right"><small>Заказ будет готов</small><br> <span class="text-success">Через 20 минут</span>
+									</div>
 								</div>
 							</div>
 						</label>
@@ -99,5 +109,16 @@
 	<script src="js/tether.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 	<script src="js/custom.js"></script>
+	<script>
+
+		$('input[name=radio]').on('change', function(){  
+			if($("#radio4").is(':checked')){
+				$('#collapseExample').collapse('show');
+			}
+			else {
+				$('#collapseExample').collapse('hide');
+			}
+		});
+	</script>
 </body>
 </html>

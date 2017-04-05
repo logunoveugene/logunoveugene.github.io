@@ -42,4 +42,14 @@
       });
 
     });
+
+    
+    $('input[name=radio]').on('change', function(){  
+      if($("#radio4").is(':checked')){
+        $('#collapseExample').collapse('show');
+      }
+      else {
+        $('#collapseExample').collapse('hide');
+      }
+    });
   //# sourceURL=pen.js
