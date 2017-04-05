@@ -126,6 +126,10 @@
   .p-25 {
 padding:.75rem;
   }
+  .m--25{
+    margin-left: -.75rem;
+    margin-right: -.75rem;
+  }
   /*-------------группа кнопок---------------*/
   .btn-cst{
     font-size: 0.9rem;
