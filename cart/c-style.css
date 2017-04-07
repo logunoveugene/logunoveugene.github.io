@@ -127,8 +127,8 @@
 padding:.75rem;
   }
   .m--25{
-    margin-left: -.75rem;
-    margin-right: -.75rem;
+    margin-left: -.75rem!important;
+    margin-right: -.75rem!important;
   }
   /*-------------группа кнопок---------------*/
   .btn-cst{
@@ -137,10 +137,17 @@ padding:.75rem;
     padding: .5rem;
     color:#355b99;
   }
-  .btn-cst.active{
+  .btn-cst.active {
     background-color:#ffedb2;
     border-color:#ccc;
   }
+    .btn-cst.focus{
+    background-color:#ffedb2;
+    border-color:#ccc;
+  }
+
+
+
     /*-------------оформление модалов с промозоной---------------*/
   .bonus-modal-promo{
     background:#f7f7f7 url(https://i.snag.gy/8Xjl6n.jpg) no-repeat right bottom; 
@@ -192,3 +199,6 @@ padding-left:1rem;
 .custom-select{
   width: 100%
 }
+
+
+
