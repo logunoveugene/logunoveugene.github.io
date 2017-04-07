@@ -205,3 +205,8 @@ padding-left:1rem;
 .list-group-item[quantity="1"]:active, .list-group-item[quantity="1"]:focus, .list-group-item[quantity="1"]:hover{
       background-color: #dff0d8;
 }
+
+
+.list-group-item[quantity="0"]:active, .list-group-item[quantity="0"]:focus, .list-group-item[quantity="0"]:hover{
+    background-color: rgb(252, 248, 227);
+    }
