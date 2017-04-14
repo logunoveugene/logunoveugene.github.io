@@ -32,6 +32,9 @@ input.hsearch::-moz-placeholder {
 .mr-30{
 	margin-right:30px;
 }
+.ml-10{
+	margin-left:10px; 
+}
 .ml-20{
 	margin-left:20px; 
 }
@@ -46,6 +49,9 @@ input.hsearch::-moz-placeholder {
 }
 .mt-10{
 	margin-top: 10px;
+}
+.mt-20{
+	margin-top: 20px;
 }
 .mb-10{
 	margin-bottom: 10px;
