@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <title>Оформление заказа</title>
     <meta charset="UTF-8">
@@ -59,9 +58,9 @@
                                 <img class="product-photo" src="https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/620/763/catalog_list/30102419_1.jpg" alt="">
                             </div>
                             <div class="d-flex align-items-center">
-                                <a rel="nofollow" href="">
+                                <span>
                                     <span class="text-muted">Смартфон Asus ZenFone 3 Max ZC520TL 16Gb Silver</span>
-                                </a>
+                                </span>
                             </div>
                         </div>
                         <div class="col-2">
@@ -186,9 +185,9 @@
                                 <img class="product-photo" src="https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/567/592/catalog_tile/11300652_1.jpg" alt="">
                             </div>
                             <div class="d-flex align-items-center">
-                                <a rel="nofollow" href="">
+                                <span>
                                     <span class="text-muted">Ноутбук Acer Extensa 2510G-53DE</span>
-                                </a>
+                                </span>
                             </div>
                         </div>
                         <div class="col-2">
@@ -328,22 +327,27 @@
                         <div class="col-12">
                             <h5 class="mb-3 mt-2">3. Выберите способ получения</h5>
                             <div class="col-12 col-md-6 p-0">
-                                <div class="btn-group mb-3 btn-block" data-toggle="buttons" role="tablist">
-                                    <div class="btn btn-secondary btn-cst btn-block active" data-toggle="tab" data-target="#home" role="tab">
-                                        <input type="radio" name="options" id="option1" checked="">
-                                        Самовывоз<br>
-                                        <small class="field-sub-text text-muted">бесплатно</small>
-                                    </div>
-                                    <div class="btn btn-secondary btn-cst btn-block" data-toggle="tab" data-target="#profile" role="tab">
-                                        <input type="radio" name="options" id="option2">
-                                        Доставка
-                                        <br>
-                                        <small class="field-sub-text text-muted">+320 р.</small>
-                                    </div>
-                                </div>
+                                <ul class="btn-group mb-3 btn-block nav nav-pills" role="tablist">
+                                    <li class="btn btn-secondary btn-cst btn-block" data-toggle="tab" data-target="#home" role="tab">
+                                        <div class="d-flex flex-row">
+                                            <div class="">
+                                                <span>Самовывоз</span><br>
+                                                <small  >быстро и просто!</small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="btn btn-secondary btn-cst btn-block" data-toggle="tab" data-target="#profile" role="tab">
+                                        <div class="d-flex flex-row">
+                                            <div class="">
+                                                <span>Доставка</span><br>
+                                                <small>от 320р. получить сегодня</small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
                             <div class="tab-content">
-                                <div class="tab-pane active" id="home" role="tabpanel">
+                                <div class="tab-pane" id="home" role="tabpanel">
                                     <div class="">
                                         <label class="field-label">Пункт самовывоза</label>
                                         <!--*******************-->
@@ -371,15 +375,16 @@
                                                 <div class="w-100">
                                                     <div class="collapse" id="collapseExample1">
                                                         <div class="mt-2 ">
-                                                            <div class="ml-4">
-                                                                <div class="">
-                                                                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A15725a03a7a8775e0830dfcd283e8ea207b2a1833b9c1d068af4a94fddd9f5e6&amp;width=100%25&amp;height=150&amp;lang=ru_RU&amp;scroll=true"></script>
-                                                                </div>
-                                                                <div class="d-flex w-100 justify-content-between mt-2">
+
+                                                            <div class="ml-4 mt-2">
+                                                                <div class="d-flex w-100 justify-content-between ">
                                                                     <div class="small">
                                                                         <strong>Время работы:</strong>
                                                                     </div>
                                                                     <div class="small">с 10:00 по 21:00</div>
+                                                                </div>
+                                                                <div class="">
+                                                                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A15725a03a7a8775e0830dfcd283e8ea207b2a1833b9c1d068af4a94fddd9f5e6&amp;width=100%25&amp;height=150&amp;lang=ru_RU&amp;scroll=true"></script>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -416,11 +421,10 @@
                                                                     </small>
                                                                 </div>
                                                                 <div class="mb-1">
-                                                                    <small>
-                                                                        Обратите внимание, товар резервируется на 24
+                                                                    <small>Обратите внимание, товар резервируется на 24
                                                                         часа с момента получения смс уведомления о его
-                                                                        готовности. <br>
-                                                                    </small>
+                                                                        готовности.
+                                                                    </small><br>
                                                                 </div>
                                                                 <a href="" class="small">Хотите выбрать другую дату
                                                                     получения?</a>
@@ -633,9 +637,7 @@
                         </button>
                     </div>
                     <div class="col-8 mb-4">
-                        <small class="text-muted">Чтобы стать участником бонусной программы, заполните необходимые
-                            поля.
-                        </small>
+                        <small class="text-muted">Чтобы стать участником бонусной программы, заполните необходимые поля.</small>
                     </div>
                 </div>
                 <div class="row">
