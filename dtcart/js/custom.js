@@ -11,7 +11,7 @@
         )
     });
 
-    jQuery('.quantity').each(function() {
+    $('.quantity').each(function() {
       var spinner = jQuery(this),
       input = spinner.find('input[type="number"]'),
       btnUp = spinner.find('.quantity-up'),
