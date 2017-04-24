@@ -103,16 +103,6 @@ if (!navigator.geolocation) {
       $('.coordinates').addClass('visible');
 
       // Create a new map and place a marker at the device location.
-      var map = new GMaps({
-        el: '#map',
-        lat: lat,
-        lng: lng
-      });
-
-      map.addMarker({
-        lat: lat,
-        lng: lng
-      });
 
     });
 
