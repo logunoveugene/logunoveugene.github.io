@@ -118,6 +118,14 @@
      box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 
    }
+
+
+    .block-shadow-4i{
+     box-shadow: inset 0 9px 10px -6px rgba(0, 0, 0, 0.1);
+
+   }
+
+
    .bb-1{
     border-bottom:1px solid #eee;  
   }
@@ -215,3 +223,18 @@ padding-left:1rem;
 .list-group-item[quantity="0"]:active, .list-group-item[quantity="0"]:focus, .list-group-item[quantity="0"]:hover{
     background-color: rgb(252, 248, 227);
     }
+
+
+
+
+.custom-control-indicator {
+
+    background-color: #fff;
+
+    border: 1px solid #d2d2d2;
+}
+
+.custom-control-input:checked ~ .custom-control-indicator {
+
+    border: none;
+}
