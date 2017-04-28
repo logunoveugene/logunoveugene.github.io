@@ -262,3 +262,12 @@ border: 1px solid #d2d2d2;
 .nav-tabs:first-child {
   padding-left: o;
 }
+
+.list-group-item:first-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+.list-group-item:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
