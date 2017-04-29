@@ -35,7 +35,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index2.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index2.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="883">
@@ -55,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="c-style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="c-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/c-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1116">
-              <caret line="279" column="1" lean-forward="true" selection-start-line="279" selection-start-column="1" selection-end-line="279" selection-end-column="23" />
+            <state relative-caret-position="1133">
+              <caret line="280" column="22" lean-forward="false" selection-start-line="280" selection-start-column="22" selection-end-line="280" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -69,8 +69,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>collapseExample1</find>
       <find>alert-warning</find>
+      <find>collapseExample1</find>
     </findStrings>
     <replaceStrings>
       <replace>2017-04-22</replace>
@@ -82,9 +82,9 @@
       <list>
         <option value="$PROJECT_DIR$/index.html" />
         <option value="C:/OpenServer/domains/scart.ru/index2.html" />
-        <option value="$PROJECT_DIR$/c-style.css" />
         <option value="$PROJECT_DIR$/js/custom.js" />
         <option value="$PROJECT_DIR$/index2.html" />
+        <option value="$PROJECT_DIR$/c-style.css" />
       </list>
     </option>
   </component>
@@ -233,12 +233,12 @@
       <option name="presentableId" value="Default" />
       <updated>1492678204441</updated>
       <workItem from="1492678206154" duration="13199000" />
-      <workItem from="1493431073679" duration="1423000" />
+      <workItem from="1493431073679" duration="1902000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14622000" />
+    <option name="totallyTimeSpent" value="15101000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1273" y="0" width="1294" height="1407" extended-state="0" />
@@ -324,18 +324,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/c-style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="279" column="1" lean-forward="true" selection-start-line="279" selection-start-column="1" selection-end-line="279" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index2.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="883">
           <caret line="408" column="113" lean-forward="false" selection-start-line="408" selection-start-column="113" selection-end-line="408" selection-end-column="113" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/c-style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1133">
+          <caret line="280" column="22" lean-forward="false" selection-start-line="280" selection-start-column="22" selection-end-line="280" selection-end-column="22" />
           <folding />
         </state>
       </provider>
