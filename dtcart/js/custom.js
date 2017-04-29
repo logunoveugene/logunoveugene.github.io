@@ -47,33 +47,44 @@
     $('input[name=radio]').on('change', function(){  
         if($("#radio1").is(':checked')){
           $('#collapseExample1').collapse('show');
+          $('div[data-quantity=radio1]').addClass('collapse-alert-warning');
         }
         else {
           $('#collapseExample1').collapse('hide');
+            $('div[data-quantity=radio1]').removeClass('collapse-alert-warning');
         }
         if($("#radio2").is(':checked')){
           $('#collapseExample2').collapse('show');
+            $('div[data-quantity=radio2]').addClass('collapse-alert-warning');
+
         }
         else {
           $('#collapseExample2').collapse('hide');
+            $('div[data-quantity=radio2]').removeClass('collapse-alert-warning');
         }
         if($("#radio3").is(':checked')){
           $('#collapseExample3').collapse('show');
+            $('div[data-quantity=radio3]').addClass('collapse-alert-warning');
         }
         else {
           $('#collapseExample3').collapse('hide');
+            $('div[data-quantity=radio3]').removeClass('collapse-alert-warning');
         }
         if($("#radio4").is(':checked')){
           $('#collapseExample4').collapse('show');
+            $('div[data-quantity=radio4]').addClass('collapse-alert-warning');
         }
         else {
           $('#collapseExample4').collapse('hide');
+            $('div[data-quantity=radio4]').removeClass('collapse-alert-warning');
         }
         if($("#radio5").is(':checked')){
           $('#collapseExample5').collapse('show');
+            $('div[data-quantity=radio5]').addClass('collapse-alert-warning');
         }
         else {
           $('#collapseExample5').collapse('hide');
+            $('div[data-quantity=radio5]').removeClass('collapse-alert-warning');
         }
       });
 
