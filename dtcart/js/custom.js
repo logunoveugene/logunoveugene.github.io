@@ -89,6 +89,34 @@
       });
 
 
+
+    $('input[name=payment]').on('change', function(){  
+        if($("#p1").is(':checked')){
+          $('div[data-quantity=p1]').addClass('collapse-alert-warning');
+        }
+        else {
+            $('div[data-quantity=p1]').removeClass('collapse-alert-warning');
+        }
+        if($("#p2").is(':checked')){
+
+            $('div[data-quantity=p2]').addClass('collapse-alert-warning');
+        }
+        else {
+            $('div[data-quantity=p2]').removeClass('collapse-alert-warning');
+        }
+        if($("#p3").is(':checked')){
+          $('#p3').collapse('show');
+            $('div[data-quantity=p3]').addClass('collapse-alert-warning');
+        }
+        else {
+          $('#collapseExample3').collapse('hide');
+            $('div[data-quantity=p3]').removeClass('collapse-alert-warning');
+        }
+
+
+      });
+
+
 var findMeButton = $('.find-me');
 
 // Check if the browser has support for the Geolocation API
