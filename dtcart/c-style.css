@@ -272,11 +272,8 @@ input[type=number]
     border-bottom-left-radius: 0;
 }
 .mb--1{
-    margin-bottom: -.25rem;}
-
-
-
-
+    margin-bottom: -.25rem;
+}
 .collapse-alert-warning {
     background-color: #eceeef;
 }
@@ -293,13 +290,10 @@ input[type=number]
     background: none;
     margin-bottom: 0px;
 }
-
-.pickup-state
-{
+.pickup-state{
     line-height: 1.1;
+    white-space: nowrap;
 }
-
-
 .bg-gray{
     background-color: #eee;
 }
