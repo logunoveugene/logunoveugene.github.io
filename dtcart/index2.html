@@ -27,7 +27,7 @@
                 <div class="p-0">
                     <div class="card border-0 rounded-0 mb-2  block-shadow-3">
                         <div class="card-block bb-1">
-                            <div class="clearfix  mb-2 mt-1"><span class="h5">Ваш заказ</span>
+                            <div class="clearfix  mb-2 mt-1"><span class="h5 step-counter">Ваш заказ</span>
                                 <a href="" data-toggle="modal" data-target="#promocod">
                                     <small class="field-sub-text float-right">Есть промокод?</small>
                                 </a>
@@ -174,7 +174,7 @@
 
 <div class="card border-0 rounded-0 mb-2">
     <div class="card-block">
-        <h5 class="mb-2 mt-2">Введите данные покупателя</h5>
+        <h5 class="mb-2 mt-2 step-counter">Введите данные покупателя</h5>
 
         <ul class=" mb-3 nav nav-tabs btn-block" role="tablist">
             <li class="nav-item nav-link active btn-block pl-0" data-toggle="tab" data-target="#user-info"
@@ -197,24 +197,32 @@
 
 <div class="tab-content">
     <div class="tab-pane active" id="user-info" role="tabpanel">
-        <div class="form-group">
+        <div class="row">
+        <div class="form-group col-12 col-lg-4">
             <label class="field-label">ФИО</label>
             <small class="field-sub-text text-muted">для гарантийного талона</small>
             <input type="email" class="form-control" placeholder="Фамилия Имя Отчество">
         </div>
-        <div class="form-group">
+        <div class="form-group col-12 col-lg-4">
             <label class="field-label">Телефон</label>
             <small class="field-sub-text text-muted">для получения SMS о статусе заказа
             </small>
-            <input type="tel" class="form-control" placeholder="+7 (   ) ___ - __ - __">
+            <input type="email" class="form-control" placeholder="+7 (   ) ___ - __ - __">
         </div>
-        <div class="">
+        <div class="form-group col-12 col-lg-4 hidden-sm-down">
+            <label class="field-label">E-mail</label>
+            <small class="field-sub-text text-muted">необязательно
+            </small>
+            <input type="tel" class="form-control" placeholder="ivan@mail.ru">
+        </div>
+        <div class="col-12">
             <label class="custom-control custom-checkbox d-flex flex-column mb-0">
                 <input type="checkbox" class="custom-control-input">
                 <span class="custom-control-indicator"></span>
                 <span class="custom-control-description d-flex">Я хочу получать бонусы за заказ</span>
                 <small class="d-flex text-muted">до 10% от суммы заказа</small>
             </label>
+        </div>
         </div>
     </div>
     <div class="tab-pane" id="company-info" role="tabpanel">
@@ -254,7 +262,7 @@
     <div class="card-block bb-2">
         <div class="row">
             <div class="col-12">
-                <h5 class="mb-2 mt-2">Выберите способ получения</h5>
+                <h5 class="mb-2 mt-2 step-counter">Выберите способ получения</h5>
                 <div class="col-12 p-0">
                     <ul class=" mb-3 nav nav-tabs btn-block" role="tablist">
                         <li class="nav-item nav-link active btn-block pl-0" data-toggle="tab"
@@ -495,7 +503,7 @@
     <div class="card-block bb-2">
         <div class="row">
             <div class="col-12">
-                <h5 class="mb-2 mt-2">Выберите способ оплаты</h5>
+                <h5 class="mb-2 mt-2 step-counter">Выберите способ оплаты</h5>
 
                 <div class=" mb-3">
                     <!--*******************-->
