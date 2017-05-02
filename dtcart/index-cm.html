@@ -202,7 +202,26 @@
 
     </div>
     <div class="tab-pane" id="company-info" role="tabpanel">
-        ...
+        <div class="form-group clearfix">
+            <label class="field-label">ФИО представителя</label>
+            <small class="field-sub-text text-muted"></small>
+            <input type="email" class="form-control" placeholder="Фамилия Имя Отчество">
+        </div>
+        <div class="form-group clearfix">
+            <label class="field-label">Телефон</label>
+            <small class="field-sub-text text-muted">для получения SMS о статусе заказа
+            </small>
+            <input type="tel" class="form-control" placeholder="+7 (   ) ___ - __ - __">
+        </div>
+
+        <div class="form-group clearfix">
+            <label class="field-label">Выберите компанию</label>
+        <select class="custom-select  w-100 ">
+          <option selected>Выбрать</option>
+          <option value="1">ООО "Юнион"</option>
+          <option value="2">ООО "Строй-торг"</option>
+        </select>
+    </div>
     </div>
 </div>
 
