@@ -295,3 +295,8 @@ input[type=number]
 }
 .pickup-state{
     line-height: 1.1;}
+
+
+.bg-gray{
+    background-color: #eee;
+}
