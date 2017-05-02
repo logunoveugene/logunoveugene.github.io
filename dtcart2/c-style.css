@@ -301,5 +301,32 @@ input[type=number]
 .container{
     width: 720px;
     max-width: 100%;
+    counter-reset: list1;
 }
+
+
+/*.step-counter:before{
+content: counter(list1);
+counter-increment: list1; 
+position: absolute;
+left: -15px;
+top:3px;
+text-align: center;
+background-color: #fff;
+font-size: 14px;
+display: block;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+width: 24px;
+line-height: 20px;
+-webkit-border-radius: 24px;
+-moz-border-radius: 24px;
+border-radius: 24px;
+color: black;
+border: 2px solid orange;
+    }*/
+
+
+
 
