@@ -298,4 +298,8 @@ input[type=number]
     background-color: #eee;
 }
 
+.container{
+    width: 720px;
+    max-width: 100%;
+}
 
