@@ -280,3 +280,11 @@ input[type=number]
 .collapse-alert-warning {
     background-color: #eceeef;
 }
+
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .cyber.nav-link.active {
+    border: 1px solid transparent;
+    box-shadow: 0 3px #ef6023;
+    background: none;
+    margin-bottom: 0px;
+}
