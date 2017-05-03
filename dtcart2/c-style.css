@@ -17,7 +17,7 @@ a:focus, a:hover {
     padding: 1rem;
 }
 body{
-    background-color:#f4f4f4;
+    
     font-family:arial;
 }
 .logo{
@@ -305,28 +305,52 @@ input[type=number]
 }
 
 
-/*.step-counter:before{
-content: counter(list1);
-counter-increment: list1; 
-position: absolute;
-left: -15px;
-top:3px;
-text-align: center;
-background-color: #fff;
-font-size: 14px;
-display: block;
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-width: 24px;
-line-height: 20px;
--webkit-border-radius: 24px;
--moz-border-radius: 24px;
-border-radius: 24px;
-color: black;
-border: 2px solid orange;
-    }*/
+.step-counter:before{
+    content: counter(list1);
+    counter-increment: list1;
+    position: absolute;
+    left: -33px;
+    text-align: center;
+    background-color: orange;
+    font-size: 12px;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 20px;
+    line-height: 16px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    border-radius: 24px;
+    color: white;
+    border: 2px solid orange;
+    }
 
 
+.step-line {
+    height: 100%;
+    position: absolute;
+    left: -24px;
+    top: 31px;
+    width: 6px;
 
+}
+
+.step-line__solid {
+    background-color: #e4e4e4;
+    height: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 3px;
+    overflow: hidden;
+}
+
+.pos-rel{
+    position: relative;
+}
+
+.bg-l-grey{
+    background-color:#f4f4f4;
+}
 
