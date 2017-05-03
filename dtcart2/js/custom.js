@@ -165,4 +165,18 @@ if (!navigator.geolocation) {
 
 
 
+        $('#stepper-back2').on('click', function(){  
+        if($('#payment-information').hasClass('show')){
+          $('#payment-information').collapse('hide');
+          $('#getting-information').collapse('show');
+        }
+      });
+        $('#stepper-back1').on('click', function(){  
+        if($('#getting-information').hasClass('show')){
+          $('#getting-information').collapse('hide');
+          $('#user-infomation').collapse('show');
+        }
+      });
+
+
 

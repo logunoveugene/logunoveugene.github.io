@@ -17,7 +17,7 @@ a:focus, a:hover {
     padding: 1rem;
 }
 body{
-    
+    background-color:#f4f4f4;
     font-family:arial;
 }
 .logo{
@@ -305,7 +305,7 @@ input[type=number]
 }
 
 
-.step-counter:before{
+/*.step-counter:before{
     content: counter(list1);
     counter-increment: list1;
     position: absolute;
@@ -352,5 +352,20 @@ input[type=number]
 
 .bg-l-grey{
     background-color:#f4f4f4;
+}*/
+
+
+button.btn-link{
+
+color:#355b99
 }
 
+.btn-warning{
+        -webkit-box-shadow: 0 2px 2px #e6dac8;
+    -moz-box-shadow: 0 2px 2px #e6dac8;
+    box-shadow: 0 2px 2px #e6dac8;
+    background: #fab249;
+    border: 1px solid #de9934;
+    color: #fff;
+    text-shadow: 0 1px 0 #d28a21;
+}
