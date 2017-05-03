@@ -155,11 +155,13 @@ if (!navigator.geolocation) {
     $('#stepper1').on('click', function(){  
         if($("#user-infomation").hasClass('show')){
           $('#user-infomation').collapse('hide');
+          $('#user-infomation-succs').collapse('show');
         }
       });
         $('#stepper2').on('click', function(){  
         if($("#getting-information").hasClass('show')){
           $('#getting-information').collapse('hide');
+          $('#getting-infomation-succs').collapse('show');
         }
       });
 
@@ -169,12 +171,14 @@ if (!navigator.geolocation) {
         if($('#payment-information').hasClass('show')){
           $('#payment-information').collapse('hide');
           $('#getting-information').collapse('show');
+          $('#getting-infomation-succs').collapse('hide');
         }
       });
         $('#stepper-back1').on('click', function(){  
         if($('#getting-information').hasClass('show')){
           $('#getting-information').collapse('hide');
           $('#user-infomation').collapse('show');
+          $('#user-infomation-succs').collapse('hide');
         }
       });
 
