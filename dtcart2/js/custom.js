@@ -156,12 +156,14 @@ if (!navigator.geolocation) {
         if($("#user-infomation").hasClass('show')){
           $('#user-infomation').collapse('hide');
           $('#user-infomation-succs').collapse('show');
+          $('#user-infomation-title').addClass('text-success');
         }
       });
         $('#stepper2').on('click', function(){  
         if($("#getting-information").hasClass('show')){
           $('#getting-information').collapse('hide');
           $('#getting-infomation-succs').collapse('show');
+          $('#getting-infomation-title').addClass('text-success');
         }
       });
 
@@ -172,6 +174,7 @@ if (!navigator.geolocation) {
           $('#payment-information').collapse('hide');
           $('#getting-information').collapse('show');
           $('#getting-infomation-succs').collapse('hide');
+          $('#getting-infomation-title').removeClass('text-success');
         }
       });
         $('#stepper-back1').on('click', function(){  
@@ -179,8 +182,8 @@ if (!navigator.geolocation) {
           $('#getting-information').collapse('hide');
           $('#user-infomation').collapse('show');
           $('#user-infomation-succs').collapse('hide');
+          $('#user-infomation-title').removeClass('text-success');
         }
       });
-
 
 
