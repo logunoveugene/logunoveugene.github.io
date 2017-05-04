@@ -254,14 +254,15 @@ input[type=number]
     box-shadow: 0 3px orange;
     background: none;
     margin-bottom: 0px;
+    color: #ee722f;
 }
 
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
     border: 1px solid transparent;
 }
 
-.nav-tabs:first-child {
-    padding-left: o;
+.nav-link:first-child {
+    padding-left: 0;
 }
 
 .list-group-item:first-child {
