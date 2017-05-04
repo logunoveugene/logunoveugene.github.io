@@ -157,6 +157,8 @@ if (!navigator.geolocation) {
           $('#user-infomation').collapse('hide');
           $('#user-infomation-succs').collapse('show');
           $('#user-infomation-title').addClass('step-success');
+          $('#getting-infomation-title').removeClass('step-success');
+          $('#getting-infomation-succs').collapse('hide');
         }
       });
         $('#stepper2').on('click', function(){  
@@ -164,6 +166,7 @@ if (!navigator.geolocation) {
           $('#getting-information').collapse('hide');
           $('#getting-infomation-succs').collapse('show');
           $('#getting-infomation-title').addClass('step-success');
+
         }
       });
 
@@ -178,8 +181,9 @@ if (!navigator.geolocation) {
         }
       });
         $('#stepper-back1').on('click', function(){  
-        if($('#getting-information').hasClass('show')){
+        if($('#getting-information').hasClass('show')||$('#payment-information').hasClass('show')){
           $('#getting-information').collapse('hide');
+           $('#payment-information').collapse('hide');
           $('#user-infomation').collapse('show');
           $('#user-infomation-succs').collapse('hide');
           $('#user-infomation-title').removeClass('step-success');
