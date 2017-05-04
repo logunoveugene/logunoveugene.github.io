@@ -187,3 +187,7 @@ if (!navigator.geolocation) {
       });
 
 
+$(window).on('load', function(){
+      var win = $(this); //this = window
+      if (win.width() >= 820) { $('#collapseExample-smart').addClass('show')}
+});

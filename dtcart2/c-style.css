@@ -50,11 +50,12 @@ body{
     position:absolute;
     right:1rem;
     font-size: 15px;
-    top: .85rem;
+top: 50%;
+transform: translateY(-50%);
 }
 .icon-accordion[aria-expanded="true"]::before{
     content: "\61";
-    transform: rotate(180deg);
+    transform: translateY(-50%) rotate(180deg);
 }
 /*------------количество-------------------*/
 
@@ -369,3 +370,12 @@ color:#355b99
     color: #fff;
     text-shadow: 0 1px 0 #d28a21;
 }
+
+.shrink{
+-webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    max-width: 100%;
+    width: auto;
+    }
