@@ -195,3 +195,17 @@ $(window).on('load', function(){
         $('#product-collapse-plate').addClass('hidden-xl-down');
       }
 });
+
+$(window).on('resize', function(){
+      var win = $(this); //this = window
+      if (win.width() >= 720) { 
+        $('#collapseExample-smart').addClass('show');
+        $('#collapseExample-smart').removeClass('product-collapse');
+        $('#product-collapse-plate').addClass('hidden-xl-down');
+      }
+      else{
+        $('#collapseExample-smart').removeClass('show');
+        $('#collapseExample-smart').addClass('product-collapse');
+        $('#product-collapse-plate').removeClass('hidden-xl-down');
+      }
+});
