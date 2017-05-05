@@ -427,6 +427,8 @@ color:#355b99
 }
 .nav-item.nav-link{
     border: none;
+    padding: .75rem 0;
+    margin-right: 1.5rem;
 }
 
 
