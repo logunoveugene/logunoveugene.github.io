@@ -27,7 +27,7 @@
                     <div class="card border-0 rounded-0 mb-2  block-shadow-3">
                         <div class="card-block bb-1">
                             <div class="clearfix  mb-3 mt-1">
-                                <span class="h5 ">Ваш заказ</span>
+                                <span class="h5">Ваш заказ</span>
                                 <a href="" data-toggle="modal" data-target="#promocod">
                                     <small class="field-sub-text float-right">Есть промокод?</small>
                                 </a>
@@ -173,7 +173,7 @@
                 </div>
                 <div class="card border-0 rounded-0 mb-2">
                     <div class="card-block">
-                        <h5 id="user-infomation-title" class="mb-0 mt-2 step-counter ">Введите данные покупателя</h5> 
+                        <h5 id="user-infomation-title" class="mb-0 mt-2 step-counter ">1. Введите данные покупателя</h5> 
                         <div id="user-infomation-succs" class="collapse" aria-labelledby="user-infomation-succs">
                             <h6 class=" mt-2 mb-0">Иванов Иван Петрович</h6>
                             <small class="mr-2 text-muted">+7 (914) 548-48-48</small>
@@ -209,7 +209,7 @@
                                             <label class="field-label">Телефон для SMS о статусе заказа</label>
                                             <small class="field-sub-text text-muted">
                                             </small>
-                                            <input type="tel" class="form-control" placeholder="+7 (   ) ___ - __ - __">
+                                            <input type="tel" id="user-phone-num" class="form-control" placeholder="+7 (   ) ___ - __ - __">
                                         </div>
                                         <div class="form-group col-12 col-md-7 hidden-sm-down">
                                             <label class="field-label">E-mail</label>
@@ -228,24 +228,24 @@
                                     </div>
                                 </div>
                                 <div class="tab-pane" id="company-info" role="tabpanel">
-                                    <div class="form-group clearfix">
+                                    <div class="row">
+                                    <div class="form-group col-12 col-md-7">
                                         <label class="field-label">ФИО представителя</label>
                                         <small class="field-sub-text text-muted"></small>
                                         <input type="email" class="form-control" placeholder="Фамилия Имя Отчество">
                                     </div>
-                                    <div class="form-group clearfix">
-                                        <label class="field-label">Телефон</label>
-                                        <small class="field-sub-text text-muted">для получения SMS о статусе заказа
-                                        </small>
+                                    <div class="form-group col-12 col-md-7">
+                                        <label class="field-label">Телефон для SMS о статусе заказа</label>
                                         <input type="tel" class="form-control" placeholder="+7 (   ) ___ - __ - __">
                                     </div>
-                                    <div class="form-group clearfix">
+                                    <div class="form-group col-12 col-md-7">
                                         <label class="field-label">Выберите компанию</label>
                                         <select class="custom-select  w-100 ">
                                             <option selected>Выбрать</option>
                                             <option value="1">ООО "Юнион"</option>
                                             <option value="2">ООО "Строй-торг"</option>
                                         </select>
+                                    </div>
                                     </div>
                                     <a rel="nofollow" href="" data-toggle="modal" data-target="#company">Добавить компанию</a>
                                 </div>
@@ -258,7 +258,7 @@
                     <div class="card-block bb-2">
                         <div class="">
                             <div class="">
-                                <h5 id="getting-infomation-title" class="mb-0 mt-2 step-counter">Выберите способ получения</h5>
+                                <h5 id="getting-infomation-title" class="mb-0 mt-2 step-counter">2. Выберите способ получения</h5>
                                 <div id="getting-infomation-succs" class="collapse" aria-labelledby="getting-infomation-succs">
                                     <h6 class=" mt-2 mb-0">Самовывоз</h6>
                                     <small class="mr-2 text-muted">на Алеутской (ул. Алеутская, 11)</small>
@@ -493,7 +493,7 @@
                                 <div class="card-block bb-2">
                                     <div class="row">
                                         <div class="col-12">
-                                            <h5 class="mb-0 mt-2 step-counter">Выберите способ оплаты</h5>
+                                            <h5 class="mb-0 mt-2 step-counter">3. Выберите способ оплаты</h5>
                                             <div id="payment-information" class="collapse" aria-labelledby="payment-information">
                                                 <div class="mt-2 mb-3">
                                                     <!--*******************-->
@@ -555,7 +555,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -678,6 +677,8 @@
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
                 <script src="js/tether.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+                
                 <script src="js/custom.js"></script>
             </body>
             </html>

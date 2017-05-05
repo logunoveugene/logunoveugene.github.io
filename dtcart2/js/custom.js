@@ -213,3 +213,5 @@ $(window).on('resize', function(){
         $('#product-collapse-plate').removeClass('hidden-xl-down');
       }
 });
+
+
