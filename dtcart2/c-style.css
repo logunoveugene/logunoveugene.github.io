@@ -388,10 +388,21 @@ color:#355b99
     top: 0;
     height: 100%;
     width: 4px;
-    background-color: #5cb85c;
+    background-color:#5cb85c; ;
+}
+
+    .step-success:after{
+
+    position: absolute;
+    right: 1.75rem;
+    color: #5cb85c;
+    top: 1.5rem;
+    font-family: "untitled-font-1" !important;
+    content: "\62";
 
 
 }
+
 
 .form-control::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color:    #999;
@@ -416,4 +427,11 @@ color:#355b99
 }
 .nav-item.nav-link{
     border: none;
+}
+
+
+
+
+.custom-control {
+margin-right: 0rem; 
 }
