@@ -429,11 +429,17 @@ color:#355b99
     border: none;
     padding: .75rem 0;
     margin-right: 1.5rem;
+    cursor: pointer;
+}
+
+.custom-control {
+margin-right: 0rem; 
 }
 
 
 
-
-.custom-control {
-margin-right: 0rem; 
+.close {
+    font-size: 2rem;
+    font-weight: 300;
+    opacity: .2;
 }
