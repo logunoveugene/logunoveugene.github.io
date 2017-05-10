@@ -193,7 +193,7 @@ if (!navigator.geolocation) {
 
 $(window).on('load', function(){
       var win = $(this); //this = window
-      if (win.width() >= 720) { 
+      if (win.width() >= 768) { 
         $('#collapseExample-smart').addClass('show');
         $('#collapseExample-smart').removeClass('product-collapse');
         $('#product-collapse-plate').addClass('hidden-xl-down');
@@ -202,7 +202,7 @@ $(window).on('load', function(){
 
 $(window).on('resize', function(){
       var win = $(this); //this = window
-      if (win.width() >= 720) { 
+      if (win.width() >= 768) { 
         $('#collapseExample-smart').addClass('show');
         $('#collapseExample-smart').removeClass('product-collapse');
         $('#product-collapse-plate').addClass('hidden-xl-down');
