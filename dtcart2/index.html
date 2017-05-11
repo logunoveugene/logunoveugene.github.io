@@ -218,7 +218,7 @@
                                                 <input type="email" class="form-control" placeholder="ivan@mail.ru">
                                             </div>
                                             <div class="col-12">
-                                                <label class="custom-control custom-checkbox d-flex flex-column mb-0">
+                                                <label class="custom-control custom-checkbox d-flex flex-column mb-0" data-toggle="modal" data-target="#bonuscard">
                                                     <input type="checkbox" class="custom-control-input">
                                                     <span class="custom-control-indicator"></span>
                                                     <span class="custom-control-description d-flex">Получить до 126 р. бонусов за заказ</span>
@@ -600,10 +600,10 @@
         <div class="modal fade" id="bonuscard" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content rounded-0">
-                    <div class="modal-body">
+                    <div class="modal-body bb-1" >
                         <div class="row mb-3 bg-faded bonus-modal-promo">
                             <div class="col-10">
-                                <h5 class="modal-title mb-3" id="bonuscardModalLabel">Анкета бонусного клиента</h5>
+                                <h5 class="modal-title mb-2" id="bonuscardModalLabel">Начисление бонусов</h5>
                             </div>
                             <div class="col-2">
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -611,41 +611,36 @@
                                 </button>
                             </div>
                             <div class="col-8 mb-4">
-                                <small class="text-muted">Чтобы стать участником бонусной программы, заполните необходимые
-                                                поля.
-                                            </small>
+                                <div class="text-muted small">Если Вы участник бонусной программы, введите номер карты.</div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <div class="form-group">
-                                    <label class="field-label">ФИО</label>
-                                    <input type="text" class="form-control" placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label class="field-label">Телефон</label>
-                                    <input type="text" class="form-control" placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label class="field-label">Дата рождения</label>
-                                    <input type="text" class="form-control" placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label class="field-label">Адрес</label>
-                                    <input type="text" class="form-control" placeholder="">
-                                </div>
-                                <form action="bonuscard.html" class="mb-0">
-                                    <button type="submit" class="btn btn-warning">Сохранить</button>
-                                    <button class="btn btn-link" data-dismiss="modal">Отмена</button>
-                                </form>
-                            </div>
+                                <div class="clearfix form-group">
+                                    <label class="field-label" for="exampleInputEmail1">Бонусная карта</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="№ 3550 ________">
+                              </div>
+                              <form action="bonuscard.html" class="mb-0">
+                                <button type="submit" class="btn btn-warning btn-lg">Подтвердить</button>
+                                
+                            </form>
                         </div>
                     </div>
                 </div>
+                <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="small text-muted">Нет карты?</span> <br>
+                                <a href="">Завести карту и получить бонусы →</a>
+
+                            </div>
+                        </div>
+                    </div>
             </div>
         </div>
-        <div class="modal fade" id="promocod" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
+    </div>
+    <div class="modal fade" id="promocod" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
                 <div class="modal-content rounded-0">
                     <div class="modal-body">
                         <div class="row mb-3 bg-faded promocod-modal-promo">
@@ -674,7 +669,9 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
+
             </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
