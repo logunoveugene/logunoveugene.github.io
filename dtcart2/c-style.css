@@ -434,12 +434,12 @@ margin-right: 0rem;
     padding-bottom: 1rem;
     margin-bottom: -.75rem;
     margin-top: 1rem;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid rgba(0,0,0,.125);
 }
 
 
 .collapse-alert-warning{
-        background-color: #fcf8e3;
+        background-color: #fff;
 
 }
 
