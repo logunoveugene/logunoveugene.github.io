@@ -126,7 +126,9 @@ input[type=number]
 .p-25 {
     padding:.75rem;
 }
-
+.m--25 {
+    margin:-.75rem;
+}
 /*-------------группа кнопок---------------*/
 
 
@@ -420,4 +422,16 @@ margin-right: 0rem;
 
 .lh-1{
     line-height: 1.1;
+}
+
+
+.split-warning{
+        margin-left: -2.25rem;
+    padding-left: 2.25rem;
+    padding-top: 1rem;
+    margin-right: -.75rem;
+    padding-bottom: 1rem;
+    margin-bottom: -.75rem;
+    margin-top: 1rem;
+}
 }
