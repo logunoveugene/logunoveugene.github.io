@@ -428,10 +428,30 @@ margin-right: 0rem;
 .split-warning{
         margin-left: -2.25rem;
     padding-left: 2.25rem;
+    padding-right: 1rem;
     padding-top: 1rem;
     margin-right: -.75rem;
     padding-bottom: 1rem;
     margin-bottom: -.75rem;
     margin-top: 1rem;
+    border-top: 1px solid #ccc;
 }
+
+
+.collapse-alert-warning{
+        background-color: #fcf8e3;
+
+}
+
+
+.list-group-item-action:active {
+    color: #292b2c;
+    background-color: #fff;
+}
+
+
+.list-group-item-action:focus, .list-group-item-action:hover {
+    color: #464a4c;
+    text-decoration: none;
+    background-color: #fff;
 }

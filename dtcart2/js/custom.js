@@ -200,9 +200,16 @@ $(window).on('load', function(){
       }
 });
 
+
+
+
+
+
+var width = $(window).width();
 $(window).on('resize', function(){
-      var win = $(this); //this = window
-      if (win.width() >= 768) { 
+   if($(this).width() != width){
+      width = $(this).width();
+      if (width >= 768) { 
         $('#collapseExample-smart').addClass('show');
         $('#collapseExample-smart').removeClass('product-collapse');
         $('#product-collapse-plate').addClass('hidden-xl-down');
@@ -212,6 +219,6 @@ $(window).on('resize', function(){
         $('#collapseExample-smart').addClass('product-collapse');
         $('#product-collapse-plate').removeClass('hidden-xl-down');
       }
+       
+   }
 });
-
-
