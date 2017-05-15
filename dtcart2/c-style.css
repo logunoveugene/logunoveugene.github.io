@@ -468,3 +468,9 @@ content: " ";
     text-decoration: none;
     background-color: #fff;
 }
+
+
+
+.link-dashed{
+    border-bottom: 1px dashed rgba(53, 91, 153, 0.6)
+}
