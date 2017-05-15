@@ -230,12 +230,12 @@
                                                 <input type="email" class="form-control" placeholder="ivan@mail.ru">
                                             </div>
                                             <div class="col-12">
-                                                <div class="form-group">
-                                                <div class="rounded accordion-plate alert-success">
+                                                <div class="form-group pt-1">
+                                                <div class="rounded accordion-plate bg-gray">
                                                     <a rel="nofollow" class="btn-link text-muted icon-accordion collapsed" data-toggle="collapse" href="#comany-fields" aria-controls="comany-fields" aria-expanded="false">Заявка на выпуск бонусной карты</a>
                                                 </div>
                                                 <div class="collapse product-collapse" id="comany-fields" aria-expanded="false">
-                                                    <div class="pt-2">
+                                                    <div class="">
                                                         <ul class="list-unstyled small mb-2">
                                                             <li class="row">
                                                                 <span class="text-muted col-5">ФИО:</span>
@@ -254,8 +254,11 @@
                                                                 <span class="col-7">15 мая 1985</span>
                                                             </li>
                                                         </ul>
-                                                        <a class="mr-1 " href="" data-toggle="modal" data-target="#newbonuscard">
+                                                        <a class="mr-3 " href="" data-toggle="modal" data-target="#newbonuscard">
                                                             <span class="lh-1">Изменить</span>
+                                                        </a>
+                                                         <a class="mr-1 " href="index.html" >
+                                                            <span class="lh-1">Отменить заяку</span>
                                                         </a>
                                                     </div>
                                                 </div>
@@ -622,6 +625,7 @@
                 </div>
             </div>
         </div>
+        <!-- Модальные окна-->
         <div class="modal fade" id="company" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content rounded-0">
@@ -678,6 +682,10 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="clearfix form-group">
+                                    <label class="field-label" for="exampleInputEmail1">Фамилия участника бонусной программы</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="Иванов">
+                                </div>
+                                <div class="clearfix form-group">
                                     <label class="field-label" for="exampleInputEmail1">Бонусная карта</label>
                                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="№ 3550 ________">
                                 </div>
@@ -728,13 +736,13 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="field-label">Адрес</label>
-                                    <input type="text" class="form-control" placeholder="" value="Владивосток, ">
+                                    <input type="text" class="form-control" placeholder="">
                                 </div>
                                 <div class="form-group ">
                                     <label class="field-label">Дата рождения</label>
                                     <input type="date" class="form-control" value="1971-08-19" placeholder="">
                                 </div>
-                                <form action="bonuscard.html" class="mb-0">
+                                <form action="bonuscard-new.html" class="mb-0">
                                     <button type="submit" class="btn btn-warning btn-lg">Сохранить</button>
                                 </form>
                             </div>
@@ -776,15 +784,16 @@
                                     <input type="text" class="form-control" placeholder="">
                                 </div>
                                 <form class="mb-0" action="promocode.html">
-                                    <button type="submit" class="btn btn-warning btn-lg">Применить</button>
-                                    <button class="btn btn-link" data-dismiss="modal">Отмена</button>
-                                </form>
+                                        <button type="submit" class="btn btn-warning btn-lg">Применить</button>
+                                        <button class="btn btn-link" data-dismiss="modal">Отмена</button>
+                                    </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- //Модальные окна-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="js/tether.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
