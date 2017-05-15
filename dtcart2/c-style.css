@@ -435,9 +435,9 @@ margin-right: 0rem;
     padding-bottom: 1rem;
     margin-bottom: -.75rem;
     margin-top: 1rem;
-    border-top: 1px solid rgba(0,0,0,.125);
+
 }
-.split-warning:before{
+/*.split-warning:before{
 content: " ";
     position: absolute;
     right: 33%;
@@ -448,7 +448,7 @@ content: " ";
     top: -.3rem;
     box-shadow: -1px -1px 0 0 rgba(0,0,0,.125);;
 }
-
+*/
 
 
 .collapse-alert-warning{
