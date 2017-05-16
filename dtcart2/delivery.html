@@ -272,7 +272,7 @@
                                     <div id="getting-infomation-succs" class="collapse" aria-labelledby="getting-infomation-succs">
                                         <h6 class=" mt-2 mb-0">Самовывоз</h6>
                                         <small class="mr-2 text-muted">на Алеутской (ул. Алеутская, 11)</small>
-                                        <small class="text-muted">готов к выдаче</small>
+                                        <small class="text-muted">сегодня</small>
                                         <br>
                                         <a id="stepper-back2" href="#getting-infomation-title" class="mt-4">
                                             <small>Изменить</small>
@@ -300,174 +300,145 @@
                                         <div class="tab-content">
                                             <div class="tab-pane " id="home" role="tabpanel">
                                                 <div class="">
-                                                    <label class="field-label">Пункт самовывоза</label>
-                                                    <!--*******************-->
-                                                    <div class="list-group">
-                                                        <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio1">
-                                                            <label class="custom-control custom-radio  w-100 mb--1">
-                                                                <input id="radio1" name="radio" type="radio" class="custom-control-input">
-                                                                <span class="custom-control-indicator"></span>
-                                                                <span class="custom-control-description row w-100">
-                                                                    <span class="col-7 pr-0">
-                                                                        <span class="store-desc mr-3">
-                                                                            <span class="mb-0 h6">на Алеутской</span>
-                                                                            <br>
-                                                                            <small class="text-muted mb-0">ул. Алеутская, 11</small>
-                                                                        </span>
-                                                                    </span>
-                                                                    <span class="mb-0 text-left col-5 d-flex  ">
-                                                                        <span class="mb-0 text-success align-self-center pickup-state">готов к выдаче</span>
+                                                <div class="row ">
+                                                    
+                                                    <span class="col-7 pr-0 ">
+                                                    <label class="field-label small">Пункт самовывоза</label>
+                                                    </span>
+                                                    <span class="col-5 pl-2 "><label class="field-label small">Получить товар</label></span>
+                                                </div>
+                                                    
+                                            <!--*******************-->
+                                            <div class="list-group">
+                                                <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio1">
+                                                    <label class="custom-control custom-radio  w-100 mb--1">
+                                                        <input id="radio1" name="radio" type="radio" class="custom-control-input">
+                                                        <span class="custom-control-indicator"></span>
+                                                        <span class="custom-control-description row w-100">
+                                                            <span class="col-7 pr-0">
+                                                                <span class="store-desc mr-3">
+                                                                    <span class="mb-0 h6 link">на Алеутской</span>
+                                                                    <br>
+                                                                    <small class="text-muted mb-0">ул. Алеутская, 11 <br class="hidden-sm-up">(пн.-вс. 09:00 - 20:00)</small>
+                                                                </span>
+                                                            </span>
+                                                            <span class="mb-0 text-left col-5 d-flex  ">
+                                                                <span class="mb-0 text-success align-self-center pickup-state">сегодня</span>
+                                                            </span>
+                                                        </span>
+                                                    </label>
+ 
+                                                </div>
+                                                <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio2">
+                                                    <label class="custom-control custom-radio  w-100 mb--1">
+                                                        <input id="radio2" name="radio" type="radio" class="custom-control-input">
+                                                        <span class="custom-control-indicator"></span>
+                                                        <span class="custom-control-description row w-100 ">
+                                                            <span class="col-7 pr-0">
+                                                                <span class="store-desc mr-3">
+                                                                    <span class="mb-0 h6 link">в ТЦ "Максим"</span>
+                                                                    <br>
+                                                                    <small class="text-muted mb-0">пр-т 100-лет Вл-ку, 57г <br class="hidden-sm-up">(пн.-вс. 09:00 - 20:00)</small>
+                                                                </span>
+                                                            </span>
+                                                            <span class="mb-0 text-left col-5 d-flex ">
+                                                                <span class="mb-0 text-success align-self-center pickup-state">сегодня</span>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                     
+                                                    </div>
+                                                    <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio3">
+                                                        <label class="custom-control custom-radio  w-100 mb--1">
+                                                            <input id="radio3" name="radio" type="radio" class="custom-control-input">
+                                                            <span class="custom-control-indicator"></span>
+                                                            <span class="custom-control-description row w-100 ">
+                                                                <span class="col-7 pr-0">
+                                                                    <span class="store-desc mr-3">
+                                                                        <span class="mb-0 h6 link">на Вилкова</span>
+                                                                        <br>
+                                                                        <small class="text-muted mb-0">ул. Вилкова, 9 <br class="hidden-sm-up">(пн.-вс. 09:00 - 20:00)</small>
                                                                     </span>
                                                                 </span>
-                                                            </label>
-                                                            <div class="w-100">
-                                                                <div class="collapse" id="collapseExample1" aria-expanded="false" role="definition">
-                                                                    <div class="mt-2 ml-4">
-                                                                        <div class="">
-                                                                            <div class="mb-1">
-                                                                                <a href="">
-                                                                                    <small>Показать на карте</small>
-                                                                                </a>
-                                                                            </div>
-                                                                            <small>пн.-сб. 09:00 - 19:00, вс. 10:00 - 19:00</small>
-                                                                        </div>
+                                                                <span class="mb-0 text-left col-5 d-flex  ">
+                                                                    <span class="mb-0 text-muted align-self-center pickup-state">
+                                                                        при заказе: <br class="hidden-md-up">через 3 дня<br> <span class="small text-success">часть – сегодня</span>
+                                                                    </span>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+                                                        <div class="w-100">
+                                                            <div class="collapse" id="collapseExample3" aria-expanded="false" role="definition">
+                                                                <div class="mt-2 ml-4">
+                                                                    <div class="alert-warning split-warning dropdown">
+
+                                                                        <span class="close" aria-hidden="true">&times;</span>
+
+                                                                        <h6>Обратите внимание:</h6>
+                                                                        <div class="small mb-1">Экшн-Камера Xiaomi Yi Basic Edition (1шт.) – сегодня, можно забирать уже сейчас.</div>
+                                                                        <div class="small">Смартфон Asus ZenFone 3 Max ZC520TL 16Gb Silver (1шт.) – будет готов 25 сентября.</div>                                                                              
                                                                     </div>
+
+
+
                                                                 </div>
+
                                                             </div>
                                                         </div>
-                                                        <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio2">
-                                                            <label class="custom-control custom-radio  w-100 mb--1">
-                                                                <input id="radio2" name="radio" type="radio" class="custom-control-input">
-                                                                <span class="custom-control-indicator"></span>
-                                                                <span class="custom-control-description row w-100 ">
-                                                                    <span class="col-7 pr-0">
-                                                                        <span class="store-desc mr-3">
-                                                                            <span class="mb-0 h6">в ТЦ "Максим"</span>
-                                                                            <br>
-                                                                            <small class="text-muted mb-0">пр-т 100-лет Вл-ку, 57г</small>
-                                                                        </span>
-                                                                    </span>
-                                                                    <span class="mb-0 text-left col-5 d-flex ">
-                                                                        <span class="mb-0 text-success align-self-center pickup-state">готов к
-                                                                            выдаче</span>
+                                                    </div>
+                                                    <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio4">
+                                                        <label class="custom-control custom-radio  w-100 mb--1">
+                                                            <input id="radio4" name="radio" type="radio" class="custom-control-input">
+                                                            <span class="custom-control-indicator"></span>
+                                                            <span class="custom-control-description row w-100 ">
+                                                                <span class="col-7 pr-0">
+                                                                    <span class="store-desc mr-3">
+                                                                        <span class="mb-0 h6 link">на Гоголя</span>
+                                                                        <br>
+                                                                        <small class="text-muted mb-0">пр-т Красного  Знамени, 59<br class="hidden-sm-up"> (пн.-вс. 09:00 - 20:00)</small>
                                                                     </span>
                                                                 </span>
-                                                            </label>
-                                                            <div class="w-100">
-                                                                <div class="collapse" id="collapseExample2" aria-expanded="false" role="definition">
-                                                                    <div class="mt-2 ml-4">
-                                                                        <div class="">
-                                                                            <div class="mb-1">
-                                                                                <a href="">
-                                                                                    <small>Показать на карте</small>
-                                                                                </a>
-                                                                            </div>
-                                                                            <small>пн.-вс. 09:00 - 20:00</small>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio3">
-                                                            <label class="custom-control custom-radio  w-100 mb--1">
-                                                                <input id="radio3" name="radio" type="radio" class="custom-control-input">
-                                                                <span class="custom-control-indicator"></span>
-                                                                <span class="custom-control-description row w-100 ">
-                                                                    <span class="col-7 pr-0">
-                                                                        <span class="store-desc mr-3">
-                                                                            <span class="mb-0 h6">на Вилкова</span>
-                                                                            <br>
-                                                                            <small class="text-muted mb-0">ул. Вилкова, 9</small>
-                                                                        </span>
-                                                                    </span>
-                                                                    <span class="mb-0 text-left col-5 d-flex  ">
-                                                                        <span class="mb-0 text-muted align-self-center pickup-state">
-                                                                            будет готов <br class="hidden-md-up">25 сентября
-                                                                        </span>
+                                                                <span class="mb-0 text-left col-5 d-flex  ">
+                                                                    <span class="mb-0 text-success align-self-center pickup-state">сегодня</span>
+                                                                </span>
+                                                            </span>
+                                                        </label>
+       
+                                                    </div>
+                                                    <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio5">
+                                                        <label class="custom-control custom-radio  w-100 mb--1">
+                                                            <input id="radio5" name="radio" type="radio" class="custom-control-input">
+                                                            <span class="custom-control-indicator"></span>
+                                                            <span class="custom-control-description row w-100 ">
+                                                                <span class="col-7 pr-0">
+                                                                    <span class="store-desc mr-3">
+                                                                        <span class="mb-0 h6 link">в ТЦ "Черемушки"</span>
+                                                                        <br>
+                                                                        <small class="text-muted mb-0">ул. Черемуховая,15 <br class="hidden-sm-up">(пн.-вс. 09:00 - 20:00)</small>
                                                                     </span>
                                                                 </span>
-                                                            </label>
-                                                            <div class="w-100">
-                                                                <div class="collapse" id="collapseExample3" aria-expanded="false" role="definition">
-                                                                    <div class="mt-2 ml-4">
-                                                                        <div class="">
-                                                                            <div class="mb-1">
-                                                                                <a href="">
-                                                                                    <small>Показать на карте</small>
-                                                                                </a>
-                                                                            </div>
-                                                                            <small>пн.-вс. 10:00 - 20:00</small>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio4">
-                                                            <label class="custom-control custom-radio  w-100 mb--1">
-                                                                <input id="radio4" name="radio" type="radio" class="custom-control-input">
-                                                                <span class="custom-control-indicator"></span>
-                                                                <span class="custom-control-description row w-100 ">
-                                                                    <span class="col-7 pr-0">
-                                                                        <span class="store-desc mr-3">
-                                                                            <span class="mb-0 h6">на Гоголя</span>
-                                                                            <br>
-                                                                            <small class="text-muted mb-0">пр-т Красного  Знамени, 59</small>
-                                                                        </span>
-                                                                    </span>
-                                                                    <span class="mb-0 text-left col-5 d-flex  ">
-                                                                        <span class="mb-0 text-success align-self-center pickup-state">готов к выдаче</span>
-                                                                    </span>
+                                                                <span class="mb-0 text-left col-5 d-flex ">
+                                                                    <span class="mb-0 text-success align-self-center pickup-state">сегодня</span>
                                                                 </span>
-                                                            </label>
-                                                            <div class="w-100">
-                                                                <div class="collapse" id="collapseExample4" aria-expanded="false" role="definition">
-                                                                    <div class="mt-2 ml-4">
-                                                                        <div class="">
-                                                                            <div class="mb-1">
-                                                                                <a href="">
-                                                                                    <small>Показать на карте</small>
-                                                                                </a>
-                                                                            </div>
-                                                                            <small>пн.-сб. 09:00 - 19:00, вс. 10:00 - 19:00</small>
+                                                            </span>
+                                                        </label>
+                                                        <div class="w-100">
+                                                            <div class="collapse" id="collapseExample5" aria-expanded="false" role="definition">
+                                                                <div class="mt-2 ml-4">
+                                                                    <div class="">
+                                                                        <div class="mb-1">
+                                                                            <a href="">
+                                                                                <small>Показать на карте</small>
+                                                                            </a>
                                                                         </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio5">
-                                                            <label class="custom-control custom-radio  w-100 mb--1">
-                                                                <input id="radio5" name="radio" type="radio" class="custom-control-input">
-                                                                <span class="custom-control-indicator"></span>
-                                                                <span class="custom-control-description row w-100 ">
-                                                                    <span class="col-7 pr-0">
-                                                                        <span class="store-desc mr-3">
-                                                                            <span class="mb-0 h6">в ТЦ "Черемушки"</span>
-                                                                            <br>
-                                                                            <small class="text-muted mb-0">ул. Черемуховая,15</small>
-                                                                        </span>
-                                                                    </span>
-                                                                    <span class="mb-0 text-left col-5 d-flex ">
-                                                                        <span class="mb-0 text-success align-self-center pickup-state">готов к выдаче</span>
-                                                                    </span>
-                                                                </span>
-                                                            </label>
-                                                            <div class="w-100">
-                                                                <div class="collapse" id="collapseExample5" aria-expanded="false" role="definition">
-                                                                    <div class="mt-2 ml-4">
-                                                                        <div class="">
-                                                                            <div class="mb-1">
-                                                                                <a href="">
-                                                                                    <small>Показать на карте</small>
-                                                                                </a>
-                                                                            </div>
-                                                                            <small>пн.-сб. 09:00 - 19:00, вс. 10:00 - 19:00</small>
-                                                                        </div>
+                                                                        <small>Сейчас открыт, до закрытия 10 ч. <br class="hidden-sm-up">(пн.-сб. 09:00 - 19:00, вс. 10:00 - 19:00)</small>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <!--*******************-->
+                                                </div>
+                                                <!--*******************-->
                                                 </div>
                                             </div>
                                             <div class="tab-pane active" id="profile" role="tabpanel">
@@ -476,8 +447,14 @@
 
                                                 <div class="form-group clearfix col-12">
                                                     <label class="field-label">Укажите адрес доставки</label>
-                                                    <input type="email" class="form-control" placeholder="Начните ввод названия улицы">
+                                                    <input type="email" class="form-control" placeholder="Город, улица, дом, квартира">
                                                 </div>
+                                                <div class="col-12 mb-3">
+                                                    
+                                                    <a href="" class="link-dashed">Добавить комментарий</a>
+                                                </div>
+
+                                                
                                     
                                                 <!-- <div class="col-12 ">
                                                 <div class="alert-warning p-2">
@@ -500,12 +477,12 @@
                                             <div class="list-group">
                                                 <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="p1">
                                                     <label class="custom-control custom-radio  w-100 mb--1">
-                                                        <input id="p1" name="payment" type="radio" class="custom-control-input">
+                                                        <input id="p1" name="payment" type="radio" class="custom-control-input" checked="true">
                                                         <span class="custom-control-indicator"></span>
                                                         <span class="custom-control-description flex-column align-items-start w-100 ">
                                                             <span class="d-flex w-100 justify-content-between">
                                                                 <span class="store-desc mr-3">
-                                                                    <span class="mb-0 h6">Сегодня (срочная доставка)</span>
+                                                                    <span class="mb-0 h6">Сегодня (срочная доставка) – 800р.</span>
                                                                     <br>
                                                                     <span class="text-muted mb-0 small lh-1">Получите свой заказ уже сегодня. Доставка осуществяется до 20:00.</span>
                                                                 </span>
@@ -521,7 +498,7 @@
                                                         <span class="custom-control-description flex-column align-items-start w-100 ">
                                                             <span class="d-flex w-100 justify-content-between">
                                                                 <span class="store-desc mr-3">
-                                                                    <span class="mb-0 h6">Завтра или позже (доставка с ожиданием) </span>
+                                                                    <span class="mb-0 h6">Завтра или позже (доставка с ожиданием) – 320р.</span>
                                                                     <br>
                                                                     <span class="text-muted mb-0 small lh-1">Доставка осуществляется в выбранный период. Предварительно с вами свяжутся для уточнения деталей</span>
                                                                 </span>
