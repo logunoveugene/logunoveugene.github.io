@@ -222,3 +222,37 @@ $(window).on('resize', function(){
   
 }
 });
+
+
+var kolich = new Vue({
+  el: '#count',
+  data: {
+    prise: 12599,
+    summ: 12599,
+    count: 1,
+    seen: false
+  },
+  methods: {
+    downcount: function () {
+      if (this.count != 1) {
+        this.count = this.count-1;
+        this.summ = this.prise*this.count;
+        if (this.count == 1) {
+          this.seen = false;
+        }
+      }
+      else{
+        this.seen = false;
+      }
+            
+      
+    },
+     upcount: function () {
+      this.count = this.count+1;
+      this.summ = this.prise*this.count;
+       this.seen = true;
+      
+    }
+  }
+
+})
