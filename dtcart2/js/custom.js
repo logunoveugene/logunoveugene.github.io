@@ -206,15 +206,31 @@ var kolich = new Vue({
         stringsumm: '12 599',
         count: 1,
         seen: false,
+        seenService: false,
         serviseListItem: [],
-        serviseListItemSum: '',
+        serviseListItemSum: 0,
+        serviseListItemSumCOUNT: 0,
+        serviseListItemCOUNT:0,
+        orderSum: 12599
 
     },
     methods: {
         serviseApp:function() {
+          this.serviseListItemCOUNT = this.serviseListItem.length * this.count;
+
           this.serviseListItemSum = this.serviseListItem.reduce(function(sum, current) {
                 return sum + current;
                 }, 0);
+          this.serviseListItemSumCOUNT = this.serviseListItemSum * this.count;
+
+          if (this.serviseListItem != 0) {
+            this.seenService = true;
+          }
+          else{
+            this.seenService = false;
+          };
+
+          this.orderSum = this.summ + this.serviseListItemSumCOUNT;
 
         },
         downcount: function() {
@@ -229,17 +245,26 @@ var kolich = new Vue({
                 
             } else {
                 this.seen = false;
-            }
+            };
+            this.serviseListItemSumCOUNT = this.serviseListItemSum * this.count;
+            this.serviseListItemCOUNT = this.serviseListItem.length * this.count;
+            this.orderSum = this.summ + this.serviseListItemSumCOUNT;
         },
         upcount: function() {
             this.count = this.count + 1;
             this.summ = this.prise * this.count;
             this.seen = true;
-            this.stringsumm = this.summ.toLocaleString()
+            this.stringsumm = this.summ.toLocaleString();
+            this.serviseListItemSumCOUNT = this.serviseListItemSum * this.count;
+            this.serviseListItemCOUNT = this.serviseListItem.length * this.count;
+            this.orderSum = this.summ + this.serviseListItemSumCOUNT;
         },
         countinput: function() {
             this.summ = this.prise * this.count;
-            this.stringsumm = this.summ.toLocaleString()
+            this.stringsumm = this.summ.toLocaleString();
+            this.serviseListItemSumCOUNT = this.serviseListItemSum * this.count;
+            this.serviseListItemCOUNT = this.serviseListItem.length * this.count;
+            this.orderSum = this.summ + this.serviseListItemSumCOUNT;
         }
 
     }
