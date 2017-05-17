@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-12 p-0">
                     <div class="p-0">
-                        <div class="card border-0 rounded-0 mb-2  block-shadow-3">
+                        <div id="count" class="card border-0 rounded-0 mb-2  block-shadow-3" >
                             <div class="card-block bb-1">
                                 <div class="clearfix  mb-3 mt-1">
                                     <span class="h5">Ваш заказ</span>
@@ -34,7 +34,7 @@
                                         <small class="field-sub-text float-right">Есть промокод?</small>
                                     </a>
                                 </div>
-                                <div class="row" id="count">
+                                <div class="row" >
                                     <div class="col-12">
                                         <div id="product-collapse-plate" class="rounded accordion-plate bg-gray">
                                             <a rel="nofollow" class="btn-link text-muted icon-accordion collapsed" data-toggle="collapse" href="#collapseExample-smart" aria-controls="collapseExample1" aria-expanded="false">{{ count }} товар <span v-if="seenService">и {{ serviseListItemCOUNT }} услуг</span> на сумму {{ orderSum }} р.</a>
@@ -185,6 +185,18 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="card-block bb-2 hidden-sm-down" v-if="seenService">
+            <div class="row">
+              <div class="col-6">
+                <div class="">{{ count }} товар <span v-if="seenService">и {{ serviseListItemCOUNT }} услуг</span> на сумму:</div>
+              </div>
+              <div class="col-6 clearfix">
+                <div class="float-right font-weight-bold text-right">{{ orderSum }} р.
+                  
+                </div>
+              </div>
+            </div>
+          </div>
                         </div>
                     </div>
                     <div class="card border-0 rounded-0 mb-2">
