@@ -37,7 +37,7 @@
                                 <div class="row" id="count">
                                     <div class="col-12">
                                         <div id="product-collapse-plate" class="rounded accordion-plate bg-gray">
-                                            <a rel="nofollow" class="btn-link text-muted icon-accordion collapsed" data-toggle="collapse" href="#collapseExample-smart" aria-controls="collapseExample1" aria-expanded="false">1 товар на сумму 12 599 р.</a>
+                                            <a rel="nofollow" class="btn-link text-muted icon-accordion collapsed" data-toggle="collapse" href="#collapseExample-smart" aria-controls="collapseExample1" aria-expanded="false">{{ count }}  товар на сумму {{ stringsumm }} р.</a>
                                         </div>
                                         <div class="border-top-0 collapse product-collapse rounded" id="collapseExample-smart" aria-expanded="false" role="complementary">
                                             <div class="product-item row mb-1">
@@ -76,7 +76,8 @@
                                                                 <span class="servise-list-item-info ">
                                                                     <small class="text-black">
                                                                         <span class="mr-1">
-                                                                            <strong>800 р.</strong>
+                                                                            <strong>
+                                                                            <span v-if="seen">{{ count }} × </span>800 р.</strong>
                                                                         </span>
                                                                     </small>
                                                                     <a href="javascript:void(0);" id="basesetting" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -106,7 +107,7 @@
                                                                 <span class="servise-list-item-info">
                                                                     <small class="text-black">
                                                                         <span class="mr-1">
-                                                                            <strong>1 500 р.</strong>
+                                                                            <strong> <span v-if="seen">{{ count }} × </span>1 500 р.</strong>
                                                                         </span>
                                                                     </small>
                                                                     <a href="javascript:void(0);" id="allsetting" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -137,7 +138,7 @@
                                                                 <span class="servise-list-item-info">
                                                                     <small class="text-black">
                                                                         <span class="mr-1">
-                                                                            <strong>300 р.</strong>
+                                                                            <strong><span v-if="seen">{{ count }} × </span>300 р.</strong>
                                                                         </span>
                                                                     </small>
                                                                     <a href="javascript:void(0);" id="setting" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -171,7 +172,7 @@
                                                                 <div class="lh-1 text-right">
                                                                     
                                                                     <span class="small text-muted" v-if="seen">за шт: {{ stringprise }} р.<br></span>
-                                                                    <span v-if="seen">Сумма:</span> {{ stringsumm }} р.
+                                                                    <span v-if="seen">Сумма:</span> {{ stringsumm }} р. <span></span>
                                                                 </div>
                                                             </div>
                                                         </div>

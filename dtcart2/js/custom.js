@@ -1,6 +1,6 @@
  $(function () {
   $('[data-toggle="tooltip"]').tooltip({
-    
+
     trigger: 'click',
     constraints: [
     {
@@ -234,6 +234,7 @@ var kolich = new Vue({
     count: 1,
     seen: false,
     serviseListItem:[],
+    serviseListItemSum:'',
 
   },
   methods: {
@@ -241,7 +242,12 @@ var kolich = new Vue({
       if (this.count != 1) {
         this.count = this.count-1;
         this.summ = this.prise*this.count;
-        this.stringsumm=this.summ.toLocaleString()
+        this.stringsumm=this.summ.toLocaleString();
+        
+        for(var i=0;i<serviseListItem.length;i++){
+          serviseListItemSum = serviseListItemSum + parseInt(serviseListItem[i]);
+
+        }
         if (this.count == 1) {
           this.seen = false;
         }
