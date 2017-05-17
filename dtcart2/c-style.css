@@ -474,3 +474,18 @@ content: " ";
 .link-dashed{
     border-bottom: 1px dashed rgba(53, 91, 153, 0.6)
 }
+
+
+  .btn-cst{
+    font-size: 0.9rem;
+    text-align: left;
+    color:#355b99;
+  }
+  .btn-cst.active {
+    background-color:#ffedb2;
+    border-color:#ccc;
+  }
+    .btn-cst.focus{
+    background-color:#ffedb2;
+    border-color:#ccc;
+  }
