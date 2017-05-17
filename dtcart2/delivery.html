@@ -161,7 +161,7 @@
                                                             <div class="col-6">
                                                                 <div class="quantity d-flex">
                                                                     <div class="quantity-button quantity-down" v-on:click="downcount">‒</div>
-                                                                    <input type="number" min="1" max="9" step="1" v-model="count">
+                                                                    <input type="number" min="1" max="9" step="1" v-model="count" v-on:keyup="countinput">
                                                                     <div class="quantity-button quantity-up" v-on:click="upcount">+</div>
                                                                     <div class="ml-2 d-flex align-items-center">шт.</div>
                                                                 </div>

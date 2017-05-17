@@ -252,7 +252,16 @@ var kolich = new Vue({
       this.summ = this.prise*this.count;
        this.seen = true;
       
+    },
+
+
+    countinput: function () {
+
+      this.summ = this.prise*this.count;
+
+      
     }
+
   }
 
 })
