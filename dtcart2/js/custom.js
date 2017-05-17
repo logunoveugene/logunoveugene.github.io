@@ -248,7 +248,7 @@ var kolich = new Vue({
         }
 
         for(var i=0;i<this.serviseListItem.length;i++){
-          this.serviseListItemSum = this.serviseListItemSum + parseInt(this.serviseListItem[i]);
+          this.serviseListItemSum = this.serviseListItemSum + this.serviseListItem[i];
 
         };
 
