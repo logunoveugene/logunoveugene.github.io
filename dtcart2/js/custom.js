@@ -243,14 +243,16 @@ var kolich = new Vue({
         this.count = this.count-1;
         this.summ = this.prise*this.count;
         this.stringsumm=this.summ.toLocaleString();
-        
-        for(var i=0;i<serviseListItem.length;i++){
-          serviseListItemSum = serviseListItemSum + parseInt(serviseListItem[i]);
-
-        }
         if (this.count == 1) {
           this.seen = false;
         }
+
+        for(var i=0;i<this.serviseListItem.length;i++){
+          this.serviseListItemSum = this.serviseListItemSum + parseInt(this.serviseListItem[i]);
+
+        };
+
+        
       }
       else{
         this.seen = false;
