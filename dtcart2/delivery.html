@@ -34,7 +34,7 @@
                                         <small class="field-sub-text float-right">Есть промокод?</small>
                                     </a>
                                 </div>
-                                <div class="row">
+                                <div class="row" id="count">
                                     <div class="col-12">
                                         <div id="product-collapse-plate" class="rounded accordion-plate bg-gray">
                                             <a rel="nofollow" class="btn-link text-muted icon-accordion collapsed" data-toggle="collapse" href="#collapseExample-smart" aria-controls="collapseExample1" aria-expanded="false">1 товар на сумму 12 599 р.</a>
@@ -67,7 +67,7 @@
                                                         <div class="row mb-2">
                                                             <div class="servise-list-item col-12 mb-1 dropdown">
                                                                 <label class="custom-control custom-checkbox mb-0 mr-0 ">
-                                                                    <input type="checkbox" class="custom-control-input">
+                                                                    <input type="checkbox" class="custom-control-input" type="number" value="800" v-model="serviseListItem">
                                                                     <span class="custom-control-indicator"></span>
                                                                     <span class="custom-control-description text-black pr-2">Базовая настройка смартфона </span>
                                                                 </label>
@@ -157,7 +157,7 @@
                                                                 </span>
                                                             </div>
                                                         </div>
-                                                        <div class="row" id="count">
+                                                        <div class="row" >
                                                             <div class="col-6">
                                                                 <div class="quantity d-flex">
                                                                     <div class="quantity-button quantity-down" v-on:click="downcount">‒</div>

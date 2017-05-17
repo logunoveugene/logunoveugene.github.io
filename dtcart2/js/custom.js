@@ -232,7 +232,8 @@ var kolich = new Vue({
     summ: 12599,
     stringsumm: '12 599',
     count: 1,
-    seen: false
+    seen: false,
+    serviseListItem:[],
 
   },
   methods: {
