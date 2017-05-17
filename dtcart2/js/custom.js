@@ -228,15 +228,19 @@ var kolich = new Vue({
   el: '#count',
   data: {
     prise: 12599,
+    stringprise: '12 599',
     summ: 12599,
+    stringsumm: '12 599',
     count: 1,
     seen: false
+
   },
   methods: {
     downcount: function () {
       if (this.count != 1) {
         this.count = this.count-1;
         this.summ = this.prise*this.count;
+        this.stringsumm=this.summ.toLocaleString()
         if (this.count == 1) {
           this.seen = false;
         }
@@ -244,22 +248,16 @@ var kolich = new Vue({
       else{
         this.seen = false;
       }
-            
-      
     },
-     upcount: function () {
+    upcount: function () {
       this.count = this.count+1;
       this.summ = this.prise*this.count;
-       this.seen = true;
-      
+      this.seen = true;
+      this.stringsumm=this.summ.toLocaleString()
     },
-
-
     countinput: function () {
-
       this.summ = this.prise*this.count;
-
-      
+      this.stringsumm=this.summ.toLocaleString()
     }
 
   }
