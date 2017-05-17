@@ -165,11 +165,12 @@
                                                                     <div class="quantity-button quantity-up" v-on:click="upcount">+</div>
                                                                     <div class="ml-2 d-flex align-items-center">шт.</div>
                                                                 </div>
+
                                                             </div>
                                                             <div class="col-6 d-flex align-items-center justify-content-end pl-0">
                                                                 <div class="lh-1 text-right">
-                                                                    {{ stringsumm }} р.<br>
-                                                                    <span class="small text-muted" v-if="seen">за шт: {{ stringprise }} р.</span>
+                                                                    <span v-if="seen">Сумма:</span> {{ stringsumm }} р.<br>
+                                                                    <span class="small text-muted" v-if="seen">цена за шт: {{ stringprise }} р.</span>
                                                                 </div>
                                                             </div>
                                                         </div>
