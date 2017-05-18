@@ -140,7 +140,7 @@ input[type=number]
 
 /*-------------оформление модалов с промозоной---------------*/
 .bonus-modal-promo{
-    background:#f7f7f7 url(https://i.snag.gy/8Xjl6n.jpg) no-repeat right bottom;
+    background:#f7f7f7 url(img/card-hand.png) no-repeat 85% bottom;
     margin-top: -15px;
     padding-top: 15px;
 }
