@@ -11,11 +11,11 @@ $(function() {
 
 $('.quantity').each(function() {
     var spinner = jQuery(this)
-      , input = spinner.find('input[type="number"]')
-      , btnUp = spinner.find('.quantity-up')
-      , btnDown = spinner.find('.quantity-down')
-      , min = input.attr('min')
-      , max = input.attr('max');
+    , input = spinner.find('input[type="number"]')
+    , btnUp = spinner.find('.quantity-up')
+    , btnDown = spinner.find('.quantity-down')
+    , min = input.attr('min')
+    , max = input.attr('max');
 
     btnUp.click(function() {
         var oldValue = parseFloat(input.val());
@@ -40,8 +40,7 @@ $('.quantity').each(function() {
     });
 
 });
-
-$('input[name=radio]').on('change', function() {
+var spepps = $('input[name=radio]').on('change', function() {
     if ($("#radio1").is(':checked')) {
         $('#collapseExample1').collapse('show');
         $('div[data-quantity=radio1]').addClass('collapse-alert-warning');
@@ -134,15 +133,7 @@ if (!navigator.geolocation) {
 
 }
 
-$('#stepper1').on('click', function() {
-    if ($("#user-infomation").hasClass('show')) {
-        $('#user-infomation').collapse('hide');
-        $('#user-infomation-succs').collapse('show');
-        $('#user-infomation-title').addClass('step-success');
-        $('#getting-infomation-title').removeClass('step-success');
-        $('#getting-infomation-succs').collapse('hide');
-    }
-});
+
 $('#stepper2').on('click', function() {
     if ($("#getting-information").hasClass('show')) {
         $('#getting-information').collapse('hide');
@@ -160,15 +151,7 @@ $('#stepper-back2').on('click', function() {
         $('#getting-infomation-title').removeClass('step-success');
     }
 });
-$('#stepper-back1').on('click', function() {
-    if ($('#getting-information').hasClass('show') || $('#payment-information').hasClass('show')) {
-        $('#getting-information').collapse('hide');
-        $('#payment-information').collapse('hide');
-        $('#user-infomation').collapse('show');
-        $('#user-infomation-succs').collapse('hide');
-        $('#user-infomation-title').removeClass('step-success');
-    }
-});
+
 
 $(window).on('load', function() {
     var win = $(this);
@@ -211,7 +194,8 @@ var kolich = new Vue({
         serviseListItemSum: 0,
         serviseListItemSumCOUNT: 0,
         serviseListItemCOUNT:0,
-        orderSum: 12599
+        orderSum: 12599,
+        companyDetal: false,
 
     },
     methods: {
@@ -219,57 +203,103 @@ var kolich = new Vue({
           this.serviseListItemCOUNT = this.serviseListItem.length * this.count;
 
           this.serviseListItemSum = this.serviseListItem.reduce(function(sum, current) {
-                return sum + current;
-                }, 0);
+            return sum + current;
+        }, 0);
           this.serviseListItemSumCOUNT = this.serviseListItemSum * this.count;
 
           if (this.serviseListItem != 0) {
             this.seenService = true;
-          }
-          else{
+        }
+        else{
             this.seenService = false;
-          };
+        };
 
-          this.orderSum = this.summ + this.serviseListItemSumCOUNT;
+        this.orderSum = this.summ + this.serviseListItemSumCOUNT;
 
-        },
-        downcount: function() {
-            if (this.count != 1) {
-                this.count = this.count - 1;
-                this.summ = this.prise * this.count;
-                this.stringsumm = this.summ.toLocaleString();
-                if (this.count == 1) {
-                    this.seen = false;
-                };
-
-                
-            } else {
+    },
+    downcount: function() {
+        if (this.count != 1) {
+            this.count = this.count - 1;
+            this.summ = this.prise * this.count;
+            this.stringsumm = this.summ.toLocaleString();
+            if (this.count == 1) {
                 this.seen = false;
             };
-            this.serviseListItemSumCOUNT = this.serviseListItemSum * this.count;
-            this.serviseListItemCOUNT = this.serviseListItem.length * this.count;
-            this.orderSum = this.summ + this.serviseListItemSumCOUNT;
+
+
+        } else {
+            this.seen = false;
+        };
+        this.serviseListItemSumCOUNT = this.serviseListItemSum * this.count;
+        this.serviseListItemCOUNT = this.serviseListItem.length * this.count;
+        this.orderSum = this.summ + this.serviseListItemSumCOUNT;
+    },
+    upcount: function() {
+        this.count = this.count + 1;
+        this.summ = this.prise * this.count;
+        this.seen = true;
+        this.stringsumm = this.summ.toLocaleString();
+        this.serviseListItemSumCOUNT = this.serviseListItemSum * this.count;
+        this.serviseListItemCOUNT = this.serviseListItem.length * this.count;
+        this.orderSum = this.summ + this.serviseListItemSumCOUNT;
+    },
+    countinput: function() {
+        this.summ = this.prise * this.count;
+        this.stringsumm = this.summ.toLocaleString();
+        this.serviseListItemSumCOUNT = this.serviseListItemSum * this.count;
+        this.serviseListItemCOUNT = this.serviseListItem.length * this.count;
+        this.orderSum = this.summ + this.serviseListItemSumCOUNT;
+    }
+
+}
+
+});
+
+
+
+
+var userDetal = new Vue({
+    el: '#userComp',
+    data: {
+
+        companyDetal: false,
+
+    },
+    methods: {
+        step2:function() {
+
+            if ($("#user-infomation").hasClass('show')) {
+                $('#user-infomation').collapse('hide');
+                $('#user-infomation-succs').collapse('show');
+                $('#user-infomation-title').addClass('step-success');
+                $('#getting-infomation-title').removeClass('step-success');
+                $('#getting-infomation-succs').collapse('hide');
+            }
+
+
         },
-        upcount: function() {
-            this.count = this.count + 1;
-            this.summ = this.prise * this.count;
-            this.seen = true;
-            this.stringsumm = this.summ.toLocaleString();
-            this.serviseListItemSumCOUNT = this.serviseListItemSum * this.count;
-            this.serviseListItemCOUNT = this.serviseListItem.length * this.count;
-            this.orderSum = this.summ + this.serviseListItemSumCOUNT;
+        step1:function() {
+
+          if ($('#getting-information').hasClass('show') || $('#payment-information').hasClass('show')) {
+        $('#getting-information').collapse('hide');
+        $('#payment-information').collapse('hide');
+        $('#user-infomation').collapse('show');
+        $('#user-infomation-succs').collapse('hide');
+        $('#user-infomation-title').removeClass('step-success');
+    }
+
         },
-        countinput: function() {
-            this.summ = this.prise * this.count;
-            this.stringsumm = this.summ.toLocaleString();
-            this.serviseListItemSumCOUNT = this.serviseListItemSum * this.count;
-            this.serviseListItemCOUNT = this.serviseListItem.length * this.count;
-            this.orderSum = this.summ + this.serviseListItemSumCOUNT;
-        }
+
 
     }
 
-})
+
+});
+
+
+
+
+
 
 
 
