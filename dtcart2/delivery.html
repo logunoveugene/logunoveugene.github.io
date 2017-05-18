@@ -171,9 +171,9 @@
                                                             <div class="col-6 d-flex align-items-center justify-content-end pl-0">
                                                                 <div class="lh-1 text-right">
                                                                     
-                                                                    <span class="small text-muted" v-if="seen">за шт: {{ stringprise }} р.<br></span>
-                                                                    <span v-if="seen">Сумма:</span> {{ stringsumm }} р.<span>
-                                                                        <span class="small text-muted" v-if="seenService"><br>+ {{ serviseListItemCOUNT }} услуга: {{ serviseListItemSumCOUNT }} р.</span>  <span>
+                                                                    <transition name="fade"><span class="small text-muted" v-if="seen">за шт: {{ stringprise }} р.<br></span></transition>
+                                                                    <transition name="fade"><span v-if="seen">Сумма:</span></transition> {{ stringsumm }} р.<span>
+                                                                        <transition name="fade"><span class="small text-muted" v-if="seenService"><br>+ {{ serviseListItemCOUNT }} услуга: {{ serviseListItemSumCOUNT }} р.</span> </transition> <span>
                                                                     </span>
                                                                 </div>
                                                             </div>
@@ -185,6 +185,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <transition name="fade">
                             <div class="card-block bb-2 hidden-sm-down" v-if="seenService">
             <div class="row">
               <div class="col-6">
@@ -197,6 +198,7 @@
               </div>
             </div>
           </div>
+          </transition>
                         </div>
                     </div>
                     <div class="card border-0 rounded-0 mb-2">
