@@ -506,3 +506,19 @@ content: " ";
 .fade-enter, .fade-leave-to /* .fade-leave-active для <2.1.8 */ {
   opacity: 0
 }
+
+
+.done-step {
+    position: relative;
+}
+
+
+
+.done-step:not(:last-child):before  {
+font-family: "untitled-font-1" !important;
+    content: "\78";
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    color: #c5c5c5;
+}
