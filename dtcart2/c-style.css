@@ -513,12 +513,14 @@ content: " ";
 }
 
 
-
-.done-step:not(:last-child):before  {
+@media (min-width: 768px)  {
+    .done-step:not(:last-child):before  {
 font-family: "untitled-font-1" !important;
     content: "\78";
     position: absolute;
     right: 1rem;
     top: 50%;
     color: #c5c5c5;
+}
+    
 }
