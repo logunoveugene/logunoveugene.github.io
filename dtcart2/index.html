@@ -13,11 +13,19 @@
         <div class="row">
             <div class="col-12 p-0">
                 <div class="card border-0 rounded-0 mb-2">
-                    <div class="logo-block">
-                        <a href="index.html">
-                            <img class="logo" src="https://i.snag.gy/EGhwrf.jpg" alt="">
-                        </a>
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col-7">
+                                <a href="index.html">
+                                    <img class="logo" src="https://i.snag.gy/EGhwrf.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="col-5">
+                                
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -44,7 +52,7 @@
                                                 <span v-if="seenService">и {{ serviseListItemCOUNT }} услуга</span>
                                             </transition>
                                             на сумму {{ orderSum }} р.
-                                            
+
                                         </a>
                                     </div>
                                     <div class="border-top-0 collapse product-collapse rounded" id="collapseExample-smart" aria-expanded="false" role="complementary">
@@ -87,7 +95,7 @@
                                                                         <strong>
                                                                             <span v-if="seen">{{ count }} × </span>
                                                                             800 р.
-                                                                            
+
                                                                         </strong>
                                                                     </span>
                                                                 </small>
@@ -121,7 +129,7 @@
                                                                         <strong>
                                                                             <span v-if="seen">{{ count }} × </span>
                                                                             1 500 р.
-                                                                            
+
                                                                         </strong>
                                                                     </span>
                                                                 </small>
@@ -156,7 +164,7 @@
                                                                             <strong>
                                                                                 <span v-if="seen">{{ count }} × </span>
                                                                                 300 р.
-                                                                                
+
                                                                             </strong>
                                                                         </span>
                                                                     </small>
@@ -222,7 +230,7 @@
                                                     <div class="">
                                                         {{ count }} товар <span v-if="seenService">и {{ serviseListItemCOUNT }} услуга</span>
                                                         на сумму:
-                                                        
+
                                                     </div>
                                                 </div>
                                                 <div class="col-6 clearfix">
@@ -281,13 +289,23 @@
                                                         <label class="field-label">E-mail для специальных предложений</label>
                                                     </small><input type="email" class="form-control" placeholder="необязательно">
                                                 </div>
-                                                <div class="col-12">
+                                                <div class="form-group col-12">
                                                     <label class="custom-control custom-checkbox d-flex flex-column mb-0" data-toggle="modal" data-target="#bonuscard">
                                                         <input type="checkbox" class="custom-control-input">
                                                         <span class="custom-control-indicator"></span>
                                                         <span class="custom-control-description d-flex">Получить до 1 260 р. бонусов</span>
                                                         <small class="d-flex text-muted">на следующую покупку</small>
                                                     </label>
+                                                </div>
+                                                <div class="col-12">
+                                                    <label class="custom-control custom-checkbox d-flex flex-column mb-0">
+                                                        <input type="checkbox" class="custom-control-input">
+                                                        <span class="custom-control-indicator"></span>
+                                                        <span class="custom-control-description">Ознакомлен и согласен с условиями<span class="ml-1 mr-2 link">политики защиты данных</span><img src="img/data-protect.png" alt=""></span>
+                                                    </label>
+
+
+
                                                 </div>
                                             </div></div>
                                             <div class="tab-pane" id="company-info" role="tabpanel">
@@ -430,7 +448,7 @@
 
 
 
-                                                                                                        
+
                                                                                                     </small>
                                                                                                 </span>
                                                                                             </span>
@@ -454,7 +472,7 @@
 
 
 
-                                                                                                        
+
                                                                                                     </small>
                                                                                                 </span>
                                                                                             </span>
@@ -478,7 +496,7 @@
 
 
 
-                                                                                                        
+
                                                                                                     </small>
                                                                                                 </span>
                                                                                             </span>
@@ -518,7 +536,7 @@
 
 
 
-                                                                                                        
+
                                                                                                     </small>
                                                                                                 </span>
                                                                                             </span>
@@ -542,7 +560,7 @@
 
 
 
-                                                                                                        
+
                                                                                                     </small>
                                                                                                 </span>
                                                                                             </span>
