@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Оформление заказа</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link type="text/css" rel="stylesheet" href="http://unpkg.com/bootstrap@next/dist/css/bootstrap.min.css"/>
+    <link type="text/css" rel="stylesheet" href="http://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"/>
+    <link href="c-style.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-12 p-0">
+            <div class="card border-0 rounded-0 mb-2">
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-7">
+                            <a href="index.html">
+                                <img class="logo" src="https://i.snag.gy/EGhwrf.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="col-5 d-flex justify-content-end">
+                            <span class="link align-self-center pt-2 text-right">Войти</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="app">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 pb-2">
+                <b-button variant="link" @click="$root.$emit('show::modal','modal1')">Кнопочка</b-button>
+            </div>
+        </div>
+    </div>
+    <b-modal id="modal1" title="Submit your name" >
+        <form @submit.stop.prevent="submit">
+            <b-form-input type="text" placeholder="Enter your name" v-model="name"></b-form-input>
+        </form>
+
+    </b-modal>
+</div>
+
+
+<script src="js/vendor/vue@2.3.3.js"></script>
+<script src="js/vendor/polyfill.min.js"></script>
+<script src="js/vendor/tether.min.js"></script>
+<script src="js/vendor/bootstrap-vue.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
