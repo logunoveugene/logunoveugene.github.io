@@ -266,6 +266,12 @@ var userDetal = new Vue({
 
     },
     methods: {
+        companydetal:function() {
+            if (this.companyDetal === "false") {
+                this.companyDetal = false;
+            }
+
+        },
         step2:function() {
 
             if ($("#user-infomation").hasClass('show')) {
@@ -281,17 +287,17 @@ var userDetal = new Vue({
         step1:function() {
 
           if ($('#getting-information').hasClass('show') || $('#payment-information').hasClass('show')) {
-        $('#getting-information').collapse('hide');
-        $('#payment-information').collapse('hide');
-        $('#user-infomation').collapse('show');
-        $('#user-infomation-succs').collapse('hide');
-        $('#user-infomation-title').removeClass('step-success');
-    }
+            $('#getting-information').collapse('hide');
+            $('#payment-information').collapse('hide');
+            $('#user-infomation').collapse('show');
+            $('#user-infomation-succs').collapse('hide');
+            $('#user-infomation-title').removeClass('step-success');
+        }
 
-        },
+    },
 
 
-    }
+}
 
 
 });

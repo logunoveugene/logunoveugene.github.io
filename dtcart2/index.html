@@ -355,7 +355,7 @@
                                                     </div>
                                                     <div class="col-12 col-md-7 mb-1">
                                                         <label class="field-label">Выберите организацию</label>
-                                                        <select class="custom-select w-100 " v-model="companyDetal">
+                                                        <select class="custom-select w-100 " v-model="companyDetal" v-on:change="companydetal">
                                                             <option value="false" selected>Выбрать</option>
                                                             <option value="true">ООО "Юнион"</option>
                                                             <option value="true">ООО "Строй-торг"</option>
