@@ -308,4 +308,3 @@ var userDetal = new Vue({
 
 
 
-

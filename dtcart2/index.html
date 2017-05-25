@@ -45,13 +45,20 @@
                 <div class="card border-0 rounded-0 mb-2">
                     <div class="card-block">
                         <div class="row">
-                            <div class="col-7">
+                            <div class="col-9 d-flex flex-row">
                                 <a href="index.html">
-                                    <img class="logo" src="https://i.snag.gy/EGhwrf.jpg" alt="">
+                                    <img class="logo mr-3" src="https://i.snag.gy/EGhwrf.jpg" alt="">
                                 </a>
+                                
+                                <div class="lh-1 d-flex flex-column pt-1 ml-4 hidden-sm-down">
+                                    <div class="small text-muted">есть вопросы?</div>
+                                    <div class="">8-800-333-33-66</div>
+                                </div>
+
+
                             </div>
-                            <div class="col-5 d-flex justify-content-end">
-                                <span class="link align-self-center pt-2 text-right">Войти</span>
+                            <div class="col-3 d-flex justify-content-end">
+                                <span class="link align-self-center pt-1 text-right"><img src="https://i.snag.gy/RMJK8a.jpg" alt=""></span>
                             </div>
                         </div>
                     </div>
@@ -65,7 +72,7 @@
             <div class="col-12 p-0">
                 <div class="p-0">
                     <div id="count" class="card border-0 rounded-0 mb-2  block-shadow-3">
-                        <div class="card-block bb-1">
+                        <div id="first" class="card-block bb-1">
                             <div class="clearfix  mb-3 mt-1">
                                 <span class="h5">Ваш заказ</span>
                                 <a href="" data-toggle="modal" data-target="#promocod">
@@ -274,7 +281,7 @@
                                 </div>
                             </div>
                             <div id="userComp" class="card border-0 rounded-0 mb-2">
-                                <div class="card-block">
+                                <div id="#second" class="card-block">
                                     <h5 id="user-infomation-title" class="mb-0 mt-2 step-counter ">Введите данные покупателя</h5>
                                     <div id="user-infomation-succs" class="collapse" aria-labelledby="user-infomation-succs">
                                         <h6 class=" mt-2 mb-0">Иванов Иван Петрович</h6>
@@ -448,6 +455,7 @@
                                                         <div class="tab-content">
                                                             <div class="tab-pane active" id="home" role="tabpanel">
                                                                 <div class="">
+                                                                <div class="text-muted mb-3">Объем с упаковкой: 0.001 м3. Вес заказа: 0.3 кг. </div>
                                                                     <nav class="btn-group mb-3 mt-1" role="group" aria-label="Basic example">
                                                                         <button type="button" class="btn btn-secondary btn-cst active" data-toggle="tab" data-target="#pickup-list" role="tab">Показать списком</button>
                                                                         <button type="button" class="btn btn-secondary btn-cst" data-toggle="tab" data-target="#pickup-map" role="tab">На карте</button>
