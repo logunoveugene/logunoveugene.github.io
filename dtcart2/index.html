@@ -8,35 +8,35 @@
     <link href="https://file.myfontastic.com/wjZRGVSBFtwBwzFfpqQDpi/icons.css" rel="stylesheet">
     <link href="c-style.css" rel="stylesheet">
     <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-            try {
-                w.yaCounter44689333 = new Ya.Metrika({
-                    id:44689333,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true,
-                    webvisor:true,
-                    trackHash:true
-                });
-            } catch(e) { }
-        });
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter44689333 = new Ya.Metrika({
+                        id:44689333,
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true,
+                        webvisor:true,
+                        trackHash:true
+                    });
+                } catch(e) { }
+            });
 
-        var n = d.getElementsByTagName("script")[0],
+            var n = d.getElementsByTagName("script")[0],
             s = d.createElement("script"),
             f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://mc.yandex.ru/metrika/watch.js";
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
 
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-    })(document, window, "yandex_metrika_callbacks");
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/44689333" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/44689333" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 </head>
 <body>
     <div class="container">
@@ -415,15 +415,15 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-12 pt-2">
-                                                    <label class="custom-control custom-checkbox d-flex flex-column mb-0">
-                                                        <input type="checkbox" class="custom-control-input">
-                                                        <span class="custom-control-indicator"></span>
-                                                        <span class="custom-control-description">Я ознакомлен и согласен с условиями<span class="ml-1 mr-2 link">политики защиты данных</span><img src="img/data-protect.png" alt=""></span>
-                                                    </label>
+                                                        <label class="custom-control custom-checkbox d-flex flex-column mb-0">
+                                                            <input type="checkbox" class="custom-control-input">
+                                                            <span class="custom-control-indicator"></span>
+                                                            <span class="custom-control-description">Я ознакомлен и согласен с условиями<span class="ml-1 mr-2 link">политики защиты данных</span><img src="img/data-protect.png" alt=""></span>
+                                                        </label>
 
 
 
-                                                </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div><button id="stepper1" type="button" class="btn btn-warning btn-lg  mt-3 stepper" v-on:click="step2" data-toggle="collapse" data-target="#getting-information" aria-expanded="false" aria-controls="getting-information">Продолжить</button>
@@ -464,174 +464,181 @@
                                                         <div class="tab-content">
                                                             <div class="tab-pane active" id="home" role="tabpanel">
                                                                 <div class="">
-                                                                <div class="text-muted mb-3">Объем с упаковкой: 0.001 м3. Вес заказа: 0.3 кг. </div>
-                                                                    <nav class="btn-group mb-3 mt-1" role="group" aria-label="Basic example">
-                                                                        <button type="button" class="btn btn-secondary btn-cst active" data-toggle="tab" data-target="#pickup-list" role="tab">Показать списком</button>
-                                                                        <button type="button" class="btn btn-secondary btn-cst" data-toggle="tab" data-target="#pickup-map" role="tab">На карте</button>
-                                                                    </nav>
-                                                                    <div class="tab-content">
-                                                                        <div class="tab-pane active" id="pickup-list" role="tabpanel">
-                                                                            <div class="row ">
-                                                                                <span class="col-7 pr-0 ">
-                                                                                    <label class="field-label small">Пункт самовывоза </label>
-                                                                                </span>
-                                                                                <span class="col-5 pl-1">
-                                                                                    <label class="field-label small">Получить товар</label>
-                                                                                </span>
+
+                                                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                    Рекомендуем заказать доставку – вес заказа: 7.3 кг, объем с упаковкой: 0.5 м3.
+                                                                </div>   
+                                                                
+                                                                <nav class="btn-group mb-3 mt-1" role="group" aria-label="Basic example">
+                                                                    <button type="button" class="btn btn-secondary btn-cst active" data-toggle="tab" data-target="#pickup-list" role="tab">Показать списком</button>
+                                                                    <button type="button" class="btn btn-secondary btn-cst" data-toggle="tab" data-target="#pickup-map" role="tab">На карте</button>
+                                                                </nav>
+                                                                <div class="tab-content">
+                                                                    <div class="tab-pane active" id="pickup-list" role="tabpanel">
+                                                                        <div class="row ">
+                                                                            <span class="col-7 pr-0 ">
+                                                                                <label class="field-label small">Пункт самовывоза </label>
+                                                                            </span>
+                                                                            <span class="col-5 pl-1">
+                                                                                <label class="field-label small">Получить товар</label>
+                                                                            </span>
+                                                                        </div>
+                                                                        <!--*******************-->
+                                                                        <div class="list-group">
+                                                                            <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio1">
+                                                                                <label class="custom-control custom-radio  w-100 mb--1">
+                                                                                    <input id="radio1" name="radio" type="radio" class="custom-control-input">
+                                                                                    <span class="custom-control-indicator"></span>
+                                                                                    <span class="custom-control-description row w-100">
+                                                                                        <span class="col-7 pr-0">
+                                                                                            <span class="store-desc mr-3">
+                                                                                                <span class="mb-0 h6 link">на Алеутской</span>
+                                                                                                <br>
+                                                                                                <small class="text-muted mb-0">
+                                                                                                    ул. Алеутская, 11 <br class="hidden-sm-up">(пн.-вс. 09:00 - 20:00)
+
+
+
+
+                                                                                                </small>
+                                                                                            </span>
+                                                                                        </span>
+                                                                                        <span class="mb-0 text-left col-5 d-flex  ">
+                                                                                            <span class="mb-0 text-success align-self-center pickup-state">сегодня</span>
+                                                                                        </span>
+                                                                                    </span>
+                                                                                </label>
                                                                             </div>
-                                                                            <!--*******************-->
-                                                                            <div class="list-group">
-                                                                                <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio1">
-                                                                                    <label class="custom-control custom-radio  w-100 mb--1">
-                                                                                        <input id="radio1" name="radio" type="radio" class="custom-control-input">
-                                                                                        <span class="custom-control-indicator"></span>
-                                                                                        <span class="custom-control-description row w-100">
-                                                                                            <span class="col-7 pr-0">
-                                                                                                <span class="store-desc mr-3">
-                                                                                                    <span class="mb-0 h6 link">на Алеутской</span>
-                                                                                                    <br>
-                                                                                                    <small class="text-muted mb-0">
-                                                                                                        ул. Алеутская, 11 <br class="hidden-sm-up">(пн.-вс. 09:00 - 20:00)
+                                                                            <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio2">
+                                                                                <label class="custom-control custom-radio  w-100 mb--1">
+                                                                                    <input id="radio2" name="radio" type="radio" class="custom-control-input">
+                                                                                    <span class="custom-control-indicator"></span>
+                                                                                    <span class="custom-control-description row w-100 ">
+                                                                                        <span class="col-7 pr-0">
+                                                                                            <span class="store-desc mr-3">
+                                                                                                <span class="mb-0 h6 link">в ТЦ "Максим"</span>
+                                                                                                <br>
+                                                                                                <small class="text-muted mb-0">
+                                                                                                    пр-т 100-лет Вл-ку, 57г <br class="hidden-sm-up">(пн.-вс. 09:00 - 20:00)
 
 
 
 
-                                                                                                    </small>
-                                                                                                </span>
-                                                                                            </span>
-                                                                                            <span class="mb-0 text-left col-5 d-flex  ">
-                                                                                                <span class="mb-0 text-success align-self-center pickup-state">сегодня</span>
+                                                                                                </small>
                                                                                             </span>
                                                                                         </span>
-                                                                                    </label>
-                                                                                </div>
-                                                                                <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio2">
-                                                                                    <label class="custom-control custom-radio  w-100 mb--1">
-                                                                                        <input id="radio2" name="radio" type="radio" class="custom-control-input">
-                                                                                        <span class="custom-control-indicator"></span>
-                                                                                        <span class="custom-control-description row w-100 ">
-                                                                                            <span class="col-7 pr-0">
-                                                                                                <span class="store-desc mr-3">
-                                                                                                    <span class="mb-0 h6 link">в ТЦ "Максим"</span>
-                                                                                                    <br>
-                                                                                                    <small class="text-muted mb-0">
-                                                                                                        пр-т 100-лет Вл-ку, 57г <br class="hidden-sm-up">(пн.-вс. 09:00 - 20:00)
+                                                                                        <span class="mb-0 text-left col-5 d-flex ">
+                                                                                            <span class="mb-0 text-success align-self-center pickup-state">сегодня</span>
+                                                                                        </span>
+                                                                                    </span>
+                                                                                </label>
+                                                                            </div>
+                                                                            <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio3">
+                                                                                <label class="custom-control custom-radio  w-100 mb--1">
+                                                                                    <input id="radio3" name="radio" type="radio" class="custom-control-input">
+                                                                                    <span class="custom-control-indicator"></span>
+                                                                                    <span class="custom-control-description row w-100 ">
+                                                                                        <span class="col-7 pr-0">
+                                                                                            <span class="store-desc mr-3">
+                                                                                                <span class="mb-0 h6 link">на Вилкова</span>
+                                                                                                <br>
+                                                                                                <small class="text-muted mb-0">
+                                                                                                    ул. Вилкова, 9 <br class="hidden-sm-up">(пн.-вс. 09:00 - 20:00)
 
 
 
 
-                                                                                                    </small>
-                                                                                                </span>
-                                                                                            </span>
-                                                                                            <span class="mb-0 text-left col-5 d-flex ">
-                                                                                                <span class="mb-0 text-success align-self-center pickup-state">сегодня</span>
+                                                                                                </small>
                                                                                             </span>
                                                                                         </span>
-                                                                                    </label>
-                                                                                </div>
-                                                                                <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio3">
-                                                                                    <label class="custom-control custom-radio  w-100 mb--1">
-                                                                                        <input id="radio3" name="radio" type="radio" class="custom-control-input">
-                                                                                        <span class="custom-control-indicator"></span>
-                                                                                        <span class="custom-control-description row w-100 ">
-                                                                                            <span class="col-7 pr-0">
-                                                                                                <span class="store-desc mr-3">
-                                                                                                    <span class="mb-0 h6 link">на Вилкова</span>
-                                                                                                    <br>
-                                                                                                    <small class="text-muted mb-0">
-                                                                                                        ул. Вилкова, 9 <br class="hidden-sm-up">(пн.-вс. 09:00 - 20:00)
-
-
-
-
-                                                                                                    </small>
-                                                                                                </span>
-                                                                                            </span>
-                                                                                            <span class="mb-0 text-left col-5 d-flex  ">
-                                                                                                <span class="mb-0 text-muted align-self-center pickup-state">
-                                                                                                    при заказе: <br class="hidden-md-up">
-                                                                                                    через 3 дня<br>
-                                                                                                    <span class="small text-success">часть – сегодня</span>
-                                                                                                </span>
+                                                                                        <span class="mb-0 text-left col-5 d-flex  ">
+                                                                                            <span class="mb-0 text-muted align-self-center pickup-state">
+                                                                                                при заказе: <br class="hidden-md-up">
+                                                                                                через 3 дня<br>
+                                                                                                <span class="small text-success">часть – сегодня</span>
                                                                                             </span>
                                                                                         </span>
-                                                                                    </label>
-                                                                                    <div class="w-100">
-                                                                                        <div class="collapse" id="collapseExample3" aria-expanded="false" role="definition">
-                                                                                            <div class="mt-2 ml-4">
-                                                                                                <div class="alert-warning split-warning dropdown">
-                                                                                                    <h6>Обратите внимание:</h6>
-                                                                                                    <div class="small mb-0">Экшн-Камера Xiaomi Yi Basic Edition (1шт.) – готов в получению, можно забирать уже сейчас.</div>
-                                                                                                    <div class="small mb-1">Смартфон Asus ZenFone 3 Max ZC520TL 16Gb Silver (1шт.) – будет готов через 3 дня.</div>
-                                                                                                    <div class="small">Для удобства, товары будут разделены на заказы по мере готовности</div>
-                                                                                                </div>
+                                                                                    </span>
+                                                                                </label>
+                                                                                <div class="w-100">
+                                                                                    <div class="collapse" id="collapseExample3" aria-expanded="false" role="definition">
+                                                                                        <div class="mt-2 ml-4">
+                                                                                            <div class="alert-warning split-warning dropdown">
+                                                                                                <h6>Обратите внимание:</h6>
+                                                                                                <div class="small mb-0">Экшн-Камера Xiaomi Yi Basic Edition (1шт.) – готов в получению, можно забирать уже сейчас.</div>
+                                                                                                <div class="small mb-1">Смартфон Asus ZenFone 3 Max ZC520TL 16Gb Silver (1шт.) – будет готов через 3 дня.</div>
+                                                                                                <div class="small">Для удобства, товары будут разделены на заказы по мере готовности</div>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio4">
-                                                                                    <label class="custom-control custom-radio  w-100 mb--1">
-                                                                                        <input id="radio4" name="radio" type="radio" class="custom-control-input">
-                                                                                        <span class="custom-control-indicator"></span>
-                                                                                        <span class="custom-control-description row w-100 ">
-                                                                                            <span class="col-7 pr-0">
-                                                                                                <span class="store-desc mr-3">
-                                                                                                    <span class="mb-0 h6 link">на Гоголя</span>
-                                                                                                    <br>
-                                                                                                    <small class="text-muted mb-0">
-                                                                                                        пр-т Красного  Знамени, 59<br class="hidden-sm-up">(пн.-вс. 09:00 - 20:00)
-                                                                                                   </small>
-                                                                                                </span>
-                                                                                            </span>
-                                                                                            <span class="mb-0 text-left col-5 d-flex  ">
-                                                                                                <span class="mb-0 text-success align-self-center pickup-state">сегодня</span>
-                                                                                            </span>
-                                                                                        </span>
-                                                                                    </label>
-                                                                                </div>
-                                                                                <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio5">
-                                                                                    <label class="custom-control custom-radio  w-100 mb--1">
-                                                                                        <input id="radio5" name="radio" type="radio" class="custom-control-input">
-                                                                                        <span class="custom-control-indicator"></span>
-                                                                                        <span class="custom-control-description row w-100 ">
-                                                                                            <span class="col-7 pr-0">
-                                                                                                <span class="store-desc mr-3">
-                                                                                                    <span class="mb-0 h6 link">в ТЦ "Черемушки"</span>
-                                                                                                    <br>
-                                                                                                    <small class="text-muted mb-0">
-                                                                                                        ул. Черемуховая,15 <br class="hidden-sm-up">(пн.-вс. 09:00 - 20:00)
-
-
-
-
-                                                                                                    </small>
-                                                                                                </span>
-                                                                                            </span>
-                                                                                            <span class="mb-0 text-left col-5 d-flex ">
-                                                                                                <span class="mb-0 text-success align-self-center pickup-state">сегодня</span>
-                                                                                            </span>
-                                                                                        </span>
-                                                                                    </label>
-                                                                                </div>
                                                                             </div>
-                                                                            <!--*******************-->
+                                                                            <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio4">
+                                                                                <label class="custom-control custom-radio  w-100 mb--1">
+                                                                                    <input id="radio4" name="radio" type="radio" class="custom-control-input">
+                                                                                    <span class="custom-control-indicator"></span>
+                                                                                    <span class="custom-control-description row w-100 ">
+                                                                                        <span class="col-7 pr-0">
+                                                                                            <span class="store-desc mr-3">
+                                                                                                <span class="mb-0 h6 link">на Гоголя</span>
+                                                                                                <br>
+                                                                                                <small class="text-muted mb-0">
+                                                                                                    пр-т Красного  Знамени, 59<br class="hidden-sm-up">(пн.-вс. 09:00 - 20:00)
+                                                                                                </small>
+                                                                                            </span>
+                                                                                        </span>
+                                                                                        <span class="mb-0 text-left col-5 d-flex  ">
+                                                                                            <span class="mb-0 text-success align-self-center pickup-state">сегодня</span>
+                                                                                        </span>
+                                                                                    </span>
+                                                                                </label>
+                                                                            </div>
+                                                                            <div class="list-group-item list-group-item-action flex-column align-items-start p-25" data-quantity="radio5">
+                                                                                <label class="custom-control custom-radio  w-100 mb--1">
+                                                                                    <input id="radio5" name="radio" type="radio" class="custom-control-input">
+                                                                                    <span class="custom-control-indicator"></span>
+                                                                                    <span class="custom-control-description row w-100 ">
+                                                                                        <span class="col-7 pr-0">
+                                                                                            <span class="store-desc mr-3">
+                                                                                                <span class="mb-0 h6 link">в ТЦ "Черемушки"</span>
+                                                                                                <br>
+                                                                                                <small class="text-muted mb-0">
+                                                                                                    ул. Черемуховая,15 <br class="hidden-sm-up">(пн.-вс. 09:00 - 20:00)
+
+
+
+
+                                                                                                </small>
+                                                                                            </span>
+                                                                                        </span>
+                                                                                        <span class="mb-0 text-left col-5 d-flex ">
+                                                                                            <span class="mb-0 text-success align-self-center pickup-state">сегодня</span>
+                                                                                        </span>
+                                                                                    </span>
+                                                                                </label>
+                                                                            </div>
                                                                         </div>
-                                                                        <div class="tab-pane" id="pickup-map" role="tabpanel">
-                                                                            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa96e0e40a24bff1f285eb345d42bc29074a393da5eb7eb9edc9bd68ac69dadac&amp;width=100%25&amp;height=287&amp;lang=ru_RU&amp;scroll=true"></script>
-                                                                        </div>
+                                                                        <!--*******************-->
+                                                                    </div>
+                                                                    <div class="tab-pane" id="pickup-map" role="tabpanel">
+                                                                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa96e0e40a24bff1f285eb345d42bc29074a393da5eb7eb9edc9bd68ac69dadac&amp;width=100%25&amp;height=287&amp;lang=ru_RU&amp;scroll=true"></script>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="tab-pane" id="profile" role="tabpanel">
-                                                                <div class="row">
+                                                        </div>
+                                                        <div class="tab-pane" id="profile" role="tabpanel">
+                                                            <div class="row">
                                                                 <div class="col-12 mb-3"><div class="text-muted">Объем с упаковкой: 0.001 м3. Вес заказа: 0.3 кг. </div></div>
-                                                                    <div class="mb-2 clearfix col-12 ">
-                                                                        <label class="field-label">Укажите адрес доставки</label>
-                                                                        <input type="email" class="form-control" placeholder="Город, улица, дом, квартира">
-                                                                    </div>
-                                                                    <div class="col-12 mb-3">
-                                                <a href="" class="link-dashed">Добавить комментарий</a>
-                                            </div>
+                                                                <div class="mb-2 clearfix col-12 ">
+                                                                    <label class="field-label">Укажите адрес доставки</label>
+                                                                    <input type="email" class="form-control" placeholder="Город, улица, дом, квартира">
+                                                                </div>
+                                                                <div class="col-12 mb-3">
+                                                                    <a href="" class="link-dashed">Добавить комментарий</a>
+                                                                </div>
                                 <!-- <div class="col-12 ">
                                                 <div class="alert-warning p-2">
                                                 <label class="custom-control custom-checkbox d-flex flex-column mb-0">
@@ -781,189 +788,189 @@
                                     <!--*******************-->
                                 </div><form action="done.html">
                                 <button type="submit" class="btn btn-warning btn-lg">Подтвердить заказ</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div></div></div>
-        <!-- Модальные окна-->
-        <div class="modal fade" id="company" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content rounded-0">
-                    <div class="modal-body">
-                        <div class="row mb-3 bg-faded company-modal-promo">
-                            <div class="col-10">
-                                <h5 class="modal-title mb-3">Укажите реквизиты компании</h5>
-                            </div>
-                            <div class="col-2">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="col-8 mb-4">
-                                <div class="text-muted small">Счет на оплату и договор будут высланы после оформления заказа</div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label class="field-label">Поиск организации</label>
-                                    <a rel="nofollow" href="" data-toggle="modal" data-target="#company">
-                                        <small class="field-sub-text float-right">Добавить вручную</small>
-                                    </a>
-                                    <input type="text" class="form-control" placeholder="Начните вводить название, ИНН или адрес">
-                                </div>
-                                <form action="#" class="mb-0">
-                                    <button type="submit" class="btn btn-warning">Продолжить</button>
-                                    <button class="btn btn-link" data-dismiss="modal">Отмена</button>
-                                </form>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="bonuscard" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content rounded-0">
-                    <div class="modal-body bb-1">
-                        <div class="row mb-3 bg-faded bonus-modal-promo">
-                            <div class="col-10">
-                                <h5 class="modal-title mb-2" id="bonuscardModalLabel">Получить бонусы</h5>
-                            </div>
-                            <div class="col-2">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="col-8 mb-4">
-                                <div class="text-muted small">Если Вы участник бонусной программы, введите номер карты.</div>
-                            </div>
+    </div></div></div>
+    <!-- Модальные окна-->
+    <div class="modal fade" id="company" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-0">
+                <div class="modal-body">
+                    <div class="row mb-3 bg-faded company-modal-promo">
+                        <div class="col-10">
+                            <h5 class="modal-title mb-3">Укажите реквизиты компании</h5>
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="clearfix form-group">
-                                    <label class="field-label" for="exampleInputEmail1">Фамилия участника бонусной программы</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="Иванов">
-                                </div>
-                                <div class="clearfix form-group">
-                                    <label class="field-label" for="exampleInputEmail1">Бонусная карта</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="№ 3550 ________">
-                                </div>
-                                <form action="bonuscard.html" class="mb-0">
-                                    <button type="submit" class="btn btn-warning btn-lg">Подтвердить</button>
-                                </form>
-                            </div>
+                        <div class="col-2">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="col-8 mb-4">
+                            <div class="text-muted small">Счет на оплату и договор будут высланы после оформления заказа</div>
                         </div>
                     </div>
-                    <div class="modal-body ">
-                        <div class="row">
-                            <div class="shrink col">
-                                <img src="https://i.snag.gy/Eg8QJo.jpg" alt="">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label class="field-label">Поиск организации</label>
+                                <a rel="nofollow" href="" data-toggle="modal" data-target="#company">
+                                    <small class="field-sub-text float-right">Добавить вручную</small>
+                                </a>
+                                <input type="text" class="form-control" placeholder="Начните вводить название, ИНН или адрес">
                             </div>
-                            <div class="col pl-0 mt-1">
-                                <div class="small text-muted lh-1">Нет карты? </div>
-                                <a href="" class="lh-1" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#newbonuscard">Завести карту и получить бонусы</a>
-                            </div>
+                            <form action="#" class="mb-0">
+                                <button type="submit" class="btn btn-warning">Продолжить</button>
+                                <button class="btn btn-link" data-dismiss="modal">Отмена</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="newbonuscard" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content rounded-0">
-                    <div class="modal-body bb-1">
-                        <div class="row mb-3 bg-faded bonus-modal-promo">
-                            <div class="col-10">
-                                <h5 class="modal-title mb-2" id="bonuscardModalLabel">Анкета бонусного клиента</h5>
-                            </div>
-                            <div class="col-2">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="col-8 mb-4">
-                                <div class="text-muted small">Чтобы стать участником бонусной программы, заполните необходимые поля.</div>
-                            </div>
+    </div>
+    <div class="modal fade" id="bonuscard" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-0">
+                <div class="modal-body bb-1">
+                    <div class="row mb-3 bg-faded bonus-modal-promo">
+                        <div class="col-10">
+                            <h5 class="modal-title mb-2" id="bonuscardModalLabel">Получить бонусы</h5>
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label class="field-label">ФИО</label>
-                                    <input type="text" class="form-control" value="Иванов Иван Петрович" placeholder="Фамилия Имя Отчество">
-                                </div>
-                                <div class="form-group">
-                                    <label class="field-label">Телефон</label>
-                                    <input type="tel" id="user-phone-num" class="form-control" value="+7 (914) 959-04-45" placeholder="+7 (   ) ___ - __ - __">
-                                </div>
-                                <div class="form-group">
-                                    <label class="field-label">Адрес</label>
-                                    <input type="text" class="form-control" value="Владивосток,">
-                                </div>
-                                <div class="form-group ">
-                                    <label class="field-label">Дата рождения</label>
-                                    <input type="date" class="form-control" value="1971-08-19" placeholder="">
-                                </div>
-                                <form action="bonuscard-new.html" class="mb-0">
-                                    <button type="submit" class="btn btn-warning btn-lg">Сохранить</button>
-                                </form>
-                            </div>
+                        <div class="col-2">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="col-8 mb-4">
+                            <div class="text-muted small">Если Вы участник бонусной программы, введите номер карты.</div>
                         </div>
                     </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="shrink col">
-                                <img src="https://i.snag.gy/7harim.jpg" alt="">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="clearfix form-group">
+                                <label class="field-label" for="exampleInputEmail1">Фамилия участника бонусной программы</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="Иванов">
                             </div>
-                            <div class="col pl-0 mt-1">
-                                <div class="small text-muted lh-1">Есть карта?</div>
-                                <a href="" class="lh-1" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#bonuscard">Ввести номер и получить бонусы</a>
+                            <div class="clearfix form-group">
+                                <label class="field-label" for="exampleInputEmail1">Бонусная карта</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="№ 3550 ________">
                             </div>
+                            <form action="bonuscard.html" class="mb-0">
+                                <button type="submit" class="btn btn-warning btn-lg">Подтвердить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body ">
+                    <div class="row">
+                        <div class="shrink col">
+                            <img src="https://i.snag.gy/Eg8QJo.jpg" alt="">
+                        </div>
+                        <div class="col pl-0 mt-1">
+                            <div class="small text-muted lh-1">Нет карты? </div>
+                            <a href="" class="lh-1" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#newbonuscard">Завести карту и получить бонусы</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="promocod" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content rounded-0">
-                    <div class="modal-body">
-                        <div class="row mb-3 bg-faded promocod-modal-promo">
-                            <div class="col-10">
-                                <h5 class="modal-title mb-2" id="companyeModalLabel">Активация промокода</h5>
-                            </div>
-                            <div class="col-2">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="col-8 mb-3">
-                                <div class="text-muted small">Введите промокод и получите скидку на Ваш заказ</div>
-                            </div>
+    </div>
+    <div class="modal fade" id="newbonuscard" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-0">
+                <div class="modal-body bb-1">
+                    <div class="row mb-3 bg-faded bonus-modal-promo">
+                        <div class="col-10">
+                            <h5 class="modal-title mb-2" id="bonuscardModalLabel">Анкета бонусного клиента</h5>
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label class="field-label">Промокод</label>
-                                    <input type="text" class="form-control" placeholder="">
-                                </div>
-                                <form class="mb-0" action="promocode.html">
-                                    <button type="submit" class="btn btn-warning btn-lg">Применить</button>
-                                    <button class="btn btn-link" data-dismiss="modal">Отмена</button>
-                                </form>
+                        <div class="col-2">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="col-8 mb-4">
+                            <div class="text-muted small">Чтобы стать участником бонусной программы, заполните необходимые поля.</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label class="field-label">ФИО</label>
+                                <input type="text" class="form-control" value="Иванов Иван Петрович" placeholder="Фамилия Имя Отчество">
                             </div>
+                            <div class="form-group">
+                                <label class="field-label">Телефон</label>
+                                <input type="tel" id="user-phone-num" class="form-control" value="+7 (914) 959-04-45" placeholder="+7 (   ) ___ - __ - __">
+                            </div>
+                            <div class="form-group">
+                                <label class="field-label">Адрес</label>
+                                <input type="text" class="form-control" value="Владивосток,">
+                            </div>
+                            <div class="form-group ">
+                                <label class="field-label">Дата рождения</label>
+                                <input type="date" class="form-control" value="1971-08-19" placeholder="">
+                            </div>
+                            <form action="bonuscard-new.html" class="mb-0">
+                                <button type="submit" class="btn btn-warning btn-lg">Сохранить</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="shrink col">
+                            <img src="https://i.snag.gy/7harim.jpg" alt="">
+                        </div>
+                        <div class="col pl-0 mt-1">
+                            <div class="small text-muted lh-1">Есть карта?</div>
+                            <a href="" class="lh-1" data-dismiss="modal" aria-label="Close" data-toggle="modal" data-target="#bonuscard">Ввести номер и получить бонусы</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- //Модальные окна-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="js/tether.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-        <script src="https://unpkg.com/vue"></script>
-        <script src="js/custom.js"></script>
-    </body></html>
+    </div>
+    <div class="modal fade" id="promocod" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content rounded-0">
+                <div class="modal-body">
+                    <div class="row mb-3 bg-faded promocod-modal-promo">
+                        <div class="col-10">
+                            <h5 class="modal-title mb-2" id="companyeModalLabel">Активация промокода</h5>
+                        </div>
+                        <div class="col-2">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="col-8 mb-3">
+                            <div class="text-muted small">Введите промокод и получите скидку на Ваш заказ</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label class="field-label">Промокод</label>
+                                <input type="text" class="form-control" placeholder="">
+                            </div>
+                            <form class="mb-0" action="promocode.html">
+                                <button type="submit" class="btn btn-warning btn-lg">Применить</button>
+                                <button class="btn btn-link" data-dismiss="modal">Отмена</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //Модальные окна-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="js/custom.js"></script>
+</body></html>
