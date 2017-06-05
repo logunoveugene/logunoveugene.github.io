@@ -1,26 +1,28 @@
 {
-  "name": "1",
-  "description": "1",
+  "name": "webpack-tutorial",
   "version": "1.0.0",
-  "author": "1",
-  "private": true,
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
-  },
-  "dependencies": {
-    "vue": "^2.3.3"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack main.js build.js --watch"
   },
   "devDependencies": {
-    "babel-core": "^6.0.0",
-    "babel-loader": "^6.0.0",
-    "babel-preset-env": "^1.5.1",
-    "cross-env": "^3.0.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-es2015": "^6.18.0",
     "css-loader": "^0.25.0",
-    "file-loader": "^0.9.0",
-    "vue-loader": "^12.1.0",
-    "vue-template-compiler": "^2.3.3",
-    "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5"
-  }
+    "jade": "^1.11.0",
+    "node-sass": "^3.12.5",
+    "sass-loader": "^4.0.2",
+    "vue": "^1.0.27",
+    "vue-html-loader": "^1.2.3",
+    "vue-loader": "^8.5.2",
+    "vue-style-loader": "^1.0.0",
+    "webpack": "^1.13.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
