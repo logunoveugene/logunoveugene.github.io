@@ -10,6 +10,10 @@ div.row
                         div.lh-1.d-flex.flex-column.pt-1.ml-4.hidden-sm-down
                             div 8 800 333 33 66
                             div.small.text-muted звонок бесплатный
+                    div.col-3.d-flex.justify-content-end
+                        div.align-self-center.pt-1.text-right.mr-2
+                            img(src="https://i.snag.gy/RMJK8a.jpg")
+                        span.pt-2.link Войти
                                     
 </template>
 
