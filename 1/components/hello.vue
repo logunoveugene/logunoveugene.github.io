@@ -1,5 +1,16 @@
 <template lang="jade">
-    h1 {{ greeting }}
+div.row
+    div.col-12.p-0
+        div.card.border-0.rounded-0.mb-2
+            div.card-block
+                div.row
+                    div.col-9.d-flex.flex-row
+                        a(href="index.html")
+                            img(src="https://i.snag.gy/EGhwrf.jpg")
+                        div.lh-1.d-flex.flex-column.pt-1.ml-4.hidden-sm-down
+                            div 8 800 333 33 66
+                            div.small.text-muted звонок бесплатный
+                                    
 </template>
 
 <script>
