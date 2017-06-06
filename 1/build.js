@@ -10849,16 +10849,21 @@
 	module.exports = {
 	    data: function data() {
 	        return {
-	            greeting: 'Привет Webpack'
+	            greeting: 'Войти'
 	        };
-	    }
-	};
+	    },
+	    methods: {
+	        login: function login() {
+	            this.greeting = 'Василий';
+	        }
+
+	    } };
 
 /***/ }),
 /* 9 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"row\"><div class=\"col-12 p-0\"><div class=\"card border-0 rounded-0 mb-2\"><div class=\"card-block\"><div class=\"row\"><div class=\"col-9 d-flex flex-row\"><a href=\"index.html\"><img src=\"https://i.snag.gy/EGhwrf.jpg\"/></a><div class=\"lh-1 d-flex flex-column pt-1 ml-4 hidden-sm-down\"><div>8 800 333 33 66</div><div class=\"small text-muted\">звонок бесплатный</div></div></div><div class=\"col-3 d-flex justify-content-end\"><div class=\"align-self-center pt-1 text-right mr-2\"><img src=\"https://i.snag.gy/RMJK8a.jpg\"/></div><span class=\"pt-2 link\">Войти</span></div></div></div></div></div></div>";
+	module.exports = "<div class=\"container\">   <div class=\"row\"><div class=\"col-12 p-0\"><div class=\"card border-0 rounded-0 mb-2\"><div class=\"card-block\"><div class=\"row\"><div class=\"col-9 d-flex flex-row\"><a href=\"index.html\"><img src=\"https://i.snag.gy/EGhwrf.jpg\"/></a><div class=\"lh-1 d-flex flex-column pt-1 ml-4 hidden-sm-down\"><div>8 800 333 33 66</div><div class=\"small text-muted\">звонок бесплатный</div></div></div><div class=\"col-3 d-flex justify-content-end\"><div class=\"align-self-center pt-1 text-right mr-2\"><img src=\"https://i.snag.gy/RMJK8a.jpg\"/></div><span v-on:click=\"login\" class=\"pt-2\">{{greeting}}</span></div></div></div></div></div></div></div>";
 
 /***/ })
 /******/ ]);

@@ -1,1 +1,718 @@
-{}
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"c",
+				"count"
+			],
+			[
+				"p",
+				"placeholder	Attr"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"ch",
+				"change"
+			],
+			[
+				"bor",
+				"border-top"
+			],
+			[
+				"i",
+				"id	Attr"
+			],
+			[
+				"to",
+				"top"
+			],
+			[
+				"e",
+				"else"
+			],
+			[
+				"ov",
+				"overflow"
+			],
+			[
+				"f",
+				"function"
+			],
+			[
+				"cl",
+				"class	Attr"
+			],
+			[
+				"n",
+				"nowrap"
+			],
+			[
+				"wh",
+				"white-space"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"in",
+				"inset"
+			],
+			[
+				"t",
+				"translateY()"
+			],
+			[
+				"tra",
+				"transform"
+			],
+			[
+				"va",
+				"val"
+			],
+			[
+				"di",
+				"disabled"
+			],
+			[
+				"pa",
+				"padding-left"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"fo",
+				"form	Tag"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"a",
+				"auto"
+			],
+			[
+				"b",
+				"background"
+			],
+			[
+				"tr",
+				"transform"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"li",
+				"line-height"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"z",
+				"z-index"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "done.html",
+			"settings":
+			{
+				"buffer_size": 15947,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/components/hello.vue",
+			"settings":
+			{
+				"buffer_size": 1525,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/main.js",
+			"settings":
+			{
+				"buffer_size": 149,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"inde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"Package Control: i",
+				"Package Control: Install Package"
+			],
+			[
+				"lorem",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"emm",
+				"Emmet: Merge Lines"
+			],
+			[
+				"em",
+				"Emmet: Merge Lines"
+			],
+			[
+				"Package Control: Install Package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 432.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print 'Please restart Sublime Text to finish installation'",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/js"
+	],
+	"file_history":
+	[
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/js/custom.js",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/index.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/index.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/build.js",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/components/hello.vue",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/README.md",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/components/Hello.vue",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/js/main.js",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/package.json",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/config/webpack.config.js",
+		"/C/Users/logunov_ey/Desktop/scss/mixins/_breakpoints.scss",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/order-list/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/c-style.css",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/payment/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/design/readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart-checkout/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/__source/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/Корзина/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/Корзина/source/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/cart-checkout/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/GUI/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/done.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/bonuscard.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/product-tour.min.css",
+		"/C/Users/logunov_ey/Desktop/scss/_buttons.scss",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/promocode.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/bonuscard-new.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/company.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/delivery.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/2product-split.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/js/inset.js",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/index — копия.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/gift2.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/1.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/2product.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/gift2-2.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/gift.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/service.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/index — копия.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/c-style.css",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/2product-promocode.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart/js/custom.js",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart/index1.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart/c-style.css",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/index2.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart/index.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart/index-cm.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart/index2.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart/index-ac.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart/img/logo-cm",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/index-order-two.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/index2.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/dsd.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/index-order-one222.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/js/custom.js",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/select.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/gift.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/index-order-two-split.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/index-order-one.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/index-order-two — копия.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/company.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/index.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/bonuscard.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/promocode.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/index-order.html",
+		"/C/Users/logunov_ey/Desktop/promo.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart2/index.html",
+		"/C/Users/logunov_ey/Downloads/Новая папка (2)/vendor-fb680d7524.css",
+		"/C/Users/logunov_ey/Downloads/Новая папка (2)/styles-f48365d30e.css",
+		"/C/Users/logunov_ey/Desktop/bootstrap.min.css",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/index1.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/2.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/4.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/cart/next.html",
+		"/C/Users/logunov_ey/Downloads/Без названия (2)",
+		"/C/Users/logunov_ey/Desktop/in.html",
+		"/C/Users/logunov_ey/Desktop/dd.js",
+		"/D/Dropbox/НОВЫЙ САЙТ кибер/Для верстки/иконки шрифт/Шрифт/styles.css",
+		"/C/Users/logunov_ey/Desktop/index.html",
+		"/C/Users/logunov_ey/Desktop/Новая папка/Не забудьте Ваши товары в Корзине!.eml",
+		"/C/Users/logunov_ey/Desktop/_spacing.scss",
+		"/C/Users/logunov_ey/Desktop/stripe-navigation/css/style.css",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/admin/index.html",
+		"/C/Users/logunov_ey/Desktop/stripe-navigation/index.html",
+		"/C/Users/logunov_ey/Desktop/stripe-navigation/css/reset.css",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/shapka/css/app.css",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/shapka/css/foundation.css",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/shapka/index.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/shapka/img/chat.svg",
+		"/C/Users/logunov_ey/Documents/GitHub/shapka/index.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/index.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/css/app.css",
+		"/C/Users/logunov_ey/Desktop/gift.svg",
+		"/D/Dropbox/НОВЫЙ САЙТ кибер/Для верстки/earth-discover.svg",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/Rondi/js/app.js",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/Rondi/index.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/Rondi/stripe-navigation/scss/style.scss",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/Rondi/css/app.css",
+		"/C/Users/logunov_ey/Documents/GitHub/shapka/js/app.js",
+		"/C/Users/logunov_ey/Documents/GitHub/shapka/css/foundation.css",
+		"/C/Users/logunov_ey/Documents/GitHub/shapka/css/app.css",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/css/foundation.css",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/libs/bem-components/common.blocks/modal/modal.examples/10-modal.bemjson.js",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/libs/bem-components/common.blocks/modal/modal.examples/10-modal.blocks/test/test.js",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/desktop.bundles/form/form.bemjson.js",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/desktop.bundles/index/index.bemjson.js",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/libs/bem-components/test.blocks/line/line.css",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/gulpfile.js",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/common.blocks/.bem/level.js",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/libs/bem-components/touch-phone.pages/islands/islands.bemjson.js",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/libs/bem-components/design/desktop.blocks/textarea/_theme/textarea_theme_islands.ie.css",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/desktop.bundles/form/form.css",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/libs/bem-components/common.blocks/textarea/textarea.css",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/desktop.blocks/form/form.css",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/desktop.bundles/form/form.min.css",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/desktop.bundles/form/formaa.css",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/desktop.bundles/form/form.js",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/desktop.bundles/form/hello.css",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/desktop.bundles/page/page.bemjson.js",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/desktop.bundles/10-modal.js",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/libs/bem-components/common.blocks/popup/popup.examples/10-popup.bemjson.js",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/libs/bem-components/common.blocks/popup/popup.tmpl-specs/10-params.bemjson.js",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/libs/bem-components/common.blocks/popup/popup.bemhtml.js",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/libs/bem-components/test.blocks/icon/icon.css",
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/libs/bem-components/test.blocks/page/page.deps.js"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"click",
+			"cart",
+			"объ",
+			"form ",
+			"hid",
+			"\";\n",
+			"text-left col-5 d-flex",
+			"col-7 pr-0",
+			"box",
+			"btn-cst",
+			"col-5 col-md-6",
+			"col-7 col-md-6",
+			"готов к выдаче",
+			"col-md-6 pr-0",
+			"mb-0 text-left col-md-6 d-flex ",
+			"col-6 pr-0",
+			"mb-0 text-left col-5 d-flex",
+			"col-7 pr-0",
+			"заяв",
+			"produ",
+			"Заявка",
+			"<img class=\"logo\" src=\"https://i.snag.gy/EGhwrf.jpg\" alt=\"\">",
+			" class=\"logo\" src=\"https://i.snag.gy/EGhwrf.jpg\" alt=\"\"></a>",
+			"<img class=\"logo\" src=\"https://i.snag.gy/EGhwrf.jpg\" alt=\"\">",
+			"local",
+			"<a href=\"javascript:void(0);\" data-toggle=\"tooltip\" data-html=\"true\" data-placement=\"bottom\" title=\"<h6>Услуга включает: </h6>\n                                                                    <ul>\n                                                                        <li>Активация продукта</li>\n                                                                        <li>Установка менеджера файлов</li>\n                                                                        <li>Установка основных виджетов</li>\n                                                                        <li>Установка альтернативного браузера</li>\n                                                                        <li>Установка альтернативной оболочки для индивидуальной настройки устройства</li>\n                                                                    </ul>\n                                                                    <h6>Продолжительность услуги — 80 мин.</h6>\">\n                                                                        <span class=\"badge badge-pill badge-ask\">?</span>\n                                                                    </a>",
+			"shadow",
+			"d-flex w-100 justify-content-between ",
+			"<br class=\"hidden-md-up\">\n                                                                            <span class=\"pl-3 hidden-md-down\"></span>",
+			"<br class=\"hidden-md-up\">\n                                                                            <span class=\"pl-3 hidden-md-down\"></span><>",
+			"изменить",
+			"yfpfl",
+			"text-success",
+			"shrink col pr-0 hidden-md-down",
+			"shrink col pr-0 hidden-sm-down",
+			"<button id=",
+			"relative",
+			" <button type=\"button\"",
+			"class=\"form-group clearfix\"",
+			"div class=\"collapse\" ",
+			"<div class=\"collapse\" id=\"collapseExample2\" aria-expanded=\"false\">",
+			"<div class=\"collapse\" id=\"collapseExample1\" aria-expanded=\"false\">",
+			"</span>\n\n                                        <small class=\"text-muted mb-0\">",
+			"<div class=\"custom-control-description flex-column align-items-start w-100 \"",
+			" id=\"delivery\">",
+			"<div class=\"card border-0 rounded-0 mb-2\" id=\"delivery\">",
+			"<div class=\"custom-control-description flex-column align-items-start w-100 \">",
+			"\">Наклейка",
+			"store-desc mr-2",
+			"mb-0 text-muted align-self-center",
+			"mb-0 text-success align-self-center",
+			"строй",
+			"w1-00",
+			" ",
+			";\n",
+			"card-block bb-1",
+			"mb",
+			"img/",
+			"              </",
+			"off-canvas-content",
+			"reveal-overlay",
+			"slide-out-r",
+			"slad",
+			"anima",
+			"reveal",
+			"reva",
+			"outline:",
+			"gre",
+			"warp",
+			"arp",
+			"dropdown-pane",
+			"hollow ",
+			"dropdown-pane",
+			"r",
+			"border-b",
+			"></",
+			"<p>",
+			"</p>",
+			"</em>",
+			"<em>",
+			"&nbsp;",
+			"<br>",
+			"small",
+			"ыьфдд",
+			"font-s",
+			"html",
+			"a {\n    ",
+			"a {\n    color:",
+			"}"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"text-left col-6 d-flex",
+			"col-6",
+			"col-5",
+			"col-7",
+			"сегодня",
+			"<a href=\"index.html\"><img class=\"logo\" src=\"https://i.snag.gy/EGhwrf.jpg\" alt=\"\"></a>",
+			"<a href=\"javascript:void(0);\" id=\"basesatting\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                                                                        <span class=\"badge badge-pill badge-ask\">?</span>\n                                                                    </a>\n                                                                    <div class=\"dropdown-menu drop-plate\" aria-labelledby=\"basesatting\">\n                                                                       <h6>Услуга включает: </h6>\n                                                                       <ul class=\"list-unstyled small\">\n                                                                        <li>Активация продукта</li>\n                                                                        <li>Установка менеджера файлов</li>\n                                                                        <li>Установка основных виджетов</li>\n                                                                        <li>Установка альтернативного браузера</li>\n                                                                        <li>Установка альтернативной оболочки для индивидуальной настройки устройства</li>\n                                                                    </ul>\n                                                                    <h6 class=\"mb-0\">Продолжительность услуги — 80 мин.</h6>\n                                                                </div>",
+			"col-7 pr-0",
+			"<br>",
+			"step-success",
+			"<div class=\"collapse\" id=\"collapseExample2\" aria-expanded=\"false\" role=\"definition\">",
+			"<div class=\"collapse\" id=\"collapseExample1\" aria-expanded=\"false\" role=\"definition\">",
+			"</span><br>\n\n                                        <small class=\"text-muted mb-0\">",
+			"store-desc mr-3",
+			"mb-0 text-success align-self-center pickup-state",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "done.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15947,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								561,
+								564
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/components/hello.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1525,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								911,
+								911
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Vue Syntax Highlight/vue.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 149,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\logunov_ey\\Documents\\GitHub\\shapka\\css\\app.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 237.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
