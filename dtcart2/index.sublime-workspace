@@ -168,27 +168,11 @@
 	"buffers":
 	[
 		{
-			"file": "done.html",
+			"file": "/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/payment/Readme.md",
 			"settings":
 			{
-				"buffer_size": 15947,
+				"buffer_size": 181,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/components/hello.vue",
-			"settings":
-			{
-				"buffer_size": 1525,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/main.js",
-			"settings":
-			{
-				"buffer_size": 149,
-				"line_ending": "Unix"
 			}
 		}
 	],
@@ -263,36 +247,46 @@
 	},
 	"expanded_folders":
 	[
-		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2",
-		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/js"
+		"/C/Users/logunov_ey/Documents/GitHub/design-system",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/modal",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/order-list",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/payment"
 	],
 	"file_history":
 	[
-		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/js/custom.js",
-		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/index.html",
-		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/index.html",
-		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/build.js",
+		"/D/YandexDisk/1/components/hello.vue",
+		"/D/YandexDisk/1/package.json",
 		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/components/hello.vue",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/getting/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/payment/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/user-info/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/index.html",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/order-list/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/c-style.css",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/done.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/main.js",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/index.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/package.json",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/js/custom.js",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/build.js",
 		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/README.md",
 		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/components/Hello.vue",
 		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/js/main.js",
-		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/package.json",
 		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/config/webpack.config.js",
 		"/C/Users/logunov_ey/Desktop/scss/mixins/_breakpoints.scss",
-		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/order-list/Readme.md",
-		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/c-style.css",
-		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/payment/Readme.md",
-		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/Readme.md",
 		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/design/readme.md",
-		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/Readme.md",
-		"/C/Users/logunov_ey/Documents/GitHub/design-system/Readme.md",
 		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart-checkout/Readme.md",
 		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/__source/Readme.md",
 		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/Корзина/Readme.md",
 		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/Корзина/source/Readme.md",
 		"/C/Users/logunov_ey/Documents/GitHub/design-system/cart-checkout/Readme.md",
 		"/C/Users/logunov_ey/Documents/GitHub/design-system/GUI/Readme.md",
-		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/done.html",
 		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/bonuscard.html",
 		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/product-tour.min.css",
 		"/C/Users/logunov_ey/Desktop/scss/_buttons.scss",
@@ -390,16 +384,11 @@
 		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/desktop.bundles/form/form.js",
 		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/desktop.bundles/form/hello.css",
 		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/desktop.bundles/page/page.bemjson.js",
-		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/desktop.bundles/10-modal.js",
-		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/libs/bem-components/common.blocks/popup/popup.examples/10-popup.bemjson.js",
-		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/libs/bem-components/common.blocks/popup/popup.tmpl-specs/10-params.bemjson.js",
-		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/libs/bem-components/common.blocks/popup/popup.bemhtml.js",
-		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/libs/bem-components/test.blocks/icon/icon.css",
-		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/libs/bem-components/test.blocks/page/page.deps.js"
+		"/C/Users/logunov_ey/Documents/GitHub/bem/start-project/desktop.bundles/10-modal.js"
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -413,6 +402,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"steps/",
 			"click",
 			"cart",
 			"объ",
@@ -509,6 +499,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
 			"text-left col-6 d-flex",
 			"col-6",
 			"col-5",
@@ -535,89 +526,29 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "done.html",
+					"file": "/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/payment/Readme.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15947,
+						"buffer_size": 181,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								561,
-								564
+								181,
+								181
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/components/hello.vue",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1525,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								911,
-								911
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Vue Syntax Highlight/vue.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 180.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/main.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 149,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -710,7 +641,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 237.0,
+	"side_bar_width": 249.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
