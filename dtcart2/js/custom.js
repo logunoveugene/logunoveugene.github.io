@@ -160,6 +160,9 @@ $(window).on('load', function() {
         $('#collapseExample-smart').addClass('show');
         $('#collapseExample-smart').removeClass('product-collapse');
         $('#product-collapse-plate').addClass('hidden-xl-down');
+        $('#collapseExample-1').addClass('show');
+        $('#collapseExample-1').removeClass('product-collapse');
+        $('#product-collapse-1').addClass('hidden-xl-down');
     }
 });
 
@@ -171,14 +174,29 @@ $(window).on('resize', function() {
             $('#collapseExample-smart').addClass('show');
             $('#collapseExample-smart').removeClass('product-collapse');
             $('#product-collapse-plate').addClass('hidden-xl-down');
+
+            $('#collapseExample-1').addClass('show');
+            $('#collapseExample-1').removeClass('product-collapse');
+            $('#product-collapse-1').addClass('hidden-xl-down');
         } else {
             $('#collapseExample-smart').removeClass('show');
             $('#collapseExample-smart').addClass('product-collapse');
             $('#product-collapse-plate').removeClass('hidden-xl-down');
+
+            $('#collapseExample-1').removeClass('show');
+            $('#collapseExample-1').addClass('product-collapse');
+            $('#product-collapse-1').removeClass('hidden-xl-down');
+
         }
 
     }
 });
+
+
+
+
+
+
 
 var kolich = new Vue({
     el: '#count',
