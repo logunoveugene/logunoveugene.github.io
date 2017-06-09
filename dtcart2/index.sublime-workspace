@@ -171,23 +171,15 @@
 			"file": "/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/Readme.md",
 			"settings":
 			{
-				"buffer_size": 1515,
+				"buffer_size": 1272,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/payment/Readme.md",
+			"file": "/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/Readme.md",
 			"settings":
 			{
-				"buffer_size": 362,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/final/Readme.md",
-			"settings":
-			{
-				"buffer_size": 604,
+				"buffer_size": 1159,
 				"line_ending": "Windows"
 			}
 		}
@@ -263,18 +255,20 @@
 	},
 	"expanded_folders":
 	[
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/js",
 		"/C/Users/logunov_ey/Documents/GitHub/design-system",
 		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages",
 		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart",
-		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/__source",
-		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps",
-		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/order-list",
-		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/payment"
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps"
 	],
 	"file_history":
 	[
-		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/payment/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/done.html",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/js/custom.js",
+		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/c-style.css",
 		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/final/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/payment/Readme.md",
+		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/Readme.md",
 		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/index.html",
 		"/D/YandexDisk/1/main.js",
 		"/D/YandexDisk/1/components/hello.vue",
@@ -284,14 +278,10 @@
 		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/user-info/Readme.md",
 		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/Readme.md",
 		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/order-list/Readme.md",
-		"/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/Readme.md",
 		"/C/Users/logunov_ey/Documents/GitHub/design-system/Readme.md",
-		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/c-style.css",
-		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/done.html",
 		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/main.js",
 		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/index.html",
 		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/package.json",
-		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/dtcart2/js/custom.js",
 		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/build.js",
 		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/README.md",
 		"/C/Users/logunov_ey/Documents/GitHub/logunoveugene.github.io/1/components/Hello.vue",
@@ -404,7 +394,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -542,7 +532,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -551,15 +541,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1515,
+						"buffer_size": 1272,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1048,
-								1048
+								658,
+								658
 							]
 						],
 						"settings":
@@ -571,70 +561,36 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/payment/Readme.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 362,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								362,
-								362
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/final/Readme.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 604,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								41,
-								41
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"file": "/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/__source/cart___success_step.png",
-					"semi_transient": true,
+					"buffer": 1,
+					"file": "/C/Users/logunov_ey/Documents/GitHub/design-system/pages/cart/steps/Readme.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1159,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1003,
+								1003
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 0,
-					"type": "image"
+					"type": "text"
 				}
 			]
 		}
@@ -720,7 +676,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 680.0,
+	"side_bar_width": 236.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
