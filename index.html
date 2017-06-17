@@ -1,570 +1,78 @@
-<!doctype html>
-<html class="no-js" lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Домотехника сервис</title>
-    <link rel="stylesheet" href="css/foundation.css">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/tabs.css">
+    <title>VueFire Todo App Demo</title>
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="vuefire.js"></script>
   </head>
   <body>
-    <div class="header-desktop">
-    <div class="greybg">
-      <div class="row align-middle first-line main-layout">
-        <div class="small-5 columns">
-          <div>
-            <a class="fz-13" href="">Интернет-магазин <img src="img/arrow-down.svg" alt=""></a>
-          </div>
-        </div>
-        <div class="small-2 ">
-          <a class="fz-13 mr-30" href="">Владивосток</a>
-        </div>
-        <div class="columns ml-30 ">
-          <div class="row align-middle">
-            <div class="shrink mr-15 clr-dark-grey"><b>8-800-333-33-66</b></div>
-            <div class="shrink mr-15 fz-12 clr-grey warp-flex"><img class="mr-5" src="img/time-h.svg" alt="">с 9:00 до 20:00</div>
-            <div class="fz-12 columns clr-grey mr-30 warp-flex "><img class="mr-5" src="img/chat.svg" alt="">Обратная связь</div>
-          </div> 
-        </div>
-        <div class="columns shrink ">
-          <ul class="menu fz-12 show-for-large information-menu">
-            <li><a class="clr-grey" href="">Доставка</a></li>
-            <li><a class="clr-grey" href="">Гарантинйный ремонт</a></li>
-            <li><a class="clr-grey" href="">Сервисные центры</a></li>
-          </ul>
-          <a class="information-link fz-12 clr-grey" href="">Информация <img src="img/arrow-down.svg" alt=""></a></a>
-        </div>
-      </div>  
+
+    <!--
+    Before running this example, make sure to:
+
+    1. cd path/to/vuefire
+    2. npm install
+    3. npm run build
+
+    Then you can open this file in your browser.
+    If you just prefer to see this example with
+    the latest published version of VueFire, you
+    play with the code in this fiddle:
+
+    https://jsfiddle.net/posva/wtyop5jy/
+    -->
+
+    <div id="app">
+      <input
+        v-model.trim="newTodoText"
+        @keyup.enter="addTodo"
+        placeholder="Add new todo"
+      >
+      <ul>
+        <li v-for="todo in todos">
+          <input
+            :value="todo.text"
+            @input="updateTodoText(todo, $event.target.value)"
+          >
+          <button @click="removeTodo(todo)">X</button>
+        </li>
+      </ul>
     </div>
-    <div class="header-bottom">
-      <div class="row first-floor main-layout">
-        <div class="shrink columns pr-20 warp-flex">
-          <div class="align-self-middle">
-            <img src="https://i.snag.gy/trlpI1.jpg" alt="" />
-          </div>
-        </div>
-        <div class="pr-20 pl-20 shrink warp-flex b-l columns">
-          <div class="align-self-middle pt-5">
-           <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 24 24" style="width:15px; height:12px;">
-            <g>
-             <path d="M24,3c0-0.6-0.4-1-1-1H1C0.4,2,0,2.4,0,3v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V3z" style="fill: rgb(119, 119, 119);"/>
-             <path d="M24,11c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V11z" style="fill: rgb(119, 119, 119);"/>
-             <path d="M24,19c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V19z" style="fill: rgb(119, 119, 119);"/>
-           </g>
-         </svg>
-         <span class="fz-18 clr-grey">Каталог</span>
-       </div>
-     </div>
-     <div class="warp-flex b-l columns pr-20 pl-20">
-      <div class="align-self-middle small-24 ">
-       <input class="hsearch no-margin" type="text" placeholder="Поиск по каталогу"/>
-     </div>
-   </div>
-   <div class="shrink b-l b-r warp-flex ">
-    <button class="cabinet pr-20 pl-20 float-right" data-toggle="example-dropdown">
-      <div class="align-self-middle ">
-        <div class="float-left pt-5">
-          <span class="float-left">
-            <img class="hidden-sm " src="https://i.snag.gy/DYJ2BI.jpg" alt=""/>
-          </span>
-          <div class="lh-16 float-left pl-15 hide-for-medium-only hide-for-small-only">
-            <a class="cabinet-link float-left" href="">Моя Домотехника </a>
-          </br>
-          <a class="fz-12 clr-grey mr-15 float-left" href="">Вход </a>
-          <a class="fz-12 clr-grey float-left" href="">Регистрация</a>
-        </div>
-      </div>
-    </div>
-  </button>
-  <div class="dropdown-pane profile-drop large" id="example-dropdown" data-dropdown>
-    <div class="row pa-25 b-b">
-      <div class="shrink mr-15 columns align-self-middle">
-        <button class="button hollow  small no-margin">Войти</button> 
-      </div>       
-      <div class="columns align-self-middle">    
-        <img src="https://i.snag.gy/R6OsEU.jpg" alt="">
-      </div>
-      <div class="small-24 columns mt-10">
-        Впервые на сайте? <a href="">Зарегистрироваться</a>
-      </div> 
-    </div>
-    
-  </div>
-</div>
-</div>
 
-</div>
-</div>
-</div> 
-<div class="header-mobile">
-  <div class="row b-b expanded align-right first-floor-mob main-layout">
-    <div class=" columns pr-20 warp-flex">
-      <div class="align-self-middle">
-        <img src="https://i.snag.gy/b6qagX.jpg" alt="" />
-      </div>
-    </div> 
-    
-    <div class="shrink warp-flex">
-      <button class="cabinet pr-20 pl-20 float-right" data-toggle="example-dropdown2">
-        <div class="align-self-middle ">
-          <div class="float-left">
-            <span class="float-left">
-              <img class="hidden-sm " src="https://i.snag.gy/p0uaKG.jpg" alt=""/>
-            </span>
-          </div>
-        </div>
-      </button>
-      
-    </div>
-  </div>
+    <script>
+      /* global Vue, firebase */
+      var db = firebase.initializeApp({
+        databaseURL: 'https://vuetemp-14a6a.firebaseio.com/'
+      }).database()
+      var todosRef = db.ref('todos')
 
-
-  <div class="row b-b expanded greybg first-floor-mob main-layout">
-    <div class=" shrink b-r warp-flex">
-      <button class="cabinet pr-20 pl-20 float-right" data-toggle="example-dropdown3">
-        <div class="align-self-middle ">
-          <div class="float-left">
-            <span class="float-left">
-             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 24 24" style="width:15px; height:12px;">
-               <g>
-                <path d="M24,3c0-0.6-0.4-1-1-1H1C0.4,2,0,2.4,0,3v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V3z" style="fill: rgb(119, 119, 119);"/>
-                <path d="M24,11c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V11z" style="fill: rgb(119, 119, 119);"/>
-                <path d="M24,19c0-0.6-0.4-1-1-1H1c-0.6,0-1,0.4-1,1v2c0,0.6,0.4,1,1,1h22c0.6,0,1-0.4,1-1V19z" style="fill: rgb(119, 119, 119);"/>
-              </g>
-            </svg>
-            <span class="fz-17 clr-grey">Каталог</span>
-            </span>
-          </div>
-        </div>
-      </button>
-    </div>
-    <div class="warp-flex columns pr-20 pl-10">
-      <div class="align-self-middle small-24 ">
-       <input class="hsearch no-margin" type="text" placeholder="Поиск по каталогу"/>
-     </div>
-   </div>
-  </div>
-  
-</div>
-    
-    <div class="bluebg"> 
-      <div class="row uncollapse align-top main-layout" data-tabs id="example-tabs">
-        <div class="columns small-6">
-          <div class="tabs-title warp-flex is-active">
-            <img class="hide-for-medium-only m-auto" src="img/service.svg" alt=""><a href="#panel1" class="ml-20 align-self-middle show-for-medium" aria-selected="true">Настройка и установка техники</a>
-          </div>
-        </div>
-        <div class="columns small-6">
-          <div class="tabs-title warp-flex ">
-            <img class="hide-for-medium-only m-auto" src="img/support.svg" alt=""><a  class="ml-20 align-self-middle show-for-medium" href="#panel2">Гарантийный ремонт техники</a>
-          </div>
-        </div>
-        <div class="columns small-6">
-          <div class="tabs-title warp-flex ">
-            <img class="hide-for-medium-only m-auto"  src="img/pin.svg" alt=""><a  class="ml-20 align-self-middle show-for-medium" href="#panel3">Найти гарантийный центр</a>
-          </div>
-        </div>
-        <div class="columns small-6">
-          <div class="tabs-title warp-flex">
-            <img class="hide-for-medium-only m-auto" src="img/truck.svg" alt=""><a  class="ml-20 align-self-middle show-for-medium" href="#panel4">Служба курьерской доставки</a>
-          </div>
-        </div>
-      </div>
-    </div>
-        <div class="tabs-content" data-tabs-content="example-tabs">
-          <div class="tabs-panel pt-30 is-active" id="panel1">
-            <div class="row main-layout mb-30">
-              <div class="small-24 columns">
-                <h1>Каталог услуг</h1>
-                <h5 class="mb-20">Оказываем услуги как часным лицам, так и организациям</h5>
-              </div>    
-              <div class="large-8 medium-12 small-24 columns">
-                <img class="float-left mr-15" src="img/washing-mashine.svg" alt="">
-                <div class="warp ml-50">
-                  <h4><a class="clr-bl" href="#">Бытовая техника</a></h4>
-                  <ul class="no-bullet fz-13">
-                    <li><a href="">Установка холодильника </a></li>
-                    <li><a href="">Установка стиральной машины</a></li>
-                    <li><a href="">Установка электрической плиты </a></li>
-                    <li><a href="">Все услуги</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="large-8 medium-12 small-24 columns">
-                <img class="float-left mr-15" src="img/air-condition.svg" alt="">
-                <div class="warp ml-50">
-                  <h4><a class="clr-bl" href="#">Климат и водоснабжение</a></h4>
-                  <ul class="no-bullet fz-13">
-                    <li><a href="">Установка водонагревателей</a></li>
-                    <li><a href="">Установка кондиционера</a></li>
-                    <li><a href="">Все услуги</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="large-8 medium-12 small-24 columns">
-               <img class="float-left mr-15" src="img/tv.svg" alt="">
-               <div class="warp ml-50">
-                 <h4><a class="clr-bl" href="#">Аудио и видео</a></h4>
-                 <ul class="no-bullet fz-13">
-                   <li><a href="">Подвес и настройка ТВ </a></li>
-                   <li><a href="">Установка домашнего кинотеатра </a></li>
-                   <li><a href="">Все услуги</a></li>
-                 </ul>
-               </div>
-              </div>
-              <div class="large-8 medium-12 small-24 columns">
-                <img class="float-left mr-15" src="img/phone.svg" alt="">
-                <div class="warp ml-50">
-                  <h4><a class="clr-bl" href="#">Цифровая электроника</a></h4>
-                  <ul class="no-bullet fz-13">
-                    <li><a href="">Настройка ПК или ноутбука</a></li>
-                    <li><a href="">Настройка Смартфона/Планшета</a></li>
-                    <li><a href="">Все услуги</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="large-8 medium-12 small-24 columns">
-               <img class="float-left mr-15" src="img/oven.svg" alt="">
-               <div class="warp ml-50">
-                 <h4><a class="clr-bl" href="#">Встраиваемая техника</a></h4>
-                 <ul class="no-bullet fz-13">
-                   <li><a href="">Установка встраиваемого холодильника</a></li>
-                   <li><a href="">Установка встраиваемой стиральной машины</a></li>
-                   <li><a href="">Установка встраиваемой посудомоечной машины</a></li>
-                   <li><a href="">Все услуги</a></li>
-                 </ul>
-                 
-               </div>
-              </div>
-              <div class="large-8 medium-12 small-24 columns">
-               <img class="float-left mr-15" src="img/key.svg" alt="">
-               <div class="warp ml-50">
-                 <h4><a class="clr-bl" href="#">Демонтаж техники</a></h4>
-                 <ul class="no-bullet fz-13">
-                   <li><a href="">Установка холодильника </a></li>
-                   <li><a href="">Установка стиральной машины</a></li>
-                   <li><a href="">Установка электрической плиты </a></li>
-                   <li><a href="">Все услуги</a></li>
-                 </ul>
-               </div>
-              </div>                   
-            </div>
-            <div class="greybg mb-20">
-                <div class="pt-30">
-                  <div class="row main-layout">
-                    <div class="large-15 columns">
-                      <div class="row align-middle"> 
-                        <div class="small-24 columns">
-                          <h3 class="mb-20">Как заказать услугу настройки или установку техники?</h3>
-                        </div>
-                        <div class="large-5 small-10 columns align-self-top">
-                          <div class="circle-80 whitebg align-center">
-                            <img class="align-middle text-center" src="img/cursor-pointer.svg" alt="">
-                          </div>
-                          <br>
-                          <p class="fz-13 lh-16"><a href="">Выберите услугу</a> с помошью поиска или каталога</p>
-                        </div>
-                        <div class="large-1 small-2 columns">
-                          <img class="align-self-middle align-middle" src="img/arrow-right-orange.svg" alt="">
-                        </div>
-                        <div class="large-5 small-10 columns align-self-top">
-                          <div class="circle-80 whitebg align-center">
-                            <img class="align-middle text-center" src="img/list.svg" alt="">
-                          </div>
-                          <br>
-                          <p class="fz-13 lh-16">Заполните форму и разместите заявку</p>
-                        </div>
-                        <div class="large-1 small-2 columns">
-                          <img class="align-self-middle align-middle" src="img/arrow-right-orange.svg" alt="">
-                        </div>
-                        <div class="large-5 small-10 columns align-self-top">
-                          <div class="circle-80 whitebg align-center">
-                            <img class="align-middle text-center" src="img/list.svg" alt="">
-                          </div>
-                          <br>
-                          <p class="fz-13 lh-16">Подпишите договор и произведите оплату</p>
-                        </div>
-                        <div class="large-1 small-2  columns">
-                          <img class="align-self-middle align-middle" src="img/arrow-right-orange.svg" alt="">
-                        </div>
-                        <div class="large-5 small-12 columns align-self-top">
-                          <div class="circle-80 whitebg align-center">
-                            <img class="align-middle text-center" src="img/handwithkey.svg" alt="">
-                          </div>
-                          <br>
-                          <p class="fz-13 lh-16">Получите качественный сервис</p>
-                        </div>
-                      </div> 
-                    </div>  
-                    <div class="large-9 columns align-self-bottom show-for-large">
-                      <img src="img/girl.png" alt="">
-                    </div>
-                  </div>
-                </div>
-            </div>
-          </div>
-          <div class="tabs-panel pt-30" id="panel2">
-            <div class="row mb-20">
-              <div class="small-24 columns">
-                <h1>Обращение в гарантийный центр</h1>
-                <h5 class="mb-20">В случае поломки Вы вправе обратиться в один из гарантийных центров</h5>
-              </div> 
-            </div>
-            <div class="row mb-30">
-              <div class="large-20 small-24 columns mb-20 warp-flex">
-                <div class="circle-30 align-center">
-                  <div class="align-self-middle">1</div>
-                </div>
-                <h5 class="ml-20 align-self-middle">Подготовьте документы для обращения в гарантийный центр. Вам потребуется гарантийный талон, кассовый чек, а также документ удостоверяющий личность.</h5>
-              </div>
-              <div class="large-20 small-24 columns mb-20 warp-flex">
-                <div class="circle-30 align-center">
-                  <div class="align-self-middle">2</div>
-                </div>
-                <h5 class="ml-20 align-self-middle">Передайте поломавшуюся технику в один из гарантийных центров. <a href="#panel3">Список гарантийных центров во Владивостоке.</a></h5>
-              </div>
-              <div class="large-20 small-24 columns mb-20 warp-flex">
-                <div class="circle-30 align-center">
-                  <div class="align-self-middle">3</div>
-                </div>
-                <h5 class="ml-20 align-self-middle">Заполните анкету. <a href="">Скачать бланк.</a></h5>
-              </div>
-              <div class="large-20 small-24 columns mb-20 warp-flex">
-                <div class="circle-30 align-center float-left">
-                  <div class="align-self-middle">4</div>
-                </div>
-                <h5 class="ml-20 align-self-middle">Получите акт приема техники.</h5>
-              </div>
-              <div class="large-20 small-24 columns mb-20 warp-flex">
-                <div class="circle-30 align-center ">
-                  <div class="align-self-middle">5</div>
-                </div>
-                <h5 class="ml-20 align-self-middle ">Дождитесь результатов проведения экспертизы. О результатах вам сообщат в течение 10 дней.</h5>
-              </div>
-              <div class="large-20 small-24 columns mb-20 warp-flex">
-                <div class="circle-30 align-center">
-                  <div class="align-self-middle">6</div>
-                </div>
-                <h5 class="ml-20 align-self-middle">Получите отремонтированную технику, подпишите акт проведения работ.</h5>
-              </div>
-            </div>
-          </div>
-          <div class="tabs-panel pt-30" id="panel3">
-            <div class="row mb-20">
-              <div class="shrink columns">
-                <h1>Поиск гарантийного центра во</h1>
-              </div>
-              <div class="shrink columns">
-                <h1><a class="dashed" href="">Владивостоке</a></h1>
-              </div>
-              <div class="small-24 columns">     
-                <h5>В случае поломки Вы вправе обратиться в один из гарантийных центров</h5>
-              </div>  
-            </div> 
-            <div class="row">
-              <div id="brand-sort">
-                <div class="small-20 columns">
-                  <label>Бренд
-                    <input type="text" class="search" placeholder="Большинство гарантийных центров обслуживает ограниченное число брендов">
-                  </label>
-                </div>
-                <div class="small-24 columns">
-                  <table>
-                    <thead>
-                      <tr>
-                        <th width="50%">Бренд</th>
-                        <th width="25%">Телефон сервиса</th>
-                        <th width="25%">Название и адррес</th>
-                      </tr>
-                    </thead>
-                    <tbody class="list">
-                      <tr>
-                        <td class="brand">Bosh, Siemens, Pantech, Nokia, LG, Motorola</td>
-                        <td>+7 (423) 220-66-00, +7 (423) 220-77-00</td>
-                        <td>«Сервисный центр Bosch-Siemens» Народный пр-т, 11</td>
-                       </tr>
-                      <tr>
-                        <td class="brand">LG, Samsung, ЕВГО</td>
-                        <td>+7 (423) 226-80-25, +7 (423) 226-51-48</td>
-                        <td>«Гранд Прим Сервис» Пушкинская, 48</td>
-                      </tr>
-                      <tr>
-                        <td class="brand">Sony, Philips, Tefal, Rowenta, Moulinex, Braun, Samsung, Thomas, Remington, Olympus</td>
-                        <td>+7 (423) 220-77-00</td>
-                        <td>«Владинтерсервис» Океанский проспект, 87</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>  
-            </div>
-          </div>
-          <div class="tabs-panel pt-30" id="panel4">
-            <div class="row mb-20">
-              <div class="shrink columns">
-                <h1>Тарифы на доставку во</h1>
-              </div>
-              <div class="shrink columns">
-                <h1><a class="dashed" href="">Владивостоке</a></h1>
-              </div>
-            </div>
-            <div class="row mb-20">
-              <div class="large-8 small-24 columns">
-                <h5>Малогабаритный товар (до 30 кг)</h5>
-                <h1>320 рублей</h1>
-              </div>
-              <div class="large-8 small-24 columns">
-                <h5>Крупногабаритный товар (свыше 30 кг)</h5>
-                <h1>500 рублей</h1>
-              </div>
-            </div>
-            <div class="row">
-              <div class="large-20 small-24 columns mb-10">
-                <p>При доставке в пригород уточните тариф у менеджера интернет-магазина по телефону 8-800-333-33-66, звонок бесплатный по всей России.Отсутствуют дополнительные платежи за подъем на этаж.</p>
-              </div>
-              <div class="large-20 small-24 columns">
-                <h4 class="mb-10">Оформление доставки</h4>
-              </div>
-              <div class="large-20 small-24 columns">
-                <p>Для оформления доставки в интернет-магазине на странице «Оформление заказа» необходимо выбрать опцию «Доставка», указать адрес доставки, включая улицу, номер дома, номер квартиры или офиса. В поле «Комментарий» укажите дополнительные сведения, например, номер подъезда. Обратите внимание, товар из категории «Уцененный товар», а также подарочные карты можно приобрести только методом «Самовывоз».</p>
-              </div>
-              <div class="large-20 small-24 columns">
-                <h4 class="mb-10">Условия доставки</h4>
-              </div>
-              <div class="large-18 small-24 columns mb-20">
-                <div class="align-center float-left">
-                  <div class="align-self-middle"><img src="img/time.svg" alt=""></div>
-                </div>
-                <p class="ml-70 align-self-middle">Доставка осуществляется в один из двух временных периодов по договоренности с клиентом ежедневно с 10 до 20 часов на следующий день или позже после оформления заказа.</p>
-              </div>
-              <div class="large-18 small-24 columns mb-20">
-                <div class="align-center float-left">
-                  <div class="align-self-middle"><img src="img/note.svg" alt=""></div>
-                </div>
-                <p class="ml-70 align-self-middle">Доставка осуществляется за порог помещения покупателя и включает в себя подъем на этаж (обязательное условие проем должен позволять заносить технику в упаковке, иначе товар передается клиенту перед входом в помещение).</p>
-              </div>
-              <div class="large-18 small-24 columns mb-20">
-                <div class="align-center float-left">
-                  <div class="align-self-middle"><img src="img/box.svg" alt=""></div>
-                </div>
-                <p class="ml-70 align-self-middle">Передача заказа покупателю осуществляется только после расчета по заказу в полном объеме непосредственно с курьером. Курьер передает покупателю оформленные документы продажи.</p>
-              </div>
-            </div>  
-            </div> 
-          </div>
-        </div>
-          </div> 
-        </div>
-        <div class="reviews-promo">
-          <div class="row main-layout align-middle pt-30">
-            <div class="shrink columns">
-              <h3>Мы оказали </h3>  
-            </div>
-            <div class="shrink columns">
-              <span>
-                <div id="watch">
-                  <ol id="dial5">
-                    <li>5</li>
-                    <li>6</li>
-                    <li>7</li>
-                    <li>8</li>
-                    <li>9</li>
-                    <li>0</li>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                  </ol>
-                  <ol id="dial3">
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                    <li>6</li>
-                    <li>7</li>
-                    <li>8</li>
-                    <li>9</li>
-                    <li>0</li>
-                    <li>1</li>
-                    <li>3</li>
-                  </ol>
-                  <ol id="dial2">
-                    <li>7</li>
-                    <li>8</li>
-                    <li>9</li>
-                    <li>0</li>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                    <li>6</li>
-                  </ol>
-                  <ol id="dial1">
-                    <li>6</li>
-                    <li>7</li>
-                    <li>8</li>
-                    <li>9</li>
-                    <li>0</li>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                  </ol>
-                  <div style="clear:both;"></div>
-                </div>
-              </span>
-            </div> 
-            <div class="shrink columns">     
-                <h3>услуги высочайшего качества!</h3>  
-            </div>
-            <div class="shrink small-24 columns"> 
-              <a href="">Добавить отзыв</a> 
-            </div> 
-          </div>
-          <div class="row main-layout pt-30">
-            <div class="large-8 medium-12 small-24 columns mb-20">
-              <img class="float-left mr-15" src="img/avatar-1.png" alt="">
-                  <div class="ml-70">
-                    <span><a class="clr-bl" href="#">Настройка смартфона</a></span>
-                    <h4 class="mb-20">Кожевникова Анастасия</h4>
-                    <p class="fz-13 lh-16 greybg pa-15 warp"><span class="triangle greybg"></span>Ремонтом довольна, мастер внимательный, всё объяснил,что и как надо делать, чтобы поддержать качество работы кондиционера.</p>
-                    <a href="">Читать полностью</a>
-                  </div>
-            </div>
-            <div class="large-8 medium-12 small-24 columns mb-20">
-              <img class="float-left mr-15" src="img/avatar-2.png" alt="">
-                  <div class="ml-70">
-                    <span><a class="clr-bl" href="#">Установка кондиционеров</a></span>
-                    <h4 class="mb-20">Ясаков Михаил</h4>
-                    <p class="fz-13 lh-16 greybg pa-15 warp"><span class="triangle greybg"></span>Выполняли монтаж системы кондиционирования в квартире с панорамным остеклением.</p>
-                    <a href="">Читать полностью</a>
-                  </div>
-            </div>
-            <div class="large-8 medium-12 show-for-large columns mb-20">
-              <img class="float-left mr-15" src="img/avatar-3.png" alt="">
-                  <div class="ml-70">
-                    <span><a class="clr-bl" href="#">Настройка смартфона</a></span>
-                    <h4 class="mb-20">Кожевникова Анастасия</h4>
-                    <p class="fz-13 lh-16 greybg pa-15 warp"><span class="triangle greybg"></span>Ремонтом довольна, мастер внимательный, всё объяснил,что и как надо делать, чтобы поддержать качество работы кондиционера.</p>
-                    <a href="">Читать полностью</a>
-                  </div>
-            </div>
-          </div>
-        </div>
-        
-      </div>
-
-
-
-    
-  <script src="js/vendor/jquery.js"></script>
-  <script src="js/vendor/what-input.js"></script>
-  <script src="js/vendor/foundation.js"></script>
-  <script src="http://listjs.com/assets/javascripts/list.min.js"></script>
-  <script src="js/app.js"></script>
-
+      new Vue({
+        el: '#app',
+        data: {
+          newTodoText: ''
+        },
+        firebase: {
+          todos: todosRef.limitToLast(25)
+        },
+        methods: {
+          addTodo: function () {
+            if (this.newTodoText) {
+              todosRef.push({
+                text: this.newTodoText
+              })
+              this.newTodoText = ''
+            }
+          },
+          updateTodoText: function (todo, newText) {
+            todosRef.child(todo['.key']).child('text').set(newText)
+          },
+          removeTodo: function (todo) {
+            todosRef.child(todo['.key']).remove()
+          }
+        }
+      })
+    </script>
   </body>
 </html>
