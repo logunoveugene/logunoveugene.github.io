@@ -71,7 +71,7 @@
         <rec>345,678</rec>
       </offer>
 
-           <offer id="9012" type="vendor.model" available="true" bid="80" cbid="90" fee="325">
+           <offer id="9013" type="vendor.model" available="true" bid="80" cbid="90" fee="325">
         <url>http://best.seller.ru/product_page.asp?pid=12345</url>
         <price>8990</price>
         <oldprice>9900</oldprice>
