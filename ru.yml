@@ -11,6 +11,7 @@
 <categories>
 <category id="1">Бытовая техника</category>
 <category id="2">Смартфоны</category>
+<category id="3">Чехлы</category>
 <category id="10" parentId="1">Мелкая техника для кухни</category>
 <category id="101" parentId="10">Сэндвичницы и приборы для выпечки</category>
 <category id="102" parentId="10">Мороженицы</category>
@@ -108,7 +109,7 @@
         <price>8990</price>
         <oldprice>9900</oldprice>
         <currencyId>RUR</currencyId>
-        <categoryId>2</categoryId>
+        <categoryId>3</categoryId>
         <picture>http://best.seller.ru/img/model_12345.jpg</picture>
         <store>false</store>
         <pickup>false</pickup>
@@ -125,6 +126,7 @@
         <model>Кожаный чехол для iphone</model>
         <description>Кожаный чехол зеленого цвета</description>
         <param name="Размер">L</param>
+        <param name="цвет">Зеленый</param>
         <sales_notes>Необходима предоплата.</sales_notes>
         <manufacturer_warranty>true</manufacturer_warranty>
         <country_of_origin>Китай</country_of_origin>
