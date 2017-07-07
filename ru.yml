@@ -123,7 +123,7 @@
         </outlets>
         <typePrefix>Чехол</typePrefix>
         <vendor>EF-3</vendor>
-        <model>Кожаный чехол для iphone</model>
+        <model>Case for для iphone</model>
         <description>Кожаный чехол зеленого цвета</description>
         <param name="Размер">L</param>
         <param name="цвет">Зеленый</param>
@@ -154,7 +154,7 @@
         </outlets>
         <typePrefix>Чехол</typePrefix>
         <vendor>EF-8</vendor>
-        <model>Кожаный чехол для Samsung</model>
+        <model> Samsung</model>
         <description>Кожаный чехол</description>
         <param name="Размер">L</param>
         <param name="цвет">синий</param>
