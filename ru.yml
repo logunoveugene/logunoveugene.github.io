@@ -104,6 +104,7 @@
         <cpa>1</cpa>
         <rec>345,678</rec>
         </offer>
+        
         <offer id="9015" type="vendor.model" available="true" bid="80" cbid="90" fee="325">
         <url>http://best.seller.ru/product_page.asp?pid=125345</url>
         <price>8990</price>
