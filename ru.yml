@@ -110,7 +110,7 @@
         <oldprice>9900</oldprice>
         <currencyId>RUR</currencyId>
         <categoryId>3</categoryId>
-        <picture>http://best.seller.ru/img/model_12345.jpg</picture>
+        <picture>http://best.seller.ru/img/model_12234345.jpg</picture>
         <store>false</store>
         <pickup>false</pickup>
         <delivery>true</delivery>
@@ -134,6 +134,38 @@
         <cpa>1</cpa>
         <rec>345,678</rec>
         </offer>
+
+     <offer id="902315" type="vendor.model" available="true" bid="80" cbid="90" fee="325">
+        <url>http://best.seller.ru/product_page.asp?pid=13325345</url>
+        <price>8990</price>
+        <oldprice>9900</oldprice>
+        <currencyId>RUR</currencyId>
+        <categoryId>3</categoryId>
+        <picture>http://best.seller.ru/img/model_122342345.jpg</picture>
+        <store>false</store>
+        <pickup>false</pickup>
+        <delivery>true</delivery>
+        <delivery-options>
+        <option cost="300" days="1" order-before="18"/>
+        </delivery-options>
+        <outlets> 
+        <outlet id="1" instock="50"/>
+        <outlet id="2" instock="20"/>
+        </outlets>
+        <typePrefix>Чехол</typePrefix>
+        <vendor>EF-8</vendor>
+        <model>Кожаный чехол для Samsung</model>
+        <description>Кожаный чехол</description>
+        <param name="Размер">L</param>
+        <param name="цвет">синий</param>
+        <sales_notes>Необходима предоплата.</sales_notes>
+        <manufacturer_warranty>true</manufacturer_warranty>
+        <country_of_origin>Китай</country_of_origin>
+        <barcode>0123456789379</barcode>
+        <cpa>1</cpa>
+        <rec>345,678</rec>
+        </offer>
+
         </offers>
         </shop>
         </yml_catalog>
