@@ -19,8 +19,7 @@ Vue.use(VueTabs);
           <img :src="slide" >
          </div>
         </swiper-slide>
-                <div class="swiper-button-prev" slot="button-prev"></div>
-        <div class="swiper-button-next" slot="button-next"></div>
+
         </swiper>  
 </div>
 
