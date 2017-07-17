@@ -19,6 +19,8 @@ Vue.use(VueTabs);
           <img :src="slide" >
          </div>
         </swiper-slide>
+                <div class="swiper-button-prev" slot="button-prev"></div>
+        <div class="swiper-button-next" slot="button-next"></div>
         </swiper>  
 </div>
 
@@ -48,6 +50,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
         swiperOptionThumbs: {
           notNextTick: true,
           spaceBetween: 10,
+          centeredSlides: true,
           slidesPerView: 'auto',
           touchRatio: 0.2,
           slideToClickedSlide: true
@@ -83,10 +86,10 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
   }
 </script>
 
-<style scoped>
-  .swiper-container {
-
-  }
+<style >
+.gallery-thumbs .swiper-wrapper{
+    margin-left:calc(-40% - 5px);
+}
   .swiper-slide {
     background-size: cover;
     background-position: center;
@@ -105,6 +108,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
   height: 50px;
     opacity: 0.4;
     padding:.5rem;
+
   }
   .gallery-thumbs .swiper-slide-active {
     opacity: 1;
