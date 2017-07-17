@@ -48,7 +48,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
           zoom: true,
           pagination: '.swiper-pagination',
           breakpoints: {
-    // when window width is <= 320px
+
               768: {
                 slidesPerView: 1,
                 spaceBetween: 10
