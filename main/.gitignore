@@ -1,11 +1,1 @@
-.DS_Store
-node_modules/
-dist/
-npm-debug.log
-yarn-error.log
-
-
-# Node Files #
 /node_modules
-/bower_components
-npm-debug.log
