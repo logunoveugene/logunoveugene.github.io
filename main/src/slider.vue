@@ -6,7 +6,7 @@ Vue.use(VueTabs);
   <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop">
     <!-- slides -->
         <swiper-slide v-for="slide in swiperSlides" class="swiper-zoom-container">
-          <div class="image-warp d-flex align-items-center justify-content-center">
+          <div class="image-warp d-flex align-items-center justify-content-center swiper-zoom-container">
             <img :data-src="slide" class="swiper-lazy large-image">
             <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
           </div>
