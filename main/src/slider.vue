@@ -11,9 +11,10 @@ Vue.use(VueTabs);
             <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
           </div>
         </swiper-slide>
+        <div class="swiper-pagination hidden-md-up" slot="pagination"></div>
   </swiper>
 
-<swiper :options="swiperOptionThumbs" class="gallery-thumbs" ref="swiperThumbs">
+<swiper :options="swiperOptionThumbs" class="gallery-thumbs hidden-sm-down" ref="swiperThumbs">
         <swiper-slide v-for="slide in swiperSlidesThumbs" class="d-flex align-items-center justify-content-center">
         <div class="">
           <img :src="slide" >
@@ -44,7 +45,15 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
           // Enable lazy loading
           lazyLoading: true,
           notNextTick: true,
-          zoom: true
+          zoom: true,
+          pagination: '.swiper-pagination',
+          breakpoints: {
+    // when window width is <= 320px
+              768: {
+                slidesPerView: 1,
+                spaceBetween: 10
+              }
+            }
         },
         swiperOptionThumbs: {
           notNextTick: true,
