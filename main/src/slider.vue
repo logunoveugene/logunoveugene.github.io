@@ -87,9 +87,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 </script>
 
 <style >
-.gallery-thumbs .swiper-wrapper{
-    margin-left:calc(-40% - 5px);
-}
+
   .swiper-slide {
     background-size: cover;
     background-position: center;
