@@ -58,7 +58,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
         swiperOptionThumbs: {
           notNextTick: true,
           spaceBetween: 10,
-          centeredSlides: true,
+          centeredSlides: false,
           slidesPerView: 'auto',
           touchRatio: 0.2,
           slideToClickedSlide: true,
@@ -130,7 +130,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 }
    @media screen and (max-width: 425px) {
      .image-warp{
-     height: 320px;
+     height: 220px;
       } 
     }
 </style>
