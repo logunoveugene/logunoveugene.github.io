@@ -55,7 +55,7 @@ Vue.use(VueAwesomeSwiper);
             </div>
             <div class="col-md-6 col-12">
             <div class="d-flex flex-column">
-              <img src="https://i.snag.gy/8VrZxc.jpg" alt="">
+              <img src="https://i.snag.gy/8VrZxc.jpg" alt="" class="hidden-sm-down">
               <div class="card rounded-0 ">
                 <div class="card-block">
                    <div class="d-flex flex-column">
