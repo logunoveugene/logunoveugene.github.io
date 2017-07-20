@@ -1,8 +1,8 @@
 <!-- The ref attr used to find the swiper instance -->
-Vue.use(VueTabs);
+
 
 <template>
-<div>
+<div class="d-flex flex-column">
   <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop">
     <!-- slides -->
         <swiper-slide v-for="slide in swiperSlides" class="swiper-zoom-container">
@@ -11,9 +11,10 @@ Vue.use(VueTabs);
             <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
           </div>
         </swiper-slide>
+
         <div class="swiper-pagination hidden-md-up" slot="pagination"></div>
   </swiper>
-
+<span class="badge badge-default badge-pill ">Увеличить</span>
 <swiper :options="swiperOptionThumbs" class="gallery-thumbs hidden-sm-down" ref="swiperThumbs">
         <swiper-slide v-for="slide in swiperSlidesThumbs" class="d-flex align-items-center justify-content-center">
         <div class="">
@@ -27,7 +28,7 @@ Vue.use(VueTabs);
 </template>
 
 <script>
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import { swiper, swiperSlide } from 'vue-awesome-swiper';
 
 
   // swiper options example:

@@ -7,15 +7,15 @@ Vue.use(VueAwesomeSwiper);
 
 <div class="container ">
   <div class="row hidden-sm-down">
-    <div class="col-12 mt-4 mb-4">
-      <nav class=" small pt-3">
+    <div class="col-12 mt-3 mb-3">
+      <nav class=" small pt-2">
         <a class="breadcrumb-item" href="#">Главная</a>
         <a class="breadcrumb-item" href="#">Телевизоры и видеотехника</a>
         <a class="breadcrumb-item" href="#">Телевизоры </a>
       </nav>
     </div>
   </div>
-  <div class="row mb-4 hidden-sm-down">
+  <div class="row mb-2 hidden-sm-down">
     <div class="col shrink">
       <h1 class="h3 ">Телевизор SAMSUNG UE19H4000AK </h1>
     </div>
@@ -57,11 +57,7 @@ Vue.use(VueAwesomeSwiper);
                 <div class="text-muted mb-2">Отзывы покупателей</div>
                 <div class="d-flex flex-row">
                 <div class="mr-2 text-warning ">
-                  <i class="icon-star"></i>
-                  <i class="icon-star"></i>
-                  <i class="icon-star"></i>
-                  <i class="icon-star"></i>
-                  <i class="icon-star text-muted"></i>
+                  <rate :length="5" :value="2" :showcount="true"></rate>
                 </div>
                 <a href="" class="small">4,4 (17 отзывов)</a>
                   
@@ -124,7 +120,7 @@ Vue.use(VueAwesomeSwiper);
 
 
 import  slider from './slider.vue'
-import VueAwesomeSwiper from 'vue-awesome-swiper'
+import  rate from './rate.vue'
 
 
 
@@ -132,7 +128,7 @@ import VueAwesomeSwiper from 'vue-awesome-swiper'
 export default {
   name: 'app',
   components: {
-    slider, VueAwesomeSwiper
+    slider,rate
   }
 }
 </script>
