@@ -39,9 +39,9 @@ Vue.use(VueAwesomeSwiper);
           <div class="row">
             <div class="col-md-6 hidden-sm-down">
               <div class="d-flex flex-column">
-              <div class="mb-5">
-                <div class="text-muted mb-3">Основные характеристики</div>
-                <ul class="list-unstyled small main-props">
+              <div class="mb-4">
+                <div class="text-muted mb-2">Основные характеристики</div>
+                <ul class="list-unstyled small main-props mb-2">
                   <li>– Диагональ дисплея - 55 "  (139,7 см)</li>
                   <li>– Тип - QLED</li>
                   <li>– HD-формат - 4K (3840x2160 пикселей)</li>
@@ -50,7 +50,37 @@ Vue.use(VueAwesomeSwiper);
                   <li>– Вход HDMI x4, Интерфейс USB x3</li>
                   <li>– DVB-T, DVB-T2, DVB-C, DVB-S2</li>
                 </ul>
+                <a href="">Все характеристики</a>
                 </div>
+
+                <div class="mb-4">
+                <div class="text-muted mb-2">Отзывы покупателей</div>
+                <div class="d-flex flex-row">
+                <div class="mr-2 text-warning ">
+                  <i class="icon-star"></i>
+                  <i class="icon-star"></i>
+                  <i class="icon-star"></i>
+                  <i class="icon-star"></i>
+                  <i class="icon-star text-muted"></i>
+                </div>
+                <a href="" class="small">4,4 (17 отзывов)</a>
+                  
+                </div>
+                </div>
+
+      <!--           <div class="mb-3">
+                <div class="text-muted mb-2"><span class="mr-2">Права покупателей защищены</span><i class="icon-shield h5 pt-2"></i></div>
+                <ul class="list-unstyled small main-props">
+                  <li>– Гарантия от Samsung 1 год</li>
+                  <li>– Обязательная предпродажная проверка </li>
+                  <li>– 14 дней на возврат</li>
+                </ul>
+                </div> -->
+
+
+
+
+
               </div>
             </div>
             <div class="col-md-6 col-12">
@@ -64,7 +94,7 @@ Vue.use(VueAwesomeSwiper);
                      <div class="mb-2"><span class="badge badge-benefit">ЭКОНОМИЯ 4 610 р. (скидка 12%)</span></div>
                      <p class="text-danger small">До 1 746 р. бонусов</p>
                      <button type="button" class="btn btn-primary btn-lg mb-3">Добавить в корзину</button>
-                     <div class="d-flex flex-row justify-content-between">
+                     <div class=" justify-content-between">
                        <a href="#">Быстрый заказ</a>
                        <a href="#">Как купить в кредит?</a>
                   </div>
