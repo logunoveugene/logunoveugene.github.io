@@ -26,9 +26,9 @@ Vue.use(VueAwesomeSwiper);
   <div class="row">
     <div class="col-md-5 col-12">
 <div class="mb-3">  <slider></slider></div>
-<div class="row mb-4 hidden-md-up">
+<div class="row hidden-md-up">
     <div class="col shrink">
-      <h1 class="h5">Телевизор SAMSUNG UE19H4000AK </h1>
+      <h1 class="h5 mb-3">Телевизор SAMSUNG UE19H4000AK </h1>
     </div>
     <div class="col d-flex flex-row-reverse align-items-center align-self-end pr-0  pt-2 pb-2 hidden-sm-down">
       <div class="small text-muted">арт. 12004252</div>
