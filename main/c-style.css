@@ -62,3 +62,10 @@ a:hover {
 }
 
 
+
+.badge-benefit{
+    background-color: #ffe600;
+    color: #000;
+  text-transform: uppercase ;
+  border-radius: 0;
+}

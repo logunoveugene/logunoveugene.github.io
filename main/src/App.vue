@@ -28,12 +28,39 @@ Vue.use(VueAwesomeSwiper);
 <slider></slider>
 
     </div>
-    <div class="col-md-7">
-      <div class="row">
-        <div class="col-6">154</div>
-        <div class="col-6">599</div>
-      </div>
-    </div>
+    <div class="col-md-7 col-12">
+          <div class="row">
+            <div class="col-md-6">154</div>
+            <div class="col-md-6 col-12">
+            <div class="d-flex flex-column">
+              <img src="https://i.snag.gy/8VrZxc.jpg" alt="">
+              <div class="card rounded-0 ">
+                <div class="card-block">
+                   <div class="d-flex flex-column">
+                     <p class="text-muted mb-0"><del>174 600 p.</del></p>
+                     <div class="h4 mb-1">169 990 p.</div>
+                     <div class="mb-2"><span class="badge badge-benefit">ЭКОНОМИЯ 4 610 р. (скидка 12%)</span></div>
+                     <p class="text-danger small">До 1 746 р. бонусов</p>
+                     <button type="button" class="btn btn-primary btn-lg mb-3">Добавить в корзину</button>
+                     <div class="d-flex flex-row justify-content-between">
+                       <a href="#">Быстрый заказ</a>
+                       <a href="#">Как купить в кредит?</a>
+                  </div>
+                   </div>
+                </div>
+                <div class="card-block bg-faded">
+                  <div class="d-flex flex-column">
+                    <div class="text-success mb-2"><span class="mr-2">В наличии во Владивостоке </span><i class="icon-access small"></i></div>
+                    <div class="small mb-2"><a href="">Самовывоз в 6 магазинах</a> – бесплатно, сегодня </div>
+                    <div class="small">Доставка ‒  320 р, с 15 сентября</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+          
+        </div>
   </div>
 </div>
 
@@ -58,6 +85,13 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style >
 
+
+.badge-benefit{
+    background-color: #ffe600;
+    color: #000;
+  text-transform: uppercase ;
+  border-radius: 0;
+}
 </style>
