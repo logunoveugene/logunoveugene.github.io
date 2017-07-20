@@ -24,8 +24,8 @@ Vue.use(VueAwesomeSwiper);
     </div>
   </div>
   <div class="row">
-    <div class="col-md-5 col-12 mb-3">
-<slider></slider>
+    <div class="col-md-5 col-12">
+<div class="mb-3">  <slider></slider></div>
 <div class="row mb-4 hidden-md-up">
     <div class="col shrink">
       <h1 class="h5">Телевизор SAMSUNG UE19H4000AK </h1>
