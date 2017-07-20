@@ -58,7 +58,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
         swiperOptionThumbs: {
           notNextTick: true,
           spaceBetween: 10,
-          centeredSlides: true,
+          centeredSlides: false,
           slidesPerView: 'auto',
           touchRatio: 0.2,
           slideToClickedSlide: true
