@@ -62,3 +62,18 @@ a:hover {
 }
 
 
+
+.badge-benefit{
+    background-color: #ffe600;
+    color: #000;
+  text-transform: uppercase ;
+  border-radius: 0;
+}
+
+.main-props{
+    line-height: 1.75rem;
+}
+
+.active-star{
+  
+}
