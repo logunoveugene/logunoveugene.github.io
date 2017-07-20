@@ -8,7 +8,7 @@ Vue.use(VueTabs);
         <swiper-slide v-for="slide in swiperSlides" class="swiper-zoom-container">
           <div class="image-warp d-flex align-items-center justify-content-center swiper-zoom-container">
             <img :data-src="slide" class="swiper-lazy large-image">
-            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
           </div>
         </swiper-slide>
         <div class="swiper-pagination hidden-md-up" slot="pagination"></div>
@@ -61,7 +61,8 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
           centeredSlides: true,
           slidesPerView: 'auto',
           touchRatio: 0.2,
-          slideToClickedSlide: true
+          slideToClickedSlide: true,
+
 
         },
       swiperSlides: [
@@ -127,5 +128,9 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 .image-warp{
   height: 320px;
 }
-
+   @media screen and (max-width: 425px) {
+     .image-warp{
+     height: 320px;
+      } 
+    }
 </style>
