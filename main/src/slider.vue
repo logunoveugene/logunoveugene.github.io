@@ -21,6 +21,7 @@
           <img :src="slide" >
          </div>
         </swiper-slide>
+        <div class="swiper-scrollbar" slot="scrollbar"></div>
         </swiper>  
 </div>
 </template>
@@ -43,18 +44,14 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
           notNextTick: true,
           zoom: true,
           pagination: '.swiper-pagination',
-          breakpoints: {
-
-              768: {
-                slidesPerView: 1,
-                spaceBetween: 10
-              }
-            }
+          scrollbar: '.swiper-scrollbar',
+          scrollbarHide: true
+          
         },
         swiperOptionThumbs: {
           notNextTick: true,
           spaceBetween: 10,
-          centeredSlides: false,
+          centeredSlides: true,
           slidesPerView: 'auto',
           touchRatio: 0.2,
           slideToClickedSlide: true,
@@ -141,13 +138,17 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
 background-color: #f7f7f7; 
 
     }
-
-
-    .zoom-badge i{
+.gallery-top:hover .zoom-badge {
+      background-color: black;  
+     }
+.zoom-badge i{
 
   top: 2px;
   left: -2px;
     position: relative;
     margin-right: .15rem;
   }
+
+
+
 </style>
