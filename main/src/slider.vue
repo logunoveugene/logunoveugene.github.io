@@ -2,7 +2,7 @@
 
 
 <template>
-<div class="d-flex flex-column justify-content-center">
+<div class="">
   <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop">
     <!-- slides -->
         <swiper-slide v-for="slide in swiperSlides">
@@ -16,11 +16,11 @@
 <div class="d-flex justify-content-center hidden-md-down"><span class="zoom-badge"> <i class="icon-search"></i> Увеличить</span></div>
 <swiper :options="swiperOptionThumbs" class="gallery-thumbs hidden-sm-down" ref="swiperThumbs">
         <swiper-slide v-for="slide in swiperSlidesThumbs" class="d-flex align-items-center justify-content-center">
-        <div class="">
-          <img :src="slide" >
-         </div>
-        </swiper-slide>
 
+          <img :src="slide" >
+
+        </swiper-slide>
+<div class="swiper-scrollbar" slot="scrollbar"></div>
         </swiper>  
 </div>
 </template>
@@ -43,18 +43,20 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
           notNextTick: true,
           zoom: true,
           pagination: '.swiper-pagination'
-
+          
           
         },
         swiperOptionThumbs: {
+        	scrollbar: '.swiper-scrollbar',
+          scrollbarHide: true,
           notNextTick: true,
           spaceBetween: 10,
-          centeredSlides: true,
+          centeredSlides: false,
           slidesPerView: 'auto',
           touchRatio: 0.2,
-          slideToClickedSlide: true
-
-
+          slideToClickedSlide: true,
+          mousewheelControl: true
+          
         },
       swiperSlides: [
           "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/711/530/safe_original/12004913_1.jpg",
@@ -62,7 +64,10 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
           "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/025/safe_original/12004913_3.jpg",
           "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/026/safe_original/12004913_4.jpg",
           "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/027/safe_original/12004913_5.jpg", 
-          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/028/safe_original/12004913_6.jpg" 
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/028/safe_original/12004913_6.jpg",
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/029/safe_original/12004913_7.jpg", 
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/030/safe_original/12004913_8.jpg",
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/031/safe_original/12004913_9.jpg"    
           ],
         swiperSlidesThumbs: [
           "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/711/530/thumb/12004913_1.jpg",
@@ -70,7 +75,10 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
           "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/025/thumb/12004913_3.jpg",
           "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/026/thumb/12004913_4.jpg",
           "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/027/thumb/12004913_5.jpg", 
-          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/028/thumb/12004913_6.jpg" 
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/028/thumb/12004913_6.jpg",
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/029/thumb/12004913_7.jpg",
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/030/thumb/12004913_8.jpg",
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/031/thumb/12004913_9.jpg"  
           ]
 
       }
@@ -79,7 +87,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
     mounted() {
       const swiperTop = this.$refs.swiperTop.swiper
       const swiperThumbs = this.$refs.swiperThumbs.swiper
-      swiperTop.params.control = swiperThumbs
+           swiperTop.params.control = swiperThumbs
       swiperThumbs.params.control = swiperTop
     }
  
@@ -97,6 +105,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
   .gallery-thumbs {
     height: 20%!important;
     box-sizing: border-box;
+    overflow: hidden;
     padding: 10px 0;
   }
   .gallery-thumbs .swiper-slide {
@@ -110,6 +119,8 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
     opacity: 1;
     border:1px solid #eee;
   }
+
+
 .large-image{
   max-height: 320px;
   max-width: 100%;
@@ -136,9 +147,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
 background-color: #f7f7f7; 
 
     }
-.gallery-top:hover .zoom-badge {
-      background-color: black;  
-     }
+
 .zoom-badge i{
 
   top: 2px;
