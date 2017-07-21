@@ -55,9 +55,9 @@ Vue.use(VueAwesomeSwiper);
 
                 <div class="mb-4">
                 <div class="text-muted mb-2">Отзывы покупателей</div>
-                <div class="d-flex flex-row">
-                <div class="mr-2 text-warning ">
-                  <rate :length="5" :value="2" :showcount="true"></rate>
+                <div class="d-flex flex-row align-items-center">
+                <div class="mr-2">
+                  <rate :length="5" :value="4"></rate>
                 </div>
                 <a href="" class="small">4,4 (17 отзывов)</a>
                   
@@ -72,11 +72,6 @@ Vue.use(VueAwesomeSwiper);
                   <li>– 14 дней на возврат</li>
                 </ul>
                 </div>
-
-
-
-
-
               </div>
             </div>
             <div class="col-md-6 col-12">

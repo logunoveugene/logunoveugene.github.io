@@ -2,7 +2,7 @@
 
 
 <template>
-<div class="d-flex flex-column">
+<div class="d-flex flex-column justify-content-center">
   <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop">
     <!-- slides -->
         <swiper-slide v-for="slide in swiperSlides" class="swiper-zoom-container">
@@ -14,23 +14,18 @@
 
         <div class="swiper-pagination hidden-md-up" slot="pagination"></div>
   </swiper>
-<span class="badge badge-default badge-pill ">Увеличить</span>
+<div class="d-flex justify-content-center hidden-md-down"><span class="zoom-badge"> <i class="icon-search"></i> Увеличить</span></div>
 <swiper :options="swiperOptionThumbs" class="gallery-thumbs hidden-sm-down" ref="swiperThumbs">
         <swiper-slide v-for="slide in swiperSlidesThumbs" class="d-flex align-items-center justify-content-center">
         <div class="">
           <img :src="slide" >
          </div>
         </swiper-slide>
-
         </swiper>  
 </div>
-
 </template>
-
 <script>
 import { swiper, swiperSlide } from 'vue-awesome-swiper';
-
-
   // swiper options example:
   export default {
     name: 'slider',
@@ -95,9 +90,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
  
   }
 </script>
-
 <style >
-
   .swiper-slide {
     background-size: cover;
     background-position: center;
@@ -134,4 +127,27 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
      height: 220px;
       } 
     }
+
+    .zoom-badge{
+      width: 100px;
+      color: #656161;
+    padding: .5em .4em .4rem;
+    font-size: 80%;
+    line-height: 1;
+
+    text-align: center;
+
+    border-radius: 1rem;
+background-color: #f7f7f7; 
+
+    }
+
+
+    .zoom-badge i{
+
+  top: 2px;
+  left: -2px;
+    position: relative;
+    margin-right: .15rem;
+  }
 </style>
