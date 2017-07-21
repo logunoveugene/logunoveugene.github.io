@@ -5,13 +5,12 @@
 <div class="d-flex flex-column justify-content-center">
   <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop">
     <!-- slides -->
-        <swiper-slide v-for="slide in swiperSlides" class="swiper-zoom-container">
+        <swiper-slide v-for="slide in swiperSlides">
           <div class="image-warp d-flex align-items-center justify-content-center swiper-zoom-container">
             <img :data-src="slide" class="swiper-lazy large-image">
             <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
           </div>
         </swiper-slide>
-
         <div class="swiper-pagination hidden-md-up" slot="pagination"></div>
   </swiper>
 <div class="d-flex justify-content-center hidden-md-down"><span class="zoom-badge"> <i class="icon-search"></i> Увеличить</span></div>
@@ -21,7 +20,7 @@
           <img :src="slide" >
          </div>
         </swiper-slide>
-        <div class="swiper-scrollbar" slot="scrollbar"></div>
+
         </swiper>  
 </div>
 </template>
@@ -43,9 +42,8 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
           lazyLoading: true,
           notNextTick: true,
           zoom: true,
-          pagination: '.swiper-pagination',
-          scrollbar: '.swiper-scrollbar',
-          scrollbarHide: true
+          pagination: '.swiper-pagination'
+
           
         },
         swiperOptionThumbs: {
@@ -54,7 +52,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
           centeredSlides: true,
           slidesPerView: 'auto',
           touchRatio: 0.2,
-          slideToClickedSlide: true,
+          slideToClickedSlide: true
 
 
         },
