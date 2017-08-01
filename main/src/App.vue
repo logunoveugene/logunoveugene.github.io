@@ -104,7 +104,7 @@ Vue.use(VueAwesomeSwiper);
                     </div>
                   </div>
                 </div>
-                <div class="card-block bg-faded">
+                <div class="card-block bg-faded mb-4">
                   <div class="d-flex flex-column">
                     <div class="text-success mb-2">
                       <span class="mr-2">В наличии во Владивостоке </span>
@@ -119,6 +119,24 @@ Vue.use(VueAwesomeSwiper);
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="row hidden-sm-up">
+      <div class="col-12">
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="card border-0">
+    <div class="rounded accordion-plate bg-faded">
+                                        <a rel="nofollow" class="btn-link text-muted icon-accordion collapsed">
+                                          Обзор  
+                                        </a>
+                                    </div>
+                                    <div class="border-top-0 collapse product-collapse rounded" aria-expanded="true" >sdfsd</div>
+
+
+  </div>
+
+
+</div>
       </div>
     </div>
   </div>
@@ -142,5 +160,35 @@ export default {
     color: #000;
   text-transform: uppercase ;
   border-radius: 0;
+}
+
+.icon-accordion::before{
+    font-family: "untitled-font-1" !important;
+    content: "\61";
+    position:absolute;
+    right:1rem;
+    font-size: 15px;
+top: 50%;
+transform: translateY(-50%);
+}
+
+
+.icon-accordion[aria-expanded="true"]::before{
+    content: "\61";
+    transform: translateY(-50%) rotate(180deg);
+}
+
+
+
+.accordion-plate {
+    padding: .6rem 1rem .6rem 1rem;
+    position: relative;
+}
+
+.product-collapse {
+    border: 1px solid rgb(238, 238, 238);
+    margin-top: -3px;
+    padding: 1rem;
+    border-top: none;
 }
 </style>
