@@ -17,7 +17,7 @@ Vue.use(VueAwesomeSwiper);
   </div>
   <div class="row mb-2 hidden-sm-down">
     <div class="col shrink">
-      <h1 class="h3 ">Телевизор SAMSUNG UE19H4000AK серый</h1>
+      <h1 class="h3 ">Телевизор SAMSUNG UE19H4000AK</h1>
     </div>
     <div class="col d-flex flex-row-reverse align-items-center align-self-end pr-0  pt-2 pb-2 hidden-sm-down">
       <div class="small text-muted">арт. 12004252</div>
@@ -29,8 +29,8 @@ Vue.use(VueAwesomeSwiper);
  <slider></slider>
  </div>
 <div class="row hidden-md-up">
-    <div class="col shrink">
-      <h1 class="h5 mb-3">Телевизор SAMSUNG UE19H4000AK серый</h1>
+    <div class="col">
+      <h1 class="h5 mb-3 text-center">Телевизор SAMSUNG UE19H4000AK</h1>
     </div>
     <div class="col d-flex flex-row-reverse align-items-center align-self-end pr-0  pt-2 pb-2 hidden-sm-down">
       <div class="small text-muted">арт. 12004252</div>
@@ -42,15 +42,15 @@ Vue.use(VueAwesomeSwiper);
             <div class="col-md-6 hidden-sm-down">
               <div class="d-flex flex-column">
               <div class="mb-4">
-                <div class="text-muted mb-2">Основные характеристики</div>
+                <div class="mb-2">Основные характеристики</div>
                 <ul class="list-unstyled small main-props mb-2">
-                  <li>– Диагональ дисплея - 55 "  (139,7 см)</li>
-                  <li>– Тип - QLED</li>
-                  <li>– HD-формат - 4K (3840x2160 пикселей)</li>
-                  <li>– Smart TV, android TV</li>
-                  <li>– WIFI, Ethernet</li>
-                  <li>– Вход HDMI x4, Интерфейс USB x3</li>
-                  <li>– DVB-T, DVB-T2, DVB-C, DVB-S2</li>
+                  <li>Диагональ дисплея - 55 "  (139,7 см)</li>
+                  <li>Тип - QLED</li>
+                  <li>HD-формат - 4K (3840x2160 пикселей)</li>
+                  <li>Smart TV, android TV</li>
+                  <li>WIFI, Ethernet</li>
+                  <li>Вход HDMI x4, Интерфейс USB x3</li>
+                  <li>DVB-T, DVB-T2, DVB-C, DVB-S2</li>
                 </ul>
                 <a href="">Все характеристики</a>
                 </div>
@@ -69,9 +69,9 @@ Vue.use(VueAwesomeSwiper);
                 <div class="mb-3">
                 <div class="text-muted mb-2"><span class="mr-2">Права покупателей защищены</span><i class="icon-shield h5 pt-2"></i></div>
                 <ul class="list-unstyled small main-props">
-                  <li>– Гарантия от Samsung 1 год</li>
-                  <li>– Обязательная предпродажная проверка </li>
-                  <li>– 14 дней на возврат</li>
+                  <li>Гарантия от Samsung 1 год</li>
+                  <li>Обязательная предпродажная проверка </li>
+                  <li>14 дней на возврат</li>
                 </ul>
                 </div>
               </div>

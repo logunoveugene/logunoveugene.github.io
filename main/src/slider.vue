@@ -48,7 +48,7 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
         },
         swiperOptionThumbs: {
         	scrollbar: '.swiper-scrollbar',
-          scrollbarHide: true,
+          scrollbarHide: false,
           notNextTick: true,
           spaceBetween: 10,
           centeredSlides: false,
@@ -134,26 +134,27 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
       } 
     }
 
-    .zoom-badge{
-      width: 100px;
-      color: #656161;
+  .zoom-badge{
+    width: 100px;
+    color: #656161;
     padding: .5em .4em .4rem;
     font-size: 80%;
     line-height: 1;
-
     text-align: center;
-
     border-radius: 1rem;
-background-color: #f7f7f7; 
+    cursor: pointer;
+    }
 
+
+  .zoom-badge:hover{
+    background-color: #f7f7f7;	
     }
 
 .zoom-badge i{
-
   top: 2px;
   left: -2px;
-    position: relative;
-    margin-right: .15rem;
+  position: relative;
+  margin-right: .15rem;
   }
 
 
