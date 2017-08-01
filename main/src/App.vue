@@ -20,22 +20,23 @@ Vue.use(VueAwesomeSwiper);
       </div>
     </div>
     <div class="row">
-      <div class="col-md-5 col-12">
+      <div class="col-lg-5 col-md-7 col-12">
         <div class="mb-3">
+        <span class="badge badge-success">% В КРЕДИТ БЕЗ ПЕРЕПЛАТ</span> <span class="badge badge-primary">ПОДАРОК</span>
           <slider></slider>
         </div>
         <div class="row hidden-md-up">
           <div class="col">
-            <h1 class="h5 mb-3 text-center">Телевизор SAMSUNG UE19H4000AK</h1>
+            <h1 class="h5 mb-3 ">Телевизор SAMSUNG UE19H4000AK</h1>
           </div>
           <div class="col d-flex flex-row-reverse align-items-center align-self-end pr-0  pt-2 pb-2 hidden-sm-down">
             <div class="small text-muted">арт. 12004252</div>
           </div>
         </div>
       </div>
-      <div class="col-md-7 col-12">
+      <div class="col-lg-7  col-md-5 col-12">
         <div class="row">
-          <div class="col-md-6 hidden-sm-down">
+          <div class="col-md-6 hidden-md-down">
             <div class="d-flex flex-column">
               <div class="mb-4">
                 <div class="mb-2">Основные характеристики</div>
@@ -51,7 +52,7 @@ Vue.use(VueAwesomeSwiper);
                 <a href="">Все характеристики</a>
               </div>
               <div class="mb-4">
-                <div class="text-muted mb-2">Отзывы покупателей</div>
+                <div class="mb-2">Отзывы покупателей</div>
                 <div class="d-flex flex-row align-items-center">
                   <div class="mr-2">
                     <rate :length="5" :value="4"></rate>
@@ -60,7 +61,7 @@ Vue.use(VueAwesomeSwiper);
                 </div>
               </div>
               <div class="mb-3">
-                <div class="text-muted mb-2">
+                <div class="mb-2">
                   <span class="mr-2">Права покупателей защищены</span>
                   <i class="icon-shield h5 pt-2"></i>
                 </div>
@@ -72,14 +73,14 @@ Vue.use(VueAwesomeSwiper);
               </div>
             </div>
           </div>
-          <div class="col-md-6 col-12">
+          <div class="col-lg-6 col-md-12 col-12">
             <div class="d-flex flex-column">
-              <img src="https://i.snag.gy/8VrZxc.jpg" alt="" class="hidden-sm-down">
-              <div class="card rounded-0 ">
-                <div class="card-block">
+              <img src="https://i.snag.gy/8VrZxc.jpg" alt="" class="hidden-sm-down mb-3">
+              <div class="  ">
+                <div class="mb-4">
                   <div class="d-flex flex-column">
                     <p class="text-muted mb-0"><del>174 600 p.</del></p>
-                    <div class="h4 mb-1">169 990 p.</div>
+                    <div class="h3 mb-1">169 990 p.</div>
                     <div class="mb-2">
                       <span class="badge badge-benefit">ЭКОНОМИЯ 4 610 р. (скидка 12%)</span>
                     </div>
