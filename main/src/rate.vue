@@ -77,8 +77,8 @@ export default {
 <style scoped lang="scss">
 .icon {
   display: inline-block;
-  width: 1em;
-  height: 1em;
+  width: .8em;
+  height: .8em;
   stroke-width: 1;
   stroke: #bdbdbd;
   fill: #e5e5e5;
