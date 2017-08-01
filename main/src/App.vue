@@ -22,28 +22,26 @@ Vue.use(VueAwesomeSwiper);
     <div class="row">
       <div class="col-lg-5 col-md-7 col-12">
         <div class="mb-3">
-        <div class="mb-2">
-        <span class="badge badge-success">% В КРЕДИТ БЕЗ ПЕРЕПЛАТ</span> <span class="badge badge-primary">ПОДАРОК</span>
-        </div>  
-        
+          <div class="mb-2">
+            <span class="badge badge-success">% В КРЕДИТ БЕЗ ПЕРЕПЛАТ</span> <span class="badge badge-primary">ПОДАРОК</span>
+          </div>
           <slider></slider>
         </div>
         <div class="row hidden-md-up">
           <div class="col-12">
             <h1 class="h5 mb-3 ">Телевизор SAMSUNG UE19H4000AK</h1>
           </div>
-
           <div class="col shrink mb-3">
-        <div class="d-flex flex-row align-items-center">
-                  <div class="mr-2">
-                    <rate :length="5" :value="4"></rate>
-                  </div>
-                  <a href="" class="small">17 отзывов</a>
-                </div>
-      </div>
-      <div class="col d-flex flex-row-reverse align-items-center align-self-end  pb-1 mb-3 ">
-        <div class="small text-muted">арт. 12004252</div>
-      </div>
+            <div class="d-flex flex-row align-items-center">
+              <div class="mr-2">
+                <rate :length="5" :value="4"></rate>
+              </div>
+              <a href="" class="small">17 отзывов</a>
+            </div>
+          </div>
+          <div class="col d-flex flex-row-reverse align-items-center align-self-end  pb-1 mb-3 ">
+            <div class="small text-muted">арт. 12004252</div>
+          </div>
         </div>
       </div>
       <div class="col-lg-7  col-md-5 col-12">
@@ -124,23 +122,18 @@ Vue.use(VueAwesomeSwiper);
     <div class="row hidden-sm-up">
       <div class="col-12">
         <div id="accordion" role="tablist" aria-multiselectable="true">
-  <div class="card border-0">
-    <div class="rounded accordion-plate bg-faded">
-                                        <a rel="nofollow" class="btn-link text-muted icon-accordion collapsed">
-                                          Обзор  
-                                        </a>
-                                    </div>
-                                    <div class="border-top-0 collapse product-collapse rounded" aria-expanded="true" >sdfsd</div>
-
-
-  </div>
-
-
-</div>
+          <div class="card border-0">
+            <div class="rounded accordion-plate bg-faded">
+              <a rel="nofollow" class="btn-link text-muted icon-accordion collapsed">Обзор</a>
+            </div>
+            <div class="border-top-0 collapse product-collapse rounded" aria-expanded="true">sdfsd</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
 </template>
 <script>
 import  slider from './slider.vue'
