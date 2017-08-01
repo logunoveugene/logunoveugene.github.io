@@ -22,7 +22,10 @@ Vue.use(VueAwesomeSwiper);
     <div class="row">
       <div class="col-lg-5 col-md-7 col-12">
         <div class="mb-3">
+        <div class="mb-2">
         <span class="badge badge-success">% В КРЕДИТ БЕЗ ПЕРЕПЛАТ</span> <span class="badge badge-primary">ПОДАРОК</span>
+        </div>  
+        
           <slider></slider>
         </div>
         <div class="row hidden-md-up">
