@@ -122,17 +122,14 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper';
 
 
 .large-image{
-  max-height: 320px;
+  max-height: 220px;
   max-width: 100%;
 }
 .image-warp{
   height: 320px;
 }
-   @media screen and (max-width: 425px) {
-     .image-warp{
-     height: 220px;
-      } 
-    }
+
+
 
   .zoom-badge{
     width: 100px;
