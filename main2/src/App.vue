@@ -94,9 +94,9 @@
       <div class="row">
         <div class="col-md-6 hidden-md-down">
           <div class="d-flex flex-column ml-3">
-            <div class="mb-4">
+            <div class="mb-5">
               <div class="mb-2">Основные характеристики</div>
-              <ul class="list-unstyled small main-props mb-2">
+              <ul class="list-unstyled small main-props mb-3">
                 <li>Диагональ дисплея - 55 " (139,7 см)</li>
                 <li>Тип - QLED</li>
                 <li>HD-формат - 4K (3840x2160 пикселей)</li>
@@ -105,7 +105,7 @@
                 <li>Вход HDMI x4, Интерфейс USB x3</li>
                 <li>DVB-T, DVB-T2, DVB-C, DVB-S2</li>
               </ul>
-              <img src="https://i.snag.gy/wvhWE1.jpg" alt="" class="mb-3">
+              <img src="https://i.snag.gy/wvhWE1.jpg" alt="" class="mb-4">
               <div class=""><a href="">Все характеристики</a></div>
             </div>
 
@@ -127,7 +127,7 @@
             <div class=" ">
               <div class="mb-3">
                 <div class="d-flex flex-column">
-                  <p class="text-muted mb-0"><del>174 600 p.</del></p>
+                  <p class="text-muted small mb-0"><del>174 600 p.</del></p>
                   <div class="h3 mb-1">169 990 p.</div>
                   <div class="mb-2">
                     <span class="badge badge-benefit">ЭКОНОМИЯ 4 610 р. (скидка 12%)</span>
@@ -307,6 +307,14 @@ cursor: zoom-in;
 .delivery-info {
     background-color: #f2fbee;
 }
+.swiper-scrollbar-drag{
+      background: rgba(0,0,0,.1);
+}
+.swiper-scrollbar{
+      background: rgba(0,0,0,.05);
 
+
+
+}
 
 </style>
