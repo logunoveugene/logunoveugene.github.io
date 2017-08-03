@@ -141,11 +141,11 @@
                   </div>
                 </div>
               </div>
-              <div class="p-3 alert-success mb-4">
+              <div class="p-3 delivery-info mb-4">
                 <div class="d-flex flex-column">
-                  <div class="small mb-1 text-muted ">
+                  <div class="small mb-1  ">
                     <a href="">Самовывоз в 6 магазинах</a> – сегодня, бесплатно </div>
-                  <div class="small text-muted">Доставка ‒  с 15 сентября, 320 р. </div>
+                  <div class="small ">Доставка ‒  с 15 сентября, 320 р. </div>
                 </div>
               </div>
             </div>
@@ -302,4 +302,11 @@ cursor: zoom-in;
     z-index: 10;
     background: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,1));
 }
+
+
+.delivery-info {
+    background-color: #f2fbee;
+}
+
+
 </style>
