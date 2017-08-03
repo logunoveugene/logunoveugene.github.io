@@ -1,13 +1,22 @@
 <template>
 <div id="app">
   <div class="container ">
-    <div class="row hidden-sm-down">
-      <div class="col-12 mt-3 mb-3">
-        <nav class=" small pt-2">
-          <a class="breadcrumb-item" href="#">Главная</a>
-          <a class="breadcrumb-item" href="#">Телевизоры и видеотехника</a>
-          <a class="breadcrumb-item" href="#">Телевизоры </a>
-        </nav>
+    <div class="row ">
+      <div class="col-12 mb-3">
+        <div class="breadcrumbsSwiper " >
+              <div class="swiper-wrapper small ">
+                <div class="swiper-slide" >
+                <div class="breadcrumbs-row " >
+                   <a class="breadcrumb-item" href="#">Главная</a>
+                   <a class="breadcrumb-item" href="#">Телевизоры и видеотехника</a>
+                   <a class="breadcrumb-item" href="#">Телевизоры </a>
+                   <a class="breadcrumb-item" href="#">Samsung </a>
+                </div>     
+                </div>
+
+                  </div>
+
+        </div>
       </div>
     </div>
     <div class="row hidden-md-up">
@@ -31,7 +40,7 @@
       <div class="col shrink">
         <h1 class="h3 ">Телевизор SAMSUNG UE19H4000AK</h1>
       </div>
-      <div class="col d-flex flex-row-reverse align-items-center align-self-end pr-0  pt-2 pb-2 hidden-sm-down">
+      <div class="col d-flex flex-row-reverse align-items-center align-self-end  pt-2 pb-2 hidden-sm-down">
         <div class="small text-muted">арт. 12004252</div>
       </div>
     </div>
@@ -66,7 +75,7 @@
             </div>
           </div>
           <div class="d-flex flex-row small">
-            <a href="" class="text-muted mr-5"> <img src="https://i.snag.gy/cUbKJR.jpg" alt="" class="mb-1 mr-2"><span>Видеообзор модели</span> </a>
+            <a href="" class="text-muted mr-4"> <img src="https://i.snag.gy/cUbKJR.jpg" alt="" class="mb-1 mr-2"><span>Видеообзор модели</span> </a>
             <a href="" class="text-muted"> <img src="https://i.snag.gy/Z8wTQl.jpg" alt="" class="mb-1 mr-2"><span>3D обзор</span> </a>
           </div>
         </div>
@@ -106,7 +115,7 @@
           <div class="col-lg-6 col-md-12 col-12">
             <div class="d-flex flex-column">
               <img src="https://i.snag.gy/8VrZxc.jpg" alt="" class="hidden-sm-down mb-3">
-              <div class="  ">
+              <div class=" ">
                 <div class="mb-4">
                   <div class="d-flex flex-column">
                     <p class="text-muted mb-0"><del>174 600 p.</del></p>
@@ -130,6 +139,10 @@
                     <div class="small text-muted">Доставка ‒  с 15 сентября, 320 р. </div>
                   </div>
                 </div>
+              </div>
+              <div class="d-flex flex-row small">
+                <a href="" class="text-muted mr-4"> <img src="https://i.snag.gy/HL2TFZ.jpg" alt="" class="mb-1 mr-2"><span>Сравнить</span> </a>
+                <a href="" class="text-muted"> <img src="https://i.snag.gy/2pc1QP.jpg" alt="" class="mb-1 mr-2"><span>Добавить в желания</span> </a>
               </div>
             </div>
           </div>
@@ -251,5 +264,13 @@ cursor: zoom-in;
 
   }
     }
+    .breadcrumbs-row{
+      white-space: nowrap;
 
+    display: flex;
+    }
+
+.breadcrumbsSwiper {
+  overflow: hidden;
+}
 </style>
