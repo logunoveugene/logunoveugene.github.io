@@ -9,16 +9,19 @@
         </a>
       </div>
       <div class="d-flex ml-1 mb-3 breadcrumbsSwiper-wrap">
+        <div class="breadcrumb-left">
+          
+        </div>
         <div class="breadcrumbsSwiper ">
           <div class="swiper-wrapper ">
             <div class="swiper-slide">
-              <a class="text-muted small mr-3 " href="#">Главная</a>
+              <a class="text-muted small mr-3 " href="#">Главная</a> <img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
             </div>
             <div class="swiper-slide">
-              <a class="text-muted  small mr-3" href="#">Телевизоры и видеотехника</a>
+              <a class="text-muted  small mr-3" href="#">Телевизоры и видеотехника</a><img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
             </div>
             <div class="swiper-slide">
-              <a class="text-muted  small mr-3" href="#">Телевизоры </a>
+              <a class="text-muted  small mr-3" href="#">Телевизоры </a><img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
             </div>
             <div class="swiper-slide">
               <a class="text-muted  small" href="#">Samsung </a>
@@ -286,5 +289,14 @@ cursor: zoom-in;
 
 .breadcrumbsSwiper .swiper-slide{
   width: auto;
+}
+
+
+.breadcrumb-left{
+  width: 30px;
+    position: absolute;
+    height: 30px;
+    z-index: 10;
+    background: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,1));
 }
 </style>
