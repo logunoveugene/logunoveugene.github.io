@@ -28,6 +28,8 @@ $(document).ready(function () {
   var tabContentSwiper = new Swiper('.tab-content', {
   	preloadImages: false,
     lazyLoading: true,
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
 
     onSlideChangeStart: function onSlideChangeStart(swiper) {
       $('#tabNav .active').removeClass('active');
