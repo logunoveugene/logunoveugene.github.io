@@ -282,7 +282,7 @@ cursor: zoom-in;
 .breadcrumbsSwiper {
   position: relative;
   width: 100%;
-  padding: 0 10px;
+  padding: 0 0 0 10px;
   overflow: hidden;
 }
 
