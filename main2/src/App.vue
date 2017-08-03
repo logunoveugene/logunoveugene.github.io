@@ -1,8 +1,15 @@
 <template>
 <div id="app">
-  <div class="container ">
-    <div class="row ">
-      <div class="col-12 mb-3">
+  <div class="container  ">
+    <div class="row d-flex flex-nowrap">
+      <div class="col d-flex flex-row align-items-center shrink mb-3 border-right-1">
+          <img src="https://i.snag.gy/Lp8yad.jpg" class="mr-2" alt="" />
+          <a href="">
+            <div class="mb-0 text-muted small">Назад</div>
+          </a>
+        </div>
+
+      <div class="col d-flex  mb-3">
         <div class="breadcrumbsSwiper " >
               <div class="swiper-wrapper small ">
                 <div class="swiper-slide" >
