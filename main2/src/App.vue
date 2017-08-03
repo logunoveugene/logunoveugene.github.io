@@ -125,7 +125,7 @@
           <div class="d-flex flex-column">
             <img src="https://i.snag.gy/8VrZxc.jpg" alt="" class="hidden-sm-down mb-3">
             <div class=" ">
-              <div class="mb-4">
+              <div class="mb-3">
                 <div class="d-flex flex-column">
                   <p class="text-muted mb-0"><del>174 600 p.</del></p>
                   <div class="h3 mb-1">169 990 p.</div>
@@ -160,6 +160,9 @@
   </div>
 </div>
  </div>
+
+
+
 
 
 </template>
@@ -293,7 +296,7 @@ cursor: zoom-in;
 
 
 .breadcrumb-left{
-  width: 30px;
+  width: 15px;
     position: absolute;
     height: 30px;
     z-index: 10;
