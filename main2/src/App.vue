@@ -3,154 +3,152 @@
   <div class="container  ">
     <div class=" d-flex flex-nowrap">
       <div class=" d-flex flex-row align-items-center pr-3 mb-3 border-right-1">
-          <img src="https://i.snag.gy/Lp8yad.jpg" class="mr-2" alt="" />
-          <a href="">
-            <div class="mb-0 text-muted small">Назад</div>
-          </a>
-        </div>
-
-      <div class="d-flex ml-3 mb-3 breadcrumbsSwiper-wrap">
-        <div class="breadcrumbsSwiper " >
-              <div class="swiper-wrapper small ">
-                <div class="swiper-slide" >
-                <div class="breadcrumbs-row " >
-                   <a class="breadcrumb-item" href="#">Главная</a>
-                   <a class="breadcrumb-item" href="#">Телевизоры и видеотехника</a>
-                   <a class="breadcrumb-item" href="#">Телевизоры </a>
-                   <a class="breadcrumb-item" href="#">Samsung </a>
-                </div>     
-                </div>
-
-                  </div>
-
+        <img src="https://i.snag.gy/Lp8yad.jpg" class="mr-2" alt="" />
+        <a href="">
+          <div class="mb-0 text-muted small">Назад</div>
+        </a>
+      </div>
+      <div class="d-flex ml-1 mb-3 breadcrumbsSwiper-wrap">
+        <div class="breadcrumbsSwiper ">
+          <div class="swiper-wrapper ">
+            <div class="swiper-slide">
+              <a class="text-muted small mr-3 " href="#">Главная</a>
+            </div>
+            <div class="swiper-slide">
+              <a class="text-muted  small mr-3" href="#">Телевизоры и видеотехника</a>
+            </div>
+            <div class="swiper-slide">
+              <a class="text-muted  small mr-3" href="#">Телевизоры </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="text-muted  small" href="#">Samsung </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="row hidden-md-up">
-          <div class="col-12">
-            <h1 class="h5 mb-3 ">Телевизор SAMSUNG UE19H4000AK</h1>
-          </div>
-          <div class="col shrink mb-3">
-            <div class="d-flex flex-row align-items-center">
-              <div class="mr-2">
-                <rate :length="5" :value="4"></rate>
-              </div>
-              <a href="" class="small">17 отзывов</a>
-
-            </div>
-          </div>
-          <div class="col d-flex flex-row-reverse align-items-center align-self-end  pb-1 mb-3 ">
-            <div class="small text-muted">арт. 12004252</div>
-          </div>
+   <div class="row hidden-md-up">
+    <div class="col-12">
+      <h1 class="h5 mb-3 ">Телевизор SAMSUNG UE19H4000AK</h1>
+    </div>
+    <div class="col shrink mb-3">
+      <div class="d-flex flex-row align-items-center">
+        <div class="mr-2">
+          <rate :length="5" :value="4"></rate>
         </div>
-    <div class="row mb-2 hidden-sm-down">
-      <div class="col shrink">
-        <h1 class="h3 ">Телевизор SAMSUNG UE19H4000AK</h1>
-      </div>
-      <div class="col d-flex flex-row-reverse align-items-center align-self-end  pt-2 pb-2 hidden-sm-down">
-        <div class="small text-muted">арт. 12004252</div>
+        <a href="" class="small">17 отзывов</a>
       </div>
     </div>
-    <div class="row">
-      <div class="col-lg-5 col-md-7 col-12">
-        <div class="mb-4">
-          <div class="mb-2">
-            <div class="d-flex flex-row align-items-center hidden-sm-down">
-                  <div class="mr-2">
-                    <rate :length="5" :value="4"></rate>
-                  </div>
-                  <a href="" class="small">4,4 (17 отзывов)</a>
-                </div>
-          </div>
-          <div class="main-image mb-3">
-            <div class="tab-content">
-              <div class="swiper-wrapper">
-                <div v-for="slide in swiperSlides" class="swiper-slide image-warp">
-                  <img :data-src="slide" class="swiper-lazy large-image">
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
-                </div>
-              </div>
-              <div class="swiper-pagination hidden-sm-up"></div>
+    <div class="col d-flex flex-row-reverse align-items-center align-self-end  pb-1 mb-3 ">
+      <div class="small text-muted">арт. 12004252</div>
+    </div>
+  </div>
+  <div class="row mb-2 hidden-sm-down">
+    <div class="col shrink">
+      <h1 class="h3 ">Телевизор SAMSUNG UE19H4000AK</h1>
+    </div>
+    <div class="col d-flex flex-row-reverse align-items-center align-self-end  pt-2 pb-2 hidden-sm-down">
+      <div class="small text-muted">арт. 12004252</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-5 col-md-7 col-12">
+      <div class="mb-3">
+        <div class="mb-2">
+          <div class="d-flex flex-row align-items-center hidden-sm-down">
+            <div class="mr-2">
+              <rate :length="5" :value="4"></rate>
             </div>
-            <div class="tab-nav hidden-sm-down" id="tabNav">
-              <div class="swiper-wrapper">
-                <div v-for="(slide, index)  in swiperSlidesThumbs" class="swiper-slide" :data-slide-index="index">
-                  <img :src="slide">
-                </div>
-              </div>
-              <div class="swiper-scrollbar"></div>
-            </div>
-          </div>
-          <div class="d-flex flex-row small">
-            <a href="" class="text-muted mr-4"> <img src="https://i.snag.gy/cUbKJR.jpg" alt="" class="mb-1 mr-2"><span>Видеообзор модели</span> </a>
-            <a href="" class="text-muted"> <img src="https://i.snag.gy/Z8wTQl.jpg" alt="" class="mb-1 mr-2"><span>3D обзор</span> </a>
+            <a href="" class="small">4,4 (17 отзывов)</a>
           </div>
         </div>
-        
+        <div class="main-image mb-3">
+          <div class="tab-content">
+            <div class="swiper-wrapper">
+              <div v-for="slide in swiperSlides" class="swiper-slide image-warp">
+                <img :data-src="slide" class="swiper-lazy large-image">
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
+              </div>
+            </div>
+            <div class="swiper-pagination hidden-sm-up"></div>
+          </div>
+          <div class="tab-nav hidden-sm-down" id="tabNav">
+            <div class="swiper-wrapper">
+              <div v-for="(slide, index)  in swiperSlidesThumbs" class="swiper-slide" :data-slide-index="index">
+                <img :src="slide">
+              </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+          </div>
+        </div>
+        <div class="d-flex flex-row small">
+          <a href="" class="text-muted mr-4"> <img src="https://i.snag.gy/cUbKJR.jpg" alt="" class="mb-1 mr-2"><span>Видеообзор модели</span> </a>
+          <a href="" class="text-muted"> <img src="https://i.snag.gy/Z8wTQl.jpg" alt="" class="mb-1 mr-2"><span>3D обзор</span> </a>
+        </div>
       </div>
-      <div class="col-lg-7  col-md-5 col-12">
-        <div class="row">
-          <div class="col-md-6 hidden-md-down">
-            <div class="d-flex flex-column ml-3">
+    </div>
+    <div class="col-lg-7  col-md-5 col-12">
+      <div class="row">
+        <div class="col-md-6 hidden-md-down">
+          <div class="d-flex flex-column ml-3">
+            <div class="mb-4">
+              <div class="mb-2">Основные характеристики</div>
+              <ul class="list-unstyled small main-props mb-2">
+                <li>Диагональ дисплея - 55 " (139,7 см)</li>
+                <li>Тип - QLED</li>
+                <li>HD-формат - 4K (3840x2160 пикселей)</li>
+                <li>Smart TV, android TV</li>
+                <li>WIFI, Ethernet</li>
+                <li>Вход HDMI x4, Интерфейс USB x3</li>
+                <li>DVB-T, DVB-T2, DVB-C, DVB-S2</li>
+              </ul>
+              <img src="https://i.snag.gy/wvhWE1.jpg" alt="" class="mb-3">
+              <div class=""><a href="">Все характеристики</a></div>
+            </div>
+
+            <div class="mb-3">
+              <div class="mb-2">
+                <span class="mr-2">Права покупателей защищены</span>
+              </div>
+              <ul class="list-unstyled small main-props">
+                <li>Гарантия от Samsung 1 год</li>
+                <li>Обязательная предпродажная проверка </li>
+                <li>14 дней на возврат</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-12">
+          <div class="d-flex flex-column">
+            <img src="https://i.snag.gy/8VrZxc.jpg" alt="" class="hidden-sm-down mb-3">
+            <div class=" ">
               <div class="mb-4">
-                <div class="mb-2">Основные характеристики</div>
-                <ul class="list-unstyled small main-props mb-2">
-                  <li>Диагональ дисплея - 55 " (139,7 см)</li>
-                  <li>Тип - QLED</li>
-                  <li>HD-формат - 4K (3840x2160 пикселей)</li>
-                  <li>Smart TV, android TV</li>
-                  <li>WIFI, Ethernet</li>
-                  <li>Вход HDMI x4, Интерфейс USB x3</li>
-                  <li>DVB-T, DVB-T2, DVB-C, DVB-S2</li>
-                </ul>
-                <img src="https://i.snag.gy/wvhWE1.jpg" alt="" class="mb-3">
-                <div class=""><a href="">Все характеристики</a></div>
-              </div>
-              
-              <div class="mb-3">
-                <div class="mb-2">
-                  <span class="mr-2">Права покупателей защищены</span>
+                <div class="d-flex flex-column">
+                  <p class="text-muted mb-0"><del>174 600 p.</del></p>
+                  <div class="h3 mb-1">169 990 p.</div>
+                  <div class="mb-2">
+                    <span class="badge badge-benefit">ЭКОНОМИЯ 4 610 р. (скидка 12%)</span>
+                  </div>
+                  <p class="text-danger small">До 1 746 р. бонусов</p>
+                  <button type="button" class="btn btn-primary btn-lg mb-3">Добавить в корзину</button>
+                  <button type="button" class="btn btn-secondary mb-3">Купить в 1 клик</button>
+                  <div class="d-flex flex-row justify-content-between small">
+                    <a href="#">Как купить в кредит?</a>
+                    <a href="#">Пожаловаться на цену!</a>
+                  </div>
                 </div>
-                <ul class="list-unstyled small main-props">
-                  <li>Гарантия от Samsung 1 год</li>
-                  <li>Обязательная предпродажная проверка </li>
-                  <li>14 дней на возврат</li>
-                </ul>
+              </div>
+              <div class="p-3 alert-success mb-4">
+                <div class="d-flex flex-column">
+                  <div class="small mb-1 text-muted ">
+                    <a href="">Самовывоз в 6 магазинах</a> – сегодня, бесплатно </div>
+                  <div class="small text-muted">Доставка ‒  с 15 сентября, 320 р. </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-6 col-md-12 col-12">
-            <div class="d-flex flex-column">
-              <img src="https://i.snag.gy/8VrZxc.jpg" alt="" class="hidden-sm-down mb-3">
-              <div class=" ">
-                <div class="mb-4">
-                  <div class="d-flex flex-column">
-                    <p class="text-muted mb-0"><del>174 600 p.</del></p>
-                    <div class="h3 mb-1">169 990 p.</div>
-                    <div class="mb-2">
-                      <span class="badge badge-benefit">ЭКОНОМИЯ 4 610 р. (скидка 12%)</span>
-                    </div>
-                    <p class="text-danger small">До 1 746 р. бонусов</p>
-                    <button type="button" class="btn btn-primary btn-lg mb-3">Добавить в корзину</button>
-                    <button type="button" class="btn btn-secondary mb-3">Купить в 1 клик</button>
-                    <div class="d-flex flex-row justify-content-between small">
-                      <a href="#">Как купить в кредит?</a>
-                      <a href="#">Пожаловаться на цену!</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="p-3 alert-success mb-4">
-                  <div class="d-flex flex-column">
-                    <div class="small mb-1 text-muted ">
-                      <a href="">Самовывоз в 6 магазинах</a> – сегодня, бесплатно </div>
-                    <div class="small text-muted">Доставка ‒  с 15 сентября, 320 р. </div>
-                  </div>
-                </div>
-              </div>
-              <div class="d-flex flex-row small">
-                <a href="" class="text-muted mr-4"> <img src="https://i.snag.gy/HL2TFZ.jpg" alt="" class="mb-1 mr-2"><span>Сравнить</span> </a>
-                <a href="" class="text-muted"> <img src="https://i.snag.gy/2pc1QP.jpg" alt="" class="mb-1 mr-2"><span>Добавить в желания</span> </a>
-              </div>
+            <div class="d-flex flex-row small">
+              <a href="" class="text-muted mr-4"> <img src="https://i.snag.gy/HL2TFZ.jpg" alt="" class="mb-1 mr-2"><span>Сравнить</span> </a>
+              <a href="" class="text-muted"> <img src="https://i.snag.gy/2pc1QP.jpg" alt="" class="mb-1 mr-2"><span>Добавить в желания</span> </a>
             </div>
           </div>
         </div>
@@ -158,6 +156,8 @@
     </div>
   </div>
 </div>
+ </div>
+
 
 </template>
 <script>
@@ -271,13 +271,20 @@ cursor: zoom-in;
 
   }
     }
-    .breadcrumbs-row{
-      white-space: nowrap;
 
-    display: flex;
-    }
 
 .breadcrumbsSwiper-wrap {
   overflow: hidden;
+}
+.breadcrumbsSwiper {
+  position: relative;
+  width: 100%;
+  padding: 0 10px;
+  overflow: hidden;
+}
+
+
+.breadcrumbsSwiper .swiper-slide{
+  width: auto;
 }
 </style>

@@ -27,7 +27,6 @@ $(document).ready(function () {
 
   var breadcrumbsSwiper = new Swiper('.breadcrumbsSwiper', {
     slidesPerView: 'auto',
-    spaceBetween: 10,
     freeMode: true
     
   });

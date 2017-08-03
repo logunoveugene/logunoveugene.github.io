@@ -50,9 +50,10 @@ a:hover {
 
 .breadcrumb-item {
   color: #4b5257;
+  width: auto;
 }
 
-.breadcrumb-item+.breadcrumb-item::before {
+.breadcrumb-item::before {
   display: inline-block;
   padding-right: .5rem;
   padding-left: .5rem;
