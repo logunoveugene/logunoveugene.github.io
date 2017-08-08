@@ -1,10 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 
-new webpack.ProvidePlugin({
-   $: "jquery",
-   jQuery: "jquery"
-})
+
 
 module.exports = {
   entry: './src/main.js',
@@ -47,6 +44,17 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new webpack.ProvidePlugin({
+      'jQuery': 'jquery',
+      $: 'jquery',
+      'window.jQuery': 'jquery',
+      'Tether': 'tether',
+      'window.Tether': 'tether'
+    }),
+  ],
+
+
 
   resolve: {
     alias: {
