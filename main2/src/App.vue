@@ -87,7 +87,7 @@
           </div>
         </div>
         <div class="d-flex flex-row small">
-          <a href="" class="text-muted mr-4"> <img src="https://i.snag.gy/cUbKJR.jpg" alt="" class="mb-1 mr-2"><span>Видеообзор модели</span> </a>
+          <a href="" class="text-muted mr-4" data-toggle="modal" data-target="#360review"> <img src="https://i.snag.gy/cUbKJR.jpg" alt="" class="mb-1 mr-2"><span>Видеообзор модели</span> </a>
           <a href="" class="text-muted"> <img src="https://i.snag.gy/Z8wTQl.jpg" alt="" class="mb-1 mr-2"><span>3D обзор</span> </a>
         </div>
       </div>
@@ -162,58 +162,70 @@
   </div>
 
 </div>
+
 <div class="modal fade" id="fullscreen-image" tabindex="-1" role="dialog" aria-labelledby="fullscreen-image" aria-hidden="true">
   <div class="modal-dialog modal-full" role="document">
     
-      <div class="card-block">
+    <div class="main-image d-flex flex-column justify-content-center">
+    <div class="card-block modal-zoom-header w-100">
       <div class="row mb-3">
         <div class="col-10">
-            <h5 class="modal-title" id="exampleModalLabel">Телевизор SAMSUNG UE19H4000AK</h5>
+          <h5 class="modal-title bg-white" id="exampleModalLabel" >Телевизор SAMSUNG UE19H4000AK</h5>
         </div>
         <div class="col-2">
-           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
       </div>
-      
-        
-       
-      
-      
-
     </div>
-<div class="main-image d-flex flex-column justify-content-center">
-
-          <div class="full-tab-content">
-            <div class="swiper-wrapper">
-              <div v-for="slide in swiperSlides" class="swiper-slide  full-image-warp">
-
-                <div class="swiper-zoom-container ">
-                  <img :data-src="slide" class="swiper-lazy large-image" >
-                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
-                   </div>
-
-              </div>
+      <div class="full-tab-content">
+        <div class="swiper-wrapper">
+          <div v-for="slide in swiperSlides" class="swiper-slide  full-image-warp">
+            <div class="swiper-zoom-container ">
+              <img :data-src="slide" class="swiper-lazy large-image">
+              <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
             </div>
-            <div class="swiper-pagination hidden-sm-up"></div>
           </div>
-          <div class="full-tab-nav hidden-sm-down " id="full-tabNav">
-            <div class="swiper-wrapper">
-              <div v-for="(slide, index)  in swiperSlidesThumbs" class="swiper-slide" :data-slide-index="index">
-                <img :src="slide">
-              </div>
-            </div>
-
+        </div>
+        <div class="swiper-pagination hidden-sm-up"></div>
+      </div>
+      <div class="full-tab-nav hidden-sm-down " id="full-tabNav">
+        <div class="swiper-wrapper">
+          <div v-for="(slide, index) in swiperSlidesThumbs" class="swiper-slide" :data-slide-index="index">
+            <img :src="slide">
           </div>
-
-                
-          </div> 
-
-
-
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<div class="modal fade" id="360review" tabindex="-1" role="dialog" aria-labelledby="fullscreen-image" aria-hidden="true">
+  <div class="modal-dialog modal-full" role="document">
+    <div class="card-block">
+      <div class="row mb-3">
+        <div class="col-10">
+          <h5 class="modal-title" id="exampleModalLabel">Видеообзор модели</h5>
+        </div>
+        <div class="col-2">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card-block mt-0 ">
+    <div class="mx-auto" style="width: auto;">
+      <iframe width="100%" height="500" src="https://www.youtube.com/embed/0X2sS_8n_8I" frameborder="0" allowfullscreen></iframe>
+    </div>
+      
+    </div>
+    
+  </div>
+</div>
+
+
  </div>
 
 
@@ -316,6 +328,7 @@ padding: 5px;
     border:1px solid #eee;
   }
 
+
   .large-image{
   max-height: 320px;
   max-width: 100%;
@@ -323,7 +336,7 @@ padding: 5px;
 
 }
 .full-image-warp{
-    height: 80vh;
+    height: 100vh;
 }
 
 .image-warp{
@@ -331,7 +344,6 @@ padding: 5px;
 cursor: zoom-in;
 
 }
-
 .zoom-cursor{
   cursor: zoom-in;
 }
@@ -389,4 +401,30 @@ cursor: zoom-in;
   background-color: white;
   height: 100%;
 }
+
+  .full-tab-nav .swiper-slide.active {
+    border:1px solid #eee;
+  }
+
+.full-tab-nav .swiper-slide {
+    background-color: white;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding: 10px 0;
+    width:70px;
+    height: 70px;
+    border:1px solid #fff;
+
+
+  }
+  .full-tab-nav{
+    position: absolute;
+    margin: .5rem;
+    bottom: 0;
+  }
+  .modal-zoom-header{
+    position: absolute;
+    top: 0;
+    z-index: 10;
+  }
 </style>
