@@ -60,10 +60,12 @@ var breadcrumbsSwiper = new Swiper('.breadcrumbsSwiper', {
 
 var fulltabNavSwiper = new Swiper('.full-tab-nav', {
     slidesPerView: 'auto',
-    scrollbar: '.swiper-scrollbar',
-    scrollbarHide: false
+    scrollbarHide: false,
+      observer: true,
+  observeParents: true,
     
   });
+
 
   var fulltabContentSwiper = new Swiper('.full-tab-content', {
     preloadImages: false,
@@ -71,6 +73,8 @@ var fulltabNavSwiper = new Swiper('.full-tab-nav', {
     zoom: true,
     pagination: '.swiper-pagination',
     paginationClickable: true,
+      observer: true,
+  observeParents: true,
 
     onSlideChangeStart: function onSlideChangeStart(swiper) {
       $('#full-tabNav .active').removeClass('active');
@@ -83,15 +87,22 @@ var fulltabNavSwiper = new Swiper('.full-tab-nav', {
     }
   });
 
+
+
+
   $('#full-tabNav .swiper-slide').on('click', function (event) {
     fulltabContentSwiper.slideTo($(this).data('slide-index'));
   });
 
-$('#fullscreen-image').on('shown.bs.modal', function (e) {
+
+
+
+$('#fullscreen-image').on('shown.bs.modal', function (event) {
+  setTimeout(function () {
   fulltabContentSwiper.update;
   fulltabNavSwiper.update;
-
-})
+  }, 500);
+});
 
 
 

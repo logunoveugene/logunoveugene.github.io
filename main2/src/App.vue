@@ -69,7 +69,7 @@
           <div class="tab-content">
             <div class="swiper-wrapper">
               <div v-for="slide in swiperSlides" class="swiper-slide image-warp">
-                <a href="" data-toggle="modal" data-target="#fullscreen-image" class="zoom-cursor">
+                <a  id="fullscreen-modal-image" href="" data-toggle="modal" data-target="#fullscreen-image" class="zoom-cursor">
                   <img :data-src="slide" class="swiper-lazy large-image" >
                   <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
                 </a>
@@ -183,7 +183,7 @@
       
 
     </div>
-
+<div class="main-image">
 
           <div class="full-tab-content">
             <div class="swiper-wrapper">
@@ -204,11 +204,11 @@
                 <img :src="slide">
               </div>
             </div>
-            <div class="swiper-scrollbar"></div>
+
           </div>
 
                 
-           
+          </div> 
 
 
 
@@ -375,8 +375,6 @@ cursor: zoom-in;
 }
 .swiper-scrollbar{
       background: rgba(0,0,0,.05);
-
-
 
 }
 
