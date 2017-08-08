@@ -69,7 +69,7 @@
           <div class="tab-content">
             <div class="swiper-wrapper">
               <div v-for="slide in swiperSlides" class="swiper-slide image-warp">
-                <a  id="fullscreen-modal-image" href="" data-toggle="modal" data-target="#fullscreen-image" class="zoom-cursor">
+                <a id="fullscreen-modal-image" href="" data-toggle="modal" data-target="#fullscreen-image" class="zoom-cursor">
                   <img :data-src="slide" class="swiper-lazy large-image" >
                   <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
                 </a>
@@ -183,13 +183,13 @@
       
 
     </div>
-<div class="main-image">
+<div class="main-image d-flex flex-column justify-content-center">
 
           <div class="full-tab-content">
             <div class="swiper-wrapper">
-              <div v-for="slide in swiperSlides" class="swiper-slide ">
+              <div v-for="slide in swiperSlides" class="swiper-slide  full-image-warp">
 
-                <div class="swiper-zoom-container">
+                <div class="swiper-zoom-container ">
                   <img :data-src="slide" class="swiper-lazy large-image" >
                   <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
                    </div>
@@ -198,7 +198,7 @@
             </div>
             <div class="swiper-pagination hidden-sm-up"></div>
           </div>
-          <div class="full-tab-nav hidden-sm-down" id="full-tabNav">
+          <div class="full-tab-nav hidden-sm-down " id="full-tabNav">
             <div class="swiper-wrapper">
               <div v-for="(slide, index)  in swiperSlidesThumbs" class="swiper-slide" :data-slide-index="index">
                 <img :src="slide">
@@ -322,6 +322,10 @@ padding: 5px;
 
 
 }
+.full-image-warp{
+    height: 80vh;
+}
+
 .image-warp{
   height: 320px;
 cursor: zoom-in;
