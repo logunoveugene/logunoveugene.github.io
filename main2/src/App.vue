@@ -87,8 +87,8 @@
           </div>
         </div>
         <div class="d-flex flex-row small">
-          <a href="" class="text-muted mr-4" data-toggle="modal" data-target="#360review"> <img src="https://i.snag.gy/cUbKJR.jpg" alt="" class="mb-1 mr-2"><span>Видеообзор модели</span> </a>
-          <a href="" class="text-muted"> <img src="https://i.snag.gy/Z8wTQl.jpg" alt="" class="mb-1 mr-2"><span>3D обзор</span> </a>
+          <a href="" class="text-muted mr-4" data-toggle="modal" data-target="#video-full"> <img src="https://i.snag.gy/cUbKJR.jpg" alt="" class="mb-1 mr-2"><span>Видеообзор модели</span> </a>
+          <a href="" class="text-muted" data-toggle="modal" data-target="#360review"> <img src="https://i.snag.gy/Z8wTQl.jpg" alt="" class="mb-1 mr-2"><span>3D обзор</span> </a>
         </div>
       </div>
     </div>
@@ -201,7 +201,7 @@
   </div>
 </div>
 
-<div class="modal fade" id="360review" tabindex="-1" role="dialog" aria-labelledby="fullscreen-image" aria-hidden="true">
+<div class="modal fade" id="video-full" tabindex="-1" role="dialog" aria-labelledby="fullscreen-image" aria-hidden="true">
   <div class="modal-dialog modal-full" role="document">
     <div class="card-block">
       <div class="row mb-3">
@@ -217,7 +217,33 @@
     </div>
     <div class="card-block mt-0 ">
     <div class="mx-auto" style="width: auto;">
-      <iframe width="100%" height="500" src="https://www.youtube.com/embed/0X2sS_8n_8I" frameborder="0" allowfullscreen></iframe>
+      <iframe width="100%" height="500px" src="https://www.youtube.com/embed/0X2sS_8n_8I" frameborder="0" allowfullscreen></iframe>
+    </div>
+      
+    </div>
+    
+  </div>
+</div>
+
+
+
+<div class="modal fade" id="360review" tabindex="-1" role="dialog" aria-labelledby="fullscreen-image" aria-hidden="true">
+  <div class="modal-dialog modal-full" role="document">
+    <div class="card-block">
+      <div class="row mb-3">
+        <div class="col-10">
+          <h5 class="modal-title" id="exampleModalLabel">3D обзор</h5>
+        </div>
+        <div class="col-2">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card-block mt-0 ">
+    <div class="mx-auto" style="width: auto;">
+      <iframe width="100%" height="500px" allowfullscreen="true" src="//reviewthree.com/embed/9616"></iframe>
     </div>
       
     </div>
