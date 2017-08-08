@@ -204,7 +204,7 @@
 <div class="modal fade" id="video-full" tabindex="-1" role="dialog" aria-labelledby="fullscreen-image" aria-hidden="true">
   <div class="modal-dialog modal-full" role="document">
     <div class="card-block">
-      <div class="row mb-3">
+      <div class="row ">
         <div class="col-10">
           <h5 class="modal-title" id="exampleModalLabel">Видеообзор модели</h5>
         </div>
@@ -215,9 +215,9 @@
         </div>
       </div>
     </div>
-    <div class="card-block mt-0 ">
-    <div class="mx-auto" style="width: auto;">
-      <iframe width="100%" height="500px" src="https://www.youtube.com/embed/0X2sS_8n_8I" frameborder="0" allowfullscreen></iframe>
+    <div class="card-block pt-0">
+    <div class="mx-auto" >
+      <iframe width="100%" height="400px" src="https://www.youtube.com/embed/0X2sS_8n_8I" frameborder="0" allowfullscreen></iframe>
     </div>
       
     </div>
@@ -230,7 +230,7 @@
 <div class="modal fade" id="360review" tabindex="-1" role="dialog" aria-labelledby="fullscreen-image" aria-hidden="true">
   <div class="modal-dialog modal-full" role="document">
     <div class="card-block">
-      <div class="row mb-3">
+      <div class="row">
         <div class="col-10">
           <h5 class="modal-title" id="exampleModalLabel">3D обзор</h5>
         </div>
@@ -241,9 +241,9 @@
         </div>
       </div>
     </div>
-    <div class="card-block mt-0 ">
-    <div class="mx-auto" style="width: auto;">
-      <iframe width="100%" height="500px" allowfullscreen="true" src="//reviewthree.com/embed/9616"></iframe>
+    <div class="card-block pt-0 ">
+    <div class="mx-auto">
+      <iframe width="100%" height="400px" allowfullscreen="true" src="//reviewthree.com/embed/9616"></iframe>
     </div>
       
     </div>
