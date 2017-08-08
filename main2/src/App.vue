@@ -69,8 +69,10 @@
           <div class="tab-content">
             <div class="swiper-wrapper">
               <div v-for="slide in swiperSlides" class="swiper-slide image-warp">
-                <img :data-src="slide" class="swiper-lazy large-image">
-                <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
+                <a href="" data-toggle="modal" data-target="#exampleModal">
+                  <img :data-src="slide" class="swiper-lazy large-image" >
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
+                </a>
               </div>
             </div>
             <div class="swiper-pagination hidden-sm-up"></div>
@@ -158,8 +160,41 @@
       </div>
     </div>
   </div>
+
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-full" role="document">
+    
+      <div class="card-block">
+      <div class="row mb-3">
+        <div class="col-10">
+            <h5 class="modal-title" id="exampleModalLabel">Телевизор SAMSUNG UE19H4000AK</h5>
+        </div>
+        <div class="col-2">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+      </div>
+      <div class="row">
+        
+      <div class="col-12">
+        Изображение
+      </div>
+      </div>
+        
+       
+      
+      
+
+    </div>
+  </div>
 </div>
  </div>
+
+
+
+
 
 
 
@@ -317,4 +352,10 @@ cursor: zoom-in;
 
 }
 
+
+.modal-full{
+  max-width: 100%; 
+  margin:0;
+  background-color: white;
+}
 </style>

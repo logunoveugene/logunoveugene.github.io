@@ -30,7 +30,10 @@ $(document).ready(function () {
     freeMode: true
     
   });
-
+ var tabssSwiper = new Swiper('.tabssSwiper', {
+    slidesPerView: 'auto',
+    freeMode: true
+  });
 
 
 
