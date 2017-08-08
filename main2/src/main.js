@@ -18,24 +18,21 @@ var btnW = 70; // 导航按钮的宽度，px
 var slideAmount = 9; // 分页数量
 
 $(document).ready(function () {
+var breadcrumbsSwiper = new Swiper('.breadcrumbsSwiper', {
+    slidesPerView: 'auto',
+    freeMode: true
+    
+  });
+
+
+
+
   var tabNavSwiper = new Swiper('.tab-nav', {
     slidesPerView: 'auto',
     scrollbar: '.swiper-scrollbar',
     scrollbarHide: false
     
   });
-
-  var breadcrumbsSwiper = new Swiper('.breadcrumbsSwiper', {
-    slidesPerView: 'auto',
-    freeMode: true
-    
-  });
- var tabssSwiper = new Swiper('.tabssSwiper', {
-    slidesPerView: 'auto',
-    freeMode: true
-  });
-
-
 
   var tabContentSwiper = new Swiper('.tab-content', {
   	preloadImages: false,
@@ -57,5 +54,49 @@ $(document).ready(function () {
   $('#tabNav .swiper-slide').on('click', function (event) {
     tabContentSwiper.slideTo($(this).data('slide-index'));
   });
+
+
+
+
+var fulltabNavSwiper = new Swiper('.full-tab-nav', {
+    slidesPerView: 'auto',
+    scrollbar: '.swiper-scrollbar',
+    scrollbarHide: false
+    
+  });
+
+  var fulltabContentSwiper = new Swiper('.full-tab-content', {
+    preloadImages: false,
+    lazyLoading: true,
+    zoom: true,
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+
+    onSlideChangeStart: function onSlideChangeStart(swiper) {
+      $('#full-tabNav .active').removeClass('active');
+      $('#full-tabNav .swiper-slide[data-slide-index=' + swiper.activeIndex + ']').addClass('active');
+      if (swiper.previousIndex < swiper.activeIndex) {
+        fulltabNavSwiper.slideTo(swiper.activeIndex - 2);
+      } else {
+        fulltabNavSwiper.slideTo(swiper.activeIndex - 1);
+      }
+    }
+  });
+
+  $('#full-tabNav .swiper-slide').on('click', function (event) {
+    fulltabContentSwiper.slideTo($(this).data('slide-index'));
+  });
+
+$('#fullscreen-image').on('shown.bs.modal', function (e) {
+  fulltabContentSwiper.update;
+  fulltabNavSwiper.update;
+
+})
+
+
+
+
 });
+
+
 

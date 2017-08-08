@@ -69,7 +69,7 @@
           <div class="tab-content">
             <div class="swiper-wrapper">
               <div v-for="slide in swiperSlides" class="swiper-slide image-warp">
-                <a href="" data-toggle="modal" data-target="#exampleModal">
+                <a href="" data-toggle="modal" data-target="#fullscreen-image" class="zoom-cursor">
                   <img :data-src="slide" class="swiper-lazy large-image" >
                   <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
                 </a>
@@ -162,7 +162,7 @@
   </div>
 
 </div>
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="fullscreen-image" tabindex="-1" role="dialog" aria-labelledby="fullscreen-image" aria-hidden="true">
   <div class="modal-dialog modal-full" role="document">
     
       <div class="card-block">
@@ -176,18 +176,42 @@
         </button>
         </div>
       </div>
-      <div class="row">
-        
-      <div class="col-12">
-        Изображение
-      </div>
-      </div>
+      
         
        
       
       
 
     </div>
+
+
+          <div class="full-tab-content">
+            <div class="swiper-wrapper">
+              <div v-for="slide in swiperSlides" class="swiper-slide ">
+
+                <div class="swiper-zoom-container">
+                  <img :data-src="slide" class="swiper-lazy large-image" >
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
+                   </div>
+
+              </div>
+            </div>
+            <div class="swiper-pagination hidden-sm-up"></div>
+          </div>
+          <div class="full-tab-nav hidden-sm-down" id="full-tabNav">
+            <div class="swiper-wrapper">
+              <div v-for="(slide, index)  in swiperSlidesThumbs" class="swiper-slide" :data-slide-index="index">
+                <img :src="slide">
+              </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+          </div>
+
+                
+           
+
+
+
   </div>
 </div>
  </div>
@@ -303,6 +327,10 @@ padding: 5px;
 cursor: zoom-in;
 
 }
+
+.zoom-cursor{
+  cursor: zoom-in;
+}
 @media screen and (max-width: 425px) {
      .image-warp{
      height: 220px;
@@ -357,5 +385,6 @@ cursor: zoom-in;
   max-width: 100%; 
   margin:0;
   background-color: white;
+  height: 100%;
 }
 </style>
