@@ -65,7 +65,7 @@
             </div>
           </div>
           <div class="main-image mb-3">
-            <div class="tab-content">
+            <div class="img-tab-content">
               <div class="swiper-wrapper">
                 <div v-for="slide in swiperSlides" class="swiper-slide image-warp">
                   <a id="fullscreen-modal-image" href="" data-toggle="modal" data-target="#fullscreen-image" class="zoom-cursor">
@@ -76,7 +76,7 @@
               </div>
               <div class="swiper-pagination hidden-sm-up"></div>
             </div>
-            <div class="tab-nav hidden-sm-down" id="tabNav">
+            <div class="img-tab-nav hidden-sm-down" id="tabNav">
               <div class="swiper-wrapper">
                 <div v-for="(slide, index)  in swiperSlidesThumbs" class="swiper-slide" :data-slide-index="index">
                   <img :src="slide">
@@ -109,7 +109,7 @@
                 <img src="https://i.snag.gy/wvhWE1.jpg" alt="" class="mb-4">
                 <div class=""><a href="">Все характеристики</a></div>
               </div>
-              <div class="mb-3">
+              <div class="mb-5">
                 <div class="mb-2">
                   <span class="mr-2">Права покупателей защищены</span>
                 </div>
@@ -121,7 +121,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-12 col-12">
+          <div class="col-lg-6 col-md-12 col-12 mb-5">
             <div class="d-flex flex-column">
               <img src="https://i.snag.gy/8VrZxc.jpg" alt="" class="hidden-sm-down mb-3">
               <div class=" ">
@@ -159,9 +159,95 @@
       </div>
     </div>
     <div class="row">
-    	<div class="col-5 bg-grey">11</div>
-    	<div class="col-4 bg-grey"><div class="ml-3">11</div></div>
-    	<div class="col-3 bg-grey">11</div>
+      <div class="col-xl-8 col-12">
+        <div class="mainTabdSwiper swiper-container">
+          <div class="swiper-wrapper ">
+            <div class="swiper-slide">
+              <ul class="mb-3 nav nav-tabs btn-block " role="tablist">
+                <li class="nav-item nav-link active" data-toggle="tab" data-target="#main" role="tab">
+                  <div class="d-flex flex-row">
+                    <div class="h5 mb-0">
+                      <a href="">Обзор</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item nav-link" data-toggle="tab" data-target="#specifications" role="tab">
+                  <div class="d-flex flex-row">
+                    <div class="h5 mb-0">
+                      <a href="">Характеристики</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item nav-link" data-toggle="tab" data-target="#review" role="tab">
+                  <div class="d-flex flex-row">
+                    <div class="h5 mb-0">
+                      <a href="">Отзывы</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item nav-link" data-toggle="tab" data-target="#qestions" role="tab">
+                  <div class="d-flex flex-row">
+                    <div class="h5 mb-0">
+                      <a href="">Вопросы</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item nav-link " data-toggle="tab" data-target="#service" role="tab">
+                  <div class="d-flex flex-row">
+                    <div class="h5 mb-0">
+                      <a href="">Услуги</a>
+                    </div>
+                  </div>
+                </li>
+                <li class="nav-item nav-link" data-toggle="tab" data-target="#accessory" role="tab">
+                  <div class="d-flex flex-row">
+                    <div class="h5 mb-0">
+                      <a href="">Аксессуары</a>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane active" id="main" role="tabpanel">1..</div>
+          <div class="tab-pane" id="specifications" role="tabpanel">2..</div>
+          <div class="tab-pane" id="review" role="tabpanel">3..</div>
+          <div class="tab-pane" id="qestions" role="tabpanel">.4..</div>
+          <div class="tab-pane" id="service" role="tabpanel">5..</div>
+          <div class="tab-pane" id="accessory" role="tabpanel">6..</div>
+        </div>
+      </div>
+      <div class="pl-5 col-4 hidden-lg-down">
+        <div class="ml-3">
+          <div class="card rounded-0">
+            <div class="card-block">
+              <div class="h5 mb-4 mt-2">Лучшие аксессуары</div>
+              <div class="media mb-3">
+                <img class="d-flex mr-3" src="http://via.placeholder.com/60x60" alt="Generic placeholder image">
+                <div class="media-body">
+                  <a href="#" class="mt-0 small text-muted">Жесткий диск Seagate 2TB STSHX-M201TCBM</a>
+                </div>
+              </div>
+              <div class="media mb-3">
+                <img class="d-flex mr-3" src="http://via.placeholder.com/60x60" alt="Generic placeholder image">
+                <div class="media-body">
+                  <a href="#" class="mt-0 small text-muted">Набор Galatec д/экрана: спрей 500 мл+микр G0011</a>
+                </div>
+              </div>
+              <div class="media ">
+                <img class="d-flex mr-3" src="http://via.placeholder.com/60x60" alt="Generic placeholder image">
+                <div class="media-body">
+                  <a href="#" class="mt-0 small text-muted">Сетевой фильтр ЭРА USF-5es-1.5m-USB-B</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>	
   <!-- Модальные окна начало -->
@@ -293,7 +379,7 @@ export default {
   border-radius: 0;
 }
 
-.tab-content {
+.img-tab-content {
   position: relative;
 }
 
@@ -312,7 +398,7 @@ export default {
   text-align: center;
 }
 
-.tab-nav {
+.img-tab-nav {
   position: relative;
   height: 50px;
   width: 100%;
@@ -321,20 +407,20 @@ export default {
   overflow: hidden;
 }
 
-.tab-nav {
+.img-tab-nav {
   height: 20%!important;
   box-sizing: border-box;
   overflow: hidden;
   padding: 10px 0;
 }
 
-.tab-nav .swiper-slide {
+.img-tab-nav .swiper-slide {
   padding: 5px;
   border: 1px solid #fff;
   cursor: pointer;
 }
 
-.tab-nav .active {
+.img-tab-nav .active {
   opacity: 0.7;
   border: 1px solid #eee;
 }
@@ -433,4 +519,18 @@ export default {
   top: 0;
   z-index: 10;
 }
+
+
+
+
+.mainTabdSwiper .swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+   .mainTabdSwiper  .swiper-slide {
+        font-size: 18px;
+        height: auto;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
 </style>
