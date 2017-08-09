@@ -220,7 +220,7 @@
                 <div class="collapse mb-3" id="collapseExample">Расширенная палитра естественных цветов, потрясающая яркость, невероятный контраст - картинка на экране поразит вас. Расширенный динамический диапазон позволяет видеть мельчайшие детали изображения, а широкие углы обзора позволяют с комфортомсмотреть
                   телевизор из любой точки помещения. Телевизор обладает привлекательным дизайном, бесшовной задней панелью, всеми необходимыми коммуникациями и интерфейсами, а с помощью специального кронштейна легко можно закрепить устройство вплотную
                   к стене.</div>
-                  <a class="btn btn-secondary btn-sm mb-3" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Читать все</a>
+                  <a class="btn btn-secondary btn-sm mb-4" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Читать все</a>
               </div>
               <div class="h5 mb-3">Технологии и функции</div>
               <div class="row">
