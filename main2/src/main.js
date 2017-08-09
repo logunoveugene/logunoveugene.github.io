@@ -18,21 +18,21 @@ var btnW = 70; // 导航按钮的宽度，px
 var slideAmount = 9; // 分页数量
 
 $(document).ready(function () {
-var breadcrumbsSwiper = new Swiper('.mainTabdSwiper', {
+var mainTabdSwiper = new Swiper('.mainTabdSwiper', {
     preventClicks :true,
     preventClicksPropagation: true,
     slidesPerView: 'auto',
-    mousewheelControl: true,
     freeMode: true,
     slidesOffsetAfter: 1
   });
 
 
 var breadcrumbsSwiper = new Swiper('.breadcrumbsSwiper', {
+    preventClicks :true,
+    preventClicksPropagation: true,
     slidesPerView: 'auto',
     freeMode: true,
-    preventClicks :true,
-    preventClicksPropagation: true
+    slidesOffsetAfter: 1
   });
 
 
@@ -47,6 +47,7 @@ var breadcrumbsSwiper = new Swiper('.breadcrumbsSwiper', {
   var tabContentSwiper = new Swiper('.img-tab-content', {
   	preloadImages: false,
     lazyLoading: true,
+    keyboardControl: true,
     pagination: '.swiper-pagination',
     paginationClickable: true,
 

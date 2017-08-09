@@ -11,19 +11,15 @@
       <div class="d-flex ml-1 mb-3 breadcrumbsSwiper-wrap">
         <div class="breadcrumb-left">
         </div>
-        <div class="breadcrumbsSwiper ">
+        <div class="breadcrumbsSwiper" dir="rtl">
           <div class="swiper-wrapper ">
             <div class="swiper-slide">
-              <a class="text-muted small mr-3 " href="#">Главная</a> <img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
-            </div>
-            <div class="swiper-slide">
-              <a class="text-muted  small mr-3" href="#">Телевизоры и видеотехника</a><img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
-            </div>
-            <div class="swiper-slide">
-              <a class="text-muted  small mr-3" href="#">Телевизоры </a><img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
-            </div>
-            <div class="swiper-slide">
-              <a class="text-muted  small" href="#">Samsung </a>
+              <nav class="">
+                <a class="text-muted small mr-3 " href="#">Главная</a> <img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
+                <a class="text-muted  small mr-3" href="#">Телевизоры и видеотехника</a><img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
+                <a class="text-muted  small mr-3" href="#">Телевизоры </a><img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
+                <a class="text-muted  small" href="#">Samsung </a>
+              </nav>
             </div>
           </div>
         </div>
@@ -215,9 +211,19 @@
           <div class="tab-pane active" id="main" role="tabpanel">
             <div class="pt-2">
               <div class="h5 mb-3">Телевизор Samsung QE55Q7CAM</div>
-              <div class="">Телевизор Samsung QE65Q7CAM имеет 65-дюймовый изогнутый безрамочный экран, работающий с наиболее современной на сегодняшний день технологией квантовых точек - она обеспечивает превосходное качество изображения. Расширенная палитра естественных
+              <div class="hidden-xs-down">Телевизор Samsung QE65Q7CAM имеет 65-дюймовый изогнутый безрамочный экран, работающий с наиболее современной на сегодняшний день технологией квантовых точек - она обеспечивает превосходное качество изображения. Расширенная палитра естественных
                 цветов, потрясающая яркость, невероятный контраст - картинка на экране поразит вас. Расширенный динамический диапазон позволяет видеть мельчайшие детали изображения, а широкие углы обзора позволяют с комфортом смотреть телевизор из любой
                 точки помещения. Телевизор обладает привлекательным дизайном, бесшовной задней панелью, всеми необходимыми коммуникациями и интерфейсами, а с помощью специального кронштейна легко можно закрепить устройство вплотную к стене.</div>
+              <div class="hidden-sm-up">
+                <div class="mb-3">Телевизор Samsung QE65Q7CAM имеет 65-дюймовый изогнутый безрамочный экран, работающий с наиболее современной на сегодняшний день технологией квантовых точек - она обеспечивает превосходное качество изображения...</div>
+                
+                <div class="collapse mb-3" id="collapseExample">Расширенная палитра естественных цветов, потрясающая яркость, невероятный контраст - картинка на экране поразит вас. Расширенный динамический диапазон позволяет видеть мельчайшие детали изображения, а широкие углы обзора позволяют с комфортомсмотреть
+                  телевизор из любой точки помещения. Телевизор обладает привлекательным дизайном, бесшовной задней панелью, всеми необходимыми коммуникациями и интерфейсами, а с помощью специального кронштейна легко можно закрепить устройство вплотную
+                  к стене.</div>
+                  <a class="btn btn-secondary btn-sm mb-3" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Читать все</a>
+              </div>
+              <div class="h5">Технологии и функции</div>
+              <div class="mb-3">Телевизор Samsung QE65Q7CAM имеет 65-дюймовый изогнутый безрамочный экран, работающий с наиболее современной на сегодняшний день технологией квантовых точек - она обеспечивает превосходное качество изображения.</div>
             </div>
           </div>
           <div class="tab-pane" id="specifications" role="tabpanel">
@@ -409,7 +415,6 @@ export default {
     },
 }
 </script>
-
 <style>
 .badge-benefit {
   background-color: #ffe600;
