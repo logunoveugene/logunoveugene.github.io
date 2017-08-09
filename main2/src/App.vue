@@ -181,7 +181,7 @@
                 <li class="nav-item nav-link" data-toggle="tab" data-target="#review" role="tab">
                   <div class="d-flex flex-row">
                     <div class="h5 mb-0">
-                      <a href="">Отзывы</a>
+                      <a href="">Отзывы <span class="small text-muted ml-1">17</span></a>
                     </div>
                   </div>
                 </li>
@@ -195,7 +195,7 @@
                 <li class="nav-item nav-link " data-toggle="tab" data-target="#service" role="tab">
                   <div class="d-flex flex-row">
                     <div class="h5 mb-0">
-                      <a href="">Услуги</a>
+                      <a href="">Услуги <span class="small text-muted ml-1">3</span></a>
                     </div>
                   </div>
                 </li>
