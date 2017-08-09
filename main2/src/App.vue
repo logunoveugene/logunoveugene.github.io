@@ -223,9 +223,15 @@
                   <a class="btn btn-secondary btn-sm mb-3" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Читать все</a>
               </div>
               <div class="h5 mb-3">Технологии и функции</div>
-              <div class="h6"> <b>Clear Resolution Enhancer: безупречная детализация</b></div>
-
-              <div class="mb-3">Телевизор Samsung QE65Q7CAM имеет 65-дюймовый изогнутый безрамочный экран, работающий с наиболее современной на сегодняшний день технологией квантовых точек - она обеспечивает превосходное качество изображения.</div>
+              <div class="row">
+                <div class="col-md-6 col-12">
+                  <div class="h6"> <b>Clear Resolution Enhancer: безупречная детализация</b></div>
+                  <div class="mb-3">Телевизор Samsung QE65Q7CAM имеет 65-дюймовый изогнутый безрамочный экран, работающий с наиболее современной на сегодняшний день технологией квантовых точек - она обеспечивает превосходное качество изображения.</div></div>
+                <div class="col-md-6 col-12">
+                  <img class="img-fluid" src="https://i.snag.gy/LuKxJT.jpg" alt="">
+                </div>
+              </div>
+              
             </div>
           </div>
           <div class="tab-pane" id="specifications" role="tabpanel">
