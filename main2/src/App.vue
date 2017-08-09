@@ -214,15 +214,47 @@
         <!-- Tab panes -->
         <div class="tab-content">
           <div class="tab-pane active" id="main" role="tabpanel">
-          <div class="mt-4">
-          <div class="h5">Телевизор Samsung QE55Q7CAM</div>
+          <div class="mt-5">
+          <div class="h5 mb-3">Телевизор Samsung QE55Q7CAM</div>
           <div class="">Телевизор Samsung QE65Q7CAM имеет 65-дюймовый изогнутый безрамочный экран, работающий с наиболее современной на сегодняшний день технологией квантовых точек - она обеспечивает превосходное качество изображения. Расширенная палитра естественных цветов, потрясающая яркость, невероятный контраст - картинка на экране поразит вас. Расширенный динамический диапазон позволяет видеть мельчайшие детали изображения, а широкие углы обзора позволяют с комфортом смотреть телевизор из любой точки помещения. Телевизор обладает привлекательным дизайном, бесшовной задней панелью, всеми необходимыми коммуникациями и интерфейсами, а с помощью специального кронштейна легко можно закрепить устройство вплотную к стене.</div>
           </div></div>
 
 
 
 
-          <div class="tab-pane" id="specifications" role="tabpanel">2..</div>
+          <div class="tab-pane" id="specifications" role="tabpanel">
+             <div class="mt-5">
+             <div class="h5 mb-3">Телевизор Samsung QE55Q7CAM</div>
+            <table class="table">
+                  <tbody>
+                    <tr>
+                      <td class="pl-0">Производитель</td>
+                      <td class="pl-0">Samsung</td>
+                    </tr>
+                    <tr>
+                      <td class="pl-0">Гарантийный срок</td>
+                      <td class="pl-0">1 год</td>
+                    </tr>
+                    <tr>
+                      <td class="pl-0">Страна происхождения</td>
+                      <td class="pl-0">Россия</td>
+                    </tr>
+                     <tr>
+                      <td class="pl-0">Цвет</td>
+                      <td class="pl-0">Серебристый</td>
+                    </tr>
+                     <tr>
+                      <td class="pl-0">Вес товара с упаковкой</td>
+                      <td class="pl-0">36.8 кг</td>
+                    </tr>
+                     <tr>
+                      <td class="pl-0">Размеры с упаковкой</td>
+                      <td class="pl-0">1.60x0.21x0.96 м</td>
+                    </tr>
+                  </tbody>
+                </table>
+   </div>
+          </div>
           <div class="tab-pane" id="review" role="tabpanel">3..</div>
           <div class="tab-pane" id="qestions" role="tabpanel">.4..</div>
           <div class="tab-pane" id="service" role="tabpanel">5..</div>
