@@ -121,7 +121,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-12 col-12 mb-5">
+          <div class="col-lg-6 col-md-12 col-12 mb-4">
             <div class="d-flex flex-column">
               <img src="https://i.snag.gy/8VrZxc.jpg" alt="" class="hidden-sm-down mb-3">
               <div class=" ">
@@ -529,6 +529,7 @@ export default {
     }
    .mainTabdSwiper  .swiper-slide {
         font-size: 18px;
+        width: auto;
         height: auto;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;

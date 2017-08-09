@@ -24,8 +24,7 @@ var breadcrumbsSwiper = new Swiper('.mainTabdSwiper', {
     slidesPerView: 'auto',
     mousewheelControl: true,
     freeMode: true,
-    width: 100
-
+    slidesOffsetAfter: 1
   });
 
 
