@@ -265,21 +265,24 @@
             <div class="card-block">
               <div class="h5 mb-4 mt-2">Лучшие аксессуары</div>
               <div class="media mb-3">
-                <img class="d-flex mr-3" src="http://via.placeholder.com/60x60" alt="Generic placeholder image">
+                <img class="d-flex mr-3" src="https://i.snag.gy/3sorHN.jpg" alt="Generic placeholder image">
                 <div class="media-body">
                   <a href="#" class="mt-0 small text-muted">Жесткий диск Seagate 2TB STSHX-M201TCBM</a>
+                  <div class="">1 190 р.</div>
                 </div>
               </div>
               <div class="media mb-3">
-                <img class="d-flex mr-3" src="http://via.placeholder.com/60x60" alt="Generic placeholder image">
+                <img class="d-flex mr-3" src="https://i.snag.gy/Z3W62H.jpg" alt="Generic placeholder image">
                 <div class="media-body">
-                  <a href="#" class="mt-0 small text-muted">Набор Galatec д/экрана: спрей 500 мл+микр G0011</a>
+                  <a href="#" class="mt-0 small text-muted">Телевизионная приставка Apple TV 64Gb</a>
+                  <div class="">4 680 р.</div>
                 </div>
               </div>
               <div class="media ">
-                <img class="d-flex mr-3" src="http://via.placeholder.com/60x60" alt="Generic placeholder image">
+                <img class="d-flex mr-3" src="https://i.snag.gy/bUsofz.jpg" alt="Generic placeholder image">
                 <div class="media-body">
-                  <a href="#" class="mt-0 small text-muted">Сетевой фильтр ЭРА USF-5es-1.5m-USB-B</a>
+                  <a href="#" class="mt-0 small text-muted">Кронштейн для ТВ наклонно-поворотный Resonans PS809</a>
+                  <div class="">2 420 р.</div>
                 </div>
               </div>
             </div>
