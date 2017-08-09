@@ -156,6 +156,7 @@
     </div>
     <div class="row">
       <div class="col-xl-8 col-12">
+        <div class="main-tab-wrap mb-4">
         <div class="mainTabdSwiper swiper-container nav-tabs mb-4">
           <div class="swiper-wrapper ">
             <div class="swiper-slide">
@@ -272,6 +273,8 @@
           <div class="tab-pane" id="service" role="tabpanel">5..</div>
           <div class="tab-pane" id="accessory" role="tabpanel">6..</div>
         </div>
+        </div>
+        <div class="h5 mb-3">Похожие товары</div>
       </div>
       <div class="pl-5 col-4 hidden-lg-down">
         <div class="ml-3">
@@ -292,6 +295,13 @@
                   <div class="">4 680 р.</div>
                 </div>
               </div>
+              <div class="media mb-3">
+                <img class="d-flex mr-3" src="https://i.snag.gy/u5ahdn.jpg" alt="Generic placeholder image">
+                <div class="media-body">
+                  <a href="#" class="mt-0 small text-muted">Кабель Philips SWV2434 HDMI-HDMI 5 м</a>
+                  <div class=""> 870 р.</div>
+                </div>
+              </div>
               <div class="media ">
                 <img class="d-flex mr-3" src="https://i.snag.gy/bUsofz.jpg" alt="Generic placeholder image">
                 <div class="media-body">
@@ -304,6 +314,7 @@
         </div>
       </div>
     </div>
+
   </div>
   <!-- Модальные окна начало -->
   <div class="modal fade" id="fullscreen-image" tabindex="-1" role="dialog" aria-labelledby="fullscreen-image" aria-hidden="true">
