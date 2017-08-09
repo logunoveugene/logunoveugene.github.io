@@ -87,10 +87,10 @@ a:hover {
 }
 .nav-item.nav-link.active a {
     border: none;
-    box-shadow: inset 0 -3px orange;
+    box-shadow: inset 0 -3px #ef6023;
     background: none;
     margin-bottom: 0px;
-    color: #ee722f;
+    color: #ea2000;
     padding:  .75rem 0;
 
 
