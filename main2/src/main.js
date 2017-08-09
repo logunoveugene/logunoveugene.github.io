@@ -27,12 +27,19 @@ var mainTabdSwiper = new Swiper('.mainTabdSwiper', {
   });
 
 
-var breadcrumbsSwiper = new Swiper('.breadcrumbsSwiper', {
+var productRelated = new Swiper('.product-related', {
     preventClicks :true,
     preventClicksPropagation: true,
     slidesPerView: 'auto',
-    freeMode: true,
     slidesOffsetAfter: 1
+  });
+
+var breadcrumbsSwiper = new Swiper('.breadcrumbsSwiper', {
+    preventClicks :true,
+    preventClicksPropagation: true,
+    slidesPerView: 'auto'
+
+
   });
 
 

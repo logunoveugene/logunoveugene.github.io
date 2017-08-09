@@ -275,6 +275,23 @@
         </div>
         </div>
         <div class="h5 mb-3">Похожие товары</div>
+        <div class="product-related">
+          <div class="swiper-wrapper ">
+            <div class="swiper-slide">
+                <img src="https://i.snag.gy/IOobaj.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://i.snag.gy/oKifkj.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://i.snag.gy/DJkGMq.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+                <img src="https://i.snag.gy/BGgYpa.jpg" alt="">
+            </div>
+              </div>
+              </div>
+
       </div>
       <div class="pl-5 col-4 hidden-lg-down">
         <div class="ml-3">
@@ -584,8 +601,6 @@ export default {
 }
 
 
-
-
 .mainTabdSwiper .swiper-container {
         width: 100%;
         height: 100%;
@@ -596,5 +611,24 @@ export default {
         height: auto;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
+    }
+
+
+
+
+.product-related .swiper-container {
+        width: 100%;
+        height: 100%;
+
+    }
+   .product-related .swiper-slide {
+        font-size: 18px;
+        width: auto;
+        height: auto;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .product-related{
+      overflow: hidden;
     }
 </style>
