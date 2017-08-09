@@ -160,7 +160,7 @@
     </div>
     <div class="row">
       <div class="col-xl-8 col-12">
-        <div class="mainTabdSwiper swiper-container nav-tabs mb-3">
+        <div class="mainTabdSwiper swiper-container nav-tabs mb-4">
           <div class="swiper-wrapper ">
             <div class="swiper-slide">
               <ul class=" nav border-bottom-0 btn-block" role="tablist">
@@ -210,50 +210,48 @@
             </div>
           </div>
         </div>
-      
         <!-- Tab panes -->
         <div class="tab-content">
           <div class="tab-pane active" id="main" role="tabpanel">
-          <div class="mt-5">
-          <div class="h5 mb-3">Телевизор Samsung QE55Q7CAM</div>
-          <div class="">Телевизор Samsung QE65Q7CAM имеет 65-дюймовый изогнутый безрамочный экран, работающий с наиболее современной на сегодняшний день технологией квантовых точек - она обеспечивает превосходное качество изображения. Расширенная палитра естественных цветов, потрясающая яркость, невероятный контраст - картинка на экране поразит вас. Расширенный динамический диапазон позволяет видеть мельчайшие детали изображения, а широкие углы обзора позволяют с комфортом смотреть телевизор из любой точки помещения. Телевизор обладает привлекательным дизайном, бесшовной задней панелью, всеми необходимыми коммуникациями и интерфейсами, а с помощью специального кронштейна легко можно закрепить устройство вплотную к стене.</div>
-          </div></div>
-
-
-
-
+            <div class="pt-2">
+              <div class="h5 mb-3">Телевизор Samsung QE55Q7CAM</div>
+              <div class="">Телевизор Samsung QE65Q7CAM имеет 65-дюймовый изогнутый безрамочный экран, работающий с наиболее современной на сегодняшний день технологией квантовых точек - она обеспечивает превосходное качество изображения. Расширенная палитра естественных
+                цветов, потрясающая яркость, невероятный контраст - картинка на экране поразит вас. Расширенный динамический диапазон позволяет видеть мельчайшие детали изображения, а широкие углы обзора позволяют с комфортом смотреть телевизор из любой
+                точки помещения. Телевизор обладает привлекательным дизайном, бесшовной задней панелью, всеми необходимыми коммуникациями и интерфейсами, а с помощью специального кронштейна легко можно закрепить устройство вплотную к стене.</div>
+            </div>
+          </div>
           <div class="tab-pane" id="specifications" role="tabpanel">
-             <div class="mt-5">
-             <div class="h5 mb-3">Телевизор Samsung QE55Q7CAM</div>
-            <table class="table">
-                  <tbody>
-                    <tr>
-                      <td class="pl-0">Производитель</td>
-                      <td class="pl-0">Samsung</td>
-                    </tr>
-                    <tr>
-                      <td class="pl-0">Гарантийный срок</td>
-                      <td class="pl-0">1 год</td>
-                    </tr>
-                    <tr>
-                      <td class="pl-0">Страна происхождения</td>
-                      <td class="pl-0">Россия</td>
-                    </tr>
-                     <tr>
-                      <td class="pl-0">Цвет</td>
-                      <td class="pl-0">Серебристый</td>
-                    </tr>
-                     <tr>
-                      <td class="pl-0">Вес товара с упаковкой</td>
-                      <td class="pl-0">36.8 кг</td>
-                    </tr>
-                     <tr>
-                      <td class="pl-0">Размеры с упаковкой</td>
-                      <td class="pl-0">1.60x0.21x0.96 м</td>
-                    </tr>
-                  </tbody>
-                </table>
-   </div>
+            <div class="pt-2">
+              <div class="h5 mb-3">Телевизор Samsung QE55Q7CAM</div>
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td class="pl-0">Производитель</td>
+                    <td class="pl-0">Samsung</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-0">Гарантийный срок</td>
+                    <td class="pl-0">1 год</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-0">Страна происхождения</td>
+                    <td class="pl-0">Россия</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-0">Цвет</td>
+                    <td class="pl-0">Серебристый</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-0">Вес товара с упаковкой</td>
+                    <td class="pl-0">36.8 кг</td>
+                  </tr>
+                  <tr>
+                    <td class="pl-0">Размеры с упаковкой</td>
+                    <td class="pl-0">1.60x0.21x0.96 м</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
           <div class="tab-pane" id="review" role="tabpanel">3..</div>
           <div class="tab-pane" id="qestions" role="tabpanel">.4..</div>
@@ -289,7 +287,7 @@
         </div>
       </div>
     </div>
-  </div>	
+  </div>
   <!-- Модальные окна начало -->
   <div class="modal fade" id="fullscreen-image" tabindex="-1" role="dialog" aria-labelledby="fullscreen-image" aria-hidden="true">
     <div class="modal-dialog modal-full" role="document">
@@ -370,9 +368,7 @@
     </div>
   </div>
   <!-- Модальные окна конец -->
-
 </div>
-
 </template>
 <script>
 import  rate from './rate.vue'
