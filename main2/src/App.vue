@@ -160,10 +160,10 @@
     </div>
     <div class="row">
       <div class="col-xl-8 col-12">
-        <div class="mainTabdSwiper swiper-container">
+        <div class="mainTabdSwiper swiper-container nav-tabs mb-3">
           <div class="swiper-wrapper ">
             <div class="swiper-slide">
-              <ul class="mb-3 nav nav-tabs btn-block " role="tablist">
+              <ul class=" nav border-bottom-0 btn-block" role="tablist">
                 <li class="nav-item nav-link active" data-toggle="tab" data-target="#main" role="tab">
                   <div class="d-flex flex-row">
                     <div class="h5 mb-0">
