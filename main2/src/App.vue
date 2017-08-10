@@ -133,14 +133,14 @@
                     <button type="button" class="btn btn-secondary mb-3">Купить в 1 клик</button>
                     <div class="d-flex flex-row justify-content-between small">
                       <a href="#">Как купить в кредит?</a>
-                      <a href="#">Пожаловаться на цену!</a>
+                      <a href="#">Нашли дешевле? снизим цену!</a>
                     </div>
                   </div>
                 </div>
                 <div class="p-3 delivery-info mb-4">
                   <div class="d-flex flex-column">
                     <div class="small mb-1  ">
-                      <a href="">Самовывоз в 6 магазинах</a> – сегодня, бесплатно </div>
+                      <a href="">Самовывоз в 6 магазинах</a> – сегодня</div>
                     <div class="small ">Доставка ‒  с 15 сентября, 320 р. </div>
                   </div>
                 </div>
@@ -278,16 +278,16 @@
         <div class="product-related">
           <div class="swiper-wrapper ">
             <div class="swiper-slide">
-                <img src="https://i.snag.gy/IOobaj.jpg" alt="">
+                <img src="https://i.snag.gy/p3S1J7.jpg" alt="">
             </div>
             <div class="swiper-slide">
-                <img src="https://i.snag.gy/oKifkj.jpg" alt="">
+                <img src="https://i.snag.gy/ve9q6E.jpg" alt="">
             </div>
             <div class="swiper-slide">
-                <img src="https://i.snag.gy/DJkGMq.jpg" alt="">
+                <img src="https://i.snag.gy/SkDUCt.jpg" alt="">
             </div>
             <div class="swiper-slide">
-                <img src="https://i.snag.gy/BGgYpa.jpg" alt="">
+                <img src="https://i.snag.gy/9yTrgZ.jpg" alt="">
             </div>
               </div>
               </div>
