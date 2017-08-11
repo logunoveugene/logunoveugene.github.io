@@ -95,6 +95,16 @@ a:hover {
 
 
 }
+
+.domotechnikaTabs .nav-item.nav-link.active a {
+    box-shadow: inset 0 -3px orange;
+      color: #ee722f;
+}
+
+
+
 .nav-link:first-child {
     padding-left: 0;
 }
+
+

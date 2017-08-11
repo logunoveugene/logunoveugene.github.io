@@ -1,5 +1,133 @@
 <template>
 <div id="app">
+
+<div class="">
+  <div class="hidden-md-up mb-4">
+  <div class="container-fulid ">
+    <div class="container">
+      <div class="row d-flex ">
+        
+        <div class="col d-flex flex-row align-items-center shrink pt-2 pb-2" v-on:click="switchsite">
+          <img v-if="cm==true"  src="https://i.snag.gy/3jefoc.jpg" alt="" />
+          <img v-if="cm==false" src="https://i.snag.gy/j6mnyA.jpg" alt="" />
+        </div>
+
+        <div class="col d-flex flex-row-reverse align-items-center align-self-end  p-3 ">
+            <img src="https://i.snag.gy/51LOiG.jpg" class="" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fulid bg-grey bb-red-3">
+    <div class="container">
+      <div class="row ">
+                
+        <div class="col  d-flex flex-row align-items-center border-right-1 shrink header-btn p-3">
+          <img src="https://i.snag.gy/oJxb64.jpg" class="mr-2" alt="" />
+          <a href="">
+            <h6 class="mb-0  main-link">Каталог</h6>
+          </a>
+        </div>
+        <div class="col d-flex flex-row align-items-center border-right-1 p-2">
+          <input type="email" class="form-control" placeholder="Поиск по сайту">
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <div class="container-fulid bg-grey hidden-sm-down">
+  <div class="container">
+    <div class="row d-flex ">
+      <div class="col d-flex flex-row align-items-center shrink pt-2 pb-2">
+        <a href="" class="text-muted">
+          <small>Петропавловск-Камчатский</small>
+        </a>
+      </div>
+      <div class="col d-flex flex-row align-items-center shrink pt-2 pb-2">
+        <a href="" class="text-muted">
+          <small>ул. Светланская, д. 147 </small>
+        </a>
+      </div>
+      <div class="col d-flex flex-row align-items-center shrink pt-2 pb-2">
+        <div class="">
+          <b class="text-muted">+7 (4232) 79-01-16</b>
+          <small>(с 9:00 до 20:00)</small>
+        </div>
+      </div>
+      <div class="col d-flex flex-row align-items-center shrink pt-2 pb-2">
+        <a href="" class="text-muted">
+          <small>Обратная связь</small>
+        </a>
+      </div>
+      <div class="col d-flex flex-row-reverse align-items-center align-self-end   pt-2 pb-2">
+        <ul class="nav small ">
+          <li class="nav-item">
+            <a class="nav-link text-muted" href="#">Как купить</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-muted" href="#">Оплата</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-muted pr-0" href="#">Доставка</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fulid  hidden-sm-down  bb-red-3 mb-4">
+  <div class="container">
+    <div class="row ">
+      <div class="col border-right-1 p-3 shrink" v-on:click="switchsite">
+        <img v-if="cm==true"  src="https://i.snag.gy/I0oqfz.jpg" alt="" />
+        <img v-if="cm==false" src="https://i.snag.gy/Amv5nC.jpg" alt="" />
+      </div>
+      <div class="col  d-flex flex-row align-items-center border-right-1 shrink header-btn">
+        <img src="https://i.snag.gy/oJxb64.jpg" class="mr-2" alt="" />
+        <a href="">
+          <h6 class="mb-0  main-link">Каталог</h6>
+        </a>
+      </div>
+      <div class="col d-flex flex-row align-items-center border-right-1">
+        <input type="email" class="form-control" placeholder="Поиск по сайту">
+      </div>
+      <div class="col d-flex flex-row align-items-center border-right-1 shrink header-btn">
+        <img src="https://i.snag.gy/u5W6MI.jpg" class="" alt="" />
+        <div class="d-flex flex-column hidden-md-down ml-2">
+          <a href="" class="main-link"><h6 class="mb-0">Личный кабинет</h6></a>
+          <div class="d-flex flex-row">
+            <a href="" class="mr-2 small text-muted">Вход</a>
+            <a href="" class="small text-muted">Регистрация</a>
+          </div>
+        </div>
+      </div>
+      <div class="col d-flex flex-row align-items-center border-right-1 shrink header-btn">
+        <img src="https://i.snag.gy/uSmB9r.jpg" class=" " alt="" />
+        <div class="d-flex flex-column  ml-2 hidden-md-down ">
+          <a href="" class="main-link">
+            <h6 class="mb-0">Сравнение</h6>
+          </a>
+        </div>
+      </div>
+      <div class="col d-flex flex-row align-items-center border-right-1 shrink header-btn">
+        <img src="https://i.snag.gy/51LOiG.jpg" class="" alt="" />
+        <div class="d-flex flex-column  ml-2 hidden-md-down">
+          <a href="" class="main-link">
+            <h6 class="mb-0">Корзина</h6>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
   <div class="container">
     <div class=" d-flex flex-nowrap">
       <div class=" d-flex flex-row align-items-center pr-3 mb-3 border-right-1">
@@ -125,11 +253,11 @@
                   <div class="d-flex flex-column">
                     <p class="text-muted small mb-0"><del>174 600 p.</del></p>
                     <div class="h3 mb-1">169 990 p.</div>
-                    <div class="mb-2">
+                    <div class="mb-0">
                       <span class="badge badge-benefit">ЭКОНОМИЯ 4 610 р. (скидка 12%)</span>
                     </div>
-                    <p class="text-danger small">До 1 746 р. бонусов</p>
-                    <button type="button" class="btn btn-primary btn-lg mb-3">Добавить в корзину</button>
+                    <p v-if="cm==false" class="text-danger small  mt-2 mb-0">До 1 746 р. бонусов</p>
+                    <button type="button" class="btn btn-lg mt-3 mb-3" v-bind:class="{ 'btn-primary':cm, 'btn-warning':!cm }">Добавить в корзину</button>
                     <button type="button" class="btn btn-secondary mb-3">Купить в 1 клик</button>
                     <div class="d-flex flex-row justify-content-between small">
                       <a href="#">Как купить в кредит?</a>
@@ -140,7 +268,7 @@
                 <div class="p-3 delivery-info mb-4">
                   <div class="d-flex flex-column">
                     <div class="small mb-1  ">
-                      <a href="">Самовывоз в 6 магазинах</a> – сегодня</div>
+                      <a href="">Забрать в 6 магазинах</a> – сегодня</div>
                     <div class="small ">Доставка ‒  с 15 сентября, 320 р. </div>
                   </div>
                 </div>
@@ -160,7 +288,7 @@
         <div class="mainTabdSwiper swiper-container nav-tabs mb-4">
           <div class="swiper-wrapper ">
             <div class="swiper-slide">
-              <ul class=" nav border-bottom-0 btn-block" role="tablist">
+              <ul class=" nav border-bottom-0 btn-block" role="tablist" v-bind:class="{ domotechnikaTabs: !cm }">
                 <li class="nav-item nav-link active" data-toggle="tab" data-target="#main" role="tab">
                   <div class="d-flex flex-row">
                     <div class="h5 mb-0">
@@ -414,6 +542,7 @@
   </div>
   <!-- Модальные окна конец -->
 </div>
+</div>
 </template>
 <script>
 import  rate from './rate.vue'
@@ -446,9 +575,15 @@ export default {
           "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/029/thumb/12004913_7.jpg",
           "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/030/thumb/12004913_8.jpg",
           "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/031/thumb/12004913_9.jpg"  
-          ]
+          ],
+        cm:true
       }
     },
+    methods: {
+    switchsite: function () {
+      this.cm = !this.cm;
+    }
+    }
 }
 </script>
 <style>
@@ -631,4 +766,17 @@ export default {
     .product-related{
       overflow: hidden;
     }
+
+
+
+
+    .btn-warning {
+    -webkit-box-shadow: 0 2px 2px #e6dac8;
+    -moz-box-shadow: 0 2px 2px #e6dac8;
+    box-shadow: 0 2px 2px #e6dac8;
+    background: #fab249;
+    border: 1px solid #de9934;
+    color: #fff;
+    text-shadow: 0 1px 0 #d28a21;
+}
 </style>
