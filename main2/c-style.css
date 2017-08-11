@@ -80,6 +80,13 @@ a:hover {
     box-shadow: inset 0 -1px #ddd;
     -webkit-box-shadow:inset 0 -1px #ddd;
 }
+
+
+.nav-tabs .domotechnikaTabs {
+    border-bottom: none;
+    box-shadow: inset 0 -1px #ddd;
+    -webkit-box-shadow:inset 0 -1px #ddd;
+}
 .nav-item.nav-link{
     border: none;
     padding: .75rem 0;
@@ -100,6 +107,7 @@ a:hover {
 .domotechnikaTabs .nav-item.nav-link.active a {
     box-shadow: inset 0 -3px orange;
       color: #ee722f;
+
 }
 
 
