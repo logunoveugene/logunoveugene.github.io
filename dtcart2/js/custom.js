@@ -372,9 +372,15 @@ var userDetal = new Vue({
 
     methods: {
     addNew: function (index) {
-        debugger;
-      this.selectedPrivate.selectedGifts.push(index,1)
+
+      this.selectedPrivate.selectedGifts.push(this.private.gifts[index])
+
       
+    },
+    del: function(index) {
+        this.selectedPrivate.selectedGifts.splice(index,1);
+    
+
     }
   }
 

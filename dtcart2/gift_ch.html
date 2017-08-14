@@ -1012,7 +1012,7 @@
                
                      
                     <div class="gift-choose-wrap">
-                    <div class="row mb-4"  v-if = "private.gifts!=null" v-for="folder in private.gifts">
+                    <div class="row mb-4"  v-if = "private.gifts!=null" v-for="(folder, index) in private.gifts">
                             <div class="col shrink hidden-sm-down">
                                 <div class="product-photo-wrap ">
                                     <img class="img-fluid product-photo" alt="" :src="folder.img">
@@ -1028,8 +1028,37 @@
                              </div>
                              
 
-                             <div class="col shrink mr-3"><button class="btn btn-warning" v-on:click="addNew" >Выбрать</button></div>
+                             <div class="col shrink mr-3"><button class="btn btn-warning" @click="addNew(index)"  >Выбрать</button></div>
                          </div>
+                     </div>
+                     <div class="">
+                         <div class="h5 mb-4 mt-5">Выбранные подарки</div>
+                         <div class="">
+                             <div class="row mb-4"  v-if = "selectedPrivate.selectedGifts!=null" v-for="(folder, index) in selectedPrivate.selectedGifts">
+                            <div class="col shrink hidden-sm-down">
+                                <div class="product-photo-wrap ">
+                                    <img class="img-fluid product-photo" alt="" :src="folder.img">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="d-flex flex-column">
+                                <div class=""><span class="badge badge-primary mb-2">ПОДАРОК</span></div>
+                                
+                                 <div class="dflex flex-row">
+                                     <div class="d-flex flex-row justify-content-between">  <span>{{folder.name}}</span>
+                                     <span><del><small>{{folder.price}} р. </small></del> бесплатно</span>
+                                     </div>
+                                     <span class="lh-1 text-muted small">В наличии:</span>
+                                     <span class="lh-1 text-muted small mr-2"  v-for="check in folder.stores">{{check.storename}}</span>
+                                 </div>
+                             </div>
+                             </div>
+                             
+
+                             <div class="col shrink mr-3"><button class="" @click="del(index)"  >x</button></div>
+                         </div>
+                         </div>
+
                      </div>    
 
 
