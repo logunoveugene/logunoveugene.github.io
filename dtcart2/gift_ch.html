@@ -37,22 +37,7 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/44689333" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
-<!-- CarrotQuest BEGIN -->
-<script type="text/javascript">
-    (function(){
-      function Build(name, args){return function(){window.carrotquestasync.push(name, arguments);} }
-      if (typeof carrotquest === 'undefined') {
-        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true;
-        s.src = '//cdn.carrotquest.io/api.min.js';
-        var x = document.getElementsByTagName('head')[0]; x.appendChild(s);
-        window.carrotquest = {}; window.carrotquestasync = []; carrotquest.settings = {};
-        var m = ['connect', 'track', 'identify', 'auth', 'open', 'onReady', 'addCallback', 'removeCallback', 'trackMessageInteraction'];
-        for (var i = 0; i < m.length; i++) carrotquest[m[i]] = Build(m[i]);
-      }
-    })();
-  carrotquest.connect('9335-2d87312f48fdd60b18cd8349a14');
-</script>
-<!-- CarrotQuest END -->
+
 </head>
 <body>
     <div class="container">
@@ -124,14 +109,17 @@
                                                 <div class="service-list">
                                                     <div class="row mb-2">
                                                         <div class="col-10 d-flex">
-                                                            <div class="d-flex align-items-center">
+
+                                                            <div class="d-flex flex-column align-items-center">
+                                                            <span class="badge badge-primary mb-2 align-self-start">ПОДАРОК ЗА ПОКУПКУ</span>
+                                                               
                                                                 <a href="#">
                                                                     <span class="">Смартфон Asus ZenFone 3 Max ZC520TL 16Gb Silver</span>
                                                                 </a>
                                                             </div>
                                                         </div>
                                                         <div class="col-2 d-flex align-self-center flex-row-reverse">
-                                                            <button type="button" class="close " aria-label="Close">
+                                                            <button type="button" class="close " aria-label="Close" >
                                                                 <span class="" aria-hidden="true">×</span>
                                                             </button>
                                                         </div>
@@ -275,9 +263,41 @@
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                    
+        
+
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="card-block">
+                                    <div class="product-item row mb-1">
+                                                <div class="shrink pr-0 hidden-sm-down">
+                                                    <div class="col pr-0">
+                                                        <div class="d-flex justify-content-center product-photo-wrap">
+                                                            <img class="img-fluid product-photo" src="https://i.snag.gy/qOQWR3.jpg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col align-self-center">
+                                                    <div class="row ">
+                                                        <div class="col">
+                                                            <div class="mb-0">
+                                                                <span class="badge badge-primary mb-2"> ПОДАРОК</span>
+                                                                <br>
+                                                                <div class="lh-1 mb-2">Выберите 2 подарка на сумму до 3 000 р.</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="shrink col d-flex">
+                                                        <button type="button" class="btn btn-warning align-self-center"  data-toggle="modal" data-target="#chooseGift">Выбрать</button>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        
                                     </div>
                                     <transition name="fade">
                                         <div class="card-block bb-2 hidden-sm-down" v-if="seenService">
@@ -972,6 +992,62 @@
             </div>
         </div>
     </div>
+    <div class="modal fade bd-example-modal-lg" id="chooseGift" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document" id="chooseGift">
+            <div class="modal-content rounded-0">
+                <div class="modal-body">
+                    <div class="row mb-3 bg-faded gift-modal-promo">
+                        <div class="col-10">
+                            <h5 class="modal-title mb-2" id="companyeModalLabel">Выберите подарок для получения</h5>
+                        </div>
+                        <div class="col-2">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="col-8 mb-3">
+                            <div class="text-muted small">Вам доступна уникальная возможность – выбрать 2 подарка на сумму до 3 000 р.</div>
+                        </div>
+                    </div>
+               
+                     
+                    <div class="gift-choose-wrap">
+                    <div class="row mb-4"  v-if = "private.gifts!=null" v-for="folder in private.gifts">
+                            <div class="col shrink hidden-sm-down">
+                                <div class="product-photo-wrap ">
+                                    <img class="img-fluid product-photo" alt="" :src="folder.img">
+                                </div></div>
+                                <div class="col">
+                                 <div class="dflex flex-row">
+                                     <div class="d-flex flex-row justify-content-between"> <span>{{folder.name}}</span>
+                                     <span>{{folder.price}} р. </span>
+                                     </div>
+                                     <span class="lh-1 text-muted small">В наличии:</span>
+                                     <span class="lh-1 text-muted small mr-2"  v-for="check in folder.stores">{{check.storename}}</span>
+                                 </div>
+                             </div>
+                             
+
+                             <div class="col shrink mr-3"><button class="btn btn-warning" v-on:click="addNew" >Выбрать</button></div>
+                         </div>
+                     </div>    
+
+
+
+                         
+                    
+              
+                </div>
+            </div>
+        </div>
+    </div>
+<style>
+    .gift-choose-wrap{
+        max-height: 40vh;
+        overflow-x: hidden; ;
+    }
+
+</style>
     <!-- //Модальные окна-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/tether.min.js"></script>

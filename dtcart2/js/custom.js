@@ -323,6 +323,68 @@ var userDetal = new Vue({
 
 
 
+var userDetal = new Vue({
+    el: '#chooseGift',
+    data: {
+                    private: {
+                gifts : [
+                {
+                    name : 'Батарея Flama FLB-LP-E10"',
+                    img: "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/526/872/catalog_tile/12500525_1.jpg",
+                    price: 3600,
+                    stores : [ {storename:"в ТЦ Черемушки"}, {storename:"на Гоголя"}, {storename:"на Алеутской"}] 
+                },
+
+                {
+                  name : 'Крышка для объектива Flama Ф82',
+                  img: "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/513/785/catalog_tile/31002347_1.jpg",
+                  price: 950,
+                  stores : [ {storename:"в ТЦ Черемушки"}, {storename:"на Гоголя"}, {storename:"на Алеутской"}] 
+              },
+              {
+                name:"Пленка защитная Kenko",
+                img: "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/515/812/catalog_tile/31002388_1.jpg",
+                price: 620,
+                stores : [ {storename:"в ТЦ Черемушки"}, {storename:"на Гоголя"}, {storename:"на Алеутской"}] 
+            },
+
+            {
+              name : 'Вспышка Nissin Di466N ',
+              img: "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/486/385/catalog_tile/31002090_1.jpg",
+            price: 4800,
+              stores : [ {storename:"в ТЦ Черемушки"}, {storename:"на Гоголя"}, {storename:"на Алеутской"}] 
+          },
+          {
+              name : 'Штатив Sony VCT-R100 ',
+               img: "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/513/681/catalog_tile/31000996_1.jpg",
+            price: 3990,
+              stores : [ {storename:"в ТЦ Черемушки"}, {storename:"на Гоголя"}, {storename:"на Алеутской"}] 
+          }
+
+
+          ]
+    },selectedPrivate: {
+                selectedGifts : []}
+                
+
+    },
+    
+
+    methods: {
+    addNew: function (index) {
+        debugger;
+      this.selectedPrivate.selectedGifts.push(index,1)
+      
+    }
+  }
+
+});
+
+
+
+
+
+
 
 
 

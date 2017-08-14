@@ -168,6 +168,12 @@ input[type=number]
     margin-top: -15px;
     padding-top: 15px;
 }
+
+.gift-modal-promo{
+    background:#f7f7f7 url(https://i.snag.gy/kwBtuX.jpg) no-repeat right bottom;
+    margin-top: -15px;
+    padding-top: 15px;
+}
 /********************accordion************************/
 .accordion-plate{
     padding: .6rem 1rem .6rem 1rem;
