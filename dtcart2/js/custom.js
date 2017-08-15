@@ -221,7 +221,7 @@ var kolich = new Vue({
                 name : 'Батарея Flama FLB-LP-E10"',
                 img: "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/526/872/catalog_tile/12500525_1.jpg",
                 price: 600,
-                
+
                 stores : [ {storename:"в ТЦ Черемушки"}, {storename:"на Алеутской"}] 
             },
 
@@ -229,14 +229,14 @@ var kolich = new Vue({
               name : 'Крышка для объектива Flama Ф82',
               img: "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/513/785/catalog_tile/31002347_1.jpg",
               price: 950,
-              
+
               stores : [ {storename:"на Гоголя"}, {storename:"на Алеутской"}] 
           },
           {
             name:"Пленка защитная Kenko",
             img: "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/515/812/catalog_tile/31002388_1.jpg",
             price: 620,
-            
+
             stores : [ {storename:"в ТЦ Черемушки"}, {storename:"на Гоголя"}, {storename:"на Алеутской"}] 
         },
 
@@ -251,7 +251,7 @@ var kolich = new Vue({
           name : 'Штатив Sony VCT-R100 ',
           img: "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/513/681/catalog_tile/31000996_1.jpg",
           price: 990,
-          
+
           stores : [ {storename:"в ТЦ Черемушки"}, {storename:"на Гоголя"}, ] 
       }
 
@@ -368,7 +368,7 @@ computed: {
   })
 },
 selectedGiftcountq:function () {
-  for(var i = 0, len = this.selectedPrivate.selectedGifts.length; i < len; i++) {
+    for(var i = 0; i < this.selectedPrivate.selectedGifts.length; i++) {
     this.selectedGiftsum += this.selectedPrivate.selectedGifts.price[i];  }
 }
 }
