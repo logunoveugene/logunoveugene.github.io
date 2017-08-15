@@ -290,8 +290,8 @@
 
 
 
-                                    <div class="card-block" >
-                                    <div class="product-item row mb-1" v-if="selectedPrivate.selectedGifts.length < giftcountset" >
+                                    <div class="card-block bb-1"  v-if="selectedPrivate.selectedGifts.length < giftcountset">
+                                    <div class="product-item row mb-1"  >
                                                 <div class="shrink pr-0 hidden-sm-down">
                                                     <div class="col pr-0">
                                                         <div class="d-flex justify-content-center product-photo-wrap">
@@ -318,8 +318,11 @@
                                                     
                                                 </div>
             </div>
-                                            <div class="">
-            <div class="row mt-2 mb-2 mr-1" v-if="selectedPrivate.selectedGifts!=null" v-for="(folder, index) in selectedPrivate.selectedGifts">
+                                            
+
+</div>
+<div class="card-block" v-if="selectedPrivate.selectedGifts.length !== 0">
+            <div class="row mt-2 mb-2"  v-for="(folder, index) in selectedPrivate.selectedGifts">
               <div class="col shrink hidden-sm-down pr-0">
                 <div class="product-photo-wrap ">
                   <img class="img-fluid product-photo" alt="" :src="folder.img">
@@ -353,8 +356,6 @@
               </div>
             </div>
           </div>
-
-</div>
 
 
 
