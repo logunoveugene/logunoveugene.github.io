@@ -39,7 +39,8 @@
     <!-- /Yandex.Metrika counter -->
 
 </head>
-<body>
+<body >
+<div class="" id="count">
     <div class="container">
         <div class="row">
             <div class="col-12 p-0">
@@ -75,7 +76,7 @@
         <div class="row">
             <div class="col-12 p-0">
                 <div class="p-0">
-                    <div id="count" class="card border-0 rounded-0 mb-2  block-shadow-3">
+                    <div  class="card border-0 rounded-0 mb-2  block-shadow-3">
                         <div id="first" class="card-block bb-1">
                             <div class="clearfix  mb-3 mt-1">
                                 <span class="h5">Ваш заказ</span>
@@ -271,8 +272,26 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card-block">
-                                    <div class="product-item row mb-1">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    <div class="card-block" >
+                                    <div class="product-item row mb-1" v-if="selectedPrivate.selectedGifts.length < giftcountset" >
                                                 <div class="shrink pr-0 hidden-sm-down">
                                                     <div class="col pr-0">
                                                         <div class="d-flex justify-content-center product-photo-wrap">
@@ -294,11 +313,114 @@
                                                         </div>
                                                         
                                                     </div>
+
+
                                                     
                                                 </div>
-                                            </div>
-                                        
-                                    </div>
+            </div>
+                                            <div class="">
+            <div class="row mt-2 mb-2 mr-1" v-if="selectedPrivate.selectedGifts!=null" v-for="(folder, index) in selectedPrivate.selectedGifts">
+              <div class="col shrink hidden-sm-down pr-0">
+                <div class="product-photo-wrap ">
+                  <img class="img-fluid product-photo" alt="" :src="folder.img">
+                </div>
+              </div>
+              <div class="d-flex flex-row justify-content-between col">
+                <div class="d-flex flex-column">
+                  <div class="">
+                    <span class="badge badge-primary mb-2">ПОДАРОК</span>
+                  </div>
+                  <span>{{folder.name}}</span>
+                  <div class="">
+                    <span class="lh-1 text-muted small">В наличии:</span>
+                    <span class="lh-1 text-muted small mr-2" v-for="check in folder.stores">{{check.storename}}</span>
+                  </div>
+                  <span>Кол-во: 1 шт.</span>
+                </div>
+                <div class="d-flex flex-column text-right align-items-end justify-content-between">
+                  <button type="button" aria-label="Close" class="close" @click="del(index)">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                  <div class="align-self-end">
+                    <del>
+                                     <small>
+                                         <span class="text-muted"> {{folder.price}} р.</span> 
+                                     </small>
+                                 </del>
+                    <span class="ml-1">бесплатно</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+</div>
+
+
+
+
+                                     
+   
+                                    
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                     <transition name="fade">
                                         <div class="card-block bb-2 hidden-sm-down" v-if="seenService">
                                             <div class="row">
@@ -649,7 +771,7 @@
                                                                     <!--*******************-->
                                                                 </div>
                                                                 <div class="tab-pane" id="pickup-map" role="tabpanel">
-                                                                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa96e0e40a24bff1f285eb345d42bc29074a393da5eb7eb9edc9bd68ac69dadac&amp;width=100%25&amp;height=287&amp;lang=ru_RU&amp;scroll=true"></script>
+                                                                    я карта
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -992,101 +1114,97 @@
             </div>
         </div>
     </div>
-    <div class="modal fade bd-example-modal-lg" id="chooseGift" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document" id="chooseGift">
-            <div class="modal-content rounded-0">
-                <div class="modal-body">
-                    <div class="row mb-3 bg-faded gift-modal-promo">
-                        <div class="col-10">
-                            <h5 class="modal-title mb-2" id="companyeModalLabel">Выберите подарок для получения</h5>
-                        </div>
-                        <div class="col-2">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="col-8 mb-3">
-                            <div class="text-muted small">Вам доступна уникальная возможность – выбрать 2 подарка на сумму до 3 000 р.</div>
-                        </div>
-                    </div>
-               <div class="mb-3"> Осталось выбрать {{giftcountset}} подарок на сумму до {{giftsum}} </div>
-                     <div class="form-group">
-                        
-                        <input type="text" class="form-control" placeholder="Поиск по названию"  v-model="filter" >
-                      </div>
-
-                    <div class="gift-choose-wrap">
-                    <div class="row mb-4 mt-4"  v-if = "filteredgifts!=null" v-for="(folder, index) in filteredgifts">
-                            <div class="col shrink hidden-sm-down">
-                                <div class="product-photo-wrap ">
-                                    <img class="img-fluid product-photo" alt="" :src="folder.img">
-                                </div></div>
-                                <div class="col">
-                                 <div class="dflex flex-row">
-                                     <div class="d-flex flex-row justify-content-between"> <span>{{folder.name}}</span>
-                                     <span class="text-nowrap">{{folder.price}} р. </span>
-                                     </div>
-                                     <span class="lh-1 text-muted small">В наличии:</span>
-                                     <span class="lh-1 text-muted small mr-2"  v-for="check in folder.stores">{{check.storename}}</span>
-                                 </div>
-                             </div>
-                             
-
-                             <div class="col  shrink mr-3"><button class="btn btn-secondary" @click="addNew(index)"  >Выбрать</button></div>
-                         </div>
-                     </div>
-
-
-
-
-
-
-
-
-                     <div class="">
-                         <div v-if="selectedPrivate.selectedGifts.length !== 0" class="h5 mb-4 mt-4">Выбранные подарки</div>
-
-                         <div class="">
-                             <div class="row mt-2 mb-2"  v-if = "selectedPrivate.selectedGifts!=null" v-for="(folder, index) in selectedPrivate.selectedGifts">
-                            <div class="col shrink hidden-sm-down">
-                                <div class="product-photo-wrap ">
-                                    <img class="img-fluid product-photo" alt="" :src="folder.img">
-                                </div>
-                            </div>
-                            <div class="col">
-                                <div class="d-flex flex-column">
-                                <div class=""><span class="badge badge-primary mb-2">ПОДАРОК</span></div>
-                                
-                                 <div class="dflex flex-row">
-                                     <div class="d-flex flex-row justify-content-between">  <span>{{folder.name}}</span>
-                                     
-                                     </div>
-                                     <span class="lh-1 text-muted small">В наличии:</span>
-                                     <span class="lh-1 text-muted small mr-2"  v-for="check in folder.stores">{{check.storename}}</span>
-                                 </div>
-                                 <div class="d-flex flex-row justify-content-between"> <span>Кол-во: 1 шт.</span><span><del><small>{{folder.price}} р. </small></del> бесплатно</span>
-                             </div> </div>
-                             </div>
-                             
-
-                             <div class="col shrink mr-3">
-                             <button type="button" aria-label="Close" class="close " @click="del(index)"><span aria-hidden="true">×</span></button>
-                         
-                             </div>
-                         </div>
-                         </div>
-
-                     </div>    
-
-
-
-                         
-                    
-              
-                </div>
-            </div>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true"  id="chooseGift">
+  <div class="modal-dialog modal-lg" role="document" >
+    <div class="modal-content rounded-0">
+      <div class="modal-body">
+        <div class="row mb-3 bg-faded gift-modal-promo">
+          <div class="col-10">
+            <h5 class="modal-title mb-2" id="companyeModalLabel">Выберите подарок для получения</h5>
+          </div>
+          <div class="col-2">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="col-8 mb-3">
+            <div class="text-muted small">Вам доступна уникальная возможность – выбрать 2 подарка на сумму до 3 000 р.</div>
+          </div>
         </div>
+        <div class="mb-3"> Осталось выбрать {{giftcountset}} подарок на сумму до {{giftsum}} р. </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Поиск по названию" v-model="filter">
+        </div>
+        <div class="gift-choose-wrap">
+          <div class="row mb-4 mt-4" v-if="filteredgifts!=null" v-for="(folder, index) in filteredgifts">
+            <div class="col shrink hidden-sm-down">
+              <div class="product-photo-wrap ">
+                <img class="img-fluid product-photo" alt="" :src="folder.img">
+              </div>
+            </div>
+            <div class="col">
+              <div class="dflex flex-row">
+                <div class="d-flex flex-row justify-content-between"> <span>{{folder.name}}</span>
+                  <span class="text-nowrap">{{folder.price}} р. </span>
+                </div>
+                <span class="lh-1 text-muted small">В наличии:</span>
+                <span class="lh-1 text-muted small mr-2" v-for="check in folder.stores">{{check.storename}}</span>
+              </div>
+            </div>
+            <div class="col  shrink mr-3">
+              <button class="btn btn-secondary" @click="addNew(index)">Выбрать</button>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div v-if="selectedPrivate.selectedGifts.length !== 0" class="h5 mb-3 mt-4">Выбранные подарки</div>
+
+          <div class="">
+            <div class="row mt-2 mb-2 mr-1" v-if="selectedPrivate.selectedGifts!=null" v-for="(folder, index) in selectedPrivate.selectedGifts">
+              <div class="col shrink hidden-sm-down">
+                <div class="product-photo-wrap ">
+                  <img class="img-fluid product-photo" alt="" :src="folder.img">
+                </div>
+              </div>
+              <div class="d-flex flex-row justify-content-between col">
+                <div class="d-flex flex-column">
+                  <div class="">
+                    <span class="badge badge-primary mb-2">ПОДАРОК</span>
+                  </div>
+                  <span>{{folder.name}}</span>
+                  <div class="">
+                    <span class="lh-1 text-muted small">В наличии:</span>
+                    <span class="lh-1 text-muted small mr-2" v-for="check in folder.stores">{{check.storename}}</span>
+                  </div>
+                  <span>Кол-во: 1 шт.</span>
+                </div>
+                <div class="d-flex flex-column text-right align-items-end justify-content-between">
+                  <button type="button" aria-label="Close" class="close" @click="del(index)">
+                    <span aria-hidden="true">×</span>
+                  </button>
+                  <div class="align-self-end">
+                    <del>
+                                     <small>
+                                         <span class="text-muted"> {{folder.price}} р.</span> 
+                                     </small>
+                                 </del>
+                    <span class="ml-1">бесплатно</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
+
+
+
+
+    </div>
+
 <style>
     .gift-choose-wrap{
         max-height: 35vh;
