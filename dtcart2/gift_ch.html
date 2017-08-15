@@ -1009,10 +1009,14 @@
                             <div class="text-muted small">Вам доступна уникальная возможность – выбрать 2 подарка на сумму до 3 000 р.</div>
                         </div>
                     </div>
-               
-                     
+               <div class="mb-3"> Осталось выбрать {{giftcountset}} подарок на сумму до {{giftsum}} </div>
+                     <div class="form-group">
+                        
+                        <input type="text" class="form-control" placeholder="Поиск по названию"  v-model="filter" >
+                      </div>
+
                     <div class="gift-choose-wrap">
-                    <div class="row mb-4"  v-if = "private.gifts!=null" v-for="(folder, index) in private.gifts">
+                    <div class="row mb-4 mt-4"  v-if = "filteredgifts!=null" v-for="(folder, index) in filteredgifts">
                             <div class="col shrink hidden-sm-down">
                                 <div class="product-photo-wrap ">
                                     <img class="img-fluid product-photo" alt="" :src="folder.img">
@@ -1020,7 +1024,7 @@
                                 <div class="col">
                                  <div class="dflex flex-row">
                                      <div class="d-flex flex-row justify-content-between"> <span>{{folder.name}}</span>
-                                     <span>{{folder.price}} р. </span>
+                                     <span class="text-nowrap">{{folder.price}} р. </span>
                                      </div>
                                      <span class="lh-1 text-muted small">В наличии:</span>
                                      <span class="lh-1 text-muted small mr-2"  v-for="check in folder.stores">{{check.storename}}</span>
@@ -1028,13 +1032,22 @@
                              </div>
                              
 
-                             <div class="col shrink mr-3"><button class="btn btn-warning" @click="addNew(index)"  >Выбрать</button></div>
+                             <div class="col  shrink mr-3"><button class="btn btn-secondary" @click="addNew(index)"  >Выбрать</button></div>
                          </div>
                      </div>
+
+
+
+
+
+
+
+
                      <div class="">
-                         <div class="h5 mb-4 mt-5">Выбранные подарки</div>
+                         <div v-if="selectedPrivate.selectedGifts.length !== 0" class="h5 mb-4 mt-4">Выбранные подарки</div>
+
                          <div class="">
-                             <div class="row mb-4"  v-if = "selectedPrivate.selectedGifts!=null" v-for="(folder, index) in selectedPrivate.selectedGifts">
+                             <div class="row mt-2 mb-2"  v-if = "selectedPrivate.selectedGifts!=null" v-for="(folder, index) in selectedPrivate.selectedGifts">
                             <div class="col shrink hidden-sm-down">
                                 <div class="product-photo-wrap ">
                                     <img class="img-fluid product-photo" alt="" :src="folder.img">
@@ -1046,16 +1059,20 @@
                                 
                                  <div class="dflex flex-row">
                                      <div class="d-flex flex-row justify-content-between">  <span>{{folder.name}}</span>
-                                     <span><del><small>{{folder.price}} р. </small></del> бесплатно</span>
+                                     
                                      </div>
                                      <span class="lh-1 text-muted small">В наличии:</span>
                                      <span class="lh-1 text-muted small mr-2"  v-for="check in folder.stores">{{check.storename}}</span>
                                  </div>
-                             </div>
+                                 <div class="d-flex flex-row justify-content-between"> <span>Кол-во: 1 шт.</span><span><del><small>{{folder.price}} р. </small></del> бесплатно</span>
+                             </div> </div>
                              </div>
                              
 
-                             <div class="col shrink mr-3"><button class="" @click="del(index)"  >x</button></div>
+                             <div class="col shrink mr-3">
+                             <button type="button" aria-label="Close" class="close " @click="del(index)"><span aria-hidden="true">×</span></button>
+                         
+                             </div>
                          </div>
                          </div>
 
@@ -1072,8 +1089,10 @@
     </div>
 <style>
     .gift-choose-wrap{
-        max-height: 40vh;
-        overflow-x: hidden; ;
+        max-height: 35vh;
+        overflow-x: hidden; 
+        border-bottom: solid 1px #e8e8e8;
+        border-top: solid 1px #e8e8e8;
     }
 
 </style>

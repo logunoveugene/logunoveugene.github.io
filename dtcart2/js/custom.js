@@ -331,7 +331,8 @@ var userDetal = new Vue({
                 {
                     name : 'Батарея Flama FLB-LP-E10"',
                     img: "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/526/872/catalog_tile/12500525_1.jpg",
-                    price: 3600,
+                    price: 600,
+         
                     stores : [ {storename:"в ТЦ Черемушки"}, {storename:"на Гоголя"}, {storename:"на Алеутской"}] 
                 },
 
@@ -339,50 +340,68 @@ var userDetal = new Vue({
                   name : 'Крышка для объектива Flama Ф82',
                   img: "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/513/785/catalog_tile/31002347_1.jpg",
                   price: 950,
+         
                   stores : [ {storename:"в ТЦ Черемушки"}, {storename:"на Гоголя"}, {storename:"на Алеутской"}] 
               },
               {
                 name:"Пленка защитная Kenko",
                 img: "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/515/812/catalog_tile/31002388_1.jpg",
                 price: 620,
+       
                 stores : [ {storename:"в ТЦ Черемушки"}, {storename:"на Гоголя"}, {storename:"на Алеутской"}] 
             },
 
             {
               name : 'Вспышка Nissin Di466N ',
               img: "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/486/385/catalog_tile/31002090_1.jpg",
-            price: 4800,
+            price: 800,
+
               stores : [ {storename:"в ТЦ Черемушки"}, {storename:"на Гоголя"}, {storename:"на Алеутской"}] 
           },
           {
               name : 'Штатив Sony VCT-R100 ',
                img: "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/513/681/catalog_tile/31000996_1.jpg",
-            price: 3990,
+            price: 990,
+    
               stores : [ {storename:"в ТЦ Черемушки"}, {storename:"на Гоголя"}, {storename:"на Алеутской"}] 
           }
 
 
           ]
     },selectedPrivate: {
-                selectedGifts : []}
-                
+        selectedGifts : []},
+        filter: "",    
+        giftcountset:2,
+        giftsum:3000,
+        selectedGiftcount:0,
+        selectedGiftsum:0
 
     },
     
 
     methods: {
     addNew: function (index) {
-
-      this.selectedPrivate.selectedGifts.push(this.private.gifts[index])
-
+        if (this.selectedPrivate.selectedGifts.length < this.giftcountset) {
+      this.selectedPrivate.selectedGifts.push(this.filteredgifts[index])}
       
     },
     del: function(index) {
         this.selectedPrivate.selectedGifts.splice(index,1);
     
-
     }
-  }
+  },
+  computed: {
+  filteredgifts: function () {
+    var self = this
+    return self.private.gifts.filter(function (folder) {
+      return folder.name.indexOf(self.filter) !== -1
+    })
+  },
+  selectedGiftcountq:function () {
+  for(var i = 0, len = this.selectedPrivate.selectedGifts.length; i < len; i++) {
+    this.selectedGiftsum += this.selectedPrivate.selectedGifts.price[i][1];  }
+}
+}
 
 });
 
