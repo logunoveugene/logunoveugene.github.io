@@ -261,7 +261,9 @@ var kolich = new Vue({
     selectedGifts : []},
     filter: "",    
     giftcountset:2,
+    giftcountsetTotal:2,
     giftsum:3000,
+    giftsumTotal:3000,
     selectedGiftcount:0,
     selectedGiftsum:0
 
@@ -298,13 +300,30 @@ methods: {
     }
 
 },
+
+
 addNew: function (index) {
     if (this.selectedPrivate.selectedGifts.length < this.giftcountset) {
-      this.selectedPrivate.selectedGifts.push(this.filteredgifts[index])}
+      this.selectedPrivate.selectedGifts.push(this.filteredgifts[index])};
+      for(var i = 0; i < this.selectedPrivate.selectedGifts.length; i++) {
+        this.selectedGiftsum += this.selectedPrivate.selectedGifts[i].price; 
+    };
+
+this.giftsum = this.giftsumTotal - this.selectedGiftsum;
+
+this.giftcountsetTotal = this.giftcountset -this.selectedPrivate.selectedGifts.length;
+
       
   },
   del: function(index) {
     this.selectedPrivate.selectedGifts.splice(index,1);
+    this.selectedGiftsum =0
+    for(var i = 0; i < this.selectedPrivate.selectedGifts.length; i++) {
+        this.selectedGiftsum += this.selectedPrivate.selectedGifts[i].price; 
+    };
+
+this.giftsum = this.giftsumTotal - this.selectedGiftsum;
+this.giftcountsetTotal = this.giftcountset -this.selectedPrivate.selectedGifts.length;
     
 },
 serviseApp:function() {
@@ -359,6 +378,8 @@ countinput: function() {
     this.orderSum = this.summ + this.serviseListItemSumCOUNT;
 }
 
+
+
 },
 computed: {
   filteredgifts: function () {
@@ -366,11 +387,8 @@ computed: {
     return self.private.gifts.filter(function (folder) {
       return folder.name.indexOf(self.filter) !== -1
   })
-},
-selectedGiftcountq:function () {
-    for(var i = 0; i < this.selectedPrivate.selectedGifts.length; i++) {
-    this.selectedGiftsum += this.selectedPrivate.selectedGifts.price[i];  }
 }
+
 }
 
 });

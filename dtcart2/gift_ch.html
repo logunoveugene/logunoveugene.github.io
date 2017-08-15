@@ -305,7 +305,7 @@
                                                             <div class="mb-0">
                                                                 <span class="badge badge-primary mb-2"> ПОДАРОК</span>
                                                                 <br>
-                                                                <div class="lh-1 mb-2">Выберите 2 подарка на сумму до 3 000 р.</div>
+                                                                <div class="lh-1 mb-2">Выберите {{giftcountsetTotal}} подарок на сумму до {{giftsum}} р. </div>
                                                             </div>
                                                         </div>
                                                         <div class="shrink col d-flex">
@@ -1133,7 +1133,9 @@
             <div class="text-muted small">Вам доступна уникальная возможность – выбрать 2 подарка на сумму до 3 000 р.</div>
           </div>
         </div>
-        <div class="mb-3"> Осталось выбрать {{giftcountset}} подарок на сумму до {{giftsum}} р. </div>
+
+        <div class="" v-if="selectedPrivate.selectedGifts.length < 2" >
+        <div class="mb-3"> Осталось выбрать {{giftcountsetTotal}} подарок на сумму до {{giftsum}} р. </div>
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Поиск по названию" v-model="filter">
         </div>
@@ -1158,6 +1160,10 @@
             </div>
           </div>
         </div>
+        </div>
+
+
+
         <div v-if="selectedPrivate.selectedGifts.length !== 0" class="">
           <div class="h5 mb-3 mt-4">Выбранные подарки</div>
 
