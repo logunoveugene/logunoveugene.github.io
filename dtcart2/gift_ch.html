@@ -1140,6 +1140,7 @@
           <input type="text" class="form-control" placeholder="Поиск по названию" v-model="filter">
         </div>
         <div class="gift-choose-wrap">
+        <div class="my-4" v-if="filteredgifts.length == 0" >По вашему запросу ничего не найдено</div>
           <div class="row mb-4 mt-4" v-if="filteredgifts!=null" v-for="(folder, index) in filteredgifts">
             <div class="col shrink hidden-sm-down pr-0">
               <div class="product-photo-wrap ">
