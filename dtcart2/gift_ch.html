@@ -1158,11 +1158,11 @@
             </div>
           </div>
         </div>
-        <div class="">
-          <div v-if="selectedPrivate.selectedGifts.length !== 0" class="h5 mb-3 mt-4">Выбранные подарки</div>
+        <div v-if="selectedPrivate.selectedGifts.length !== 0" class="">
+          <div class="h5 mb-3 mt-4">Выбранные подарки</div>
 
-          <div class="">
-            <div class="row mt-2 mb-2 mr-1" v-if="selectedPrivate.selectedGifts!=null" v-for="(folder, index) in selectedPrivate.selectedGifts">
+          <div class="" >
+            <div class="row mt-2 mb-2 mr-1"  v-for="(folder, index) in selectedPrivate.selectedGifts">
               <div class="col shrink hidden-sm-down pr-0">
                 <div class="product-photo-wrap ">
                   <img class="img-fluid product-photo" alt="" :src="folder.img">
@@ -1196,9 +1196,10 @@
               </div>
             </div>
           </div>
+          <button type="button" class="btn btn-warning btn-lg mt-3"  data-dismiss="modal" aria-label="Close" >Подтвердить выбор</button>
         </div>
 
-        <button type="button" class="btn btn-warning btn-lg mt-3"  data-dismiss="modal" aria-label="Close" >Подтвердить выбор</button>
+        
       </div>
     </div>
   </div>
