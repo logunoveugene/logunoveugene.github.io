@@ -1143,7 +1143,8 @@
 
         <div class="my-4" v-if="selectedPrivate.selectedGifts.length == 2" >Отлично! Осталось подтвердить выбор подарков и оформить заказ </div>
         <div class="my-4" v-if="filteredgifts.length == 0" >По вашему запросу ничего не найдено</div>
-          <div class="row mb-4 mt-4" v-if="selectedPrivate.selectedGifts.length < 2" v-for="(folder, index) in filteredgifts">
+
+          <div class="row mb-4 mt-4" v-if="selectedPrivate.selectedGifts.length < 2" v-for="(folder, index) in filteredgifts" >
             <div class="col shrink hidden-sm-down pr-0">
               <div class="product-photo-wrap ">
                 <img class="img-fluid product-photo" alt="" :src="folder.img">
@@ -1151,7 +1152,7 @@
             </div>
             <div class="col">
               <div class="dflex flex-row">
-                <div class="d-flex flex-row justify-content-between"> <span>{{folder.name}}</span>
+                <div class="d-flex flex-row justify-content-between"> <span>{{folder.name}} </span>
                   <span class="text-nowrap">{{folder.price}} р. </span>
                 </div>
                 <span class="lh-1 text-muted small">В наличии:</span>
@@ -1159,7 +1160,7 @@
               </div>
             </div>
             <div class="col  shrink mr-3">
-              <button class="btn btn-secondary" @click="addNew(index)">Выбрать</button>
+              <button class="btn btn-secondary" @click="addNew(index)"  :class="{ 'btn-warning': folder.clicked }" >Выбрать</button>
             </div>
           </div>
         </div>
@@ -1171,7 +1172,7 @@
           <div class="h5 mb-3 mt-4">Ваш выбор</div>
 
           <div class="" >
-            <div class="row mt-2 mb-2 "  v-for="(folder, index) in selectedPrivate.selectedGifts">
+            <div class="row mt-2 mb-2 "  v-for="(folder,index, key) in selectedPrivate.selectedGifts" :key=folder.id>
               <div class="col shrink hidden-sm-down pr-0">
                 <div class="product-photo-wrap ">
                   <img class="img-fluid product-photo" alt="" :src="folder.img">
@@ -1180,7 +1181,7 @@
               <div class="d-flex flex-row justify-content-between col">
                 <div class="d-flex flex-column">
                   
-                  <span>{{folder.name}}</span>
+                  <span>{{folder.name}}  {{index}} {{key}}</span>
                   <div class="">
                     <span class="lh-1 text-muted small">В наличии:</span>
                     <span class="lh-1 text-muted small mr-2" v-for="check in folder.stores">{{check.storename}}</span>
