@@ -545,9 +545,6 @@ font-family: "untitled-font-1" !important;
     
 }
 
-
-
-
 .active-step:after{
     content: "";
     background:  rgba(0, 0, 0, 0.2);
@@ -566,7 +563,7 @@ font-family: "untitled-font-1" !important;
 }
 
 ::-webkit-scrollbar:vertical {
-    width: 12px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar:horizontal {
@@ -574,12 +571,15 @@ font-family: "untitled-font-1" !important;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(0, 0, 0, .5);
-    border-radius: 10px;
-    border: 2px solid #ffffff;
+    background-color: rgba(193, 193, 193, 1);
+    
+
 }
 
 ::-webkit-scrollbar-track {
-    border-radius: 10px;  
-    background-color: #ffffff; 
+ 
+    background-color: #f1f1f1; 
+}
+button:focus, a:active{
+  outline:none;
 }
