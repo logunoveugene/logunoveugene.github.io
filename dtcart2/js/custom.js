@@ -340,7 +340,7 @@ var kolich = new Vue({
           for (var i = 0; i < this.selectedPrivate.selectedGifts.length; i++) {
         if (this.selectedPrivate.selectedGifts[i].id == this.casemyToDel) {
                 this.selectedPrivate.selectedGifts.splice(i, 1);
-                debugger;
+
 
         }
       };
@@ -350,7 +350,7 @@ var kolich = new Vue({
         this.selectedPrivate.selectedGifts.push(this.filteredgifts[index])
       };
 
-
+        this.selectedGiftsum = 0
       for (var i = 0; i < this.selectedPrivate.selectedGifts.length; i++) {
         this.selectedGiftsum += this.selectedPrivate.selectedGifts[i].price;
       };
@@ -371,6 +371,7 @@ var kolich = new Vue({
       this.selectedPrivate.selectedGifts.splice(index, 1);
 
       this.selectedGiftsum = 0
+
       for (var i = 0; i < this.selectedPrivate.selectedGifts.length; i++) {
         this.selectedGiftsum += this.selectedPrivate.selectedGifts[i].price;
       };
