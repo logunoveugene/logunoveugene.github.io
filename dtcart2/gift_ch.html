@@ -1172,7 +1172,7 @@
           <div class="h5 mb-3 mt-4">Ваш выбор</div>
 
           <div class="" >
-            <div class="row mt-2 mb-2 "  v-for="(folder,index, key) in selectedPrivate.selectedGifts" :key=folder.id>
+            <div class="row mt-2 mb-2 "  v-for="(folder,index, key) in selectedPrivate.selectedGifts">
               <div class="col shrink hidden-sm-down pr-0">
                 <div class="product-photo-wrap ">
                   <img class="img-fluid product-photo" alt="" :src="folder.img">
@@ -1181,7 +1181,7 @@
               <div class="d-flex flex-row justify-content-between col">
                 <div class="d-flex flex-column">
                   
-                  <span>{{folder.name}}  {{index}} {{key}}</span>
+                  <span>{{folder.name}} </span>
                   <div class="">
                     <span class="lh-1 text-muted small">В наличии:</span>
                     <span class="lh-1 text-muted small mr-2" v-for="check in folder.stores">{{check.storename}}</span>
