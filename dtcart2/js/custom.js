@@ -196,7 +196,7 @@ $(window).on('resize', function() {
 
 
 
-
+Vue.config.devtools = true;
 
 var kolich = new Vue({
     el: '#count',
@@ -259,7 +259,8 @@ var kolich = new Vue({
       ]
   },selectedPrivate: {
     selectedGifts : []},
-    filter: "",    
+    filter: "",
+   
     giftcountset:2,
     giftcountsetTotal:2,
     giftsum:3000,
@@ -312,6 +313,9 @@ addNew: function (index) {
 this.giftsum = this.giftsumTotal - this.selectedGiftsum;
 
 this.giftcountsetTotal = this.giftcountset -this.selectedPrivate.selectedGifts.length;
+
+
+
 
       
   },
@@ -387,7 +391,18 @@ computed: {
     return self.private.gifts.filter(function (folder) {
       return folder.name.indexOf(self.filter) !== -1
   })
+},
+
+formaslova: function (giftcountsetTotal) {
+    n= this.giftcountsetTotal;
+  if (this.giftcountsetTotal ===2) {
+    return '2 подарка'
+  } else if (this.giftcountsetTotal ===1) {
+    return '1 подарок'
+  }
 }
+
+
 
 }
 
