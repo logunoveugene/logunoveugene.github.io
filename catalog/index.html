@@ -62,9 +62,17 @@
               <div class="mb-3">
                 <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">{{product.rate}}</span>
                   </div>
-                  <div class="h5 mb-4">{{product.price}} р.</div>
-                  <div class="mb-3">
-                      <button type="button" class="btn btn-secondary">В корзину</button>
+                  <div class="hidden-sm-down">
+                      <div class="h5 mb-4">{{product.price}} р.</div>
+                      <div class="mb-3">
+                          <button type="button" class="btn btn-secondary">В корзину</button>
+
+                      </div>
+                  </div>
+
+                  <div class="hidden-md-up d-flex justify-content-between align-items-center">
+                      <span><b>{{product.price}} р.</b></span>
+                      <button type="button" class="btn btn-secondary">К</button>
 
                   </div>
                   <div class="small hidden-md-down"><a href="">Забрать в 6 магазинах с 18 сен.</a></div>
