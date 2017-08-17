@@ -11,7 +11,7 @@ var kolich = new Vue({
     {
       id: 20101507,
       name: 'Ноутбук Apple MacBook 12" MJY32 Серый космос',
-      img: "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/526/872/catalog_tile/12500525_1.jpg",
+      img: "https://logunoveugene.github.io/catalog/img/1.png",
       price: 54800,
       rate:4.5,
       rateCount:15,
@@ -39,7 +39,7 @@ var kolich = new Vue({
     {
       id: 20101508,
       name: 'Фотоаппарат Canon EOS 70D Kit [18-135STM]',
-      img: "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/513/785/catalog_tile/31002347_1.jpg",
+      img: "https://logunoveugene.github.io/catalog/img/2.png",
       price: 84800,
       rate:4.5,
       rateCount:15,
@@ -66,7 +66,7 @@ var kolich = new Vue({
     {
       id: 20101509,
       name: "Планшет Apple iPad 4G 128Gb Gold",
-      img: "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/515/812/catalog_tile/31002388_1.jpg",
+      img: "https://logunoveugene.github.io/catalog/img/3.png",
       price: 18800,
       rate:4.5,
       rateCount:15,
@@ -93,7 +93,7 @@ var kolich = new Vue({
     {
       id: 20101511,
       name: 'Холодильник Nissin Di466N ',
-      img: "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/486/385/catalog_tile/31002090_1.jpg",
+      img: "https://logunoveugene.github.io/catalog/img/4.png",
       price: 21800,
       rate:4.5,
       rateCount:15,
@@ -120,7 +120,7 @@ var kolich = new Vue({
     {
       id: 20101512,
       name: 'Смартфон Sony VCT-R100 ',
-      img: "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/513/681/catalog_tile/31000996_1.jpg",
+      img: "https://logunoveugene.github.io/catalog/img/5.png",
       price: 32990,
       rate:4.5,
       rateCount:15,
