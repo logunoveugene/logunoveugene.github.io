@@ -1,0 +1,41 @@
+* {
+  font-family:arial;
+}
+
+.w-208{
+  width:208px
+}
+.product-plate{
+    margin: -1px 0 0 -1px;
+  border: 1px solid #e9ecef!important;
+  
+}
+
+.img-wrap{
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+  align-self: center;
+}
+
+.poduct-img{
+  max-width:100%;
+  max-height: 220px;
+  
+}
+html {
+  font-size: 15px;
+}
+
+a, .link {
+    color: #1d5dbe;
+}
+
+.shrink {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    max-width: 100%;
+    width: auto;
+}

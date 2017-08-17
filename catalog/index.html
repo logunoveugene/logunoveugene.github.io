@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Каталог</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link href="https://file.myfontastic.com/wjZRGVSBFtwBwzFfpqQDpi/icons.css" rel="stylesheet">
+    <link href="css/c-style.css" rel="stylesheet">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function() {
+                try {
+                    w.yaCounter44689333 = new Ya.Metrika({
+                        id:44689333,
+                        clickmap:true,
+                        trackLinks:true,
+                        accurateTrackBounce:true,
+                        webvisor:true,
+                        trackHash:true
+                    });
+                } catch(e) { }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else { f(); }
+        })(document, window, "yandex_metrika_callbacks");
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/44689333" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    <!-- CarrotQuest BEGIN -->
+
+    <!-- CarrotQuest END -->
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+          <div class="row">
+            <div class="col shrink hidden-md-down">
+              <div class="border w-208 p-3">Фильтрs</div>
+          </div>
+          <div class="col">
+              <div class="row">
+              <div class="product-plate col-xl-3 col-lg-4 col-md-4 col-6 p-0 d-flex flex-column border p-3" v-for="(product, index) in products">
+                    <div class="d-flex justify-content-center mb-4 img-wrap">
+                      <div class="d-flex">
+                        <img class="align-self-center poduct-img" :src="product.img" alt="">
+                    </div>
+                </div>
+                <div class="mb-2">
+                  <a href="">{{product.name}}</a>
+              </div>
+              <div class="mb-3">
+                  <img src="https://i.snag.gy/dcObIh.jpg" alt=""></div>
+                  <div class="h5 mb-4">47 300 р.</div>
+                  <div class="mb-3">
+                      <button type="button" class="btn btn-secondary">В корзину</button>
+                      <button type="button" class="btn btn-link">#</button>
+                      <button type="button" class="btn btn-link">#</button>
+                  </div>
+                  <div class="small"><a href="">Забрать в 6 магазинах с 18 сен.</a></div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="js/tether.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>
