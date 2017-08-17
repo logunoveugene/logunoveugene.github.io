@@ -221,7 +221,7 @@ var kolich = new Vue({
     },
     {
       id: 20101512,
-      name: 'Телевизор LG OLED55B7V',
+      name: 'Обогреватель инфракрасный Timberk TCH Q1 800',
       img: "https://logunoveugene.github.io/catalog/img/6.png",
       oldPrice: 0,
       price: 32990,

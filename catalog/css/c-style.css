@@ -79,6 +79,7 @@ a:hover{
 
 
 .productName{
-  max-height: 40px;
+height: 42px;
+
   overflow: hidden;
 }
