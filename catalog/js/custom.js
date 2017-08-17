@@ -218,6 +218,87 @@ var kolich = new Vue({
         date: "2017-10-28" 
       }
       ]
+    },
+    {
+      id: 20101512,
+      name: 'Смартфон Sony VCT-R100 ',
+      img: "https://logunoveugene.github.io/catalog/img/5.png",
+      oldPrice: 0,
+      price: 32990,
+      rate:4.5,
+      rateCount:15,
+      amount:"Забрать в 6 магазинах сегодня",
+      stores: [{
+        storeName: "в ТЦ Черемушки",
+        date: "2017-10-24" 
+      }, {
+        storeName: "на Алеутской",
+        date: "2017-10-28" 
+      },{
+        storeName: "в ТЦ Максим",
+        date: "2017-10-24" 
+      }, {
+        storeName: "на Гоголя",
+        date: "2017-10-28" 
+      },{
+        storeName: "на Вилкова",
+        date: "2017-10-28" 
+      }
+      ]
+    },
+    {
+      id: 20101512,
+      name: 'Смартфон Sony VCT-R100 ',
+      img: "https://logunoveugene.github.io/catalog/img/5.png",
+      oldPrice: 0,
+      price: 32990,
+      rate:4.5,
+      rateCount:15,
+      amount:"Забрать в 6 магазинах сегодня",
+      stores: [{
+        storeName: "в ТЦ Черемушки",
+        date: "2017-10-24" 
+      }, {
+        storeName: "на Алеутской",
+        date: "2017-10-28" 
+      },{
+        storeName: "в ТЦ Максим",
+        date: "2017-10-24" 
+      }, {
+        storeName: "на Гоголя",
+        date: "2017-10-28" 
+      },{
+        storeName: "на Вилкова",
+        date: "2017-10-28" 
+      }
+      ]
+    },
+    {
+      id: 20101512,
+      name: 'Смартфон Sony VCT-R100 ',
+      img: "https://logunoveugene.github.io/catalog/img/5.png",
+      oldPrice: 0,
+      price: 32990,
+      rate:4.5,
+      rateCount:15,
+      amount:"Забрать в 6 магазинах сегодня",
+      stores: [{
+        storeName: "в ТЦ Черемушки",
+        date: "2017-10-24" 
+      }, {
+        storeName: "на Алеутской",
+        date: "2017-10-28" 
+      },{
+        storeName: "в ТЦ Максим",
+        date: "2017-10-24" 
+      }, {
+        storeName: "на Гоголя",
+        date: "2017-10-28" 
+      },{
+        storeName: "на Вилкова",
+        date: "2017-10-28" 
+      }
+      ]
     }
 
 
