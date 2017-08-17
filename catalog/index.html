@@ -71,7 +71,11 @@
                   </div>
 
                   <div class="hidden-md-up d-flex justify-content-between align-items-center">
-                      <span class="h5">{{product.price}} р.</span>
+                  <div class="d-flex flex-column">
+                      <span class="small" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
+                      <span class="h5 mb-0">{{product.price}} р.</span>
+                  </div>
+                        
                       <button type="button" class="btn btn-secondary">К</button>
 
                   </div>
