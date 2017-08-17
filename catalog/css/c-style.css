@@ -69,3 +69,9 @@ a, .link {
 a:hover{
   text-decoration: none;
 }
+
+
+.icon-cart {
+      padding-top: 5px;
+    margin-bottom: -2px;
+}
