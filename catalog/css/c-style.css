@@ -39,3 +39,33 @@ a, .link {
     max-width: 100%;
     width: auto;
 }
+
+
+.icon {
+  display: inline-block;
+  width: .7em;
+  height: .7em;
+  stroke-width: 1;
+  stroke: #bdbdbd;
+  fill: #e5e5e5;
+  vertical-align: middle;
+  top: -2px;
+  position: relative;
+  margin: 0 2px 0 0;
+}
+
+
+.filled .icon {
+    stroke: #ff5205;
+  fill: #ff9c00;
+}
+
+
+.Rate{
+  display: inline-block;
+}
+
+
+a:hover{
+  text-decoration: none;
+}
