@@ -74,5 +74,11 @@ a:hover{
 .icon-cart {
       padding-top: 5px;
     margin: 0px -2px -2px -3px;
-    
+
+}
+
+
+.productName{
+  max-height: 42px;
+  overflow: hidden;
 }
