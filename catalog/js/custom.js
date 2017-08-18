@@ -1,6 +1,6 @@
  $(function () {
       $('[data-toggle="tooltip"]').tooltip({
-        
+        template:'<div class="tooltip" role="tooltip"><div class="tooltip-arrowe"></div><div class="tooltip-inner"></div></div>',
         trigger: 'click',
         constraints: [
         {
@@ -316,7 +316,7 @@ var kolich = new Vue({
       actions:[{
         actionName: "Подарок за покупку",
         actionType: "gift",
-        actionDesc:""
+        actionDesc:"ОПисание3"
       }],
       stores: [{
         storeName: "в ТЦ Черемушки",
