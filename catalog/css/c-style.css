@@ -8,7 +8,13 @@
 .product-plate{
     margin: -1px 0 0 -1px;
   border: 1px solid #e9ecef!important;
-  
+
+}
+
+.product-plate:hover{
+
+   transition: box-shadow 0.2s ease; 
+   box-shadow: 0 0 20px rgba(0,0,0, 0.05);
 }
 
 .img-wrap{
