@@ -86,6 +86,9 @@ a:hover{
     overflow: hidden;
     height: 40px;
     line-height: 20px;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
 }
 
 .productName:before {
