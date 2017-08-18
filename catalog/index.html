@@ -43,53 +43,65 @@
 </head>
 <body>
     <div id="app">
-        <div class="container">
-          <div class="row">
-            <div class="col shrink hidden-md-down">
-              <div class="border w-208 p-3">Фильтрs</div>
+      <div class="container">
+        <div class="row">
+          <div class="col shrink hidden-md-down">
+            <div class="border w-208 p-3">Фильтрs</div>
           </div>
           <div class="col">
-              <div class="row">
+            <div class="row">
               <div class="product-plate col-xl-3 col-lg-4 col-md-4 col-6 p-0 d-flex flex-column border p-3" v-for="(product, index) in products">
-                    <div class="d-flex justify-content-center mb-4 img-wrap">
-                      <div class="d-flex">
-                        <img class="align-self-center poduct-img" :src="product.img" alt="">
+                <div class="d-flex justify-content-center mb-4 img-wrap">
+
+                    <div class="stikerWrap" v-if="products[index].actions !== 0">
+                      
+                                <span v-for="(action, index) in product.actions" :class="action.actionType">{{action.actionName}}</span>
+                       
+
+                         
+                        
                     </div>
+                    
+                  <div class="d-flex">
+                    <img class="align-self-center poduct-img" :src="product.img" alt="">
+                  </div>
                 </div>
                 <div class="mb-2 productName hidden-sm-down">
                   <a href="" :title="product.name">{{product.name}}</a>
-              </div>
-              <div class="mb-2 productName hidden-md-up small">
+                </div>
+                <div class="mb-2 productName hidden-md-up small">
                   <a href="">{{product.name}}</a>
+                </div>
+                <div class="mb-2">
+                  <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">{{product.rateCount}} отз.</span>
+                </div>
+                <div class="hidden-sm-down">
+                  <div class="d-flex flex-row align-items-end mb-4">
+                    <div class="h5 mb-0 mr-2 "><b>{{product.price}} р.</b></div>
+                    <span class="small text-danger" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
+                  </div>
+                  <div class="mb-3">
+                    <button type="button" class="btn btn-secondary mr-2">В корзину</button> 
+                    <img src="https://i.snag.gy/zo2fWm.jpg" alt="">
+                  </div>
+                </div>
+                <div class="hidden-md-up d-flex justify-content-between align-items-center">
+                  <div class="d-flex flex-column ">
+                    <span class="small text-danger" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
+                    <span class=" mb-0"><b>{{product.price}} р.</b></span>
+                  </div>
+                  <button type="button" class="btn btn-secondary">
+                    <div class="icon-cart text-muted"></div>
+                  </button>
+                </div>
+                <div class="small hidden-md-down">
+                    <a href="">Забрать в 6 магазинах с 18 сен.</a></div>
               </div>
-              <div class="mb-2">
-                <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">{{product.rate}}</span>
-                  </div>
-                  <div class="hidden-sm-down">
-                      <div class="h5 mb-4">{{product.price}} р.</div>
-                      <div class="mb-3">
-                          <button type="button" class="btn btn-secondary">В корзину</button>
-
-                      </div>
-                  </div>
-
-                  <div class="hidden-md-up d-flex justify-content-between align-items-center">
-                  <div class="d-flex flex-column">
-                      <span class="small" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
-                      <span class="h5 mb-0">{{product.price}} р.</span>
-                  </div>
-                        
-                      <button type="button" class="btn btn-secondary"><div class="icon-cart text-muted"></div></button>
-
-                  </div>
-                  <div class="small hidden-md-down"><a href="">Забрать в 6 магазинах с 18 сен.</a></div>
-              </div>
+            </div>
           </div>
+        </div>
       </div>
-  </div>
-</div>
-
-</div>
+    </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="js/tether.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>

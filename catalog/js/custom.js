@@ -86,8 +86,20 @@ var kolich = new Vue({
       oldPrice: 0,
       price: 54800,
       rate:4.5,
-      rateCount:15,
+      rateCount:65,
       amount:"Забрать в 6 магазинах сегодня",
+      actions: [{
+        actionName: "Летние скидки",
+        actionType: "sale",
+        actionDesc:""
+      },
+      {
+        actionName: "Подарок за покупку",
+        actionType: "gift",
+        actionDesc:""
+      }
+
+      ],
       stores: [{
         storeName: "в ТЦ Черемушки",
         date: "2017-10-24" 
@@ -117,6 +129,7 @@ var kolich = new Vue({
       rate:3.1,
       rateCount:15,
       amount:"Забрать в 6 магазинах сегодня",
+      actions:0,
       stores: [{
         storeName: "в ТЦ Черемушки",
         date: "2017-10-24" 
@@ -142,9 +155,10 @@ var kolich = new Vue({
       img: "https://logunoveugene.github.io/catalog/img/3.png",
       oldPrice: 19860,
       price: 18800,
-      rate:1.5,
-      rateCount:15,
+      rate:0,
+      rateCount:0,
       amount:"Забрать в 6 магазинах сегодня",
+      actions:0,
       stores: [{
         storeName: "в ТЦ Черемушки",
         date: "2017-10-24" 
@@ -171,8 +185,9 @@ var kolich = new Vue({
       oldPrice: 33860,
       price: 21800,
       rate:5,
-      rateCount:15,
+      rateCount:3,
       amount:"Забрать в 6 магазинах сегодня",
+      actions:0,
       stores: [{
         storeName: "в ТЦ Черемушки",
         date: "2017-10-24" 
@@ -199,8 +214,9 @@ var kolich = new Vue({
       oldPrice: 0,
       price: 32990,
       rate:4.5,
-      rateCount:15,
+      rateCount:60,
       amount:"Забрать в 6 магазинах сегодня",
+      actions:0,
       stores: [{
         storeName: "в ТЦ Черемушки",
         date: "2017-10-24" 
@@ -228,6 +244,7 @@ var kolich = new Vue({
       rate:4.5,
       rateCount:15,
       amount:"Забрать в 6 магазинах сегодня",
+      actions:0,
       stores: [{
         storeName: "в ТЦ Черемушки",
         date: "2017-10-24" 
@@ -253,8 +270,9 @@ var kolich = new Vue({
       oldPrice: 0,
       price: 86990,
       rate:4.5,
-      rateCount:15,
+      rateCount:71,
       amount:"Забрать в 6 магазинах сегодня",
+      actions:0,
       stores: [{
         storeName: "в ТЦ Черемушки",
         date: "2017-10-24" 
@@ -280,8 +298,13 @@ var kolich = new Vue({
       oldPrice: 0,
       price: 169990,
       rate:4.5,
-      rateCount:15,
+      rateCount:8,
       amount:"Забрать в 6 магазинах сегодня",
+      actions:[{
+        actionName: "Подарок за покупку",
+        actionType: "gift",
+        actionDesc:""
+      }],
       stores: [{
         storeName: "в ТЦ Черемушки",
         date: "2017-10-24" 
