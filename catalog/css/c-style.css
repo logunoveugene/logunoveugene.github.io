@@ -36,6 +36,15 @@
   max-height: 200px;
 }
 
+*@media screen and (max-width: 576px){
+.row-img-wrap {
+  width: 200px;
+    max-width: 100px;
+  margin-right: 2rem;
+}
+}
+  }
+
 html {
   font-size: 15px;
 }
@@ -198,3 +207,4 @@ a:hover {
   
 }
 */
+
