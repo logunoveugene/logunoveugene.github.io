@@ -109,7 +109,7 @@ var kolich = new Vue({
       {
         actionName: "Подарок за покупку",
         actionType: "gift",
-        actionDesc:""
+        actionDesc:"Описание2"
       }
 
       ],

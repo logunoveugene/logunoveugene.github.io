@@ -53,7 +53,7 @@
 
                     <div class="stikerWrap" v-if="products[index].actions !== 0">
                     <div class="" v-for="(action, index) in product.actions" >
-                            <a  data-toggle="tooltip" data-html="true" data-placement="bottom" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>" >
+                            <a  data-toggle="tooltip" data-html="true" data-placement="bottom" :title="action.actionDesc" >
                                 <span class="mr-1 stiker" :class="action.actionType">{{action.actionName}}</span>
                             </a>
                             
