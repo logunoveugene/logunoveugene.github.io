@@ -137,9 +137,9 @@ a:hover{
     max-width: 100%;
 
 }
-
-
-.gift {
+.stiker{
+    position: relative;
+    cursor: pointer;
     display: inline-block;
     padding: .25em .4em;
     font-size: 75%;
@@ -148,17 +148,21 @@ a:hover{
     text-align: center;
     white-space: nowrap;
     vertical-align: baseline;
+
+}
+.stiker:hover{
+  opacity: .9;
+
+}
+
+.gift {
+
     background-color: #0275d8;
+
 }
 
 .sale {
-    display: inline-block;
-    padding: .25em .4em;
-    font-size: 75%;
-    height: 22px;
-    color: #fff;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
+
     background-color: #761ca9;
+
 }

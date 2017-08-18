@@ -1,3 +1,16 @@
+ $(function () {
+      $('[data-toggle="tooltip"]').tooltip({
+        
+        trigger: 'click',
+        constraints: [
+        {
+          to: 'scrollParent',
+          pin: true
+        },
+        ]}
+        )
+    });
+
 Vue.component('rate', {
   template: `
     <div class="Rate" v-if="length > 0">
@@ -91,7 +104,7 @@ var kolich = new Vue({
       actions: [{
         actionName: "Летние скидки",
         actionType: "sale",
-        actionDesc:""
+        actionDesc:"Описание"
       },
       {
         actionName: "Подарок за покупку",
