@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-    <link href="https://file.myfontastic.com/wjZRGVSBFtwBwzFfpqQDpi/icons.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
     <link href="css/c-style.css" rel="stylesheet">
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
@@ -90,42 +90,87 @@
               </button>
             </div>
             <div class="small hidden-md-down ">
-              <a href="" class="text-muted">Забрать в 6 магазинах с 18 сен.</a></div>
+              <a href="" class="text-muted"><a href="">Забрать в 6 магазинах</a> с 18 сен.</a>
+            </div>
           </div>
         </div>
-        <div class="row  hidden-md-down">
-          <div class="product-plate col-12 p-0 d-flex flex-row border p-3 " v-for="(product, index) in products">
-            <div class="stikerWrap" v-if="products[index].actions !== 0">
-              <div class="" v-for="(action, index) in product.actions">
-                <a data-toggle="tooltip" data-html="true" data-placement="bottom" :title="action.actionDesc">
-                  <span class="mr-1 stiker" :class="action.actionType">{{action.actionName}}</span>
-                </a>
+
+
+
+        <div class="row ">
+          <div class="product-plate col-12 p-0  border p-3 " v-for="(product, index) in products">
+            <div class="row">
+              <div class="stikerWrap" v-if="products[index].actions !== 0">
+                <div class="" v-for="(action, index) in product.actions">
+                  <a data-toggle="tooltip" data-html="true" data-placement="bottom" :title="action.actionDesc">
+                    <span class="mr-1 stiker" :class="action.actionType">{{action.actionName}}</span>
+                  </a>
+                </div>
               </div>
+              <div class="col shrink">
+                <div class="d-flex justify-content-center h-100 mb-2 row-img-wrap ">
+                  <div class="d-flex">
+                    <img class="align-self-center row-poduct-img" :src="product.img" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="col-12 col-md">
+                    <div class="d-flex flex-column ">
+                      <div class="mb-2 mt-3  h5 hidden-sm-down ">
+                        <a href="" :title="product.name">{{product.name}}</a>
+                      </div>
+                      <div class="mb-1 hidden-md-up small">
+                          <a href="">{{product.name}}</a>
+                        </div>
+                      <div class="desc-list-warp hidden-md-down" v-html="product.desc"></div>
+                      <div class="mb-3 ">
+                        <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">{{product.rateCount}} отз.</span>
+                      </div>
+                      <div class="hidden-md-up d-flex justify-content-between align-items-center">
+              <div class="d-flex flex-column ">
+                <span class="small text-danger" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
+                <span class=" mb-0"><b>{{product.price}} р.</b></span>
+              </div>
+              <button type="button" class="btn btn-secondary">
+                <div class="icon-cart text-muted"></div>
+              </button>
             </div>
-            <div class="d-flex justify-content-center mb-2 row-img-wrap">
-              <div class="d-flex">
-                <img class="align-self-center row-poduct-img" :src="product.img" alt="">
-              </div>
-            </div>
-            <div class="d-flex flex-column">
-              <div class="mb-2 mt-3  h5">
-                <a href="" :title="product.name">{{product.name}}</a>
-              </div>
-              <div class="desc-list-warp" v-html="product.desc"></div>
-              <div class="mb-2">
-                <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">{{product.rateCount}} отз.</span>
-              </div>
-            </div>
-            <div class="d-flex flex-column ml-auto  text-right">
-              <div class="mt-2 pt-2">
-                <span class="small text-danger  mb-1" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
-                <div class="h5 mb-3 "><b>{{product.price}} р.</b></div>
-              </div>
-              <div class="">
-                <button type="button" class="btn btn-secondary mb-2">В корзину</button>
-              </div>
-              <div class="small hidden-md-down ">
-                <a href="" class="text-muted">Забрать в 6 магазинах с 18 сен.</a>
+                    </div>
+                  </div>
+                  <div class="col shrink hidden-sm-down">
+                    <div class="d-flex flex-column ml-auto  text-right">
+                      <div class="mt-2 pt-2">
+                        <span class="small text-danger  mb-1" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
+                        <div class="h5 mb-3 "><b>{{product.price}} р.</b></div>
+                      </div>
+                      <div class="">
+                        <button type="button" class="btn btn-secondary mb-2">В корзину</button>
+                      </div>
+                      <div class="small">
+                        <a href="" class="text-muted"><a href="">Забрать в 6 магазинах</a> с 18 сен.</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row hidden-sm-down">
+                  <div class="col">
+                    <div class="d-flex flex-row">
+                      <div class="mr-4">
+                        <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">{{product.rateCount}} отз.</span>
+                      </div>
+                      <div class="d-inline-block mr-4">
+                        <div data-icon="h" class="icon small text-muted mr-2 d-inline-block"></div>
+                        <div class="small text-muted  d-inline-block">Сравнить</div>
+                      </div>
+                      <div class="d-inline-block">
+                        <div data-icon="_" class="icon small text-muted mr-2 d-inline-block"></div>
+                        <div class="small text-muted  d-inline-block">Добавить в желания</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -134,6 +179,7 @@
     </div>
   </div>
 </div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="js/tether.min.js"></script>
