@@ -43,8 +43,8 @@
 <div id="app">
   <div class="container">
     <div class="row">
-      <div class="col shrink hidden-md-down card rounded-0">
-        <div class="border w-208 p-3">Фильтрs</div>
+      <div class="col shrink hidden-md-down  p-0">
+        <div class="border w-208 mr-3 sticky-top"><img src="https://i.snag.gy/L8nKmq.jpg" alt=""></div>
       </div>
       <div class="col">
         <div class="row mb-5">
@@ -68,7 +68,7 @@
               <a href="">{{product.name}}</a>
             </div>
             <div class="mb-2">
-              <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">{{product.rateCount}} отз.</span>
+              <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">({{product.rateCount}})</span>
             </div>
             <div class="hidden-sm-down">
               <div class="d-flex flex-row align-items-end mb-4">
@@ -126,7 +126,7 @@
                         </div>
                       <div class="desc-list-warp hidden-md-down" v-html="product.desc"></div>
                       <div class="mb-2 hidden-md-up">
-                        <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">{{product.rateCount}} отз.</span>
+                        <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">({{product.rateCount}}) </span>
                       </div>
 
                       <div class="mb-3 hidden-md-up">
@@ -163,7 +163,7 @@
                   <div class="col">
                     <div class="d-flex flex-row">
                       <div class="mr-4">
-                        <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">{{product.rateCount}} отз.</span>
+                        <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">({{product.rateCount}}) </span>
                       </div>
                       <div class="d-inline-block mr-4">
                         <div data-icon="h" class="icon small text-muted mr-2 d-inline-block"></div>
