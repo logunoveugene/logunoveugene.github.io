@@ -73,7 +73,7 @@
             <div class="hidden-sm-down">
               <div class="d-flex flex-row align-items-end mb-4">
                 <div class="h5 mb-0 mr-2 "><b>{{product.price}} р.</b></div>
-                <span class="small text-danger" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
+                <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
               </div>
               <div class="mb-3">
                 <button type="button" class="btn btn-secondary mr-2">В корзину</button>
@@ -82,7 +82,7 @@
             </div>
             <div class="hidden-md-up d-flex justify-content-between align-items-center">
               <div class="d-flex flex-column ">
-                <span class="small text-danger" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
+                <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
                 <span class=" mb-0"><b>{{product.price}} р.</b></span>
               </div>
               <button type="button" class="btn btn-secondary">
@@ -135,7 +135,7 @@
 
                       <div class="hidden-md-up d-flex justify-content-between align-items-center">
               <div class="d-flex flex-column ">
-                <span class="small text-danger" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
+                <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
                 <span class=" mb-0"><b>{{product.price}} р.</b></span>
               </div>
               <button type="button" class="btn btn-secondary">
@@ -147,7 +147,7 @@
                   <div class="col shrink hidden-sm-down">
                     <div class="d-flex flex-column ml-auto  text-right">
                       <div class="mt-2 pt-2">
-                        <span class="small text-danger  mb-1" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
+                        <span class="small text-muted  mb-1" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
                         <div class="h5 mb-3 "><b>{{product.price}} р.</b></div>
                       </div>
                       <div class="">
