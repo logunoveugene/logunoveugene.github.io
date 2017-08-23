@@ -179,7 +179,7 @@
       </div>
       <div class="col">
         <div class="row ">
-          <div class="col-12 d-flex flex-row p-0 pt-4 mb-4 bt-1">
+          <div class="col-12 d-flex flex-row p-0 pt-4 mb-4 bt-1 hidden-md-down">
             <div class="d-flex flex-row mr-4">
               <div class="mr-1 small">Сортировка:</div>
               <div class="dropdown small">
@@ -276,7 +276,7 @@
               <a href="https://logunoveugene.github.io/main2/index.html">{{product.name}}</a>
             </div>
             <div class="mb-2">
-              <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">({{product.rateCount}})</span>
+              <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">{{product.rateCount}}</span>
             </div>
             <div class="hidden-sm-down">
               <div class="mb-4 price-wrap">
@@ -342,7 +342,7 @@
                       </div>
                       <div class="desc-list-warp hidden-md-down" v-html="product.desc"></div>
                       <div class="mb-2 hidden-md-up">
-                        <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">({{product.rateCount}}) </span>
+                        <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">{{product.rateCount}} </span>
                       </div>
 
                       <div class="mb-3 hidden-md-up">
@@ -385,7 +385,7 @@
                   <div class="col">
                     <div class="d-flex flex-row">
                       <div class="mr-4">
-                        <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">({{product.rateCount}}) </span>
+                        <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">{{product.rateCount}} </span>
                       </div>
                       <div class="d-inline-block mr-4">
                         <div data-icon="h" class="icon small text-muted mr-2 d-inline-block"></div>
