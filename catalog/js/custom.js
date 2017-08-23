@@ -106,7 +106,7 @@ var kolich = new Vue({
   el: '#app',
 
   data: {
-    
+    layout:'list',
     products: [ 
     {
       id: 20101507,
@@ -115,6 +115,7 @@ var kolich = new Vue({
       desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
       oldPrice: 0,
       price: 54800,
+      discount:0,
       rate:4.5,
       rateCount:65,
       amount:"Забрать в 6 магазинах сегодня",
@@ -157,6 +158,7 @@ var kolich = new Vue({
       desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
       oldPrice: 0,
       price: 84800,
+      discount:0,
       rate:3.1,
       rateCount:15,
       amount:"Забрать в 6 магазинах сегодня",
@@ -187,6 +189,7 @@ var kolich = new Vue({
       desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
       oldPrice: 19860,
       price: 18800,
+      discount:0,
       rate:0,
       rateCount:0,
       amount:"Забрать в 6 магазинах сегодня",
@@ -217,6 +220,7 @@ var kolich = new Vue({
       desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
       oldPrice: 33860,
       price: 21800,
+      discount:0,
       rate:5,
       rateCount:3,
       amount:"Забрать в 6 магазинах сегодня",
@@ -251,6 +255,7 @@ var kolich = new Vue({
       desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
       oldPrice: 0,
       price: 32990,
+      discount:0,
       rate:4.5,
       rateCount:60,
       amount:"Забрать в 6 магазинах сегодня",
@@ -280,6 +285,7 @@ var kolich = new Vue({
       desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
       oldPrice: 0,
       price: 32990,
+      discount:0,
       rate:4.5,
       rateCount:15,
       amount:"Забрать в 6 магазинах сегодня",
@@ -309,6 +315,7 @@ var kolich = new Vue({
       desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
       oldPrice: 0,
       price: 86990,
+      discount:0,
       rate:4.5,
       rateCount:71,
       amount:"Забрать в 6 магазинах сегодня",
@@ -338,6 +345,7 @@ var kolich = new Vue({
       desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
       oldPrice: 0,
       price: 169990,
+      discount:1800,
       rate:4.5,
       rateCount:8,
       amount:"Забрать в 6 магазинах сегодня",

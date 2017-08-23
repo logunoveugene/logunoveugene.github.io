@@ -2,6 +2,37 @@
   font-family: arial;
 }
 
+html {
+    font-size: 15px;
+}
+
+.border-right-1 {
+  border-right: 1px solid #eee;
+}
+
+.border-bottom-3 {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.10);
+}
+
+.bg-grey {
+  background-color: #f7f7f7
+}
+
+.header-btn:hover {
+  transition: box-shadow 0.2s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.header-btn:hover .main-link {
+  transition: color 0.2s ease;
+  color: #f26522;
+}
+.bb-red-3 {
+    border-bottom: 3px solid #f06124;
+}
+
+
 .w-208 {
   width: 208px
 }
@@ -51,7 +82,7 @@ html {
 
 a,
 .link {
-  color: #1d5dbe;
+  color: #355b99;
 }
 
 .shrink {
@@ -230,4 +261,30 @@ a:hover {
 
 .text-muted{
   color:#999!important;
+}
+
+.discount mark{
+    position: relative;
+    cursor: pointer;
+
+    padding: .25em .4em;
+    font-size: 60%;
+    font-weight: 700;
+    color: #000;
+
+    background-color: #ffe600;
+    text-transform: uppercase;
+}
+
+.discount{
+  line-height: 11px;
+}
+
+
+.price-wrap{
+  height: 30px
+}
+
+.bt-1{
+  border-top: 1px solid #eee;
 }
