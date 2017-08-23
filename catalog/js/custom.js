@@ -1,12 +1,14 @@
   $(document).on('click', function(event) {
     // choose to close all popovers if clicking on anything but a popover element.
-    if (!($(event.target).data('toggle') === "tooltip" /* the trigger buttons */ 
+    if (  ( $(event.target).data('toggle') === "tooltip" /* the trigger buttons */ 
           || $(event.target).hasClass('tooltip') /* the popup menu */
           || $(event.target).parents('.tooltip[role="tooltip"]').length /* this one is a bit fiddly but also catches child elements of the popup menu. */ )) {
       
-      $('[data-toggle="tooltip"]').tooltip('hide');
+      
     }
   });
+
+
 
 
  $(function () {
