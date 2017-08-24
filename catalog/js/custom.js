@@ -139,7 +139,7 @@ var kolich = new Vue({
     products: [ 
     {
       id: 20101507,
-      name: 'Ноутбук Apple MacBook 12" MJY32 Серый космос',
+      name: 'Телевизор BBK 32LEM-1018/T2C',
       img: "https://logunoveugene.github.io/catalog/img/1.png",
       desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
       oldPrice: 0,
@@ -245,7 +245,7 @@ var kolich = new Vue({
     {
       id: 20101511,
       name: 'Телевизор Samsung UE55MU6100',
-      img: "https://i.snag.gy/ChljkG.jpg",
+      img: "https://logunoveugene.github.io/catalog/img/9.png",
       desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
       oldPrice: 33860,
       price: 21800,
