@@ -179,13 +179,9 @@ var kolich = new Vue({
       actions:[{
         actionName: "Летние скидки",
         actionType: "sale",
-        actionDesc:"Описание"
-      },
-      {
-        actionName: "Подарок за покупку",
-        actionType: "gift",
-        actionDesc:"Описание2"
+        actionDesc:"Скидка по промокоду ЖАРА"
       }
+      
 
       ],
       stores: [{
