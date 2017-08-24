@@ -331,7 +331,7 @@
 
 
         <div v-if="layout == 'list'" class="row ">
-          <div class="product-plate col-12 p-0  border p-3 " v-for="(product, index) in products">
+          <div class="product-plate col-12 p-3" v-for="(product, index) in products">
           
 
           <div class="stikerWrap hidden-sm-down" v-if="products[index].actions !== 0">
@@ -397,10 +397,10 @@
                   </div>
                   <div class="col shrink hidden-sm-down">
                     <div class="d-flex flex-column ml-auto  text-right">
-                      <div class="mt-2 pt-2 mb-3">
+                      <div class="mt-2 pt-2 mb-1">
                         <span class="small text-muted  mb-1" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
                         <div class="h5 mb-2 "><b>{{product.price}} р.</b></div>
-                        <div class="discount" v-if="products[index].discount !== 0">
+                        <div class="discount mb-2" v-if="products[index].discount !== 0">
                           <mark>Доступна скидка {{product.discount}} р.</mark>
                         </div>
                       </div>
@@ -415,7 +415,7 @@
                 </div>
                 <div class="row hidden-sm-down">
                   <div class="col">
-                    <div class="d-flex flex-row">
+                    <div class="d-flex flex-row mb-2">
                       <div class="mr-4">
                         <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">{{product.rateCount}} </span>
                       </div>
