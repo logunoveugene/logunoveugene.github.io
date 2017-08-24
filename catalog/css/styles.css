@@ -302,3 +302,9 @@
 .icon-like-1:before {
   content: "\5f";
 }
+.icon-sorting:before {
+  content: "\60";
+}
+.icon-filter:before {
+  content: "\7b";
+}

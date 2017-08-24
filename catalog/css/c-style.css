@@ -329,3 +329,13 @@ a:hover {
 .breadcrumbsSwiper .swiper-slide {
   width: auto;
 }
+
+
+.mobile-list-control{
+  font-size: 1.2rem;
+      height: 20px;
+}
+
+.p-2-5{
+  padding: 0.75rem;
+}
