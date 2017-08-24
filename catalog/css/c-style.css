@@ -304,3 +304,12 @@ a:hover {
 
 
 
+.filterSet{
+  width: 100%;
+    padding:  10px 0;
+  overflow:hidden;
+}
+
+.filterSet .swiper-slide {
+  width: auto;
+}
