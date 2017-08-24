@@ -278,7 +278,7 @@
           </div>
           <div class="col-12 hidden-lg-up">
               <div class="row">
-                  <div class="col-6 filterSet-plate p-2-5  text-center d-flex justify-content-center align-items-center"><i class="icon-filter mobile-list-control mr-2"></i>Фильтрация</div>
+                  <div class="col-6 filterSet-plate p-2-5  text-center d-flex justify-content-center align-items-center" data-toggle="modal" data-target="#filterModal"><i class="icon-filter mobile-list-control mr-2"></i>Фильтрация</div>
                   <div class="col-6 filterSet-plate  text-center d-flex justify-content-center align-items-center"><i class="icon-sorting mobile-list-control mr-2"></i>Сортировка</div>
               </div>
           </div>
@@ -469,7 +469,30 @@
   </div>
 </div>
 
-
+<div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="fullscreen-image" aria-hidden="true">
+    <div class="modal-dialog modal-full" role="document">
+      <div class="card-block">
+        <div class="row">
+          <div class="col-10">
+            <h5 class="modal-title" id="exampleModalLabel">Фильтрация </h5>
+          </div>
+          <div class="col-2">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card-block pt-0 ">
+        <div class="mx-auto">
+          фильтры
+        </div>
+        <div class="fixed-bottom p-2">
+            <button type="button" class="btn btn-primary btn-lg btn-block ">Применить фильтр</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
