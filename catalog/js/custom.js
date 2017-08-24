@@ -172,7 +172,7 @@ var kolich = new Vue({
       desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
       oldPrice: 0,
       price: 84800,
-      discount:0,
+      discount:1800,
       rate:3.1,
       rateCount:15,
       amount:"Забрать в 6 магазинах сегодня",
