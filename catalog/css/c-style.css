@@ -313,3 +313,19 @@ a:hover {
 .filterSet .swiper-slide {
   width: auto;
 }
+
+
+.breadcrumbsSwiper-wrap {
+  overflow: hidden;
+}
+
+.breadcrumbsSwiper {
+  position: relative;
+  width: 100%;
+  padding: 0 0 0 10px;
+  overflow: hidden;
+}
+
+.breadcrumbsSwiper .swiper-slide {
+  width: auto;
+}

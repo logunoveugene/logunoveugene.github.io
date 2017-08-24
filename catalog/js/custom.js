@@ -1,6 +1,10 @@
   
 
-$(document).ready(function () { var filterSet = new Swiper('.filterSet', {
+$(document).ready(function () { 
+
+
+
+  var filterSet = new Swiper('.filterSet', {
     preventClicks :true,
     preventClicksPropagation: true,
     freeMode: true,
@@ -9,20 +13,12 @@ $(document).ready(function () { var filterSet = new Swiper('.filterSet', {
   });
 
 
-var mySwiper = new Swiper ('.swiper-container', {
-    // Optional parameters
-    direction: 'vertical',
-    loop: true,
-    
-    // If we need pagination
-    pagination: '.swiper-pagination',
-    
-    // Navigation arrows
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
-    
-    // And if we need scrollbar
-    scrollbar: '.swiper-scrollbar',
+  var breadcrumbsSwiper = new Swiper('.breadcrumbsSwiper', {
+    preventClicks :true,
+    preventClicksPropagation: true,
+    freeMode: true,
+    slidesPerView: 'auto'
+
   });
 
   });
