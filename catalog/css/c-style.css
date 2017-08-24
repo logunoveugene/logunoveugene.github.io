@@ -347,9 +347,11 @@ a:hover {
 #logo{
   width:235px;}
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
 
     #logo #cart{display:none;}/*скрываем корзину*/
 
-    #logo{transform: translate(-55px, 3px);}
+    #logo{transform: translate(-52px, 3px);
+      width:210px;}
+
    }
