@@ -288,3 +288,18 @@ a:hover {
 .bt-1{
   border-top: 1px solid #eee;
 }
+.filterSet-plate{
+  margin: -1px 0 0 -1px;
+    border: 1px solid #e9ecef!important;
+}
+.filterPreSet{
+  padding: .75rem;
+    font-size: 80%;
+    background-color: white;
+    border-radius: 5px;
+    color: #666;
+    margin-right: .5rem;
+}
+
+
+

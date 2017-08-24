@@ -1,3 +1,32 @@
+  
+
+$(document).ready(function () { var filterSet = new Swiper('.filterSet', {
+    preventClicks :true,
+    preventClicksPropagation: true,
+    freeMode: true,
+    slidesPerView: 'auto'
+
+  });
+
+
+var mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    direction: 'vertical',
+    loop: true,
+    
+    // If we need pagination
+    pagination: '.swiper-pagination',
+    
+    // Navigation arrows
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    
+    // And if we need scrollbar
+    scrollbar: '.swiper-scrollbar',
+  });
+
+  });
+
   $(document).on('click', function(event) {
     // choose to close all popovers if clicking on anything but a popover element.
     if (  ( $(event.target).data('toggle') === "tooltip" /* the trigger buttons */ 
@@ -7,7 +36,6 @@
       
     }
   });
-
 
 
 
@@ -24,6 +52,7 @@
         ]}
         )
     });
+
 
 
 
@@ -119,7 +148,39 @@ var kolich = new Vue({
       rate:4.5,
       rateCount:65,
       amount:"Забрать в 6 магазинах сегодня",
-      actions: [{
+      actions: 0,
+      stores: [{
+        storeName: "в ТЦ Черемушки",
+        date: "2017-10-24" 
+      }, {
+        storeName: "на Алеутской",
+        date: "2017-10-28" 
+      },{
+        storeName: "в ТЦ Максим",
+        date: "2017-10-24" 
+      }, {
+        storeName: "на Гоголя",
+        date: "2017-10-28" 
+      },{
+        storeName: "на Вилкова",
+        date: "2017-10-28" 
+      }
+      ]
+    },
+
+
+    {
+      id: 20101508,
+      name: 'Телевизор Sony KD-43XE8096',
+      img: "https://logunoveugene.github.io/catalog/img/2.png",
+      desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
+      oldPrice: 0,
+      price: 84800,
+      discount:0,
+      rate:3.1,
+      rateCount:15,
+      amount:"Забрать в 6 магазинах сегодня",
+      actions:[{
         actionName: "Летние скидки",
         actionType: "sale",
         actionDesc:"Описание"
@@ -148,43 +209,11 @@ var kolich = new Vue({
         date: "2017-10-28" 
       }
       ]
-    },
-
-
-    {
-      id: 20101508,
-      name: 'Фотоаппарат Canon EOS 70D Kit [18-135STM]',
-      img: "https://logunoveugene.github.io/catalog/img/2.png",
-      desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
-      oldPrice: 0,
-      price: 84800,
-      discount:0,
-      rate:3.1,
-      rateCount:15,
-      amount:"Забрать в 6 магазинах сегодня",
-      actions:0,
-      stores: [{
-        storeName: "в ТЦ Черемушки",
-        date: "2017-10-24" 
-      }, {
-        storeName: "на Алеутской",
-        date: "2017-10-28" 
-      },{
-        storeName: "в ТЦ Максим",
-        date: "2017-10-24" 
-      }, {
-        storeName: "на Гоголя",
-        date: "2017-10-28" 
-      },{
-        storeName: "на Вилкова",
-        date: "2017-10-28" 
-      }
-      ]
     }, 
 
     {
       id: 20101509,
-      name: "Планшет Apple iPad 4G 128Gb Gold",
+      name: "Телевизор LG 55UJ670V",
       img: "https://logunoveugene.github.io/catalog/img/3.png",
       desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
       oldPrice: 19860,
@@ -215,7 +244,7 @@ var kolich = new Vue({
 
     {
       id: 20101511,
-      name: 'Холодильник Nissin Di466N ',
+      name: 'Телевизор Samsung UE55MU6100',
       img: "https://i.snag.gy/ChljkG.jpg",
       desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
       oldPrice: 33860,
@@ -250,7 +279,7 @@ var kolich = new Vue({
 
     {
       id: 20101512,
-      name: 'Смартфон Sony VCT-R100 ',
+      name: 'Телевизор LG 32LH590U',
       img: "https://logunoveugene.github.io/catalog/img/5.png",
       desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
       oldPrice: 0,
@@ -280,7 +309,7 @@ var kolich = new Vue({
     },
     {
       id: 20101512,
-      name: 'Обогреватель инфракрасный Timberk TCH Q1 800',
+      name: 'Телевизор LG 43LJ519V',
       img: "https://logunoveugene.github.io/catalog/img/6.png",
       desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
       oldPrice: 0,
