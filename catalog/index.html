@@ -332,16 +332,30 @@
 
         <div v-if="layout == 'list'" class="row ">
           <div class="product-plate col-12 p-0  border p-3 " v-for="(product, index) in products">
-            <div class="row">
-              
-              <div class="col shrink">
-              <div class="stikerWrap" v-if="products[index].actions !== 0">
+          
+
+          <div class="stikerWrap hidden-sm-down" v-if="products[index].actions !== 0">
                 <div class="d-inline" v-for="(action, index) in product.actions">
                   <a data-toggle="tooltip" data-html="true" data-placement="bottom" :title="action.actionDesc">
                     <span class="mr-1 stiker" :class="action.actionType">{{action.actionName}}</span>
                   </a>
                 </div>
               </div>
+
+              <div class="stikerWrap hidden-md-up" v-if="products[index].actions !== 0">
+                <div class="d-block" v-for="(action, index) in product.actions">
+                  <a data-toggle="tooltip" data-html="true" data-placement="bottom" :title="action.actionDesc">
+                    <span class="mr-1 stiker" :class="action.actionType">{{action.actionName}}</span>
+                  </a>
+                </div>
+              </div>
+
+
+
+            <div class="row">
+              
+              <div class="col shrink">
+              
                 <div class="d-flex justify-content-center h-100 mb-2 row-img-wrap ">
                   <div class="d-flex">
                     <img class="align-self-center row-poduct-img" :src="product.img" alt="">
