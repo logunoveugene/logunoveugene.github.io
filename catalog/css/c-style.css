@@ -355,3 +355,11 @@ a:hover {
       width:210px;}
 
    }
+
+   .header-cart{
+    color:#f4793b; 
+
+    height: 25px;
+    font-size: 1.3rem;
+    margin-right: 0.4rem;
+   }
