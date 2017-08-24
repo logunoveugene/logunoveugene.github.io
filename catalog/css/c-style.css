@@ -339,3 +339,17 @@ a:hover {
 .p-2-5{
   padding: 0.75rem;
 }
+
+
+
+
+
+#logo{
+  width:235px;}
+
+@media screen and (max-width: 600px) {
+
+    #logo #cart{display:none;}/*скрываем корзину*/
+
+    #logo{transform: translate(-55px, 3px);}
+   }
