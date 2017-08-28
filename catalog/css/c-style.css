@@ -260,9 +260,25 @@ a:hover {
 }
 
 
-.text-muted{
-  color:#999!important;
+
+
+@media screen and (max-width: 1200px){
+
+.row-img-wrap {
+    width: 140px;
+    max-width: 140px;
+    margin-right: 0rem;
 }
+.row-poduct-img {
+  max-width: 140px;
+  max-height: 150px;
+}
+
+
+}
+
+
+
 
 .discount mark{
     position: relative;
