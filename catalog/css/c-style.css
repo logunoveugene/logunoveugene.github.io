@@ -371,3 +371,12 @@ a:hover {
   background-color: white;
   height: 100%;
 }
+
+
+.viewSetting{
+  color:#999;
+}
+
+.viewSetting.active{
+  color:#333;
+}
