@@ -375,6 +375,7 @@ a:hover {
 
 .viewSetting{
   color:#999;
+  cursor: pointer;
 }
 
 .viewSetting.active{
