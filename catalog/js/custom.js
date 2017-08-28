@@ -27,7 +27,7 @@ var handlesSlider = document.getElementById('slider-handles');
 
 noUiSlider.create(handlesSlider, {
   start: [ 4000, 8000 ],
-  behaviour: 'tap',
+  behaviour: 'drag-tap',
   connect: true,
   range: {
     'min': [  2000 ],
