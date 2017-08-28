@@ -397,3 +397,15 @@ a:hover {
 .viewSetting.active{
   color:#333;
 }
+
+
+.noUi-target {
+    background: url(https://i.snag.gy/Q0XuEU.jpg) 51% 82%;
+    border-radius: 4px;
+ border: none;
+ box-shadow: none;
+}
+
+.noUi-horizontal {
+    height: 39px;
+}
