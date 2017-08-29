@@ -408,20 +408,38 @@ a:hover {
 
 .noUi-horizontal {
     height: 39px;
+    cursor: pointer;
 }
 .noUi-connect {
     height: 2px;
     top: 19px;
+        background: #0275d8;
   }
 
 
   .noUi-horizontal .noUi-handle {
-    width: 18px;
-    height: 18px;
-    left: -17px;
-    top: 10px;
+        width: 11px;
+    height: 11px;
+    left: -11px;
+    top: 14px;
+    border-radius: 50%;
+    background-color: #0275d8;
+        box-shadow:none;
+    border:none;
 }
 
+
+
+.noUi-horizontal .noUi-handle.noUi-active{
+        width: 20px;
+    height: 20px;
+    left: -15px;
+    top: 9px;
+
+
+        box-shadow: 0px 0px 0px 6px rgba(0, 0, 0, 0.01);
+
+}
 
 
 .noUi-handle:after, .noUi-handle:before {
