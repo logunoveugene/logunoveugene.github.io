@@ -440,7 +440,11 @@ a:hover {
 
     }
 
+.noUi-value-horizontal {
 
+    transform: translate(-50%,50%);
+    font-size: 11px;
+}
 
     .noUi-horizontal .noUi-handle:focus{
       outline:none;}

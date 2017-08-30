@@ -29,6 +29,10 @@ noUiSlider.create(handlesSlider, {
   start: [ 4000, 8000 ],
   behaviour: 'snap',
   connect: true,
+  pips: {
+    mode: 'range',
+    density: 4
+  },
   range: {
     'min': [  2000 ],
     'max': [ 10000 ]
