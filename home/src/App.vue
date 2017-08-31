@@ -146,8 +146,8 @@
                   <div class="main-slider mt-3 mb-2">
                     <div class="swiper-wrapper">
                       <div v-for="slide in mainSlides" class="swiper-slide">
-                        <a href="#">
-                          <img :data-src="slide.sliderImg" class="swiper-lazy">
+                        <a href="#" class="d-block">
+                          <img :data-src="slide.sliderImg" class="swiper-lazy d-block">
                           <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
                         </a>
                       </div>
@@ -665,6 +665,25 @@ border: none;
   .propuct-swiper .swiper-slide {
     width: 50%;
   }
+
+.main-slider .swiper-slide img {
+    width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+}
+
+
+.main-slider {
+
+  width: 100%;
+  height: 100px!important;
+
+
+}
+
+
+
 }
 
 .top-ptoduct-img {
