@@ -677,7 +677,7 @@ border: none;
 .main-slider {
 
   width: 100%;
-  height: 100px!important;
+  height: 120px!important;
 
 
 }
