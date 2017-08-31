@@ -143,7 +143,7 @@
             <div class="right-main">
               <div class="row">
                 <div class="col-12 ">
-                  <div class="main-slider mt-3 mb-2 hidden-md-down">
+                  <div class="main-slider mt-3 mb-2 hidden-sm-down">
                     <div class="swiper-wrapper">
                       <div v-for="slide in mainSlides" class="swiper-slide">
                         <a href="#" class="d-block">
@@ -157,7 +157,7 @@
                   </div>
                   
 
-                  <div class="main-slider-m mt-3 mb-2">
+                  <div class="main-slider-m mt-3 mb-2 hidden-md-up">
                     <div class="swiper-wrapper">
                       <div v-for="slide in mainSlidesM" class="swiper-slide">
                         <a href="#" class="d-block">
