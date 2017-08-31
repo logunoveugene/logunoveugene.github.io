@@ -208,7 +208,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-12 mt-2">
+                <div class="col-12 mt-2 mb-4">
 <div class="h4">Скидки</div>
                   <div class="propuct-swiper">
                     <div class="swiper-wrapper d-flex align-items-stretch">
