@@ -44,7 +44,9 @@ var breadcrumbsSwiper = new Swiper('.propuct-swiper', {
     slidesPerView: 'auto',
 spaceBetween: 0,
         slidesPerView: 'auto',
-        paginationClickable: true
+        paginationClickable: true,
+    scrollbar: '.swiper-scrollbar',
+        scrollbarHide: false
 
   });
 
