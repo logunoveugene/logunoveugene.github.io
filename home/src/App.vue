@@ -131,11 +131,41 @@
         <div class="row">
           <div class="col shrink p-0">
             <div class="left-main">
-              <div class="derection hidden-md-down">
+              <div class="derection hidden-md-down mb-5">
                 <div class="derection-item d-flex flex-row " v-for="(derection, index) in catalogList">
                   <img class="derection-image hidden-lg-down" :src="derection.derectionImage" alt="">
                   <a href="" class="text-nowrap text-truncate">{{derection.derectionName}}</a>
                 </div>
+              </div>
+              <div class="ml-3 hidden-md-down">
+                <div class="h5 mb-4">Информационная лента</div>
+
+                <div class="new-item mb-3">
+                  <div class="new-item-date small text-muted mb-0">21 июля</div>
+                  <a href="" class="new-item-title mb-1 d-block">Cash Back на телевизоры Philips</a>
+                  <div class="new-item-desc small">Верните до 4 000 рублей с покупки новой техники</div>
+                </div>
+
+                <div class="new-item mb-3">
+                  <div class="new-item-date small text-muted mb-0">14 июля</div>
+                  <a href="" class="new-item-title mb-1 d-block">Студент, лови момент в «Кибермолле»!</a>
+                  <div class="new-item-desc small">Подготовься к учебному году с нашими скидками на нужную технику</div>
+                </div>
+
+                <div class="new-item mb-3">
+                  <div class="new-item-date small text-muted mb-0">21 июля</div>
+                  <a href="" class="new-item-title mb-1 d-block">Cash Back на телевизоры Philips</a>
+                  <div class="new-item-desc small">Верните до 4 000 рублей с покупки новой техники</div>
+                </div>
+
+                <div class="new-item mb-3">
+                  <div class="new-item-date small text-muted mb-0">14 июля</div>
+                  <a href="" class="new-item-title mb-1 d-block">Заморозить витамины — легко!</a>
+                  <div class="new-item-desc small">Морозильная техника для сохранения свежести даров сада и огорода</div>
+                </div>
+
+
+
               </div>
             </div>
           </div>
@@ -166,6 +196,7 @@
                         </a>
                       </div>
                     </div>
+
 
                   </div>
 
