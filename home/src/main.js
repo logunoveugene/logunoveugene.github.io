@@ -27,6 +27,15 @@ $(document).ready(function () {
         lazyLoading: true
     });
 
+var mainSlider = new Swiper('.main-slider-m', {
+
+        // Disable preloading of all images
+        preloadImages: false,
+        // Enable lazy loading
+        lazyLoading: true
+    });
+
+
    var actionSlider = new Swiper('.action-slider', {
  		scrollbar: '.swiper-scrollbar',
         scrollbarHide: false,

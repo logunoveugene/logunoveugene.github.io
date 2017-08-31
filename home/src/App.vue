@@ -143,7 +143,7 @@
             <div class="right-main">
               <div class="row">
                 <div class="col-12 ">
-                  <div class="main-slider mt-3 mb-2">
+                  <div class="main-slider mt-3 mb-2 hidden-md-down">
                     <div class="swiper-wrapper">
                       <div v-for="slide in mainSlides" class="swiper-slide">
                         <a href="#" class="d-block">
@@ -155,6 +155,21 @@
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                   </div>
+                  
+
+                  <div class="main-slider-m mt-3 mb-2">
+                    <div class="swiper-wrapper">
+                      <div v-for="slide in mainSlidesM" class="swiper-slide">
+                        <a href="#" class="d-block">
+                          <img :data-src="slide.sliderImg" class="swiper-lazy d-block">
+                          <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
+                        </a>
+                      </div>
+                    </div>
+
+                  </div>
+
+
                 </div>
                 <div class="col-12 mb-5">
                   <div class="action-slider mt-4">
@@ -360,6 +375,8 @@ export default {
         derectionName: "Уцененные товары",
         derectionImage: "https://logunoveugene.github.io/home/img/derection/broken.svg"
       }],
+
+
       mainSlides: [{
         sliderImg: "https://logunoveugene.github.io/home/img/mainslides/1.png"
       }, {
@@ -369,6 +386,21 @@ export default {
       }, {
         sliderImg: "https://logunoveugene.github.io/home/img/mainslides/1.png"
       }],
+
+
+      mainSlidesM: [{
+        sliderImg: "https://logunoveugene.github.io/home/img/mainslides-m/1.png"
+      }, {
+        sliderImg: "https://logunoveugene.github.io/home/img/mainslides-m/1.png"
+      }, {
+        sliderImg: "https://logunoveugene.github.io/home/img/mainslides-m/1.png"
+      }, {
+        sliderImg: "https://logunoveugene.github.io/home/img/mainslides-m/1.png"
+      }],
+
+
+
+
       actions: [{
         actionImg: "https://logunoveugene.github.io/home/img/action/1.png"
       }, {
@@ -666,23 +698,6 @@ border: none;
     width: 50%;
   }
 
-.main-slider .swiper-slide img {
-    width: auto;
-      height: auto;
-      max-width: 100%;
-      max-height: 100%;
-}
-
-
-.main-slider {
-
-  width: 100%;
-  height: 120px!important;
-
-
-}
-
-
 
 }
 
@@ -696,6 +711,7 @@ border: none;
   width: 100%;
   height: 250px;
   overflow: hidden;
+      position: relative;
 }
 
 .main-slider .swiper-slide img {
@@ -710,6 +726,30 @@ border: none;
   top: 50%;
   overflow: hidden;
 }
+
+
+.main-slider-m {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+      position: relative;
+}
+
+.main-slider-m .swiper-slide img {
+  width: auto;
+  height: auto;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+}
+
+
+
 
 .swiper-slide-active {
   z-index: 50;
