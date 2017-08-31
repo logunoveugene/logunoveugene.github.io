@@ -8,7 +8,7 @@ body {
 }
 
 
-.container-fulid{
+.container-fluid{
   background-color: #ededed;
 }
 .container{
@@ -118,3 +118,57 @@ a:hover {
 }
 
 
+
+.left-main{
+      width: 346px;
+}
+
+.right-main{
+      width: 764px;
+}
+
+@media screen and (max-width: 1200px) {
+.left-main {
+    width: 239px;
+}
+.right-main{
+    width: 691px;
+}
+}
+
+
+/*каталог*/
+
+
+
+.derection-item {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+.derection-image{
+  max-width: 20px;
+  max-height: 20px;
+  margin-right: .75rem;
+}
+
+
+.derection {
+
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.05);
+}
+
+
+
+
+
+
+.product-plate {
+  margin: -1px 0 0 -1px;
+  border: 1px solid #e9ecef!important;
+}
+
+.product-plate:hover {
+  transition: box-shadow 0.2s ease;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}

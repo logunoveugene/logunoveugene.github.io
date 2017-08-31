@@ -17,7 +17,25 @@ new Vue({
 $(document).ready(function () {
   
 
+   var mainSlider = new Swiper('.main-slider', {
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
 
+        // Disable preloading of all images
+        preloadImages: false,
+        // Enable lazy loading
+        lazyLoading: true
+    });
+
+   var actionSlider = new Swiper('.action-slider', {
+ 		scrollbar: '.swiper-scrollbar',
+        scrollbarHide: false,
+        slidesPerView: 'auto',
+        spaceBetween: 17
+  
+
+
+    });
 
 });
 
