@@ -164,6 +164,9 @@
                   <div class="new-item-desc small">Морозильная техника для сохранения свежести даров сада и огорода</div>
                 </div>
 
+                <a href="" class="new-item-title mb-1 d-block small">Смотреть все</a>
+
+
 
 
               </div>
