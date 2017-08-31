@@ -73,22 +73,21 @@
         </div>
       </div>
     </div>
-
     <div class="container-fluid hidden-sm-down">
       <div class="container bb-red-3">
         <div class="row ">
           <div class="col border-right-1 p-3 shrink" v-on:click="switchsite">
             <div class=" hidden-xl-up">
-              <img v-if="cm==true" src="https://i.snag.gy/3jefoc.jpg" alt=""/>
-              <img v-if="cm==false" src="https://i.snag.gy/j6mnyA.jpg" alt=""/>
+              <img v-if="cm==true" src="https://i.snag.gy/3jefoc.jpg" alt="" />
+              <img v-if="cm==false" src="https://i.snag.gy/j6mnyA.jpg" alt="" />
             </div>
             <div class="hidden-lg-down">
-              <img v-if="cm==true" src="https://i.snag.gy/I0oqfz.jpg" alt=""/>
-              <img v-if="cm==false" src="https://i.snag.gy/Amv5nC.jpg" alt=""/>
+              <img v-if="cm==true" src="https://i.snag.gy/I0oqfz.jpg" alt="" />
+              <img v-if="cm==false" src="https://i.snag.gy/Amv5nC.jpg" alt="" />
             </div>
           </div>
           <div class="col d-flex flex-row align-items-center border-right-1 shrink header-btn">
-            <img src="https://i.snag.gy/oJxb64.jpg" class="p-1" alt=""/>
+            <img src="https://i.snag.gy/oJxb64.jpg" class="p-1" alt="" />
             <a href="#" class="hidden-lg-down">
               <h6 class="mb-0 ml-2 main-link">Каталог</h6>
             </a>
@@ -107,7 +106,7 @@
             </div>
           </div>
           <div class="col d-flex flex-row align-items-center border-right-1 shrink header-btn">
-            <img src="https://i.snag.gy/uSmB9r.jpg" class=" p-1" alt=""/>
+            <img src="https://i.snag.gy/uSmB9r.jpg" class=" p-1" alt="" />
             <div class="d-flex flex-column ml-2 hidden-md-down">
               <a href="" class="main-link">
                 <h6 class="mb-0">Сравнение</h6>
@@ -115,7 +114,7 @@
             </div>
           </div>
           <div class="col d-flex flex-row align-items-center shrink header-btn">
-            <img src="https://i.snag.gy/51LOiG.jpg" class="p-1" alt=""/>
+            <img src="https://i.snag.gy/51LOiG.jpg" class="p-1" alt="" />
             <div class="d-flex flex-column ml-2 hidden-md-down">
               <a href="" class="main-link">
                 <h6 class="mb-0">Корзина</h6>
@@ -127,98 +126,101 @@
     </div>
     <!-- шапка конец -->
 
-
-<div class="container-fluid">
-  <div class="container ">
-    <div class="row">
-      <div class="col shrink p-0">
-        <div class="left-main">    
-        <div class="derection hidden-md-down">
-          <div class="derection-item d-flex flex-row " v-for="(derection, index) in catalogList">
-            <img class="derection-image hidden-lg-down" :src="derection.derectionImage" alt="">
-            <a href="" class="text-nowrap text-truncate">{{derection.derectionName}}</a>
-           </div>
-        </div>
-        </div> 
-      </div>
-      <div class="col">
-      <div class="right-main">
+    <div class="container-fluid">
+      <div class="container ">
         <div class="row">
-          <div class="col-12 ">
-            <div class="main-slider mt-3 mb-2">
-              <div class="swiper-wrapper">
-                <div v-for="slide in mainSlides" class="swiper-slide">
-                  <a href="#">
-                    <img :data-src="slide.sliderImg" class="swiper-lazy">
-                    <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
-                  </a>
+          <div class="col shrink p-0">
+            <div class="left-main">
+              <div class="derection hidden-md-down">
+                <div class="derection-item d-flex flex-row " v-for="(derection, index) in catalogList">
+                  <img class="derection-image hidden-lg-down" :src="derection.derectionImage" alt="">
+                  <a href="" class="text-nowrap text-truncate">{{derection.derectionName}}</a>
                 </div>
               </div>
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
-              </div>
+            </div>
           </div>
-          <div class="col-12 mb-5">
-            <div class="action-slider mt-4">
-              <div class="swiper-wrapper">
-                <div v-for="action in actions" class="swiper-slide">
-                  <a href="#">
-                    <img :src="action.actionImg" class="y">
-                  </a>
+          <div class="col">
+            <div class="right-main">
+              <div class="row">
+                <div class="col-12 ">
+                  <div class="main-slider mt-3 mb-2">
+                    <div class="swiper-wrapper">
+                      <div v-for="slide in mainSlides" class="swiper-slide">
+                        <a href="#">
+                          <img :data-src="slide.sliderImg" class="swiper-lazy">
+                          <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  </div>
                 </div>
+                <div class="col-12 mb-5">
+                  <div class="action-slider mt-4">
+                    <div class="swiper-wrapper">
+                      <div v-for="action in actions" class="swiper-slide">
+                        <a href="#">
+                          <img :src="action.actionImg" class="y">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="swiper-scrollbar"></div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="d-flex flex-row flex-wrap flex-md-nowrap ">
+                    <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-12 p-4">
+                      <img src="https://i.snag.gy/uHTN4e.jpg" alt="" class="top-ptoduct-img">
+                      <div class="d-flex flex-column">
+                        <div class="small text-muted mb-2">
+                          <div class="small">ХИТЫ ПРОДАЖ</div>
+                        </div>
+                        <div class="h5 mb-3">Электроника</div>
+                        <a href="" class="small mb-1">Телевизоры 4k</a>
+                        <a href="" class="small mb-1">Смартфоны Apple</a>
+                        <a href="" class="small ">Ноутбуки</a>
+                      </div>
+                    </div>
+                    <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-12 p-4">
+                      <img src="https://i.snag.gy/z86m0g.jpg" alt="" class="top-ptoduct-img">
+                      <div class="d-flex flex-column">
+                        <div class="small text-muted mb-2">
+                          <div class="small">АКТУАЛЬНО</div>
+                        </div>
+                        <div class="h5 mb-3">Климатическия
+                          <br> техника</div>
+                        <a href="" class="small mb-1">Кондиционеры</a>
+                        <a href="" class="small mb-1">Осушители воздуха</a>
+                      </div>
+                    </div>
+                    <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-12 p-4">
+                      <img src="https://i.snag.gy/XfIH9r.jpg" alt="" class="top-ptoduct-img">
+                      <div class="d-flex flex-column">
+                        <div class="small text-muted mb-2">
+                          <div class="small">В ЦЕНТРЕ ВНИМАНИЯ</div>
+                        </div>
+                        <div class="h5 mb-3">Техника для кухни</div>
+                        <a href="" class="small mb-1">Холодильники</a>
+                        <a href="" class="small mb-1">Электрические плиты</a>
+                        <a href="" class="small mb-1">Чайники</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12"></div>
               </div>
-              <div class="swiper-scrollbar"></div>
-              </div>
-
-          </div>
-          <div class="col-12">
-          <div class="d-flex flex-row">
-            <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-6 p-4">
-            <img src="https://i.snag.gy/uHTN4e.jpg" alt="" class="top-ptoduct-img">
-             <div class="d-flex flex-column">
-               <div class="small text-muted mb-2"><div class="small">ХИТЫ ПРОДАЖ</div></div>
-               <div class="h5 mb-3">Электроника</div>
-               <a href="" class="small mb-1">Телевизоры 4k</a>
-               <a href="" class="small mb-1">Смартфоны Apple</a>
-               <a href="" class="small ">Ноутбуки</a>
-             </div>
-            </div>
-            <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-6 p-4">
-            <img src="https://i.snag.gy/z86m0g.jpg" alt="" class="top-ptoduct-img">
-              <div class="d-flex flex-column">
-               <div class="small text-muted mb-2"><div class="small">АКТУАЛЬНО</div></div>
-               <div class="h5 mb-3">Климатическия <br> техника</div>
-               <a href="" class="small mb-1">Кондиционеры</a>
-               <a href="" class="small mb-1">Осушители воздуха</a>
-             </div>
-            </div>
-            <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-6 p-4">
-            <img src="https://i.snag.gy/XfIH9r.jpg" alt="" class="top-ptoduct-img">
-                <div class="d-flex flex-column">
-               <div class="small text-muted mb-2"><div class="small">В ЦЕНТРЕ ВНИМАНИЯ</div></div>
-               <div class="h5 mb-3">Техника для кухни</div>
-               <a href="" class="small mb-1">Холодильники</a>
-               <a href="" class="small mb-1">Электрические плиты</a>
-               <a href="" class="small mb-1">Чайники</a>
-             </div>
-            </div>
             </div>
           </div>
-          <div class="col-12"></div>
         </div>
-        </div>
-
       </div>
     </div>
-  </div>
-</div>
-
-
 
     <!-- Модальные окна начало -->
     <!-- Модальные окна конец -->
   </div>
 </div>
+
 
 </template>
 <script>

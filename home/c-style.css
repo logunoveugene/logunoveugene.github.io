@@ -136,6 +136,15 @@ a:hover {
 }
 }
 
+@media screen and (max-width: 768px) {
+.left-main {
+    width: 100%;
+}
+.right-main{
+    width: 100%;
+}
+}
+
 
 /*каталог*/
 
