@@ -168,7 +168,7 @@
                     <div class="swiper-scrollbar"></div>
                   </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12 mb-5">
                   <div class="d-flex flex-row flex-wrap flex-md-nowrap ">
                     <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-12 p-4">
                       <img src="https://i.snag.gy/uHTN4e.jpg" alt="" class="top-ptoduct-img">
@@ -208,13 +208,84 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-12"></div>
+                <div class="col-12">
+<div class="h4">Скидки</div>
+                  <div class="propuct-swiper">
+                    <div class="swiper-wrapper d-flex align-items-stretch">
+                      <div class="swiper-slide border-right-1 " v-for="(product, index) in products">
+
+                        <div class="col-12  p-0 ">
+
+                          <div class="flex-column border p-3 ">
+                            <div class="d-flex justify-content-center mb-4 img-wrap pt-3">
+                              <div class="stikerWrap" v-if="products[index].actions !== 0">
+                                <div class="d-inline" v-for="(action, index) in product.actions">
+                                  <a data-toggle="tooltip" data-html="true" data-placement="bottom" :title="action.actionDesc">
+                                    <span class="mr-1 stiker" :class="action.actionType">{{action.actionName}}</span>
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="d-flex">
+                                <img class="align-self-center poduct-img" :src="product.img" alt="">
+                              </div>
+                            </div>
+                            <div class="mb-2 productName hidden-sm-down small">
+                              <a href="https://logunoveugene.github.io/main2/index.html" :title="product.name">{{product.name}}</a>
+                            </div>
+                            <div class="mb-2 productName hidden-md-up small">
+                              <a href="https://logunoveugene.github.io/main2/index.html">{{product.name}}</a>
+                            </div>
+                            <div class="mb-2">
+                              <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">{{product.rateCount}}</span>
+                            </div>
+                            <div class="hidden-sm-down">
+                              <div class="mb-4 price-wrap">
+                                <div class="d-flex flex-row align-items-end mb-1">
+                                  <div class="h5 mb-0 mr-2 "><b>{{product.price}} р.</b></div>
+                                  <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
+                                </div>
+                                <div class="discount" v-if="products[index].discount !== 0">
+                                  <mark>Доступна скидка {{product.discount}} р.</mark>
+                                </div>
+                              </div>
+                              <div class="mb-3">
+                                <button type="button" class="btn btn-secondary mr-2">В корзину</button>
+                                <img src="https://i.snag.gy/zo2fWm.jpg" alt="">
+                              </div>
+                            </div>
+                            <div class="hidden-md-up d-flex justify-content-between align-items-center">
+                              <div class="d-flex flex-column ">
+                                <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
+                                <span class=" mb-0"><b>{{product.price}} р.</b></span>
+                                <div class="discount" v-if="products[index].discount !== 0">
+                                  <mark>Доступна скидка {{product.discount}} р.</mark>
+                                </div>
+                              </div>
+                              <button type="button" class="btn btn-secondary">
+                                <div class="icon-cart text-muted"></div>
+                              </button>
+                            </div>
+                            <div class="small hidden-md-down ">
+                              <a href="" class="text-muted"><a href="">Забрать в 6 магазинах</a> с 18 сен.</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
+
+
           </div>
+
+
+
         </div>
       </div>
     </div>
+
 
     <!-- Модальные окна начало -->
     <!-- Модальные окна конец -->
@@ -224,141 +295,432 @@
 
 </template>
 <script>
-import  rate from './rate.vue'
+import rate from './rate.vue'
 
 export default {
   name: 'app',
   components: {
     rate
   },
-   data() {
-      return {
-        cm:true,
-        catalogList:[ 
-            { derectionName:"Телевизоры и видеотехника", 
-              derectionImage:"https://logunoveugene.github.io/home/img/derection/tv.svg"},
-            { derectionName:"Телефоны и мобильные устройства", 
-              derectionImage:"https://logunoveugene.github.io/home/img/derection/phone.svg"},
-            { derectionName:"Компьютерная техника", 
-              derectionImage:"https://logunoveugene.github.io/home/img/derection/laptop.svg"},
-            { derectionName:"Компьютерные комплектующие", 
-              derectionImage:"https://logunoveugene.github.io/home/img/derection/pc.svg"},
-            { derectionName:"Фото и видеокамеры", 
-              derectionImage:"https://logunoveugene.github.io/home/img/derection/photo.svg"},
-            { derectionName:"Встраиваемая техника", 
-              derectionImage:"https://logunoveugene.github.io/home/img/derection/oven.svg"},
-            { derectionName:"Товары для дома", 
-              derectionImage:"https://logunoveugene.github.io/home/img/derection/washing-m.svg"},
-            { derectionName:"Техника для кухни", 
-              derectionImage:"https://logunoveugene.github.io/home/img/derection/cooking.svg"},
-            { derectionName:"Игры и развлечения", 
-              derectionImage:"https://logunoveugene.github.io/home/img/derection/game.svg"},
-            { derectionName:"Климатическая техника", 
-              derectionImage:"https://logunoveugene.github.io/home/img/derection/tv.svg"},
-            { derectionName:"Красота и здоровье", 
-              derectionImage:"https://logunoveugene.github.io/home/img/derection/hairdry.svg"},
-            { derectionName:"Аудиотехника", 
-              derectionImage:"https://logunoveugene.github.io/home/img/derection/headphones.svg"},
-            { derectionName:"Автомобильная электроника и техника", 
-              derectionImage:"https://logunoveugene.github.io/home/img/derection/car.svg"},
-            { derectionName:"Подарочные карты", 
-              derectionImage:"https://logunoveugene.github.io/home/img/derection/gift.svg"},
-            { derectionName:"Акционные товары", 
-              derectionImage:"https://logunoveugene.github.io/home/img/derection/sale.svg"},
-            { derectionName:"Уцененные товары",
-              derectionImage:"https://logunoveugene.github.io/home/img/derection/broken.svg"}
-        ],
-      mainSlides:[
-            {sliderImg:"https://logunoveugene.github.io/home/img/mainslides/1.png"},
-            {sliderImg:"https://logunoveugene.github.io/home/img/mainslides/1.png"},
-            {sliderImg:"https://logunoveugene.github.io/home/img/mainslides/1.png"},
-            {sliderImg:"https://logunoveugene.github.io/home/img/mainslides/1.png"}
-      ],
-      actions:[
-            {actionImg:"https://logunoveugene.github.io/home/img/action/1.png"},
-            {actionImg:"https://logunoveugene.github.io/home/img/action/2.png"},
-            {actionImg:"https://logunoveugene.github.io/home/img/action/3.png"},
-            {actionImg:"https://logunoveugene.github.io/home/img/action/4.png"},
-            {actionImg:"https://logunoveugene.github.io/home/img/action/5.png"},
-            {actionImg:"https://logunoveugene.github.io/home/img/action/1.png"},
-            {actionImg:"https://logunoveugene.github.io/home/img/action/1.png"}
-      ],
+  data() {
+    return {
+      cm: true,
+      catalogList: [{
+        derectionName: "Телевизоры и видеотехника",
+        derectionImage: "https://logunoveugene.github.io/home/img/derection/tv.svg"
+      }, {
+        derectionName: "Телефоны и мобильные устройства",
+        derectionImage: "https://logunoveugene.github.io/home/img/derection/phone.svg"
+      }, {
+        derectionName: "Компьютерная техника",
+        derectionImage: "https://logunoveugene.github.io/home/img/derection/laptop.svg"
+      }, {
+        derectionName: "Компьютерные комплектующие",
+        derectionImage: "https://logunoveugene.github.io/home/img/derection/pc.svg"
+      }, {
+        derectionName: "Фото и видеокамеры",
+        derectionImage: "https://logunoveugene.github.io/home/img/derection/photo.svg"
+      }, {
+        derectionName: "Встраиваемая техника",
+        derectionImage: "https://logunoveugene.github.io/home/img/derection/oven.svg"
+      }, {
+        derectionName: "Товары для дома",
+        derectionImage: "https://logunoveugene.github.io/home/img/derection/washing-m.svg"
+      }, {
+        derectionName: "Техника для кухни",
+        derectionImage: "https://logunoveugene.github.io/home/img/derection/cooking.svg"
+      }, {
+        derectionName: "Игры и развлечения",
+        derectionImage: "https://logunoveugene.github.io/home/img/derection/game.svg"
+      }, {
+        derectionName: "Климатическая техника",
+        derectionImage: "https://logunoveugene.github.io/home/img/derection/tv.svg"
+      }, {
+        derectionName: "Красота и здоровье",
+        derectionImage: "https://logunoveugene.github.io/home/img/derection/hairdry.svg"
+      }, {
+        derectionName: "Аудиотехника",
+        derectionImage: "https://logunoveugene.github.io/home/img/derection/headphones.svg"
+      }, {
+        derectionName: "Автомобильная электроника и техника",
+        derectionImage: "https://logunoveugene.github.io/home/img/derection/car.svg"
+      }, {
+        derectionName: "Подарочные карты",
+        derectionImage: "https://logunoveugene.github.io/home/img/derection/gift.svg"
+      }, {
+        derectionName: "Акционные товары",
+        derectionImage: "https://logunoveugene.github.io/home/img/derection/sale.svg"
+      }, {
+        derectionName: "Уцененные товары",
+        derectionImage: "https://logunoveugene.github.io/home/img/derection/broken.svg"
+      }],
+      mainSlides: [{
+        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/1.png"
+      }, {
+        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/1.png"
+      }, {
+        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/1.png"
+      }, {
+        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/1.png"
+      }],
+      actions: [{
+        actionImg: "https://logunoveugene.github.io/home/img/action/1.png"
+      }, {
+        actionImg: "https://logunoveugene.github.io/home/img/action/2.png"
+      }, {
+        actionImg: "https://logunoveugene.github.io/home/img/action/3.png"
+      }, {
+        actionImg: "https://logunoveugene.github.io/home/img/action/4.png"
+      }, {
+        actionImg: "https://logunoveugene.github.io/home/img/action/5.png"
+      }, {
+        actionImg: "https://logunoveugene.github.io/home/img/action/1.png"
+      }, {
+        actionImg: "https://logunoveugene.github.io/home/img/action/1.png"
+      }],
+      products: [{
+          id: 20101507,
+          name: 'Телевизор BBK 32LEM-1018/T2C',
+          img: "https://logunoveugene.github.io/catalog/img/1.png",
+          desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
+          oldPrice: 0,
+          price: 54800,
+          discount: 0,
+          rate: 4.5,
+          rateCount: 65,
+          amount: "Забрать в 6 магазинах сегодня",
+          actions: 0,
+          stores: [{
+            storeName: "в ТЦ Черемушки",
+            date: "2017-10-24"
+          }, {
+            storeName: "на Алеутской",
+            date: "2017-10-28"
+          }, {
+            storeName: "в ТЦ Максим",
+            date: "2017-10-24"
+          }, {
+            storeName: "на Гоголя",
+            date: "2017-10-28"
+          }, {
+            storeName: "на Вилкова",
+            date: "2017-10-28"
+          }]
+        },
 
 
-      }
-    },
-    methods: {
-      switchsite: function () {
-        this.cm = !this.cm;
-      }
+        {
+          id: 20101508,
+          name: 'Телевизор Sony KD-43XE8096',
+          img: "https://logunoveugene.github.io/catalog/img/2.png",
+          desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
+          oldPrice: 0,
+          price: 84800,
+          discount: 1800,
+          rate: 3.1,
+          rateCount: 15,
+          amount: "Забрать в 6 магазинах сегодня",
+          actions: [{
+              actionName: "Летние скидки",
+              actionType: "sale",
+              actionDesc: "Скидка по промокоду ЖАРА"
+            }
+
+
+          ],
+          stores: [{
+            storeName: "в ТЦ Черемушки",
+            date: "2017-10-24"
+          }, {
+            storeName: "на Алеутской",
+            date: "2017-10-28"
+          }, {
+            storeName: "в ТЦ Максим",
+            date: "2017-10-24"
+          }, {
+            storeName: "на Гоголя",
+            date: "2017-10-28"
+          }, {
+            storeName: "на Вилкова",
+            date: "2017-10-28"
+          }]
+        },
+
+        {
+          id: 20101509,
+          name: "Телевизор LG 55UJ670V",
+          img: "https://logunoveugene.github.io/catalog/img/3.png",
+          desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
+          oldPrice: 19860,
+          price: 18800,
+          discount: 0,
+          rate: 0,
+          rateCount: 0,
+          amount: "Забрать в 6 магазинах сегодня",
+          actions: 0,
+          stores: [{
+            storeName: "в ТЦ Черемушки",
+            date: "2017-10-24"
+          }, {
+            storeName: "на Алеутской",
+            date: "2017-10-28"
+          }, {
+            storeName: "в ТЦ Максим",
+            date: "2017-10-24"
+          }, {
+            storeName: "на Гоголя",
+            date: "2017-10-28"
+          }, {
+            storeName: "на Вилкова",
+            date: "2017-10-28"
+          }]
+        },
+
+        {
+          id: 20101511,
+          name: 'Телевизор Samsung UE55MU6100',
+          img: "https://logunoveugene.github.io/catalog/img/9.png",
+          desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
+          oldPrice: 33860,
+          price: 21800,
+          discount: 0,
+          rate: 5,
+          rateCount: 3,
+          amount: "Забрать в 6 магазинах сегодня",
+          actions: [{
+            actionName: "Подарок за покупку",
+            actionType: "gift",
+            actionDesc: "ОПисание3"
+          }],
+          stores: [{
+            storeName: "в ТЦ Черемушки",
+            date: "2017-10-24"
+          }, {
+            storeName: "на Алеутской",
+            date: "2017-10-28"
+          }, {
+            storeName: "в ТЦ Максим",
+            date: "2017-10-24"
+          }, {
+            storeName: "на Гоголя",
+            date: "2017-10-28"
+          }, {
+            storeName: "на Вилкова",
+            date: "2017-10-28"
+          }]
+        },
+
+        {
+          id: 20101512,
+          name: 'Телевизор LG 32LH590U',
+          img: "https://logunoveugene.github.io/catalog/img/5.png",
+          desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
+          oldPrice: 0,
+          price: 32990,
+          discount: 0,
+          rate: 4.5,
+          rateCount: 60,
+          amount: "Забрать в 6 магазинах сегодня",
+          actions: 0,
+          stores: [{
+            storeName: "в ТЦ Черемушки",
+            date: "2017-10-24"
+          }, {
+            storeName: "на Алеутской",
+            date: "2017-10-28"
+          }, {
+            storeName: "в ТЦ Максим",
+            date: "2017-10-24"
+          }, {
+            storeName: "на Гоголя",
+            date: "2017-10-28"
+          }, {
+            storeName: "на Вилкова",
+            date: "2017-10-28"
+          }]
+        }, {
+          id: 20101512,
+          name: 'Телевизор LG 43LJ519V',
+          img: "https://logunoveugene.github.io/catalog/img/6.png",
+          desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
+          oldPrice: 0,
+          price: 32990,
+          discount: 0,
+          rate: 4.5,
+          rateCount: 15,
+          amount: "Забрать в 6 магазинах сегодня",
+          actions: 0,
+          stores: [{
+            storeName: "в ТЦ Черемушки",
+            date: "2017-10-24"
+          }, {
+            storeName: "на Алеутской",
+            date: "2017-10-28"
+          }, {
+            storeName: "в ТЦ Максим",
+            date: "2017-10-24"
+          }, {
+            storeName: "на Гоголя",
+            date: "2017-10-28"
+          }, {
+            storeName: "на Вилкова",
+            date: "2017-10-28"
+          }]
+        }, {
+          id: 20101512,
+          name: 'Телевизор LG OLED55E6V ',
+          img: "https://logunoveugene.github.io/catalog/img/7.png",
+          desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
+          oldPrice: 0,
+          price: 86990,
+          discount: 0,
+          rate: 4.5,
+          rateCount: 71,
+          amount: "Забрать в 6 магазинах сегодня",
+          actions: 0,
+          stores: [{
+            storeName: "в ТЦ Черемушки",
+            date: "2017-10-24"
+          }, {
+            storeName: "на Алеутской",
+            date: "2017-10-28"
+          }, {
+            storeName: "в ТЦ Максим",
+            date: "2017-10-24"
+          }, {
+            storeName: "на Гоголя",
+            date: "2017-10-28"
+          }, {
+            storeName: "на Вилкова",
+            date: "2017-10-28"
+          }]
+        }, {
+          id: 20101512,
+          name: 'Телевизор Samsung QE55Q7CAM',
+          img: "https://logunoveugene.github.io/catalog/img/8.png",
+          desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
+          oldPrice: 0,
+          price: 169990,
+          discount: 1800,
+          rate: 4.5,
+          rateCount: 8,
+          amount: "Забрать в 6 магазинах сегодня",
+          actions: 0,
+          stores: [{
+            storeName: "в ТЦ Черемушки",
+            date: "2017-10-24"
+          }, {
+            storeName: "на Алеутской",
+            date: "2017-10-28"
+          }, {
+            storeName: "в ТЦ Максим",
+            date: "2017-10-24"
+          }, {
+            storeName: "на Гоголя",
+            date: "2017-10-28"
+          }, {
+            storeName: "на Вилкова",
+            date: "2017-10-28"
+          }]
+        }
+
+
+      ]
+
+
     }
+  },
+  methods: {
+    switchsite: function() {
+      this.cm = !this.cm;
+    }
+  }
 }
+
 </script>
 <style>
-.top-ptoduct-img{
+
+.propuct-swiper {
+  height: 100%;
+  overflow: hidden;
+border: 1px solid #e9ecef!important;
+}
+
+.propuct-swiper .swiper-slide:last-child {
+border: none;
+}
+
+
+.propuct-swiper .swiper-slide {
+  width: 33.333%;
+}
+
+@media screen and (max-width: 768px) {
+  .propuct-swiper .swiper-slide {
+    width: 50%;
+  }
+}
+
+.top-ptoduct-img {
   position: absolute;
   bottom: 0;
-  right:0;
-
+  right: 0;
 }
 
 .main-slider {
-width: 100%;
-height: 250px;
- overflow: hidden;
-}
-
-    .main-slider .swiper-slide img {
-      width: auto;
-      height: auto;
-      -ms-transform: translate(-50%, -50%);
-      -webkit-transform: translate(-50%, -50%);
-      -moz-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      overflow: hidden;
-    }
-
-
-    .swiper-slide-active{
-      z-index: 50;
-    }
-
-.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
-    right: 30px;
-}
-
-.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
- left: 30px;
-
-}
-
-
-
-.action-slider{
   width: 100%;
-height: 160px;
- overflow: hidden;
-
+  height: 250px;
+  overflow: hidden;
 }
 
-.action-slider .swiper-slide{
+.main-slider .swiper-slide img {
+  width: auto;
+  height: auto;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+}
+
+.swiper-slide-active {
+  z-index: 50;
+}
+
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  right: 30px;
+}
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+  left: 30px;
+}
+
+.action-slider {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+
+.action-slider .swiper-slide {
   width: 160px;
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 
 .swiper-scrollbar-drag {
@@ -369,11 +731,11 @@ height: 160px;
   background: rgba(0, 0, 0, .05);
 }
 
-
 .swiper-container-horizontal>.swiper-scrollbar {
-    left: 15px;
-    bottom: -12px;
-    width: 96%;
+  left: 15px;
+  bottom: -12px;
+  width: 96%;
 }
+
 
 </style>

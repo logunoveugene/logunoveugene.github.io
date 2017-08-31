@@ -37,6 +37,20 @@ $(document).ready(function () {
 
     });
 
+
+var breadcrumbsSwiper = new Swiper('.propuct-swiper', {
+    preventClicks :true,
+    preventClicksPropagation: true,
+    slidesPerView: 'auto',
+spaceBetween: 0,
+        slidesPerView: 'auto',
+        paginationClickable: true
+
+  });
+
+
+
+
 });
 
 
