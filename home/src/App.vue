@@ -168,7 +168,7 @@
                     <div class="swiper-scrollbar"></div>
                   </div>
                 </div>
-                <div class="col-12 mb-5">
+                <div class="col-12 mb-4">
                   <div class="d-flex flex-row flex-wrap flex-md-nowrap ">
                     <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-12 p-4">
                       <img src="https://i.snag.gy/uHTN4e.jpg" alt="" class="top-ptoduct-img">
@@ -208,7 +208,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-12">
+                <div class="col-12 mt-2">
 <div class="h4">Скидки</div>
                   <div class="propuct-swiper">
                     <div class="swiper-wrapper d-flex align-items-stretch">
@@ -641,7 +641,7 @@ export default {
 <style>
 
 .propuct-swiper {
-  height: 100%;
+
   overflow: hidden;
 border: 1px solid #e9ecef!important;
 }
