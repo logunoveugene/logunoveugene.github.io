@@ -174,7 +174,7 @@
           <div class="col-12">
           <div class="d-flex flex-row">
             <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-6 p-4">
-            <img src="" alt="" class="top-ptoduct-img">
+            <img src="https://i.snag.gy/uHTN4e.jpg" alt="" class="top-ptoduct-img">
              <div class="d-flex flex-column">
                <div class="small text-muted mb-2"><div class="small">ХИТЫ ПРОДАЖ</div></div>
                <div class="h5 mb-3">Электроника</div>
@@ -184,7 +184,7 @@
              </div>
             </div>
             <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-6 p-4">
-            <img src="" alt="" class="top-ptoduct-img">
+            <img src="https://i.snag.gy/z86m0g.jpg" alt="" class="top-ptoduct-img">
               <div class="d-flex flex-column">
                <div class="small text-muted mb-2"><div class="small">АКТУАЛЬНО</div></div>
                <div class="h5 mb-3">Климатическия <br> техника</div>
@@ -193,7 +193,7 @@
              </div>
             </div>
             <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-6 p-4">
-            <img src="" alt="" class="top-ptoduct-img">
+            <img src="https://i.snag.gy/XfIH9r.jpg" alt="" class="top-ptoduct-img">
                 <div class="d-flex flex-column">
                <div class="small text-muted mb-2"><div class="small">В ЦЕНТРЕ ВНИМАНИЯ</div></div>
                <div class="h5 mb-3">Техника для кухни</div>
