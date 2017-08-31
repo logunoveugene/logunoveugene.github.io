@@ -210,7 +210,11 @@
                     <div class="swiper-wrapper">
                       <div v-for="action in actions" class="swiper-slide">
                         <a href="#">
-                          <img :src="action.actionImg" class="y">
+                          <img :src="action.actionImg" class="">
+                          <span class="action-desc-hov">
+                            <span class="m-3  d-block">{{action.actionName}}</span>
+                            <span class="m-3 mt-0 d-block small text-muted">{{action.actionDesc}}</span>
+                          </span>
                         </a>
                       </div>
                     </div>
@@ -436,19 +440,33 @@ export default {
 
 
       actions: [{
-        actionImg: "https://logunoveugene.github.io/home/img/action/1.png"
+        actionImg: "https://logunoveugene.github.io/home/img/action/1.png",
+        actionName:"Скидка 30% на аксессуары HP",
+        actionDesc:"Купи ноутбук HP и получи скидку на покупку аксессуаров"
       }, {
-        actionImg: "https://logunoveugene.github.io/home/img/action/2.png"
+        actionImg: "https://logunoveugene.github.io/home/img/action/2.png",
+        actionName:"Новинка от LG",
+        actionDesc:"Безрамочный смартфон для тебя"
       }, {
-        actionImg: "https://logunoveugene.github.io/home/img/action/3.png"
+        actionImg: "https://logunoveugene.github.io/home/img/action/3.png",
+        actionName:"Новые часы Samsung Gear",
+        actionDesc:"Купи ноутбук HP и получи скидку на покупку аксессуаров"
       }, {
-        actionImg: "https://logunoveugene.github.io/home/img/action/4.png"
+        actionImg: "https://logunoveugene.github.io/home/img/action/4.png",
+        actionName:"Скидка 30% на аксессуары HP",
+        actionDesc:"Купи ноутбук HP и получи скидку на покупку аксессуаров"
       }, {
-        actionImg: "https://logunoveugene.github.io/home/img/action/5.png"
+        actionImg: "https://logunoveugene.github.io/home/img/action/5.png",
+        actionName:"Скидка 30% на аксессуары HP",
+        actionDesc:"Купи ноутбук HP и получи скидку на покупку аксессуаров"
       }, {
-        actionImg: "https://logunoveugene.github.io/home/img/action/1.png"
+        actionImg: "https://logunoveugene.github.io/home/img/action/1.png",
+        actionName:"Скидка 30% на аксессуары HP",
+        actionDesc:"Купи ноутбук HP и получи скидку на покупку аксессуаров"
       }, {
-        actionImg: "https://logunoveugene.github.io/home/img/action/1.png"
+        actionImg: "https://logunoveugene.github.io/home/img/action/1.png",
+        actionName:"Скидка 30% на аксессуары HP",
+        actionDesc:"Купи ноутбук HP и получи скидку на покупку аксессуаров"
       }],
       products: [{
           id: 20101507,
@@ -711,6 +729,25 @@ export default {
 
 </script>
 <style>
+.action-desc-hov{
+
+  opacity: 0;
+    position: absolute;
+    z-index: 10000;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(256,256,256,0.9);
+}
+.action-slider .swiper-slide:hover  .action-desc-hov{
+display: block;
+opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+
+
+
 
 .propuct-swiper {
 
