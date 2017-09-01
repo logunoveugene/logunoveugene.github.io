@@ -20,11 +20,12 @@ $(document).ready(function () {
    var mainSlider = new Swiper('.main-slider', {
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
-
         // Disable preloading of all images
         preloadImages: false,
         // Enable lazy loading
-        lazyLoading: true
+        lazyLoading: true,
+        pagination: '.swiper-pagination',
+        paginationType: 'fraction'
     });
 
 var mainSlider = new Swiper('.main-slider-m', {

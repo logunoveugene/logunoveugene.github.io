@@ -185,8 +185,10 @@
                         </a>
                       </div>
                     </div>
+                       <div class="swiper-pagination"></div>
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
+
                   </div>
                   
 
@@ -738,7 +740,12 @@ export default {
     height: 100%;
     width: 100%;
     background-color: rgba(256,256,256,0.9);
+ 
 }
+
+
+
+
 .action-slider .swiper-slide:hover  .action-desc-hov{
 display: block;
 opacity: 1;
@@ -769,7 +776,6 @@ border: none;
     width: 50%;
   }
 
-
 }
 
 .top-ptoduct-img {
@@ -784,6 +790,21 @@ border: none;
   overflow: hidden;
       position: relative;
 }
+
+
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 20px;
+
+ width: auto ;
+    right: 20px;
+    background-color: rgba(0,0,0,.5);
+    padding: 0 .25rem;
+    color: white;
+    opacity: 0.8;
+       left: auto;
+       font-size: 80%;
+}
+
 
 .main-slider .swiper-slide img {
   width: auto;
@@ -828,12 +849,12 @@ border: none;
 
 .swiper-button-next,
 .swiper-container-rtl .swiper-button-prev {
-  right: 30px;
+  right: 20px;
 }
 
 .swiper-button-prev,
 .swiper-container-rtl .swiper-button-next {
-  left: 30px;
+  left: 20px;
 }
 
 .action-slider {
