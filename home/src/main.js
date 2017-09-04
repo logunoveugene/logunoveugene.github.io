@@ -35,7 +35,8 @@ var mainSlider = new Swiper('.main-slider-m', {
         nextButton: '.slider-arrow-r',
         prevButton: '.slider-arrow-l',
 pagination: '.swiper-pagination',
-        paginationType: 'fraction'
+        paginationType: 'fraction',
+           loop: true
     });
 
 
