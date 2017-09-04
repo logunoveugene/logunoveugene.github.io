@@ -30,11 +30,12 @@ $(document).ready(function () {
     });
 
 var mainSlider = new Swiper('.main-slider-m', {
-
-        // Disable preloading of all images
         preloadImages: false,
-        // Enable lazy loading
-        lazyLoading: true
+        lazyLoading: true,
+        nextButton: '.slider-arrow-r',
+        prevButton: '.slider-arrow-l',
+pagination: '.swiper-pagination',
+        paginationType: 'fraction'
     });
 
 
@@ -58,7 +59,7 @@ spaceBetween: 0,
         paginationClickable: true,
     scrollbar: '.swiper-scrollbar',
         scrollbarHide: false
-           
+
 
   });
 

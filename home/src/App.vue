@@ -208,6 +208,14 @@
                         </a>
                       </div>
                     </div>
+                    <div class="swiper-pagination"></div>
+
+                       <div class="slider-arrow slider-arrow-l">
+                         <div class="icon-left-arrow"></div>
+                       </div> 
+                       <div class="slider-arrow slider-arrow-r">
+                         <div class="icon-rightt-arrow"></div>
+                       </div> 
 
 
                   </div>
@@ -335,7 +343,7 @@
                       </div>
                     </div>
                     <div class="swiper-scrollbar"></div>
-                 
+
 
 
 
