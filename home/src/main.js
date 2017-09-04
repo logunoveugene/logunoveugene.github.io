@@ -18,14 +18,15 @@ $(document).ready(function () {
   
 
    var mainSlider = new Swiper('.main-slider', {
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
+        nextButton: '.slider-arrow-r',
+        prevButton: '.slider-arrow-l',
         // Disable preloading of all images
         preloadImages: false,
         // Enable lazy loading
         lazyLoading: true,
         pagination: '.swiper-pagination',
-        paginationType: 'fraction'
+        paginationType: 'fraction',
+         loop: true
     });
 
 var mainSlider = new Swiper('.main-slider-m', {
@@ -57,6 +58,7 @@ spaceBetween: 0,
         paginationClickable: true,
     scrollbar: '.swiper-scrollbar',
         scrollbarHide: false
+           
 
   });
 

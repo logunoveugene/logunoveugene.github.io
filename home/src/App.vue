@@ -186,8 +186,15 @@
                       </div>
                     </div>
                        <div class="swiper-pagination"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+
+                       <div class="slider-arrow slider-arrow-l">
+                         <div class="icon-left-arrow"></div>
+                       </div> 
+                       <div class="slider-arrow slider-arrow-r">
+                         <div class="icon-rightt-arrow"></div>
+                       </div> 
+
+                    
 
                   </div>
                   
@@ -223,7 +230,7 @@
                     <div class="swiper-scrollbar"></div>
                   </div>
                 </div>
-                <div class="col-12 mb-4">
+                <!-- <div class="col-12 mb-4">
                   <div class="d-flex flex-row flex-wrap flex-md-nowrap ">
                     <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-12 p-4">
                       <img src="https://i.snag.gy/uHTN4e.jpg" alt="" class="top-ptoduct-img">
@@ -262,7 +269,7 @@
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
                 <div class="col-12 mt-2 mb-4">
 <div class="h4">Скидки</div>
                   <div class="propuct-swiper">
@@ -328,6 +335,7 @@
                       </div>
                     </div>
                     <div class="swiper-scrollbar"></div>
+                 
 
 
 

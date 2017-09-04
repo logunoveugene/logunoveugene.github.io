@@ -45,16 +45,6 @@ noUiSlider.create(handlesSlider, {
 
   });
 
-  $(document).on('click', function(event) {
-    // choose to close all popovers if clicking on anything but a popover element.
-    if (  ( $(event.target).data('toggle') === "tooltip" /* the trigger buttons */ 
-          || $(event.target).hasClass('tooltip') /* the popup menu */
-          || $(event.target).parents('.tooltip[role="tooltip"]').length /* this one is a bit fiddly but also catches child elements of the popup menu. */ )) {
-      
-      
-    }
-  });
-
 
 
  $(function () {
@@ -200,6 +190,16 @@ var kolich = new Vue({
       amount:"Забрать в 6 магазинах сегодня",
       actions:[{
         actionName: "Летние скидки",
+        actionType: "sale",
+        actionDesc:"Скидка по промокоду ЖАРА"
+      },
+      {
+        actionName: "Подарок за покупку",
+        actionType: "gift",
+        actionDesc:"Скидка по промокоду ЖАРА"
+      },
+      {
+        actionName: "Дарим по 500 р.",
         actionType: "sale",
         actionDesc:"Скидка по промокоду ЖАРА"
       }

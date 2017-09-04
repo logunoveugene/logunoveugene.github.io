@@ -1,3 +1,36 @@
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  background-color: #fff;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  z-index: 1000;
+  transform: translateY(-50%);
+  padding: 9px;
+    opacity: .2;
+    cursor: pointer;
+    box-shadow:  0 0 15px rgba(0,0,0,.1);
+}
+
+.slider-arrow.swiper-button-disabled{
+    color: #999;
+}
+
+.slider-arrow:hover{
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.slider-arrow-l{
+  left: 20px;
+}
+
+.slider-arrow-r{
+  right: 20px;
+  text-align: right;
+}
+
 html {
   font-size: 15px;
 }
