@@ -203,10 +203,17 @@
                 </div>
                 <div class="col-12 ">
                   <div class="main-slider  mb-2 hidden-sm-down">
+
                     <div class="swiper-wrapper">
                       <div v-for="slide in mainSlides" class="swiper-slide">
+                      <div class="main-slider-content">
+                      <div class="title h3" data-swiper-parallax="-300">{{slide.sliderName}}</div>
+                <div class="subtitle small mb-3" data-swiper-parallax="-500">{{slide.sliderSub}}</div>
+<button type="button" class="btn btn-secondary mr-2" data-swiper-parallax="-800">{{slide.sliderButton}}</button>
+</div>
+
                         <a href="#" class="d-block">
-                          <img :data-src="slide.sliderImg" class="swiper-lazy d-block">
+                          <img :data-src="slide.sliderImg" class="swiper-lazy d-block parallax-bg"   >
                           <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
                         </a>
                       </div>
@@ -219,6 +226,13 @@
                       <div class="icon-rightt-arrow"></div>
                     </div>
                   </div>
+
+
+
+
+
+
+
                   <div class="main-slider-m  mb-2 hidden-md-up">
                     <div class="swiper-wrapper">
                       <div v-for="slide in mainSlidesM" class="swiper-slide">
@@ -537,8 +551,7 @@ export default {
       }, {
         derectionName: "Подарочные карты",
         derectionImage: "https://logunoveugene.github.io/home/img/derection/gift.svg"
-      
-      },
+            },
       {
         derectionName: "Уцененные товары",
         derectionImage: "https://logunoveugene.github.io/home/img/derection/broken.svg"
@@ -547,14 +560,30 @@ export default {
 
 
       mainSlides: [{
-        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/1.png"
+        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/1.png",
+        sliderName: "Рассрочка без переплат",
+        sliderSub:"Тысячи товаров в рассрочку без переплат",
+        sliderButton: "Смотреть",
+        sliderButtonStyle: "btn-secondary"
 
       }, {
-        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/2.png"
+        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/2.png",
+        sliderName: "Студент лови момент",
+        sliderSub:"Скидки на товары для учебы и работы",
+        sliderButton: "Смотреть",
+        sliderButtonStyle: "btn-secondary"
       }, {
-        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/3.png"
+        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/3.png",
+        sliderName: "Соленья варенья",
+        sliderSub:"Тысячи товаров в рассрочку без переплат",
+        sliderButton: "Смотреть",
+        sliderButtonStyle: "btn-secondary"
       }, {
-        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/4.png"
+        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/4.png",
+        sliderName: "Задари всех",
+        sliderSub:"Тысячи товаров в рассрочку без переплат",
+        sliderButton: "Смотреть",
+        sliderButtonStyle: "btn-secondary"
       }],
 
 
@@ -862,7 +891,15 @@ export default {
 </script>
 <style>
 
+    .parallax-bg {
+z-index: -1;
+    }
 
+.main-slider-content{
+  position: absolute;
+  top:50px;
+  left: 80px;
+}
 
 
 .search-input::before {
@@ -970,13 +1007,10 @@ border: none;
 .main-slider .swiper-slide img {
   width: auto;
   height: auto;
-  -ms-transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 0;
+  top: 0;
   overflow: hidden;
 }
 
