@@ -560,26 +560,26 @@ export default {
 
 
       mainSlides: [{
-        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/1.png",
+        sliderImg: "https://logunoveugene.github.io/home3/img/mainslides/1.png",
         sliderName: "Рассрочка без переплат",
         sliderSub:"Тысячи товаров в рассрочку без переплат",
         sliderButton: "Смотреть",
         sliderButtonStyle: "btn-secondary"
 
       }, {
-        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/2.png",
+        sliderImg: "https://logunoveugene.github.io/home3/img/mainslides/2.png",
         sliderName: "Студент лови момент",
         sliderSub:"Скидки на товары для учебы и работы",
         sliderButton: "Смотреть",
         sliderButtonStyle: "btn-secondary"
       }, {
-        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/3.png",
+        sliderImg: "https://logunoveugene.github.io/home3/img/mainslides/3.png",
         sliderName: "Соленья варенья",
         sliderSub:"Тысячи товаров в рассрочку без переплат",
         sliderButton: "Смотреть",
         sliderButtonStyle: "btn-secondary"
       }, {
-        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/4.png",
+        sliderImg: "https://logunoveugene.github.io/home3/img/mainslides/4.png",
         sliderName: "Задари всех",
         sliderSub:"Тысячи товаров в рассрочку без переплат",
         sliderButton: "Смотреть",
