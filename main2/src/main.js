@@ -37,8 +37,8 @@ var productRelated = new Swiper('.product-related', {
 var breadcrumbsSwiper = new Swiper('.breadcrumbsSwiper', {
     preventClicks :true,
     preventClicksPropagation: true,
-    slidesPerView: 'auto'
-
+    slidesPerView: 'auto',
+    slidesOffsetAfter: 1
 
   });
 

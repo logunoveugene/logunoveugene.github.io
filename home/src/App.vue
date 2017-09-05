@@ -93,7 +93,9 @@
             </a>
           </div>
           <div class="col d-flex flex-row align-items-center border-right-1">
-            <input type="email" class="form-control" placeholder="Поиск по сайту">
+          <div class="search-input col p-0">
+            <input type="text" class="form-control " placeholder="Поиск по сайту">
+            </div>
           </div>
           <div class="col d-flex flex-row align-items-center border-right-1 shrink header-btn">
             <img src="https://i.snag.gy/u5W6MI.jpg" class="p-1" alt="" />
@@ -139,53 +141,63 @@
               </div>
               <div class="ml-3 hidden-md-down">
                 <div class="h5 mb-4">Информационная лента</div>
-
                 <div class="new-item mb-3">
                   <div class="new-item-date small text-muted mb-0">21 июля</div>
                   <a href="" class="new-item-title mb-1 d-block">Cash Back на телевизоры Philips</a>
                   <div class="new-item-desc small">Верните до 4 000 рублей с покупки новой техники</div>
                 </div>
-
                 <div class="new-item mb-3">
                   <div class="new-item-date small text-muted mb-0">14 июля</div>
                   <a href="" class="new-item-title mb-1 d-block">Студент, лови момент в «Кибермолле»!</a>
                   <div class="new-item-desc small">Подготовься к учебному году с нашими скидками на нужную технику</div>
                 </div>
-
                 <div class="new-item mb-3">
                   <div class="new-item-date small text-muted mb-0">21 июля</div>
                   <a href="" class="new-item-title mb-1 d-block">Cash Back на телевизоры Philips</a>
                   <div class="new-item-desc small">Верните до 4 000 рублей с покупки новой техники</div>
                 </div>
-
                 <div class="new-item mb-3">
                   <div class="new-item-date small text-muted mb-0">14 июля</div>
                   <a href="" class="new-item-title mb-1 d-block">Заморозить витамины — легко!</a>
                   <div class="new-item-desc small">Морозильная техника для сохранения свежести даров сада и огорода</div>
                 </div>
-
                 <a href="" class="new-item-title mb-1 d-block small">Смотреть все</a>
-
-
-
-
               </div>
             </div>
           </div>
           <div class="col">
             <div class="right-main">
               <div class="row">
-              <div class="col-12">
-              <div class=" pr-0 pl-0 derection-item ">
-                <a href="">Акционные товары</a>
-                <a href="">Уцененные товары</a>
-                <a href="">Телевизоры</a>
+                <div class="col-12">
+
+        <div class="topOffert">
+                    <div class="swiper-wrapper">
+                    <div   class="swiper-slide">
+                  <div class=" px-0 py-3  d-flex flex-row  ">
+                    <div class=" d-flex flex-row pr-3 action-svg">
+                      <img class="mr-2 svg " src="https://logunoveugene.github.io/home/img/derection/sale.svg" alt="">
+                      <a href="" class="text-danger text-nowrap">Акционные товары</a>
+                    </div>
+                    <div class=" d-flex flex-row pr-3 broken-svg border-right-1 ">
+                      <img class="mr-2 svg " src="https://logunoveugene.github.io/home/img/derection/broken.svg" alt="">
+                      <a href="" class="text-nowrap text-muted">Уцененные товары</a>
+                    </div>
+                    <div class=" d-flex flex-row px-3 broken-svg  ">
+                      <a href="">Телевизоры</a>
+                    </div>
+                    <div class=" d-flex flex-row pr-3 broken-svg  ">
+                      <a href="">Смартфоны</a>
+                    </div>
+                    <div class=" d-flex flex-row pr-3 broken-svg  ">
+                      <a href="">Холодильники</a>
+                    </div>
+                  </div>
+                   </div>
+                  </div>
                 </div>
-
-
-              </div>
+                </div>
                 <div class="col-12 ">
-                  <div class="main-slider mt-3 mb-2 hidden-sm-down">
+                  <div class="main-slider  mb-2 hidden-sm-down">
                     <div class="swiper-wrapper">
                       <div v-for="slide in mainSlides" class="swiper-slide">
                         <a href="#" class="d-block">
@@ -194,21 +206,15 @@
                         </a>
                       </div>
                     </div>
-                       <div class="swiper-pagination"></div>
-
-                       <div class="slider-arrow slider-arrow-l">
-                         <div class="icon-left-arrow"></div>
-                       </div> 
-                       <div class="slider-arrow slider-arrow-r">
-                         <div class="icon-rightt-arrow"></div>
-                       </div> 
-
-                    
-
+                    <div class="swiper-pagination"></div>
+                    <div class="slider-arrow slider-arrow-l">
+                      <div class="icon-left-arrow"></div>
+                    </div>
+                    <div class="slider-arrow slider-arrow-r">
+                      <div class="icon-rightt-arrow"></div>
+                    </div>
                   </div>
-                  
-
-                  <div class="main-slider-m mt-3 mb-2 hidden-md-up">
+                  <div class="main-slider-m  mb-2 hidden-md-up">
                     <div class="swiper-wrapper">
                       <div v-for="slide in mainSlidesM" class="swiper-slide">
                         <a href="#" class="d-block">
@@ -218,18 +224,13 @@
                       </div>
                     </div>
                     <div class="swiper-pagination"></div>
-
-                       <div class="slider-arrow slider-arrow-l">
-                         <div class="icon-left-arrow"></div>
-                       </div> 
-                       <div class="slider-arrow slider-arrow-r">
-                         <div class="icon-rightt-arrow"></div>
-                       </div> 
-
-
+                    <div class="slider-arrow slider-arrow-l">
+                      <div class="icon-left-arrow"></div>
+                    </div>
+                    <div class="slider-arrow slider-arrow-r">
+                      <div class="icon-rightt-arrow"></div>
+                    </div>
                   </div>
-
-
                 </div>
                 <div class="col-12 mb-5">
                   <div class="action-slider mt-4">
@@ -239,7 +240,7 @@
                           <img :src="action.actionImg" class="">
                           <span class="action-desc-hov">
                             <span class="m-3  d-block">{{action.actionName}}</span>
-                            <span class="m-3 mt-0 d-block small text-muted">{{action.actionDesc}}</span>
+                          <span class="m-3 mt-0 d-block small text-muted">{{action.actionDesc}}</span>
                           </span>
                         </a>
                       </div>
@@ -287,14 +288,35 @@
                     </div>
                   </div>
                 </div> -->
-                <div class="col-12 mt-2 mb-4">
-<div class="h4">Скидки</div>
+                <div class="col-12 mt-2 mb-5">
+                  <div class="h4 mb-3 d-inline-block mr-2">Скидки</div>
+                  <a href="" class="d-inline small">2 456 товаров</a>
+                          <div class="topOffert    ">
+                    <div class="swiper-wrapper">
+                    <div   class="swiper-slide">
+                  <ul class="nav nav-pills small mb-3">
+                    <li class="nav-item mr-3">
+                      <a class="nav-link active p-1 px-2" href="#">Телевизоры и видеотехника </a>
+                    </li>
+                    <li class="nav-item mr-3 ">
+                      <a class="nav-link" href="#">Техника для дома</a>
+                    </li>
+                    <li class="nav-item mr-3">
+                      <a class="nav-link" href="#">Техника для кухни</a>
+                    </li>
+
+                    <li class="nav-item mr-3">
+                      <a class="nav-link" href="#">Смартфоны</a>
+                    </li>
+                    <li class="nav-item mr-3">
+                      <a class="nav-link" href="#">Климатическая техника</a>
+                    </li>
+                  </ul>
+                  </div></div></div>
                   <div class="propuct-swiper">
                     <div class="swiper-wrapper d-flex align-items-stretch">
                       <div class="swiper-slide border-right-1 " v-for="(product, index) in products">
-
                         <div class="col-12  p-0 ">
-
                           <div class="flex-column border p-3 ">
                             <div class="d-flex justify-content-center mb-4 img-wrap pt-3">
                               <div class="stikerWrap" v-if="products[index].actions !== 0">
@@ -352,31 +374,108 @@
                       </div>
                     </div>
                     <div class="swiper-scrollbar"></div>
+                  </div>
+                </div>
 
+                <div class="col-12 mt-2 mb-5">
+                  <div class="h4 mb-3 d-inline-block mr-2">Новинки</div>
+                  <a href="" class="d-inline small">581 товар</a>
+                  <div class="topOffert    ">
+                    <div class="swiper-wrapper">
+                    <div   class="swiper-slide">
+                  <ul class="nav nav-pills small mb-3">
+                    <li class="nav-item mr-3">
+                      <a class="nav-link active p-1 px-2" href="#">Телевизоры и видеотехника </a>
+                    </li>
+                    <li class="nav-item mr-3 ">
+                      <a class="nav-link" href="#">Техника для дома</a>
+                    </li>
+                    <li class="nav-item mr-3">
+                      <a class="nav-link" href="#">Техника для кухни</a>
+                    </li>
 
-
-
-
-
+                    <li class="nav-item mr-3">
+                      <a class="nav-link" href="#">Смартфоны</a>
+                    </li>
+                    <li class="nav-item mr-3">
+                      <a class="nav-link" href="#">Климатическая техника</a>
+                    </li>
+                  </ul>
+                  </div></div></div>
+                  <div class="propuct-swiper">
+                    <div class="swiper-wrapper d-flex align-items-stretch">
+                      <div class="swiper-slide border-right-1 " v-for="(product, index) in products">
+                        <div class="col-12  p-0 ">
+                          <div class="flex-column border p-3 ">
+                            <div class="d-flex justify-content-center mb-4 img-wrap pt-3">
+                              <div class="stikerWrap" v-if="products[index].actions !== 0">
+                                <div class="d-inline" v-for="(action, index) in product.actions">
+                                  <a data-toggle="tooltip" data-html="true" data-placement="bottom" :title="action.actionDesc">
+                                    <span class="mr-1 stiker" :class="action.actionType">{{action.actionName}}</span>
+                                  </a>
+                                </div>
+                              </div>
+                              <div class="d-flex">
+                                <img class="align-self-center poduct-img" :src="product.img" alt="">
+                              </div>
+                            </div>
+                            <div class="mb-2 productName hidden-sm-down small">
+                              <a href="https://logunoveugene.github.io/main2/index.html" :title="product.name">{{product.name}}</a>
+                            </div>
+                            <div class="mb-2 productName hidden-md-up small">
+                              <a href="https://logunoveugene.github.io/main2/index.html">{{product.name}}</a>
+                            </div>
+                            <div class="mb-2">
+                              <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">{{product.rateCount}}</span>
+                            </div>
+                            <div class="hidden-sm-down">
+                              <div class="mb-4 price-wrap">
+                                <div class="d-flex flex-row align-items-end mb-1">
+                                  <div class="h5 mb-0 mr-2 "><b>{{product.price}} р.</b></div>
+                                  <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
+                                </div>
+                                <div class="discount" v-if="products[index].discount !== 0">
+                                  <mark>Доступна скидка {{product.discount}} р.</mark>
+                                </div>
+                              </div>
+                              <div class="mb-3">
+                                <button type="button" class="btn btn-secondary mr-2">В корзину</button>
+                                <img src="https://i.snag.gy/zo2fWm.jpg" alt="">
+                              </div>
+                            </div>
+                            <div class="hidden-md-up d-flex justify-content-between align-items-center">
+                              <div class="d-flex flex-column ">
+                                <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
+                                <span class=" mb-0"><b>{{product.price}} р.</b></span>
+                                <div class="discount" v-if="products[index].discount !== 0">
+                                  <mark>Доступна скидка {{product.discount}} р.</mark>
+                                </div>
+                              </div>
+                              <button type="button" class="btn btn-secondary">
+                                <div class="icon-cart text-muted"></div>
+                              </button>
+                            </div>
+                            <div class="small hidden-md-down ">
+                              <a href="" class="text-muted"><a href="">Забрать в 6 магазинах</a> с 18 сен.</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-scrollbar"></div>
                   </div>
                 </div>
               </div>
             </div>
-
-
           </div>
-
-
-
         </div>
       </div>
     </div>
-
-
     <!-- Модальные окна начало -->
     <!-- Модальные окна конец -->
   </div>
 </div>
+
 
 
 </template>
@@ -433,12 +532,7 @@ export default {
       }, {
         derectionName: "Подарочные карты",
         derectionImage: "https://logunoveugene.github.io/home/img/derection/gift.svg"
-      }, {
-        derectionName: "Акционные товары",
-        derectionImage: "https://logunoveugene.github.io/home/img/derection/sale.svg"
-      }, {
-        derectionName: "Уцененные товары",
-        derectionImage: "https://logunoveugene.github.io/home/img/derection/broken.svg"
+      
       }],
 
 
@@ -756,6 +850,37 @@ export default {
 
 </script>
 <style>
+
+
+
+
+.search-input::before {
+    content: 'm';
+    font-family: 'icons';
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    color: #adadad;
+    cursor: pointer;
+}
+
+
+.topOffert{
+  overflow: hidden;
+  width: 100%;
+}
+
+
+.topOffert .swiper-slide{
+
+  width: auto;
+}
+
+
+svg {width: 21px; height: 21px;}
+.action-svg svg * {fill: #d9534f!important;}
+
+.broken-svg svg * {fill: #666!important;}
 .action-desc-hov{
 
   opacity: 0;
@@ -906,11 +1031,11 @@ border: none;
 }
 
 .swiper-scrollbar-drag {
-  background: rgba(0, 0, 0, .1);
+  background: rgba(0, 0, 0, .2);
 }
 
 .swiper-scrollbar {
-  background: rgba(0, 0, 0, .05);
+  background: rgba(0, 0, 0, .1);
 }
 
 .swiper-container-horizontal>.swiper-scrollbar {
