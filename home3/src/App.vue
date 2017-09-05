@@ -209,13 +209,13 @@
                       <div class="main-slider-content" :class="slide.sliderColor">
                       <div class="title h2" data-swiper-parallax="-300">{{slide.sliderName}}</div>
                 <div class="subtitle small mb-3" data-swiper-parallax="-500">{{slide.sliderSub}}</div>
-<button type="button" class="btn btn-secondary mr-2" data-swiper-parallax="-800">{{slide.sliderButton}}</button>
+<button type="button" :class="slide.sliderButtonStyle"  data-swiper-parallax="-800">{{slide.sliderButton}}</button>
 </div>
 
-                        <a href="#" class="d-block">
+                        
                           <img :data-src="slide.sliderImg" class="swiper-lazy d-block parallax-bg"   >
                           <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
-                        </a>
+                        
                       </div>
                     </div>
                     <div class="swiper-pagination"></div>
@@ -565,27 +565,21 @@ export default {
         sliderName: "Рассрочка без переплат",
         sliderSub:"Тысячи товаров в рассрочку без переплат",
         sliderButton: "Смотреть",
-        sliderButtonStyle: "btn-secondary"
+        sliderButtonStyle: "btn btn-secondary "
 
       }, {
-        sliderImg: "https://logunoveugene.github.io/home3/img/mainslides/2.png",
-        sliderColor: "",
-        sliderName: "Студент, лови момент!",
-        sliderSub:"Скидки на товары для учебы и работы",
-        sliderButton: "Смотреть",
-        sliderButtonStyle: "btn-secondary"
-      }, {
         sliderImg: "https://logunoveugene.github.io/home3/img/mainslides/3.png",
+        sliderColor: "text-white",
         sliderName: "Соленья варенья",
         sliderSub:"Тысячи товаров в рассрочку без переплат",
         sliderButton: "Смотреть",
-        sliderButtonStyle: "btn-secondary"
+        sliderButtonStyle: "btn btn-secondary "
       }, {
         sliderImg: "https://logunoveugene.github.io/home3/img/mainslides/4.png",
         sliderName: "Задари всех",
         sliderSub:"Тысячи товаров в рассрочку без переплат",
         sliderButton: "Смотреть",
-        sliderButtonStyle: "btn-secondary"
+        sliderButtonStyle: "btn btn-primary "
       }],
 
 
