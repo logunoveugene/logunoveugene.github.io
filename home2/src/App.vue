@@ -17,7 +17,7 @@
         </div>
       </div>
       <div class="container-fluid ">
-        <div class="container bg-grey bb-red-3">
+        <div class="container bg-grey border-bottom-1">
           <div class="row ">
             <div class="col d-flex flex-row align-items-center border-right-1 shrink header-btn p-3">
               <img src="https://i.snag.gy/oJxb64.jpg" class="mr-2" alt="" />
@@ -26,9 +26,7 @@
               </a>
             </div>
             <div class="col d-flex flex-row align-items-center border-right-1 p-2">
-               <div class="search-input col p-0">
               <input type="email" class="form-control" placeholder="Поиск по сайту">
-               </div>
             </div>
           </div>
         </div>
@@ -76,7 +74,7 @@
       </div>
     </div>
     <div class="container-fluid hidden-sm-down">
-      <div class="container bb-red-3">
+      <div class="container border-bottom-1">
         <div class="row ">
           <div class="col border-right-1 p-3 shrink" v-on:click="switchsite">
             <div class=" hidden-xl-up">
@@ -96,10 +94,7 @@
           </div>
           <div class="col d-flex flex-row align-items-center border-right-1">
           <div class="search-input col p-0">
-
             <input type="text" class="form-control " placeholder="Поиск по сайту">
-
-
             </div>
           </div>
           <div class="col d-flex flex-row align-items-center border-right-1 shrink header-btn">
@@ -856,6 +851,16 @@ export default {
 </script>
 <style>
 
+.header-btn img{
+  -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); /* Чёрно-белое изображение */
+    transition: .3s; /* Плавный переход */
+}
+
+.header-btn:hover img{
+  -webkit-filter: none;
+    filter: none; /* Убираем фильтр */
+}
 
 
 
