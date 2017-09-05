@@ -232,10 +232,9 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-12 mb-5">
-                  <div class="action-slider mt-4">
-                    <div class="swiper-wrapper">
-                      <div v-for="action in actions" class="swiper-slide">
+                <div class="col-12 mb-5 mt-3">
+<div class="d-flex flex-row action-wrap-more">
+                      <div v-for="action in actions" class="mr-3" >
                         <a href="#">
                           <img :src="action.actionImg" class="">
                           <span class="action-desc-hov">
@@ -243,10 +242,12 @@
                           <span class="m-3 mt-0 d-block small text-muted">{{action.actionDesc}}</span>
                           </span>
                         </a>
-                      </div>
-                    </div>
-                    <div class="swiper-scrollbar"></div>
-                  </div>
+                   </div>
+
+                   <div class="action-more">
+                     <img src="https://i.snag.gy/RJu6Ql.jpg" alt="">
+                   </div>
+                </div>
                 </div>
                 <!-- <div class="col-12 mb-4">
                   <div class="d-flex flex-row flex-wrap flex-md-nowrap ">
@@ -851,6 +852,20 @@ export default {
 </script>
 <style>
 
+
+.action-wrap-more{
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+
+}
+
+.action-more{
+  position: absolute;
+  right: 0;
+  box-shadow: 0 0 25px 25px rgba(256,256,256,1)
+
+}
 .header-btn img{
   -webkit-filter: grayscale(100%);
     filter: grayscale(100%); /* Чёрно-белое изображение */

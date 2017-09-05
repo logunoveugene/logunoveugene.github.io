@@ -44,7 +44,7 @@ pagination: '.swiper-pagination',
  		scrollbar: '.swiper-scrollbar',
         scrollbarHide: false,
         slidesPerView: 'auto',
-        spaceBetween: 17
+        spaceBetween: 40
   
     });
 
