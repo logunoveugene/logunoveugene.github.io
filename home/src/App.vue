@@ -89,7 +89,7 @@
             </div>
           </div>
           <div class="col d-flex flex-row align-items-center border-right-1 shrink header-btn">
-            <img src="https://i.snag.gy/oJxb64.jpg" class="p-1" alt="" />
+            <img src="https://i.snag.gy/oJxb64.jpg" class="m-1" alt="" />
             <a href="#" class="hidden-lg-down">
               <h6 class="mb-0 ml-2 main-link">Каталог</h6>
             </a>
@@ -103,7 +103,7 @@
             </div>
           </div>
           <div class="col d-flex flex-row align-items-center border-right-1 shrink header-btn">
-            <img src="https://i.snag.gy/u5W6MI.jpg" class="p-1" alt="" />
+            <img src="https://i.snag.gy/u5W6MI.jpg" class="m-1" alt="" />
             <div class="d-flex flex-column hidden-md-down ml-2">
               <a href="" class="main-link"><h6 class="mb-0">Личный кабинет</h6></a>
               <div class="d-flex flex-row">
@@ -113,7 +113,7 @@
             </div>
           </div>
           <div class="col d-flex flex-row align-items-center border-right-1 shrink header-btn">
-            <img src="https://i.snag.gy/uSmB9r.jpg" class=" p-1" alt="" />
+            <img src="https://i.snag.gy/uSmB9r.jpg" class=" m-1" alt="" />
             <div class="d-flex flex-column ml-2 hidden-md-down">
               <a href="" class="main-link">
                 <h6 class="mb-0">Сравнение</h6>
@@ -121,7 +121,7 @@
             </div>
           </div>
           <div class="col d-flex flex-row align-items-center shrink header-btn">
-            <img src="https://i.snag.gy/51LOiG.jpg" class="p-1" alt="" />
+            <img src="https://i.snag.gy/51LOiG.jpg" class="m-1" alt="" />
             <div class="d-flex flex-column ml-2 hidden-md-down">
               <a href="" class="main-link">
                 <h6 class="mb-0">Корзина</h6>
@@ -179,14 +179,11 @@
                     <div class="swiper-wrapper">
                     <div   class="swiper-slide">
                   <div class=" px-0 py-3  d-flex flex-row  ">
-                    <div class=" d-flex flex-row pr-3 action-svg">
+                    <div class=" d-flex flex-row pr-3 action-svg border-right-1 ">
                       <img class="mr-2 svg " src="https://logunoveugene.github.io/home/img/derection/sale.svg" alt="">
                       <a href="" class="text-danger text-nowrap">Акционные товары</a>
                     </div>
-                    <div class=" d-flex flex-row pr-3 broken-svg border-right-1 ">
-                      <img class="mr-2 svg " src="https://logunoveugene.github.io/home/img/derection/broken.svg" alt="">
-                      <a href="" class="text-nowrap text-muted">Уцененные товары</a>
-                    </div>
+              
                     <div class=" d-flex flex-row px-3 broken-svg  ">
                       <a href="">Телевизоры</a>
                     </div>
@@ -195,6 +192,9 @@
                     </div>
                     <div class=" d-flex flex-row pr-3 broken-svg  ">
                       <a href="">Холодильники</a>
+                    </div>
+                    <div class=" d-flex flex-row pr-3 broken-svg  ">
+                      <a href="">Кондиционеры</a>
                     </div>
                   </div>
                    </div>
@@ -537,6 +537,11 @@ export default {
       }, {
         derectionName: "Подарочные карты",
         derectionImage: "https://logunoveugene.github.io/home/img/derection/gift.svg"
+      
+      },
+      {
+        derectionName: "Уцененные товары",
+        derectionImage: "https://logunoveugene.github.io/home/img/derection/broken.svg"
       
       }],
 
