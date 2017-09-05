@@ -570,7 +570,7 @@ export default {
       }, {
         sliderImg: "https://logunoveugene.github.io/home3/img/mainslides/2.png",
         sliderColor: "text-muted",
-        sliderName: "Студент лови момент",
+        sliderName: "Студент, лови момент!",
         sliderSub:"Скидки на товары для учебы и работы",
         sliderButton: "Смотреть",
         sliderButtonStyle: "btn-secondary"
