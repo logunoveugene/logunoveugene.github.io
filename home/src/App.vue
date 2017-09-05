@@ -175,6 +175,15 @@
           <div class="col">
             <div class="right-main">
               <div class="row">
+              <div class="col-12">
+              <div class=" pr-0 pl-0 derection-item ">
+                <a href="">Акционные товары</a>
+                <a href="">Уцененные товары</a>
+                <a href="">Телевизоры</a>
+                </div>
+
+
+              </div>
                 <div class="col-12 ">
                   <div class="main-slider mt-3 mb-2 hidden-sm-down">
                     <div class="swiper-wrapper">
@@ -436,22 +445,22 @@ export default {
       mainSlides: [{
         sliderImg: "https://logunoveugene.github.io/home/img/mainslides/1.png"
       }, {
-        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/1.png"
+        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/2.png"
       }, {
-        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/1.png"
+        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/3.png"
       }, {
-        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/1.png"
+        sliderImg: "https://logunoveugene.github.io/home/img/mainslides/4.png"
       }],
 
 
       mainSlidesM: [{
         sliderImg: "https://logunoveugene.github.io/home/img/mainslides-m/1.png"
       }, {
-        sliderImg: "https://logunoveugene.github.io/home/img/mainslides-m/1.png"
+        sliderImg: "https://logunoveugene.github.io/home/img/mainslides-m/2.png"
       }, {
-        sliderImg: "https://logunoveugene.github.io/home/img/mainslides-m/1.png"
+        sliderImg: "https://logunoveugene.github.io/home/img/mainslides-m/3.png"
       }, {
-        sliderImg: "https://logunoveugene.github.io/home/img/mainslides-m/1.png"
+        sliderImg: "https://logunoveugene.github.io/home/img/mainslides-m/4.png"
       }],
 
 

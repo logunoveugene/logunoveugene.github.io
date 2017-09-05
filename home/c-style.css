@@ -17,7 +17,8 @@
     color: #999;
 }
 
-.slider-arrow:hover{
+.slider-arrow:hover,
+.slider-arrow:focus{
   opacity: 1;
   transition: opacity 0.2s ease;
 }
@@ -73,6 +74,9 @@ a:hover {
 
 .border-bottom-3 {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.10);
+}
+.border-bottom-1 {
+  border-bottom: 1px solid #eee;
 }
 
 .bg-grey {
