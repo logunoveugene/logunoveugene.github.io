@@ -206,8 +206,8 @@
 
                     <div class="swiper-wrapper">
                       <div v-for="slide in mainSlides" class="swiper-slide">
-                      <div class="main-slider-content">
-                      <div class="title h3" data-swiper-parallax="-300">{{slide.sliderName}}</div>
+                      <div class="main-slider-content" :class="slide.sliderColor">
+                      <div class="title h2" data-swiper-parallax="-300">{{slide.sliderName}}</div>
                 <div class="subtitle small mb-3" data-swiper-parallax="-500">{{slide.sliderSub}}</div>
 <button type="button" class="btn btn-secondary mr-2" data-swiper-parallax="-800">{{slide.sliderButton}}</button>
 </div>
@@ -561,6 +561,7 @@ export default {
 
       mainSlides: [{
         sliderImg: "https://logunoveugene.github.io/home3/img/mainslides/1.png",
+        sliderColor: "text-white",
         sliderName: "Рассрочка без переплат",
         sliderSub:"Тысячи товаров в рассрочку без переплат",
         sliderButton: "Смотреть",
@@ -568,6 +569,7 @@ export default {
 
       }, {
         sliderImg: "https://logunoveugene.github.io/home3/img/mainslides/2.png",
+        sliderColor: "text-muted",
         sliderName: "Студент лови момент",
         sliderSub:"Скидки на товары для учебы и работы",
         sliderButton: "Смотреть",
