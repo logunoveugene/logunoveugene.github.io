@@ -17,6 +17,25 @@ new Vue({
 $(document).ready(function () {
 
 
+
+
+ $(function () {
+      $('[data-toggle="tooltip"]').tooltip({
+        template:'<div class="tooltip" role="tooltip"><div class="tooltip-arrowe"></div><div class="tooltip-inner"></div></div>',
+        trigger: 'click',
+        container: 'body',
+        constraints: [
+        {
+          to: 'scrollParent',
+          pin: true
+        },
+        ]}
+        )
+    });
+
+
+ 
+
     var swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
         paginationClickable: true,

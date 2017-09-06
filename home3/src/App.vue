@@ -209,7 +209,7 @@
                       <div class="main-slider-content" :class="slide.sliderColor">
                       <div class="title h2" data-swiper-parallax="-300">{{slide.sliderName}}</div>
                 <div class="subtitle small mb-3" data-swiper-parallax="-500">{{slide.sliderSub}}</div>
-<button type="button" :class="slide.sliderButtonStyle"  data-swiper-parallax="-800">{{slide.sliderButton}}</button>
+  <button type="button" class="main-slider-button" :class="slide.sliderButtonStyle"  data-swiper-parallax="-800">{{slide.sliderButton}}</button>
 </div>
 
                         
@@ -386,7 +386,7 @@
                               </button>
                             </div>
                             <div class="small hidden-md-down ">
-                              <a href="" class="text-muted"><a href="">Забрать в 6 магазинах</a> с 18 сен.</a>
+                              <a href="" class="">{{product.amount}}</a>
                             </div>
                           </div>
                         </div>
@@ -475,7 +475,7 @@
                               </button>
                             </div>
                             <div class="small hidden-md-down ">
-                              <a href="" class="text-muted"><a href="">Забрать в 6 магазинах</a> с 18 сен.</a>
+                              <a href="" class="">{{product.amount}}</a>
                             </div>
                           </div>
                         </div>
@@ -564,21 +564,21 @@ export default {
         sliderColor: "text-white",
         sliderName: "Рассрочка без переплат",
         sliderSub:"Тысячи товаров в рассрочку без переплат",
-        sliderButton: "Смотреть",
+        sliderButton: "Все товары",
         sliderButtonStyle: "btn btn-secondary "
 
       }, {
         sliderImg: "https://logunoveugene.github.io/home3/img/mainslides/3.png",
         sliderColor: "text-white",
         sliderName: "Соленья варенья",
-        sliderSub:"Тысячи товаров в рассрочку без переплат",
-        sliderButton: "Смотреть",
+        sliderSub:"Скидка по промокоду СОЛЕНЬЯ",
+        sliderButton: "Получить скидку",
         sliderButtonStyle: "btn btn-secondary "
       }, {
         sliderImg: "https://logunoveugene.github.io/home3/img/mainslides/4.png",
         sliderName: "Задари всех",
-        sliderSub:"Тысячи товаров в рассрочку без переплат",
-        sliderButton: "Смотреть",
+        sliderSub:"Подарки для любимых с огромной скидкой",
+        sliderButton: "Выбрать подарок",
         sliderButtonStyle: "btn btn-primary "
       }],
 
@@ -635,7 +635,7 @@ export default {
           discount: 0,
           rate: 4.5,
           rateCount: 65,
-          amount: "Забрать в 6 магазинах сегодня",
+          amount: "В 6 магазинах сегодня",
           actions: 0,
           stores: [{
             storeName: "в ТЦ Черемушки",
@@ -666,11 +666,14 @@ export default {
           discount: 1800,
           rate: 3.1,
           rateCount: 15,
-          amount: "Забрать в 6 магазинах сегодня",
+          amount: "В 6 магазинах с 12 сентября",
           actions: [{
               actionName: "Летние скидки",
+              actionImg: "http://via.placeholder.com/100x100",
               actionType: "sale",
-              actionDesc: "Скидка по промокоду ЖАРА"
+              actionDesc: "Скидка по промокоду ЖАРА",
+              actionDescFull: "Реальная экономия вместе с «Кибермоллом» доступна всем! Акция продлиться с 22 августа по 17 сентября, главное, поймать момент"
+
             }
 
 
@@ -703,7 +706,7 @@ export default {
           discount: 0,
           rate: 0,
           rateCount: 0,
-          amount: "Забрать в 6 магазинах сегодня",
+          amount: "В 6 магазинах сегодня",
           actions: 0,
           stores: [{
             storeName: "в ТЦ Черемушки",
@@ -733,11 +736,13 @@ export default {
           discount: 0,
           rate: 5,
           rateCount: 3,
-          amount: "Забрать в 6 магазинах сегодня",
+          amount: "В 6 магазинах сегодня",
           actions: [{
             actionName: "Подарок за покупку",
+            actionImg: "http://via.placeholder.com/100x100",
             actionType: "gift",
-            actionDesc: "ОПисание3"
+            actionDesc: "ОПисание3",
+            actionDescFull: "Реальная экономия вместе с «Кибермоллом» доступна всем! Акция продлиться с 22 августа по 17 сентября, главное, поймать момент"
           }],
           stores: [{
             storeName: "в ТЦ Черемушки",
@@ -767,7 +772,7 @@ export default {
           discount: 0,
           rate: 4.5,
           rateCount: 60,
-          amount: "Забрать в 6 магазинах сегодня",
+          amount: "В 6 магазинах сегодня",
           actions: 0,
           stores: [{
             storeName: "в ТЦ Черемушки",
@@ -795,7 +800,7 @@ export default {
           discount: 0,
           rate: 4.5,
           rateCount: 15,
-          amount: "Забрать в 6 магазинах сегодня",
+          amount: "В 6 магазинах сегодня",
           actions: 0,
           stores: [{
             storeName: "в ТЦ Черемушки",
@@ -823,7 +828,7 @@ export default {
           discount: 0,
           rate: 4.5,
           rateCount: 71,
-          amount: "Забрать в 6 магазинах сегодня",
+          amount: "В 6 магазинах сегодня",
           actions: 0,
           stores: [{
             storeName: "в ТЦ Черемушки",
@@ -851,7 +856,7 @@ export default {
           discount: 1800,
           rate: 4.5,
           rateCount: 8,
-          amount: "Забрать в 6 магазинах сегодня",
+          amount: "В 6 магазинах сегодня",
           actions: 0,
           stores: [{
             storeName: "в ТЦ Черемушки",
@@ -886,6 +891,28 @@ export default {
 
 </script>
 <style>
+
+
+.main-slider-button{
+
+    cursor: pointer;
+}
+@-webkit-keyframes pulse {
+  0% {
+  box-shadow: 0 0 0 0 rgba(256, 256, 256, 0);
+  }
+  30% {
+
+ box-shadow: 0 0 0px 10px rgba(256, 256, 256, 0.1);
+   
+  }
+  100% {
+
+    box-shadow: 0 0 0 10px rgba(256, 256, 256, 0);
+  }
+}
+
+
 
     .parallax-bg {
 z-index: -1;
