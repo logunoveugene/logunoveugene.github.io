@@ -267,7 +267,7 @@
                           </span>
                       </div>
                     </div>
-                    <div class="swiper-scrollbar"></div>
+                
                     <div class="slider-arrow slider-arrow-l">
                       <div class="icon-left-arrow"></div>
                     </div>
@@ -317,30 +317,9 @@
                   </div>
                 </div> -->
                 <div class="col-12 mt-2 mb-5">
-                  <div class="h4 mb-3 d-inline-block mr-2">Скидки</div>
+                  <div class="h4 mb-3 d-inline-block mr-2">Товары со скидками</div>
                   <a href="" class="d-inline small">2 456 товаров</a>
-                          <div class="topOffert    ">
-                    <div class="swiper-wrapper">
-                    <div   class="swiper-slide">
-                  <ul class="nav nav-pills small mb-3">
-                    <li class="nav-item mr-3">
-                      <a class="nav-link active p-1 px-2" href="#">Телевизоры и видеотехника </a>
-                    </li>
-                    <li class="nav-item mr-3 ">
-                      <a class="nav-link" href="#">Техника для дома</a>
-                    </li>
-                    <li class="nav-item mr-3">
-                      <a class="nav-link" href="#">Техника для кухни</a>
-                    </li>
-
-                    <li class="nav-item mr-3">
-                      <a class="nav-link" href="#">Смартфоны</a>
-                    </li>
-                    <li class="nav-item mr-3">
-                      <a class="nav-link" href="#">Климатическая техника</a>
-                    </li>
-                  </ul>
-                  </div></div></div>
+                         
                   <div class="propuct-swiper">
                     <div class="swiper-wrapper d-flex align-items-stretch">
                       <div class="swiper-slide border-right-1 " v-for="(product, index) in products">
@@ -348,60 +327,51 @@
                           <div class="flex-column border p-3 ">
                             <div class="d-flex justify-content-center mb-4 img-wrap pt-3">
                               <div class="stikerWrap" v-if="products[index].actions !== 0">
-                                <div class="d-inline" v-for="(action, index) in product.actions">
-                                  <a data-toggle="tooltip" data-html="true" data-placement="bottom" :title="action.actionDesc">
-                                    <span class="mr-1 stiker" :class="action.actionType">{{action.actionName}}</span>
-                                  </a>
-                                </div>
+                                
                               </div>
                               
                                 <img class="align-self-center poduct-img" :src="product.img" alt="">
                               
                             </div>
-                            <div class="mb-2 productName hidden-sm-down small">
+                            <div class="mb-3  ">
                               <a href="https://logunoveugene.github.io/main2/index.html" :title="product.name">{{product.name}}</a>
                             </div>
-                            <div class="mb-2 productName hidden-md-up small">
-                              <a href="https://logunoveugene.github.io/main2/index.html">{{product.name}}</a>
-                            </div>
-                            <div class="mb-2">
-                              <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">{{product.rateCount}}</span>
-                            </div>
+                           
+                           
                             <div class="hidden-sm-down">
                               <div class="mb-4 price-wrap">
                                 <div class="d-flex flex-row align-items-end mb-1">
-                                  <div class="h5 mb-0 mr-2 "><b>{{product.price}} р.</b></div>
-                                  <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
+                                  <div class="h5 mb-0 mr-2 "><b>от {{product.price}} р.</b></div>
+           
                                 </div>
                                 <div class="discount" v-if="products[index].discount !== 0">
-                                  <mark>Доступна скидка {{product.discount}} р.</mark>
+                                  <mark>Скидки до {{product.discount}} %</mark>
                                 </div>
                               </div>
-                              <div class="mb-3">
-                                <button type="button" class="btn btn-secondary mr-2">В корзину</button>
-                                <img src="https://i.snag.gy/zo2fWm.jpg" alt="">
-                              </div>
+                            
                             </div>
                             <div class="hidden-md-up d-flex justify-content-between align-items-center">
                               <div class="d-flex flex-column ">
-                                <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
-                                <span class=" mb-0"><b>{{product.price}} р.</b></span>
+                              
+                                <span class=" mb-0"><b>от {{product.price}} р.</b></span>
                                 <div class="discount" v-if="products[index].discount !== 0">
-                                  <mark>Доступна скидка {{product.discount}} р.</mark>
+                                  <mark>Скидки до {{product.discount}} %</mark>
                                 </div>
                               </div>
-                              <button type="button" class="btn btn-secondary">
-                                <div class="icon-cart text-muted"></div>
-                              </button>
+                              
                             </div>
-                            <div class="small hidden-md-down ">
-                              <a href="" class="">{{product.amount}}</a>
-                            </div>
+                            
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-scrollbar"></div>
+       
+                       <div class="slider-arrow slider-arrow-l">
+                      <div class="icon-left-arrow"></div>
+                    </div>
+                    <div class="slider-arrow slider-arrow-r">
+                      <div class="icon-rightt-arrow"></div>
+                    </div>
                   </div>
                 </div>
 
@@ -640,12 +610,12 @@ export default {
       }],
       products: [{
           id: 20101507,
-          name: 'Телевизор BBK 32LEM-1018/T2C',
-          img: "https://logunoveugene.github.io/catalog/img/1.png",
+          name: 'Телевизоры',
+          img: "https://i.snag.gy/f9i0q5.jpg",
           desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
           oldPrice: 0,
-          price: 54800,
-          discount: 0,
+          price: 4800,
+          discount: 45,
           rate: 4.5,
           rateCount: 65,
           amount: "В 6 магазинах сегодня",
@@ -669,120 +639,16 @@ export default {
         },
 
 
-        {
-          id: 20101508,
-          name: 'Телевизор Sony KD-43XE8096',
-          img: "https://logunoveugene.github.io/catalog/img/2.png",
-          desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
-          oldPrice: 0,
-          price: 84800,
-          discount: 1800,
-          rate: 3.1,
-          rateCount: 15,
-          amount: "В 6 магазинах с 12 сентября",
-          actions: [{
-              actionName: "Летние скидки",
-              actionImg: "http://via.placeholder.com/100x100",
-              actionType: "sale",
-              actionDesc: "Скидка по промокоду ЖАРА",
-              actionDescFull: "Реальная экономия вместе с «Кибермоллом» доступна всем! Акция продлиться с 22 августа по 17 сентября, главное, поймать момент"
-
-            }
-
-
-          ],
-          stores: [{
-            storeName: "в ТЦ Черемушки",
-            date: "2017-10-24"
-          }, {
-            storeName: "на Алеутской",
-            date: "2017-10-28"
-          }, {
-            storeName: "в ТЦ Максим",
-            date: "2017-10-24"
-          }, {
-            storeName: "на Гоголя",
-            date: "2017-10-28"
-          }, {
-            storeName: "на Вилкова",
-            date: "2017-10-28"
-          }]
-        },
-
-        {
-          id: 20101509,
-          name: "Телевизор LG 55UJ670V",
-          img: "https://logunoveugene.github.io/catalog/img/3.png",
-          desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
-          oldPrice: 19860,
-          price: 18800,
-          discount: 0,
-          rate: 0,
-          rateCount: 0,
-          amount: "В 6 магазинах сегодня",
-          actions: 0,
-          stores: [{
-            storeName: "в ТЦ Черемушки",
-            date: "2017-10-24"
-          }, {
-            storeName: "на Алеутской",
-            date: "2017-10-28"
-          }, {
-            storeName: "в ТЦ Максим",
-            date: "2017-10-24"
-          }, {
-            storeName: "на Гоголя",
-            date: "2017-10-28"
-          }, {
-            storeName: "на Вилкова",
-            date: "2017-10-28"
-          }]
-        },
-
-        {
-          id: 20101511,
-          name: 'Телевизор Samsung UE55MU6100',
-          img: "https://logunoveugene.github.io/catalog/img/9.png",
-          desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
-          oldPrice: 33860,
-          price: 21800,
-          discount: 0,
-          rate: 5,
-          rateCount: 3,
-          amount: "В 6 магазинах сегодня",
-          actions: [{
-            actionName: "Подарок за покупку",
-            actionImg: "http://via.placeholder.com/100x100",
-            actionType: "gift",
-            actionDesc: "ОПисание3",
-            actionDescFull: "Реальная экономия вместе с «Кибермоллом» доступна всем! Акция продлиться с 22 августа по 17 сентября, главное, поймать момент"
-          }],
-          stores: [{
-            storeName: "в ТЦ Черемушки",
-            date: "2017-10-24"
-          }, {
-            storeName: "на Алеутской",
-            date: "2017-10-28"
-          }, {
-            storeName: "в ТЦ Максим",
-            date: "2017-10-24"
-          }, {
-            storeName: "на Гоголя",
-            date: "2017-10-28"
-          }, {
-            storeName: "на Вилкова",
-            date: "2017-10-28"
-          }]
-        },
+       
 
         {
           id: 20101512,
-          name: 'Телевизор LG 32LH590U',
-          img: "https://logunoveugene.github.io/catalog/img/5.png",
+          name: 'Холодильники',
+          img: "https://i.snag.gy/A0bXu3.jpg",
           desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
           oldPrice: 0,
-          price: 32990,
-          discount: 0,
+          price: 11990,
+          discount: 35,
           rate: 4.5,
           rateCount: 60,
           amount: "В 6 магазинах сегодня",
@@ -805,12 +671,12 @@ export default {
           }]
         }, {
           id: 20101512,
-          name: 'Телевизор LG 43LJ519V',
-          img: "https://logunoveugene.github.io/catalog/img/6.png",
+          name: 'Стиральные машины',
+          img: "https://i.snag.gy/yN1nVL.jpg",
           desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
           oldPrice: 0,
-          price: 32990,
-          discount: 0,
+          price: 990,
+          discount: 45,
           rate: 4.5,
           rateCount: 15,
           amount: "В 6 магазинах сегодня",
@@ -833,12 +699,12 @@ export default {
           }]
         }, {
           id: 20101512,
-          name: 'Телевизор LG OLED55E6V ',
-          img: "https://logunoveugene.github.io/catalog/img/7.png",
+          name: 'Смартфоны',
+          img: "https://i.snag.gy/xk3Zud.jpg",
           desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
           oldPrice: 0,
-          price: 86990,
-          discount: 0,
+          price: 2990,
+          discount: 25,
           rate: 4.5,
           rateCount: 71,
           amount: "В 6 магазинах сегодня",
@@ -861,12 +727,12 @@ export default {
           }]
         }, {
           id: 20101512,
-          name: 'Телевизор Samsung QE55Q7CAM',
-          img: "https://logunoveugene.github.io/catalog/img/8.png",
+          name: 'Обогреватели',
+          img: "https://i.snag.gy/r5L9BY.jpg",
           desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
           oldPrice: 0,
-          price: 169990,
-          discount: 1800,
+          price: 790,
+          discount: 68,
           rate: 4.5,
           rateCount: 8,
           amount: "В 6 магазинах сегодня",
@@ -992,7 +858,7 @@ opacity: 1;
 
 
 .propuct-swiper {
-
+position: relative;
   overflow: hidden;
 border: 1px solid #e9ecef!important;
 }

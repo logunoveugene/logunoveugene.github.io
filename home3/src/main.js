@@ -72,8 +72,7 @@ pagination: '.swiper-pagination',
 
 
    var actionSlider = new Swiper('.action-slider', {
- 		scrollbar: '.swiper-scrollbar',
-        scrollbarHide: true,
+
         nextButton: '.slider-arrow-r',
         prevButton: '.slider-arrow-l',
         scrollbarHide: false,
@@ -85,13 +84,14 @@ pagination: '.swiper-pagination',
 
 var productSwiper = new Swiper('.propuct-swiper', {
     preventClicks :true,
+            nextButton: '.slider-arrow-r',
+        prevButton: '.slider-arrow-l',
     preventClicksPropagation: true,
     slidesPerView: 'auto',
 spaceBetween: 0,
         slidesPerView: 'auto',
-        paginationClickable: true,
-    scrollbar: '.swiper-scrollbar',
-        scrollbarHide: false
+        paginationClickable: true
+
 
 
   });
