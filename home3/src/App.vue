@@ -255,13 +255,16 @@
                   <div class="action-slider mt-4">
                     <div class="swiper-wrapper">
                       <div v-for="action in actions" class="swiper-slide">
-                        <a href="#">
+                        
                           <img :src="action.actionImg" class="">
-                          <span class="action-desc-hov">
+                          
+                      
+                        <span class="action-desc-hov">
+                        <a href="">
                             <span class="m-3  d-block">{{action.actionName}}</span>
+                            </a>
                           <span class="m-3 mt-0 d-block small text-muted">{{action.actionDesc}}</span>
                           </span>
-                        </a>
                       </div>
                     </div>
                     <div class="swiper-scrollbar"></div>
@@ -345,9 +348,9 @@
                                   </a>
                                 </div>
                               </div>
-                              <div class="d-flex">
+                              
                                 <img class="align-self-center poduct-img" :src="product.img" alt="">
-                              </div>
+                              
                             </div>
                             <div class="mb-2 productName hidden-sm-down small">
                               <a href="https://logunoveugene.github.io/main2/index.html" :title="product.name">{{product.name}}</a>
