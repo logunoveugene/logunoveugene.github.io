@@ -268,6 +268,12 @@
                       </div>
                     </div>
                     <div class="swiper-scrollbar"></div>
+                    <div class="slider-arrow slider-arrow-l">
+                      <div class="icon-left-arrow"></div>
+                    </div>
+                    <div class="slider-arrow slider-arrow-r">
+                      <div class="icon-rightt-arrow"></div>
+                    </div>
                   </div>
                 </div>
                 <!-- <div class="col-12 mb-4">
@@ -627,6 +633,10 @@ export default {
         actionImg: "https://logunoveugene.github.io/home/img/action/1.png",
         actionName:"Скидка 30% на аксессуары HP",
         actionDesc:"Купи ноутбук HP и получи скидку на покупку аксессуаров"
+      }, {
+        actionImg: "https://logunoveugene.github.io/home/img/action/1.png",
+        actionName:"Скидка 30% на аксессуары HP",
+        actionDesc:"Купи ноутбук HP и получи скидку на покупку аксессуаров"
       }],
       products: [{
           id: 20101507,
@@ -964,6 +974,7 @@ svg {width: 21px; height: 21px;}
     height: 100%;
     width: 100%;
     background-color: rgba(256,256,256,0.9);
+    cursor: default;
  
 }
 
@@ -1082,6 +1093,7 @@ border: none;
   width: 100%;
   height: 160px;
   overflow: hidden;
+  position: relative;
 }
 
 .action-slider .swiper-slide {

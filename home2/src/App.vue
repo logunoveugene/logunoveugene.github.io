@@ -233,8 +233,8 @@
                   </div>
                 </div>
                 <div class="col-12 mb-5 mt-3">
-<div class="d-flex flex-row action-wrap-more">
-                      <div v-for="action in actions" class="mr-3" >
+<div class="d-flex flex-row action-wrap-more flex-wrap justify-content-between">
+                      <div v-for="action in actions" class=" mb-3" >
                         <a href="#">
                           <img :src="action.actionImg" class="">
                           <span class="action-desc-hov">
@@ -595,6 +595,10 @@ export default {
         actionImg: "https://logunoveugene.github.io/home/img/action/1.png",
         actionName:"Скидка 30% на аксессуары HP",
         actionDesc:"Купи ноутбук HP и получи скидку на покупку аксессуаров"
+      }, {
+        actionImg: "https://logunoveugene.github.io/home/img/action/1.png",
+        actionName:"Скидка 30% на аксессуары HP",
+        actionDesc:"Купи ноутбук HP и получи скидку на покупку аксессуаров"
       }],
       products: [{
           id: 20101507,
@@ -863,15 +867,18 @@ export default {
   overflow: hidden;
   width: 100%;
   position: relative;
+height: 160px;
+
 
 }
 
 .action-more{
   position: absolute;
   right: 0;
-  box-shadow: 0 0 25px 25px rgba(256,256,256,1)
-
 }
+
+
+
 .header-btn img{
   -webkit-filter: grayscale(100%);
     filter: grayscale(100%); /* Чёрно-белое изображение */

@@ -73,6 +73,9 @@ pagination: '.swiper-pagination',
 
    var actionSlider = new Swiper('.action-slider', {
  		scrollbar: '.swiper-scrollbar',
+        scrollbarHide: true,
+        nextButton: '.slider-arrow-r',
+        prevButton: '.slider-arrow-l',
         scrollbarHide: false,
         slidesPerView: 'auto',
         spaceBetween: 17
