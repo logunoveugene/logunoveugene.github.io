@@ -6,7 +6,7 @@
       <div class="container-fluid">
         <div class="container">
           <div class="row d-flex ">
-            <div class="col d-flex flex-row align-items-center shrink pt-2 pb-2" v-on:click="switchsite">
+            <div class="col d-flex flex-row align-items-center shrink py-2" v-on:click="switchsite">
               <img v-if="cm==true" src="https://i.snag.gy/3jefoc.jpg" alt="" />
               <img v-if="cm==false" src="https://i.snag.gy/j6mnyA.jpg" alt="" />
             </div>
@@ -38,28 +38,28 @@
     <div class="container-fluid hidden-sm-down">
       <div class="container bg-grey ">
         <div class="row d-flex ">
-          <div class="col d-flex flex-row align-items-center shrink pt-2 pb-2">
+          <div class="col d-flex flex-row align-items-center shrink py-2">
             <a href="" class="text-muted">
               <small>Петропавловск-Камчатский</small>
             </a>
           </div>
-          <div class="col d-flex flex-row align-items-center shrink pt-2 pb-2">
+          <div class="col d-flex flex-row align-items-center shrink py-2">
             <a href="" class="text-muted">
               <small>ул. Светланская, д. 147 </small>
             </a>
           </div>
-          <div class="col d-flex flex-row align-items-center shrink pt-2 pb-2">
+          <div class="col d-flex flex-row align-items-center shrink py-2">
             <div class="">
               <b class="text-muted">+7 (4232) 79-01-16</b>
               <small>(с 9:00 до 20:00)</small>
             </div>
           </div>
-          <div class="col d-flex flex-row align-items-center shrink pt-2 pb-2">
+          <div class="col d-flex flex-row align-items-center shrink py-2">
             <a href="" class="text-muted">
               <small>Обратная связь</small>
             </a>
           </div>
-          <div class="col d-flex flex-row-reverse align-items-center align-self-end pt-2 pb-2 hidden-md-down">
+          <div class="col d-flex flex-row-reverse align-items-center align-self-end py-2 hidden-md-down">
             <ul class="nav small ">
               <li class="nav-item">
                 <a class="nav-link text-muted" href="#">Как купить</a>
@@ -103,7 +103,7 @@
             </div>
           </div>
           <div class="col d-flex flex-row align-items-center border-right-1 shrink header-btn">
-            <img src="https://i.snag.gy/u5W6MI.jpg" class="m-1" alt="" />
+            <div class="icon-cabinet header-icon"></div>
             <div class="d-flex flex-column hidden-md-down ml-2">
               <a href="" class="main-link"><h6 class="mb-0">Личный кабинет</h6></a>
               <div class="d-flex flex-row">

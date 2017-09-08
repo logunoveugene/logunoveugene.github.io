@@ -85,6 +85,12 @@ a:hover {
   background-color: #f7f7f7
 }
 
+ .header-icon{
+color: #f4793b;
+font-size: 2rem;
+
+}
+
 .header-btn:hover {
   transition: box-shadow 0.2s ease;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
