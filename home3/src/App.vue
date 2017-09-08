@@ -317,7 +317,7 @@
                   </div>
                 </div> -->
                 <div class="col-12 mt-2 mb-5">
-                  <div class="h4 mb-3 d-inline-block mr-2">Товары со скидками</div>
+                  <div class="h4 mb-3 d-inline-block mr-2">Скидки</div>
                   <a href="" class="d-inline small">2 456 товаров</a>
                          
                   <div class="propuct-swiper">
