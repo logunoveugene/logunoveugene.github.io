@@ -86,8 +86,9 @@ a:hover {
 }
 
  .header-icon{
-color: #f4793b;
-font-size: 2rem;
+    color: #f4793b;
+    font-size: 1.3rem;
+    padding-top: .25rem;
 
 }
 

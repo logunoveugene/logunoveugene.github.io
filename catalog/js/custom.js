@@ -22,6 +22,17 @@ $(document).ready(function () {
   });
 
 
+  var catBanner = new Swiper('.catBanner', {
+    preventClicks :true,
+    preventClicksPropagation: true,
+    loop: true,
+    slidesPerView: 'auto',
+       nextButton: '.slider-arrow-r',
+        prevButton: '.slider-arrow-l',
+
+  });
+
+
 
 var handlesSlider = document.getElementById('slider-handles');
 
@@ -31,7 +42,9 @@ noUiSlider.create(handlesSlider, {
   connect: true,
   pips: {
     mode: 'range',
+    values: 6,
     density: 4
+  
   },
   range: {
     'min': [  2000 ],
@@ -198,11 +211,7 @@ var kolich = new Vue({
         actionType: "gift",
         actionDesc:"Скидка по промокоду ЖАРА"
       },
-      {
-        actionName: "Дарим по 500 р.",
-        actionType: "sale",
-        actionDesc:"Скидка по промокоду ЖАРА"
-      }
+
       
 
       ],
@@ -413,8 +422,14 @@ var kolich = new Vue({
     }
 
 
-    ]
+    ],
+       cm: true,
 
+  },
+  methods: {
+    switchsite: function() {
+      this.cm = !this.cm;
+    }
   }
 
 

@@ -89,7 +89,7 @@
             </div>
           </div>
           <div class="col d-flex flex-row align-items-center border-right-1 shrink header-btn">
-            <img src="https://i.snag.gy/oJxb64.jpg" class="m-1" alt="" />
+            <div class="icon-catalog-header header-icon pt-2 text-muted"></div>
             <a href="#" class="hidden-lg-down">
               <h6 class="mb-0 ml-2 main-link">Каталог</h6>
             </a>
@@ -113,7 +113,7 @@
             </div>
           </div>
           <div class="col d-flex flex-row align-items-center border-right-1 shrink header-btn">
-            <img src="https://i.snag.gy/uSmB9r.jpg" class=" m-1" alt="" />
+            <div class="icon-compare header-icon"></div>
             <div class="d-flex flex-column ml-2 hidden-md-down">
               <a href="" class="main-link">
                 <h6 class="mb-0">Сравнение</h6>
@@ -121,7 +121,7 @@
             </div>
           </div>
           <div class="col d-flex flex-row align-items-center shrink header-btn">
-            <img src="https://i.snag.gy/51LOiG.jpg" class="m-1" alt="" />
+             <div class="icon-cart header-icon"></div>
             <div class="d-flex flex-column ml-2 hidden-md-down">
               <a href="" class="main-link">
                 <h6 class="mb-0">Корзина</h6>
