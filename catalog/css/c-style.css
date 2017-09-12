@@ -576,8 +576,8 @@ a:hover {
 
 .stikerWrap .dropdown-menu{
       padding: 0.75rem;
-    min-width: 300px;
-    max-width: 300px;
+    width: 300px;
+    
     border:none;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             top: 21px;
@@ -602,4 +602,25 @@ a:hover {
 .dropdown.show .dropdown-menu {
     max-height: 200px;
     opacity: 1;
+}
+
+
+
+
+@media screen and (max-width: 768px){
+
+
+.stikerWrap .dropdown-menu{
+  position: fixed;
+  width: 90vw;
+
+  margin:5vh 5vw; 
+
+
+        box-shadow: 0 0 100px 100px rgba(0, 0, 0, 0.1);
+            top: 21px;
+          }
+
+
+
 }
