@@ -515,7 +515,7 @@ a:hover {
 
 .catBanner {
   width: 100%;
-  height: 130px;
+  height: 150px;
   overflow: hidden;
       position: relative;
 }
@@ -557,3 +557,17 @@ a:hover {
     padding-top: .25rem;
 
 }
+
+
+
+.search-input:before {
+    content: "m";
+    font-family: icons;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: #adadad;
+    cursor: pointer;
+    padding: .5rem .85rem;
+}
+
