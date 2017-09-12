@@ -270,7 +270,8 @@ var kolich = new Vue({
       actions:[{
         actionName: "Подарок за покупку",
         actionType: "gift",
-        actionDesc:"ОПисание3"
+        actionDesc:"Купи кофемашину Delonghi – получи 10 килограмм кофе «Кимбо Арабика».",
+          actionImg: "http://via.placeholder.com/60x60"
       }],
       stores: [{
         storeName: "в ТЦ Черемушки",
