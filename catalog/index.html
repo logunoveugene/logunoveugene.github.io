@@ -302,19 +302,18 @@
         </div>
         <div v-if="layout == 'grid'" class="row mb-5 pr-lg-3">
           <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-6 p-0 d-flex flex-column border p-3" v-for="(product, index) in products">
-            <div class="d-flex justify-content-center mb-4 img-wrap pt-3">
-              <div class="stikerWrap" v-if="products[index].actions !== 0">
+          <div class="stikerWrap" v-if="products[index].actions !== 0">
                 <div class="d-inline" v-for="(action, index) in product.actions">
                   <div class="dropdown d-inline">
-                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                      <span class="mr-1 stiker" :class="action.actionType">{{action.actionName}}</span>
+                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="mr-1 stiker text-white" :class="action.actionType">
+                      {{action.actionName}}
                     </a>
                     <div class="dropdown-menu">
                     <button type="button" class="close" aria-label="Close">
   <span aria-hidden="true">&times;</span>
 </button>
                       <div class="media">
-                        <img class="d-flex mr-3" :src="action.actionImg" alt="Generic placeholder image">
+                        <img class="d-flex mr-3" :src="action.actionImg" alt="1">
                         <div class="media-body">
                           <div class="mt-0 ">{{action.actionName}}</div>
                           <div class="small">{{action.actionDesc}}</div>
@@ -325,6 +324,18 @@
                   </div> 
                 </div>
               </div>
+
+              
+            <div class="d-flex justify-content-center mb-4 img-wrap pt-3">
+
+
+              
+
+
+
+
+
+
               <div class="d-flex mx-lg-3 mt-lg-3">
                 <img class="align-self-center poduct-img" :src="product.img" alt="">
               </div>
@@ -381,8 +392,8 @@
                 <div class="d-inline" v-for="(action, index) in product.actions">
 
                   <div class="dropdown d-inline">
-                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                      <span class="mr-1 stiker" :class="action.actionType">{{action.actionName}}</span>
+                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="mr-1 stiker text-white" :class="action.actionType">
+                      {{action.actionName}}
                     </a>
                     <div class="dropdown-menu">
                     <button type="button" class="close" aria-label="Close">
@@ -408,8 +419,8 @@
               <div class="stikerWrap hidden-md-up" v-if="products[index].actions !== 0">
                 <div class="d-block" v-for="(action, index) in product.actions">
                   <div class="dropdown d-block">
-                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                      <span class="mr-1 stiker" :class="action.actionType">{{action.actionName}}</span>
+                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="mr-1 stiker text-white" :class="action.actionType">
+                      {{action.actionName}}
                     </a>
                     <div class="dropdown-menu">
                     <button type="button" class="close" aria-label="Close">

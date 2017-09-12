@@ -194,7 +194,7 @@ a:hover {
   top: -1px;
   left: 0;
   max-width: 100%;
-  z-index: 100;
+  z-index: 1000;
 
 }
 
@@ -600,7 +600,7 @@ a:hover {
 }
 
 .dropdown.show .dropdown-menu {
-
+z-index: 100000000
     opacity: 1;
 }
 
