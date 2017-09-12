@@ -400,7 +400,8 @@
 
 
               <div class="stikerWrap hidden-md-up" v-if="products[index].actions !== 0">
-                <div class="dropdown d-block">
+                <div class="d-block" v-for="(action, index) in product.actions">
+                  <div class="dropdown d-block">
                     <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
                       <span class="mr-1 stiker" :class="action.actionType">{{action.actionName}}</span>
                     </a>
@@ -415,6 +416,7 @@
                       </div>
                     </div>
                   </div>  
+                </div>
               </div>
 
 
