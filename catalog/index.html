@@ -400,11 +400,21 @@
 
 
               <div class="stikerWrap hidden-md-up" v-if="products[index].actions !== 0">
-                <div class="d-block" v-for="(action, index) in product.actions">
-                  <a data-toggle="tooltip" data-html="true" data-placement="bottom" :title="action.actionDesc">
-                    <span class="mr-1 stiker" :class="action.actionType">{{action.actionName}}</span>
-                  </a>
-                </div>
+                <div class="dropdown d-block">
+                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                      <span class="mr-1 stiker" :class="action.actionType">{{action.actionName}}</span>
+                    </a>
+                    <div class="dropdown-menu">
+                      <div class="media">
+                        <img class="d-flex mr-3" :src="action.actionImg" alt="Generic placeholder image">
+                        <div class="media-body">
+                          <div class="mt-0 ">{{action.actionName}}</div>
+                          <div class="small">{{action.actionDesc}}</div>
+                          <a href="#" class="small">Подробнее</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>  
               </div>
 
 
