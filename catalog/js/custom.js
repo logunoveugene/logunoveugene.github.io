@@ -60,19 +60,7 @@ noUiSlider.create(handlesSlider, {
 
 
 
- $(function () {
-      $('[data-toggle="tooltip"]').tooltip({
-        template:'<div class="tooltip" role="tooltip"><div class="tooltip-arrowe"></div><div class="tooltip-inner"></div></div>',
-        trigger: 'click',
-        container: 'body',
-        constraints: [
-        {
-          to: 'scrollParent',
-          pin: true
-        },
-        ]}
-        )
-    });
+
 
 
 
@@ -204,12 +192,15 @@ var kolich = new Vue({
       actions:[{
         actionName: "Летние скидки",
         actionType: "sale",
-        actionDesc:"Скидка по промокоду ЖАРА"
+        actionDesc:"Только два дня на широкий ассортимент товаров действуют скидки до 50%!",
+        actionImg: "http://via.placeholder.com/60x60"
+
       },
       {
         actionName: "Подарок за покупку",
         actionType: "gift",
-        actionDesc:"Скидка по промокоду ЖАРА"
+        actionDesc:"Купи кофемашину Delonghi – получи 10 килограмм кофе «Кимбо Арабика».",
+          actionImg: "http://via.placeholder.com/60x60"
       },
 
       

@@ -197,7 +197,7 @@
        <div class="catBanner " >
           <div class="swiper-wrapper ">
             <div class="swiper-slide">
-              <img class="w-100" src="https://i.snag.gy/L2njBz.jpg" alt="">
+              <img class="w-100" src="https://i.snag.gy/JoV0p3.jpg" alt="">
             </div>
             <div class="swiper-slide">
               <img class="w-100" src="https://i.snag.gy/8luxsd.jpg" alt="">
@@ -206,7 +206,7 @@
               <img class="w-100" src="https://i.snag.gy/Td0qAm.jpg" alt="">
             </div>
              <div class="swiper-slide">
-              <img class="w-100" src="https://i.snag.gy/JoV0p3.jpg" alt="">
+              <img class="w-100" src="https://i.snag.gy/L2njBz.jpg" alt="">
             </div>
           </div>
           <div class="slider-arrow slider-arrow-l">
@@ -218,7 +218,7 @@
         </div>
       </div>
       <div class="col shrink hidden-md-down  ">
-        <div class="border w-208 mr-3 sticky-top"><img src="https://i.snag.gy/aTlq8R.jpg" alt=""></div>
+        <div class="border w-208 mr-3 sticky-top"><img src="https://i.snag.gy/o4RxHh.jpg" alt=""></div>
       </div>
       <div class="col">
         <div class="row  pr-lg-3">
@@ -305,9 +305,21 @@
             <div class="d-flex justify-content-center mb-4 img-wrap pt-3">
               <div class="stikerWrap" v-if="products[index].actions !== 0">
                 <div class="d-inline" v-for="(action, index) in product.actions">
-                  <a data-toggle="tooltip" data-html="true" data-placement="bottom" :title="action.actionDesc">
-                    <span class="mr-1 stiker" :class="action.actionType">{{action.actionName}}</span>
-                  </a>
+                  <div class="dropdown d-inline">
+                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                      <span class="mr-1 stiker" :class="action.actionType">{{action.actionName}}</span>
+                    </a>
+                    <div class="dropdown-menu">
+                      <div class="media">
+                        <img class="d-flex mr-3" :src="action.actionImg" alt="Generic placeholder image">
+                        <div class="media-body">
+                          <div class="mt-0 ">{{action.actionName}}</div>
+                          <div class="small">{{action.actionDesc}}</div>
+                          <a href="" class="small">Подробнее</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div> 
                 </div>
               </div>
               <div class="d-flex mx-3 mt-3">
@@ -364,11 +376,28 @@
 
           <div class="stikerWrap hidden-sm-down" v-if="products[index].actions !== 0">
                 <div class="d-inline" v-for="(action, index) in product.actions">
-                  <a data-toggle="tooltip" data-html="true" data-placement="bottom" :title="action.actionDesc">
-                    <span class="mr-1 stiker" :class="action.actionType">{{action.actionName}}</span>
-                  </a>
+
+                  <div class="dropdown d-inline">
+                    <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                      <span class="mr-1 stiker" :class="action.actionType">{{action.actionName}}</span>
+                    </a>
+                    <div class="dropdown-menu">
+                      <div class="media">
+                        <img class="d-flex mr-3" :src="action.actionImg" alt="Generic placeholder image">
+                        <div class="media-body">
+                          <div class="mt-0 ">{{action.actionName}}</div>
+                          <div class="small">{{action.actionDesc}}</div>
+                          <a href="#" class="small">Подробнее</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>   
+
                 </div>
               </div>
+
+
+
 
               <div class="stikerWrap hidden-md-up" v-if="products[index].actions !== 0">
                 <div class="d-block" v-for="(action, index) in product.actions">

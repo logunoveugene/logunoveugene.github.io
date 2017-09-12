@@ -571,3 +571,35 @@ a:hover {
     padding: .5rem .85rem;
 }
 
+
+
+
+.stikerWrap .dropdown-menu{
+      padding: 0.75rem;
+    min-width: 300px;
+    max-width: 300px;
+    border:none;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            top: 21px;
+          }
+
+
+
+            /* actual dropdown animation */
+.dropdown .dropdown-menu {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.dropdown.show .dropdown-menu {
+    max-height: 200px;
+    opacity: 1;
+}
