@@ -218,7 +218,9 @@
         </div>
       </div>
       <div class="col shrink hidden-md-down  ">
-        <div class="border w-208 mr-3 sticky-top"><img src="https://i.snag.gy/o4RxHh.jpg" alt=""></div>
+        <div class="border mr-3 sticky-top"><img src="https://i.snag.gy/o4RxHh.jpg" alt=""></div>
+        <!--  <div class="border mr-3 sticky-top"><img src="https://i.snag.gy/8c40TL.jpg" alt=""></div> -->
+        
       </div>
       <div class="col">
         <div class="row  pr-lg-3">
@@ -301,7 +303,7 @@
 
         </div>
         <div v-if="layout == 'grid'" class="row mb-5 pr-lg-3">
-          <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-6 p-0 d-flex flex-column border p-3" v-for="(product, index) in products">
+          <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-6 p-0 d-flex flex-column border" v-for="(product, index) in products">
           <div class="stikerWrap" v-if="products[index].actions !== 0">
                 <div class="d-inline" v-for="(action, index) in product.actions">
                   <div class="dropdown d-inline">
