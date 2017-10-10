@@ -227,6 +227,9 @@ a:hover {
 .sale {
   background-color: #761ca9;
 }
+.d-bonus {
+  background-color: #e7a300;
+}
 
 .tooltip-inner {
   max-width: 200px;
@@ -628,4 +631,32 @@ transform: translateY(-50%);
 
 
 
+}
+
+.quick-view{
+  opacity: 0;
+  color: white;
+  position: absolute;
+  background: rgba(0,0,0,.7);
+  border-radius: 5px;
+  font-size: 80%;
+  padding: .25rem;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.poduct-img-wrap-z{
+  position: relative;
+}
+
+.poduct-img-wrap-z:hover .quick-view{
+  opacity: .7;
+  transition: all 0.3s;
+}
+
+.poduct-img-wrap-z:hover .quick-view:hover{
+    opacity: .9;
 }

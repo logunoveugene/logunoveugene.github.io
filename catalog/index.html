@@ -219,7 +219,7 @@
       </div>
       <div class="col shrink hidden-md-down  ">
         <div class="border mr-3 sticky-top"><img src="https://i.snag.gy/o4RxHh.jpg" alt=""></div>
-        <!--  <div class="border mr-3 sticky-top"><img src="https://i.snag.gy/8c40TL.jpg" alt=""></div> -->
+        <!--  https://i.snag.gy/ZBDfsS.jpg" -->
         
       </div>
       <div class="col">
@@ -304,7 +304,7 @@
         </div>
         <div v-if="layout == 'grid'" class="row mb-5 pr-lg-3">
           <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-6 p-0 d-flex flex-column border" v-for="(product, index) in products">
-          <div class="stikerWrap" v-if="products[index].actions !== 0">
+          <div class="stikerWrap" v-if="products[index].actions !== 0" id="stickers">
                 <div class="d-inline" v-for="(action, index) in product.actions">
 
 
@@ -342,8 +342,9 @@
 
 
 
-              <div class="d-flex mx-lg-3 mt-lg-3">
+              <div class="d-flex mx-lg-3 mt-lg-3 poduct-img-wrap-z">
                 <img class="align-self-center poduct-img" :src="product.img" alt="">
+                <div class="quick-view">Быстрый просмотр</div>
               </div>
             </div>
             <div class="mb-2 productName hidden-sm-down small">
@@ -602,8 +603,6 @@
                 </div>
               </div>
             </div>
-
-
         </div>
         <div class="fixed-bottom p-2">
             <button type="button" class="btn btn-primary btn-lg btn-block ">Применить сортировку</button>
@@ -620,5 +619,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/10.1.0/nouislider.min.js"></script>
 <script src="js/custom.js"></script>
+
+
 </body>
 </html>

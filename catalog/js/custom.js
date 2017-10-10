@@ -53,9 +53,6 @@ noUiSlider.create(handlesSlider, {
 });
 
 
-
-
-
   });
 
 
@@ -199,6 +196,11 @@ var kolich = new Vue({
       {
         actionName: "Подарок за покупку",
         actionType: "gift",
+        actionDesc:"Купи кофемашину Delonghi – получи 10 килограмм кофе «Кимбо Арабика».",
+          actionImg: "http://via.placeholder.com/60x60"
+      },{
+        actionName: "Двойные бонусы",
+        actionType: "d-bonus",
         actionDesc:"Купи кофемашину Delonghi – получи 10 килограмм кофе «Кимбо Арабика».",
           actionImg: "http://via.placeholder.com/60x60"
       },
