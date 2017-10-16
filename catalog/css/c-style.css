@@ -765,3 +765,7 @@ transform: translateY(-50%);
   text-transform: uppercase;
   border-radius: 0;
 }
+
+.main-props {
+    line-height: 1.75rem;
+}
