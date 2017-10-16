@@ -646,6 +646,7 @@ transform: translateY(-50%);
   transform: translate(-50%,-50%);
   cursor: pointer;
   transition: all 0.1s;
+  white-space: nowrap;
 }
 
 .poduct-img-wrap-z{
@@ -659,4 +660,108 @@ transform: translateY(-50%);
 
 .poduct-img-wrap-z:hover .quick-view:hover{
     opacity: .9;
+      color: white;
+
+}
+
+
+
+
+.img-tab-content {
+  position: relative;
+}
+
+.main-image {
+  width: 100%;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+.main-image .swiper-slide {
+  display: block;
+  width: 50px;
+  color: #999;
+  font-size: 14px;
+  line-height: 50px;
+  text-align: center;
+}
+
+.img-tab-nav {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  padding: 0 10px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.img-tab-nav {
+  height: 20%!important;
+  box-sizing: border-box;
+  overflow: hidden;
+  padding: 10px 0;
+}
+
+.img-tab-nav .swiper-slide {
+  padding: 5px;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+.img-tab-nav .active {
+  opacity: 0.7;
+  border: 1px solid #eee;
+}
+
+.large-image {
+  max-height: 320px;
+  max-width: 100%;
+}
+
+.full-image-warp {
+  height: 100vh;
+}
+
+.image-warp {
+  height: 320px;
+  cursor: zoom-in;
+}
+
+.zoom-cursor {
+  cursor: zoom-in;
+}
+
+@media screen and (max-width: 425px) {
+  .image-warp {
+    height: 220px;
+  }
+  .large-image {
+    max-height: 220px;
+  }
+}
+
+
+
+.quick-product-modal{
+
+}
+
+
+@media (min-width: 576px){
+
+.quick-product-modal{
+    max-width: 1140px;
+    margin: 30px auto;
+}}
+
+.delivery-info {
+  background-color: #f2fbee;
+}
+
+
+.badge-benefit {
+  background-color: #ffe600;
+  color: #000;
+  text-transform: uppercase;
+  border-radius: 0;
 }

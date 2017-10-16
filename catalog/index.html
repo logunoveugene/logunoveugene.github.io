@@ -344,7 +344,7 @@
 
               <div class="d-flex mx-lg-3 mt-lg-3 poduct-img-wrap-z">
                 <img class="align-self-center poduct-img" :src="product.img" alt="">
-                <div class="quick-view">Быстрый просмотр</div>
+                <div class=""><a href="#" data-toggle="modal" data-target="#quick-product" class="quick-view"><i class="icon-search-field mr-2"></i>Быстрый просмотр</a></div>
               </div>
             </div>
             <div class="mb-2 productName hidden-sm-down small">
@@ -611,7 +611,129 @@
     </div>
   </div>
 </div>
+<div class="modal fade" id="quick-product" tabindex="-1" role="dialog" aria-labelledby="quick-product" aria-hidden="true">
+    <div class="modal-dialog modal-content quick-product-modal" role="document">
+      <div class="card-block">
+        <div class="row">
+          <div class="col-10">
+            <h5 class="modal-title" id="">Телевизор BBK 32LEM-1018/T2C</h5>
+          </div>
+          <div class="col-2">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card-block pt-0">
+        <div class="mx-auto">
+         <div class="row">
+      <div class="col-lg-5 col-md-7 col-12">
+        <div class="mb-3">
+          <div class="mb-2">
+            <div class="d-flex flex-row align-items-center hidden-sm-down">
+              <div class="mr-2">
+                <rate :length="5" :value="4"></rate>
+              </div>
+              <a href="" class="small">4,4 (17 отзывов)</a>
+            </div>
+          </div>
+          <div class="main-image mb-3">
+            <div class="img-tab-content">
+              <div class="swiper-wrapper">
+                <div v-for="slide in swiperSlides" class="swiper-slide image-warp">
+                  <a  href="" >
+                    <img :data-src="slide" class="swiper-lazy large-image">
+                    <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-pagination hidden-sm-up"></div>
+            </div>
+            <div class="img-tab-nav hidden-sm-down" id="tabNav">
+              <div class="swiper-wrapper">
+                <div v-for="(slide, index)  in swiperSlidesThumbs" class="swiper-slide" :data-slide-index="index">
+                  <img :src="slide">
+                </div>
+              </div>
+              <div class="swiper-scrollbar"></div>
+            </div>
+          </div>
+           </div>
+      </div>
+      <div class="col-lg-7  col-md-5 col-12">
+        <div class="row">
+          <div class="col-md-6 hidden-md-down">
+            <div class="d-flex flex-column ml-3">
+              <div class="mb-5">
+                <div class="mb-2">Основные характеристики</div>
+                <ul class="list-unstyled small main-props mb-3">
+                  <li>Диагональ дисплея - 55 " (139,7 см)</li>
+                  <li>Тип - QLED</li>
+                  <li>HD-формат - 4K (3840x2160 пикселей)</li>
+                  <li>Smart TV, android TV</li>
+                  <li>WIFI, Ethernet</li>
+                  <li>Вход HDMI x4, Интерфейс USB x3</li>
+                  <li>DVB-T, DVB-T2, DVB-C, DVB-S2</li>
+                </ul>
+                <img src="https://i.snag.gy/wvhWE1.jpg" alt="" class="mb-4">
+                <div class=""><a href="">Все характеристики</a></div>
+              </div>
+              <div class="mb-5">
+                <div class="mb-2">
+                  <span class="mr-2">Права покупателей защищены</span>
+                </div>
+                <ul class="list-unstyled small main-props">
+                  <li>Гарантия от Samsung 1 год</li>
+                  <li>Обязательная предпродажная проверка </li>
+                  <li>14 дней на возврат</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12 col-12 mb-4">
+            <div class="d-flex flex-column">
+              <img src="https://i.snag.gy/8VrZxc.jpg" alt="" class="hidden-sm-down mb-3">
+              <div class=" ">
+                <div class="mb-3">
+                  <div class="d-flex flex-column">
+                    <p class="text-muted small mb-0"><del>174 600 p.</del></p>
+                    <div class="h3 mb-1">169 990 p.</div>
+                    <div class="mb-0">
+                      <span class="badge badge-benefit">ЭКОНОМИЯ 4 610 р. (скидка 12%)</span>
+                    </div>
+                    <p v-if="cm==false" class="text-danger small  mt-2 mb-0">До 1 746 р. бонусов</p>
+                    <button type="button" class="btn btn-lg mt-3 mb-3" v-bind:class="{ 'btn-primary':cm, 'btn-warning':!cm }">Добавить в корзину</button>
+                    <button type="button" class="btn btn-secondary mb-3">Купить в 1 клик</button>
+                    <div class="d-flex flex-row justify-content-between small">
+                      <a href="#">Как купить в кредит?</a>
+                      <a href="#">Нашли дешевле? снизим цену!</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-3 delivery-info mb-4">
+                  <div class="d-flex flex-column">
+                    <div class="small mb-1  ">
+                      <a href="">Забрать в 6 магазинах</a> – сегодня</div>
+                    <div class="small ">Доставка ‒  с 15 сентября, 320 р. </div>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex flex-row small">
+                <a href="" class="text-muted mr-4"> <img src="https://i.snag.gy/HL2TFZ.jpg" alt="" class="mb-1 mr-2"><span>Сравнить</span> </a>
+                <a href="" class="text-muted"> <img src="https://i.snag.gy/2pc1QP.jpg" alt="" class="mb-1 mr-2"><span>Добавить в желания</span> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="js/tether.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>

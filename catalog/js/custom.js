@@ -53,7 +53,49 @@ noUiSlider.create(handlesSlider, {
 });
 
 
+
+
+  var tabNavSwiper = new Swiper('.img-tab-nav', {
+    slidesPerView: 'auto',
+    scrollbar: '.swiper-scrollbar',
+    scrollbarHide: false
+    
   });
+
+  var tabContentSwiper  = new Swiper('.img-tab-content', {
+    preloadImages: false,
+    lazyLoading: true,
+    keyboardControl: true,
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+
+    onSlideChangeStart: function onSlideChangeStart(swiper) {
+      $('#tabNav .active').removeClass('active');
+      $('#tabNav .swiper-slide[data-slide-index=' + swiper.activeIndex + ']').addClass('active');
+      if (swiper.previousIndex < swiper.activeIndex) {
+        tabNavSwiper.slideTo(swiper.activeIndex - 2);
+      } else {
+        tabNavSwiper.slideTo(swiper.activeIndex - 1);
+      }
+    }
+  });
+
+  $('#tabNav .swiper-slide').on('click', function (event) {
+    tabContentSwiper.slideTo($(this).data('slide-index'));
+  });
+
+
+$('#quick-product').on('shown.bs.modal', function (event) {
+  setTimeout(function () {
+  tabNavSwiper.update;
+  tabContentSwiper.update;
+  }, 1000);
+});
+
+
+  });
+
+
 
 
 
@@ -142,6 +184,28 @@ var kolich = new Vue({
 
   data: {
     layout:'list',
+     swiperSlides: [
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/711/530/safe_original/12004913_1.jpg",
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/024/safe_original/12004913_2.jpg",
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/025/safe_original/12004913_3.jpg",
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/026/safe_original/12004913_4.jpg",
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/027/safe_original/12004913_5.jpg", 
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/028/safe_original/12004913_6.jpg",
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/029/safe_original/12004913_7.jpg", 
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/030/safe_original/12004913_8.jpg",
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/031/safe_original/12004913_9.jpg"    
+          ],
+        swiperSlidesThumbs: [
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/711/530/thumb/12004913_1.jpg",
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/024/thumb/12004913_2.jpg",
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/025/thumb/12004913_3.jpg",
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/026/thumb/12004913_4.jpg",
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/027/thumb/12004913_5.jpg", 
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/028/thumb/12004913_6.jpg",
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/029/thumb/12004913_7.jpg",
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/030/thumb/12004913_8.jpg",
+          "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/031/thumb/12004913_9.jpg"  
+          ],
     products: [ 
     {
       id: 20101507,
