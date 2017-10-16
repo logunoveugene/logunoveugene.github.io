@@ -215,6 +215,7 @@ var kolich = new Vue({
       oldPrice: 0,
       price: 54800,
       discount:0,
+      newprice:0,
       rate:4.5,
       rateCount:65,
       amount:"Забрать в 6 магазинах сегодня",
@@ -247,29 +248,18 @@ var kolich = new Vue({
       oldPrice: 0,
       price: 84800,
       discount:1800,
+      newprice:0,
       rate:3.1,
       rateCount:15,
       amount:"Забрать в 6 магазинах сегодня",
       actions:[{
-        actionName: "Летние скидки",
-        actionType: "sale",
+        actionName: "Скидка по промокоду",
+        actionType: "promocod",
         actionDesc:"Только два дня на широкий ассортимент товаров действуют скидки до 50%!",
         actionImg: "http://via.placeholder.com/60x60"
 
       },
-      {
-        actionName: "Подарок за покупку",
-        actionType: "gift",
-        actionDesc:"Купи кофемашину Delonghi – получи 10 килограмм кофе «Кимбо Арабика».",
-          actionImg: "http://via.placeholder.com/60x60"
-      },{
-        actionName: "Двойные бонусы",
-        actionType: "d-bonus",
-        actionDesc:"Купи кофемашину Delonghi – получи 10 килограмм кофе «Кимбо Арабика».",
-          actionImg: "http://via.placeholder.com/60x60"
-      },
-
-      
+        
 
       ],
       stores: [{
@@ -299,10 +289,20 @@ var kolich = new Vue({
       oldPrice: 19860,
       price: 18800,
       discount:0,
+      newprice:0,
       rate:0,
       rateCount:0,
       amount:"Забрать в 6 магазинах сегодня",
-      actions:0,
+      actions:[{
+        actionName: "Цена снижена",
+        actionType: "sale",
+        actionDesc:"Только два дня на широкий ассортимент товаров действуют скидки до 50%!",
+        actionImg: "http://via.placeholder.com/60x60"
+
+      },
+        
+
+      ],
       stores: [{
         storeName: "в ТЦ Черемушки",
         date: "2017-10-24" 
@@ -330,15 +330,20 @@ var kolich = new Vue({
       oldPrice: 33860,
       price: 21800,
       discount:0,
+      newprice:0,
       rate:5,
       rateCount:3,
       amount:"Забрать в 6 магазинах сегодня",
-      actions:[{
-        actionName: "Подарок за покупку",
-        actionType: "gift",
-        actionDesc:"Купи кофемашину Delonghi – получи 10 килограмм кофе «Кимбо Арабика».",
-          actionImg: "http://via.placeholder.com/60x60"
-      }],
+     actions:[{
+        actionName: "Цена снижена",
+        actionType: "sale",
+        actionDesc:"Только два дня на широкий ассортимент товаров действуют скидки до 50%!",
+        actionImg: "http://via.placeholder.com/60x60"
+
+      },
+        
+
+      ],
       stores: [{
         storeName: "в ТЦ Черемушки",
         date: "2017-10-24" 
@@ -366,6 +371,7 @@ var kolich = new Vue({
       oldPrice: 0,
       price: 32990,
       discount:0,
+      newprice:0,
       rate:4.5,
       rateCount:60,
       amount:"Забрать в 6 магазинах сегодня",
@@ -396,6 +402,7 @@ var kolich = new Vue({
       oldPrice: 0,
       price: 32990,
       discount:0,
+      newprice:0,
       rate:4.5,
       rateCount:15,
       amount:"Забрать в 6 магазинах сегодня",
@@ -426,6 +433,7 @@ var kolich = new Vue({
       oldPrice: 0,
       price: 86990,
       discount:0,
+      newprice:0,
       rate:4.5,
       rateCount:71,
       amount:"Забрать в 6 магазинах сегодня",
@@ -456,10 +464,20 @@ var kolich = new Vue({
       oldPrice: 0,
       price: 169990,
       discount:1800,
+      newprice:0,
       rate:4.5,
       rateCount:8,
       amount:"Забрать в 6 магазинах сегодня",
-      actions:0,
+        actions:[{
+        actionName: "Скидка по промокоду",
+        actionType: "promocod",
+        actionDesc:"Только два дня на широкий ассортимент товаров действуют скидки до 50%!",
+        actionImg: "http://via.placeholder.com/60x60"
+
+      },
+        
+
+      ],
       stores: [{
         storeName: "в ТЦ Черемушки",
         date: "2017-10-24" 

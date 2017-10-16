@@ -392,6 +392,11 @@
 
 
 
+
+
+
+
+
         <div v-if="layout == 'list'" class="row pr-lg-3">
           <div class="product-plate col-12 " v-for="(product, index) in products">
           
@@ -485,6 +490,9 @@
                           <div class="discount" v-if="products[index].discount !== 0">
                             <mark>Доступна скидка {{product.discount}} р.</mark>
                           </div>
+                          <div class="discount " v-if="products[index].oldPrice !== 0">
+                            <mark>Выгода {{product.oldPrice-product.price}} р.</mark>
+                          </div>
                         </div>
                         <button type="button" class="btn btn-secondary">
                           <div class="icon-cart text-muted"></div>
@@ -500,6 +508,11 @@
                         <div class="discount mb-2" v-if="products[index].discount !== 0">
                           <mark>Доступна скидка {{product.discount}} р.</mark>
                         </div>
+                         <div class="discount mb-2" v-if="products[index].oldPrice !== 0">
+                            <mark>Выгода {{product.oldPrice-product.price}} р.</mark>
+                          </div>
+
+
                       </div>
                       <div class="">
                         <button type="button" class="btn btn-primary mb-2">В корзину</button>
@@ -534,6 +547,10 @@
       </div>
     </div>
   </div>
+
+
+
+
   <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="fullscreen-image" aria-hidden="true">
     <div class="modal-dialog modal-full" role="document">
       <div class="card-block">
