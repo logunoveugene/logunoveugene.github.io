@@ -488,10 +488,10 @@
                           <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
                           <span class=" mb-0"><b>{{product.price}} р.</b></span>
                           <div class="discount" v-if="products[index].discount !== 0">
-                            <mark>Доступна скидка {{product.discount}} р.</mark>
+                            <mark>Доступна скидка <span class="text-nowrap">{{product.discount}} р.</span></mark>
                           </div>
                           <div class="discount " v-if="products[index].oldPrice !== 0">
-                            <mark>Выгода {{product.oldPrice-product.price}} р.</mark>
+                            <mark>Выгода <span class="text-nowrap">{{product.oldPrice-product.price}} р.</span></mark>
                           </div>
                         </div>
                         <button type="button" class="btn btn-secondary">
@@ -506,10 +506,10 @@
                         <span class="small text-muted  mb-1" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
                         <div class="h5 mb-2 "><b>{{product.price}} р.</b></div>
                         <div class="discount mb-2" v-if="products[index].discount !== 0">
-                          <mark>Доступна скидка {{product.discount}} р.</mark>
+                          <mark>Доступна скидка <span class="text-nowrap">{{product.discount}} р.</span></mark>
                         </div>
                          <div class="discount mb-2" v-if="products[index].oldPrice !== 0">
-                            <mark>Выгода {{product.oldPrice-product.price}} р.</mark>
+                            <mark>Выгода <span class="text-nowrap">{{product.oldPrice-product.price}} р.</span></mark>
                           </div>
 
 
