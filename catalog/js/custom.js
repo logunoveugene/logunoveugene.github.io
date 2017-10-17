@@ -475,6 +475,19 @@ var kolich = new Vue({
         actionDesc:"Только два дня на широкий ассортимент товаров действуют скидки до 50%!",
         actionImg: "http://via.placeholder.com/60x60"
 
+      },{
+        actionName: "Рассрочка 0%",
+        actionType: "credit",
+        actionDesc:"Только два дня на широкий ассортимент товаров действуют скидки до 50%!",
+        actionImg: "http://via.placeholder.com/60x60"
+
+      },
+      {
+        actionName: "Цена снижена",
+        actionType: "sale",
+        actionDesc:"Только два дня на широкий ассортимент товаров действуют скидки до 50%!",
+        actionImg: "http://via.placeholder.com/60x60"
+
       },
         
 
