@@ -119,6 +119,11 @@ a:hover {
 .tooltip{
   font-size: 1rem;
   font-family: arial;
+
+}
+
+.tooltip.show {
+    opacity: 1;
 }
 
 .ask:before {
@@ -155,4 +160,12 @@ a:hover {
 
 .tooltip-inner:before {
   display: none;
+}
+
+.gift-img{
+     flex-shrink: 0;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    margin-right: 1rem;
 }

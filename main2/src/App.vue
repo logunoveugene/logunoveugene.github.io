@@ -247,24 +247,27 @@
           </div>
           <div class="col-lg-6 col-md-12 col-12 mb-4">
             <div class="d-flex flex-column">
-              <img src="https://i.snag.gy/8VrZxc.jpg" alt="" class="">
-              <div class="card w-100 rounded-0 p-3 mb-4">
-                <div class="d-flex flex-row align-items-center">
-                  <img class="d-flex mr-3" src="https://i.snag.gy/3sorHN.jpg" alt="">
-                  <div class="media-body">
-                    <div class="small text-muted">Жесткий диск Seagate 2TB STSHX-M201TCBM</div> 
-                    <div class="d-flex flex-row align-items-end">
-                      <div class="">1 190 р.</div>
-                      <div class="small text-muted ">
-                        <del>бесплатно</del> 
-                        <a href="#" data-toggle="tooltip" title="" class="ask ml-2" style="" data-html="true" data-original-title="
-                <div class='media'><img src='http://via.placeholder.com/60x60' alt='Generic placeholder image' class='d-flex mr-3'> <div class='media-body'><div class='mt-0 '>Цена снижена</div> <div class='small'>Только два дня на широкий ассортимент товаров действуют скидки до 50%!</div> <a href='#' class='small'>Подробнее</a></div></div>" aria-describedby="tooltip395689">
-                </a>
+            
+                <img src="https://i.snag.gy/8VrZxc.jpg" alt="" class="">
+           
+                <div class="card w-100 rounded-0 p-3 mb-4">
+                  <div class="d-flex flex-row align-items-center">
+                  <div class="gift-img mr-3">
+                      <img src="https://i.snag.gy/3sorHN.jpg" alt="">
+                    </div>
+                    <div class="media-body">
+                      <div class="small text-muted mb-1">Жесткий диск Seagate 2TB STSHX-M201TCBM</div> 
+                      <div class="d-flex flex-row align-items-end">
+                        <div class="mr-1">бесплатно</div>
+                        <div class="small text-muted text-nowrap">
+                          <del>1 190 р.</del> 
+                          <a href="#" data-toggle="tooltip" title="" class="ask ml-2" style="" data-html="true" data-original-title="
+                          <div class='media'><img src='http://via.placeholder.com/60x60' alt='Generic placeholder image' class='d-flex mr-3'> <div class='media-body'><div class='mt-0 '>Цена снижена</div> <div class='small'>Только два дня на широкий ассортимент товаров действуют скидки до 50%!</div> <a href='#' class='small'>Подробнее</a></div></div>">
+                        </a>
                       </div>
                     </div>
                   </div>
                 </div>
-                
               </div>
               <div class=" ">
                 <div class="mb-3">
