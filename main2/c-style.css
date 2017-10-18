@@ -116,4 +116,43 @@ a:hover {
     padding-left: 0;
 }
 
+.tooltip{
+  font-size: 1rem;
+  font-family: arial;
+}
 
+.ask:before {
+    content: '?';
+}
+.ask {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    color: #666;
+    border: 1px solid #d2d2d2;
+    border-radius: 50%;
+    font-size: 0.875rem;
+    margin-left: .1rem;
+}
+
+
+.tooltip .tooltip-inner {
+    background: #fff;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+    color: #292b2c;
+}
+
+.tooltip-inner {
+    width: 96vw;
+    max-width: 400px;
+    text-align: left;
+    padding: .75rem 1rem;
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.tooltip-inner:before {
+  display: none;
+}

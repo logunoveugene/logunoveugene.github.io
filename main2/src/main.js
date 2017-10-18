@@ -122,7 +122,17 @@ $('#fullscreen-image').on('shown.bs.modal', function (event) {
   }, 500);
 });
 
-
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip(
+  {
+        trigger: 'click',
+        constraints: [
+        {
+          to: 'scrollParent',
+          pin: true
+        },
+        ]})
+})
 
 
 });
