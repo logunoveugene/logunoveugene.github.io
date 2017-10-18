@@ -261,7 +261,7 @@
                         <div class="mr-1">бесплатно</div>
                         <div class="small text-muted text-nowrap">
                           <del>1 190 р.</del> 
-                          <a href="javascript:void(0);" data-toggle="tooltip" title="" class="ask ml-2" style="" data-html="true" data-original-title="
+                          <a href="javascript:void(0);" data-toggle="tooltip" title="" class="ask ml-2" data-placement="bottom" data-html="true" data-original-title="
                           <div class='media'><img src='http://via.placeholder.com/60x60' alt='Generic placeholder image' class='d-flex mr-3'> <div class='media-body'><div class='mt-0 '>Цена снижена</div> <div class='small'>Только два дня на широкий ассортимент товаров действуют скидки до 50%!</div> <a href='#' class='small'>Подробнее</a></div></div>">
                         </a>
                       </div>
