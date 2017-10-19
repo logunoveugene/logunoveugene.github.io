@@ -306,8 +306,8 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-xl-8 col-12">
+    <div class="row" id="main-content">
+      <div id="content"  class="col-xl-8 col-12">
         <div class="main-tab-wrap mb-4">
         <div class="mainTabdSwiper swiper-container nav-tabs mb-4">
           <div class="swiper-wrapper ">
@@ -445,8 +445,22 @@
               </div>
 
       </div>
-      <div class="pl-5 col-4 hidden-lg-down">
-        <div class="ml-3">
+
+      <div id="sidebar" class="col-4 hidden-lg-down p-0">
+        <div class="sidebar__inner">
+        <div id="price" class="mb-3 hidden-xs-up">
+                  <div class="d-flex flex-column">
+                    <p class="text-muted small mb-0"><del>174 600 p.</del></p>
+                    <div class="h3 mb-1">169 990 p.</div>
+                    <div class="mb-0">
+                      <span class="badge badge-benefit">ЭКОНОМИЯ 4 610 р. (скидка 12%)</span>
+                    </div>
+                    <p v-if="cm==false" class="text-danger small  mt-2 mb-0">До 1 746 р. бонусов</p>
+                    <button type="button" class="btn btn-lg mt-3 mb-3" v-bind:class="{ 'btn-primary':cm, 'btn-warning':!cm }">Добавить в корзину</button>
+                   
+                  </div>
+                </div>
+
           <div class="card rounded-0">
             <div class="card-block">
               <div class="h5 mb-4 mt-2">Лучшие аксессуары</div>
@@ -471,17 +485,29 @@
                   <div class=""> 870 р.</div>
                 </div>
               </div>
-              <div class="media ">
+              <div class="media mb-3">
                 <img class="d-flex mr-3" src="https://i.snag.gy/bUsofz.jpg" alt="Generic placeholder image">
                 <div class="media-body">
                   <a href="#" class="mt-0 small text-muted">Кронштейн для ТВ наклонно-поворотный Resonans PS809</a>
                   <div class="">2 420 р.</div>
                 </div>
               </div>
+               <div class="media mb-3">
+                <img class="d-flex mr-3" src="https://i.snag.gy/Z3W62H.jpg" alt="Generic placeholder image">
+                <div class="media-body">
+                  <a href="#" class="mt-0 small text-muted">Телевизионная приставка Apple TV 64Gb</a>
+                  <div class="">4 680 р.</div>
+                </div>
+              </div>
+              <div class="">
+                <button type="button" class="btn btn-secondary btn-block">Показать все аксессары</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+
     </div>
 
   </div>

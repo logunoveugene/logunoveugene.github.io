@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import swiper from 'swiper';
+import 'sticky-sidebar';
 import 'tether';
 import './bootstrap/bootstrap';
 import './bootstrap/bootstrap.scss';
@@ -18,6 +19,8 @@ var btnW = 70; // 导航按钮的宽度，px
 var slideAmount = 9; // 分页数量
 
 $(document).ready(function () {
+
+
 var mainTabdSwiper = new Swiper('.mainTabdSwiper', {
     preventClicks :true,
     preventClicksPropagation: true,
@@ -132,7 +135,27 @@ $(function () {
           pin: true
         },
         ]})
-})
+});
+
+ var sidebar = new StickySidebar('#sidebar', {
+        containerSelector: '#main-content',
+        innerWrapperSelector: '.sidebar__inner',
+        topSpacing: 20,
+        bottomSpacing: 20
+
+    });
+
+$(window).scroll(function (event) {
+    var scroll = $(window).scrollTop();
+    if (scroll > 600) {
+        $('#price').removeClass('hidden-xs-up'); 
+    };
+    if (scroll < 600) {
+        $('#price').addClass('hidden-xs-up'); 
+    };
+});
+
+
 
 });
 
