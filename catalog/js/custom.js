@@ -1,8 +1,5 @@
   
-
 $(document).ready(function () { 
-
-
 
   var filterSet = new Swiper('.filterSet', {
     preventClicks :true,
@@ -11,7 +8,6 @@ $(document).ready(function () {
     slidesPerView: 'auto'
 
   });
-
 
   var breadcrumbsSwiper = new Swiper('.breadcrumbsSwiper', {
     preventClicks :true,
@@ -33,7 +29,6 @@ $(document).ready(function () {
   });
 
 
-
 var handlesSlider = document.getElementById('slider-handles');
 
 noUiSlider.create(handlesSlider, {
@@ -51,8 +46,6 @@ noUiSlider.create(handlesSlider, {
     'max': [ 10000 ]
   }
 });
-
-
 
 
   var tabNavSwiper = new Swiper('.img-tab-nav', {
@@ -91,6 +84,15 @@ $('#quick-product').on('shown.bs.modal', function (event) {
   tabContentSwiper.update;
   }, 1000);
 });
+
+
+ var sidebar = new StickySidebar('#sidebar', {
+        containerSelector: '#main-content',
+        innerWrapperSelector: '.sidebar__inner',
+
+
+    });
+
 
 
   });

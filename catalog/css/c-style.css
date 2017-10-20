@@ -775,3 +775,13 @@ transform: translateY(-50%);
 .main-props {
     line-height: 1.75rem;
 }
+
+#sidebar{
+  width: 264px;
+    flex-shrink: 0;
+
+}
+
+#content: {
+  margin-left: 284px;
+}
