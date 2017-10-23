@@ -39,12 +39,17 @@ html {
 
 .product-plate {
   margin: -1px 0 0 -1px;
-  border: 1px solid #e9ecef!important;
+  border: 1px solid #e9ecef;
 }
 
 .product-plate:hover {
-  transition: box-shadow 0.2s ease;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  transition: 0.2s ease;
+  box-shadow: 0 0 0 5px rgba(256, 256, 256, 1),
+
+  0 5px  35px  rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  border:1px solid #fff; !important
+
 }
 .row-img-wrap {
   width: 120px;
@@ -651,7 +656,7 @@ transform: translateY(-50%);
   left:50%;
   transform: translate(-50%,-50%);
   cursor: pointer;
-  transition: all 0.1s;
+
   white-space: nowrap;
 }
 
@@ -659,12 +664,12 @@ transform: translateY(-50%);
   position: relative;
 }
 
-.poduct-img-wrap-z:hover .quick-view{
+.product-plate:hover .quick-view{
   opacity: .7;
-  transition: all 0.3s;
+
 }
 
-.poduct-img-wrap-z:hover .quick-view:hover{
+.product-plate:hover .quick-view:hover{
     opacity: .9;
       color: white;
 
