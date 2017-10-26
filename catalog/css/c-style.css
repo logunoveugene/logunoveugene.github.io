@@ -802,11 +802,12 @@ transform: translateY(-50%);
 
 
 .btn-primary {
-  box-shadow: 0 2px 6px rgba(71, 102, 191, 0.66), 0 10px 15px rgba(71, 102, 191, 0.31);
+    box-shadow: 0 2px 6px rgba(71, 102, 191, 0.66);
+ 
 }
 
 
 .product-plate:hover .btn-primary {
-  box-shadow: 0 2px 6px rgba(71, 102, 191, 0.66);
+ box-shadow: 0 2px 6px rgba(71, 102, 191, 0.66), 0 6px 14px rgba(71, 102, 191, 0.31);
 }
 
