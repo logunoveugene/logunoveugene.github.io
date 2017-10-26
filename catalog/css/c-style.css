@@ -657,6 +657,7 @@ transform: translateY(-50%);
   transform: translate(-50%,-50%);
   cursor: pointer;
 
+  transition: all 0.1s ease;
   white-space: nowrap;
 }
 
@@ -667,12 +668,13 @@ transform: translateY(-50%);
 .product-plate:hover .quick-view{
   opacity: .7;
 
+
 }
 
 .product-plate:hover .quick-view:hover{
     opacity: .9;
-      color: white;
 
+  color: white;
 }
 
 
@@ -811,3 +813,6 @@ transform: translateY(-50%);
  box-shadow: 0 2px 6px rgba(71, 102, 191, 0.66), 0 6px 14px rgba(71, 102, 191, 0.31);
 }
 
+.btn-primary:active {
+ box-shadow: 0 1px 3px rgba(71, 102, 191, 0.66));
+}
