@@ -67,10 +67,12 @@ html {
 .poduct-img {
   max-width: 100%;
   max-height: 200px;
+    transition: all 0.2s ease;
 }
 .row-poduct-img {
   max-width: 120px;
   max-height: 120px;
+    transition: all 0.2s ease;
 }
 
 
@@ -823,6 +825,7 @@ transform: translateY(-50%);
 
 .product-plate:hover  .row-poduct-img{
   opacity: 0.5;
+
 }
 
 
