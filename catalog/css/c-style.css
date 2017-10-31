@@ -861,7 +861,7 @@ background-color: white;
     width: 100%;
     position: fixed;
     height: 100%;
-    max-height: calc(100% - 108px);
+    max-height: calc(100% - 106px);
     box-shadow: 0 5px 20px rgba(0,0,0,0.3);
     bottom: 0px;
     left: 0;
