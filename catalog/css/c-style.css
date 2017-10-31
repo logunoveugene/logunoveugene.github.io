@@ -865,7 +865,7 @@ background-color: white;
     box-shadow: 0 5px 20px rgba(0,0,0,0.3);
     bottom: 0px;
     left: 0;
-    overflow-x: scroll;
+    overflow: scroll;
 
 
 
@@ -885,12 +885,14 @@ background-color: white;
 
 }
 .button-search-result{
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #fff; 
-  box-shadow: 0 10px 30px 30px #fff;
-    margin:  1rem 0;
+     position: fixed;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    padding: 0 15px;
+    background-color: #fff;
+    box-shadow: 0 10px 30px 30px #fff;
+    margin: 1rem 0;
 }
 
 .relative{
@@ -909,13 +911,13 @@ background-color: white;
     position: absolute;
       top: 55px;
   left: -15px;
-      overflow-x: hidden;
+      overflow: hidden;
 
 }
 
 
 .button-search-result{
   position: absolute;
-
+    margin:  0 0;
 }
 }
