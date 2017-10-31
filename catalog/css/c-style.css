@@ -852,3 +852,57 @@ transform: translateY(-50%);
   content: "d";
   font-family: 'untitled-font-4';
 }
+
+
+.search-result{
+  z-index: 1111111111111;
+background-color: white;
+  height: 500px;
+    width: 100%;
+    position: fixed;
+    height: 500px;
+    max-height: calc(100vh - 108px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    top: 107px;
+    left: 0;
+    overflow: hidden;
+
+
+}
+
+
+.search-image-wrap{
+  height: 40px;
+  width: 40px;
+}
+.search-image{
+  max-height: 100%;
+  max-width: 100%;
+
+}
+.button-search-result{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff; 
+  box-shadow: 0 10px 30px 30px #fff;
+}
+
+.relative{
+  position: relative;
+  height: 100%;
+}
+
+@media (min-width: 768px){
+
+
+.search-result{
+
+  width: 500px;
+  top: 55px;
+  max-height: calc(100vh - 160px);
+    position: absolute;
+      top: 55px;
+  left: -15px;
+}
+}

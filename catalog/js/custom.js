@@ -178,6 +178,7 @@ var kolich = new Vue({
 
   data: {
     layout:'list',
+    search:'',
      swiperSlides: [
           "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/711/530/safe_original/12004913_1.jpg",
           "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/024/safe_original/12004913_2.jpg",

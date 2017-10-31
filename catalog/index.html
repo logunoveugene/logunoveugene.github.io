@@ -42,7 +42,21 @@
           </div>
           <div class="col d-flex flex-row align-items-center border-right-1 p-2">
            <div class="search-input col p-0">
-            <input type="email" class="form-control" placeholder="Поиск по сайту">
+           <input type="text" class="form-control search-field" v-model="search"  placeholder="Поиск по сайту">
+            <div v-if="search == '1'" class="search-result p-3">
+<div class="relative">
+  <div class="" v-for="(product, index) in products">
+    <div class="d-flex flex-row py-1">
+      <div class="search-image-wrap mr-3"><img class="search-image" :src="product.img" alt=""></div>
+      <div class="search-product-name"><a href="" class="">{{product.name}}</a></div>
+      <div class="search-product-price ml-auto text-muted">{{product.price}} р.</div>
+    </div>
+  </div>
+  <div class="button-search-result">
+  <button type="button" class="btn btn-warning btn-block">Block level button</button>
+  </div>
+  </div>
+</div>
           </div>
         </div>
       </div>
@@ -112,8 +126,21 @@
       <div class="col d-flex flex-row align-items-center border-right-1">
         <div class="search-input col p-0">
 
-          <input type="text" class="form-control " placeholder="Поиск по сайту">
-
+          <input type="text" class="form-control search-field" v-model="search"  placeholder="Поиск по сайту">
+<div v-if="search == '1'" class="search-result p-3">
+<div class="relative">
+  <div class="" v-for="(product, index) in products">
+    <div class="d-flex flex-row py-1">
+      <div class="search-image-wrap mr-3"><img class="search-image" :src="product.img" alt=""></div>
+      <div class="search-product-name"><a href="" class="">{{product.name}}</a></div>
+      <div class="search-product-price ml-auto text-muted">{{product.price}} р.</div>
+    </div>
+  </div>
+  <div class="button-search-result">
+  <button type="button" class="btn btn-warning btn-block">Block level button</button>
+  </div>
+  </div>
+</div>
 
         </div>
       </div>
