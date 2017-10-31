@@ -18,7 +18,7 @@
 
   <div id="app">
    <!-- шапка начало -->
-   <div class="hidden-md-up ">
+   <div class="hidden-md-up fixed-top">
     <div class="container-fluid">
       <div class="container">
         <div class="row d-flex ">
@@ -46,6 +46,7 @@
            <input type="text" class="form-control search-field" v-model="search"  placeholder="Поиск по сайту">
             <div v-if="search == '1'" class="search-result p-3">
 <div class="relative">
+
   <div class="" v-for="(product, index) in products">
     <div class="d-flex flex-row py-1">
       <div class="search-image-wrap mr-3"><img class="search-image" :src="product.img" alt=""></div>

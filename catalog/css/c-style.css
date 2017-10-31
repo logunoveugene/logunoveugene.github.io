@@ -857,7 +857,7 @@ transform: translateY(-50%);
 .search-result{
   z-index: 1111111111111;
 background-color: white;
-  height: 500px;
+
     width: 100%;
     position: fixed;
     height: 100%;
@@ -865,12 +865,15 @@ background-color: white;
     box-shadow: 0 5px 20px rgba(0,0,0,0.3);
     bottom: 0px;
     left: 0;
-    overflow: scroll;
+    overflow: hidden;
 
 
 
 }
 
+.overflow{
+  overflow: scroll;
+}
 
 .search-image-wrap{
   height: 40px;
@@ -898,7 +901,7 @@ background-color: white;
 
 
 .search-result{
-
+  height: 500px;
   width: 500px;
   top: 55px;
   max-height: calc(100vh - 160px);
