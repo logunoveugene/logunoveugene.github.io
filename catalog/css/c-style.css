@@ -919,5 +919,7 @@ background-color: white;
 .button-search-result{
   position: absolute;
     margin:  0 0;
+    bottom: 0;
+    padding: 0
 }
 }
