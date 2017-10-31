@@ -860,10 +860,10 @@ background-color: white;
   height: 500px;
     width: 100%;
     position: fixed;
-    height: 500px;
+    height: 100%;
     max-height: calc(100vh - 108px);
     box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    top: 107px;
+    bottom: 0px;
     left: 0;
     overflow: hidden;
 
