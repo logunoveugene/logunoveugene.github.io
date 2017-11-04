@@ -62,6 +62,9 @@ body{
 	color: #212529;
 }
 
+.order-table{
+	min-width: 1340px;
+}
 .order-row{
 	width: 90px;
     min-width: 80px;
