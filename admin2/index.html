@@ -21,172 +21,173 @@
 				<div class="d-flex flex-row"><div class="h3 mb-0">Список заказов</div><button class="ml-auto btn btn-admin"><img class="mr-2" src="https://i.snag.gy/6fGx1q.jpg" alt="">Новый заказ</button></div>
 			</div>
 		</div>
-		<div class="p-3 bs-1">
-		<div class="d-flex flex-row align-items-center">
-		<div class="d-inline-block">
-			<div class="btn-group mt-2 mr-3" data-toggle="buttons">
-				<label class="btn btn-admin active">
-					<input type="radio" name="options" id="option1" autocomplete="off" checked>Сегодня
-				</label>
-				<label class="btn btn-admin">
-					<input type="radio" name="options" id="option2" autocomplete="off">Вчера
-				</label>
-				<label class="btn btn-admin">
-					<input type="radio" name="options" id="option3" autocomplete="off">Неделя
-				</label>
-				<label class="btn btn-admin">
-					<input type="radio" name="options" id="option4" autocomplete="off">Месяц
-				</label>
+		<div class="p-3 bs-1 ">
+			<div class="d-flex flex-row align-items-center">
+				<div class="d-inline-block">
+					<div class="btn-group mt-2 mr-3" data-toggle="buttons">
+						<label class="btn btn-admin active">
+							<input type="radio" name="options" id="option1" autocomplete="off" checked>Сегодня
+						</label>
+						<label class="btn btn-admin">
+							<input type="radio" name="options" id="option2" autocomplete="off">Вчера
+						</label>
+						<label class="btn btn-admin">
+							<input type="radio" name="options" id="option3" autocomplete="off">Неделя
+						</label>
+						<label class="btn btn-admin">
+							<input type="radio" name="options" id="option4" autocomplete="off">Месяц
+						</label>
+					</div>
+					<div class="btn btn-admin active mr-3" v-if="searchAttributes" v-for="(Attributes, index) in searchAttributes">
+						Признак: {{Attributes}} <img class="ml-1" v-on:click="AttributesClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
+					</div>
+					<div class="btn btn-admin active mr-3" v-if="searchIdSubmit">
+						Номер заказа: {{searchIdSubmit}} <img class="ml-1" v-on:click="searchIdClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
+					</div>
+					<div class="btn btn-admin active mr-3" v-if="searchBuyerSubmit">
+						Покупатель: {{searchBuyerSubmit}} <img class="ml-1" v-on:click="searchBuyerClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
+					</div>
+				</div>
+				<div class="ml-auto text-muted">Найдено 16 шт.</div>
 			</div>
-			<div class="btn btn-admin active mr-3" v-if="searchAttributes" v-for="(Attributes, index) in searchAttributes">
-				Признак: {{Attributes}} <img class="ml-1" v-on:click="AttributesClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
-			</div>
-			<div class="btn btn-admin active mr-3" v-if="searchIdSubmit">
-				Номер заказа: {{searchIdSubmit}} <img class="ml-1" v-on:click="searchIdClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
-			</div>
-			<div class="btn btn-admin active mr-3" v-if="searchBuyerSubmit">
-				Покупатель: {{searchBuyerSubmit}} <img class="ml-1" v-on:click="searchBuyerClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
-			</div>
-			</div>
-			<div class="ml-auto text-muted">Найдено 8 шт.</div></div>
 		</div>
-		<div class="bs-1 p-3 py-4">
+		<div class="bs-1 p-3 py-4 ">
 
-		<div class="order-table">
-			<div class="d-flex flex-row flex-nowrap justify-content-between">
-				<div class="order-row order-row-small">
-					<div class="dropdown  w-100">
-						<div class="" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<div class="small filter-drop d-flex flex-row align-items-center">
-								<div class="">Признаки</div>
-							</div>
-						</div>
-						<div class="dropdown-menu filter" aria-labelledby="dropdownMenu2">
-							<label class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" value="Терминал" v-model="searchAttributes">
-								<span class="custom-control-indicator"></span>
-								<span class="custom-control-description">Терминал</span>
-							</label>
-							<label class="custom-control custom-checkbox">
-								<input type="checkbox" class="custom-control-input" value="Подарок" v-model="searchAttributes">
-								<span class="custom-control-indicator"></span>
-								<span class="custom-control-description">Подарок</span>
-							</label>
-							<label class="custom-control custom-checkbox mb-0">
-								<input type="checkbox" class="custom-control-input" value="В один клик" v-model="searchAttributes">
-								<span class="custom-control-indicator"></span>
-								<span class="custom-control-description">В один клик</span>
-							</label>
-						</div>
-					</div>
-				</div>
-				<div class="order-row order-row-small">
-					<input class="filter-input  w-100" v-bind:class="{ edit: searchId }" v-model="searchId" v-on:keyup.enter="searchIdLabel" type="text" placeholder="Номер">
-				</div>
-				<div class="order-row order-row-small">
-					<div class="dropdown  w-100">
-						<div class="" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<div class="small filter-drop d-flex flex-row align-items-center">
-								<div class="">Дата и время</div>
-							</div>
-						</div>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenu2">11
-						</div>
-					</div>
-				</div>
-				<div class="order-row">
-					<div class="dropdown w-100">
-						<div class="" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<div class="small filter-drop d-flex flex-row align-items-center">
-								<div class="">Статус</div>
-							</div>
-						</div>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenu2">11
-						</div>
-					</div>
-				</div>
-				<div class="order-row order-row-large">
-					<input class="filter-input mr-5 w-100" v-bind:class="{ edit: searchBuyer }" v-model="searchBuyer" v-on:keyup.enter="searchBuyerLabel" type="text" placeholder="Покупатель">
-				</div>
-				<div class="order-row order-row-small">
-					<div class="dropdown  w-100">
-						<div class="" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<div class="small filter-drop d-flex flex-row align-items-center">
-								<div class="">Доступность</div>
-							</div>
-						</div>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenu2">11
-						</div>
-					</div>
-				</div>
-				<div class="order-row order-row-large">
-					<div class="dropdown w-100">
-						<div class="" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<div class="small filter-drop d-flex flex-row align-items-center">
-								<div class="">Получение</div>
-							</div>
-						</div>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenu2">11
-						</div>
-					</div>
-				</div>
-				<div class="order-row">
-					<div class="dropdown w-100">
-						<div class="" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<div class="small filter-drop d-flex flex-row align-items-center">
-								<div class="">К оплате</div>
-							</div>
-						</div>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenu2">11
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="order-list py-3">
-				<div class="order-item d-flex flex-row justify-content-between align-items-center py-3" v-for="(order, index) in orders">
+			<div class="order-table">
+				<div class="sticky-top bg-white d-flex flex-row flex-nowrap justify-content-between">
 					<div class="order-row order-row-small">
-						<div class="">
-							<div class="d-inline-block" v-for="(attribute, index) in order.attributes">
-								<div class="attribute" :class="attribute.attributesType" data-toggle="tooltip" data-placement="top" :title="attribute.attributesName"></div>
+						<div class="dropdown  w-100">
+							<div class="" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<div class="small filter-drop d-flex flex-row align-items-center">
+									<div class="">Признаки</div>
+								</div>
+							</div>
+							<div class="dropdown-menu filter" aria-labelledby="dropdownMenu2">
+								<label class="custom-control custom-checkbox">
+									<input type="checkbox" class="custom-control-input" value="Терминал" v-model="searchAttributes">
+									<span class="custom-control-indicator"></span>
+									<span class="custom-control-description">Терминал</span>
+								</label>
+								<label class="custom-control custom-checkbox">
+									<input type="checkbox" class="custom-control-input" value="Подарок" v-model="searchAttributes">
+									<span class="custom-control-indicator"></span>
+									<span class="custom-control-description">Подарок</span>
+								</label>
+								<label class="custom-control custom-checkbox mb-0">
+									<input type="checkbox" class="custom-control-input" value="В один клик" v-model="searchAttributes">
+									<span class="custom-control-indicator"></span>
+									<span class="custom-control-description">В один клик</span>
+								</label>
 							</div>
 						</div>
 					</div>
 					<div class="order-row order-row-small">
-					<div class=""><a href="">{{order.id}}</a></div>
+						<input class="filter-input  w-100" v-bind:class="{ edit: searchId }" v-model="searchId" v-on:keyup.enter="searchIdLabel" type="text" placeholder="Номер">
 					</div>
 					<div class="order-row order-row-small">
-						<div class="">
-							{{order.date | time}} <div class="small text-nowrap  text-muted ">{{order.date | date}}</div>
-						</div>
-					</div>
-					<div class="order-row ">
-						<div class="text-nowrap small d-inline" :class="order.status.statusType">{{order.status.statusName}}</div>
-					</div>
-					<div class="order-row order-row-large">
-						<div class="text-nowrap ">
-							<div class="">{{order.buyer.buyerName}}</div>
-							<div class="small text-muted">{{order.buyer.buyerPhone}}</div>
-						</div>
-					</div>
-					<div class="order-row order-row-small">
-						<div class="mr-5">
-							<div class="text-nowrap">{{order.availability | date}}</div>
-						</div>
-					</div>
-					<div class="order-row order-row-large">
-						<div class="mr-5 d-flex flex-row align-items-center">
-							<div class="delivery-type" :class="order.delivery.deliveryType"></div>
-							<div class="">
-								<div class="">{{order.delivery.deliveryCity}} </div>
-								<div class="small text-muted text-nowrap">{{order.delivery.deliveryName}}: {{order.delivery.deliveryPlace}}</div>
+						<div class="dropdown  w-100">
+							<div class="" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<div class="small filter-drop d-flex flex-row align-items-center">
+									<div class="">Дата и время</div>
+								</div>
+							</div>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenu2">11
 							</div>
 						</div>
 					</div>
 					<div class="order-row">
-						<div class="text-right"><div class="">{{order.orderSum}} р.</div> <div class="small text-muted">{{order.orderPaymentType}} </div> </div>
+						<div class="dropdown w-100">
+							<div class="" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<div class="small filter-drop d-flex flex-row align-items-center">
+									<div class="">Статус</div>
+								</div>
+							</div>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenu2">11
+							</div>
+						</div>
+					</div>
+					<div class="order-row order-row-large">
+						<input class="filter-input mr-5 w-100" v-bind:class="{ edit: searchBuyer }" v-model="searchBuyer" v-on:keyup.enter="searchBuyerLabel" type="text" placeholder="Покупатель">
+					</div>
+					<div class="order-row order-row-small">
+						<div class="dropdown  w-100">
+							<div class="" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<div class="small filter-drop d-flex flex-row align-items-center">
+									<div class="">Доступность</div>
+								</div>
+							</div>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenu2">11
+							</div>
+						</div>
+					</div>
+					<div class="order-row order-row-large">
+						<div class="dropdown w-100">
+							<div class="" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<div class="small filter-drop d-flex flex-row align-items-center">
+									<div class="">Получение</div>
+								</div>
+							</div>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenu2">11
+							</div>
+						</div>
+					</div>
+					<div class="order-row">
+						<div class="dropdown w-100">
+							<div class="" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<div class="small filter-drop d-flex flex-row align-items-center">
+									<div class="">К оплате</div>
+								</div>
+							</div>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenu2">11
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
+				<div class="order-list py-3">
+					<div class="order-item d-flex flex-row justify-content-between align-items-center py-3" v-for="(order, index) in orders">
+						<div class="order-row order-row-small">
+							<div class="">
+								<div class="d-inline-block" v-for="(attribute, index) in order.attributes">
+									<div class="attribute" :class="attribute.attributesType" data-toggle="tooltip" data-placement="top" :title="attribute.attributesName"></div>
+								</div>
+							</div>
+						</div>
+						<div class="order-row order-row-small">
+							<div class=""><a href="">{{order.id}}</a></div>
+						</div>
+						<div class="order-row order-row-small">
+							<div class="">
+								{{order.date | time}} <div class="small text-nowrap  text-muted ">{{order.date | date}}</div>
+							</div>
+						</div>
+						<div class="order-row ">
+							<div class="text-nowrap small d-inline" :class="order.status.statusType">{{order.status.statusName}}</div>
+						</div>
+						<div class="order-row order-row-large">
+							<div class="text-nowrap ">
+								<div class="">{{order.buyer.buyerName}}</div>
+								<div class="small text-muted">{{order.buyer.buyerPhone}}</div>
+							</div>
+						</div>
+						<div class="order-row order-row-small">
+							<div class="mr-5">
+								<div class="text-nowrap">{{order.availability | date}}</div>
+							</div>
+						</div>
+						<div class="order-row order-row-large">
+							<div class="mr-5 d-flex flex-row align-items-center">
+								<div class="delivery-type" :class="order.delivery.deliveryType"></div>
+								<div class="">
+									<div class="">{{order.delivery.deliveryCity}} </div>
+									<div class="small text-muted text-nowrap">{{order.delivery.deliveryName}}: {{order.delivery.deliveryPlace}}</div>
+								</div>
+							</div>
+						</div>
+						<div class="order-row">
+							<div class="text-right"><div class="">{{order.orderSum}} р.</div> <div class="small text-muted">{{order.orderPaymentType}} </div> </div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
