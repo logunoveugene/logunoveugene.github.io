@@ -5,32 +5,6 @@ $(function () {
 moment.lang('ru');
 
 
-
-const i18nEnData = {
-  selected: 'Your stay:',
-  night: 'Night',
-  nights: 'Nights',
-  button: 'Close',
-  'check-in': 'Check-in',
-  'check-out': 'Check-Out',
-  'day-names': ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'],
-  'month-names': ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-  'error-more': 'Date range should not be more than 1 night',
-  'error-more-plural': 'Date range should not be more than %d nights',
-  'error-less': 'Date range should not be less than 1 night',
-  'error-less-plural': 'Date range should not be less than %d nights',
-  'info-more': 'Please select a date range longer than 1 night',
-  'info-more-plural': 'Please select a date range longer than %d nights',
-  'info-range': 'Please select a date range between %d and %d nights',
-  'info-default': 'Please select a date range'
-}
-
-
-
-
-
-
-
 var orders = new Vue({
 el: '#app',
 
