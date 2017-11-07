@@ -3,10 +3,41 @@ $(function () {
 })
 
 moment.lang('ru');
+
+
+
+const i18nEnData = {
+  selected: 'Your stay:',
+  night: 'Night',
+  nights: 'Nights',
+  button: 'Close',
+  'check-in': 'Check-in',
+  'check-out': 'Check-Out',
+  'day-names': ['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat'],
+  'month-names': ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+  'error-more': 'Date range should not be more than 1 night',
+  'error-more-plural': 'Date range should not be more than %d nights',
+  'error-less': 'Date range should not be less than 1 night',
+  'error-less-plural': 'Date range should not be less than %d nights',
+  'info-more': 'Please select a date range longer than 1 night',
+  'info-more-plural': 'Please select a date range longer than %d nights',
+  'info-range': 'Please select a date range between %d and %d nights',
+  'info-default': 'Please select a date range'
+}
+
+
+
+
+
+
+
 var orders = new Vue({
 el: '#app',
 
+
 data: {
+ 
+
   orders: [ 
   {
     id: 20101507,
@@ -36,7 +67,7 @@ data: {
     orderSum: 4880
   },
   {
-    id: 20101507,
+    id: 20101506,
     attributes: [ {
       attributesType: "gift",
       attributesName: "Подарок"
@@ -60,7 +91,7 @@ data: {
     orderSum: 1960
   },
   {
-    id: 20101507,
+    id: 20101505,
     attributes: [    ],
     date: "2016-01-13T05:23:38+00:00",
     status:{
@@ -80,7 +111,7 @@ data: {
     orderSum: 18400
   },
   {
-    id: 20101507,
+    id: 20101504,
     attributes: [     ],
     date: "2016-01-13T05:23:38+00:00",
     status:{
@@ -100,7 +131,7 @@ data: {
     orderSum: 34590
   },
   {
-    id: 20101507,
+    id: 20101503,
     attributes: [{
       attributesType: "terminal",
       attributesName: "Терминал"
@@ -127,7 +158,7 @@ data: {
     orderSum: 4880
   },
   {
-    id: 20101507,
+    id: 20101502,
     attributes: [ {
       attributesType: "gift",
       attributesName: "Подарок"
@@ -151,7 +182,7 @@ data: {
     orderSum: 1960
   },
   {
-    id: 20101507,
+    id: 20101501,
     attributes: [    ],
     date: "2016-01-13T05:23:38+00:00",
     status:{
@@ -171,7 +202,7 @@ data: {
     orderSum: 18400
   },
   {
-    id: 20101507,
+    id: 20101500,
     attributes: [     ],
     date: "2016-01-13T05:23:38+00:00",
     status:{
@@ -191,7 +222,7 @@ data: {
     orderSum: 34590
   },
    {
-    id: 20101507,
+    id: 20101499,
     attributes: [{
       attributesType: "terminal",
       attributesName: "Терминал"
@@ -218,7 +249,7 @@ data: {
     orderSum: 4880
   },
   {
-    id: 20101507,
+    id: 20101498,
     attributes: [ {
       attributesType: "gift",
       attributesName: "Подарок"
@@ -242,7 +273,7 @@ data: {
     orderSum: 1960
   },
   {
-    id: 20101507,
+    id: 20101497,
     attributes: [    ],
     date: "2016-01-13T05:23:38+00:00",
     status:{
@@ -262,7 +293,7 @@ data: {
     orderSum: 18400
   },
   {
-    id: 20101507,
+    id: 20101496,
     attributes: [     ],
     date: "2016-01-13T05:23:38+00:00",
     status:{
@@ -282,7 +313,7 @@ data: {
     orderSum: 34590
   },
   {
-    id: 20101507,
+    id: 20101495,
     attributes: [{
       attributesType: "terminal",
       attributesName: "Терминал"
@@ -309,7 +340,7 @@ data: {
     orderSum: 4880
   },
   {
-    id: 20101507,
+    id: 20101494,
     attributes: [ {
       attributesType: "gift",
       attributesName: "Подарок"
@@ -333,7 +364,7 @@ data: {
     orderSum: 1960
   },
   {
-    id: 20101507,
+    id: 20101493,
     attributes: [    ],
     date: "2016-01-13T05:23:38+00:00",
     status:{
@@ -353,7 +384,7 @@ data: {
     orderSum: 18400
   },
   {
-    id: 20101507,
+    id: 20101492,
     attributes: [     ],
     date: "2016-01-13T05:23:38+00:00",
     status:{
@@ -435,3 +466,9 @@ methods: {
 
 
 });
+
+
+
+
+
+
