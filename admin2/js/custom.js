@@ -14,7 +14,10 @@ data: {
 config: {
  wrap: true,
         mode: "range",
-        parseDate:true
+        parseDate:true,
+   
+         "locale": "ru",
+       
 
      },
   orders: [ 
@@ -420,7 +423,7 @@ number:  function(value) {
 
 computed:{
 searchDateSumbit: function(){
-  return  this.searchDate.split('to');
+  return  this.searchDate.split(' — ');
 },
 todaydate: function(){
   return  new Date();
