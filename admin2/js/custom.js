@@ -412,7 +412,12 @@ date:  function(value) {
   }
 },
 
+number:  function(value) {
+      return value.toLocaleString();
+  }
 },
+
+
 computed:{
 searchDateSumbit: function(){
   return  this.searchDate.split('to');

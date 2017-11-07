@@ -40,11 +40,12 @@
 						</label>
 					</div>
 					
-					<div class="btn btn-admin active mr-3" v-if="searchAttributes" v-for="(Attributes, index) in searchAttributes">
-						Признак: {{Attributes}} <img class="ml-1" v-on:click="AttributesClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
-					</div>
+					
 					<div class="btn btn-admin active mr-3" v-if="searchIdSubmit">
 						Номер заказа: {{searchIdSubmit}} <img class="ml-1" v-on:click="searchIdClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
+					</div>
+					<div class="btn btn-admin active mr-3" v-if="searchAttributes" v-for="(Attributes, index) in searchAttributes">
+						Признак: {{Attributes}} <img class="ml-1" v-on:click="AttributesClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
 					</div>
 					<div class="btn btn-admin active mr-3" v-if="searchDateSumbit[1]">
 						Дата: {{searchDateSumbit[0] | date}} – {{searchDateSumbit[1] | date}} <img class="ml-1" v-on:click="searchDateClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
@@ -262,7 +263,7 @@
 							</div>
 						</div>
 						<div class="order-row">
-							<div class="text-right"><div class="">{{order.orderSum}} р.</div> <div class="small text-muted">{{order.orderPaymentType}} </div> </div>
+							<div class="text-right"><div class="">{{order.orderSum | number}} р.</div> <div class="small text-muted">{{order.orderPaymentType}} </div> </div>
 						</div>
 					</div>
 				</div>
