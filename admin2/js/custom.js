@@ -3,7 +3,7 @@ $(function () {
 })
 
 moment.lang('ru');
-
+ Vue.component('flat-pickr', VueFlatpickr.default);
 
 var orders = new Vue({
 el: '#app',
@@ -11,7 +11,12 @@ el: '#app',
 
 data: {
  
+config: {
+ wrap: true,
+        mode: "range",
+        parseDate:true
 
+     },
   orders: [ 
   {
     id: 20101507,
@@ -408,6 +413,15 @@ date:  function(value) {
 },
 
 },
+computed:{
+searchDateSumbit: function(){
+  return  this.searchDate.split('to');
+},
+todaydate: function(){
+  return  new Date();
+},
+
+},
 
 methods: {
   searchIdLabel: function() {
@@ -433,6 +447,9 @@ methods: {
     },
     AttributesClear: function (index) {
       this.searchAttributes.splice(index, 1);
+    },
+    searchDateClear: function() {
+       this.searchDate = "";
     },
 
 

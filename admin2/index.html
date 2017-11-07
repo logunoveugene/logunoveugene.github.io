@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://unpkg.com/flatpickr@4.0.3/dist/flatpickr.min.css">
 	<link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
@@ -26,23 +27,27 @@
 				<div class="d-inline-block">
 					<div class="btn-group mt-2 mr-3" data-toggle="buttons">
 						<label class="btn btn-admin active">
-							<input type="radio" name="options" id="option1" autocomplete="off" checked>Сегодня
+							<input type="radio" id="one" :value="todaydate" v-model="searchDate">Сегодня
 						</label>
 						<label class="btn btn-admin">
-							<input type="radio" name="options" id="option2" autocomplete="off">Вчера
+							<input type="radio" value="54"  id="option2" v-model="searchDate">Вчера
 						</label>
 						<label class="btn btn-admin">
-							<input type="radio" name="options" id="option3" autocomplete="off">Неделя
+							<input type="radio"  id="option3" v-model="searchDate">Неделя
 						</label>
 						<label class="btn btn-admin">
-							<input type="radio" name="options" id="option4" autocomplete="off">Месяц
+							<input type="radio" id="option4"  v-model="searchDate">Месяц
 						</label>
 					</div>
+					
 					<div class="btn btn-admin active mr-3" v-if="searchAttributes" v-for="(Attributes, index) in searchAttributes">
 						Признак: {{Attributes}} <img class="ml-1" v-on:click="AttributesClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
 					</div>
 					<div class="btn btn-admin active mr-3" v-if="searchIdSubmit">
 						Номер заказа: {{searchIdSubmit}} <img class="ml-1" v-on:click="searchIdClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
+					</div>
+					<div class="btn btn-admin active mr-3" v-if="searchDateSumbit[1]">
+						Дата: {{searchDateSumbit[0] | date}} – {{searchDateSumbit[1] | date}} <img class="ml-1" v-on:click="searchDateClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
 					</div>
 					<div class="btn btn-admin active mr-3" v-if="searchBuyerSubmit">
 						Покупатель: {{searchBuyerSubmit}} <img class="ml-1" v-on:click="searchBuyerClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
@@ -86,30 +91,11 @@
 						</div>
 					</div>
 					<div class="order-row order-row-small">
-						<div class="dropdown  w-100">
-							<div class="" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<div class="small filter-drop d-flex flex-row align-items-center">
-									<div class="">Дата и время</div>
-								</div>
-							</div>
-							<div class="dropdown-menu filter" aria-labelledby="dropdownMenu2">
-								<label class="custom-control custom-checkbox">
-									<input type="checkbox" class="custom-control-input" value="Терминал" v-model="searchAttributes">
-									<span class="custom-control-indicator"></span>
-									<span class="custom-control-description">Терминал</span>
-								</label>
-								<label class="custom-control custom-checkbox">
-									<input type="checkbox" class="custom-control-input" value="Подарок" v-model="searchAttributes">
-									<span class="custom-control-indicator"></span>
-									<span class="custom-control-description">Подарок</span>
-								</label>
-								<label class="custom-control custom-checkbox mb-0">
-									<input type="checkbox" class="custom-control-input" value="В один клик" v-model="searchAttributes">
-									<span class="custom-control-indicator"></span>
-									<span class="custom-control-description">В один клик</span>
-								</label>
-							</div>
-						</div>
+						 <div class="filter-drop w-100 " data-toggle>
+							      Дата
+							    </div>
+						  	 <flat-pickr v-model="searchDate" input-class="d-none" :config="config" placeholder="Дата"></flat-pickr>
+						  
 					</div>
 					<div class="order-row">
 						<div class="dropdown w-100">
@@ -282,12 +268,19 @@
 				</div>
 			</div>
 		</div>
+		
 
-         
+
+
+
+
+
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/flatpickr@4.0.7/dist/flatpickr.js" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/vue-flatpickr-component@4.0.0/dist/vue-flatpickr.min.js" crossorigin="anonymous"></script>
 	<script src="js/moment-with-locales.min.js"></script>
 	<script src="https://unpkg.com/vue"></script>
 	<script src="js/custom.js"></script>

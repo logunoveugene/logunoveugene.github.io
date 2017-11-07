@@ -30,7 +30,6 @@ body{
 }
 
 .filter-drop {
-	font-size: 0.8rem;
     border-bottom: 1px solid #ddd;
     padding: .6rem 0 ;
     cursor: pointer;
@@ -53,7 +52,6 @@ body{
 	font-size: 0.8rem;
 	background: url(https://i.snag.gy/F7Ba6Z.jpg) no-repeat 100% 50%;
 	white-space: nowrap;
-	    width: 100%;
 
 }
 .filter-input:focus{
