@@ -54,7 +54,7 @@
                             Признак: {{Attributes}} <img class="ml-1" v-on:click="AttributesClear(index)" src="https://i.snag.gy/VGpiUI.jpg" alt="">
                         </div>
                         <div class="btn btn-admin active mr-3" v-if="searchDateSumbit[0]">
-                            Дата: {{searchDateSumbit[0] | date}} <span class=""  v-if="searchDateSumbit[1]">– </span>{{searchDateSumbit[1] | date}} <img class="ml-1" v-on:click="searchDateClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
+                            Дата: {{searchDateSumbit[0] | date}} <span class=""  v-if="showTwoDatePlate">– {{searchDateSumbit[1] | date}} </span><img class="ml-1" v-on:click="searchDateClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
                         </div>
                         <div class="btn btn-admin active mr-3" v-if="searchAttributes" v-for="(status, index) in searchStatus">
                             Статус: {{status}} <img class="ml-1" v-on:click="StatusClear(index)" src="https://i.snag.gy/VGpiUI.jpg" alt="">

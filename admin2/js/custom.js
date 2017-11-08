@@ -23,8 +23,6 @@ var orders = new Vue({
             maxDate:"today",
             dateFormat: "Y-m-d",
             defaultDate: "today",
-
-
             "locale": "ru",
 
         },
@@ -447,6 +445,21 @@ var orders = new Vue({
         monthdate: function() {
            return moment(String(new Date(Date.now() - 2592000000))).format("YYYY-MM-DD") ;
         },
+
+        showTwoDatePlate:function() {
+            
+           if (this.searchDateSumbit[1]==this.searchDateSumbit[0] || this.searchDateSumbit.length==1 ) {
+                   
+                                         return false ;  
+                   
+                     
+            }
+            else{
+                return true ; 
+            }
+
+        },
+
 
 
 
