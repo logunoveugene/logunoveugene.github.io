@@ -31,17 +31,18 @@
                 <div class="d-flex flex-row align-items-center">
                     <div class="d-inline-block">
                         <div class="btn-group mt-2 mr-3" data-toggle="buttons">
+                            <label class="btn btn-admin active"  @click="setToday">
                                 <input type="radio" id="one" :value="todaydate" v-model="searchDate">Сегодня
                             </label>
-                            <label class="btn btn-admin">
+                            <label class="btn btn-admin" @click="setYesterday">
                                 <input type="radio" value="54" id="option2" v-model="searchDate">Вчера
 						
                             </label>
-                            <label class="btn btn-admin d-none d-md-inline">
+                            <label class="btn btn-admin d-none d-md-inline" @click="setWeek">
                                 <input type="radio" id="option3" v-model="searchDate">Неделя
 						
                             </label>
-                            <label class="btn btn-admin d-none d-md-inline">
+                            <label class="btn btn-admin d-none d-md-inline" @click="setmonth">
                                 <input type="radio" id="option4" v-model="searchDate">Месяц
 						
                             </label>
@@ -53,7 +54,7 @@
                             Признак: {{Attributes}} <img class="ml-1" v-on:click="AttributesClear(index)" src="https://i.snag.gy/VGpiUI.jpg" alt="">
                         </div>
                         <div class="btn btn-admin active mr-3" v-if="searchDateSumbit[0]">
-                            Дата: {{searchDateSumbit[0] | date}} – {{searchDateSumbit[1] | date}} <img class="ml-1" v-on:click="searchDateClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
+                            Дата: {{searchDateSumbit[0] | date}} <span class=""  v-if="searchDateSumbit[1]">– </span>{{searchDateSumbit[1] | date}} <img class="ml-1" v-on:click="searchDateClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
                         </div>
                         <div class="btn btn-admin active mr-3" v-if="searchAttributes" v-for="(status, index) in searchStatus">
                             Статус: {{status}} <img class="ml-1" v-on:click="StatusClear(index)" src="https://i.snag.gy/VGpiUI.jpg" alt="">

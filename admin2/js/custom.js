@@ -20,7 +20,10 @@ var orders = new Vue({
         config: {
             wrap: true,
             mode: "range",
-            parseDate: true,
+            maxDate:"today",
+            dateFormat: "Y-m-d",
+            defaultDate: "today",
+
 
             "locale": "ru",
 
@@ -432,14 +435,41 @@ var orders = new Vue({
             return this.searchDate.split(' — ');
         },
         todaydate: function() {
-            return new Date();
+            return moment(String(new Date())).format("YYYY-MM-DD") ;
         },
+        yesterdaydate: function() {
+            return moment(String(new Date(Date.now() - 86400000))).format("YYYY-MM-DD") ;
+            ;
+        },
+        weekdate: function() {
+           return moment(String(new Date(Date.now() - 604800000))).format("YYYY-MM-DD") ;
+        },
+        monthdate: function() {
+           return moment(String(new Date(Date.now() - 2592000000))).format("YYYY-MM-DD") ;
+        },
+
+
+
 
     },
 
     methods: {
+        setToday:function(){
+        this.searchDate = this.todaydate + ' — ' + this.todaydate;
+        },
 
-        
+        setYesterday:function(){
+        this.searchDate = this.yesterdaydate + ' — ' + this.yesterdaydate;
+        },
+        setWeek:function(){
+        this.searchDate = this.weekdate + ' — ' + this.todaydate;
+        },
+        setmonth:function(){
+        this.searchDate = this.monthdate + ' — ' + this.todaydate;
+        },
+
+
+
         searchIdLabel: function() {
             if (this.searchId.length > 0) {
                 this.searchIdSubmit = this.searchId;
