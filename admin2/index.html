@@ -45,7 +45,7 @@
 						Номер заказа: {{searchIdSubmit}} <img class="ml-1" v-on:click="searchIdClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
 					</div>
 					<div class="btn btn-admin active mr-3" v-if="searchAttributes" v-for="(Attributes, index) in searchAttributes">
-						Признак: {{Attributes}} <img class="ml-1" v-on:click="AttributesClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
+						Признак: {{Attributes}} <img class="ml-1" v-on:click="AttributesClear(index)" src="https://i.snag.gy/VGpiUI.jpg" alt="">
 					</div>
 					<div class="btn btn-admin active mr-3" v-if="searchDateSumbit[0]">
 						Дата: {{searchDateSumbit[0] | date}} – {{searchDateSumbit[1] | date}} <img class="ml-1" v-on:click="searchDateClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
