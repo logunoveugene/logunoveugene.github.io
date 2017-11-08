@@ -78,6 +78,23 @@ a, .link {
     min-width: 1310px;
 }
 
+.order-table-header {
+    box-shadow: -15px 0 white, 15px 0 white;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    -ms-flex-pack: justify!important;
+    justify-content: space-between!important;
+    -ms-flex-wrap: nowrap!important;
+    flex-wrap: nowrap!important;
+    -ms-flex-direction: row!important;
+    flex-direction: row!important;
+    display: -ms-flexbox!important;
+    display: flex!important;
+    background-color: #fff!important;
+}
+
 .order-row {
     width: 90px;
     min-width: 80px;
