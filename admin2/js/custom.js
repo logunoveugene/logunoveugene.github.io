@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 });
 
-moment.lang('ru');
+moment.locale('ru');
 Vue.component('flat-pickr', VueFlatpickr.default);
 
 var orders = new Vue({
@@ -438,6 +438,8 @@ var orders = new Vue({
     },
 
     methods: {
+
+        
         searchIdLabel: function() {
             if (this.searchId.length > 0) {
                 this.searchIdSubmit = this.searchId;
