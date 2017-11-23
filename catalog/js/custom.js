@@ -499,7 +499,14 @@ var kolich = new Vue({
     switchsite: function() {
       this.cm = !this.cm;
     }
-  }
+  },
+    filters: {
+
+        number: function(value) {
+            return value.toLocaleString();
+        }
+    },
+
 
 
 });

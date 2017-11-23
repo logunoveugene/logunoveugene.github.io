@@ -429,14 +429,14 @@
               <div class="hidden-sm-down">
                 <div class="mb-4 price-wrap">
                   <div class="d-flex flex-row align-items-end mb-1">
-                    <div class="h5 mb-0 mr-2 "><b>{{product.price}} р.</b></div>
-                    <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
+                    <div class="h5 mb-0 mr-2 "><b>{{product.price | number}} р.</b></div>
+                    <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice | number}} р.</del></span>
                   </div>
                   <div class="discount" v-if="products[index].discount !== 0">
-                    <mark>Доступна скидка {{product.discount}} р.</mark>
+                    <mark>Доступна скидка {{product.discount | number}} р.</mark>
                   </div>
                   <div class="discount " v-if="products[index].oldPrice !== 0">
-                    <mark>Выгода <span class="text-nowrap">{{product.oldPrice-product.price}} р.</span></mark>
+                    <mark>Выгода <span class="text-nowrap">{{product.oldPrice-product.price | number}} р.</span></mark>
                   </div>
                 </div>
                 <div class="mb-3">
@@ -446,10 +446,10 @@
               </div>
               <div class="hidden-md-up d-flex justify-content-between align-items-center">
                 <div class="d-flex flex-column ">
-                  <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
-                  <span class=" mb-0"><b>{{product.price}} р.</b></span>
+                  <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice | number}} р.</del></span>
+                  <span class=" mb-0"><b>{{product.price | number}} р.</b></span>
                   <div class="discount" v-if="products[index].discount !== 0">
-                    <mark>Доступна скидка {{product.discount}} р.</mark>
+                    <mark>Доступна скидка {{product.discount | number}} р.</mark>
                   </div>
                   <div class="discount mb-2" v-if="products[index].oldPrice !== 0">
                     <mark>Выгода <span class="text-nowrap">{{product.oldPrice-product.price}} р.</span></mark>
@@ -549,13 +549,13 @@
                       </div>
                       <div class="hidden-md-up d-flex justify-content-between align-items-center">
                         <div class="d-flex flex-column ">
-                          <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
-                          <span class=" mb-0"><b>{{product.price}} р.</b></span>
+                          <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice | number}} р.</del></span>
+                          <span class=" mb-0"><b>{{product.price | number}} р.</b></span>
                           <div class="discount" v-if="products[index].discount !== 0">
-                            <mark>Доступна скидка <span class="text-nowrap">{{product.discount}} р.</span></mark>
+                            <mark>Доступна скидка <span class="text-nowrap">{{product.discount | number}} р.</span></mark>
                           </div>
                           <div class="discount " v-if="products[index].oldPrice !== 0">
-                            <mark>Выгода <span class="text-nowrap">{{product.oldPrice-product.price}} р.</span></mark>
+                            <mark>Выгода <span class="text-nowrap">{{product.oldPrice-product.price | number}} р.</span></mark>
                           </div>
                           <div class="discount" v-if="products[index].creditprice !== 0">
                             <mark>от <span class="text-nowrap">{{product.creditprice}} р. /мес.</span></mark>
@@ -570,16 +570,16 @@
                   <div class="col shrink hidden-sm-down">
                     <div class="d-flex flex-column ml-auto  text-right">
                       <div class="mt-2 pt-2 mb-1">
-                        <span class="small text-muted  mb-1" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice}} р.</del></span>
-                        <div class="h5 mb-2 "><b>{{product.price}} р.</b></div>
+                        <span class="small text-muted  mb-1" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice | number}} р.</del></span>
+                        <div class="h5 mb-2 "><b>{{product.price | number}} р.</b></div>
                         <div class="discount mb-2" v-if="products[index].discount !== 0">
-                          <mark>Доступна скидка <span class="text-nowrap">{{product.discount}} р.</span></mark>
+                          <mark>Доступна скидка <span class="text-nowrap">{{product.discount | number}} р.</span></mark>
                         </div>
                         <div class="discount mb-2" v-if="products[index].oldPrice !== 0">
-                          <mark>Выгода <span class="text-nowrap">{{product.oldPrice-product.price}} р.</span></mark>
+                          <mark>Выгода <span class="text-nowrap">{{product.oldPrice-product.price | number}} р.</span></mark>
                         </div>
                         <div class="discount mb-2" v-if="products[index].creditprice !== 0">
-                          <mark>от <span class="text-nowrap">{{product.creditprice}} р. /мес.</span></mark>
+                          <mark>от <span class="text-nowrap">{{product.creditprice | number}} р. /мес.</span></mark>
                         </div>
                       </div>
                       <div class="">
