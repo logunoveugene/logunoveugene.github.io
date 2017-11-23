@@ -392,7 +392,7 @@
               <div class="d-inline" v-for="(action, index) in product.actions">
                 <div class="dropdown d-inline">
                   <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="mr-1 stiker text-white" :class="action.actionType">
-                    {{action.actionName}}
+                    <span class="">{{action.actionName}}</span>
                   </a>
                   <div class="dropdown-menu">
                     <button type="button" class="close" aria-label="Close">
@@ -474,11 +474,11 @@
           <div class="product-plate col-12 " v-for="(product, index) in products">
 
 
-            <div class="stikerWrap hidden-sm-down row" v-if="products[index].actions !== 0">
+            <div class="stikerWrap hidden-sm-down " v-if="products[index].actions !== 0">
               <div class="d-inline" v-for="(action, index) in product.actions">
                 <div class="dropdown d-inline">
-                  <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="mr-1 stiker text-white" :class="action.actionType">
-                    {{action.actionName}}
+                  <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="mr-1 stiker" :class="action.actionType">
+                    <span class="">{{action.actionName}}</span>
                   </a>
                   <div class="dropdown-menu">
                     <button type="button" class="close" aria-label="Close">
@@ -497,11 +497,11 @@
               </div>
             </div>
 
-            <div class="stikerWrap hidden-md-up row" v-if="products[index].actions !== 0">
+            <div class="stikerWrap hidden-md-up " v-if="products[index].actions !== 0">
               <div class="d-block" v-for="(action, index) in product.actions">
                 <div class="dropdown d-block">
-                  <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="mr-1 stiker text-white mobile-stiker" :class="action.actionType">
-                    
+                  <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="mr-1 stiker " :class="action.actionType">
+                     <span class="">{{action.actionName}}</span>
                   </a>
                   <div class="dropdown-menu">
                     <button type="button" class="close" aria-label="Close">

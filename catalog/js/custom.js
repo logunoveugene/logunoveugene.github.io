@@ -288,16 +288,7 @@ var kolich = new Vue({
       rate:0,
       rateCount:0,
       amount:"Забрать в 6 магазинах сегодня",
-      actions:[{
-        actionName: "Цена снижена",
-        actionType: "sale",
-        actionDesc:"Только два дня на широкий ассортимент товаров действуют скидки до 50%!",
-        actionImg: "http://via.placeholder.com/60x60"
-
-      },
-        
-
-      ],
+      actions:0,
       stores: [{
         storeName: "в ТЦ Черемушки",
         date: "2017-10-24" 
@@ -329,16 +320,7 @@ var kolich = new Vue({
       rate:5,
       rateCount:3,
       amount:"Забрать в 6 магазинах сегодня",
-     actions:[{
-        actionName: "Цена снижена",
-        actionType: "sale",
-        actionDesc:"Только два дня на широкий ассортимент товаров действуют скидки до 50%!",
-        actionImg: "http://via.placeholder.com/60x60"
-
-      },
-        
-
-      ],
+     actions:0,
       stores: [{
         storeName: "в ТЦ Черемушки",
         date: "2017-10-24" 
@@ -485,13 +467,7 @@ var kolich = new Vue({
         actionImg: "http://via.placeholder.com/60x60"
 
       },
-      {
-        actionName: "Цена снижена",
-        actionType: "sale",
-        actionDesc:"Только два дня на широкий ассортимент товаров действуют скидки до 50%!",
-        actionImg: "http://via.placeholder.com/60x60"
-
-      },
+     
         
 
       ],
