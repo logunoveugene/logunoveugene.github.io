@@ -191,6 +191,7 @@
           <div class="main-image mb-3">
             <div class="img-tab-content">
               <div class="swiper-wrapper">
+              <div class="gallery-zoom-image">Нажми для увеличения</div>
                 <div v-for="slide in swiperSlides" class="swiper-slide image-warp">
                   <a id="fullscreen-modal-image" href="" data-toggle="modal" data-target="#fullscreen-image" class="zoom-cursor">
                     <img :data-src="slide" class="swiper-lazy large-image">
@@ -648,6 +649,38 @@ export default {
   position: relative;
 }
 
+
+.gallery-zoom-image{
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 50;
+  transform: translate(-50%,-50%);
+  font-size: .8rem;
+  color: white;
+  background-color: rgba(0,0,0,0.35);
+  border-radius: 5rem;
+  padding: .25rem .75rem;
+  cursor: zoom-in;
+  transition: all 0.2s ease 0s;
+  text-rendering: optimizeSpeed;
+}
+
+.btn-primary:hover  {
+           box-shadow: 0 2px 6px rgba(71, 102, 191, 0.66), 0 6px 14px rgba(71, 102, 191, 0.31);
+         }
+
+.img-tab-content:hover .gallery-zoom-image{
+opacity: 1;
+}
+
+.img-tab-content:hover .zoom-cursor{
+  opacity: .8;
+}
+
+
+
 .main-image {
   width: 100%;
   background-color: #fff;
@@ -687,7 +720,7 @@ export default {
 
 .img-tab-nav .active {
   opacity: 0.7;
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
 }
 
 .large-image {
@@ -706,6 +739,8 @@ export default {
 
 .zoom-cursor {
   cursor: zoom-in;
+    transition: all 0.2s ease 0s;
+
 }
 
 @media screen and (max-width: 425px) {

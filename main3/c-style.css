@@ -177,3 +177,7 @@ a:hover {
 
   }
 
+
+.btn-primary {
+    box-shadow: 0 2px 6px rgba(71, 102, 191, 0.66);
+}

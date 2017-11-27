@@ -869,7 +869,7 @@ a:hover {
           }
 
 
-          .product-plate:hover .btn-primary {
+          .btn-primary:hover  {
            box-shadow: 0 2px 6px rgba(71, 102, 191, 0.66), 0 6px 14px rgba(71, 102, 191, 0.31);
          }
 
