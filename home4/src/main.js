@@ -50,14 +50,21 @@ $(document).ready(function () {
         nextButton: '.slider-arrow-r',
         prevButton: '.slider-arrow-l',
         // Disable preloading of all images
-        preloadImages: false,
+        preloadImages: true,
+        slidesPerView: 'auto',
+         centeredSlides: true,
+
+ lazyLoadingOnTransitionStart : true,
+  lazyLoadingInPrevNext : true,
+
+
         // Enable lazy loading
         lazyLoading: true,
         pagination: '.swiper-pagination',
         paginationType: 'fraction',
-         loop: true,
-         parallax: true,
-        speed: 600
+         loop: true
+      
+      
     });
 
 var mainSlider = new Swiper('.main-slider-m', {
