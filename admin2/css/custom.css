@@ -304,16 +304,10 @@ background-color: #f4f9ee;
 transform: rotate(45deg);
 }
 
-
-
-
-
-
 .split-page{
     height: calc(100vh - 145px);
     overflow-y: scroll;
     }
-
 
 .split-page::-webkit-scrollbar {
     width: 3px;
@@ -321,7 +315,6 @@ transform: rotate(45deg);
  
 .split-page::-webkit-scrollbar-track {
    background-color: rgba(0,0,0,0.1); 
-
 
 }
  
