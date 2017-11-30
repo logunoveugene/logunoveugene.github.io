@@ -270,15 +270,6 @@ a, .link {
     position: relative;
 }
 
-.alert-warning{
-    background-color: #fff9ec
-}
-.alert-danger{
-background-color: #fdf2f2;
-}
-.alert-success{
-  background-color: #f4f9ee;  
-}
 
 .speach-label.alert-danger::before{
 content: "";
@@ -288,7 +279,7 @@ left: 15px;
 display: block;
 width: 10px;
 height:10px;
-background-color: #fdf2f2;
+background-color: #f8d7da;
 transform: rotate(45deg);
 }
 
@@ -300,7 +291,7 @@ left: 15px;
 display: block;
 width: 10px;
 height:10px;
-background-color: #f4f9ee;
+background-color: #d4edda;
 transform: rotate(45deg);
 }
 
