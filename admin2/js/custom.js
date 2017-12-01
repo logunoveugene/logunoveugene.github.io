@@ -12,7 +12,7 @@ $(document).ready(function() {
 
 function time() {
 var d = new Date();
-document.getElementById("localtime").innerHTML = d.toLocaleTimeString();
+document.getElementById("localtime").innerHTML = '('+d.toLocaleTimeString()+')';
 }
 setInterval(time, 1000);
 
