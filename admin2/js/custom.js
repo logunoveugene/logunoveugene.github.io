@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 });
 
-
+$('.collapse').collapse()
 
 // $('.split-page').scroll(function (event) {
 //     var scroll = $('.split-page').scrollTop();
