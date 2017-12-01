@@ -10,6 +10,21 @@ $(document).ready(function() {
 });
 
 
+
+// $('.split-page').scroll(function (event) {
+//     var scroll = $('.split-page').scrollTop();
+//     if (scroll>0) {
+//             $('.split-page').addClass( "scrolled" );
+//      $('.page-header').addClass( "d-none" );
+//     }
+//     else {
+//          $('.split-page').removeClass( "scrolled" );
+//      $('.page-header').removeClass( "d-none" );
+//     }
+
+
+// });
+
 function time() {
 var d = new Date();
 document.getElementById("localtime").innerHTML = '('+d.toLocaleTimeString()+')';

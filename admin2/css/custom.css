@@ -300,6 +300,13 @@ transform: rotate(45deg);
     overflow-y: scroll;
     }
 
+/*.split-page.scrolled{
+ 
+       height: calc(100vh);
+}
+*/
+
+
 .split-page::-webkit-scrollbar {
     width: 3px;
 }
