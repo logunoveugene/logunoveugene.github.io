@@ -134,10 +134,20 @@
                                         <span class="custom-control-indicator"></span>
                                         <span class="custom-control-description">Аннулирован</span>
                                     </label>
-                                    <label class="custom-control custom-checkbox mb-0">
-                                        <input type="checkbox" class="custom-control-input" value="Не подтвержден" v-model="searchStatus">
+                                    <label class="custom-control custom-checkbox ">
+                                        <input type="checkbox" class="custom-control-input" value="Согласование" v-model="searchStatus">
                                         <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description">Не подтвержден</span>
+                                        <span class="custom-control-description">Согласование</span>
+                                    </label>
+                                    <label class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" value="Ожидание подтверждения" v-model="searchStatus">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description">Ожидание подтверждения</span>
+                                    </label>
+                                    <label class="custom-control custom-checkbox mb-0">
+                                        <input type="checkbox" class="custom-control-input" value="Ошибка наличия товара" v-model="searchStatus">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description">Ошибка наличия товара</span>
                                     </label>
                                 </div>
                             </div>
