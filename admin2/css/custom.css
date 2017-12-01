@@ -320,3 +320,13 @@ transform: rotate(45deg);
     background-color: rgba(0,0,0,0.3);
      width: 3px;
 }
+
+
+.table-icons{
+        max-width: 17px;
+    height: auto;
+}
+.table-icons-wrap{
+    width: 20px;
+    flex-shrink: 0;
+}
