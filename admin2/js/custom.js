@@ -22,16 +22,13 @@ $('.collapse').collapse()
 //      $('.page-header').removeClass( "d-none" );
 //     }
 
-
 // });
 
 function time() {
-var d = new Date();
-document.getElementById("localtime").innerHTML = '('+d.toLocaleTimeString()+')';
+    var d = new Date();
+    document.getElementById("localtime").innerHTML = '(' + d.toLocaleTimeString() + ')';
 }
 setInterval(time, 1000);
-
-
 
 moment.locale('ru');
 Vue.component('flat-pickr', VueFlatpickr.default);
@@ -44,7 +41,7 @@ var orders = new Vue({
         config: {
             wrap: true,
             mode: "range",
-            maxDate:"today",
+            maxDate: "today",
             dateFormat: "Y-m-d",
             defaultDate: "today",
             "locale": "ru",
@@ -53,6 +50,9 @@ var orders = new Vue({
         orders: [{
             id: 20101507,
             attributes: [{
+                attributesType: "terminal",
+                attributesName: "Оплачен"
+            }, {
                 attributesType: "terminal",
                 attributesName: "Терминал"
             }, {
@@ -80,6 +80,9 @@ var orders = new Vue({
         }, {
             id: 20101506,
             attributes: [{
+                attributesType: "terminal",
+                attributesName: "Оплачен"
+            }, {
                 attributesType: "gift",
                 attributesName: "Подарок"
             }],
@@ -103,7 +106,10 @@ var orders = new Vue({
             orderSum: 1960
         }, {
             id: 20101505,
-            attributes: [],
+            attributes: [{
+                attributesType: "terminal",
+                attributesName: "Оплачен"
+            }, ],
             date: "2016-01-13T05:23:38+00:00",
             status: {
                 statusType: "info",
@@ -124,7 +130,10 @@ var orders = new Vue({
             orderSum: 18400
         }, {
             id: 20101504,
-            attributes: [],
+            attributes: [{
+                attributesType: "terminal",
+                attributesName: "Оплачен"
+            }, ],
             date: "2016-01-13T05:23:38+00:00",
             status: {
                 statusType: "warning",
@@ -146,6 +155,9 @@ var orders = new Vue({
         }, {
             id: 20101503,
             attributes: [{
+                attributesType: "terminal",
+                attributesName: "Оплачен"
+            }, {
                 attributesType: "terminal",
                 attributesName: "Терминал"
             }, {
@@ -173,6 +185,9 @@ var orders = new Vue({
         }, {
             id: 20101502,
             attributes: [{
+                attributesType: "terminal",
+                attributesName: "Оплачен"
+            }, {
                 attributesType: "gift",
                 attributesName: "Подарок"
             }],
@@ -193,11 +208,14 @@ var orders = new Vue({
                 deliveryPlace: "ТЦ Черемушки"
             },
             orderPaymentType: "Онлайн оплата",
-                     orderPaymentState: "text-success",
+            orderPaymentState: "text-success",
             orderSum: 1960
         }, {
             id: 20101501,
-            attributes: [],
+            attributes: [{
+                attributesType: "terminal",
+                attributesName: "Оплачен"
+            }, ],
             date: "2016-01-13T05:23:38+00:00",
             status: {
                 statusType: "holdstatus",
@@ -218,7 +236,10 @@ var orders = new Vue({
             orderSum: 18400
         }, {
             id: 20101500,
-            attributes: [],
+            attributes: [{
+                attributesType: "terminal",
+                attributesName: "Оплачен"
+            }, ],
             date: "2016-01-13T05:23:38+00:00",
             status: {
                 statusType: "warning",
@@ -240,6 +261,9 @@ var orders = new Vue({
         }, {
             id: 20101499,
             attributes: [{
+                attributesType: "terminal",
+                attributesName: "Оплачен"
+            }, {
                 attributesType: "terminal",
                 attributesName: "Терминал"
             }, {
@@ -267,6 +291,9 @@ var orders = new Vue({
         }, {
             id: 20101498,
             attributes: [{
+                attributesType: "terminal",
+                attributesName: "Оплачен"
+            }, {
                 attributesType: "gift",
                 attributesName: "Подарок"
             }],
@@ -290,7 +317,10 @@ var orders = new Vue({
             orderSum: 1960
         }, {
             id: 20101497,
-            attributes: [],
+            attributes: [{
+                attributesType: "terminal",
+                attributesName: "Оплачен"
+            }, ],
             date: "2016-01-13T05:23:38+00:00",
             status: {
                 statusType: "info",
@@ -311,7 +341,10 @@ var orders = new Vue({
             orderSum: 18400
         }, {
             id: 20101496,
-            attributes: [],
+            attributes: [{
+                attributesType: "terminal",
+                attributesName: "Оплачен"
+            }, ],
             date: "2016-01-13T05:23:38+00:00",
             status: {
                 statusType: "warning",
@@ -333,6 +366,9 @@ var orders = new Vue({
         }, {
             id: 20101495,
             attributes: [{
+                attributesType: "terminal",
+                attributesName: "Оплачен"
+            }, {
                 attributesType: "terminal",
                 attributesName: "Терминал"
             }, {
@@ -361,6 +397,9 @@ var orders = new Vue({
         }, {
             id: 20101494,
             attributes: [{
+                attributesType: "terminal",
+                attributesName: "Не оплачен"
+            }, {
                 attributesType: "gift",
                 attributesName: "Подарок"
             }],
@@ -381,11 +420,14 @@ var orders = new Vue({
                 deliveryPlace: "ТЦ Черемушки"
             },
             orderPaymentType: "Онлайн оплата",
-    orderPaymentState: "text-success",
+            orderPaymentState: "text-success",
             orderSum: 1960
         }, {
             id: 20101493,
-            attributes: [],
+            attributes: [{
+                attributesType: "terminal",
+                attributesName: "Оплачен"
+            }, ],
             date: "2016-01-13T05:23:38+00:00",
             status: {
                 statusType: "holdstatus",
@@ -406,7 +448,10 @@ var orders = new Vue({
             orderSum: 18400
         }, {
             id: 20101492,
-            attributes: [],
+            attributes: [{
+                attributesType: "terminal",
+                attributesName: "Оплачен"
+            }, ],
             date: "2016-01-13T05:23:38+00:00",
             status: {
                 statusType: "warning",
@@ -425,9 +470,11 @@ var orders = new Vue({
             },
             orderPaymentType: "При получении",
             orderSum: 34590
-        },
-        ],
-        searchAttributes: [],
+        }, ],
+        searchattributes: [{
+            attributesType: "terminal",
+            attributesName: "Оплачен"
+        }, ],
         searchId: "",
         searchIdSubmit: "",
         searchDate: "",
@@ -460,62 +507,53 @@ var orders = new Vue({
             return this.searchDate.split(' — ');
         },
 
-        allOrderSum: function(){
-               return this.orders.reduce(function(sum, next) {
-                   return sum + Number(next.orderSum);
-               }, 0);
-            },
+        allOrderSum: function() {
+            return this.orders.reduce(function(sum, next) {
+                return sum + Number(next.orderSum);
+            }, 0);
+        },
 
         todaydate: function() {
-            return moment(String(new Date())).format("YYYY-MM-DD") ;
+            return moment(String(new Date())).format("YYYY-MM-DD");
         },
         yesterdaydate: function() {
-            return moment(String(new Date(Date.now() - 86400000))).format("YYYY-MM-DD") ;
+            return moment(String(new Date(Date.now() - 86400000))).format("YYYY-MM-DD");
             ;
         },
         weekdate: function() {
-           return moment(String(new Date(Date.now() - 604800000))).format("YYYY-MM-DD") ;
+            return moment(String(new Date(Date.now() - 604800000))).format("YYYY-MM-DD");
         },
         monthdate: function() {
-           return moment(String(new Date(Date.now() - 2592000000))).format("YYYY-MM-DD") ;
+            return moment(String(new Date(Date.now() - 2592000000))).format("YYYY-MM-DD");
         },
 
-        showTwoDatePlate:function() {
-            
-           if (this.searchDateSumbit[1]==this.searchDateSumbit[0] || this.searchDateSumbit.length==1 ) {
-                   
-                                         return false ;  
-                   
-                     
-            }
-            else{
-                return true ; 
+        showTwoDatePlate: function() {
+
+            if (this.searchDateSumbit[1] == this.searchDateSumbit[0] || this.searchDateSumbit.length == 1) {
+
+                return false;
+
+            } else {
+                return true;
             }
 
         },
-
-
-
-
-
     },
 
     methods: {
-        setToday:function(){
-        this.searchDate = this.todaydate + ' — ' + this.todaydate;
+        setToday: function() {
+            this.searchDate = this.todaydate + ' — ' + this.todaydate;
         },
 
-        setYesterday:function(){
-        this.searchDate = this.yesterdaydate + ' — ' + this.yesterdaydate;
+        setYesterday: function() {
+            this.searchDate = this.yesterdaydate + ' — ' + this.yesterdaydate;
         },
-        setWeek:function(){
-        this.searchDate = this.weekdate + ' — ' + this.todaydate;
+        setWeek: function() {
+            this.searchDate = this.weekdate + ' — ' + this.todaydate;
         },
-        setmonth:function(){
-        this.searchDate = this.monthdate + ' — ' + this.todaydate;
+        setmonth: function() {
+            this.searchDate = this.monthdate + ' — ' + this.todaydate;
         },
-
-
 
         searchIdLabel: function() {
             if (this.searchId.length > 0) {
@@ -541,7 +579,6 @@ var orders = new Vue({
         AttributesClear: function(index) {
             this.searchAttributes.splice(index, 1);
         },
-
 
         StatusClear: function(index) {
             this.searchStatus.splice(index, 1);

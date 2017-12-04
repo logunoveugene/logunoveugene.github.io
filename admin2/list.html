@@ -55,10 +55,7 @@
                                 </label>
                             </div>
 
-
-
-
-                            <div class="btn btn-admin active mr-3" v-if="searchIdSubmit">
+                           <div class="btn btn-admin active mr-3" v-if="searchIdSubmit">
                                 Номер заказа: {{searchIdSubmit}} <img class="ml-1" v-on:click="searchIdClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
                             </div>
                             <div class="btn btn-admin active mr-3" v-if="searchAttributes" v-for="(Attributes, index) in searchAttributes">
