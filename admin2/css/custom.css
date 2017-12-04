@@ -121,33 +121,43 @@ a, .link {
 }
 
 .info {
-    border: 2px solid #00aeef;
+    background-color: #00aeef;
     border-radius: 3px;
     padding: 4px 8px;
+    color: white;
 }
 
 .warning {
-    border: 2px solid #ff9f00;
+
+        background-color: #ff9f00;
     border-radius: 3px;
     padding: 4px 8px;
+    color: white;
 }
 
 .sucsess {
-    border: 2px solid #5cb85c;
+
+    background-color: #5cb85c;
     border-radius: 3px;
     padding: 4px 8px;
+    color: white;
+
 }
 
 .holdstatus {
-    border: 2px solid #999999;
+
+    background-color: #999999;
     border-radius: 3px;
     padding: 4px 8px;
+    color: white;
 }
 
 .danger {
-    border: 2px solid #ff1844;
+
+    background-color: #ff1844;
     border-radius: 3px;
     padding: 4px 8px;
+    color: white;
 }
 
 .attribute {
@@ -171,7 +181,7 @@ a, .link {
 }
 
 .order-item:nth-child(2n-1) {
-    background: #fbfbfb;
+    background: #f7f7f7;
 }
 
 .delivery-type {

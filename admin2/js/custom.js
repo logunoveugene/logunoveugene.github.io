@@ -120,7 +120,7 @@ var orders = new Vue({
                 deliveryCity: "Москва",
                 deliveryPlace: "пр-т Красного Знамени, д.59, кв 257"
             },
-            orderPaymentType: "При получении",
+            orderPaymentType: "Онлайн кредит",
             orderSum: 18400
         }, {
             id: 20101504,
@@ -193,6 +193,7 @@ var orders = new Vue({
                 deliveryPlace: "ТЦ Черемушки"
             },
             orderPaymentType: "Онлайн оплата",
+                     orderPaymentState: "text-success",
             orderSum: 1960
         }, {
             id: 20101501,
@@ -355,6 +356,7 @@ var orders = new Vue({
                 deliveryPlace: "Фрунзе 54, кв. 528"
             },
             orderPaymentType: "При получении",
+
             orderSum: 4880
         }, {
             id: 20101494,
@@ -379,6 +381,7 @@ var orders = new Vue({
                 deliveryPlace: "ТЦ Черемушки"
             },
             orderPaymentType: "Онлайн оплата",
+    orderPaymentState: "text-success",
             orderSum: 1960
         }, {
             id: 20101493,
@@ -456,6 +459,13 @@ var orders = new Vue({
         searchDateSumbit: function() {
             return this.searchDate.split(' — ');
         },
+
+        allOrderSum: function(){
+               return this.orders.reduce(function(sum, next) {
+                   return sum + Number(next.orderSum);
+               }, 0);
+            },
+
         todaydate: function() {
             return moment(String(new Date())).format("YYYY-MM-DD") ;
         },
