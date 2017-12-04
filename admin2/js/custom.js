@@ -548,6 +548,7 @@ var orders = new Vue({
         },
         searchDateClear: function() {
             this.searchDate = "";
+            $(".date-group").removeClass("active");
         },
 
     }

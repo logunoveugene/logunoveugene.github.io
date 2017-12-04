@@ -38,18 +38,18 @@
                                 
                             </div>
                             <div class="btn-group mt-2 mr-3" data-toggle="buttons">
-                                <label class="btn btn-admin "  @click="setToday">
+                                <label class="btn btn-admin date-group"  @click="setToday">
                                     <input type="radio" id="one" :value="todaydate" v-model="searchDate">Сегодня
                                 </label>
-                                <label class="btn btn-admin" @click="setYesterday">
+                                <label class="btn btn-admin date-group" @click="setYesterday">
                                     <input type="radio" value="54" id="option2" v-model="searchDate">Вчера
 
                                 </label>
-                                <label class="btn btn-admin d-none d-md-inline" @click="setWeek">
+                                <label class="btn btn-admin d-none d-md-inline date-group" @click="setWeek">
                                     <input type="radio" id="option3" v-model="searchDate">Неделя
 
                                 </label>
-                                <label class="btn btn-admin d-none d-md-inline" @click="setmonth">
+                                <label class="btn btn-admin d-none d-md-inline date-group" @click="setmonth">
                                     <input type="radio" id="option4" v-model="searchDate">Месяц
 
                                 </label>
