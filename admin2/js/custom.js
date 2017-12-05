@@ -105,7 +105,7 @@ var orders = new Vue({
             attributes: [ ],
             date: "2016-01-13T05:23:38+00:00",
             status: {
-                statusType: "info",
+                statusType: "success",
                 statusName: "Готов к выдаче"
             },
             buyer: {
@@ -177,7 +177,7 @@ var orders = new Vue({
             }],
             date: "2016-01-13T05:23:38+00:00",
             status: {
-                statusType: "sucsess",
+                statusType: "success",
                 statusName: "Выполнен"
             },
             buyer: {
@@ -248,7 +248,7 @@ var orders = new Vue({
             }],
             date: "2016-01-13T05:23:38+00:00",
             status: {
-                statusType: "sucsess",
+                statusType: "success",
                 statusName: "Готов к выдаче"
             },
             buyer: {
@@ -272,7 +272,7 @@ var orders = new Vue({
             }],
             date: "2016-01-13T05:23:38+00:00",
             status: {
-                statusType: "sucsess",
+                statusType: "success",
                 statusName: "Готов к выдаче"
             },
             buyer: {
@@ -294,7 +294,7 @@ var orders = new Vue({
             attributes: [ ],
             date: "2016-01-13T05:23:38+00:00",
             status: {
-                statusType: "sucsess",
+                statusType: "success",
                 statusName: "Готов к выдаче"
             },
             buyer: {
@@ -370,7 +370,7 @@ var orders = new Vue({
             }],
             date: "2016-01-13T05:23:38+00:00",
             status: {
-                statusType: "sucsess",
+                statusType: "success",
                 statusName: "Выполнен"
             },
             buyer: {
@@ -534,6 +534,9 @@ var orders = new Vue({
         },
         AttributesClear: function(index) {
             this.searchAttributes.splice(index, 1);
+        },
+        AttributesClearAll: function(index) {
+            this.searchAttributes=[];
         },
 
         StatusClear: function(index) {

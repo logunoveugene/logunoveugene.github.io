@@ -80,6 +80,7 @@
                             <div class="order-table-header">
                                 <div class="order-row order-row-small">
                                     <input class="filter-input  w-100" v-bind:class="{ edit: searchId }" v-model="searchId" v-on:keyup.enter="searchIdLabel" type="number" placeholder="Номер">
+                                    <div class="small mt-1" v-if="searchIdSubmit" v-on:click="searchIdClear">Фильтр: 1<a href="#" class="ml-1">сброс</a></div>
                                 </div>
                                 <div class="order-row order-row-small">
                                     <div class="dropdown  w-100">
@@ -106,10 +107,12 @@
                                             </label>
                                         </div>
                                     </div>
+                                    <div class="small mt-1" v-if="searchAttributes.length>0" v-on:click="AttributesClearAll">Фильтр: {{searchAttributes.length}}<a href="#" class="ml-1">сброс</a></div>
                                 </div>
                                 <div class="order-row order-row-small">
                                     <div class="filter-drop w-100 " data-toggle>Дата</div>
                                     <flat-pickr v-model="searchDate" input-class="height-0" :config="config" placeholder="Дата"></flat-pickr>
+                                    <div class="small mt-1" v-if="searchDate" v-on:click="searchDateClear">Фильтр: 1<a href="#" class="ml-1">сброс</a></div>
                                 </div>
                                 <div class="order-row">
                                     <div class="dropdown w-100">
@@ -120,44 +123,46 @@
                                         </div>
                                         <div class="dropdown-menu filter" aria-labelledby="dropdownMenu2">
                                             <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" value="Принят" v-model="searchStatus">
+                                                <input type="checkbox" class="custom-control-input" value="Выполнен" v-model="searchStatus">
                                                 <span class="custom-control-indicator"></span>
-                                                <span class="custom-control-description">Принят</span>
+                                                <span class="custom-control-description ">Выполнен</span>
                                             </label>
                                             <label class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" value="Готов к выдаче" v-model="searchStatus">
                                                 <span class="custom-control-indicator"></span>
-                                                <span class="custom-control-description">Готов к выдаче</span>
+                                                <span class="custom-control-description ">Готов к выдаче</span>
                                             </label>
+                                            <label class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" value="Принят" v-model="searchStatus">
+                                                <span class="custom-control-indicator"></span>
+                                                <span class="custom-control-description ">Принят</span>
+                                            </label>
+                                            
                                             <label class="custom-control custom-checkbox ">
                                                 <input type="checkbox" class="custom-control-input" value="Доставляется" v-model="searchStatus">
                                                 <span class="custom-control-indicator"></span>
-                                                <span class="custom-control-description">Доставляется</span>
+                                                <span class="custom-control-description ">Доставляется</span>
                                             </label>
-                                            <label class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" value="Выполнен" v-model="searchStatus">
-                                                <span class="custom-control-indicator"></span>
-                                                <span class="custom-control-description">Выполнен</span>
-                                            </label>
+                                            
                                             <label class="custom-control custom-checkbox ">
                                                 <input type="checkbox" class="custom-control-input" value="Аннулирован" v-model="searchStatus">
                                                 <span class="custom-control-indicator"></span>
-                                                <span class="custom-control-description">Аннулирован</span>
+                                                <span class="custom-control-description ">Аннулирован</span>
                                             </label>
                                             <label class="custom-control custom-checkbox ">
                                                 <input type="checkbox" class="custom-control-input" value="Согласование" v-model="searchStatus">
                                                 <span class="custom-control-indicator"></span>
-                                                <span class="custom-control-description">Согласование</span>
+                                                <span class="custom-control-description ">Согласование</span>
                                             </label>
                                             <label class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input" value="Ожидание подтверждения" v-model="searchStatus">
                                                 <span class="custom-control-indicator"></span>
-                                                <span class="custom-control-description">Ожидание подтверждения</span>
+                                                <span class="custom-control-description ">Ожидание подтверждения</span>
                                             </label>
                                             <label class="custom-control custom-checkbox mb-0">
                                                 <input type="checkbox" class="custom-control-input" value="Ошибка наличия товара" v-model="searchStatus">
                                                 <span class="custom-control-indicator"></span>
-                                                <span class="custom-control-description">Ошибка наличия товара</span>
+                                                <span class="custom-control-description ">Ошибка наличия товара</span>
                                             </label>
                                         </div>
                                     </div>
