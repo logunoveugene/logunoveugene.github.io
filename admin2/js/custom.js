@@ -11,18 +11,17 @@ $(document).ready(function() {
 
 $('.collapse').collapse()
 
-// $('.split-page').scroll(function (event) {
-//     var scroll = $('.split-page').scrollTop();
-//     if (scroll>0) {
-//             $('.split-page').addClass( "scrolled" );
-//      $('.page-header').addClass( "d-none" );
-//     }
-//     else {
-//          $('.split-page').removeClass( "scrolled" );
-//      $('.page-header').removeClass( "d-none" );
-//     }
+$(window).scroll(function (event) {
+    var scroll = $(window).scrollTop();
+    if (scroll<150) {
+            $('.filter-state').addClass( "d-none" );
+    }
+    else {
+         $('.filter-state').removeClass( "d-none" );
+   
+    }
 
-// });
+});
 
 function time() {
     var d = new Date();
