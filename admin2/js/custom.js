@@ -49,10 +49,7 @@ var orders = new Vue({
         },
         orders: [{
             id: 20101507,
-            attributes: [{
-                attributesType: "terminal",
-                attributesName: "Оплачен"
-            }, {
+            attributes: [ {
                 attributesType: "terminal",
                 attributesName: "Терминал"
             }, {
@@ -76,13 +73,11 @@ var orders = new Vue({
                 deliveryPlace: "Алеутская"
             },
             orderPaymentType: "При получении",
+            orderPaymentState: "text-success",
             orderSum: 4880
         }, {
             id: 20101506,
-            attributes: [{
-                attributesType: "terminal",
-                attributesName: "Оплачен"
-            }, {
+            attributes: [ {
                 attributesType: "gift",
                 attributesName: "Подарок"
             }],
@@ -103,13 +98,11 @@ var orders = new Vue({
                 deliveryPlace: "ТЦ Черемушки"
             },
             orderPaymentType: "Онлайн оплата",
+            orderPaymentState: "text-success",
             orderSum: 1960
         }, {
             id: 20101505,
-            attributes: [{
-                attributesType: "terminal",
-                attributesName: "Оплачен"
-            }, ],
+            attributes: [ ],
             date: "2016-01-13T05:23:38+00:00",
             status: {
                 statusType: "info",
@@ -130,10 +123,7 @@ var orders = new Vue({
             orderSum: 18400
         }, {
             id: 20101504,
-            attributes: [{
-                attributesType: "terminal",
-                attributesName: "Оплачен"
-            }, ],
+            attributes: [ ],
             date: "2016-01-13T05:23:38+00:00",
             status: {
                 statusType: "warning",
@@ -154,10 +144,7 @@ var orders = new Vue({
             orderSum: 34590
         }, {
             id: 20101503,
-            attributes: [{
-                attributesType: "terminal",
-                attributesName: "Оплачен"
-            }, {
+            attributes: [ {
                 attributesType: "terminal",
                 attributesName: "Терминал"
             }, {
@@ -184,10 +171,7 @@ var orders = new Vue({
             orderSum: 4880
         }, {
             id: 20101502,
-            attributes: [{
-                attributesType: "terminal",
-                attributesName: "Оплачен"
-            }, {
+            attributes: [ {
                 attributesType: "gift",
                 attributesName: "Подарок"
             }],
@@ -212,10 +196,7 @@ var orders = new Vue({
             orderSum: 1960
         }, {
             id: 20101501,
-            attributes: [{
-                attributesType: "terminal",
-                attributesName: "Оплачен"
-            }, ],
+            attributes: [ ],
             date: "2016-01-13T05:23:38+00:00",
             status: {
                 statusType: "holdstatus",
@@ -236,10 +217,7 @@ var orders = new Vue({
             orderSum: 18400
         }, {
             id: 20101500,
-            attributes: [{
-                attributesType: "terminal",
-                attributesName: "Оплачен"
-            }, ],
+            attributes: [ ],
             date: "2016-01-13T05:23:38+00:00",
             status: {
                 statusType: "warning",
@@ -256,14 +234,12 @@ var orders = new Vue({
                 deliveryCity: "Владивосток",
                 deliveryPlace: "ТЦ Черемушки"
             },
-            orderPaymentType: "При получении",
+            orderPaymentType: "Онлайн оплата",
+            orderPaymentState: "text-success",
             orderSum: 34590
         }, {
             id: 20101499,
-            attributes: [{
-                attributesType: "terminal",
-                attributesName: "Оплачен"
-            }, {
+            attributes: [ {
                 attributesType: "terminal",
                 attributesName: "Терминал"
             }, {
@@ -272,8 +248,8 @@ var orders = new Vue({
             }],
             date: "2016-01-13T05:23:38+00:00",
             status: {
-                statusType: "info",
-                statusName: "Принят"
+                statusType: "sucsess",
+                statusName: "Готов к выдаче"
             },
             buyer: {
                 buyerName: "Полянский Виталий Петрович",
@@ -290,17 +266,14 @@ var orders = new Vue({
             orderSum: 4880
         }, {
             id: 20101498,
-            attributes: [{
-                attributesType: "terminal",
-                attributesName: "Оплачен"
-            }, {
+            attributes: [ {
                 attributesType: "gift",
                 attributesName: "Подарок"
             }],
             date: "2016-01-13T05:23:38+00:00",
             status: {
-                statusType: "info",
-                statusName: "Принят"
+                statusType: "sucsess",
+                statusName: "Готов к выдаче"
             },
             buyer: {
                 buyerName: "Юрий Васильевич Баранов",
@@ -314,16 +287,14 @@ var orders = new Vue({
                 deliveryPlace: "ТЦ Черемушки"
             },
             orderPaymentType: "Онлайн оплата",
+            orderPaymentState: "text-success",
             orderSum: 1960
         }, {
             id: 20101497,
-            attributes: [{
-                attributesType: "terminal",
-                attributesName: "Оплачен"
-            }, ],
+            attributes: [ ],
             date: "2016-01-13T05:23:38+00:00",
             status: {
-                statusType: "info",
+                statusType: "sucsess",
                 statusName: "Готов к выдаче"
             },
             buyer: {
@@ -341,10 +312,7 @@ var orders = new Vue({
             orderSum: 18400
         }, {
             id: 20101496,
-            attributes: [{
-                attributesType: "terminal",
-                attributesName: "Оплачен"
-            }, ],
+            attributes: [ ],
             date: "2016-01-13T05:23:38+00:00",
             status: {
                 statusType: "warning",
@@ -365,10 +333,7 @@ var orders = new Vue({
             orderSum: 34590
         }, {
             id: 20101495,
-            attributes: [{
-                attributesType: "terminal",
-                attributesName: "Оплачен"
-            }, {
+            attributes: [ {
                 attributesType: "terminal",
                 attributesName: "Терминал"
             }, {
@@ -424,10 +389,7 @@ var orders = new Vue({
             orderSum: 1960
         }, {
             id: 20101493,
-            attributes: [{
-                attributesType: "terminal",
-                attributesName: "Оплачен"
-            }, ],
+            attributes: [ ],
             date: "2016-01-13T05:23:38+00:00",
             status: {
                 statusType: "holdstatus",
@@ -448,10 +410,7 @@ var orders = new Vue({
             orderSum: 18400
         }, {
             id: 20101492,
-            attributes: [{
-                attributesType: "terminal",
-                attributesName: "Оплачен"
-            }, ],
+            attributes: [ ],
             date: "2016-01-13T05:23:38+00:00",
             status: {
                 statusType: "warning",
