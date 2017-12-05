@@ -80,7 +80,7 @@
                             <div class="order-table-header">
                                 <div class="order-row order-row-small">
                                     <input class="filter-input  w-100" v-bind:class="{ edit: searchId }" v-model="searchId" v-on:keyup.enter="searchIdLabel" type="number" placeholder="Номер">
-                                    <div class="small mt-1" v-if="searchIdSubmit" v-on:click="searchIdClear">Фильтр: 1<a href="#" class="ml-1">сброс</a></div>
+                                    <div class="small my-1" v-if="searchIdSubmit" v-on:click="searchIdClear">Фильтр: 1<a href="#" class="ml-1">сброс</a></div>
                                 </div>
                                 <div class="order-row order-row-small">
                                     <div class="dropdown  w-100">
@@ -107,12 +107,12 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <div class="small mt-1" v-if="searchAttributes.length>0" v-on:click="AttributesClearAll">Фильтр: {{searchAttributes.length}}<a href="#" class="ml-1">сброс</a></div>
+                                    <div class="small my-1" v-if="searchAttributes.length>0" v-on:click="AttributesClearAll">Фильтр: {{searchAttributes.length}}<a href="#" class="ml-1">сброс</a></div>
                                 </div>
                                 <div class="order-row order-row-small">
                                     <div class="filter-drop w-100 " data-toggle>Дата</div>
                                     <flat-pickr v-model="searchDate" input-class="height-0" :config="config" placeholder="Дата"></flat-pickr>
-                                    <div class="small mt-1" v-if="searchDate" v-on:click="searchDateClear">Фильтр: 1<a href="#" class="ml-1">сброс</a></div>
+                                    <div class="small my-1" v-if="searchDate" v-on:click="searchDateClear">Фильтр: 1<a href="#" class="ml-1">сброс</a></div>
                                 </div>
                                 <div class="order-row">
                                     <div class="dropdown w-100">
