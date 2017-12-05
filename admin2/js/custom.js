@@ -429,11 +429,8 @@ var orders = new Vue({
             },
             orderPaymentType: "При получении",
             orderSum: 34590
-        }, ],
-        searchattributes: [{
-            attributesType: "terminal",
-            attributesName: "Оплачен"
-        }, ],
+        } ],
+        searchAttributes: [],
         searchId: "",
         searchIdSubmit: "",
         searchDate: "",
