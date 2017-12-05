@@ -72,7 +72,7 @@ var orders = new Vue({
                 deliveryCity: "Владивосток",
                 deliveryPlace: "Алеутская"
             },
-            orderPaymentType: "При получении",
+            orderPaymentType: "Онлайн оплата",
             orderPaymentState: "text-success",
             orderSum: 4880
         }, {
