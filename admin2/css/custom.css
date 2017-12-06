@@ -373,3 +373,8 @@ font-size: .875rem;
 .lch-0:last-child{
     margin-right: 0!important;
 }
+
+
+.mr-3.lch-0:hover {
+    text-decoration: line-through;
+}
