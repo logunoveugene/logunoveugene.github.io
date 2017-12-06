@@ -116,6 +116,10 @@ a, .link {
     flex-grow: 7;
 }
 
+.order-row-half-large {
+    flex-grow: 5;
+}
+
 .order-row-small {
     flex-grow: 0.5;
 }
@@ -125,6 +129,9 @@ a, .link {
     border-radius: 3px;
     padding: 4px 8px;
     color: white;
+     max-width: 100%;
+    width: auto;
+    display: inline-block;
 }
 
 .warning {
@@ -133,6 +140,9 @@ a, .link {
     border-radius: 3px;
     padding: 4px 8px;
     color: white;
+    max-width: 100%;
+    width: auto;
+    display: inline-block;
 }
 
 .success {
@@ -141,6 +151,9 @@ a, .link {
     border-radius: 3px;
     padding: 4px 8px;
     color: white;
+   max-width: 100%;
+    width: auto;
+    display: inline-block;
 
 }
 
@@ -150,6 +163,9 @@ a, .link {
     border-radius: 3px;
     padding: 4px 8px;
     color: white;
+    max-width: 100%;
+    width: auto;
+    display: inline-block;
 }
 
 .danger {
@@ -158,6 +174,9 @@ a, .link {
     border-radius: 3px;
     padding: 4px 8px;
     color: white;
+    max-width: 100%;
+    width: auto;
+    display: inline-block;
 }
 
 .attribute {
@@ -255,7 +274,7 @@ a, .link {
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     border: 1px solid #ddd;
     padding: 1rem;
-    width: 346px;
+    width: 382px !important;
     display: none;
 }
 
@@ -341,3 +360,16 @@ transform: rotate(45deg);
     flex-shrink: 0;
 }
 
+.custom-select {
+    height: 1.95rem;
+    padding: .25rem 1.75rem .25rem .6rem;
+    border-radius: .2rem;
+font-size: .875rem;
+}
+
+
+
+/*dsddsd*/
+.lch-0:last-child{
+    margin-right: 0!important;
+}

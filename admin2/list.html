@@ -20,24 +20,23 @@
                     </nav> -->
                     <div class="d-flex flex-row">
                         <div class="h3 mb-0">Список заказов</div>
-                        <button class="ml-auto btn btn-admin">
-                            <img class="" src="https://i.snag.gy/6fGx1q.jpg" alt=""><span class="d-none d-md-inline ml-2">Новый заказ</span>
+                        <button class="ml-auto btn btn-admin mr-2">
+                            <img class="" src="https://i.snag.gy/6fGx1q.jpg" alt=""><span class="d-none d-md-inline ml-2">Заказ</span>
+                        </button>
+                        <button class="btn btn-admin">
+                            <img class="" src="https://i.snag.gy/6fGx1q.jpg" alt=""><span class="d-none d-md-inline ml-2">Услуга</span>
                         </button>
                     </div>
                 </div>
-                <div class="p-3 bs-1 ">
+                <div class="px-3 pt-3 bs-1 pb-0">
                     <div class="d-flex flex-row align-items-center">
                         <div class="d-inline-block">
-                        <div class="btn-group mt-2 mr-3" data-toggle="buttons">
-                                <label class="btn btn-admin active" >
-                                    <input type="radio" id="11" >Все 
-                                </label>
-                                <label class="btn btn-admin " >
-                                    <input type="radio" value="54" id="26" >Требуется действие
-                                </label>
-                                
-                            </div>
-                            <div class="btn-group mt-2 mr-3" data-toggle="buttons">
+                        <select class="custom-select mr-2 mb-3">
+                                                  <option selected>Сохраненные фильтры</option>
+                                                  <option value="1">"Красные" статусы</option>
+                                                  <option value="3">Добавить</option>
+                                              </select>
+                           <!--  <div class="btn-group mt-2 mr-3" data-toggle="buttons">
                                 <label class="btn btn-admin date-group"  @click="setToday">
                                     <input type="radio" id="one" :value="todaydate" v-model="searchDate">Сегодня
                                 </label>
@@ -48,30 +47,35 @@
                                 <label class="btn btn-admin d-none d-md-inline date-group" @click="setWeek">
                                     <input type="radio" id="option3" v-model="searchDate">Неделя
 
-                                </label>
-                                <label class="btn btn-admin d-none d-md-inline date-group" @click="setmonth">
+                                </label> 
+                               <label class="btn btn-admin d-none d-md-inline date-group" @click="setmonth">
                                     <input type="radio" id="option4" v-model="searchDate">Месяц
+                                </label> 
+                            </div> -->
 
-                                </label>
-                            </div>
-
-                           <div class="btn btn-admin active mr-3" v-if="searchIdSubmit">
+                           <div class="btn btn-admin active mr-3 mb-3" v-if="searchIdSubmit">
                                 Номер заказа: {{searchIdSubmit}} <img class="ml-1" v-on:click="searchIdClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
                             </div>
-                            <div class="btn btn-admin active mr-3" v-if="searchAttributes" v-for="(Attributes, index) in searchAttributes">
+                            <div class="btn btn-admin active mr-3 mb-3" v-if="searchAttributes" v-for="(Attributes, index) in searchAttributes">
                                 Признак: {{Attributes}} <img class="ml-1" v-on:click="AttributesClear(index)" src="https://i.snag.gy/VGpiUI.jpg" alt="">
                             </div>
-                            <div class="btn btn-admin active mr-3" v-if="searchDateSumbit[0]">
+                            <div class="btn btn-admin active mr-3 mb-3"  v-if="searchDateSumbit[0]">
                                 Дата: {{searchDateSumbit[0] | date}} <span class=""  v-if="showTwoDatePlate">– {{searchDateSumbit[1] | date}} </span><img class="ml-1" v-on:click="searchDateClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
                             </div>
-                            <div class="btn btn-admin active mr-3" v-if="searchAttributes" v-for="(status, index) in searchStatus">
-                                Статус: {{status}} <img class="ml-1" v-on:click="StatusClear(index)" src="https://i.snag.gy/VGpiUI.jpg" alt="">
+                            <div class="btn btn-admin active d-inline-flex flex-row flex-wrap mb-3" v-if="searchStatus.length > 0" > <div class="d-inline mr-2">Статус:</div>
+                                <div class=" mr-3 lch-0" v-for="(status, index) in searchStatus" v-on:click="StatusClear(index)" >
+                               {{status}} <img class="ml-1" src="https://i.snag.gy/VGpiUI.jpg" alt="">
                             </div>
-                            <div class="btn btn-admin active mr-3" v-if="searchBuyerSubmit">
+                            </div>
+                            <div class="btn btn-admin active mr-3 mb-3" v-if="searchBuyerSubmit">
                                 Покупатель: {{searchBuyerSubmit}} <img class="ml-1" v-on:click="searchBuyerClear" src="https://i.snag.gy/VGpiUI.jpg" alt="">
                             </div>
                         </div>
-                        <div class="ml-auto"><div class="d-inline">Найдено 16 шт. </div> <div class="d-inline">на {{allOrderSum | number}} р.</div></div>
+                        <div class="ml-auto mb-3">
+                            <div class="d-inline">Найдено 16 шт. </div>
+                             <div class="d-inline">на {{allOrderSum | number}} р.</div>
+                           
+                         </div>
                     </div>
                 </div>
                 <div class="bs-1 ">
@@ -104,7 +108,7 @@
                                                 <input type="checkbox" class="custom-control-input" value="В один клик" v-model="searchAttributes">
                                                 <span class="custom-control-indicator"></span>
                                                 <span class="custom-control-description">В один клик</span>
-                                            </label>
+                                            </label> 
                                         </div>
                                     </div>
                                     <div class="filter-state small my-1" v-if="searchAttributes.length>0" v-on:click="AttributesClearAll">Фильтр: {{searchAttributes.length}}<a href="#" class="ml-1">сброс</a></div>
@@ -167,46 +171,10 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="order-row order-row-large">
+                                <div class="order-row order-row-half-large">
                                     <input class="filter-input mr-5 w-100" v-bind:class="{ edit: searchBuyer }" v-model="searchBuyer" v-on:keyup.enter="searchBuyerLabel" type="text" placeholder="Покупатель">
                                 </div>
-                                <div class="order-row">
-                                    <div class="dropdown w-100">
-                                        <div class="" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <div class="small filter-drop d-flex flex-row align-items-center">
-                                                <div class="">К оплате</div>
-                                            </div>
-                                        </div>
-                                        <div class="dropdown-menu filter " aria-labelledby="dropdownMenu2">
-                                            <form>
-                                              <div class="form-row mb-3">
-                                                <div class="col">
-                                                  <input type="text" class="form-control form-control-sm" placeholder="Сумма от">
-                                              </div>
-                                              <div class="col">
-                                                  <input type="text" class="form-control form-control-sm" placeholder="до">
-                                              </div>
-                                          </div>
-                                      </form>  
-
-                                      <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" value="Терминал" v-model="searchAttributes">
-                                        <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description">При получении</span>
-                                    </label>
-                                    <label class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" value="Подарок" v-model="searchAttributes">
-                                        <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description">Онлайн оплата</span>
-                                    </label>
-                                    <label class="custom-control custom-checkbox mb-0">
-                                        <input type="checkbox" class="custom-control-input" value="В один клик" v-model="searchAttributes">
-                                        <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description">В кредит</span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+                                
 
                         
                         <div class="order-row order-row-large">
@@ -271,6 +239,43 @@
                         </div>
                     </div>
                 </div>
+                <div class="order-row">
+                                    <div class="dropdown w-100">
+                                        <div class="" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <div class="small filter-drop d-flex flex-row align-items-center">
+                                                <div class="">К оплате</div>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-menu filter " aria-labelledby="dropdownMenu2">
+                                            <form>
+                                              <div class="form-row mb-3">
+                                                <div class="col">
+                                                  <input type="text" class="form-control form-control-sm" placeholder="Сумма от">
+                                              </div>
+                                              <div class="col">
+                                                  <input type="text" class="form-control form-control-sm" placeholder="до">
+                                              </div>
+                                          </div>
+                                      </form>  
+
+                                      <label class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" value="Терминал" v-model="searchAttributes">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description">При получении</span>
+                                    </label>
+                                    <label class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" value="Подарок" v-model="searchAttributes">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description">Онлайн оплата</span>
+                                    </label>
+                                    <label class="custom-control custom-checkbox mb-0">
+                                        <input type="checkbox" class="custom-control-input" value="В один клик" v-model="searchAttributes">
+                                        <span class="custom-control-indicator"></span>
+                                        <span class="custom-control-description">В кредит</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
             </div>
             <div class="order-list py-3">
                 <div class="order-item d-flex flex-row justify-content-between align-items-center py-3" v-for="(order, index) in orders">
@@ -292,33 +297,35 @@
                         </div>
                     </div>
                     <div class="order-row ">
-                        <div class="text-nowrap small d-inline" :class="order.status.statusType">{{order.status.statusName}}</div>
+                        <div class="text-nowrap small d-inline" ><div class="text-truncate" :class="order.status.statusType">{{order.status.statusName}}</div></div>
                     </div>
-                    <div class="order-row order-row-large">
+                    <div class="order-row order-row-half-large">
                         <div class="text-nowrap ">
                             <div class="">{{order.buyer.buyerName}}</div>
                             <div class="small ">{{order.buyer.buyerPhone}}</div>
                         </div>
                     </div>
-                    <div class="order-row">
-                        <div class="text-right">
-                            <a href="#" class="d-inline" data-toggle="tooltip" data-placement="bottom" title="Содержимое заказа">{{order.orderSum | number}} р.</a>
-                            <div class="small" :class="order.orderPaymentState" >{{order.orderPaymentType}} </div>
-                        </div>
-                    </div>
+                    
 
                     <div class="order-row order-row-large">
                         <div class="mr-5 d-flex flex-row align-items-center">
                             <div class="delivery-type" :class="order.delivery.deliveryType"></div>
                             <div class="">
-                                <div class="">{{order.delivery.deliveryCity}} <div v-if="order.delivery.deliveryCity=='Москва'" class="small d-inline" id="localtime"></div></div>
-                                <div class="small">{{order.delivery.deliveryName}}: {{order.delivery.deliveryPlace}}</div>
+                                <div class="">{{order.delivery.deliveryName}}: {{order.delivery.deliveryPlace}} 
+                                </div>
+                                <div class="small">{{order.delivery.deliveryCity}} <div v-if="order.delivery.deliveryCity=='Москва'" class="small d-inline" id="localtime"></div></div>
                             </div>
                         </div>
                     </div>
                     <div class="order-row order-row-small">
                         <div class="mr-5">
                             <div class="text-nowrap">{{order.availability | date}}</div>
+                        </div>
+                    </div>
+                    <div class="order-row">
+                        <div class="text-right">
+                            <a href="#" class="d-inline" data-toggle="tooltip" data-placement="bottom" title="Содержимое заказа">{{order.orderSum | number}} р.</a>
+                            <div class="small text-nowrap text-truncate" :class="order.orderPaymentState" >{{order.orderPaymentType}} </div>
                         </div>
                     </div>
                 </div>

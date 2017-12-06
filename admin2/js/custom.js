@@ -7,12 +7,10 @@ $(document).ready(function() {
         e.stopPropagation();
     });
 
-});
 
-$('.collapse').collapse()
-
-$(window).scroll(function (event) {
-    var scroll = $(window).scrollTop();
+    $(window).scroll(function (event) {
+      var scroll=0;
+     scroll = $(window).scrollTop();
     if (scroll<150) {
             $('.filter-state').addClass( "d-none" );
     }
@@ -22,6 +20,12 @@ $(window).scroll(function (event) {
     }
 
 });
+
+});
+
+$('.collapse').collapse()
+
+
 
 function time() {
     var d = new Date();
@@ -39,6 +43,7 @@ var orders = new Vue({
 
         config: {
             wrap: true,
+            weekNumbers: true,
             mode: "range",
             maxDate: "today",
             dateFormat: "Y-m-d",
@@ -139,7 +144,7 @@ var orders = new Vue({
                 deliveryCity: "Владивосток",
                 deliveryPlace: "ТЦ Черемушки"
             },
-            orderPaymentType: "При получении",
+            orderPaymentType: "Оплата при получении",
             orderSum: 34590
         }, {
             id: 20101503,
@@ -152,8 +157,8 @@ var orders = new Vue({
             }],
             date: "2016-01-13T05:23:38+00:00",
             status: {
-                statusType: "danger",
-                statusName: "Не подтвержден"
+                statusType: "success",
+                statusName: "Выполнен"
             },
             buyer: {
                 buyerName: "Полянский Виталий Петрович",
@@ -166,7 +171,8 @@ var orders = new Vue({
                 deliveryCity: "Владивосток",
                 deliveryPlace: "Фрунзе 54, кв. 528"
             },
-            orderPaymentType: "При получении",
+            orderPaymentType: "Оплата (картой) при получении",
+            orderPaymentState: "text-success",
             orderSum: 4880
         }, {
             id: 20101502,
@@ -212,7 +218,7 @@ var orders = new Vue({
                 deliveryCity: "Москва",
                 deliveryPlace: "пр-т Красного Знамени, д.59, кв 257"
             },
-            orderPaymentType: "При получении",
+            orderPaymentType: "Оплата при получении",
             orderSum: 18400
         }, {
             id: 20101500,
@@ -261,7 +267,7 @@ var orders = new Vue({
                 deliveryCity: "Владивосток",
                 deliveryPlace: "Алеутская"
             },
-            orderPaymentType: "При получении",
+            orderPaymentType: "Оплата при получении",
             orderSum: 4880
         }, {
             id: 20101498,
@@ -307,7 +313,7 @@ var orders = new Vue({
                 deliveryCity: "Москва",
                 deliveryPlace: "пр-т Красного Знамени, д.59, кв 257"
             },
-            orderPaymentType: "При получении",
+            orderPaymentType: "Оплата при получении",
             orderSum: 18400
         }, {
             id: 20101496,
@@ -328,7 +334,7 @@ var orders = new Vue({
                 deliveryCity: "Владивосток",
                 deliveryPlace: "ТЦ Черемушки"
             },
-            orderPaymentType: "При получении",
+            orderPaymentType: "Оплата при получении",
             orderSum: 34590
         }, {
             id: 20101495,
@@ -355,7 +361,7 @@ var orders = new Vue({
                 deliveryCity: "Владивосток",
                 deliveryPlace: "Фрунзе 54, кв. 528"
             },
-            orderPaymentType: "При получении",
+            orderPaymentType: "Безналичный расчет (банковский перевод)",
 
             orderSum: 4880
         }, {
@@ -405,7 +411,7 @@ var orders = new Vue({
                 deliveryCity: "Москва",
                 deliveryPlace: "пр-т Красного Знамени, д.59, кв 257"
             },
-            orderPaymentType: "При получении",
+            orderPaymentType: "Оплата при получении",
             orderSum: 18400
         }, {
             id: 20101492,
@@ -426,7 +432,28 @@ var orders = new Vue({
                 deliveryCity: "Владивосток",
                 deliveryPlace: "ТЦ Черемушки"
             },
-            orderPaymentType: "При получении",
+            orderPaymentType: "Оплата при получении",
+            orderSum: 34590
+        }, {
+            id: 20101492,
+            attributes: [ ],
+            date: "2016-01-13T05:23:38+00:00",
+            status: {
+                statusType: "warning",
+                statusName: "Ожидание выполнения услуги"
+            },
+            buyer: {
+                buyerName: "Смирнов Петр Васильевич",
+                buyerPhone: "+7 (969) 148-77-75"
+            },
+            availability: "2016-01-13T05:23:38+00:00",
+            delivery: {
+                deliveryType: "pickup",
+                deliveryName: "Самовывоз",
+                deliveryCity: "Владивосток",
+                deliveryPlace: "ТЦ Черемушки"
+            },
+            orderPaymentType: "Оплата при получении",
             orderSum: 34590
         } ],
         searchAttributes: [],
