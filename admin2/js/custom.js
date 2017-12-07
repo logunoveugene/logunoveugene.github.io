@@ -8,22 +8,22 @@ $(document).ready(function() {
     });
 
 
-    $(window).scroll(function (event) {
-      var scroll=0;
-     scroll = $(window).scrollTop();
-    if (scroll<150) {
-            $('.filter-state').addClass( "d-none" );
-    }
-    else {
-         $('.filter-state').removeClass( "d-none" );
+//     $(window).scroll(function (event) {
+//       var scroll=0;
+//      scroll = $(window).scrollTop();
+//     if (scroll<150) {
+//             $('.filter-state').addClass( "d-none" );
+//     }
+//     else {
+//          $('.filter-state').removeClass( "d-none" );
    
-    }
+//     }
+
+// });
 
 });
 
-});
-
-$('.collapse').collapse()
+// $('.collapse').collapse()
 
 
 
