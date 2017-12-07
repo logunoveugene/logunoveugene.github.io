@@ -572,6 +572,19 @@ var orders = new Vue({
             this.searchDate = "";
             $(".date-group").removeClass("active");
         },
+        searchAllClear: function() {
+            this.searchAttributes = [];
+            this.searchId = "";
+            this.searchIdSubmit = "";
+            this.searchDate = "";
+            this.searchStatus = [];
+            this.searchBuyer = "";
+            this.searchBuyerSubmit = "";
+            this.searchAvailability = "";
+            this.searchDelivery =  "";
+            
+        },
+
 
     }
 

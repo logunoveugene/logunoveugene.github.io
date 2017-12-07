@@ -51,10 +51,12 @@ a, .link {
 }
 
 .dropdown-menu.filter {
-    width: 300px;
+    width: 333px;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
     border: 1px solid #ddd;
     padding: 1.25rem;
+    overflow-y: scroll;
+    max-height: 50vh;
 }
 
 .filter-input {
@@ -89,7 +91,7 @@ a, .link {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 1020;
+    z-index: 2;
     -ms-flex-pack: justify!important;
     justify-content: space-between!important;
     -ms-flex-wrap: nowrap!important;
@@ -104,7 +106,7 @@ a, .link {
 .order-row {
     width: 90px;
     min-width: 80px;
-    flex-grow: 1;
+    flex-grow: 2;
     margin-right: 2rem;
 }
 
