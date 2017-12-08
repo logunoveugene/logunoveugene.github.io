@@ -380,3 +380,23 @@ font-size: .875rem;
 .mr-3.lch-0:hover {
     text-decoration: line-through;
 }
+
+
+
+
+.comment{
+    opacity: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.comment.hascomment{
+    opacity: .5;
+}
+
+.order-item:hover .comment{
+ opacity: .5;
+}
+
+.comment:hover{
+    opacity: 1!important;
+}

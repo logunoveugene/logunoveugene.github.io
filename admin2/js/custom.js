@@ -201,6 +201,7 @@ var orders = new Vue({
             orderSum: 1960
         }, {
             id: 20101501,
+            comment: "hascomment",
             attributes: [ ],
             date: "2016-01-13T05:23:38+00:00",
             status: {
@@ -296,6 +297,7 @@ var orders = new Vue({
             orderSum: 1960
         }, {
             id: 20101497,
+            comment: "hascomment",
             attributes: [ ],
             date: "2016-01-13T05:23:38+00:00",
             status: {

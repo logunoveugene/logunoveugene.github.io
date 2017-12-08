@@ -400,7 +400,9 @@
                             <div class="order-item d-flex flex-row justify-content-between align-items-center py-3" v-for="(order, index) in orders">
                                 <div class="order-row order-row-small">
                                     <div class="">
-                                        <a href="item.html">{{order.id}} </a><img v-if="order.orderPaymentType=='Онлайн оплата'" class="ml-2" src="https://i.snag.gy/bL9RwC.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Комментарий">
+                                        <a href="item.html">{{order.id}} </a>
+                                        <!-- <img v-if="order.orderPaymentType=='Онлайн оплата'" class="ml-2 " src="https://i.snag.gy/bL9RwC.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Комментарий"> -->
+                                        <img class="comment ml-2" :class="order.comment" src="https://i.snag.gy/bL9RwC.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Комментарий+добавление">
                                     </div>
                                 </div>
                                 <div class="order-row order-row-small">
@@ -430,8 +432,7 @@
                                     <div class=" d-flex flex-row align-items-center">
                                         <div class="delivery-type" :class="order.delivery.deliveryType"></div>
                                         <div class="">
-                                            <div class="">{{order.delivery.deliveryName}}: {{order.delivery.deliveryPlace}} 
-                        </div>
+                                            <div class="">{{order.delivery.deliveryName}}: {{order.delivery.deliveryPlace}}</div>
                                             <div class="small">
                                                 {{order.delivery.deliveryCity}} <div v-if="order.delivery.deliveryCity=='Москва'" class="d-inline" id="localtime"></div>
                                             </div>
