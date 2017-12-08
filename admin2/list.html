@@ -272,7 +272,7 @@
                                 </div>
                             </div>
                             <div class="order-row order-row-half-large">
-                                <input class="filter-input mr-5 w-100" v-bind:class="{ edit: searchBuyer }" v-model="searchBuyer" v-on:keyup.enter="searchBuyerLabel" type="text" placeholder="Покупатель">
+                                <input class="filter-input  w-100" v-bind:class="{ edit: searchBuyer }" v-model="searchBuyer" v-on:keyup.enter="searchBuyerLabel" type="text" placeholder="Покупатель">
                             </div>
                             <div class="order-row order-row-large">
                                 <div class="dropdown w-100">
@@ -427,7 +427,7 @@
                                     </div>
                                 </div>
                                 <div class="order-row order-row-large">
-                                    <div class="mr-5 d-flex flex-row align-items-center">
+                                    <div class=" d-flex flex-row align-items-center">
                                         <div class="delivery-type" :class="order.delivery.deliveryType"></div>
                                         <div class="">
                                             <div class="">{{order.delivery.deliveryName}}: {{order.delivery.deliveryPlace}} 
@@ -439,7 +439,7 @@
                                     </div>
                                 </div>
                                 <div class="order-row order-row-small">
-                                    <div class="mr-5">
+                                    <div class="">
                                         <div class="text-nowrap">{{order.availability | date}}</div>
                                     </div>
                                 </div>
