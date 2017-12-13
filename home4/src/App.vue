@@ -1531,7 +1531,7 @@ border: none;
 
 
 .main-slider  .swiper-slide {
-      text-align: center;
+    
       font-size: 18px;
       background: #fff;
       /* Center slide text vertically */

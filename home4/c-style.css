@@ -1,11 +1,4 @@
 
-@media (min-width: 992px){
-.container {
-    width: 960px;
-    max-width: 100%;
-}
-}
-
 
 .slider-arrow {
   position: absolute;
@@ -175,8 +168,8 @@ a:hover {
       width: 346px;
 }
 
-.right-main{
-      width: 901px;
+.right-main {
+    width: 764px;
 }
 
 @media screen and (max-width: 1200px) {
