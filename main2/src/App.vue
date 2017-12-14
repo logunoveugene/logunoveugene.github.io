@@ -275,7 +275,7 @@
               <div class=" ">
                 <div class="mb-3">
                   <div class="d-flex flex-column">
-                  	<p class="text-muted small mb-2">Цена в интернет магазине <a href="javascript:void(0);" data-toggle="tooltip" title="" class="ask ml-1" data-placement="bottom" data-html="true" data-original-title="Цена в розничном магазине может отличаться"></a> </p>
+                  	<p class="text-muted small mb-2">Цена в интернет магазине <a href="javascript:void(0);" data-toggle="tooltip" title="" class="ask ml-1" data-placement="bottom" data-html="true" data-original-title="Цена в розничном магазине может отличаться."></a> </p>
                     <p class="text-muted small mb-0"><del>174 600 p.</del></p>
                     <div class="h3 mb-1">169 990 p.</div>
                     <div class="mb-0">
