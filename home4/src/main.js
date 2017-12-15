@@ -89,6 +89,17 @@ pagination: '.swiper-pagination',
     });
 
 
+var logoSlider = new Swiper('.logo-swiper', {
+
+        nextButton: '.slider-arrow-r',
+        prevButton: '.slider-arrow-l',
+        scrollbarHide: false,
+        slidesPerView: 'auto',
+        spaceBetween: 17
+  
+    });
+
+
 var productSwiper = new Swiper('.propuct-swiper', {
     preventClicks :true,
             nextButton: '.slider-arrow-r',

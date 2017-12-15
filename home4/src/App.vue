@@ -223,7 +223,7 @@
                       <div class="icon-left-arrow"></div>
                     </div>
                     <div class="slider-arrow slider-arrow-r">
-                      <div class="icon-rightt-arrow"></div>
+                      <div class="icon-right-arrow"></div>
                     </div>
                   </div>
 
@@ -247,7 +247,7 @@
                       <div class="icon-left-arrow"></div>
                     </div>
                     <div class="slider-arrow slider-arrow-r">
-                      <div class="icon-rightt-arrow"></div>
+                      <div class="icon-right-arrow"></div>
                     </div>
                   </div>
                 </div>
@@ -274,7 +274,7 @@
                       <div class="icon-left-arrow"></div>
                     </div>
                     <div class="slider-arrow slider-arrow-r">
-                      <div class="icon-rightt-arrow"></div>
+                      <div class="icon-right-arrow"></div>
                     </div>
                   </div>
                 </div>
@@ -372,7 +372,7 @@
                       <div class="icon-left-arrow"></div>
                     </div>
                     <div class="slider-arrow slider-arrow-r">
-                      <div class="icon-rightt-arrow"></div>
+                      <div class="icon-right-arrow"></div>
                     </div>
                   </div>
                 </div>
@@ -470,7 +470,7 @@
                       <div class="icon-left-arrow"></div>
                     </div>
                     <div class="slider-arrow slider-arrow-r">
-                      <div class="icon-rightt-arrow"></div>
+                      <div class="icon-right-arrow"></div>
                       </div>
                   </div>
                 </div>
@@ -566,9 +566,27 @@
                       <div class="icon-left-arrow"></div>
                     </div>
                     <div class="slider-arrow slider-arrow-r">
-                      <div class="icon-rightt-arrow"></div>
+                      <div class="icon-right-arrow"></div>
                       </div>
                   </div>
+                </div>
+                <div class="col-12">
+
+                    <div class="logo-swiper">
+                    <div class="swiper-wrapper d-flex align-items-stretch">
+                      <div class="swiper-slide " v-for="(brand, index) in brands">
+                        <img :src="brand.brandurl"  class="swiper-lazy d-block "   >
+                      </div>
+                    </div>
+                        <div class="slider-arrow slider-arrow-l">
+                      <div class="icon-left-arrow"></div>
+                    </div>
+                    <div class="slider-arrow slider-arrow-r">
+                      <div class="icon-right-arrow"></div>
+                      </div>
+                  </div>
+
+                  
                 </div>
 
 
@@ -683,6 +701,37 @@ export default {
       }, {
         sliderImg: "https://logunoveugene.github.io/home/img/mainslides-m/4.png"
       }],
+
+
+       brands: [{
+        brandurl: "https://cdn.domotekhnika.ru/images/brands/000/010/007/0a2265cf22b113a1171c4ce66a1fb474d80eb1ba-icon.png"
+      }, {
+        brandurl: "https://cdn.domotekhnika.ru/images/brands/000/010/110/e74bc5db71a32b4ec5ea36795b499bf728401d33-icon.png"
+      }, 
+      {
+        brandurl: "https://cdn.domotekhnika.ru/images/brands/000/010/127/fdeefb782718fc418f25b336196e2822d2744e25-icon.png"
+      }, {
+        brandurl: "https://cdn.domotekhnika.ru/images/brands/000/010/183/a7ad101491857c1b14151f29c982ddf9872d2733-icon.png"
+      }, {
+        brandurl: "https://cdn.domotekhnika.ru/images/brands/000/010/232/345c7168105938b7e483ea4ff94f0d6d79048228-icon.png"
+      }, 
+      {
+        brandurl: "https://cdn.domotekhnika.ru/images/brands/000/010/345/80a914674b88e77e0cef3616804ef5bcf2780504-icon.png"
+      }, {
+        brandurl: "https://cdn.domotekhnika.ru/images/brands/000/010/486/120e3e66d825636edb932a363bb465f08a0ac9c0-icon.png"
+      }, {
+        brandurl: "https://cdn.domotekhnika.ru/images/brands/000/010/585/28d9b57c66a538832414fe1e7eb637911aa2d771-icon.png"
+      }, 
+
+
+      {
+        brandurl: "https://cdn.domotekhnika.ru/images/brands/000/010/629/65cfa8a0357f49e54fdef0e9a1e71a22df698c80-icon.png"
+      }, {
+        brandurl: "https://cdn.domotekhnika.ru/images/brands/000/010/705/f40302c808617d90050527059f73c6e183f1331d-icon.png"
+      }, {
+        brandurl: "https://cdn.domotekhnika.ru/images/brands/000/010/760/ba904fd7e698e361358af848bc617366bceaa4cd-icon.png"
+      } ],
+
 
 
 
@@ -1599,8 +1648,47 @@ width: 764px;
 .swiper-container-rtl .swiper-button-next {
   left: 20px;
 }
+ .logo-swiper {
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 50px;
+}
 
-.action-slider {
+.logo-swiper .swiper-slide {
+  width: 140px;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.logo-swiper .swiper-slide img {
+width: 80%;
+height: auto;
+ filter: grayscale(100%);
+ opacity: .5;
+   transition: all 0.2s ease;
+}
+.logo-swiper .swiper-slide img:hover {
+width: 80%;
+height: auto;
+ filter: none;
+ opacity: 1;
+}
+
+
+.action-slider{
   width: 100%;
   height: 160px;
   overflow: hidden;

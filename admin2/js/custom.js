@@ -1,3 +1,16 @@
+var config = {
+    apiKey: "AIzaSyAyJD_kBeVPVGmDNTxiD_uv9IpyVqwHbcY",
+    authDomain: "notification-593d4.firebaseapp.com",
+    databaseURL: "https://notification-593d4.firebaseio.com",
+    projectId: "notification-593d4",
+    storageBucket: "notification-593d4.appspot.com",
+    messagingSenderId: "352852691558"
+  };
+  firebase.initializeApp(config);
+
+
+var usersRef = firebase.database().ref('note')
+
 $(function() {
     $('[data-toggle="tooltip"]').tooltip()
 })
@@ -38,6 +51,10 @@ Vue.component('flat-pickr', VueFlatpickr.default);
 
 var orders = new Vue({
     el: '#app',
+
+    firebase: {
+    users: usersRef
+  },
 
     data: {
 
@@ -487,9 +504,13 @@ var orders = new Vue({
     },
 
     computed: {
+        notification:function() {
+            return usersRef;
+        },
         searchDateSumbit: function() {
             return this.searchDate.split(' — ');
         },
+
 
         allOrderSum: function() {
             return this.orders.reduce(function(sum, next) {
