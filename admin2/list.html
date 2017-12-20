@@ -151,6 +151,21 @@
                                             <span class="custom-control-indicator"></span>
                                             <span class="custom-control-description">В один клик</span>
                                         </label>
+                                        <label class="custom-control custom-checkbox mb-0">
+                                            <input type="checkbox" class="custom-control-input" value="Задержка проверки" v-model="searchAttributes">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description">Задержка проверки</span>
+                                        </label>
+                                        <label class="custom-control custom-checkbox mb-0">
+                                            <input type="checkbox" class="custom-control-input" value="Проверка не пройдена" v-model="searchAttributes">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description">Проверка не пройдена</span>
+                                        </label>
+                                        <label class="custom-control custom-checkbox mb-0">
+                                            <input type="checkbox" class="custom-control-input" value="Ошибка связи" v-model="searchAttributes">
+                                            <span class="custom-control-indicator"></span>
+                                            <span class="custom-control-description">Ошибка связи</span>
+                                        </label>
                                     </div>
                                 </div>
                                 <!-- <div class="filter-state small my-1" v-if="searchAttributes.length>0" v-on:click="AttributesClearAll">
