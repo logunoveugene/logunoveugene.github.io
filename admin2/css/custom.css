@@ -390,13 +390,20 @@ font-size: .875rem;
     transition: all 0.3s ease;
 }
 .comment.hascomment{
-    opacity: .5;
+    opacity: 1;
 }
 
 .order-item:hover .comment{
- opacity: .5;
+ opacity: 1;
 }
 
 .comment:hover{
     opacity: 1!important;
+}
+
+.shrink-0 {
+
+    flex-shrink: 0;
+    width: 15px;
+    height: auto;
 }

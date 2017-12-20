@@ -399,10 +399,13 @@
                         <div class="order-list py-3">
                             <div class="order-item d-flex flex-row justify-content-between align-items-center py-3" v-for="(order, index) in orders">
                                 <div class="order-row order-row-small">
-                                    <div class="">
+                                    <div class="d-flex flex-row align-items-center ">
                                         <a href="item.html">{{order.id}} </a>
                                         <!-- <img v-if="order.orderPaymentType=='Онлайн оплата'" class="ml-2 " src="https://i.snag.gy/bL9RwC.jpg" alt="" data-toggle="tooltip" data-placement="bottom" title="Комментарий"> -->
-                                        <img class="comment ml-2" :class="order.comment" src="https://i.snag.gy/bL9RwC.jpg" alt="" data-toggle="tooltip" data-placement="right" title="Комментарий+добавление">
+                                        <div class="mb-1 ">
+                                            <img class="comment ml-2   " :class="order.comment" src="https://i.snag.gy/bL9RwC.jpg" alt="" data-toggle="tooltip" data-placement="right" title="Комментарий+добавление"><div v-if="order.comment" class="small d-inline ml-1">1</div>
+                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <div class="order-row order-row-small">
