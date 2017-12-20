@@ -72,7 +72,7 @@ var orders = new Vue({
             id: 20101507,
             attributes: [ {
                 attributesType: "terminal",
-                attributesName: "Терминал"
+                attributesName: "Задержка проверки"
             }, {
                 attributesType: "gift",
                 attributesName: "Подарок"
@@ -291,7 +291,7 @@ var orders = new Vue({
             id: 20101498,
             attributes: [ {
                 attributesType: "gift",
-                attributesName: "Подарок"
+                attributesName: "Проверка не пройдена"
             }],
             date: "2016-01-13T05:23:38+00:00",
             status: {
