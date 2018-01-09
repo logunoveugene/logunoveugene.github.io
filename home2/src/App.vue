@@ -201,8 +201,9 @@
                     <div class="swiper-wrapper">
                       <div v-for="slide in mainSlides" class="swiper-slide">
                         <a href="#" class="d-block">
-                          <img :data-src="slide.sliderImg" class="swiper-lazy d-block">
+                         <div :data-background="slide.sliderImg" class="swiper-lazy sliderImg-bg">
                           <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
+                          </div>
                         </a>
                       </div>
                     </div>
@@ -857,10 +858,26 @@ export default {
       this.cm = !this.cm;
     }
   }
+
 }
 
 </script>
 <style>
+
+.sliderImg-bg{
+
+	height: 250px;
+
+}
+
+
+@media screen and (max-width: 900px) { 
+
+.sliderImg-bg{
+	background: none!important;
+	height: 250px;
+}
+}
 
 
 .action-wrap-more{

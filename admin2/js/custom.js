@@ -1,15 +1,6 @@
-var config = {
-    apiKey: "AIzaSyAyJD_kBeVPVGmDNTxiD_uv9IpyVqwHbcY",
-    authDomain: "notification-593d4.firebaseapp.com",
-    databaseURL: "https://notification-593d4.firebaseio.com",
-    projectId: "notification-593d4",
-    storageBucket: "notification-593d4.appspot.com",
-    messagingSenderId: "352852691558"
-  };
-  firebase.initializeApp(config);
 
 
-var usersRef = firebase.database().ref('note')
+
 
 $(function() {
     $('[data-toggle="tooltip"]').tooltip()
@@ -52,9 +43,7 @@ Vue.component('flat-pickr', VueFlatpickr.default);
 var orders = new Vue({
     el: '#app',
 
-    firebase: {
-    users: usersRef
-  },
+
 
     data: {
 
@@ -95,6 +84,7 @@ var orders = new Vue({
             },
             orderPaymentType: "Онлайн оплата",
             orderPaymentState: "text-success",
+            orderSource: "Магазин",
             orderSum: 4880
         }, {
             id: 20101506,
@@ -120,6 +110,7 @@ var orders = new Vue({
             },
             orderPaymentType: "Онлайн оплата",
             orderPaymentState: "text-success",
+            orderSource: "ЦРС",
             orderSum: 1960
         }, {
             id: 20101505,
@@ -141,6 +132,7 @@ var orders = new Vue({
                 deliveryPlace: "пр-т Красного Знамени, д.59, кв 257"
             },
             orderPaymentType: "Онлайн кредит",
+            orderSource: "Магазин",
             orderSum: 18400
         }, {
             id: 20101504,
@@ -162,6 +154,7 @@ var orders = new Vue({
                 deliveryPlace: "ТЦ Черемушки"
             },
             orderPaymentType: "Оплата при получении",
+            orderSource: "Магазин",
             orderSum: 34590
         }, {
             id: 20101503,
@@ -190,6 +183,7 @@ var orders = new Vue({
             },
             orderPaymentType: "Оплата (картой) при получении",
             orderPaymentState: "text-success",
+            orderSource: "ПВЗ",
             orderSum: 4880
         }, {
             id: 20101502,
@@ -215,6 +209,7 @@ var orders = new Vue({
             },
             orderPaymentType: "Онлайн оплата",
             orderPaymentState: "text-success",
+            orderSource: "Магазин",
             orderSum: 1960
         }, {
             id: 20101501,
@@ -237,6 +232,7 @@ var orders = new Vue({
                 deliveryPlace: "пр-т Красного Знамени, д.59, кв 257"
             },
             orderPaymentType: "Оплата при получении",
+            orderSource: "Магазин",
             orderSum: 18400
         }, {
             id: 20101500,
@@ -259,6 +255,7 @@ var orders = new Vue({
             },
             orderPaymentType: "Онлайн оплата",
             orderPaymentState: "text-success",
+            orderSource: "Буферный Склад",
             orderSum: 34590
         }, {
             id: 20101499,
@@ -286,6 +283,7 @@ var orders = new Vue({
                 deliveryPlace: "Алеутская"
             },
             orderPaymentType: "Оплата при получении",
+            orderSource: "Магазин",
             orderSum: 4880
         }, {
             id: 20101498,
@@ -311,6 +309,7 @@ var orders = new Vue({
             },
             orderPaymentType: "Онлайн оплата",
             orderPaymentState: "text-success",
+            orderSource: "Магазин",
             orderSum: 1960
         }, {
             id: 20101497,
@@ -354,6 +353,7 @@ var orders = new Vue({
                 deliveryPlace: "ТЦ Черемушки"
             },
             orderPaymentType: "Оплата при получении",
+            orderSource: "Магазин",
             orderSum: 34590
         }, {
             id: 20101495,
@@ -381,7 +381,7 @@ var orders = new Vue({
                 deliveryPlace: "Фрунзе 54, кв. 528"
             },
             orderPaymentType: "Безналичный расчет (банковский перевод)",
-
+            orderSource: "Магазин",
             orderSum: 4880
         }, {
             id: 20101494,
@@ -410,6 +410,7 @@ var orders = new Vue({
             },
             orderPaymentType: "Онлайн оплата",
             orderPaymentState: "text-success",
+            orderSource: "Магазин",
             orderSum: 1960
         }, {
             id: 20101493,
@@ -431,6 +432,7 @@ var orders = new Vue({
                 deliveryPlace: "пр-т Красного Знамени, д.59, кв 257"
             },
             orderPaymentType: "Оплата при получении",
+            orderSource: "Магазин",
             orderSum: 18400
         }, {
             id: 20101492,
@@ -452,6 +454,7 @@ var orders = new Vue({
                 deliveryPlace: "ТЦ Черемушки"
             },
             orderPaymentType: "Оплата при получении",
+            orderSource: "Магазин",
             orderSum: 34590
         }, {
             id: 20101492,
@@ -473,6 +476,7 @@ var orders = new Vue({
                 deliveryPlace: "ТЦ Черемушки"
             },
             orderPaymentType: "Оплата при получении",
+            orderSource: "Магазин",
             orderSum: 34590
         } ],
         searchAttributes: [],
