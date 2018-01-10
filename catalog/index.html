@@ -8,10 +8,10 @@
   <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/10.1.0/nouislider.min.css">
-  <link href="https://file.myfontastic.com/9Ji8YSBQFaitohvErY5573/icons.css" rel="stylesheet">
+
   <link href="css/styles.css" rel="stylesheet">
   <link href="css/c-style.css" rel="stylesheet">
-  <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter45756420 = new Ya.Metrika({ id:45756420, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, ut:"noindex" }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/45756420?ut=noindex" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+
 
 </head>
 <body>
@@ -202,32 +202,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="container-fluid mt-5 pt-5  mt-md-0 pt-md-0">
   <div class="container">
     <div class="row">
@@ -391,9 +365,9 @@
             <div class="stikerWrap" v-if="products[index].actions !== 0" id="stickers">
               <div class="d-inline" v-for="(action, index) in product.actions">
                 <div class="dropdown d-inline">
-                  <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="mr-1 stiker text-white" :class="action.actionType">
+                  <div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="mr-1 stiker" :class="action.actionType">
                     <span class="">{{action.actionName}}</span>
-                  </a>
+                  </div>
                   <div class="dropdown-menu">
                     <button type="button" class="close" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
@@ -433,7 +407,7 @@
                     <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice | number}} р.</del></span>
                   </div>
                   <div class="discount" v-if="products[index].discount !== 0">
-                    <mark>Доступна скидка {{product.discount | number}} р.</mark>
+                    <mark>- {{product.discount | number}} р. по промокоду код</mark>
                   </div>
                   <div class="discount " v-if="products[index].oldPrice !== 0">
                     <mark>Выгода <span class="text-nowrap">{{product.oldPrice-product.price | number}} р.</span></mark>
@@ -449,7 +423,7 @@
                   <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice | number}} р.</del></span>
                   <span class=" mb-0"><b>{{product.price | number}} р.</b></span>
                   <div class="discount" v-if="products[index].discount !== 0">
-                    <mark>Доступна скидка {{product.discount | number}} р.</mark>
+                    <mark>- {{product.discount | number}} р. по промокоду код</mark>
                   </div>
                   <div class="discount mb-2" v-if="products[index].oldPrice !== 0">
                     <mark>Выгода <span class="text-nowrap">{{product.oldPrice-product.price}} р.</span></mark>
@@ -477,9 +451,9 @@
             <div class="stikerWrap hidden-sm-down " v-if="products[index].actions !== 0">
               <div class="d-inline" v-for="(action, index) in product.actions">
                 <div class="dropdown d-inline">
-                  <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="mr-1 stiker" :class="action.actionType">
-                    <span class="">{{action.actionName}}</span>
-                  </a>
+                  <div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="mr-1 stiker" :class="action.actionType">
+                   <span class="">{{action.actionName}}</span>
+                  </div>
                   <div class="dropdown-menu">
                     <button type="button" class="close" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
@@ -500,9 +474,9 @@
             <div class="stikerWrap hidden-md-up " v-if="products[index].actions !== 0">
               <div class="d-block" v-for="(action, index) in product.actions">
                 <div class="dropdown d-block">
-                  <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="mr-1 stiker " :class="action.actionType">
-                     <span class="">{{action.actionName}}</span>
-                  </a>
+                  <div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="mr-1 stiker " :class="action.actionType">
+                    <span class="">{{action.actionName}}</span>
+                  </div>
                   <div class="dropdown-menu">
                     <button type="button" class="close" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
@@ -552,7 +526,7 @@
                           <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice | number}} р.</del></span>
                           <span class=" mb-0"><b>{{product.price | number}} р.</b></span>
                           <div class="discount" v-if="products[index].discount !== 0">
-                            <mark>Доступна скидка <span class="text-nowrap">{{product.discount | number}} р.</span></mark>
+                            <mark> <span class="">-{{product.discount | number}} р. по промокоду код</span></mark>
                           </div>
                           <div class="discount " v-if="products[index].oldPrice !== 0">
                             <mark>Выгода <span class="text-nowrap">{{product.oldPrice-product.price | number}} р.</span></mark>
@@ -573,7 +547,7 @@
                         <span class="small text-muted  mb-1" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice | number}} р.</del></span>
                         <div class="h5 mb-2 "><b>{{product.price | number}} р.</b></div>
                         <div class="discount mb-2" v-if="products[index].discount !== 0">
-                          <mark>Доступна скидка <span class="text-nowrap">{{product.discount | number}} р.</span></mark>
+                          <mark> <span class="">-{{product.discount | number}} р. по промокоду код</span></mark>
                         </div>
                         <div class="discount mb-2" v-if="products[index].oldPrice !== 0">
                           <mark>Выгода <span class="text-nowrap">{{product.oldPrice-product.price | number}} р.</span></mark>

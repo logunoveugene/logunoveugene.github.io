@@ -196,12 +196,23 @@ a:hover {
   background: linear-gradient(to right, rgba(255, 255, 255, 0), white 50%, white);
 }
 
+
+
+
+
+
+
+
+
+
+/*----------------------стикеры-----------------------------*/
+
+
 .stikerWrap {
   position: absolute;
   top: 5px;
   left: 5px;
   max-width: 100%;
-
   overflow: visible;
   height: 1px;
 
@@ -212,10 +223,8 @@ a:hover {
   cursor: pointer;
   display: inline-block;
   padding: 0.25em .6em;
-
   font-size: 75%;
   height: 22px;
-
   z-index: 1;
   text-align: center;
   white-space: nowrap;
@@ -230,9 +239,35 @@ a:hover {
   opacity: .9;
 }
 
+
+
+
+
+/*подарок*/
+
 .gift {
-  background-color: #0275d8;
+  background-color: #dff1ff;
+  border-radius: .15rem;
+  color: #1470cd;
+
 }
+
+.gift::before {
+    content: " ";
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #1470cd;
+    top: 7px;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(0, 88, 178, 0.32);
+}
+
+
+
+
+/*скидка*/
 
 .sale {
   background-color: #f3e5f7;
@@ -240,6 +275,7 @@ a:hover {
   color: #8600b2;
 
 }
+
 .sale::before {
     content: " ";
     display: block;
@@ -252,14 +288,13 @@ a:hover {
     box-shadow: 0 0 0 3px rgba(134, 0, 178, 0.4);
 }
 
-.promocod {
- background-color: #f3e5f7;
-  border-radius: .15rem;
-  color: #0bb159;
-}
 
-.promocod span{
-  color: #8600b2;
+
+/*промокод*/
+.promocod {
+ background-color: #fff4d8;
+  border-radius: .15rem;
+  color: #de5e00;
 }
 
 
@@ -268,14 +303,16 @@ a:hover {
     display: block;
     width: 8px;
     height: 8px;
-    background-color: #8600b2;
+	background-color: #ef7900;
     top: 7px;
     position: absolute;
     border-radius: 50%;
-    box-shadow: 0 0 0 3px rgba(134, 0, 178, 0.4);
+    box-shadow: 0 0 0 3px rgba(255, 154, 49, 0.55);
 }
 
 
+
+/*рассрочка */
 .credit {
  background-color: #e6f7ee;
   border-radius: .15rem;
@@ -295,13 +332,37 @@ a:hover {
     box-shadow: 0 0 0 3px rgba(11, 177, 89, 0.4);
 }
 
-.credit span{
-  color: #009a48;
-}
+
+
+/*бонусы*/
 
 .d-bonus {
-  background-color: #e7a300;
+ background-color: #e6f7ee;
+  border-radius: .15rem;
+  color: #007f3c;
 }
+
+
+.d-bonus::before {
+    content: " ";
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #0bb159;
+    top: 7px;
+    position: absolute;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(11, 177, 89, 0.4);
+}
+
+
+
+
+/*----------------------/стикеры-----------------------------*/
+
+
+
+
 
 .tooltip-inner {
   max-width: 200px;

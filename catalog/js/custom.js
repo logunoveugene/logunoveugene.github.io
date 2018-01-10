@@ -114,7 +114,7 @@ Vue.component('rate', {
         </symbol>
       </defs>
     </svg>
-    <input type="hidden" :name="name" :value="rate" v-model="rate" :required="required">
+    <input type="hidden" :name="name" :value="rate" :required="required">
     <template v-for="n in length">
       <a href="javascript:;" :class="{'Rate__star': true, 'hover': n <= over, 'filled': n <= rate}" @mouseover="onOver(n)" @mouseout="onOut(n)" @click="setRate(n)" @keyup="onOver(n)"  @keyup.enter="setRate(n)">
         <svg class="icon" v-show="isFilled(n)">
@@ -250,7 +250,7 @@ var kolich = new Vue({
       actions:[{
         actionName: "Скидка по промокоду",
         actionType: "promocod",
-        actionDesc:"Только два дня на широкий ассортимент товаров действуют скидки до 50%!",
+        actionDesc:"PROMOCOD - акция с отображением старой цены и скидки, которая будет применена после активации промокода",
         actionImg: "http://via.placeholder.com/60x60"
 
       },
@@ -288,7 +288,16 @@ var kolich = new Vue({
       rate:0,
       rateCount:0,
       amount:"Забрать в 6 магазинах сегодня",
-      actions:0,
+      actions:[{
+        actionName: "Цена снижена",
+        actionType: "sale",
+        actionDesc:"SALE - Акция с отображением цены со скидкой и без, а также размером выгоды",
+        actionImg: "http://via.placeholder.com/60x60"
+
+      },
+        
+
+      ],
       stores: [{
         storeName: "в ТЦ Черемушки",
         date: "2017-10-24" 
@@ -313,7 +322,7 @@ var kolich = new Vue({
       name: 'Телевизор Samsung UE55MU6100',
       img: "https://logunoveugene.github.io/catalog/img/9.png",
       desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
-      oldPrice: 33860,
+      oldPrice: 0,
       price: 21800,
       discount:0,
       creditprice:0,
@@ -392,7 +401,16 @@ var kolich = new Vue({
       rate:4.5,
       rateCount:15,
       amount:"Забрать в 6 магазинах сегодня",
-      actions:0,
+      actions:[{
+        actionName: "Подарок за покупку",
+        actionType: "gift",
+        actionDesc:"GIFT - Подарочная акция",
+        actionImg: "http://via.placeholder.com/60x60"
+
+      },
+        
+
+      ],
       stores: [{
         storeName: "в ТЦ Черемушки",
         date: "2017-10-24" 
@@ -449,28 +467,12 @@ var kolich = new Vue({
       desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
       oldPrice: 0,
       price: 169990,
-      discount:1800,
+      discount:0,
       creditprice:0,
       rate:4.5,
       rateCount:8,
       amount:"Забрать в 6 магазинах сегодня",
-        actions:[{
-        actionName: "Скидка по промокоду",
-        actionType: "promocod",
-        actionDesc:"Только два дня на широкий ассортимент товаров действуют скидки до 50%!",
-        actionImg: "http://via.placeholder.com/60x60"
-
-      },{
-        actionName: "Рассрочка 0%",
-        actionType: "credit",
-        actionDesc:"Только два дня на широкий ассортимент товаров действуют скидки до 50%!",
-        actionImg: "http://via.placeholder.com/60x60"
-
-      },
-     
-        
-
-      ],
+        actions:0,
       stores: [{
         storeName: "в ТЦ Черемушки",
         date: "2017-10-24" 

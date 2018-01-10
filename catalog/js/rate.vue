@@ -13,7 +13,7 @@
         </symbol>
       </defs>
     </svg>
-    <input type="hidden" :name="name" :value="rate" v-model="rate" :required="required">
+    <input type="hidden" :name="name" :value="rate" :required="required">
     <template v-for="n in length">
       <a href="javascript:;" :class="{'Rate__star': true, 'hover': n <= over, 'filled': n <= rate}" @mouseover="onOver(n)" @mouseout="onOut(n)" @click="setRate(n)" @keyup="onOver(n)"  @keyup.enter="setRate(n)">
         <svg class="icon" v-show="isFilled(n)">
