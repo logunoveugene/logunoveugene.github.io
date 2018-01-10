@@ -251,7 +251,7 @@ var kolich = new Vue({
         actionName: "Скидка по промокоду",
         actionType: "promocod",
         actionDesc:"PROMOCOD - акция с отображением старой цены и скидки, которая будет применена после активации промокода",
-        actionImg: "http://via.placeholder.com/60x60"
+        actionImg: "https://via.placeholder.com/60x60"
 
       },
         
@@ -292,7 +292,7 @@ var kolich = new Vue({
         actionName: "Цена снижена",
         actionType: "sale",
         actionDesc:"SALE - Акция с отображением цены со скидкой и без, а также размером выгоды",
-        actionImg: "http://via.placeholder.com/60x60"
+        actionImg: "https://via.placeholder.com/60x60"
 
       },
         
@@ -405,7 +405,7 @@ var kolich = new Vue({
         actionName: "Подарок за покупку",
         actionType: "gift",
         actionDesc:"GIFT - Подарочная акция",
-        actionImg: "http://via.placeholder.com/60x60"
+        actionImg: "https://via.placeholder.com/60x60"
 
       },
         
