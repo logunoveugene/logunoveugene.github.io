@@ -253,7 +253,13 @@ var kolich = new Vue({
         actionDesc:"PROMOCOD - акция с отображением старой цены и скидки, которая будет применена после активации промокода",
         actionImg: "https://via.placeholder.com/60x60"
 
-      },
+      },{
+        actionName: "Рассрочка 0%",
+        actionType: "credit",
+        actionDesc:"Только два дня на широкий ассортимент товаров действуют скидки до 50%!",
+        actionImg: "http://via.placeholder.com/60x60"
+
+      }
         
 
       ],
