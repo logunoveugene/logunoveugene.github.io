@@ -440,10 +440,6 @@
           </div>
         </div>
 
-
-
-
-
         <div v-if="layout == 'list'" class="row">
           <div class="product-plate col-12 " v-for="(product, index) in products">
 
@@ -532,7 +528,7 @@
                             <mark>Выгода <span class="text-nowrap">{{product.oldPrice-product.price | number}} р.</span></mark>
                           </div>
                           <div class="discount" v-if="products[index].creditprice !== 0">
-                            <mark>от <span class="text-nowrap">{{product.creditprice}} р. /мес.</span></mark>
+                            <mark>от <span class="text-nowrap">{{product.creditprice | number}} р. /мес.</span></mark>
                           </div>
                         </div>
                         <button type="button" class="btn btn-primary">
