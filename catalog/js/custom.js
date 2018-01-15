@@ -1,5 +1,9 @@
-  
+
 $(document).ready(function () { 
+
+
+
+
 
   var filterSet = new Swiper('.filterSet', {
     preventClicks :true,
@@ -82,7 +86,10 @@ $('#quick-product').on('shown.bs.modal', function (event) {
   setTimeout(function () {
   tabNavSwiper.update;
   tabContentSwiper.update;
-  }, 1000);
+    console.log("ddd");
+  }, 500);
+
+
 });
 
 

@@ -44,11 +44,11 @@ html {
 
 .product-plate:hover {
   transition: 0.2s ease;
-  box-shadow: 0 0 0 5px rgba(256, 256, 256, 1),
+/*  box-shadow: 0 0 0 5px rgba(256, 256, 256, 1),
 
-  0 5px  35px  rgba(0, 0, 0, 0.15);
+  0 5px  35px  rgba(0, 0, 0, 0.15);*/
   z-index: 100;
-  border:1px solid #fff; !important
+/*  border:1px solid #fff; !important*/
 
 }
 .row-img-wrap {
@@ -768,7 +768,7 @@ a:hover {
         left:50%;
         transform: translate(-50%,-50%);
         cursor: pointer;
-
+transition: 0.3s ease;
         white-space: nowrap;
       }
 
@@ -777,7 +777,7 @@ a:hover {
       }
 
       .product-plate:hover .quick-view{
-        opacity: .7;
+        opacity: .9;
 
 
       }
@@ -787,16 +787,6 @@ a:hover {
 
         color: white;
       }
-
-
-
-
-
-
-
-
-
-
 
       .img-tab-content {
         position: relative;
@@ -934,7 +924,7 @@ a:hover {
 
 
 .product-plate:hover  .row-poduct-img{
-  opacity: 0.5;
+  opacity: 0.8;
 
 }
 
