@@ -180,6 +180,7 @@ Vue.component('rate', {
 
 Vue.config.devtools = true;
 
+
 var kolich = new Vue({
   el: '#app',
 
