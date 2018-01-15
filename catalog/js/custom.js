@@ -514,6 +514,10 @@ var kolich = new Vue({
   methods: {
     switchsite: function() {
       this.cm = !this.cm;
+    },
+
+    quicklymodal: function() {
+      $('#quick-product').modal('show')
     }
   },
     filters: {
