@@ -213,7 +213,7 @@ var kolich = new Vue({
       id: 20101507,
       name: 'Телевизор BBK 32LEM-1018/T2C',
       img: "https://logunoveugene.github.io/catalog/img/1.png",
-      desc:'<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
+      desc:'<ul><li>Диагональ дисплея: 32</li><li>HD-стандарт</li><li>Wi-Fi</li><li>Smart TV</li><li>Количество интерфейсов USB: 1</li><li>Количество входов HDMI: 2</li></ul>',
       oldPrice: 0,
       price: 54800,
       discount:0,
