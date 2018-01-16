@@ -873,7 +873,7 @@ transition: 0.3s ease;
 
 
       .quick-product-modal{
-
+    user-select: none;
       }
 
 
