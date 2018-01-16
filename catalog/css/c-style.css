@@ -2,10 +2,22 @@
 .quicklymodal-wrap{
   background-color: rgba(0,0,0,0);
   position: absolute;
-
   height: 100%;
   width: 100%;
 }
+
+
+
+
+      @media screen and (max-width: 992px) {
+        body{
+     user-select: none; 
+}
+      }
+    
+
+
+
 
 * {
   font-family: arial;
@@ -14,6 +26,7 @@
 html {
   font-size: 15px;
 }
+
 
 .border-right-1 {
   border-right: 1px solid #eee;
@@ -873,7 +886,7 @@ transition: 0.3s ease;
 
 
       .quick-product-modal{
-    user-select: none;
+
       }
 
 
