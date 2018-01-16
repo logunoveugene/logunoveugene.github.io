@@ -519,14 +519,15 @@
                 </div>
 
 
-
-                <div class="d-flex justify-content-center h-100 mb-2 row-img-wrap  poduct-img-wrap-z hidden-lg-up">
+<v-touch class="hidden-lg-up "   tag="a" v-on:press="quicklymodal">
+                <div class="d-flex justify-content-center h-100 mb-2 row-img-wrap  poduct-img-wrap-z" >
                   <div class="d-flex">
-      
-<v-touch class="align-self-center row-poduct-img" :src="product.img" tag="img" v-on:press="quicklymodal"></v-touch>
+                    <div class="quicklymodal-wrap"></div>
+                    <img class="align-self-center row-poduct-img" :src="product.img" alt="">
+
                   </div>
                 </div>
-
+</v-touch>
 
 
 
