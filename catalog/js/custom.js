@@ -36,18 +36,14 @@ $(document).ready(function () {
 var handlesSlider = document.getElementById('slider-handles');
 
 noUiSlider.create(handlesSlider, {
-  start: [ 4000, 8000 ],
-  behaviour: 'snap',
+  start: [ 2000, 3583 ],
+
   connect: true,
-  pips: {
-    mode: 'range',
-    values: 6,
-    density: 4
-  
-  },
+
+
   range: {
     'min': [  2000 ],
-    'max': [ 10000 ]
+    'max': [ 3583 ]
   }
 });
 
