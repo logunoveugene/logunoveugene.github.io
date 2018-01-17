@@ -37,7 +37,7 @@ var handlesSlider = document.getElementById('slider-handles');
 
 noUiSlider.create(handlesSlider, {
   start: [ 2000, 3583 ],
-
+  behaviour: 'snap',
   connect: true,
 
 
