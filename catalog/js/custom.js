@@ -36,18 +36,39 @@ $(document).ready(function () {
 var handlesSlider = document.getElementById('slider-handles');
 
 noUiSlider.create(handlesSlider, {
-  start: [ 2000, 3583 ],
+  
   behaviour: 'snap',
   connect: true,
+     snap: true,
 tooltips: [ true, true ],
 format: wNumb({
     decimals: 0
   }),
 
   range: {
-    'min': [  2000 ],
-    'max': [ 3583 ]
-  }
+    'min':   9499 ,
+    '5%':  12000 ,
+    '10%':  14000 ,
+    '15%':  16000 ,
+    '20%':  18000 ,
+    '25%':  20000 ,
+    '30%':  22000 ,
+    '35%':  24000 ,
+    '40%':  26000 ,
+    '45%':  28000 ,
+    '50%':  30000 ,
+    '55%':  32000 ,
+    '60%':  34000 ,
+    '65%':  36000 ,
+    '70%':  38000 ,
+    '75%':  40000 ,
+    '80%':  42000 ,
+    '85%':  44000 ,
+    '90%':  46000 ,
+    '95%':  47000 ,
+    'max': [ 48990 ]
+  },
+  start: [ 9499, 48990],
 });
 
 
