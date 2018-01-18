@@ -1,4 +1,12 @@
 
+
+/*.noUi-tooltip{
+  display: none;
+}*/
+.noUi-active .noUi-tooltip{
+  display: block;
+}
+
 .quicklymodal-wrap{
   background-color: rgba(0,0,0,0);
   position: absolute;

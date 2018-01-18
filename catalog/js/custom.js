@@ -39,7 +39,10 @@ noUiSlider.create(handlesSlider, {
   start: [ 2000, 3583 ],
   behaviour: 'snap',
   connect: true,
-
+tooltips: [ true, true ],
+format: wNumb({
+    decimals: 0
+  }),
 
   range: {
     'min': [  2000 ],
