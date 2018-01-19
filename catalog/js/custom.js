@@ -72,6 +72,10 @@ format: wNumb({
 });
 
 
+
+
+
+
   var tabNavSwiper = new Swiper('.img-tab-nav', {
     slidesPerView: 'auto',
     scrollbar: '.swiper-scrollbar',
