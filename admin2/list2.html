@@ -14,9 +14,6 @@
                 <div class="h5 text-white mb-0">Администратор</div>
             </nav>
             <div class="p-3 b-b-1">
-                <!-- <nav class="breadcrumb bg-white p-0 mb-1 small">
-                        <a class="breadcrumb-item" href="#">Главная</a>
-                    </nav> -->
                     <div class="d-flex flex-row flex-row align-items-center ">
                     	<div class="h3 mb-0 mr-3">Заказы</div>
                     	<button class="btn btn-admin mr-3">
@@ -84,9 +81,6 @@
                         <div class="order-table-header">
                             <div class="order-row order-row-small">
                                 <input class="filter-input  w-100" v-bind:class="{ edit: searchId }" v-model="searchId" v-on:keyup.enter="searchIdLabel" type="number" placeholder="Номер">
-                                <!-- <div class="filter-state small my-1" v-if="searchIdSubmit" v-on:click="searchIdClear">
-                                    Фильтр: 1<a href="#" class="ml-1">сброс</a>
-                                </div> -->
                             </div>
                             <div class="order-row order-row-small">
                                 <div class="dropdown  w-100">
@@ -160,16 +154,10 @@
                                         </label>
                                     </div>
                                 </div>
-                                <!-- <div class="filter-state small my-1" v-if="searchAttributes.length>0" v-on:click="AttributesClearAll">
-                                    Фильтр: {{searchAttributes.length}}<a href="#" class="ml-1">сброс</a>
-                                </div> -->
                             </div>
                             <div class="order-row order-row-small">
                                 <div class="filter-drop w-100 " data-toggle>Дата</div>
                                 <flat-pickr v-model="searchDate" input-class="height-0" :config="config" placeholder="Дата"></flat-pickr>
-                                <!-- <div class="filter-state small my-1" v-if="searchDate" v-on:click="searchDateClear">
-                                    Фильтр: 1<a href="#" class="ml-1">сброс</a>
-                                </div> -->
                             </div>
                             <div class="order-row">
                                 <div class="dropdown w-100">
