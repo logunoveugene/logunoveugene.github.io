@@ -1,14 +1,5 @@
 
-
-
 $(document).ready(function () { 
-
-
-
-
-
-
-
 
 
   var filterSet = new Swiper('.filterSet', {
@@ -126,9 +117,9 @@ $('#quick-product').on('shown.bs.modal', function (event) {
  var sidebar = new StickySidebar('#sidebar', {
         containerSelector: '#main-content',
         innerWrapperSelector: '.sidebar__inner',
-
-
     });
+
+
 
 
 
