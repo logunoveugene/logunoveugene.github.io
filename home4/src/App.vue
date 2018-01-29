@@ -202,7 +202,7 @@
                 </div>
                 </div>
                 <div class="col-12 ">
-                  <div class="main-slider  mb-2 hidden-sm-down">
+                  <div class="main-slider  mb-4 hidden-sm-down">
 
                     <div class="swiper-wrapper">
                       <div v-for="slide in mainSlides" class="swiper-slide">
@@ -233,7 +233,7 @@
 
 
 
-                  <div class="main-slider-m  mb-2 hidden-md-up">
+                  <div class="main-slider-m  mb-4 hidden-md-up">
                     <div class="swiper-wrapper">
                       <div v-for="slide in mainSlidesM" class="swiper-slide">
                         <a href="#" class="d-block">
@@ -253,8 +253,8 @@
                 </div>
 
 
-                <div class="col-12 mb-5">
-                  <div class="action-slider mt-4">
+                <div class="col-12 mb-4">
+                  <div class="action-slider ">
                     <div class="swiper-wrapper">
                       <div v-for="action in actions" class="swiper-slide">
                         
@@ -318,7 +318,7 @@
                     </div>
                   </div>
                 </div> -->
-                <div class="col-12 mt-2 mb-5">
+                <div class="col-12  mb-4">
                         
                   <div class="propuct-swiper">
                     <div class="swiper-wrapper d-flex align-items-stretch">
@@ -767,10 +767,15 @@ export default {
         actionName:"Скидка 30% на аксессуары HP",
         actionDesc:"Купи ноутбук HP и получи скидку на покупку аксессуаров"
       }],
+
+
+
+
+
       products: [{
           id: 20101507,
           name: 'Телевизоры',
-          img: "https://i.snag.gy/f9i0q5.jpg",
+          img: "https://logunoveugene.github.io/home4/img/cat/tv.png",
           desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
           oldPrice: 0,
           price: 4800,
@@ -803,7 +808,7 @@ export default {
         {
           id: 20101512,
           name: 'Холодильники',
-          img: "https://i.snag.gy/A0bXu3.jpg",
+          img: "https://logunoveugene.github.io/home4/img/cat/refreg.png",
           desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
           oldPrice: 0,
           price: 11990,
@@ -830,8 +835,8 @@ export default {
           }]
         }, {
           id: 20101512,
-          name: 'Стиральные машины',
-          img: "https://i.snag.gy/yN1nVL.jpg",
+          name: 'Смартфоны',
+          img: "https://logunoveugene.github.io/home4/img/cat/smartphone.png",
           desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
           oldPrice: 0,
           price: 990,
@@ -858,8 +863,8 @@ export default {
           }]
         }, {
           id: 20101512,
-          name: 'Смартфоны',
-          img: "https://i.snag.gy/xk3Zud.jpg",
+          name: 'Кондиционеры',
+          img: "https://logunoveugene.github.io/home4/img/cat/air-condition.png",
           desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
           oldPrice: 0,
           price: 2990,
@@ -886,8 +891,8 @@ export default {
           }]
         }, {
           id: 20101512,
-          name: 'Обогреватели',
-          img: "https://i.snag.gy/r5L9BY.jpg",
+          name: 'Встраиваемые панели',
+          img: "https://logunoveugene.github.io/home4/img/cat/oven.png",
           desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
           oldPrice: 0,
           price: 790,
