@@ -319,15 +319,13 @@
                   </div>
                 </div> -->
                 <div class="col-12 mt-2 mb-5">
-                  <div class="h4 mb-3 d-inline-block mr-2">Скидки</div>
-                  <a href="" class="d-inline small">2 456 товаров</a>
-                         
+                        
                   <div class="propuct-swiper">
                     <div class="swiper-wrapper d-flex align-items-stretch">
                       <div class="swiper-slide border-right-1 " v-for="(product, index) in products">
                         <div class="col-12  p-0 ">
                           <div class="flex-column border p-3 ">
-                            <div class="d-flex justify-content-center mb-4 img-wrap pt-3">
+                            <div class="d-flex justify-content-center mb-1 img-wrap ">
                               <div class="stikerWrap" v-if="products[index].actions !== 0">
                                 
                               </div>
@@ -341,7 +339,7 @@
                            
                            
                             <div class="hidden-sm-down">
-                              <div class="mb-4 price-wrap">
+                              <div class="mb-3 price-wrap">
                                 <div class="d-flex flex-row align-items-end mb-1">
                                   <div class="h5 mb-0 mr-2 "><b>от {{product.price}} р.</b></div>
            

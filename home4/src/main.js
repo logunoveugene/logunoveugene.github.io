@@ -46,7 +46,7 @@ $(document).ready(function () {
         speed: 600
     });
 
-   };
+
 
    var mainSlider = new Swiper('.main-slider', {
         nextButton: '.slider-arrow-r',
@@ -134,6 +134,7 @@ var topOffert = new Swiper('.topOffert', {
 
 
 
+    });
 
 
 
