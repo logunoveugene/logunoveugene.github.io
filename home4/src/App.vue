@@ -772,7 +772,9 @@ export default {
 
 
 
-      products: [{
+      products: [
+
+       {
           id: 20101507,
           name: 'Телевизоры',
           img: "https://logunoveugene.github.io/home4/img/cat/tv.png",
@@ -802,38 +804,7 @@ export default {
           }]
         },
 
-
-       
-
-        {
-          id: 20101512,
-          name: 'Холодильники',
-          img: "https://logunoveugene.github.io/home4/img/cat/refreg.png",
-          desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
-          oldPrice: 0,
-          price: 11990,
-          discount: 35,
-          rate: 4.5,
-          rateCount: 60,
-          amount: "В 6 магазинах сегодня",
-          actions: 0,
-          stores: [{
-            storeName: "в ТЦ Черемушки",
-            date: "2017-10-24"
-          }, {
-            storeName: "на Алеутской",
-            date: "2017-10-28"
-          }, {
-            storeName: "в ТЦ Максим",
-            date: "2017-10-24"
-          }, {
-            storeName: "на Гоголя",
-            date: "2017-10-28"
-          }, {
-            storeName: "на Вилкова",
-            date: "2017-10-28"
-          }]
-        }, {
+         {
           id: 20101512,
           name: 'Смартфоны',
           img: "https://logunoveugene.github.io/home4/img/cat/smartphone.png",
@@ -889,9 +860,40 @@ export default {
             storeName: "на Вилкова",
             date: "2017-10-28"
           }]
-        }, {
+        }, 
+        {
           id: 20101512,
-          name: 'Встраиваемые панели',
+          name: 'Холодильники',
+          img: "https://logunoveugene.github.io/home4/img/cat/refreg.png",
+          desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
+          oldPrice: 0,
+          price: 11990,
+          discount: 35,
+          rate: 4.5,
+          rateCount: 60,
+          amount: "В 6 магазинах сегодня",
+          actions: 0,
+          stores: [{
+            storeName: "в ТЦ Черемушки",
+            date: "2017-10-24"
+          }, {
+            storeName: "на Алеутской",
+            date: "2017-10-28"
+          }, {
+            storeName: "в ТЦ Максим",
+            date: "2017-10-24"
+          }, {
+            storeName: "на Гоголя",
+            date: "2017-10-28"
+          }, {
+            storeName: "на Вилкова",
+            date: "2017-10-28"
+          }]
+        },
+
+{
+          id: 20101512,
+          name: 'Электроплиты',
           img: "https://logunoveugene.github.io/home4/img/cat/oven.png",
           desc: '<ul><li>планшет 9.7", 2048x1536, TFT IPS</li><li>встроенная память 32 Гб, без слота для карт памяти</li><li>iOS, ОЗУ 2 Гб, процессор Apple A9</li><li>Wi-Fi, Bluetooth, NFC</li><li>камера 15 Мп.</li></ul>',
           oldPrice: 0,
