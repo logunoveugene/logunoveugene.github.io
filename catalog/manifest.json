@@ -1,6 +1,6 @@
 {
-  "name": "Catalog",
-  "short_name": "Catalog",
+  "name": "Catalog PWA",
+  "short_name": "Catalog PWA",
   "lang": "ru",
   "start_url": "/catalog/index.html",
   "display": "standalone",
