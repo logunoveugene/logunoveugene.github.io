@@ -13,6 +13,22 @@ new Vue({
 
 
 
+var logoSlider = new Swiper('.logo-swiper', {
+
+        slidesPerView: 'auto',
+ scrollbarHide: false,
+        scrollbar: '.swiper-scrollbar',
+        prevButton: '.slider-arrow-l',
+        slidesPerView: 'auto',
+
+        spaceBetween: 17,
+    freeMode: true
+
+
+
+      
+  
+    });
 
 $(document).ready(function () {
 
@@ -94,16 +110,7 @@ pagination: '.swiper-pagination',
     });
 
 
-var logoSlider = new Swiper('.logo-swiper', {
 
-        nextButton: '.slider-arrow-r',
-        prevButton: '.slider-arrow-l',
-        scrollbarHide: false,
-        slidesPerView: 'auto',
-        observer:true,
-        spaceBetween: 17
-  
-    });
 
 
 var productSwiper = new Swiper('.propuct-swiper', {

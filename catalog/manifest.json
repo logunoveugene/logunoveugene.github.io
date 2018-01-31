@@ -1,0 +1,13 @@
+{
+  "name": "Catalog",
+  "short_name": "Catalog",
+  "lang": "ru",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0060ba",
+  "icons": [
+    {
+      "src": "icon-192x192.png"
+    }
+  ]
+}
