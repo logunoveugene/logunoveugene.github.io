@@ -1,7 +1,10 @@
-const
-  cacheName = 'v2',
-  cacheFiles = [
-    './',
+
+// Set a name for the current cache
+var cacheName = 'v1'; 
+
+// Default files to always cache
+var cacheFiles = [
+  './',
     './css/styles.css',
     'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css',
     'https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css',
@@ -19,86 +22,99 @@ const
     './js/vue-touch.min.js',
     './js/rate.vue',
     './js/custom.js'
+]
 
 
-  ];
+self.addEventListener('install', function(e) {
+    console.log('[ServiceWorker] Installed');
 
-function install(e) {
- console.info('[sw] Установка sw');
-  e.waitUntil(
-    caches.open(cacheName)
-    .then(cachedFiles)
-    .catch(cachedError)
-  );
-}
+    // e.waitUntil Delays the event until the Promise is resolved
+    e.waitUntil(
 
-function cachedFiles(cache) {
-  console.info('[sw] Кэширование данных');
-  return cache.addAll(cacheFiles);
-}
+      // Open the cache
+      caches.open(cacheName).then(function(cache) {
 
-function cachedError(error) {
-  console.error(`[sw] Ошибка кэширования: ${error}`);
-}
+        // Add all the default files to the cache
+      console.log('[ServiceWorker] Caching cacheFiles');
+      return cache.addAll(cacheFiles);
+      })
+  ); // end e.waitUntil
+});
 
-function activate(e) {
-  console.info('[sw] Активация sw');
-  e.waitUntil(
-    caches.keys()
-    .then(cacheActual)
-  )
-}
 
-function cacheActual(cacheNames) {
-  return Promise.all(cacheNames.map(outdatedCache));
-}
+self.addEventListener('activate', function(e) {
+    console.log('[ServiceWorker] Activated');
 
-function outdatedCache(thisCacheName) {
-  if (thisCacheName !== cacheName) {
-   console.info('[sw] Удаление кэшированных файлов:', thisCacheName);
-    return caches.delete(thisCacheName);
-  }
-}
+    e.waitUntil(
 
-function fetched(e) {
-  console.info('[sw] Получение данных', e.request.url);
+      // Get all the cache keys (cacheName)
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(cacheNames.map(function(thisCacheName) {
+
+        // If a cached item is saved under a previous cacheName
+        if (thisCacheName !== cacheName) {
+
+          // Delete that cached file
+          console.log('[ServiceWorker] Removing Cached Files from Cache - ', thisCacheName);
+          return caches.delete(thisCacheName);
+        }
+      }));
+    })
+  ); // end e.waitUntil
+
+});
+
+
+self.addEventListener('fetch', function(e) {
+  console.log('[ServiceWorker] Fetch', e.request.url);
+
+  // e.respondWidth Responds to the fetch event
   e.respondWith(
-    caches.match(e.request)
-    .then(response => {
-      if (response) {
-        console.info("[sw] Найдено в кэше: ", e.request.url, response);
-        return response;
-      }
 
-      let requestClone = e.request.clone();
-      fetch(requestClone)
-      .then(response => {
-        if (!response) {
-          console.info("[sw] Нет ответа из кэша");
+    // Check in cache for the request being made
+    caches.match(e.request)
+
+
+      .then(function(response) {
+
+        // If the request is in the cache
+        if ( response ) {
+          console.log("[ServiceWorker] Found in Cache", e.request.url, response);
+          // Return the cached version
           return response;
         }
 
-        let responseClone = response.clone();
+        // If the request is NOT in the cache, fetch and cache
 
-        caches.open(cacheName)
-        .then(cache => {
-          cache.put(e.request, responseClone);
-          console.info('[sw] Кэширование новых данных: ', e.request.url);
+        var requestClone = e.request.clone();
+        fetch(requestClone)
+          .then(function(response) {
 
-          return response;
+            if ( !response ) {
+              console.log("[ServiceWorker] No response from fetch ")
+              return response;
+            }
 
-        });
+            var responseClone = response.clone();
 
-      })
-      .catch(fetchError);
-    })
-  )
-}
+            //  Open the cache
+            caches.open(cacheName).then(function(cache) {
 
-function fetchError(error) {
-  console.error(`[sw] Ошибка получения & кэширования новых данных: ${error}`);
-}
+              // Put the fetched response in the cache
+              cache.put(e.request, responseClone);
+              console.log('[ServiceWorker] New Data Cached', e.request.url);
 
-self.addEventListener('install', install);
-self.addEventListener('activate', activate);
-self.addEventListener('fetch', fetched);
+              // Return the response
+              return response;
+      
+                }); // end caches.open
+
+          })
+          .catch(function(err) {
+            console.log('[ServiceWorker] Error Fetching & Caching New Data', err);
+          });
+
+
+      }) // end caches.match(e.request)
+  ); // end e.respondWith
+});
