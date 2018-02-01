@@ -35,7 +35,7 @@ function install(e) {
 }
 
 function cachedFiles(cache) {
-  // console.info('[sw] Кэширование данных');
+console.info('[sw] Кэширование данных');
   return cache.addAll(cacheFiles);
 }
 
@@ -44,7 +44,7 @@ function cachedError(error) {
 }
 
 function activate(e) {
-  // console.info('[sw] Активация sw');
+console.info('[sw] Активация sw');
   e.waitUntil(
     caches.keys()
     .then(cacheActual)
@@ -57,18 +57,18 @@ function cacheActual(cacheNames) {
 
 function outdatedCache(thisCacheName) {
   if (thisCacheName !== cacheName) {
-    // console.info('[sw] Удаление кэшированных файлов:', thisCacheName);
+ console.info('[sw] Удаление кэшированных файлов:', thisCacheName);
     return caches.delete(thisCacheName);
   }
 }
 
 function fetched(e) {
-  // console.info('[sw] Получение данных', e.request.url);
+console.info('[sw] Получение данных', e.request.url);
   e.respondWith(
     caches.match(e.request)
     .then(response => {
       if (response) {
-        // console.info("[sw] Найдено в кэше: ", e.request.url, response);
+     console.info("[sw] Найдено в кэше: ", e.request.url, response);
         return response;
       }
 
@@ -76,7 +76,7 @@ function fetched(e) {
       fetch(requestClone)
       .then(response => {
         if (!response) {
-          // console.info("[sw] Нет ответа из кэша");
+         console.info("[sw] Нет ответа из кэша");
           return response;
         }
 
@@ -85,7 +85,7 @@ function fetched(e) {
         caches.open(cacheName)
         .then(cache => {
           cache.put(e.request, responseClone);
-          // console.info('[sw] Кэширование новых данных: ', e.request.url);
+       console.info('[sw] Кэширование новых данных: ', e.request.url);
 
           return response;
 
