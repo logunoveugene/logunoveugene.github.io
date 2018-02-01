@@ -312,7 +312,7 @@ var kolich = new Vue({
         actionName: "Рассрочка 0%",
         actionType: "credit",
         actionDesc:"Только два дня на широкий ассортимент товаров действуют скидки до 50%!",
-        actionImg: "http://via.placeholder.com/60x60"
+        actionImg: "https://via.placeholder.com/60x60"
 
       }
         
@@ -426,7 +426,7 @@ var kolich = new Vue({
         actionName: "Рассрочка 0%",
         actionType: "credit",
         actionDesc:"Только два дня на широкий ассортимент товаров действуют скидки до 50%!",
-        actionImg: "http://via.placeholder.com/60x60"
+        actionImg: "https://via.placeholder.com/60x60"
 
       },
         
