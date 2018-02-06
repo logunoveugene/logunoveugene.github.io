@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>Каталог</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0" >
+
+<script>
+
+</script>
+  <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/11.0.0/nouislider.min.css">
+
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/c-style.css" rel="stylesheet">
+<link rel="manifest" href="manifest.json">
+
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="application-name" content="Catalog">
+<meta name="apple-mobile-web-app-title" content="Catalog">
+<meta name="theme-color" content="#0060ba">
+<meta name="msapplication-navbutton-color" content="#0060ba">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="msapplication-starturl" content="/">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="icon" href="icon-192x192.png">
+<link rel="apple-touch-icon" href="icon-192x192.png">
+
+</head>
+<body>
+
+  <div id="app">
+   <!-- шапка начало -->
+   <div class="hidden-md-up fixed-top">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row d-flex ">
+          <div class="col d-flex flex-row align-items-center shrink py-2" v-on:click="switchsite">
+            <img v-if="cm==true" src="https://i.snag.gy/3jefoc.jpg" alt="" />
+            <img v-if="cm==false" src="https://i.snag.gy/j6mnyA.jpg" alt="" />
+          </div>
+          <div class="col d-flex flex-row-reverse align-items-center align-self-end p-3">
+            <img src="https://i.snag.gy/51LOiG.jpg" class="" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid ">
+      <div class="container bg-grey bb-red-3">
+        <div class="row ">
+          <div class="col d-flex flex-row align-items-center border-right-1 shrink header-btn p-3">
+            <img src="https://i.snag.gy/oJxb64.jpg" class="mr-2" alt="" />
+            <a href="">
+              <h6 class="mb-0 main-link">Каталог</h6>
+            </a>
+          </div>
+          <div class="col d-flex flex-row align-items-center border-right-1 p-2">
+           <div class="search-input col p-0">
+             <input type="text" class="form-control search-field" v-model="search"  placeholder="Поиск по сайту">
+             <div v-if="search == '1'" class="search-result p-3">
+              <div class="relative">
+
+                <div class="" v-for="(product, index) in products">
+                  <div class="d-flex flex-row py-1">
+                    <div class="search-image-wrap mr-3"><img class="search-image" :src="product.img" alt=""></div>
+                    <div class="search-product-name"><a href="" class="">{{product.name}}</a></div>
+                    <div class="search-product-price ml-auto text-muted">{{product.price}} р.</div>
+                  </div>
+                </div>
+                <div class="button-search-result">
+                  <button type="button" class="btn btn-warning btn-block">Block level button</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- для десктопа -->
+<div class="container-fluid hidden-sm-down">
+  <div class="container bg-grey ">
+    <div class="row d-flex ">
+      <div class="col d-flex flex-row align-items-center shrink py-2">
+        <a href="" class="text-muted">
+          <small>Петропавловск-Камчатский</small>
+        </a>
+      </div>
+      <div class="col d-flex flex-row align-items-center shrink py-2">
+        <a href="" class="text-muted">
+          <small>ул. Светланская, д. 147 </small>
+        </a>
+      </div>
+      <div class="col d-flex flex-row align-items-center shrink py-2">
+        <div class="">
+          <b class="text-muted">+7 (4232) 79-01-16</b>
+          <small>(с 9:00 до 20:00)</small>
+        </div>
+      </div>
+      <div class="col d-flex flex-row align-items-center shrink py-2">
+        <a href="" class="text-muted">
+          <small>Обратная связь</small>
+        </a>
+      </div>
+      <div class="col d-flex flex-row-reverse align-items-center align-self-end py-2 hidden-md-down">
+        <ul class="nav small ">
+          <li class="nav-item">
+            <a class="nav-link text-muted" href="#">Как купить</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-muted" href="#">Оплата</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-muted pr-0" href="#">Доставка</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid hidden-sm-down">
+  <div class="container bb-red-3">
+    <div class="row ">
+      <div class="col border-right-1 p-3 shrink" v-on:click="switchsite">
+        <div class=" hidden-xl-up">
+          <img v-if="cm==true" src="https://i.snag.gy/3jefoc.jpg" alt="" />
+          <img v-if="cm==false" src="https://i.snag.gy/j6mnyA.jpg" alt="" />
+        </div>
+        <div class="hidden-lg-down">
+          <img v-if="cm==true" src="https://i.snag.gy/I0oqfz.jpg" alt="" />
+          <img v-if="cm==false" src="https://i.snag.gy/Amv5nC.jpg" alt="" />
+        </div>
+      </div>
+      <div class="col d-flex flex-row align-items-center border-right-1 shrink header-btn">
+        <div class="icon-catalog-header header-icon pt-2 text-muted"></div>
+        <a href="#" class="hidden-lg-down">
+          <h6 class="mb-0 ml-2 main-link">Каталог</h6>
+        </a>
+      </div>
+      <div class="col d-flex flex-row align-items-center border-right-1">
+        <div class="search-input col p-0">
+
+          <input type="text" class="form-control search-field" v-model="search"  placeholder="Поиск по сайту">
+          <div v-if="search == '1'" class="search-result p-3">
+            <div class="relative">
+              <div class="" v-for="(product, index) in products">
+                <div class="d-flex flex-row py-1">
+                  <div class="search-image-wrap mr-3"><img class="search-image" :src="product.img" alt=""></div>
+                  <div class="search-product-name"><a href="" class="">{{product.name}}</a></div>
+                  <div class="search-product-price ml-auto text-muted">{{product.price}} р.</div>
+                </div>
+              </div>
+              <div class="button-search-result">
+                <button type="button" class="btn btn-warning btn-block">Block level button</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col d-flex flex-row align-items-center border-right-1 shrink header-btn">
+        <div class="icon-cabinet header-icon"></div>
+        <div class="d-flex flex-column hidden-md-down ml-2">
+          <a href="" class="main-link"><h6 class="mb-0">Личный кабинет</h6></a>
+          <div class="d-flex flex-row">
+            <a href="" class="mr-2 small text-muted">Вход</a>
+            <a href="" class="small text-muted">Регистрация</a>
+          </div>
+        </div>
+      </div>
+      <div class="col d-flex flex-row align-items-center border-right-1 shrink header-btn">
+        <div class="icon-compare header-icon"></div>
+        <div class="d-flex flex-column ml-2 hidden-md-down">
+          <a href="" class="main-link">
+            <h6 class="mb-0">Сравнение</h6>
+          </a>
+        </div>
+      </div>
+      <div class="col d-flex flex-row align-items-center shrink header-btn">
+       <div class="icon-cart header-icon"></div>
+       <div class="d-flex flex-column ml-2 hidden-md-down">
+        <a href="" class="main-link">
+          <h6 class="mb-0">Корзина</h6>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<!-- шапка конец -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container-fluid mt-5 pt-5  mt-md-0 pt-md-0">
+  <div class="container">
+    <div class="row mt-2 mt-md-0">
+      <div class="col-12 mt-4  mb-3">
+
+        <div class=" d-flex flex-nowrap">
+          <div class=" d-flex flex-row align-items-center pr-3 border-right-1">
+            <img src="https://i.snag.gy/Lp8yad.jpg" class="mr-2" alt="" />
+            <a href="">
+              <div class="mb-0 text-muted small">Назад</div>
+            </a>
+          </div>
+          <div class="d-flex ml-1 breadcrumbsSwiper-wrap">
+            <div class="breadcrumb-left">
+            </div>
+            <div class="breadcrumbsSwiper" dir="rtl">
+              <div class="swiper-wrapper ">
+                <div class="swiper-slide">
+                  <nav class="">
+                    <a class="text-muted small mr-3 " href="#">Главная</a> <img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
+                    <a class="text-muted  small mr-3" href="#">Телевизоры и видеотехника</a><img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
+                    <a class="text-muted  small mr-3" href="#">Телевизоры </a><img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 d-flex flex-lg-row flex-column align-items-start  align-items-lg-center mb-4 p-0 px-lg-3">
+
+
+
+
+        <div class=" h4 mb-0 text-nowrap pl-3 pl-lg-0 mb-3 mb-lg-0">Телевизоры  <span class="small text-muted mr-2">(275)</span></div>
+
+        <div class="filterSet">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <nav class="">
+                <a class="filterPreSet ml-3 " href="#"><i class="icon-search-field mr-2 "></i>До 30 тыс. р</a> 
+                <a class="filterPreSet" href="#"><i class="icon-search-field mr-2"></i>4к телевизоры</a>
+                <a class="filterPreSet" href="#"><i class="icon-search-field mr-2"></i>Samsung, LG или Sony</a>
+                <a class="filterPreSet" href="#"><i class="icon-search-field mr-2"></i>Smart TV</a>
+                <a class="filterPreSet" href="#"><i class="icon-search-field mr-2"></i>Изогнутый экран</a>
+              </nav>
+            </div>
+          </div>
+        </div>  
+
+      </div>
+      <div class="col-12 mb-4 hidden-md-down">
+
+
+       <div class="catBanner " >
+        <div class="swiper-wrapper ">
+          <div class="swiper-slide">
+            <img class="w-100" src="https://i.snag.gy/JoV0p3.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img class="w-100" src="https://i.snag.gy/8luxsd.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img class="w-100" src="https://i.snag.gy/Td0qAm.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img class="w-100" src="https://i.snag.gy/L2njBz.jpg" alt="">
+          </div>
+        </div>
+        <div class="slider-arrow slider-arrow-l">
+          <div class="icon-left-arrow"></div>
+        </div>
+        <div class="slider-arrow slider-arrow-r">
+          <div class="icon-rightt-arrow"></div>
+        </div>
+      </div>
+    </div>
+    <div id="main-content" class="d-flex flex-row">
+
+      <div id="sidebar" class=" hidden-md-down m-3 ">
+        <div class="border mr-3 sidebar__inner"><img src="https://i.snag.gy/yPRXOc.jpg" alt=""  ></div>
+        <!--  https://i.snag.gy/o4RxHh.jpg -->
+
+      </div>
+      <div id="content"  class="m-lg-3 px-3">
+
+        <div class="row  " >
+          <div class="col-12 d-flex flex-row p-0 pt-4 mb-3 bt-1 hidden-md-down">
+            <div class="d-flex flex-wrap mr-4">
+              <div class="mr-1 small">Сортировка:</div>
+              <div class="dropdown small">
+
+                <a class="  dropdown-toggle" href="https://example.com" id="sort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  по возрастанию цены
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="sort">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex flex-wrap mr-4">
+              <div class="mr-1 small">Группировать:</div>
+              <div class="dropdown small">
+
+                <a class="  dropdown-toggle" href="https://example.com" id="sort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  без группировки
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="sort">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex flex-wrap mr-4">
+              <div class="mr-1 small">Магазин:</div>
+              <div class="dropdown small">
+
+                <a class="  dropdown-toggle" href="https://example.com" id="sort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  любой
+                </a>
+                <div class="dropdown-menu" aria-labelledby="sort">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex flex-wrap mr-4">
+              <div class="mr-1 small">Наличие:</div>
+              <div class="dropdown small">
+                <a class="  dropdown-toggle" href="https://example.com" id="sort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  склад и магазин
+                </a>
+                <div class="dropdown-menu" aria-labelledby="sort">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </div>
+            </div>
+            <div class="viewSetting pr-3 ml-auto" v-on:click="layout = 'list'" v-bind:class="{ 'active': layout == 'list'}">
+              <i class="icon-horizontal"></i>
+            </div>
+            <div class="viewSetting pr-3" v-on:click="layout = 'grid'" v-bind:class="{ 'active': layout == 'grid'}">
+              <i class="icon-plates"></i>
+            </div>
+          </div>
+          <div class="col-12 hidden-lg-up">
+            <div class="row">
+              <div class="col-6 filterSet-plate p-2-5  text-center d-flex justify-content-center align-items-center" data-toggle="modal" data-target="#filterModal"><i class="icon-filter mobile-list-control mr-2"></i>Фильтрация</div>
+              <div class="col-6 filterSet-plate  text-center d-flex justify-content-center align-items-center" data-toggle="modal" data-target="#sortingModal"><i class="icon-sorting mobile-list-control mr-2"></i>Сортировка</div>
+            </div>
+          </div>
+        </div>
+        <div v-if="layout == 'grid'" class="row mb-5 ">
+          <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-6 p-0 d-flex flex-column border" v-for="(product, index) in products">
+            <div class="stikerWrap" v-if="products[index].actions !== 0" id="stickers">
+              <div class="d-inline" v-for="(action, index) in product.actions">
+                <div class="dropdown d-inline">
+                  <div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="mr-1 stiker" :class="action.actionType">
+                    <span class="">{{action.actionName}}</span>
+                  </div>
+                  <div class="dropdown-menu">
+                    <button type="button" class="close" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="media">
+                      <img class="d-flex mr-3" :src="action.actionImg" alt="1">
+                      <div class="media-body">
+                        <div class="mt-0 ">{{action.actionName}}</div>
+                        <div class="small">{{action.actionDesc}}</div>
+                        <a href="" class="small">Подробнее</a>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+            </div>
+            <div class="p-3">
+              <div class="d-flex justify-content-center mb-4 img-wrap pt-3">
+                <div class="d-flex mx-lg-3 mt-lg-3 poduct-img-wrap-z hidden-md-down">
+                  <img class="align-self-center poduct-img" :src="product.img" alt="">
+                  <div class=""><a href="#" data-toggle="modal" data-target="#quick-product" class="quick-view"><i class="icon-search-field mr-2"></i>Быстрый просмотр</a></div>
+                </div>
+                <v-touch class="hidden-lg-up" v-on:press="quicklymodal">
+                  <div class="d-flex mx-lg-3 mt-lg-3 poduct-img-wrap-z ">
+                    <div class="quicklymodal-wrap"></div>
+                    <img class="align-self-center poduct-img" :src="product.img" alt="">
+                  </div>
+                </v-touch>
+              </div>
+              <div class="mb-2 productName hidden-sm-down small">
+                <a href="https://logunoveugene.github.io/main2/index.html" :title="product.name">{{product.name}}</a>
+              </div>
+              <div class="mb-2 productName hidden-md-up small">
+                <a href="https://logunoveugene.github.io/main2/index.html">{{product.name}}</a>
+              </div>
+              <div class="mb-2">
+                <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">{{product.rateCount}}</span>
+              </div>
+              <div class="hidden-sm-down">
+                <div class="mb-4 price-wrap">
+                  <div class="d-flex flex-row align-items-end mb-1">
+                    <div class="h5 mb-0 mr-2 "><b>{{product.price | number}} р.</b></div>
+                    <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice | number}} р.</del></span>
+                  </div>
+                  <div class="discount" v-if="products[index].discount !== 0">
+                    <mark>- {{product.discount | number}} р. по промокоду код</mark>
+                  </div>
+                  <div class="discount " v-if="products[index].oldPrice !== 0">
+                    <mark>Выгода <span class="text-nowrap">{{product.oldPrice-product.price | number}} р.</span></mark>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <button type="button" class="btn btn-primary mr-2">В корзину</button>
+                  <img src="https://i.snag.gy/zo2fWm.jpg" alt="">
+                </div>
+              </div>
+              <div class="hidden-md-up d-flex justify-content-between align-items-center">
+                <div class="d-flex flex-column ">
+                  <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice | number}} р.</del></span>
+                  <span class=" mb-0"><b>{{product.price | number}} р.</b></span>
+                  <div class="discount" v-if="products[index].discount !== 0">
+                    <mark>- {{product.discount | number}} р. по промокоду код</mark>
+                  </div>
+                  <div class="discount mb-2" v-if="products[index].oldPrice !== 0">
+                    <mark>Выгода <span class="text-nowrap">{{product.oldPrice-product.price}} р.</span></mark>
+                  </div>
+                </div>
+                <button type="button" class="btn btn-primary">
+                  <div class="icon-cart text-white"></div>
+                </button>
+              </div>
+              <div class="small hidden-md-down ">
+                <a href="" class="text-muted"><a href="">В 6 магазинах</a> с 18 сентября</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-if="layout == 'list'" class="row">
+          <div class="product-plate col-12 " v-for="(product, index) in products">
+            <div class="stikerWrap hidden-sm-down " v-if="products[index].actions !== 0">
+              <div class="d-inline" v-for="(action, index) in product.actions">
+                <div class="dropdown d-inline">
+                  <div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="mr-1 stiker" :class="action.actionType">
+                   <span class="">{{action.actionName}}</span>
+                 </div>
+                 <div class="dropdown-menu">
+                  <button type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <div class="media">
+                    <img class="d-flex mr-3" :src="action.actionImg" alt="Generic placeholder image">
+                    <div class="media-body">
+                      <div class="mt-0 ">{{action.actionName}}</div>
+                      <div class="small">{{action.actionDesc}}</div>
+                      <a href="#" class="small">Подробнее</a>
+                    </div>
+                  </div>
+                </div>
+              </div>   
+            </div>
+          </div>
+          <div class="stikerWrap hidden-md-up " v-if="products[index].actions !== 0">
+            <div class="d-block" v-for="(action, index) in product.actions">
+              <div class="dropdown d-block">
+                <div data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="mr-1 stiker " :class="action.actionType">
+                  <span class="">{{action.actionName}}</span>
+                </div>
+                <div class="dropdown-menu">
+                  <button type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <div class="media">
+                    <img class="d-flex mr-3" :src="action.actionImg" alt="Generic placeholder image">
+                    <div class="media-body">
+                      <div class="mt-0 ">{{action.actionName}}</div>
+                      <div class="small">{{action.actionDesc}}</div>
+                      <a href="#" class="small">Подробнее</a>
+                    </div>
+                  </div>
+                </div>
+              </div>  
+            </div>
+          </div>
+          <div class="row p-3">
+            <div class="col shrink ">
+              <div class="d-flex justify-content-center h-100 mb-2 row-img-wrap  poduct-img-wrap-z hidden-md-down">
+                <div class="d-flex">
+                  <img class="align-self-center row-poduct-img" :src="product.img" alt="">
+                  <div class=""><a href="#" data-toggle="modal" data-target="#quick-product" class="quick-view"><i class="icon-search-field mr-2"></i>Быстрый просмотр</a></div>
+                </div>
+              </div>
+              <v-touch class="hidden-lg-up "  v-on:press="quicklymodal">
+                <div class="d-flex justify-content-center h-100 mb-2 row-img-wrap  poduct-img-wrap-z" >
+                  <div class="d-flex">
+                    <div class="quicklymodal-wrap"></div>
+                    <img class="align-self-center row-poduct-img" :src="product.img" alt="">
+
+                  </div>
+                </div>
+              </v-touch>
+            </div>
+            <div class="col pr-0">
+              <div class="row">
+                <div class="col-12 col-md">
+                  <div class="d-flex flex-column ">
+                    <div class="mb-2 mt-3  h5 hidden-sm-down ">
+                      <a href="https://logunoveugene.github.io/main2/index.html" :title="product.name">{{product.name}}</a>
+                    </div>
+                    <div class="mb-1 hidden-md-up small">
+                      <a href="https://logunoveugene.github.io/main2/index.html">{{product.name}}</a>
+                    </div>
+                    <div class="desc-list-warp hidden-sm-down" v-html="product.desc"></div>
+                    <div class="mb-2 hidden-md-up">
+                      <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">{{product.rateCount}} </span>
+                    </div>
+                    <div class="mb-2 hidden-md-up">
+                      <div href="" class="text-muted small"><a href="">В 6 магазинах</a> <span class="text-nowrap">с 18 сентября</span></div>
+                    </div>
+                    <div class="hidden-md-up d-flex justify-content-between align-items-center">
+                      <div class="d-flex flex-column ">
+                        <span class="small text-muted" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice | number}} р.</del></span>
+                        <span class=" mb-0"><b>{{product.price | number}} р.</b></span>
+                        <div class="discount" v-if="products[index].discount !== 0">
+                          <mark> <span class="">-{{product.discount | number}} р. по промокоду код</span></mark>
+                        </div>
+                        <div class="discount " v-if="products[index].oldPrice !== 0">
+                          <mark>Выгода <span class="text-nowrap">{{product.oldPrice-product.price | number}} р.</span></mark>
+                        </div>
+                        <div class="discount" v-if="products[index].creditprice !== 0">
+                          <mark>от <span class="text-nowrap">{{product.creditprice | number}} р. /мес.</span></mark>
+                        </div>
+                      </div>
+                      <button type="button" class="btn btn-primary">
+                        <div class="icon-cart text-white"></div>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col shrink hidden-sm-down">
+                  <div class="d-flex flex-column ml-auto  text-right">
+                    <div class="mt-2 pt-2 mb-1">
+                      <span class="small text-muted  mb-1" v-if="products[index].oldPrice !== 0"><del>{{product.oldPrice | number}} р.</del></span>
+                      <div class="h5 mb-2 "><b>{{product.price | number}} р.</b></div>
+                      <div class="discount mb-2" v-if="products[index].discount !== 0">
+                        <mark> <span class="">-{{product.discount | number}} р. по промокоду код</span></mark>
+                      </div>
+                      <div class="discount mb-2" v-if="products[index].oldPrice !== 0">
+                        <mark>Выгода <span class="text-nowrap">{{product.oldPrice-product.price | number}} р.</span></mark>
+                      </div>
+                      <div class="discount mb-2" v-if="products[index].creditprice !== 0">
+                        <mark>от <span class="text-nowrap">{{product.creditprice | number}} р. /мес.</span></mark>
+                      </div>
+                    </div>
+                    <div class="">
+                      <button type="button" class="btn btn-primary mb-2">В корзину</button>
+                    </div>
+                    <div class="small">
+                      <a href="" class="text-muted"><a href="">В 6 магазинах</a> с 18 сентября</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row hidden-sm-down">
+                <div class="col">
+                  <div class="d-flex flex-row mb-2">
+                    <div class="mr-4">
+                      <rate :length="5" :value="product.rate"></rate> <span class="small text-muted">{{product.rateCount}} </span>
+                    </div>
+                    <div class="d-inline-block mr-4">
+                      <div data-icon="h" class="icon small text-muted mr-2 d-inline-block"></div>
+                      <div class="small text-muted  d-inline-block">Сравнить</div>
+                    </div>
+                    <div class="d-inline-block">
+                      <div data-icon="_" class="icon small text-muted mr-2 d-inline-block"></div>
+                      <div class="small text-muted  d-inline-block">Добавить в желания</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="fullscreen-image" aria-hidden="true">
+  <div class="modal-dialog modal-full" role="document">
+    <div class="card-block">
+      <div class="row">
+        <div class="col-10">
+          <h5 class="modal-title" id="exampleModalLabel">Фильтрация </h5>
+        </div>
+        <div class="col-2">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card-block pt-0 ">
+      <div class="mx-auto">
+        <div id="slider-handles" >
+
+        </div>
+      </div>
+      <div class="fixed-bottom p-2 text-center"><button type="button" class="btn btn-primary btn-lg btn-block mb-2 ">Показать 54 товара</button>
+        <button type="button" class="btn btn-link">Сбросить фильтры</button></div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="modal fade" id="sortingModal" tabindex="-1" role="dialog" aria-labelledby="fullscreen-image" aria-hidden="true">
+    <div class="modal-dialog modal-full" role="document">
+      <div class="card-block">
+        <div class="row  ">
+          <div class="col-10">
+            <h5 class="modal-title" id="exampleModalLabel">Сортировка</h5>
+          </div>
+          <div class="col-2">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card-block pt-0 ">
+        <div class="mx-auto">
+          <div class="d-flex flex-row mb-3">
+            <div class="small">Вариант отображения:</div>
+            <div class="viewSetting pr-3 ml-auto" v-on:click="layout = 'list'" v-bind:class="{ 'active': layout == 'list'}">
+              <i class="icon-horizontal"></i>
+            </div>
+            <div class="viewSetting pr-3" v-on:click="layout = 'grid'" v-bind:class="{ 'active': layout == 'grid'}">
+              <i class="icon-plates"></i>
+            </div>
+          </div>
+          <div class="d-flex flex-row ">
+            <div class="mr-1 small">Сортировка:</div>
+            <div class="dropdown small ml-auto ">
+
+              <a class=" dropdown-toggle" href="https://example.com" id="sort" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                по возрастанию цены
+              </a>
+
+              <div class="dropdown-menu  dropdown-menu-right" aria-labelledby="sort">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fixed-bottom p-2">
+          <button type="button" class="btn btn-primary btn-lg btn-block ">Применить сортировку</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="quick-product" tabindex="-1" role="dialog" aria-labelledby="quick-product" aria-hidden="true">
+  <div class="modal-dialog modal-content quick-product-modal" role="document">
+    <div class="card-block">
+      <div class="row">
+        <div class="col-10">
+          <h5 class="modal-title" id="">Телевизор BBK 32LEM-1018/T2C</h5>
+        </div>
+        <div class="col-2">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="card-block pt-0">
+      <div class="mx-auto">
+       <div class="row">
+        <div class="col-lg-5 col-md-7 col-12">
+          <div class="mb-3">
+            <div class="mb-2">
+              <div class="d-flex flex-row align-items-center hidden-sm-down">
+                <div class="mr-2">
+                  <rate :length="5" :value="4"></rate>
+                </div>
+                <a href="" class="small">4,4 (17 отзывов)</a>
+              </div>
+            </div>
+            <div class="main-image mb-3">
+
+              <div class="img-tab-content">
+                <div class="swiper-wrapper">
+                  <div v-for="slide in swiperSlides" class="swiper-slide image-warp">
+
+                    <img :data-src="slide" class="swiper-lazy large-image">
+                    <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
+
+                  </div>
+                </div>
+                <div class="swiper-pagination hidden-sm-up"></div>
+              </div>
+              <div class="img-tab-nav hidden-sm-down" id="tabNav">
+                <div class="swiper-wrapper">
+                  <div v-for="(slide, index)  in swiperSlidesThumbs" class="swiper-slide" :data-slide-index="index">
+                    <img :src="slide">
+                  </div>
+                </div>
+                <div class="swiper-scrollbar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7  col-md-5 col-12">
+          <div class="row">
+            <div class="col-md-6 hidden-md-down">
+              <div class="d-flex flex-column ml-3">
+                <div class="mb-5">
+                  <div class="mb-2">Основные характеристики</div>
+                  <ul class="list-unstyled small main-props mb-3">
+                    <li>Диагональ дисплея - 55 " (139,7 см)</li>
+                    <li>Тип - QLED</li>
+                    <li>HD-формат - 4K (3840x2160 пикселей)</li>
+                    <li>Smart TV, android TV</li>
+                    <li>WIFI, Ethernet</li>
+                    <li>Вход HDMI x4, Интерфейс USB x3</li>
+                    <li>DVB-T, DVB-T2, DVB-C, DVB-S2</li>
+                  </ul>
+                  <img src="https://i.snag.gy/wvhWE1.jpg" alt="" class="mb-4">
+                  <div class=""><a href="">Все характеристики</a></div>
+                </div>
+                <div class="mb-5">
+                  <div class="mb-2">
+                    <span class="mr-2">Права покупателей защищены</span>
+                  </div>
+                  <ul class="list-unstyled small main-props">
+                    <li>Гарантия от Samsung 1 год</li>
+                    <li>Обязательная предпродажная проверка </li>
+                    <li>14 дней на возврат</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-12 mb-0 mb-sm-4">
+              <div class="d-flex flex-column">
+                <img src="https://i.snag.gy/8VrZxc.jpg" alt="" class="hidden-sm-down mb-3">
+                <div class=" ">
+                  <div class="mb-0 mb-md-3">
+                    <div class="d-flex flex-column">
+                      <p class="text-muted small mb-0"><del>174 600 p.</del></p>
+                      <div class="h3 mb-1">169 990 p.</div>
+                      <div class="mb-0">
+                        <span class="badge badge-benefit">ЭКОНОМИЯ 4 610 р. (скидка 12%)</span>
+                      </div>
+                      <p v-if="cm==false" class="text-danger small  mt-2 mb-0">До 1 746 р. бонусов</p>
+                      <button type="button" class="btn btn-lg mt-3 mb-3" v-bind:class="{ 'btn-primary':cm, 'btn-warning':!cm }">Добавить в корзину</button>
+                      <button type="button" class="btn btn-secondary mb-0 mb-sm-3">Подробнее о товаре</button>
+                      <div class="d-flex flex-row justify-content-between small hidden-md-down">
+                        <a href="#">Как купить в кредит?</a>
+                        <a href="#">Нашли дешевле? снизим цену!</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-3 delivery-info mb-4 hidden-md-down">
+                    <div class="d-flex flex-column">
+                      <div class="small mb-1  ">
+                        <a href="">Забрать в 6 магазинах</a> – сегодня</div>
+                        <div class="small ">Доставка ‒  с 15 сентября, 320 р. </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row small hidden-md-down">
+                    <a href="" class="text-muted mr-4"> <img src="https://i.snag.gy/HL2TFZ.jpg" alt="" class="mb-1 mr-2"><span>Сравнить</span> </a>
+                    <a href="" class="text-muted"> <img src="https://i.snag.gy/2pc1QP.jpg" alt="" class="mb-1 mr-2"><span>Добавить в желания</span> </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="js/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="js/tether.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.1.0/wNumb.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+<script src="js/vue-touch.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/11.0.0/nouislider.min.js"></script>
+<script src="js/sticky-sidebar.min.js"></script>
+
+<script src="js/custom.js"></script>
+
+
+</body>
+</html>
