@@ -829,18 +829,31 @@
 </div>
 </div>
 
-<script src="js/index.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="js/tether.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.1.0/wNumb.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-<script src="https://unpkg.com/vue"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
-<script src="js/vue-touch.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/js/swiper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/11.0.0/nouislider.min.js"></script>
-<script src="js/sticky-sidebar.min.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js');
+}
 
+// link to a image file
+var iconUrl = 'https://www.seeklogo.net/wp-content/uploads/2014/10/Google-Chrome-logo-vector-download.png';
+
+// create the <img> html element
+// on first load it will request the image
+// second time it will load it from cache directly thanks to the service worker
+var imgElement = document.createElement('img');
+imgElement.src = iconUrl;
+
+</script>
+<script src="js/jquery.min.js"></script>
+<script src="js/tether.min.js"></script>
+<script src="js/wNumb.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/hammer.min.js"></script>
+<script src="js/vue-touch.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/nouislider.min.js"></script>
+<script src="js/sticky-sidebar.min.js"></script>
 <script src="js/custom.js"></script>
 
 
