@@ -23,7 +23,7 @@ var cacheFiles = [
     './js/tether.min.js',
     './js/vue-touch.min.js',
     './js/rate.vue',
-    './manifest.json'
+    './manifest.json',
     './js/custom.js'
 ]
 
