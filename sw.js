@@ -4,7 +4,7 @@ var cacheName = 'v1';
 
 // Default files to always cache
 var cacheFiles = [
-  './',
+  './index.html',
     './css/styles.css',
     'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css',
     'https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css',
