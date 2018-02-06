@@ -1,5 +1,3 @@
-
-// Set a name for the current cache
 var cacheName = 'v1'; 
 
 // Default files to always cache
@@ -25,6 +23,7 @@ var cacheFiles = [
     './js/tether.min.js',
     './js/vue-touch.min.js',
     './js/rate.vue',
+    './manifest.json'
     './js/custom.js'
 ]
 
