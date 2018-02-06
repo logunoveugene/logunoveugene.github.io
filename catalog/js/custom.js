@@ -43,6 +43,7 @@ noUiSlider.create(handlesSlider, {
 tooltips: [ true, true ],
 
 
+
   range: {
   'min':180,
 '4,21%':205,
@@ -68,8 +69,6 @@ tooltips: [ true, true ],
   },
   start: [180, 590]
 });
-
-
 
 
 
