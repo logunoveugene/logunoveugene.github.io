@@ -1,4 +1,3 @@
-
 var PRECACHE = 'precache-v1';
 var RUNTIME = 'runtime';
 
