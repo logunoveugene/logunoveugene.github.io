@@ -30,11 +30,11 @@ $(document).ready(function () {
 
   });
 
-
+  var arr = [];
 function filterarr(a, b) {
   var rp = [1, 2, 5, 10, 20, 25, 50, 100, 250, 500, 1000, 2000, 5000, 10000, 15000, 20000, 50000];
   var n, z, step, width;
-  var arr = [];
+
   var range = {};
   n = b - a;
 
@@ -72,6 +72,9 @@ console.log(range);
 };
 
 
+
+
+
 var handlesSlider = document.getElementById('slider-handles');
 var input0 = document.getElementById('input-with-keypress-0');
 var input1 = document.getElementById('input-with-keypress-1');
@@ -92,9 +95,22 @@ tooltips: [ true, true ],
   start: [2290, 89999]
 });
 
+var select = document.getElementById('inputsug');
+
+// Append the option elements
+for ( var i = 0; i <=arr.length-1 ; i++ ){
+
+	var option = document.createElement("option");
+	
+		option.value = arr[i];
+
+	select.appendChild(option);
+}
+
+
 
 handlesSlider.noUiSlider.on('update', function( values, handle ) {
-	inputs[handle].value = values[handle];
+	inputs[handle].placeholder = values[handle];
 });
 
 function setSliderHandle(i, value) {
