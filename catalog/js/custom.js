@@ -31,44 +31,158 @@ $(document).ready(function () {
   });
 
 
+function filterarr(a, b) {
+  var rp = [1, 2, 5, 10, 20, 25, 50, 100, 250, 500, 1000, 2000, 5000, 10000, 15000, 20000, 50000];
+  var n, z, step, width;
+  var arr = [];
+  var range = {};
+  n = b - a;
+
+  for (var i = 0; i < rp.length; i++) {
+    z = n / rp[i];
+    if (z <= 20) {
+      step = rp[i];
+      break;
+    }
+  };
+
+  for (let i = 0; i < b; i = step + i) {
+    if (i < (b - step) && i > (a + step)) {
+      arr.push(i);
+    };
+  };
+
+  arr.splice(0, 0, a);
+  arr.push(b);
+
+
+  var width = 100 / (arr.length-1);
+  var pos = width;
+  for (let i = 1; i < arr.length-1; i++) {
+
+    range[pos] = arr[i];
+    pos = pos + width;
+  };
+
+range.min=a;
+range.max=b;
+console.log(range);
+  return range;
+
+};
+
+
+
+
+
 var handlesSlider = document.getElementById('slider-handles');
+
+
+var input0 = document.getElementById('input-with-keypress-0');
+var input1 = document.getElementById('input-with-keypress-1');
+var inputs = [input0, input1];
+
+
+
+
 
 noUiSlider.create(handlesSlider, {
   
   behaviour: 'snap',
+       snap: true,
+
   connect: true,
   format: wNumb({
     decimals: 0
   }),
 tooltips: [ true, true ],
 
-
-
-  range: {
-  'min':180,
-'4,21%':205,
-'7,37%':220,
-'28,42%':250,
-'30,53%':270,
-'33,68%':290,
-'37,89%':300,
-'41,05%':310,
-'45,26%':320,
-'52,63%':330,
-'65,26%':340,
-'69,47%':350,
-'72,63%':430,
-'77,89%':450,
-'80,00%':470,
-'83,16%':900,
-'87,37%':1210,
-'90,53%':2021,
-'94,74%':4500,
-'96,84%':5570,
-'max':18590
-  },
-  start: [180, 590]
+  range: filterarr(2290, 89999),
+  start: [2290, 89999]
 });
+
+
+
+
+
+handlesSlider.noUiSlider.on('update', function( values, handle ) {
+	inputs[handle].value = values[handle];
+});
+
+
+
+
+
+function setSliderHandle(i, value) {
+	var r = [null,null];
+	r[i] = value;
+	handlesSlider.noUiSlider.set(r);
+}
+
+// Listen to keydown events on the input field.
+inputs.forEach(function(input, handle) {
+
+	input.addEventListener('change', function(){
+		setSliderHandle(handle, this.value);
+	});
+
+	input.addEventListener('keydown', function( e ) {
+
+		var values = handlesSlider.noUiSlider.get();
+		var value = Number(values[handle]);
+
+		// [[handle0_down, handle0_up], [handle1_down, handle1_up]]
+		var steps = handlesSlider.noUiSlider.steps();
+
+		// [down, up]
+		var step = steps[handle];
+
+		var position;
+
+		// 13 is enter,
+		// 38 is key up,
+		// 40 is key down.
+		switch ( e.which ) {
+
+			case 13:
+				setSliderHandle(handle, this.value);
+				break;
+
+			case 38:
+
+				// Get step to go increase slider value (up)
+				position = step[1];
+
+				// false = no step is set
+				if ( position === false ) {
+					position = 1;
+				}
+
+				// null = edge of slider
+				if ( position !== null ) {
+					setSliderHandle(handle, value + position);
+				}
+
+				break;
+
+			case 40:
+
+				position = step[0];
+
+				if ( position === false ) {
+					position = 1;
+				}
+
+				if ( position !== null ) {
+					setSliderHandle(handle, value - position);
+				}
+
+				break;
+		}
+	});
+});
+
+
 
 
 
