@@ -1,4 +1,6 @@
-
+.noUi-base  .noUi-origin:last-child{
+  left:-10px;
+}
 
 .noUi-tooltip{
   display: none;
