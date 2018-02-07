@@ -110,7 +110,7 @@ for ( var i = 0; i <=arr.length-1 ; i++ ){
 
 
 handlesSlider.noUiSlider.on('update', function( values, handle ) {
-	inputs[handle].value = values[handle];
+	inputs[handle].placeholder = values[handle];
 });
 
 function setSliderHandle(i, value) {
