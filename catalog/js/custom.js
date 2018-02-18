@@ -30,43 +30,102 @@ $(document).ready(function () {
 
   });
 
+  var arr = [];
+function filterarr(a, b) {
+  var rp = [1, 2, 5, 10, 20, 25, 50, 100, 250, 500, 1000, 2000, 5000, 10000, 15000, 20000, 50000];
+  var n, z, step, width;
+
+  var range = {};
+  n = b - a;
+
+  for (var i = 0; i < rp.length; i++) {
+    z = n / rp[i];
+    if (z <= 20) {
+      step = rp[i];
+      break;
+    }
+  };
+
+  for (let i = 0; i < b; i = step + i) {
+    if (i < (b - step) && i > (a + step)) {
+      arr.push(i);
+    };
+  };
+
+  arr.splice(0, 0, a);
+  arr.push(b);
+
+
+  var width = 100 / (arr.length-1);
+  var pos = width;
+  for (let i = 1; i < arr.length-1; i++) {
+
+    range[pos] = arr[i];
+    pos = pos + width;
+  };
+
+range.min=a;
+range.max=b;
+console.log(range);
+  return range;
+
+};
+
+
+
+
 
 var handlesSlider = document.getElementById('slider-handles');
+var input0 = document.getElementById('input-with-keypress-0');
+var input1 = document.getElementById('input-with-keypress-1');
+var inputs = [input0, input1];
 
 noUiSlider.create(handlesSlider, {
   
   behaviour: 'snap',
+
+
   connect: true,
-     snap: true,
-tooltips: [ true, true ],
-format: wNumb({
+  format: wNumb({
     decimals: 0
   }),
+tooltips: [ true, true ],
 
-  range: {
-    'min':   9499 ,
-    '5%':  12000 ,
-    '10%':  14000 ,
-    '15%':  16000 ,
-    '20%':  18000 ,
-    '25%':  20000 ,
-    '30%':  22000 ,
-    '35%':  24000 ,
-    '40%':  26000 ,
-    '45%':  28000 ,
-    '50%':  30000 ,
-    '55%':  32000 ,
-    '60%':  34000 ,
-    '65%':  36000 ,
-    '70%':  38000 ,
-    '75%':  40000 ,
-    '80%':  42000 ,
-    '85%':  44000 ,
-    '90%':  46000 ,
-    '95%':  47000 ,
-    'max': [ 48990 ]
-  },
-  start: [ 9499, 48990],
+  range: filterarr(2290, 89999),
+  start: [2290, 89999]
+});
+
+var select = document.getElementById('inputsug');
+
+// Append the option elements
+for ( var i = 0; i <=arr.length-1 ; i++ ){
+
+	var option = document.createElement("option");
+	
+		option.value = arr[i];
+
+	select.appendChild(option);
+}
+
+
+
+handlesSlider.noUiSlider.on('update', function( values, handle ) {
+	inputs[handle].placeholder = values[handle];
+});
+
+function setSliderHandle(i, value) {
+	var r = [null,null];
+	r[i] = value;
+	handlesSlider.noUiSlider.set(r);
+}
+
+// Listen to keydown events on the input field.
+inputs.forEach(function(input, handle) {
+
+	input.addEventListener('change', function(){
+		setSliderHandle(handle, this.value);
+	});
+
 });
 
 
