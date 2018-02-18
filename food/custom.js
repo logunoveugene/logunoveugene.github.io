@@ -1,7 +1,6 @@
 var swiper = new Swiper('.swiper-container', {
-      spaceBetween: 30,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
+      speed: 600,
+      parallax: true,
+
+
     });
