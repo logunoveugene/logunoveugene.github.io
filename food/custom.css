@@ -35,6 +35,17 @@
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
       padding: 25px 20px;
+
+
+
+width: calc(100% - 2rem);
+
+
+
+
+
+
+
     }
     .parallax-bg {
       position: absolute;
