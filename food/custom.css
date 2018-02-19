@@ -166,7 +166,7 @@ overflow:hidden;
   }
 
 .swiper-project .swiper-slide {
-	width: 100%
+width: auto;
 }
 
 .poselok-img{
