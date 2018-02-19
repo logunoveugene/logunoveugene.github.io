@@ -14,7 +14,26 @@ autoplay: {
 
 var swiper = new Swiper('.swiper-poselok', {
       slidesPerView: 'auto',
-      spaceBetween: 20,
+      spaceBetween: 15,
       freeMode: true,
 
     });
+
+var swiper = new Swiper('.swiper-project-menu', {
+      slidesPerView: 'auto',
+      spaceBetween: 15,
+      freeMode: true,
+
+    });
+var swiper = new Swiper('.swiper-project', {
+      slidesPerView: 'auto',
+      spaceBetween: 15,
+      freeMode: true,
+
+    });
+
+
+
+
+
+
