@@ -3,6 +3,6 @@ var swiper = new Swiper('.swiper-container', {
       parallax: true,
 slidesPerView: 'auto',
       centeredSlides: true,
-
+autoHeight: true, 
 
     });
