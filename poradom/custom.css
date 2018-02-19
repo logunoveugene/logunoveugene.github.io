@@ -199,6 +199,7 @@ width: auto;
 
 .bottom-plate-icon{
 	max-width: 30px;
+	height: auto;
 	    margin: auto;
 	    padding-top: .25rem;
 }
