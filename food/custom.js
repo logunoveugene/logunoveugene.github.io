@@ -4,5 +4,8 @@ var swiper = new Swiper('.swiper-container', {
 slidesPerView: 'auto',
       centeredSlides: true,
 autoHeight: true, 
-
+autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
     });
