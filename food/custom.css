@@ -45,7 +45,7 @@ body{
 .swiper-main {
 	width: 100%;
 	height: auto;
-
+overflow:hidden;
 }
 .swiper-slide {
 	font-size: 18px;
