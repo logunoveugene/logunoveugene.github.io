@@ -21,13 +21,11 @@ var swiper = new Swiper('.swiper-poselok', {
 
 var swiper = new Swiper('.swiper-project-menu', {
       slidesPerView: 'auto',
-      spaceBetween: 15,
       freeMode: true,
 
     });
 var swiper = new Swiper('.swiper-project', {
       slidesPerView: 'auto',
-      spaceBetween: 15,
       freeMode: true,
 
     });
