@@ -1,4 +1,4 @@
-var swiper = new Swiper('.swiper-container', {
+var swiper = new Swiper('.swiper-main', {
       speed: 600,
       parallax: true,
 slidesPerView: 'auto',

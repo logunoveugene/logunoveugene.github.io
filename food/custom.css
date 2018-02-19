@@ -1,3 +1,10 @@
+
+body{
+		font-family: "PT Sans";
+		background-color: #f4f4f4; 
+}
+
+
 .logo{
 	width: 130px;
 	height: 33px;
@@ -23,8 +30,19 @@
 }
 
 
+.block-title{
+	font-weight: 700;
+	font-size: 17px;
+}
 
-.swiper-container {
+
+
+
+
+
+
+
+.swiper-main {
 	width: 100%;
 	height: auto;
 
@@ -58,7 +76,7 @@ position: absolute;
 	top: 20px;
 	font-weight: 700;
 	font-size: 17px;
-	font-family: "PT Sans";
+
 	padding: 0px 5px;
 	background-color: #ef1456;
 	display: inline-block;
