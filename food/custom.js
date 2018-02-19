@@ -9,3 +9,12 @@ autoplay: {
         disableOnInteraction: false,
       },
     });
+
+
+
+var swiper = new Swiper('.swiper-poselok', {
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      freeMode: true,
+
+    });
