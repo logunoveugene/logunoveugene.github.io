@@ -148,6 +148,9 @@ overflow:hidden;
 }
 
 
+.swiper-project-menu .nav-item:last-child{
+	margin-right: 0;
+}
 
 
 
@@ -174,4 +177,8 @@ width: auto;
 .swiper-project .cont-block{
 	width: 125px;
 	margin-right: 15px;
+}
+
+.swiper-project .cont-block:last-child{
+	margin-right: 0;
 }
