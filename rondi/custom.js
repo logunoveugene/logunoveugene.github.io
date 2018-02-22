@@ -24,7 +24,5 @@ var swiper = new Swiper('.swiper-main', {
 $('div[data-act=modal]').click(function(e) {
   $('#work').modal();
   var soure = $(this).attr('data-src');
-  console.log(soure);
-$("#result").load("hi.html");
-
+  $("#result").load(soure);
 });
