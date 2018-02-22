@@ -4,7 +4,11 @@ var swiper = new Swiper('.swiper-main', {
   parallax: true,
   slidesPerView: 'auto',
   centeredSlides: true,
-  autoHeight: true, 
+ 
+        lazy: {
+    loadPrevNext: true,
+    loadPrevNextAmount:3,
+  },
    pagination: {
         el: '.swiper-pagination',
         dynamicBullets: true,
