@@ -4,7 +4,7 @@ var swiper = new Swiper('.swiper-main', {
   parallax: true,
   slidesPerView: 'auto',
   centeredSlides: true,
- 
+ loop: true,
         lazy: {
     loadPrevNext: true,
     loadPrevNextAmount:3,
@@ -13,9 +13,11 @@ var swiper = new Swiper('.swiper-main', {
         el: '.swiper-pagination',
         dynamicBullets: true,
       }
-  // autoplay: {
-  //   delay: 2500,
-  //   disableOnInteraction: false,
-  // },
+
 });
+
+
+
+
+
 

@@ -97,3 +97,12 @@ z-index: -2;
     
   }
 }
+
+
+
+.main-title{
+	font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    line-height: 3rem;
+    margin-bottom: 2rem;
+}
