@@ -12,7 +12,7 @@
 	min-height: 240px;
 
 
-
+	background-color: #f4f4f4;
 
 }
 
@@ -21,7 +21,7 @@
 	height: auto;
 	z-index: -1;
 	border-radius: 3px;
-	background-color: #f4f4f4;
+
 
 }
 .swiper-main .swiper-slide .title {
