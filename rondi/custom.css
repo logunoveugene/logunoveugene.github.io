@@ -21,6 +21,7 @@
 	height: auto;
 	z-index: -1;
 	border-radius: 3px;
+	background-color: #f4f4f4;
 
 }
 .swiper-main .swiper-slide .title {
@@ -58,4 +59,42 @@
 
 span.swiper-pagination-bullet{
     margin: 0 4px;
+}
+
+
+
+
+.preloader {
+  height: 20px;
+  width: 20px;
+position: absolute;
+top:50%;
+left: 50%;
+transform: translate(-50%,-50%);
+  border: 2px solid rgba(252, 208, 0, .33);
+ border-top: 2px solid rgba(252, 208, 0, 1);
+   
+z-index: -2;
+  border-radius: 30px;
+  animation: rotate .8s infinite linear;
+  
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    
+   
+  }
+
+  50% {
+    transform: rotate(180deg);
+
+  }
+
+  100% {
+    transform: rotate(360deg);
+
+    
+  }
 }
