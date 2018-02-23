@@ -5,6 +5,10 @@ var swiper = new Swiper('.swiper-main', {
   slidesPerView: 'auto',
   centeredSlides: true,
   loop: true,
+  navigation: {
+        nextEl: '.slider-arrow-r',
+        prevEl: '.slider-arrow-l',
+      },
   lazy: {
     loadPrevNext: true,
     loadPrevNextAmount:3,
