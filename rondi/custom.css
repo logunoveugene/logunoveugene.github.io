@@ -101,7 +101,9 @@ span.swiper-pagination-bullet{
 
 .slider-arrow-r{
   right: 20px;
-  transform: rotate(180deg);
+
+
+  transform: translateY(-50%) rotate(180deg);
    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNSAxNSI+PHBhdGggZD0iTTEwIDIuN0w4LjIuOSAxLjQgNy43bDYuOCA2LjkgMS44LTEuOC01LTUuMXoiLz48L3N2Zz4=");
  
 
