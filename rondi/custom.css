@@ -78,7 +78,7 @@ span.swiper-pagination-bullet{
     opacity: .6;
     cursor: pointer;
     box-shadow:  0 0 15px rgba(0,0,0,.1);
-    background-size: 15px 44px;
+    background-size: 14px 44px;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -152,7 +152,7 @@ z-index: -2;
 	font-family: 'Playfair Display', serif;
     font-size: 3rem;
     line-height: 3rem;
-    margin-bottom: 2rem;
+ 
 }
 
 
