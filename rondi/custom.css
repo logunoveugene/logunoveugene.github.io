@@ -148,6 +148,27 @@ z-index: -2;
 
 
 
+
+.swiper-site {
+	width: 100%;
+	height: auto;
+
+
+}
+.swiper-site .swiper-slide {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: auto;
+	height: auto;
+
+}
+.overflow{
+		overflow:hidden;
+}
+
+
+
+
 .main-title{
 
     font-size: 3rem;

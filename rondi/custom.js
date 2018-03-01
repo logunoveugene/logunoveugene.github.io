@@ -21,6 +21,17 @@ var swiper = new Swiper('.swiper-main', {
 });
 
 
+var swipersite = new Swiper('.swiper-site', {
+  spaceBetween: 30,
+  slidesPerView: 'auto',
+  freeMode: true
+
+
+});
+
+
+
+
 
 
 
