@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 11/03/2018 06:10
+  	Creation date: 11/03/2018 07:06
   	*/
 
 @font-face {
@@ -28,26 +28,38 @@ font-style: normal;
 
 }
 
-.flaticon-gallery:before { content: "\f100"; }
-.flaticon-people:before { content: "\f101"; }
-.flaticon-notification-bell:before { content: "\f102"; }
-.flaticon-shield:before { content: "\f103"; }
-.flaticon-vip:before { content: "\f104"; }
-.flaticon-time:before { content: "\f105"; }
-.flaticon-multimedia:before { content: "\f106"; }
-.flaticon-rocket:before { content: "\f107"; }
-.flaticon-loupe:before { content: "\f108"; }
-.flaticon-idea:before { content: "\f109"; }
-.flaticon-settings:before { content: "\f10a"; }
-.flaticon-trophy:before { content: "\f10b"; }
-.flaticon-responsive:before { content: "\f10c"; }
-.flaticon-contract:before { content: "\f10d"; }
-.flaticon-clipboard:before { content: "\f10e"; }
-.flaticon-like:before { content: "\f10f"; }
-.flaticon-profits:before { content: "\f110"; }
-.flaticon-dashboard:before { content: "\f111"; }
-.flaticon-calendar:before { content: "\f112"; }
-.flaticon-microscope:before { content: "\f113"; }
-.flaticon-paper:before { content: "\f114"; }
-.flaticon-percentage:before { content: "\f115"; }
-.flaticon-planning:before { content: "\f116"; }
+.flaticon-list:before { content: "\f100"; }
+.flaticon-medal:before { content: "\f101"; }
+.flaticon-clock:before { content: "\f102"; }
+.flaticon-food:before { content: "\f103"; }
+.flaticon-hammer:before { content: "\f104"; }
+.flaticon-copyright:before { content: "\f105"; }
+.flaticon-glasses:before { content: "\f106"; }
+.flaticon-tool:before { content: "\f107"; }
+.flaticon-briefcase:before { content: "\f108"; }
+.flaticon-shopping-list:before { content: "\f109"; }
+.flaticon-arrow:before { content: "\f10a"; }
+.flaticon-cube-with-arrows:before { content: "\f10b"; }
+.flaticon-fruit:before { content: "\f10c"; }
+.flaticon-gallery:before { content: "\f10d"; }
+.flaticon-people:before { content: "\f10e"; }
+.flaticon-notification-bell:before { content: "\f10f"; }
+.flaticon-shield:before { content: "\f110"; }
+.flaticon-vip:before { content: "\f111"; }
+.flaticon-time:before { content: "\f112"; }
+.flaticon-multimedia:before { content: "\f113"; }
+.flaticon-rocket:before { content: "\f114"; }
+.flaticon-loupe:before { content: "\f115"; }
+.flaticon-idea:before { content: "\f116"; }
+.flaticon-trophy:before { content: "\f117"; }
+.flaticon-responsive:before { content: "\f118"; }
+.flaticon-contract:before { content: "\f119"; }
+.flaticon-clipboard:before { content: "\f11a"; }
+.flaticon-like:before { content: "\f11b"; }
+.flaticon-profits:before { content: "\f11c"; }
+.flaticon-dashboard:before { content: "\f11d"; }
+.flaticon-calendar:before { content: "\f11e"; }
+.flaticon-microscope:before { content: "\f11f"; }
+.flaticon-paper:before { content: "\f120"; }
+.flaticon-percentage:before { content: "\f121"; }
+.flaticon-planning:before { content: "\f122"; }
