@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 11/03/2018 02:33
+  	Creation date: 11/03/2018 06:10
   	*/
 
 @font-face {
@@ -24,30 +24,31 @@
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
   font-family: Flaticon;
+        font-size: 20px;
 font-style: normal;
-
+margin-left: 20px;
 }
 
-.flaticon-image:before { content: "\f100"; }
-.flaticon-profile:before { content: "\f101"; }
-.flaticon-planning:before { content: "\f102"; }
-.flaticon-notification-bell:before { content: "\f103"; }
-.flaticon-paper:before { content: "\f104"; }
-.flaticon-microscope:before { content: "\f105"; }
-.flaticon-calendar:before { content: "\f106"; }
-.flaticon-social:before { content: "\f107"; }
-.flaticon-multimedia:before { content: "\f108"; }
-.flaticon-dashboard:before { content: "\f109"; }
-.flaticon-idea:before { content: "\f10a"; }
-.flaticon-profits:before { content: "\f10b"; }
-.flaticon-vip:before { content: "\f10c"; }
+.flaticon-gallery:before { content: "\f100"; }
+.flaticon-people:before { content: "\f101"; }
+.flaticon-notification-bell:before { content: "\f102"; }
+.flaticon-shield:before { content: "\f103"; }
+.flaticon-vip:before { content: "\f104"; }
+.flaticon-time:before { content: "\f105"; }
+.flaticon-multimedia:before { content: "\f106"; }
+.flaticon-rocket:before { content: "\f107"; }
+.flaticon-loupe:before { content: "\f108"; }
+.flaticon-idea:before { content: "\f109"; }
+.flaticon-settings:before { content: "\f10a"; }
+.flaticon-trophy:before { content: "\f10b"; }
+.flaticon-responsive:before { content: "\f10c"; }
 .flaticon-contract:before { content: "\f10d"; }
-.flaticon-loupe:before { content: "\f10e"; }
-.flaticon-rocket:before { content: "\f10f"; }
-.flaticon-like:before { content: "\f110"; }
-.flaticon-shield:before { content: "\f111"; }
-.flaticon-trophy:before { content: "\f112"; }
-.flaticon-clipboard:before { content: "\f113"; }
-.flaticon-percentage:before { content: "\f114"; }
-.flaticon-responsive:before { content: "\f115"; }
-.flaticon-time:before { content: "\f116"; }
+.flaticon-clipboard:before { content: "\f10e"; }
+.flaticon-like:before { content: "\f10f"; }
+.flaticon-profits:before { content: "\f110"; }
+.flaticon-dashboard:before { content: "\f111"; }
+.flaticon-calendar:before { content: "\f112"; }
+.flaticon-microscope:before { content: "\f113"; }
+.flaticon-paper:before { content: "\f114"; }
+.flaticon-percentage:before { content: "\f115"; }
+.flaticon-planning:before { content: "\f116"; }
