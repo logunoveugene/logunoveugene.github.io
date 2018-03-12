@@ -590,6 +590,7 @@ var kolich = new Vue({
 
     ],
        cm: true,
+       iSkrasota:false;
 
   },
   methods: {
@@ -597,13 +598,12 @@ var kolich = new Vue({
       this.cm = !this.cm;
     },
 
-    quicklymodal: function() {
+    quicklymodal: function(e) {
       $('#quick-product').modal('show');
-       $('.product-plate').removeClass('krasota');
-        console.log('del')
+       this.iSkrasota = false;
     },
-    krasota: function() {
-      $('.product-plate').addClass('krasota');
+    krasota: function(e) {
+      this.iSkrasota = true;
       console.log('sd')
     }
    
