@@ -600,12 +600,12 @@ var kolich = new Vue({
 
     quicklymodal: function(e) {
       $('#quick-product').modal('show');
-       this.isKrasota = false;
+       event.target.classList.remove('krasota');
     },
     krasota: function(event) {
       // this.isKrasota = true;
-       event.target.classList.toggle('krasota');
-      console.log('sd');
+       event.target.classList.add('krasota');
+ 
           }
    
 

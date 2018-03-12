@@ -367,15 +367,16 @@
               </div>
             </div>
             <div class="p-3" >
-              <div class="d-flex justify-content-center mb-4 img-wrap pt-3" v-bind:class="{ krasota: isKrasota }">
+              <div class="d-flex justify-content-center mb-4 img-wrap pt-3" >
                 <div class="d-flex mx-lg-3 mt-lg-3 poduct-img-wrap-z hidden-md-down">
                   <img class="align-self-center poduct-img" :src="product.img" alt="">
                   <div class=""><a href="#" data-toggle="modal" data-target="#quick-product" class="quick-view"><i class="icon-search-field mr-2"></i>Быстрый просмотр</a></div>
                 </div>
-                <v-touch class="hidden-lg-up"  v-on:pressup="quicklymodal" v-on:press="krasota($event)" >
+                <v-touch class="hidden-lg-up"  v-on:pressup="quicklymodal($event)" v-on:press="krasota($event)" >
                   <div class="d-flex mx-lg-3 mt-lg-3 poduct-img-wrap-z ">
-                   
+                    <button class="quicklymodal-wrap">
                     <img class="align-self-center poduct-img" :src="product.img" alt="">
+                    </button>
                   </div>
                 </v-touch>
               </div>
