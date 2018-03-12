@@ -5,15 +5,6 @@
   transition: all 0.7s ease;
 }
 
-.quicklymodal-wrap:active, .quicklymodal-wrap:focus {
-  outline: none;
-}
-.quicklymodal-wrap::-moz-focus-inner {
-  border: 0;
-}
-
-
-
 .noUi-base  .noUi-origin:last-child{
   left:-12px;
 }
