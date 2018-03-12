@@ -343,7 +343,7 @@
           </div>
         </div>
         <div v-if="layout == 'grid'" class="row mb-5 ">
-          <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-6 p-0 d-flex flex-column border" v-for="(product, index) in products" v-bind:class="{ krasota: isKrasota }">
+          <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-6 p-0 d-flex flex-column border" v-for="(product, index) in products" >
             <div class="stikerWrap" v-if="products[index].actions !== 0" id="stickers">
               <div class="d-inline" v-for="(action, index) in product.actions">
                 <div class="dropdown d-inline">
@@ -366,8 +366,8 @@
                 </div> 
               </div>
             </div>
-            <div class="p-3">
-              <div class="d-flex justify-content-center mb-4 img-wrap pt-3">
+            <div class="p-3" >
+              <div class="d-flex justify-content-center mb-4 img-wrap pt-3" v-bind:class="{ krasota: isKrasota }">
                 <div class="d-flex mx-lg-3 mt-lg-3 poduct-img-wrap-z hidden-md-down">
                   <img class="align-self-center poduct-img" :src="product.img" alt="">
                   <div class=""><a href="#" data-toggle="modal" data-target="#quick-product" class="quick-view"><i class="icon-search-field mr-2"></i>Быстрый просмотр</a></div>

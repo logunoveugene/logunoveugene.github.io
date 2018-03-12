@@ -599,11 +599,12 @@ var kolich = new Vue({
     },
 
     quicklymodal: function(e) {
-      $('#quick-product').modal('show');
-       this.isKrasota = false;
+      this.isKrasota = false;
     },
     krasota: function() {
       this.isKrasota = true;
+      $('#quick-product').modal('show');
+      
       console.log('sd')
     }
    

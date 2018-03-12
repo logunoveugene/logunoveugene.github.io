@@ -1,6 +1,8 @@
 
 .krasota{
-  transform: scale(.95);
+  transform: scale(.95) ;
+  border: none!important;
+  transition: all 0.9s ease;
 }
 
 .noUi-base  .noUi-origin:last-child{
