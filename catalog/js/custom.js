@@ -598,16 +598,14 @@ var kolich = new Vue({
     },
 
     quicklymodal: function() {
-      $('#quick-product').modal('show')
+      $('#quick-product').modal('show');
+       $('.product-plate').removeClass('krasota');
     },
     krasota: function() {
       $('.product-plate').addClass('krasota');
       console.log('sd')
-    },
-     krasotadel: function() {
-      $('.product-plate').removeClass('krasota');
-      console.log('sd')
     }
+   
 
   },
     filters: {
