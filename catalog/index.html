@@ -343,7 +343,7 @@
           </div>
         </div>
         <div v-if="layout == 'grid'" class="row mb-5 ">
-          <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-6 p-0 d-flex flex-column border" v-for="(product, index) in products" v-bind:class="{ krasota: isActive }">
+          <div class="product-plate col-xl-4 col-lg-4 col-md-4 col-6 p-0 d-flex flex-column border" v-for="(product, index) in products" v-bind:class="{ krasota: isKrasota }">
             <div class="stikerWrap" v-if="products[index].actions !== 0" id="stickers">
               <div class="d-inline" v-for="(action, index) in product.actions">
                 <div class="dropdown d-inline">
