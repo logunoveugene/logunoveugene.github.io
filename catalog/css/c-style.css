@@ -21,7 +21,7 @@
 }
 
 .quicklymodal-wrap{
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(256,256,256,0.5);
   position: absolute;
   height: 100%;
   width: 100%;
@@ -818,6 +818,9 @@ transition: 0.3s ease;
 
       .poduct-img-wrap-z{
         position: relative;
+        height: 100%
+        width:100%;
+        background-color: rgba(0,0,0,0);
       }
 
       .product-plate:hover .quick-view{
