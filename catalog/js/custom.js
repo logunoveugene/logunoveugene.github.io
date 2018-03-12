@@ -600,6 +600,7 @@ var kolich = new Vue({
     quicklymodal: function() {
       $('#quick-product').modal('show');
        $('.product-plate').removeClass('krasota');
+        console.log('del')
     },
     krasota: function() {
       $('.product-plate').addClass('krasota');
