@@ -372,7 +372,7 @@
                   <img class="align-self-center poduct-img" :src="product.img" alt="">
                   <div class=""><a href="#" data-toggle="modal" data-target="#quick-product" class="quick-view"><i class="icon-search-field mr-2"></i>Быстрый просмотр</a></div>
                 </div>
-                <v-touch class="hidden-lg-up" v-on:press="quicklymodal">
+                <v-touch class="hidden-lg-up"  v-on:panstart="krasota" v-on:panend="krasotadel" >
                   <div class="d-flex mx-lg-3 mt-lg-3 poduct-img-wrap-z ">
                     <div class="quicklymodal-wrap"></div>
                     <img class="align-self-center poduct-img" :src="product.img" alt="">

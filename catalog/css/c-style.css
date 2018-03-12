@@ -1,3 +1,8 @@
+
+.krasota{
+  transform: scale(.95);
+}
+
 .noUi-base  .noUi-origin:last-child{
   left:-12px;
 }
