@@ -2,7 +2,7 @@
 .krasota{
   transform: scale(.95) ;
   border: none!important;
-  transition: all 0.7s ease;
+  transition: all 0.9s ease;
 }
 
 .noUi-base  .noUi-origin:last-child{
@@ -21,11 +21,10 @@
 }
 
 .quicklymodal-wrap{
-    background-color: rgba(0,0,0,0);
-
-    height: auto;
-    width: 200px;
-    border: 0;
+  background-color: rgba(0,0,0,0);
+  position: absolute;
+  height: 100%;
+  width: 100%;
 
 }
 
