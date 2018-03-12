@@ -602,10 +602,11 @@ var kolich = new Vue({
       $('#quick-product').modal('show');
        this.isKrasota = false;
     },
-    krasota: function() {
-      this.isKrasota = true;
-      console.log('sd')
-    }
+    krasota: function(event) {
+      // this.isKrasota = true;
+       event.target.classList.toggle('krasota');
+      console.log('sd');
+          }
    
 
   },
