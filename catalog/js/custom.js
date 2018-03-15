@@ -605,6 +605,7 @@ var kolich = new Vue({
     krasota: function(event) {
       // this.isKrasota = true;
        event.target.classList.add('krasota');
+       javascript:void(0);
  
           }
    
