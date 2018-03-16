@@ -599,7 +599,9 @@ var kolich = new Vue({
     },
 
     quicklymodal: function(e) {
+       history.pushState("premodal","title");
       $('#quick-product').modal('show');
+
        event.target.classList.remove('krasota');
     },
     krasota: function(event) {
