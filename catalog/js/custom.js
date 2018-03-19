@@ -623,39 +623,3 @@ var kolich = new Vue({
 
 });
 
-(function() {
-  // Take some variables.
-  var calcSize, xWidth, yHeight;
-  var btnMaterial = document.querySelectorAll('.btnMaterial'),
-    span = document.createElement("span");
-  span.className = "effect";
-
-  // Just get the click once.
-  for (var i = 0; i < btnMaterial.length; i++) {
-    btnMaterial[i].addEventListener('click', function(getPage) {
-
-      // Insert element before the first child
-      this.insertBefore(span, this.firstChild);
-
-      // Remove CSS Class if it's been applying.
-      span.classList.remove('animate');
-
-      // Calculate the sizes
-      calcSize = Math.max(this.offsetWidth, this.offsetHeight);
-
-      // Apply height and width effect.
-      span.style.height = calcSize + 'px';
-      span.style.width = calcSize + 'px';
-
-      // Get the position of the click.
-      xWidth = getPage.pageX - this.offsetLeft - span.offsetWidth / 2;
-      yHeight = getPage.pageY - this.offsetTop - span.offsetHeight / 2;
-
-      span.style.left = xWidth + 'px';
-      span.style.top = yHeight + 'px';
-
-      // Apply CSS Class to animate it.
-      span.classList.add('animate');
-    });
-  }
-}());
