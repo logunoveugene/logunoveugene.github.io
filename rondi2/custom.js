@@ -49,10 +49,39 @@ $('div[data-act=modal]').click(function(e) {
 var ecommerceAnim = anime({
   autoplay:false,
   targets: '.web-st',
-  translateX: 250,
-  backgroundColor: 'rgb(255, 0, 0)',
+  backgroundColor: '#4506b2',
   easing: 'linear',
-  duration: 2000
+  duration: 300
 });
 
 
+
+
+
+
+
+
+
+var change = function () {
+
+	
+
+				var animation = anime({
+  targets: '.web-st',
+  duration: 1500,
+  easing: 'linear',
+  backgroundImage: '100% -> 0%',
+})
+				animation.play();
+
+
+
+
+				
+
+
+				
+}
+
+
+document.querySelector('#landingAnimation').onclick = change();
