@@ -48,7 +48,7 @@ font-family: 'Roboto Slab', serif;
 
 .web-st{
 background-image: radial-gradient(circle at 73% -12%, #a3636e 0%, #4506b2 48%);
-     border-radius: 40px;
+     border-radius: 30px;
     box-shadow: 0px 20px 40px 0px rgba(72, 9, 176, 0.4);
         overflow:hidden;
         color: #fff;
