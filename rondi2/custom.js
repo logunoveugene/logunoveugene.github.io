@@ -47,11 +47,11 @@ $('div[data-act=modal]').click(function(e) {
 
 
 var ecommerceAnim = anime({
-  autoplay:false,
   targets: '.web-st',
-  backgroundColor: '#4506b2',
-  easing: 'linear',
-  duration: 300
+  duration: 1000,
+   backgroundImage: '73% -> 60%, url('whB2c1.jpg') -> url('whB2c1.jpg')',
+  backgroundPosition: '100% 0%',
+  autoplay:false,
 });
 
 
@@ -62,26 +62,10 @@ var ecommerceAnim = anime({
 
 
 
-var change = function () {
-
-	
-
-				var animation = anime({
-  targets: '.web-st',
-  duration: 1500,
-  easing: 'linear',
-  backgroundImage: '100% -> 0%',
-})
-				animation.play();
 
 
 
 
-				
-
-
-				
-}
-
-
-document.querySelector('#landingAnimation').onclick = change();
+$( "#landingAnimation" ).click(function() {
+  ecommerceAnim.restart();
+});
