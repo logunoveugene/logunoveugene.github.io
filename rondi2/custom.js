@@ -46,26 +46,9 @@ $('div[data-act=modal]').click(function(e) {
 
 
 
-var ecommerceAnim = anime({
-  targets: '.web-st',
-  duration: 1000,
-   backgroundImage: '73% -> 60%, url('whB2c1.jpg') -> url('whB2c1.jpg')',
-  backgroundPosition: '100% 0%',
-  autoplay:false,
-});
 
 
 
 
 
 
-
-
-
-
-
-
-
-$( "#landingAnimation" ).click(function() {
-  ecommerceAnim.restart();
-});
