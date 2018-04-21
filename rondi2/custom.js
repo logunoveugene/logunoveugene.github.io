@@ -44,6 +44,11 @@ $('div[data-act=modal]').click(function(e) {
 
 
 
+window.sr = ScrollReveal();
+sr.reveal('.container', { duration: 1000 });
+
+
+
 
 
 
