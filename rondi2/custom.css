@@ -86,6 +86,7 @@
     width: 100%;
     transition: all .5s;
     box-shadow: 0 0 15px rgba(0, 0, 0, .2);
+    z-index: 5;
 }
 
 .menu.visible {
