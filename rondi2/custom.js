@@ -49,10 +49,17 @@ sr.reveal('.intro', { duration: 1000 });
 
 
 
+    window.onscroll = function() {
+   var scroll = $( window ).scrollTop();
+  console.log(scroll);
+  if (scroll>100) {
+    $( ".menu" ).addClass( "visible" );
 
-
-
-
+  }
+  else{
+    $( ".menu" ).removeClass( "visible" );
+  }
+};
 
 
 
