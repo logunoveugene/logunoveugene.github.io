@@ -104,7 +104,7 @@
   .cd-morph-dropdown {
     position: relative;
     height: 60px;
-    background-color: #FFFFFF;
+    background-color: #007bff;
   }
   .cd-morph-dropdown::before {
     /* never visible - used in JS to check mq */
