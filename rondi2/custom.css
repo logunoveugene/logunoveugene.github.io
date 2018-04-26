@@ -32,7 +32,7 @@
 
 .main-title{
   font-family: 'Roboto Slab', serif;
-  font-size: 2rem;
+  font-size: 1.75rem;
   line-height: 2rem;
 
 }
@@ -131,7 +131,7 @@
   .cd-morph-dropdown .nav-trigger span, .cd-morph-dropdown .nav-trigger span::after, .cd-morph-dropdown .nav-trigger span::before {
     /* these are the 3 lines of the menu icon */
     position: absolute;
-    background-color: #1A1A1A;
+    background-color: #fff;
     height: 3px;
     width: 26px;
   }
