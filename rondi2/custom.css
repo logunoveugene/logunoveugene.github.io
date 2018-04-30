@@ -2,7 +2,12 @@
   margin: 0;
   padding: 0;
 }
-
+.vbg_vid{
+  position: absolute;
+    top: 78px;
+    left: 130px;
+    z-index: -1;
+}
 
 .swiper-site {
 	width: 100%;
