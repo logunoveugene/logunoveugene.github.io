@@ -9,6 +9,21 @@
     z-index: -1;
 }
 
+.content li{
+  border-bottom: 1px solid #eee;
+  padding: .5rem 0;
+}
+.content li:last-child{
+  border-bottom:none;
+}
+.content li:before{
+  content: "→";
+  margin-right: .75rem;
+  color:#999; 
+
+}
+
+
 .swiper-site {
 	width: 100%;
 	height: auto;
@@ -358,24 +373,16 @@
       display: none;
     }
     .cd-morph-dropdown .content {
-      padding: 1rem;
       -webkit-transition: -webkit-transform .3s;
       transition: -webkit-transform .3s;
       transition: transform .3s;
       transition: transform .3s, -webkit-transform .3s;
       text-align: left;
+         width: 510px;
+      padding: 1.5rem 1.5rem 0 1.5rem;
     }
 
-    .cd-morph-dropdown .gallery .content {
-      /* you need to set a width for the .content elements because they have a position absolute */
-      width: 510px;
-      padding-bottom: .8em;
-    }
 
-    .cd-morph-dropdown .links .content,
-    .cd-morph-dropdown .button .content {
-      width: 390px;
-    }
 
     .cd-morph-dropdown .bg-layer {
       /* morph dropdown background */
