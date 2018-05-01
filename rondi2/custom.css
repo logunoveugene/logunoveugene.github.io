@@ -2,13 +2,20 @@
   margin: 0;
   padding: 0;
 }
+.phone_player{
+  position: relative;
+}
 .vbg_vid{
   position: absolute;
-    top: 78px;
-    left: 130px;
+    top: 55px;
+    left: 70px;
     z-index: -1;
+     max-height: 550px;
 }
 
+.phone-frame{
+  max-height: 550px;
+}
 .content li{
   border-bottom: 1px solid #eee;
   padding: .5rem 0;
