@@ -217,12 +217,7 @@
   .cd-morph-dropdown .dropdown-list > ul > li {
     margin-bottom: 3.3em;
   }
-  .cd-morph-dropdown .label {
-    display: block;
-    font-size: 1rem;
-    color: #1A1A1A;
-    margin-bottom: .8em;
-  }
+
 
   @media only screen and (min-width: 1000px) {
     .cd-morph-dropdown {
@@ -368,10 +363,7 @@
       -ms-transform: translateX(100px);
       transform: translateX(100px);
     }
-    .cd-morph-dropdown .label {
-      /* hide the label on bigger devices */
-      display: none;
-    }
+ 
     .cd-morph-dropdown .content {
       -webkit-transition: -webkit-transform .3s;
       transition: -webkit-transform .3s;
@@ -413,7 +405,7 @@
     }
   }
 
-  @media only screen and (min-width: 1000px) {
+  @media only screen and (min-width: 992px) {
     .cd-morph-dropdown .bg-layer {
       /* morph dropdown background */
       position: absolute;
