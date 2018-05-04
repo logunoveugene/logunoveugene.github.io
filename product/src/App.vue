@@ -127,7 +127,7 @@
 									<nav class="">
 										<a class="text-muted small mr-3 " href="#">Главная</a> <img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
 										<a class="text-muted  small mr-3" href="#">Товары для дома</a><img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
-										<a class="text-muted  small mr-3" href="#">Стирвальные машины</a><img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
+										<a class="text-muted  small mr-3" href="#">Стиральные машины</a><img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
 										<a class="text-muted  small" href="#">Samsung </a>
 									</nav>
 								</div>
