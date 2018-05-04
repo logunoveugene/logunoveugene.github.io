@@ -137,8 +137,8 @@
 								<div class="swiper-slide">
 									<nav class="">
 										<a class="text-muted small mr-3 " href="#">Главная</a> <img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
-										<a class="text-muted  small mr-3" href="#">Телевизоры и видеотехника</a><img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
-										<a class="text-muted  small mr-3" href="#">Телевизоры </a><img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
+										<a class="text-muted  small mr-3" href="#">Товары для дома</a><img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
+										<a class="text-muted  small mr-3" href="#">Стирвальные машины</a><img src="https://i.snag.gy/CcYVtq.jpg" alt="" class="mr-3">
 										<a class="text-muted  small" href="#">Samsung </a>
 									</nav>
 								</div>
@@ -188,7 +188,7 @@
 					<div class="col-lg-6  col-md-5 col-12">
 						<div class="row pt-3">
 							<div class="col-12 hidden-md-down">
-								<h1 class="h4 mb-4">Телевизор SAMSUNG UE19H4000AK</h1>
+								<h1 class="h4 mb-4">Стиральная машина Samsung WW70K62E09W</h1>
 								<div class="d-flex flex-row align-items-center hidden-sm-down mb-3">
 									<div class="mr-5 d-flex flex-row">
 									<div class="mr-2">
@@ -203,14 +203,52 @@
 									
 
 									<ul class="list-inline small main-props mb-2">
-										<li class="list-inline-item">Диагональ дисплея - 55 " (139,7 см)</li>
-										<li class="list-inline-item">Тип - QLED</li>
-										<li class="list-inline-item">HD-формат - 4K (3840x2160 пикселей)</li>
-										<li class="list-inline-item">Smart TV, android TV</li>
-										<li class="list-inline-item">WIFI, Ethernet</li>
-										<li class="list-inline-item">Вход HDMI x4, Интерфейс USB x3</li>
-										<li class="list-inline-item">DVB-T, DVB-T2, DVB-C, DVB-S2</li>
-									</ul>
+    <li class="list-inline-item">
+        Тип загрузки: фронтальная
+    </li> 
+    <li class="list-inline-item">
+        Максимальная загрузка белья для стирки: 7
+        <span title="Килограммы">
+            кг
+        </span>
+    </li> 
+    <li class="list-inline-item">
+        Тип управления: электронный
+    </li> 
+    <li class="list-inline-item">
+        Расход воды за стирку: 42
+        <span title="Литры">
+            л
+        </span>
+    </li>
+    <li class="list-inline-item">
+        Уровень шума при стирке: 54
+        <span title="Децибелы">
+            дБ
+        </span>
+    </li>
+    <li class="list-inline-item">
+        Количество программ: 12
+    </li> 
+    <li class="list-inline-item">
+        Ширина: 60
+        <span title="Сантиметры">
+            см
+        </span>
+    </li>
+    <li class="list-inline-item">
+        Высота: 85
+        <span title="Сантиметры">
+            см
+        </span>
+    </li>
+    <li class="list-inline-item">
+        Глубина: 45
+        <span title="Сантиметры">
+            см
+        </span>
+    </li>
+</ul>
 									<!-- <img src="https://i.snag.gy/wvhWE1.jpg" alt="" class="mb-4"> -->
 									<div class="mb-4 small"><a href="">Все характеристики</a></div>
 									
@@ -569,10 +607,10 @@
 			data() {
 				return {
 					swiperSlides: [
-					"https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/711/530/safe_original/12004913_1.jpg",
-					"https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/024/safe_original/12004913_2.jpg",
-					"https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/025/safe_original/12004913_3.jpg",
-					"https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/026/safe_original/12004913_4.jpg",
+					"https://i.snag.gy/q36u98.jpg",
+					"https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/714/280/safe_original/20302094_1.jpg",
+					"https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/719/707/safe_original/20302094_3.jpg",
+					"https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/719/708/safe_original/20302094_4.jpg",
 					// "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/027/safe_original/12004913_5.jpg", 
 					// "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/028/safe_original/12004913_6.jpg",
 					// "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/029/safe_original/12004913_7.jpg", 
@@ -580,10 +618,10 @@
 					// "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/031/safe_original/12004913_9.jpg"    
 					],
 					swiperSlidesThumbs: [
-					"https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/711/530/thumb/12004913_1.jpg",
-					"https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/024/thumb/12004913_2.jpg",
-					"https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/025/thumb/12004913_3.jpg",
-					"https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/026/thumb/12004913_4.jpg",
+					"https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/719/706/thumb/20302094_2.jpg",
+					"https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/714/280/thumb/20302094_1.jpg",
+					"https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/719/707/thumb/20302094_3.jpg",
+					"https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/719/708/thumb/20302094_4.jpg",
 					// "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/027/thumb/12004913_5.jpg", 
 					// "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/028/thumb/12004913_6.jpg",
 					// "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/029/thumb/12004913_7.jpg",
@@ -621,9 +659,13 @@ body{
 			position: relative;
 			max-height: 450px;
 			overflow:hidden;
+			width: 	100%
 		}
 
+.img-tab-content .swiper-slide {
 
+    text-align: center;
+}
 		.gallery-zoom-image{
 			opacity: 0;
 			position: absolute;
@@ -705,7 +747,7 @@ body{
 		}
 
 		.large-image {
-			max-height: 320px;
+			max-height: 450px;
 			max-width: 100%;
 
 		}
