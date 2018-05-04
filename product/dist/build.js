@@ -29268,6 +29268,44 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -29278,8 +29316,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	},
 	data: function data() {
 		return {
-			swiperSlides: ["https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/711/530/safe_original/12004913_1.jpg", "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/024/safe_original/12004913_2.jpg", "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/025/safe_original/12004913_3.jpg", "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/026/safe_original/12004913_4.jpg"],
-			swiperSlidesThumbs: ["https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/711/530/thumb/12004913_1.jpg", "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/024/thumb/12004913_2.jpg", "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/025/thumb/12004913_3.jpg", "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/713/026/thumb/12004913_4.jpg"],
+			swiperSlides: ["https://i.snag.gy/q36u98.jpg", "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/714/280/safe_original/20302094_1.jpg", "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/719/707/safe_original/20302094_3.jpg", "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/719/708/safe_original/20302094_4.jpg"],
+			swiperSlidesThumbs: ["https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/719/706/thumb/20302094_2.jpg", "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/714/280/thumb/20302094_1.jpg", "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/719/707/thumb/20302094_3.jpg", "https://cdn.domotekhnika.ru/images/App/Models/Catalog/ProductImage/images/002/719/708/thumb/20302094_4.jpg"],
 			cm: true
 		};
 	},
@@ -33120,7 +33158,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "body{background-color:#f4f4f4}.bg-white{background-color:#fff}.bb-1{border-bottom:1px solid #eee}.badge-benefit{background-color:#ffe600;color:#000;text-transform:uppercase;border-radius:0}.img-tab-content{position:relative;max-height:450px;overflow:hidden}.gallery-zoom-image{opacity:0;position:absolute;top:50%;left:50%;z-index:50;transform:translate(-50%,-50%);font-size:.8rem;color:#fff;background-color:rgba(0,0,0,.35);border-radius:5rem;padding:.25rem .75rem;cursor:zoom-in;transition:all .2s ease 0s;text-rendering:optimizeSpeed}.btn-primary:hover{box-shadow:0 2px 6px rgba(71,102,191,.66),0 6px 14px rgba(71,102,191,.31)}.main-image{width:100%;background-color:#fff;overflow-x:hidden}.main-image .swiper-slide{display:block;width:50px;color:#999;font-size:14px;line-height:50px;text-align:center}.img-tab-nav{position:relative;height:50px;width:60px;padding:0 10px;background-color:#fff;height:20%!important;box-sizing:border-box;overflow:hidden;padding:10px 0}.img-tab-nav .swiper-slide{margin-bottom:20px;border:1px solid #eee;cursor:pointer;width:50px;height:50px;opacity:.9;position:relative}.img-tab-nav .swiper-slide img{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.8)}.img-tab-nav .active{opacity:1;border:1px solid #f7a650;box-shadow:0 2px 5px 0 rgba(232,99,55,.15)}.large-image{max-height:320px;max-width:100%}.full-image-warp{height:100vh}.image-warp{height:320px;cursor:zoom-in}.zoom-cursor{cursor:zoom-in;transition:all .2s ease 0s}@media screen and (max-width:425px){.image-warp{height:220px}.large-image{max-height:220px}}.breadcrumbsSwiper-wrap{overflow:hidden}.breadcrumbsSwiper{position:relative;width:100%;overflow:hidden}.breadcrumbsSwiper .swiper-slide{width:auto}.breadcrumb-left{width:15px;position:absolute;height:30px;z-index:10;background:linear-gradient(270deg,hsla(0,0%,100%,0),#fff)}.delivery-info{background-color:#f2fbee}.swiper-scrollbar-drag{background:rgba(0,0,0,.1)}.swiper-scrollbar{background:rgba(0,0,0,.05)}.modal-full{max-width:100%;margin:0;background-color:#fff;height:100%}.full-tab-nav .swiper-slide.active{border:1px solid #eee}.full-tab-nav .swiper-slide{background-color:#fff;box-sizing:border-box;overflow:hidden;padding:10px 0;width:70px;height:70px;border:1px solid #fff}.full-tab-nav{position:absolute;margin:.5rem;bottom:0}.modal-zoom-header{position:absolute;top:0;z-index:10}.mainTabdSwiper .swiper-container{width:100%;height:100%}.mainTabdSwiper .swiper-slide{font-size:18px;width:auto;height:auto;box-sizing:border-box}.product-related .swiper-container{width:100%;height:100%}.product-related .swiper-slide{font-size:18px;width:auto;height:auto;box-sizing:border-box}.product-related{overflow:hidden}.btn-warning{box-shadow:0 2px 2px #e6dac8;background:#fab249;border:1px solid #de9934;color:#fff;text-shadow:0 1px 0 #d28a21}", ""]);
+exports.push([module.i, "body{background-color:#f4f4f4}.bg-white{background-color:#fff}.bb-1{border-bottom:1px solid #eee}.badge-benefit{background-color:#ffe600;color:#000;text-transform:uppercase;border-radius:0}.img-tab-content{position:relative;max-height:450px;overflow:hidden;width:100%}.img-tab-content .swiper-slide{text-align:center}.gallery-zoom-image{opacity:0;position:absolute;top:50%;left:50%;z-index:50;transform:translate(-50%,-50%);font-size:.8rem;color:#fff;background-color:rgba(0,0,0,.35);border-radius:5rem;padding:.25rem .75rem;cursor:zoom-in;transition:all .2s ease 0s;text-rendering:optimizeSpeed}.btn-primary:hover{box-shadow:0 2px 6px rgba(71,102,191,.66),0 6px 14px rgba(71,102,191,.31)}.main-image{width:100%;background-color:#fff;overflow-x:hidden}.main-image .swiper-slide{display:block;width:50px;color:#999;font-size:14px;line-height:50px;text-align:center}.img-tab-nav{position:relative;height:50px;width:60px;padding:0 10px;background-color:#fff;height:20%!important;box-sizing:border-box;overflow:hidden;padding:10px 0}.img-tab-nav .swiper-slide{margin-bottom:20px;border:1px solid #eee;cursor:pointer;width:50px;height:50px;opacity:.9;position:relative}.img-tab-nav .swiper-slide img{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.8)}.img-tab-nav .active{opacity:1;border:1px solid #f7a650;box-shadow:0 2px 5px 0 rgba(232,99,55,.15)}.large-image{max-height:450px;max-width:100%}.full-image-warp{height:100vh}.image-warp{height:320px;cursor:zoom-in}.zoom-cursor{cursor:zoom-in;transition:all .2s ease 0s}@media screen and (max-width:425px){.image-warp{height:220px}.large-image{max-height:220px}}.breadcrumbsSwiper-wrap{overflow:hidden}.breadcrumbsSwiper{position:relative;width:100%;overflow:hidden}.breadcrumbsSwiper .swiper-slide{width:auto}.breadcrumb-left{width:15px;position:absolute;height:30px;z-index:10;background:linear-gradient(270deg,hsla(0,0%,100%,0),#fff)}.delivery-info{background-color:#f2fbee}.swiper-scrollbar-drag{background:rgba(0,0,0,.1)}.swiper-scrollbar{background:rgba(0,0,0,.05)}.modal-full{max-width:100%;margin:0;background-color:#fff;height:100%}.full-tab-nav .swiper-slide.active{border:1px solid #eee}.full-tab-nav .swiper-slide{background-color:#fff;box-sizing:border-box;overflow:hidden;padding:10px 0;width:70px;height:70px;border:1px solid #fff}.full-tab-nav{position:absolute;margin:.5rem;bottom:0}.modal-zoom-header{position:absolute;top:0;z-index:10}.mainTabdSwiper .swiper-container{width:100%;height:100%}.mainTabdSwiper .swiper-slide{font-size:18px;width:auto;height:auto;box-sizing:border-box}.product-related .swiper-container{width:100%;height:100%}.product-related .swiper-slide{font-size:18px;width:auto;height:auto;box-sizing:border-box}.product-related{overflow:hidden}.btn-warning{box-shadow:0 2px 2px #e6dac8;background:#fab249;border:1px solid #de9934;color:#fff;text-shadow:0 1px 0 #d28a21}", ""]);
 
 // exports
 
@@ -33839,7 +33877,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "col-12 hidden-md-down"
   }, [_c('h1', {
     staticClass: "h4 mb-4"
-  }, [_vm._v("Телевизор SAMSUNG UE19H4000AK")]), _vm._v(" "), _c('div', {
+  }, [_vm._v("Стиральная машина Samsung WW70K62E09W")]), _vm._v(" "), _c('div', {
     staticClass: "d-flex flex-row align-items-center hidden-sm-down mb-3"
   }, [_c('div', {
     staticClass: "mr-5 d-flex flex-row"
@@ -34218,7 +34256,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "#"
     }
-  }, [_vm._v("Телевизоры и видеотехника")]), _c('img', {
+  }, [_vm._v("Товары для дома")]), _c('img', {
     staticClass: "mr-3",
     attrs: {
       "src": "https://i.snag.gy/CcYVtq.jpg",
@@ -34229,7 +34267,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "href": "#"
     }
-  }, [_vm._v("Телевизоры ")]), _c('img', {
+  }, [_vm._v("Стирвальные машины")]), _c('img', {
     staticClass: "mr-3",
     attrs: {
       "src": "https://i.snag.gy/CcYVtq.jpg",
@@ -34252,19 +34290,47 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "list-inline small main-props mb-2"
   }, [_c('li', {
     staticClass: "list-inline-item"
-  }, [_vm._v("Диагональ дисплея - 55 \" (139,7 см)")]), _vm._v(" "), _c('li', {
+  }, [_vm._v("\n        Тип загрузки: фронтальная\n    ")]), _vm._v(" "), _c('li', {
     staticClass: "list-inline-item"
-  }, [_vm._v("Тип - QLED")]), _vm._v(" "), _c('li', {
+  }, [_vm._v("\n        Максимальная загрузка белья для стирки: 7\n        "), _c('span', {
+    attrs: {
+      "title": "Килограммы"
+    }
+  }, [_vm._v("\n            кг\n        ")])]), _vm._v(" "), _c('li', {
     staticClass: "list-inline-item"
-  }, [_vm._v("HD-формат - 4K (3840x2160 пикселей)")]), _vm._v(" "), _c('li', {
+  }, [_vm._v("\n        Тип управления: электронный\n    ")]), _vm._v(" "), _c('li', {
     staticClass: "list-inline-item"
-  }, [_vm._v("Smart TV, android TV")]), _vm._v(" "), _c('li', {
+  }, [_vm._v("\n        Расход воды за стирку: 42\n        "), _c('span', {
+    attrs: {
+      "title": "Литры"
+    }
+  }, [_vm._v("\n            л\n        ")])]), _vm._v(" "), _c('li', {
     staticClass: "list-inline-item"
-  }, [_vm._v("WIFI, Ethernet")]), _vm._v(" "), _c('li', {
+  }, [_vm._v("\n        Уровень шума при стирке: 54\n        "), _c('span', {
+    attrs: {
+      "title": "Децибелы"
+    }
+  }, [_vm._v("\n            дБ\n        ")])]), _vm._v(" "), _c('li', {
     staticClass: "list-inline-item"
-  }, [_vm._v("Вход HDMI x4, Интерфейс USB x3")]), _vm._v(" "), _c('li', {
+  }, [_vm._v("\n        Количество программ: 12\n    ")]), _vm._v(" "), _c('li', {
     staticClass: "list-inline-item"
-  }, [_vm._v("DVB-T, DVB-T2, DVB-C, DVB-S2")])]), _vm._v(" "), _c('div', {
+  }, [_vm._v("\n        Ширина: 60\n        "), _c('span', {
+    attrs: {
+      "title": "Сантиметры"
+    }
+  }, [_vm._v("\n            см\n        ")])]), _vm._v(" "), _c('li', {
+    staticClass: "list-inline-item"
+  }, [_vm._v("\n        Высота: 85\n        "), _c('span', {
+    attrs: {
+      "title": "Сантиметры"
+    }
+  }, [_vm._v("\n            см\n        ")])]), _vm._v(" "), _c('li', {
+    staticClass: "list-inline-item"
+  }, [_vm._v("\n        Глубина: 45\n        "), _c('span', {
+    attrs: {
+      "title": "Сантиметры"
+    }
+  }, [_vm._v("\n            см\n        ")])])]), _vm._v(" "), _c('div', {
     staticClass: "mb-4 small"
   }, [_c('a', {
     attrs: {
