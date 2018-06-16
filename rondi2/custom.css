@@ -9,12 +9,13 @@
   position: absolute;
     top: 55px;
     left: 70px;
-    z-index: -1;
+
      max-height: 550px;
 }
 
 .phone-frame{
   max-height: 550px;
+  z-index: 100;
 }
 .content li{
   border-bottom: 1px solid #eee;
@@ -76,6 +77,7 @@
 
 .intro {
  visibility: hidden;
+ overflow: hidden;
 }
 
 
