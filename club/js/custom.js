@@ -12,7 +12,7 @@ $(document).ready(function () {
   }
   firebase.initializeApp(config)
 
-  var usersRef = firebase.database().ref('posts')
+  var postsRef = firebase.database().ref('posts')
 
 
   Vue.config.devtools = true;
