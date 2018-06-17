@@ -73,13 +73,30 @@
 											</div>
 										</div>
 									</div>
-									<span v-if="index ==2 ">after 2</span>
+									<div v-if="index == 1 ">
+										<div class="h2">Горячие темы форума</div>
+										<ul class="list-unstyled" >
+											<li class="media mb-4" v-for="(ask, index) in orderedAsks">
+												<img class="mr-3 img-60" :src="ask.img">
+												<div class="media-body">
+													<div class="mt-0 small mb-1">{{ask.product}}</div>
+													<div class="small">
+														<a href="" class="">{{ask.desc}}</a>
+													</div>
+													<div class="d-flex flex-row align-items-center justify-content-between mt-2">
+														<a class="dotted-link small">Ответить</a>
+														<div class="text-secondary small">{{ask.date | fdate}} {{ask.author}}</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="col-12 col-lg-4">
-						<div class="card sticky-top">
+						<div class="card">
 							<div class="card-body">
 								<div class="h1 mb-2">Прямой эфир</div>
 								<ul class="nav nav-tabs m-card-0  px-3 bg-white sticky-top" id="myTab" role="tablist">
@@ -103,7 +120,7 @@
 										</div>
 										<div class="ask-list py-4 px-3 m-card-0">
 											<ul class="list-unstyled" >
-												<li class="media mb-4" v-for="(ask, index) in asks">
+												<li class="media mb-4" v-for="(ask, index) in orderedAsks">
 													<img class="mr-3 img-60" :src="ask.img">
 													<div class="media-body">
 														<div class="mt-0 small mb-1">{{ask.product}}</div>
@@ -163,6 +180,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
 	<script src="https://unpkg.com/vue"></script>
 
 

@@ -55,6 +55,11 @@ dayjs.locale('ru');
       fdate: function(value) {
         return dayjs().from(dayjs(value));
       }
+    },
+    computed: {
+      orderedAsks: function () {
+        return _.orderBy(this.asks, 'date', 'desc' )
+      }
     }
   });
 
