@@ -19,15 +19,15 @@
 						<div class="w-75 mb-4">Клуб DNS – центр онлайн компетенции. Это сообщество покупателей, экспертов в цифробытовой технике, готовых поделиться опытом и знаниями. </div>
 						<div class="d-flex flex-row align-items-center "> 
 							<div class="d-flex flex-row align-items-center mr-4">
-								<img class="mr-3 benefit-img" src="https://i.snag.gy/aZNYQy.jpg" alt="Generic placeholder image">
+								<img class="mr-3 img-60" src="https://i.snag.gy/aZNYQy.jpg" alt="Generic placeholder image">
 								<div class="small">участников получили ответы на свои вопросы </div>
 							</div>
 							<div class="d-flex flex-row align-items-center mr-4">
-								<img class="mr-3 benefit-img" src="https://i.snag.gy/O8Yv9M.jpg" alt="Generic placeholder image">
+								<img class="mr-3 img-60" src="https://i.snag.gy/O8Yv9M.jpg" alt="Generic placeholder image">
 								<div class="small">участников получили ответы на свои вопросы </div>
 							</div>
 							<div class="d-flex flex-row align-items-center mr-4">
-								<img class="mr-3 benefit-img" src="https://i.snag.gy/Zq4t7z.jpg" alt="Generic placeholder image">
+								<img class="mr-3 img-60" src="https://i.snag.gy/Zq4t7z.jpg" alt="Generic placeholder image">
 								<div class="small">участников получили ответы на свои вопросы </div>
 							</div>
 						</div>
@@ -73,10 +73,10 @@
 						</div>
 					</div>
 					<div class="col-12 col-lg-4">
-						<div class="card">
+						<div class="card sticky-top">
 							<div class="card-body">
 								<div class="h1 mb-2">Прямой эфир</div>
-								<ul class="nav nav-tabs m-card-0 sticky-top px-3 bg-white" id="myTab" role="tablist">
+								<ul class="nav nav-tabs m-card-0  px-3 bg-white sticky-top" id="myTab" role="tablist">
 									<li class="nav-item">
 										<a class="nav-link active" id="ask-tab" data-toggle="tab" href="#ask" role="tab" aria-controls="ask" aria-selected="true">Вопросы</a>
 									</li>
@@ -86,77 +86,33 @@
 								</ul>
 								<div class="tab-content" id="myTabContent">
 									<div class="tab-pane fade show active" id="ask" role="tabpanel">
-										<div class="d-flex flex-row align-items-center justify-content-between p-3 bg-white sticky-35 m-card-0">
+										<div class="d-flex flex-row align-items-center justify-content-between p-3 bg-white  m-card-0 sticky-35"> <!-- sticky-35 -->
 											<div class="">
 												<div class="h3 mb-0">
 													<a href="">Всего 616 тыс.</a>
 												</div>
 												<div class="">1 481 за сегодня</div>
 											</div>
-											<button type="button" class="btn btn-secondary">Задать вопрос</button>
+											<button type="button" class="btn btn-secondary"  data-toggle="modal" data-target="#addAsk">Задать вопрос</button>
 										</div>
 										<div class="ask-list py-4 px-3 m-card-0">
-											<ul class="list-unstyled">
-												<li class="media mb-4">
-													<img class="mr-3" src="https://i.snag.gy/4eHFJx.jpg" alt="Generic placeholder image">
+											<ul class="list-unstyled" >
+												<li class="media mb-4" v-for="(ask, index) in asks">
+													<img class="mr-3 img-60" :src="ask.img">
 													<div class="media-body">
-														<div class="mt-0 small mb-1">18.5" Монитор Acer KA190HQb [UM.XX0EE.001]</div>
+														<div class="mt-0 small mb-1">{{ask.product}}</div>
 														<div class="small">
-															<a href="" class=" ">Я все настройки перепробовал, но все равно не могу за ним сидеть - почти сразу начинают болеть глаза. Могу ли я его обменять на другой? Пользуюсь всего 3 дня, даже пленку с корпуса не снимал</a>
+															<a href="" class=" ">{{ask.desc}}</a>
 														</div>
 
 														<div class="d-flex flex-row align-items-center justify-content-between mt-2">
 															<a class="dotted-link small ">Ответить</a>
-															<div class="text-secondary small">15 минут назад Антон</div>
+															<div class="text-secondary small">{{ask.date | fdate}} {{ask.author}}</div>
 
 														</div>
 													</div>
 												</li>
-												<li class="media mb-4">
-													<img class="mr-3" src="https://i.snag.gy/MIuUmf.jpg" alt="Generic placeholder image">
-													<div class="media-body">
-														<div class="mt-0 small mb-1">Оперативная память Kingston HyperX Predator [HX430C15PB3K2/16] 16 ГБ</div>
-														<div class="small">
-															<a href="" class=" ">Возможно ли разогнать данную память до частоты, например, 3400?</a>
-														</div>
-
-														<div class="d-flex flex-row align-items-center justify-content-between mt-2">
-															<a class="dotted-link small ">Ответить</a>
-															<div class="text-secondary small">15 минут назад Антон</div>
-
-														</div>
-													</div>
-												</li>
-												<li class="media mb-4">
-													<img class="mr-3" src="https://i.snag.gy/9L0Ax4.jpg" alt="Generic placeholder image">
-													<div class="media-body">
-														<div class="mt-0 small mb-1">Материнская плата ASRock 970M Pro3  + ещё 2</div>
-														<div class="small">
-															<a href="" class=" ">Ребята выручайте, стоит ли брать 8320, если можно взять 8320е, один из них брать буду и разгонять в любом случае?</a>
-														</div>
-
-														<div class="d-flex flex-row align-items-center justify-content-between mt-2">
-															<a class="dotted-link small ">Ответить</a>
-															<div class="text-secondary small">15 минут назад Антон</div>
-
-														</div>
-													</div>
-												</li>
-												<li class="media mb-4">
-													<img class="mr-3" src="https://i.snag.gy/UN9cWt.jpg" alt="Generic placeholder image">
-													<div class="media-body">
-														<div class="mt-0 small mb-1">Экшн видеокамера AC Robin ZED1 серебристый</div>
-														<div class="small">
-															<a href="" class=" ">Здравствуйте, я в-первые сталкнулся с такой проблемой, когда камеру включаешь у неё экран загорается и тухнит, а потом нагревается сама камера</a>
-														</div>
-
-														<div class="d-flex flex-row align-items-center justify-content-between mt-2">
-															<a class="dotted-link small ">Ответить</a>
-															<div class="text-secondary small">15 минут назад Антон</div>
-
-														</div>
-													</div>
-												</li>
+												
 											</ul>
 										</div>
 
@@ -174,8 +130,29 @@
 		</div>
 
 		<!-- lakfjlkdfjlsdjflkadfslakfjlkdfjlsdjflkadfslakfjlkdfjlsdjflkadfslakfjlkdfjlsdjflkadfs -->
+		<div class="modal fade" id="addAsk" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Добавление вопроса</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+
+						<input class="form-control mb-3" type="text" v-model="newAsk.product" placeholder="Товар">
+						<input class="form-control mb-3" type="text" v-model="newAsk.img" placeholder="Сcылка на изображение">
+						<input class="form-control mb-3" type="text" v-model="newAsk.desc" placeholder="Вопрос">
+						<input class="form-control mb-3" type="text" v-model="newAsk.author" placeholder="Автор">
+						<button type="button" class="btn btn-primary" v-on:click="addAsk">Отправить</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 	</div>
+
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
@@ -183,9 +160,13 @@
 	<script src="https://unpkg.com/vue"></script>
 
 
+	<script src="https://gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+	<script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+
+
 	<script src="https://unpkg.com/dayjs@1.6.9/dayjs.min.js"></script>
 	<script src="https://unpkg.com/dayjs@1.6.9/plugin/relativeTime.js"></script>
-	<script src="https://unpkg.com/dayjs@1.6.9/locale/ru.js"></script>
+	<script src="js/ru.js"></script>
 
 	<script src="js/custom.js"></script>
 
