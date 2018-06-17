@@ -73,19 +73,24 @@
 											</div>
 										</div>
 									</div>
-									<div v-if="index == 1 ">
-										<div class="h2">Горячие темы форума</div>
-										<ul class="list-unstyled" >
-											<li class="media mb-4" v-for="(ask, index) in orderedAsks">
-												<img class="mr-3 img-60" :src="ask.img">
+									<div class="m-card-0 px-3 forum-plate" v-if="index == 1 ">
+										<div class="h2 mt-4">Горячие темы форума</div>
+										<ul class="list-unstyled mb-4 pb-1" >
+											<li class="media mb-2 pt-1" v-for="(forum, index) in forums">
 												<div class="media-body">
-													<div class="mt-0 small mb-1">{{ask.product}}</div>
-													<div class="small">
-														<a href="" class="">{{ask.desc}}</a>
-													</div>
-													<div class="d-flex flex-row align-items-center justify-content-between mt-2">
-														<a class="dotted-link small">Ответить</a>
-														<div class="text-secondary small">{{ask.date | fdate}} {{ask.author}}</div>
+													
+														<a href="" class="">{{forum.title}}</a>
+													
+													<div class="d-flex flex-row align-items-center mt-1">
+														<div class="d-flex flex-row align-items-center mr-4">
+															<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-2">
+															<div class="small text-secondary">{{forum.view}} </div>
+														</div>
+														<div class="d-flex flex-row align-items-center mr-1">
+															<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-2">
+															<div class="small text-secondary">{{forum.comment}} ответов</div>
+														</div>
+														<div class="text-secondary small">последний {{forum.date | fdate}}</div>
 													</div>
 												</div>
 											</li>

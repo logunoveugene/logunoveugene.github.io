@@ -103,3 +103,7 @@ box-shadow:  0 10px 40px -10px rgba(0,0,0, 0.15);
 height: auto; 
   width: 60px;
 }
+.forum-plate{
+  border-top: 5px solid #eee;
+  border-bottom: 5px solid #eee;
+}
