@@ -221,8 +221,8 @@
 
 						<input class="form-control mb-3" type="text" v-model="newAsk.product" placeholder="Товар">
 						<input class="form-control mb-3" type="text" v-model="newAsk.img" placeholder="Сcылка на изображение">
-						<input class="form-control mb-3" type="text" v-model="newAsk.desc" placeholder="Вопрос">
 						<input class="form-control mb-3" type="text" v-model="newAsk.author" placeholder="Автор">
+						<textarea class="form-control mb-3"  rows="3" v-model="newAsk.desc" placeholder="Вопрос"></textarea>
 						<button type="button" class="btn btn-primary" v-on:click="addAsk">Отправить</button>
 					</div>
 				</div>
