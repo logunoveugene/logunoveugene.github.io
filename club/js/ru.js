@@ -3,6 +3,7 @@
 }(this, function(e) {
     "use strict";
     e = e && e.hasOwnProperty("default") ? e.default : e;
+
     var t = {
         name: "ru",
         weekdays: "Воскресенье_Понедельник_Вторник_Среда_Четверг_Пятница_Суббота".split("_"),
