@@ -96,10 +96,15 @@
 									</div>
 									<div class="" v-for="(post, index) in posts">
 										<div class=" m-card-0 p-3 py-4" :class="post.type">
+											<button type="button" v-if="post.type == 'alert-post'"  class="close" aria-label="Close">
+												  <span aria-hidden="true">&times;</span>
+												</button>
 											<div  v-if="post.type == 'alert-post'" class="text-secondary small mb-2">Закрепленная запись</div>
+
 											<div class="h3">
 												<a href="">{{post.title}}</a>
 											</div>
+
 											<div class="d-inline-block mr-1" v-for="(tag, index) in post.tags">
 												<div class="text-secondary small mb-3">{{tag}}</div>
 											</div>

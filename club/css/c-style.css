@@ -17,6 +17,7 @@ a {
 
 .alert-post{  
   background-color: #FFF7DA;
+  z-index: -1;
 }
 
 .base-post{ 
@@ -208,3 +209,10 @@ height: auto;
 .bottom-button{
   width: 33%
 }
+
+
+.bottom-plate .nav-pills  .nav-link{
+  margin-right: 0;
+  border-radius: 0rem;
+}
+
