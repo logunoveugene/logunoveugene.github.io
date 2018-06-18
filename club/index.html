@@ -11,7 +11,159 @@
 <body>
 
 	<div id="app">
-		<div class="bg-light">
+
+		<div class="d-lg-none">
+			<div class="container">
+				<div class="row py-3">
+					<div class="col-12">
+						<img class="logo mr-5" src="https://i.snag.gy/rhv1jA.jpg" alt="">
+					</div>
+				</div>
+				<div class="row-12">
+					<div class="tab-content" id="pills-tabContent">
+						<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+							<div class="h1 mb-2">Вопросы пользователей</div>
+							<ul class="nav nav-tabs m-card-0  px-3 bg-white " id="myTab" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link active"  data-toggle="tab" href="#ask" role="tab" aria-controls="ask" aria-selected="true">Все категории</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link"  data-toggle="tab" href="#ask" role="tab" aria-controls="ask" aria-selected="false">Компьютеры</a>
+								</li>
+
+							</ul>
+							<div class="tab-content" id="myTabContent">
+								<div class="tab-pane fade show active" id="ask" role="tabpanel">
+									<div class="d-flex flex-row align-items-center justify-content-between p-3 bg-white shadow-plate-lg m-card-0"> 
+										<div class="">
+											<div class="h3 mb-0">
+												<a href="">Всего 616 тыс.</a>
+											</div>
+											<div class="">1 481 за сегодня</div>
+										</div>
+										<button type="button" class="btn btn-secondary"  data-toggle="modal" data-target="#addAsk">Задать вопрос</button>
+									</div>
+									<div class="ask-list pt-4 px-3 m-card-0">
+										<ul class="list-unstyled" >
+											<li class="media mb-4" v-for="(ask, index) in orderedAsks">
+												<img class="mr-3 img-60" :src="ask.img">
+												<div class="media-body">
+													<div class="mt-0 small mb-1">{{ask.product}}</div>
+													<div class="">
+														<a href="" class=" ">{{ask.desc}}</a>
+													</div>
+
+													<div class="d-flex flex-row align-items-center justify-content-between mt-2">
+														<a class="dotted-link small ">Ответить</a>
+														<div class="text-secondary small">{{ask.date | fdate}} {{ask.author}}</div>
+
+													</div>
+												</div>
+											</li>
+
+										</ul>
+									</div>
+									<button type="button" class="btn btn-secondary btn-block" >Все вопросы</button>
+
+
+								</div>
+
+							</div>
+						</div>
+						<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+							<div class="h1 mb-2">Записи в блогах</div>
+							<ul class="nav nav-tabs m-card-0  px-3 bg-white " id="myTab" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link active" id="ask-tab" data-toggle="tab" href="#ask" role="tab" aria-controls="ask" aria-selected="true">Свежие</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="comment-tab" data-toggle="tab" href="#comment" role="tab" aria-controls="comment" aria-selected="false">Лучшие</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="comment-tab" data-toggle="tab" href="#comment" role="tab" aria-controls="comment" aria-selected="false">Обсуждаемые</a>
+								</li>
+							</ul>
+							<div class="tab-content" id="myTabContent">
+								<div class="tab-pane fade show active" id="ask" role="tabpanel">
+									<div class="d-flex flex-row align-items-center justify-content-between p-3 bg-white shadow-plate-lg m-card-0"> 
+										<div class="">
+											<div class="h3 mb-0">
+												<a href="">Всего 78 постов</a>
+											</div>
+											<div class="">6 за сегодня</div>
+										</div>
+										<button type="button" class="btn btn-secondary"  data-toggle="modal" data-target="#addAsk">Создать блог</button>
+									</div>
+									<div class="" v-for="(post, index) in posts">
+										<div class=" m-card-0 p-3 py-4" :class="post.type">
+											<div  v-if="post.type == 'alert-post'" class="text-secondary small mb-2">Закрепленная запись</div>
+											<div class="h3">
+												<a href="">{{post.title}}</a>
+											</div>
+											<div class="d-inline-block mr-1" v-for="(tag, index) in post.tags">
+												<div class="text-secondary small mb-3">{{tag}}</div>
+											</div>
+											<img v-if="post.img != 0" :src="post.img" alt="" class="img-fluid mb-3">
+											<div class="text-dark mb-3">{{post.desc}}</div>
+											<div class="d-flex flex-column">
+												<div class="d-flex flex-row align-items-center justify-content-between mb-3">
+													<button type="button" class="btn btn-secondary">Читать далее</button>
+													<div class="d-flex flex-row align-items-center">
+														<div class="d-flex flex-row align-items-center ">
+															<div class="small text-secondary">{{post.date | fdate}}</div>
+														</div>
+														
+													</div>
+												</div>
+												<div class="d-flex flex-row align-items-center justify-content-between">
+														<div class="d-flex flex-row "><div class="d-flex flex-row align-items-center mr-4">
+															<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-2">
+															<div class="small text-secondary">{{post.view}}</div>
+														</div>
+														<div class="d-flex flex-row align-items-center mr-4">
+															<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-2">
+															<div class="small text-secondary">{{post.comment}}</div>
+														</div>
+													</div>
+														
+														<img src="https://i.snag.gy/59HDhw.jpg" alt="">
+													</div>
+
+
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+
+
+
+						</div>
+						<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+					</div>
+					
+				</div>
+			</div>
+			
+
+			
+			<div class="bottom-plate fixed-bottom">
+				<ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Вопросы</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Блоги</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Эфир</a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+		<div class="bg-light d-none d-lg-block">
 			<div class="container">
 				<div class="row py-2">
 					<div class="col-8">
