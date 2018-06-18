@@ -18,6 +18,7 @@ dayjs.locale('ru');
   var postsRef = firebase.database().ref('posts');
   var askRef = firebase.database().ref('asks');
   var forumRef = firebase.database().ref('forum-items');
+  var liveRef = firebase.database().ref('live');
 
 
   Vue.config.devtools = true;
@@ -37,7 +38,8 @@ dayjs.locale('ru');
     firebase: {
       posts: postsRef,
       asks: askRef,
-      forums: forumRef
+      forums: forumRef,
+      lives:liveRef
     },
 
     methods: {
@@ -61,9 +63,6 @@ dayjs.locale('ru');
     computed: {
       orderedAsks: function () {
         return _.orderBy(this.asks, 'date', 'desc' )
-      },
-      orderedPosts: function () {
-        return _.orderBy(this.posts, 'date', 'desc' )
       },
       orderedPosts: function () {
         return _.orderBy(this.posts, 'date', 'desc' )

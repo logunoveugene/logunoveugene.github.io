@@ -26,7 +26,7 @@
 						<div class="d-flex flex-row align-items-center justify-content-between"> 
 							<div class="small text-secondary mr-5">Тур по сайту</div>
 							
-							<div class="small text-secondary mr-3 font-weight-bold">Вход | Регистрация</div>
+							<div class="small text-secondary font-weight-bold">Вход | Регистрация</div>
 						</div>
 					</div>
 				</div>
@@ -238,13 +238,24 @@
 					<div class="col-12 col-lg-4">
 						<div class="card">
 							<div class="card-body">
-								<div class="d-flex flex-row align-items-center  mb-2"> 
+								<div class="d-flex flex-row align-items-center m-card-0 shadow-plate-lg mb-2 px-3 pb-2"> 
 									<div class="h1 mb-0">Прямой эфир</div> 
-									<div class="ml-3 mt-1 pulse"></div>
+									<div class="ml-3  pulse"></div>
 								</div>
-								
-								
-
+								<ul class="list-unstyled mb-4 pb-1" >
+									<li class="media mb-3 " v-for="(live, index) in lives">
+										<div class="media-body">
+											<a href="" class="">{{live.title}}</a>
+											<div class="">
+												{{live.desc}}
+											</div>
+											<div class="d-flex flex-row align-items-center justify-content-between mt-2">
+												<a class="dotted-link small ">Ответить</a>
+												<div class="text-secondary small">{{live.date | fdate}} {{live.author}}</div>
+											</div>
+										</div>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
