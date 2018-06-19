@@ -148,7 +148,30 @@
 
 
 						</div>
-						<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+						<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+							<div class="d-flex flex-row align-items-center m-card-0 shadow-plate-lg mb-2 px-3 pb-2"> 
+									<div class="h1 mb-0">Прямой эфир</div> 
+									<div class="ml-3  pulse"></div>
+								</div>
+								<ul class="list-unstyled pt-3" >
+									<li class="media mb-3 " v-for="(live, index) in lives">
+										<div class="media-body">
+											<div class=" live-type mb-1">{{live.type}}</div>
+											<br>
+											<a href="" class="">{{live.title}}</a>
+											<div class="">
+												{{live.desc}}
+											</div>
+											<div class="d-flex flex-row align-items-center justify-content-between mt-2">
+												<a class="dotted-link small ">Ответить</a>
+												<div class="text-secondary small">{{live.date | fdate}} {{live.author}}</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<button type="button" class="btn btn-secondary btn-block" >Показать все</button>
+					
+						</div>
 					</div>
 					
 				</div>
