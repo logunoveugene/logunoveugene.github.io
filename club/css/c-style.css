@@ -67,6 +67,13 @@ h4, .h4 {
    border-radius: 8px; 
      border: none;
 }
+.btn-outline-primary {
+    color: #0f61b5;
+    background-color: transparent;
+    background-image: none;
+    border-color: #0f61b5;
+    border-radius: .5rem;
+}
 
 
 
