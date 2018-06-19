@@ -19,7 +19,7 @@ dayjs.locale('ru');
   var askRef = firebase.database().ref('asks');
   var forumRef = firebase.database().ref('forum-items');
   var liveRef = firebase.database().ref('live');
-
+var usersRef = firebase.database().ref('top-users');
 
   Vue.config.devtools = true;
   var main = new Vue({
@@ -39,7 +39,8 @@ dayjs.locale('ru');
       posts: postsRef,
       asks: askRef,
       forums: forumRef,
-      lives:liveRef
+      lives:liveRef,
+      top-users:usersRef
     },
 
     methods: {
