@@ -54,36 +54,36 @@
   } ],
 
   "top-users" : [ {
-    "user-name" : "LG Rus",
+    "name" : "LG Rus",
     "img" : "https://i.snag.gy/cx5WZ4.jpg",
     "rate" : "01",
     "count" : 5465,
-    "count-up" : 564
+    "up" : 564
   },
   {
-    "user-name" : "Владимир_123",
+    "name" : "Владимир_123",
     "img" : "https://i.snag.gy/CjreJP.jpg",
     "rate" : "02",
     "count" : 1005,
-    "count-up" : 354
+    "up" : 354
   }, {
-    "user-name" : "Angelina 78",
+    "name" : "Angelina 78",
     "img" : "https://i.snag.gy/2xT6YS.jpg",
     "rate" : "03",
     "count" : 455,
-    "count-up" : 289
+    "up" : 289
   }, {
-    "user-name" : "Xiaomi",
+    "name" : "Xiaomi",
     "img" : "https://i.snag.gy/MZKtqd.jpg",
     "rate" : "04",
     "count" : 545,
-    "count-up" : 178
+    "up" : 178
   }, {
-    "user-name" : "Виктор",
+    "name" : "Виктор",
     "img" : "https://i.snag.gy/zr8MSj.jpg",
     "rate" : "05",
     "count" : 8059,
-    "count-up" : 152
+    "up" : 152
   } 
    ],
   "live" : [ {

@@ -435,17 +435,28 @@
 					</div>
 					<div class="card mb-3">
 						<div class="card-body">
-							<div class="h1 mb-2">Лидеры</div> 
+							<div class="h1 mb-1">Лидеры</div> 
+							<ul class="nav nav-tabs m-card-0 mb-3 px-3 bg-white " id="myTab" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link active" aria-selected="true">Неделя</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" aria-selected="false">Месяц</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" aria-selected="false">Все время</a>
+								</li>
+							</ul>
 							<ul class="list-unstyled">
-								<li class="media mb-4" v-for="(user, index) in top-users">
+								<li class="media mb-3" v-for="(user, index) in topUsers">
 									<img class="mr-3 img-60" :src="user.img">
 									<div class="media-body">
-										<div class="font-weight-bold">{{ask.rate}}</div>
+										<div class="font-weight-bold">{{user.rate}}</div>
 										<div class="">
-											<a href="" class=" ">{{ask.user-name}}</a>
+											<a href="" class=" ">{{user.name}}</a>
 										</div>
-										<div class="small d-inline-block">{{ask.count}}</div>
-										<div class="text-success d-inline-block">+ {{ask.count-up}}</div>
+										<div class="small d-inline-block">{{user.count}} баллов</div>
+										<div class="text-success small d-inline-block">+ {{user.up}}</div>
 
 									</div>
 									
@@ -453,7 +464,7 @@
 
 							</ul>
 							
-							<button type="button" class="btn btn-secondary btn-block" >Показать все</button>
+							<button type="button" class="btn btn-secondary btn-block">Весь список</button>
 						</div>
 					</div>
 				</div>

@@ -40,7 +40,7 @@ var usersRef = firebase.database().ref('top-users');
       asks: askRef,
       forums: forumRef,
       lives:liveRef,
-      top-users:usersRef
+      topUsers:usersRef
     },
 
     methods: {
