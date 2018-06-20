@@ -1,11 +1,20 @@
 
-$(document).ready(function () { 
+
 
 dayjs.locale('ru');
 
 
   var day = dayjs.extend(dayjs_plugin_relativeTime);
 
+
+    var swiper = new Swiper('.swiper-asks', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
 
 
 
@@ -74,7 +83,6 @@ dayjs.locale('ru');
     }
   });
 
-     var swiper = new Swiper('.swiper-container');
 
-});
 
+ 
