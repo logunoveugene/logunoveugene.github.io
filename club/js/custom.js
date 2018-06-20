@@ -7,6 +7,9 @@ dayjs.locale('ru');
   var day = dayjs.extend(dayjs_plugin_relativeTime);
 
 
+
+
+
   var config = {
     apiKey: "AIzaSyAM5dSSOW6uZq-3e5oDyNWK-CkHAd66EX8",
     authDomain: "club-74325.firebaseapp.com",
@@ -70,6 +73,8 @@ dayjs.locale('ru');
       }
     }
   });
+
+     var swiper = new Swiper('.swiper-container');
 
 });
 
