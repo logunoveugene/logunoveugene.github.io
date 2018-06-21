@@ -234,106 +234,131 @@
 		</div>
 
 		<div class="container">
-			<div class="row mt-4 mb-4">
-				<div class="col-8 my-3">
-					<div class="h1 mb-3">Помощь в выборе, обзоры и обсуждения</div>
-					<div class="d-flex flex-row align-items-center "> 
-						<div class="d-flex flex-row align-items-center mr-4">
-							<img class="mr-3 img-60" src="https://i.snag.gy/aZNYQy.jpg" alt="Generic placeholder image">
-							<div class="small">участников получили ответы на свои вопросы </div>
-						</div>
-						<div class="d-flex flex-row align-items-center mr-4">
-							<img class="mr-3 img-60" src="https://i.snag.gy/O8Yv9M.jpg" alt="Generic placeholder image">
-							<div class="small">участников получили ответы на свои вопросы </div>
-						</div>
-						<div class="d-flex flex-row align-items-center mr-4">
-							<img class="mr-3 img-60" src="https://i.snag.gy/Zq4t7z.jpg" alt="Generic placeholder image">
-							<div class="small">участников получили ответы на свои вопросы </div>
+			<div class="row my-4 ">
+				<div class="col-12 ">
+					<div class="card">
+						<div class="card-body">
+							<div class="d-flex flex-row align-items-center "> 
+								<div class="d-flex flex-row align-items-center mr-4">
+									<img class="mr-3 img-60" src="https://i.snag.gy/aZNYQy.jpg" alt="Generic placeholder image">
+									<div class="small">Зарегистрируйся и стань участником клуба DNS</div>
+								</div>
+								<div class="d-flex flex-row align-items-center mr-4">
+									<img class="mr-3 img-60" src="https://i.snag.gy/O8Yv9M.jpg" alt="Generic placeholder image">
+									<div class="small">Отвечай на вопросы пользователей, пиши на форуме, публикуй обзоры и зарабатывай рейтинг</div>
+								</div>
+								<div class="d-flex flex-row align-items-center mr-4">
+									<img class="mr-3 img-60" src="https://i.snag.gy/Zq4t7z.jpg" alt="Generic placeholder image">
+									<div class="small">Получай возможность выиграть призы от клуба DNS и его спонсоров</div>
+								</div>
+								<button type="button" class="btn btn-primary ">Стать участником</button>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-4 my-3">
-					<div class="h2 mt-3 mb-3">Присоединяйтесь прямо сейчас</div>
-					<button type="button" class="btn btn-primary mb-3">Зарегистрироваться</button>
-				</div>
+
 			</div>
 			<div class="row">
 				<div class="col-12 col-lg-8">
 					<div class="card mb-4">
 						<div class="card-body">
-							<div class="h1 mb-0">Вопросы пользователей</div>
-
+							<div class="h1 mb-0"><a href="">Вопросы пользователей</a></div>
 							<div class="ask-list pt-4">
-								<ul class="list-unstyled" >
+								<ul class="list-unstyled mb-4" >
 									<li class="media pb-4 b-b-1" v-for="(ask, index) in orderedAsks"  v-if="index == 0">
 										<img class="mr-4" :src="ask.img">
 										<div class="media-body">
 											<div class="mt-0 mb-1">{{ask.product}}</div>
 											<div class="small">{{ask.desc}}</div>
-
 											<div class="d-flex flex-row align-items-center justify-content-between mt-2">
 												<a href="#" class="dotted-link small ">Ответить</a>
 												<div class="text-secondary small">{{ask.date | fdate}} {{ask.author}}</div>
-
 											</div>
 										</div>
 									</li>
-
 								</ul>
-								<div class="swiper-asks swiper-container">
-									<div class="swiper-wrapper">
-										<div class="swiper-slide " v-for="(ask, index) in orderedAsks"  v-if="index != 0">
-										
+								<local-swiper ref="awesomeSwiperB" :options="swiperOptionB" >
+									<local-slide v-for="(ask, index) in orderedAsks"  v-if="index != 0">
+										<div class="d-flex flex-column mb-2">
+											<div class="mt-0 mb-2">{{ask.product}}</div>
+											<div class="small">{{ask.desc}}</div>
 
-												<div class="d-flex flex-column">
-													<div class="mt-0 mb-2">{{ask.product}}</div>
-													<div class="small">{{ask.desc}}</div>
-
-													<div class="d-flex flex-row align-items-center justify-content-between mt-auto">
-														<a href="#" class="dotted-link small ">Ответить</a>
-														<div class="text-secondary small">{{ask.date | fdate}} {{ask.author}}</div>
-
-													</div>
-												</div>
-											
+											<div class="d-flex flex-row align-items-center justify-content-between mt-auto">
+												<a href="#" class="dotted-link small ">Ответить</a>
+												<div class="text-secondary small">{{ask.date | fdate}} {{ask.author}}</div>
+											</div>
 										</div>
-										<div class="swiper-pagination"></div>
-
-									</div>
-								</div>
+									</local-slide>
+									<div class="swiper-button-prev" slot="button-prev"></div>
+									<div class="swiper-button-next" slot="button-next"></div>
+								</local-swiper>
 							</div>
 						</div>
 					</div>
 					<div class="card">
 						<div class="card-body">
-							<div class="h1 mb-2">Записи в блогах</div>
+							<div class="h1 mb-2"><a href="">Статьи в блогах</a></div>
 							<div class="" v-for="(post, index) in posts">
-								<div class="py-4" :class="post.type">
-									<div class="h3">
-										<a href="">{{post.title}}</a>
-									</div>
-									<div class="d-inline-block mr-1" v-for="(tag, index) in post.tags">
-										<div class="text-secondary small mb-3">{{tag}}</div>
-									</div>
-									<img v-if="post.img != 0" :src="post.img" alt="" class="img-fluid mb-3">
-									<div class="text-dark mb-3">{{post.desc}}</div>
-									<div class="d-flex flex-row align-items-center justify-content-between">
-										<button type="button" class="btn btn-secondary">Читать далее</button>
-										<div class="d-flex flex-row align-items-center">
-											<div class="d-flex flex-row align-items-center mr-4">
-												<div class="small text-secondary">{{post.date | fdate}}</div>
+								<div class="py-4" >
+									<div class="d-flex flex-row">
+										<div class="mr-4">
+											<div class="post-image-wrap">
+												<img :src="post.img" alt="" class="post-image">
+												<div class="post-rating">
+													<div class="d-flex flex-row align-items-center justify-content-center">
+														<img src="https://i.snag.gy/Fi9pUx.jpg" class="mr-2" alt="">
+												55 голосов
+													</div>
+													</div>
+												<img :src="post.img" alt="" class="blured-img">
 											</div>
-											<div class="d-flex flex-row align-items-center mr-4">
-												<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-2">
-												<div class="small text-secondary">{{post.view}}</div>
-											</div>
-											<div class="d-flex flex-row align-items-center mr-4">
-												<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-2">
-												<div class="small text-secondary">{{post.comment}}</div>
-											</div>
-											<img src="https://i.snag.gy/59HDhw.jpg" alt="">
 										</div>
+										
+										<div class="d-flex flex-column">
+											<div class="h3"><a href="">{{post.title}}</a></div>
+											<div class="d-flex flex-row">
+												<div class="mr-1" v-for="(tag, index) in post.tags">
+													<div class=" small mb-2">
+														<a class="text-secondary"  href="">{{tag}} <span v-if="index <1" class="">/</span></a>
+														
+													</div>
+												</div>
+											</div>
+											
+											<div class="text-dark mb-3">{{post.desc | text180}}</div>
+
+						
+
+												<div class="d-flex flex-row align-items-center justify-content-between">
+													<div class="d-flex flex-row align-items-center">
+														<div class="d-flex flex-row align-items-center mr-4">
+															<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-2">
+															<div class="small text-secondary">{{post.view}}</div>
+														</div>
+														<div class="d-flex flex-row align-items-center mr-4">
+															<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-2">
+															<div class="small text-secondary">{{post.comment}} </div>
+														</div>
+													</div>
+													
+
+													
+
+													<div class="d-flex flex-row align-items-center ">
+														<div class="small text-secondary">{{post.date | fdate}} {{post.author}}</div>
+													</div>
+
+												</div>
+										
+
+										</div>
+
 									</div>
+									
+									
+									
+									
+									
 								</div>
 								<div class="forum-plate" v-if="index == 1 ">
 									<div class="h2 mt-4">Горячие темы форума</div>
@@ -479,13 +504,14 @@
 
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
 <script src="https://unpkg.com/vue"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/vue-awesome-swiper@3.1.2/dist/vue-awesome-swiper.js"></script>
 
 
 <script src="https://gstatic.com/firebasejs/4.2.0/firebase.js"></script>
