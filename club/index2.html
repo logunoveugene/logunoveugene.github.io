@@ -374,7 +374,9 @@
 									
 								</div>
 								<div class="forum-plate mb-5" v-if="index == 2 ">
-									<div class="h2 mt-4">Горячие темы форума</div>
+									<div class="h1 my-4">
+										<a href="">Горячие темы форума</a>
+									</div>
 									<ul class="list-unstyled mb-4" >
 										<li class="media mb-4 " v-for="(forum, index) in forums">
 											<img :src="forum.img" alt="" class="mr-4 mt-1">
@@ -395,6 +397,47 @@
 										</li>
 									</ul>
 								</div>
+
+								<div class="forum-plate " v-if="index == 5">
+									<div class="h1 my-4">
+										<a href="">Горячие темы форума</a>
+									</div>
+									<div class="row mb-4" >
+										<div class="col-4 d-flex flex-column" v-for="(guid, index) in guids">
+											<div class="post-image-wrap mb-3">
+												<img :src="guid.img" alt="" class="post-image">
+												<div class="post-rating">
+													<div class="d-flex flex-row align-items-center justify-content-center">
+														<img src="https://i.snag.gy/Fi9pUx.jpg" class="mr-2" alt="">
+														голосов
+													</div>
+												</div>
+												<img :src="guid.img" alt="" class="blured-img">
+											</div>
+											<div class="media-body">
+												<div class="mb-2">
+													<a href="" class="">{{guid.title}}</a>
+												</div>
+												<div class="d-flex flex-row align-items-center">
+													<div class="d-flex flex-row align-items-center w-px-90">
+														<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-2">
+														<div class="small text-secondary">{{guid.view}} </div>
+													</div>
+													<div class="d-flex flex-row align-items-center mr-1">
+														<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-2">
+														<div class="small text-secondary">{{guid.comment}} ответов</div>
+													</div>
+													<!-- <div class="text-secondary small">последний {{guid.date | fdate}}</div> -->
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+
+
 							</div>
 						</div>
 					</div>

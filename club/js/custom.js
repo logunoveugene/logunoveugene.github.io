@@ -23,6 +23,7 @@ var forumRef = firebase.database().ref('forum-items');
 var liveRef = firebase.database().ref('live');
 var usersRef = firebase.database().ref('top-users');
 var newsRef = firebase.database().ref('news');
+var guidsRef = firebase.database().ref('guid');
 
 Vue.config.devtools = true;
 
@@ -61,7 +62,8 @@ var main = new Vue({
     asks: askRef,
     forums: forumRef,
     lives: liveRef,
-    topUsers: usersRef
+    topUsers: usersRef,
+    guids: guidsRef
     
   },
 
