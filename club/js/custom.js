@@ -86,7 +86,7 @@ var main = new Vue({
     },
     text180:function(value) {
 
-      var sliced = value.slice(0,180);
+      var sliced = value.slice(0,170);
       if (sliced.length < value.length) {
         return sliced += '...';
       }
