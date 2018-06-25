@@ -11,7 +11,10 @@
 </head>
 <body>
 	<div id="app" class="main-layout">
-		<div class="live ">
+		<div class="live" v-if="showlive" >
+			<div class="bg-light p-2">
+				<div class="d-inline-flex dotted-link small" on:click="!showlive">Скрыть</div>
+			</div>
 			<div class="d-flex flex-row align-items-center p-3">
 				<div class="h1 mb-0">Прямой эфир</div>
 				<div class="ml-3  pulse"></div>

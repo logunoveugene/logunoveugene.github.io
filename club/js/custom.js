@@ -44,6 +44,8 @@ var main = new Vue({
       author:"",
       answer:0
     },
+    showlive:true,
+    
     swiperOptionB: {
 
       spaceBetween:30,
