@@ -382,4 +382,14 @@ position: relative;
 }
 
 
+.custom-badge{
+border: 1px solid #FD9B09;
+border-radius: .25rem;
+
+padding: .35rem;
+font-size: 10px;
+color: #FC8507;
+text-transform: uppercase;
+}
+
 

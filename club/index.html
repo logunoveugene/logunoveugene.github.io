@@ -191,9 +191,9 @@
 					<div class="col-8">
 						<div class="d-flex flex-row align-items-center mr-5">
 					
-							<div class="small text-secondary mr-3">ДНС Цифровой</div>
-							<div class="small text-secondary mr-3">ДНС Технопоинт</div>
-							<div class="small text-secondary mr-3">ДНС Сервис</div>
+							<div class="small text-secondary mr-3">DNS Цифровой</div>
+							<div class="small text-secondary mr-3">DNS Технопоинт</div>
+							<div class="small text-secondary mr-3">DNS Сервис</div>
 						</div>
 						<div class="d-flex flex-row align-items-center mr-5">
 
@@ -284,7 +284,7 @@
 											<img class="mr-4" :src="ask.img">
 											<div class="media-body">
 												<div class="mt-0 mb-1">{{ask.product}}</div>
-												<div class="small">{{ask.desc}}</div>
+												<div class="small"><a href="" class="text-dark">{{ask.desc}}</a></div>
 												<div class="d-flex flex-row align-items-center justify-content-between mt-2">
 													<a href="#" class="dotted-link small ">Ответить</a>
 													<div class="text-secondary small">{{ask.date | fdate}} {{ask.author}}</div>
@@ -296,7 +296,7 @@
 										<local-slide v-for="(ask, index) in orderedAsks" v-if="index != 0">
 											<div class="d-flex flex-column mb-2">
 												<div class="mt-0 mb-2">{{ask.product}}</div>
-												<div class="small">{{ask.desc}}</div>
+												<div class="small"><a href="" class="text-dark">{{ask.desc}}</a></div>
 												<div class="d-flex flex-row align-items-center justify-content-between mt-auto">
 													<a href="#" class="dotted-link small ">Ответить</a>
 													<div class="text-secondary small">{{ask.date | fdate}} {{ask.author}}</div>
@@ -341,14 +341,16 @@
 												<div class="h3">
 													<a href="">{{post.title}}</a>
 												</div>
-												<div class="d-flex flex-row">
+												<div class="d-flex flex-row align-items-center mb-2">
+													<div class="badge custom-badge mr-3">Перевод</div>
 													<div class="mr-1" v-for="(tag, index) in post.tags">
-														<div class=" small mb-2">
+														<div class=" small ">
 															<a class="text-secondary" href="">
 																{{tag}} <span v-if="index <1" class="">/</span>
 															</a>
 														</div>
 													</div>
+													
 												</div>
 												<div class="text-dark mb-3">{{post.desc | text180}}</div>
 												<div class="d-flex flex-row align-items-center justify-content-between">
@@ -433,7 +435,7 @@
 						</div>
 					</div>
 					<div class="col-12 col-lg-4">
-						<div class="card mb-3">
+						<div class="card mb-4">
 							<div class="card-body">
 								<div class="d-flex flex-row align-items-center justify-content-between mb-4">
 									<div class="h1 mb-0">
@@ -462,7 +464,7 @@
 								<!-- <button type="button" class="btn btn-secondary btn-block" >Показать все</button> -->
 							</div>
 						</div>
-						<div class="card mb-3">
+						<div class="card mb-4">
 							<div class="card-body">
 								<div class="h1 mb-1">Лидеры</div>
 								<ul class="nav nav-tabs  mb-4 bg-white " id="myTab" role="tablist">
