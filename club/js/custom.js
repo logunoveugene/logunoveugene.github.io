@@ -44,8 +44,8 @@ var main = new Vue({
       author:"",
       answer:0
     },
-    showlive:true,
-    
+    live:"showlive",
+
     swiperOptionB: {
 
       spaceBetween:30,
@@ -80,6 +80,13 @@ var main = new Vue({
       this.newAsk.author = ''
       this.newAsk.answer = 0
     },
+    liveoff:function () {
+      this.live = "";
+    },
+    liveon:function () {
+      this.live = "showlive";
+    },
+
   },
 
   filters: {

@@ -1,9 +1,14 @@
 body {
     font-family: "PT Sans";
 }
+.form-control.search {
+  border-radius: .5rem;
+  background: white url('https://i.snag.gy/7rBCoa.jpg') no-repeat 97% 50%;
+}
 
-
-
+.c-pointer{
+  cursor: pointer;
+}
 
 
 .live{
@@ -19,7 +24,7 @@ body {
 height: 100vh;
 }
 @media (min-width: 1300px){
-.main-layout{
+.showlive.main-layout{
   padding-right: 280px;
 }
 .live{
@@ -288,16 +293,18 @@ width: 280px;
 
     }
 
-
-    .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
-
+.swiper-button-next, .swiper-button-prev {
+  transition: all .5s;
+}
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
     right: 10px;
     background-size: 25%;
     background-color: white;
     width: 35px;
     height: 35px;
+    border: 1px solid white;
     border-radius: 50%;
-    box-shadow: 0 10px 10px rgba(0,0,0,.1);
+    box-shadow: 0 4px 20px rgba(0,0,0,.25);
 }
 .swiper-button-next:before{
      content: '';
@@ -331,7 +338,8 @@ width: 280px;
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    box-shadow: 0 10px 10px rgba(0,0,0,.1);
+    border: 1px solid white;
+   box-shadow: 0 4px 20px rgba(0,0,0,.25);
 }
 
 .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
@@ -340,6 +348,9 @@ width: 280px;
     pointer-events: none;
 }
 
+.swiper-button-next:hover, .swiper-button-prev:hover{
+  border: 1px solid #4D8FF3;
+}
 
 
 .post-image-wrap{
