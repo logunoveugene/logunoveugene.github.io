@@ -347,14 +347,7 @@
 																<img src="https://i.snag.gy/Fi9pUx.jpg" class="mr-1" alt="">
 																<div class="small text-success ">{{post.rating}} </div>
 															</div>
-															<div class="d-flex flex-row align-items-center ">
-																<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-1">
-																<div class="small text-secondary">{{post.view}}</div>
-															</div>
-															<div class="d-flex flex-row align-items-center ">
-																<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-1">
-																<div class="small text-secondary">{{post.comment}} </div>
-															</div>
+															
 															
 														</div>
 													</div>
@@ -362,31 +355,57 @@
 												</div>
 											</div>
 											<div class="col-8 d-flex flex-column">
-												<div class="mb-2" ><div v-for="(badge, index) in post.badges" :class="badge.style" class="badge ">{{badge.name}}</div></div>
-												<div class="h3">
-													<a href="">{{post.title}}</a>
-												</div>
-												<div class="d-flex flex-row align-items-center mb-2 justify-content-between">
-													<div class="d-flex flex-row ">
-														<div class="mr-1" v-for="(tag, index) in post.tags">
-															<div class=" small ">
+												<!-- <div class="mb-2" ><div v-for="(badge, index) in post.badges" :class="badge.style" class="badge ">{{badge.name}}</div></div> -->
+												
+												<div class="d-flex flex-row mb-2">
+														<div class="" v-for="(tag, index) in post.tags"  v-if="index == 0">
+															<div class="">
 																<a class="text-secondary" href="">
-																	{{tag}} <span v-if="index <1" class="">/</span>
+																	{{tag}} 
 																</a>
 															</div>
 														</div>
 													</div>
-													<div class="d-flex flex-row align-items-center ">
-														<div class="small text-secondary">{{post.date | fdate}} <a href="">{{post.author}}</a></div>
+												
+												<div class="h3">
+
+													<a href="">{{post.title}}</a>
+												</div>
+												<div class="d-flex flex-row align-items-center mb-2 justify-content-between">
+													
+													<div class="d-flex flex-row ">
+														<div class="" v-for="(tag, index) in post.tags"  v-if="index == 1">
+															<div class="  ">
+																<a class="text-secondary" href="">
+																	{{tag}} 
+																</a>
+															</div>
+														</div>
 													</div>
+
+													
 												</div>
 												
 												
-												<div class="text-dark">{{post.desc | text180}}</div>
+												<div class="text-dark mb-2">{{post.desc | text180}}</div>
 												<div class="d-flex flex-row align-items-center justify-content-between">
-													<div class="d-flex flex-row align-items-center">
-														
-													</div>
+													<div class="d-flex flex-row align-items-center ">
+													<div class="d-flex flex-row align-items-center mr-4 ">
+																<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-1">
+																<div class="small text-secondary">{{post.view}}</div>
+															</div>
+															<div class="d-flex flex-row align-items-center ">
+																<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-1">
+																<div class="small text-secondary">{{post.comment}} </div>
+															</div>
+															</div>
+
+
+
+															<div class="d-flex flex-row align-items-center ">
+														<div class="small text-secondary">{{post.date | fdate}} <a href="">{{post.author}}</a></div>
+													</div>	
+													
 													
 												</div>
 											</div>
@@ -468,6 +487,31 @@
 						</div>
 					</div>
 					<div class="col-12 col-lg-4">
+						
+						<div class="card mb-4">
+							<div class="card-body">
+								<div class="d-flex flex-row align-items-center justify-content-between mb-4">
+									<div class="h1 mb-0">
+										<a href="">Новости</a>
+									</div>
+									
+								</div>
+								<ul class="list-unstyled ">
+									<li class="d-flex flex-row mb-4" v-for="(newitem, index) in news">
+										<div class="">
+											<div class="small mb-1">
+												<a href="" class="text-dark">{{newitem.title}}</a>
+											</div>
+											<div class="text-secondary small">{{newitem.date | fdate}} <a href="">{{newitem.author}}</a></div>
+										</div>
+										<div class="ml-3">
+											<img :src="newitem.img" alt="">
+										</div>
+									</li>
+								</ul>
+								<!-- <button type="button" class="btn btn-secondary btn-block" >Показать все</button> -->
+							</div>
+						</div>
 						<div class="card mb-4">
 							<div class="card-body">
 								<div class="d-flex flex-row align-items-center justify-content-between mb-2">
@@ -498,30 +542,6 @@
 									</local-swiper>
 									
 								</div>
-							</div>
-						</div>
-						<div class="card mb-4">
-							<div class="card-body">
-								<div class="d-flex flex-row align-items-center justify-content-between mb-4">
-									<div class="h1 mb-0">
-										<a href="">Новости</a>
-									</div>
-									
-								</div>
-								<ul class="list-unstyled ">
-									<li class="d-flex flex-row mb-4" v-for="(newitem, index) in news">
-										<div class="">
-											<div class="small mb-1">
-												<a href="" class="text-dark">{{newitem.title}}</a>
-											</div>
-											<div class="text-secondary small">{{newitem.date | fdate}} <a href="">{{newitem.author}}</a></div>
-										</div>
-										<div class="ml-3">
-											<img :src="newitem.img" alt="">
-										</div>
-									</li>
-								</ul>
-								<!-- <button type="button" class="btn btn-secondary btn-block" >Показать все</button> -->
 							</div>
 						</div>
 						<div class="card mb-4">
