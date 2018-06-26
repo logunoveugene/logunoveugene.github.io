@@ -1,5 +1,19 @@
+  var observer = lozad('.lozad', {
+        threshold: 0.1,
+        load: function(el) {
+            el.src = el.getAttribute("data-src");
+       
+        }
+    })
 
+    // Picture observer
+    // with default `load` method
+    var pictureObserver = lozad('.lozad-picture', {
+      threshold: 0.1
+    })
 
+    observer.observe()
+    pictureObserver.observe()
 
 
 
@@ -45,6 +59,8 @@ var main = new Vue({
       answer:0
     },
     live:"showlive",
+    
+    promoreg:true,
 
     swiperOptionB: {
 

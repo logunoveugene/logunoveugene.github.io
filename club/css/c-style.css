@@ -18,15 +18,25 @@ body {
   top: 0;
   width: 280px;
   background-color: white;
-  z-index: 500;
+  z-index: 999999;
   box-shadow: 0 1px 5px rgba(0,0,0,.07);
 
 height: 100vh;
 }
+
+.top-layout{
+  padding-top: 132px;
+}
+
+
 @media (min-width: 1300px){
 .showlive.main-layout{
   padding-right: 280px;
 }
+.showlive .fixed-top{
+  padding-right: 280px;
+}
+
 .live{
   display: block;
   }
@@ -224,8 +234,11 @@ height: auto;
 .card{
   border-radius: .5rem;
   box-shadow: 0 1px 5px rgba(0,0,0,.07);
+  overflow: hidden;
+  border: none; 
+  position: relative;
 
-    border: none; 
+
 }
 
 
@@ -233,8 +246,13 @@ height: auto;
   background-color: #fff;
     box-shadow: 0px -2px 5px 0px rgba(0, 0, 0, 0.1);
 
+}
 
-
+.main-post{
+  background: url("https://i.snag.gy/sKhtWl.jpg");
+  padding: 2rem;
+box-shadow: inset 0 -200px 190px -110px rgba(0,0,0,.5);
+    height: 260px;
 
 }
 
@@ -394,14 +412,50 @@ position: relative;
 }
 
 
-.custom-badge{
-border: 1px solid #FD9B09;
-border-radius: .25rem;
-
-padding: .35rem;
+.badge-green{
+border: 1px solid #dcdcdc;
+border-radius: 0rem;
+padding: .35rem .25rem .25rem .25rem;
 font-size: 10px;
-color: #FC8507;
+color: #00a000;
 text-transform: uppercase;
+margin-right: .5rem;
 }
 
+.badge-white{
+border: 1px solid white;
+border-radius: 0rem;
+padding: .35rem .25rem .25rem .25rem;
+font-size: 10px;
+color: white;
+text-transform: uppercase;
+margin-right: .5rem;
+}
+
+
+.badge-orange{
+border: 1px solid #dcdcdc;
+border-radius: 0rem;
+padding: .35rem .25rem .25rem .25rem;
+font-size: 10px;
+color: #de7322;
+text-transform: uppercase;
+margin-right: .5rem;
+}
+
+.badge-violet{
+border: 1px solid #dcdcdc;
+border-radius: 0rem;
+padding: .35rem .25rem .25rem .25rem;
+font-size: 10px;
+color: #8759b5;
+text-transform: uppercase;
+margin-right: .5rem;
+}
+.close{
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  opacity: .1;
+}
 

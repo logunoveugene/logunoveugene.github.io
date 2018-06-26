@@ -189,33 +189,36 @@
 			</div>
 		</div>
 		<div class="bg-light d-none d-lg-block">
-			<div class="container">
-				<div class="row py-2">
-					<div class="col-8">
-						<div class="d-flex flex-row align-items-center mr-5">
+			<div class="fixed-top">
+			<div class="bg-light">
+				<div class="container ">
+					<div class="row py-2">
+						<div class="col-8">
+							<div class="d-flex flex-row align-items-center mr-5">
 
-							<div class="small text-secondary mr-3">DNS Цифровой</div>
-							<div class="small text-secondary mr-3">DNS Технопоинт</div>
-							<div class="small text-secondary mr-3">DNS Сервис</div>
-						</div>
-						<div class="d-flex flex-row align-items-center mr-5">
+								<div class="small text-secondary mr-3">DNS Цифровой</div>
+								<div class="small text-secondary mr-3">DNS Технопоинт</div>
+								<div class="small text-secondary mr-3">DNS Сервис</div>
+							</div>
+							<div class="d-flex flex-row align-items-center mr-5">
 
+							</div>
 						</div>
-					</div>
-					<div class="col-4">
-						<div class="d-flex flex-row align-items-center justify-content-between">
-							<div class="small text-secondary "> <img class="mr-2 mb-1" src="https://i.snag.gy/35Eqzh.jpg" alt="">Тур по сайту</div>
-							<div class="small text-secondary c-pointer" v-on:click="liveon" v-if="live == ''"><img class="mr-2 mb-1" src="https://i.snag.gy/iNKObg.jpg" alt="">Эфир</div>
-							<div class="small text-secondary font-weight-bold">Вход | Регистрация</div>
+						<div class="col-4">
+							<div class="d-flex flex-row align-items-center justify-content-between">
+								<div class="small text-secondary "> <img class="mr-2 mb-1" src="https://i.snag.gy/35Eqzh.jpg" alt="">Тур по сайту</div>
+								<div class="small text-secondary c-pointer" v-on:click="liveon" v-if="live == ''"><img class="mr-2 mb-1" src="https://i.snag.gy/iNKObg.jpg" alt="">Эфир</div>
+								<div class="small text-secondary font-weight-bold">Вход | Регистрация</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="bg-white shadow-plate">
+			<div class="bg-white shadow-plate mb-4 ">
 				<div class="container">
-					<div class="row py-4">
+					<div class="row py-3">
 						<div class="col-8 d-flex flex-row align-items-center ">
-							<img class="logo mr-5" src="https://i.snag.gy/rhv1jA.jpg" alt="">
+							<img class="logo mr-5" src="https://i.snag.gy/jOME0L.jpg" alt="">
 							<div class="d-flex flex-row align-items-center justify-content-center w-100">
 								
 								<ul class="nav">
@@ -248,11 +251,19 @@
 					</div>
 				</div>
 			</div>
-			<div class="container">
-				<div class="row my-4 ">
+			</div>
+
+
+
+			<div class="container top-layout">
+
+				<div class="row mb-4" v-if="promoreg">
 					<div class="col-12 ">
 						<div class="card">
 							<div class="card-body">
+								<button type="button" class="close" v-on:click="promoreg = !promoreg" aria-label="Close">
+								  <span aria-hidden="true">&times;</span>
+								</button>
 								<div class="d-flex flex-row align-items-center ">
 									<div class="d-flex flex-row align-items-center mr-4">
 										<img class="mr-3 img-60" src="https://i.snag.gy/aZNYQy.jpg" alt="Generic placeholder image">
@@ -272,8 +283,46 @@
 						</div>
 					</div>
 				</div>
+			
 				<div class="row">
 					<div class="col-12 col-lg-8">
+						<div class="card mb-4">
+							<div class="card-body p-0">
+								<div class="main-post d-flex flex-column ">
+
+									
+									
+									<div class="mb-2 mt-auto"><div class="badge badge-white d-inline-block">Лучшее за день</div></div>
+
+									<div class="h3 w-75"><a href="" class="text-white">Обзор ADATA XPG Spectrix D41 3200 PC4-25600. Кому 8 ГБ скоростной радуги?</a></div>
+									<div class="d-flex flex-row align-items-center justify-content-between">
+										<div class="d-flex flex-row ">
+											<div class="mr-1">
+												<div class=" small ">
+													<a href="" class="text-white ">Обзоры <span>/</span></a>
+												</div>
+											</div>
+											<div class="mr-1">
+												<div class=" small ">
+													<a href="" class="text-white">Принтеры </a>
+												</div>
+											</div>
+										</div>
+										<div class="d-flex flex-row align-items-center ">
+											<div class="small text-white"> 
+												17 дней назад 
+												<a class="text-white" href="">Олег_777</a>
+											</div>
+										</div>
+									</div>
+									
+
+								</div>	
+
+
+							</div>
+						</div>
+						
 						<div class="card mb-4">
 							<div class="card-body">
 								<div class="d-flex flex-row align-items-center justify-content-between mb-4">
@@ -296,7 +345,7 @@
 												<div class="small"><a href="" class="text-dark">{{ask.desc}}</a></div>
 												<div class="d-flex flex-row align-items-center justify-content-between mt-2">
 													<a href="#" class="dotted-link small ">Ответить</a>
-													<div class="text-secondary small">{{ask.date | fdate}} {{ask.author}}</div>
+													<div class="text-secondary small">{{ask.date | fdate}} <a href="">{{ask.author}}</a></div>
 												</div>
 											</div>
 										</li>
@@ -308,7 +357,7 @@
 												<div class="small"><a href="" class="text-dark">{{ask.desc}}</a></div>
 												<div class="d-flex flex-row align-items-center justify-content-between mt-auto">
 													<a href="#" class="dotted-link small ">Ответить</a>
-													<div class="text-secondary small">{{ask.date | fdate}} {{ask.author}}</div>
+													<div class="text-secondary small">{{ask.date | fdate}} <a href="">{{ask.author}}</a></div>
 												</div>
 											</div>
 										</local-slide>
@@ -322,7 +371,7 @@
 							<div class="card-body">
 								<div class="d-flex flex-row align-items-center justify-content-between mb-4">
 									<div class="h1 mb-0">
-										<a href="">Статьи в блогах</a>
+										<a href="">Блоги</a>
 									</div>
 									<div class="d-flex flex-row align-items-center">
 										<img src="https://i.snag.gy/sU7jur.jpg" alt="" class="mr-2">
@@ -358,9 +407,11 @@
 												</div>
 											</div>
 											<div class="col-8 d-flex flex-column">
+												<div class="mb-2" ><div v-for="(badge, index) in post.badges" :class="badge.style" class="badge ">{{badge.name}}</div></div>
+												<div class="h3">
+													<a href="">{{post.title}}</a>
+												</div>
 												<div class="d-flex flex-row align-items-center mb-2 justify-content-between">
-													
-
 													<div class="d-flex flex-row ">
 														<div class="mr-1" v-for="(tag, index) in post.tags">
 															<div class=" small ">
@@ -373,16 +424,10 @@
 													<div class="d-flex flex-row align-items-center ">
 														<div class="small text-secondary">{{post.date | fdate}} <a href="">{{post.author}}</a></div>
 													</div>
-													
-													
-													
 												</div>
-												<div class="h3">
-													<a href="">{{post.title}}</a>
-												</div>
-												<div class=""><div class="badge custom-badge mb-2">Перевод</div></div>
 												
-												<div class="text-dark mb-3">{{post.desc | text180}}</div>
+												
+												<div class="text-dark">{{post.desc | text180}}</div>
 												<div class="d-flex flex-row align-items-center justify-content-between">
 													<div class="d-flex flex-row align-items-center">
 														
@@ -393,8 +438,8 @@
 										</div>
 									</div>
 									<div class="forum-plate mb-5" v-if="index == 2 ">
-										<div class="h1 my-4">
-											<a href="">Горячие темы форума</a>
+										<div class="h2 my-4">
+											<a href="">Горячее обсуждение</a>
 										</div>
 										<ul class="list-unstyled mb-4">
 											<li class="media mb-4 " v-for="(forum, index) in forums">
@@ -417,7 +462,7 @@
 										</ul>
 									</div>
 									<div class="forum-plate " v-if="index == 5">
-										<div class="h1 my-4">
+										<div class="h2 my-4">
 											<a href="">Гайды</a>
 										</div>
 										<div class="row mb-4">
@@ -425,19 +470,30 @@
 												<div class="post-image-wrap mb-3">
 													<img :src="guid.img" alt="" class="post-image">
 													<div class="post-rating">
-														<div class="d-flex flex-row align-items-center justify-content-center">
-															<img src="https://i.snag.gy/Fi9pUx.jpg" class="mr-2" alt="">{{guid.rating}} голосов
+														<div class="d-flex flex-row align-items-center justify-content-around">
+															<div class="d-flex flex-row align-items-center ">
+																<img src="https://i.snag.gy/Fi9pUx.jpg" class="mr-1" alt="">
+																<div class="small text-success ">{{guid.rating}} </div>
+															</div>
+															<div class="d-flex flex-row align-items-center ">
+																<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-1">
+																<div class="small text-secondary">{{guid.view}}</div>
+															</div>
+															<div class="d-flex flex-row align-items-center ">
+																<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-1">
+																<div class="small text-secondary">{{guid.comment}} </div>
+															</div>
 															
 														</div>
 													</div>
 													<img :src="guid.img" alt="" class="blured-img">
 												</div>
 												<div class="media-body">
-													<div class="small text-secondary mb-1">{{guid.date | fdate}} {{guid.author}}</div>
+													<div class="small text-secondary mb-1">{{guid.date | fdate}} <a href="">{{guid.author}}</a></div>
 													<div class="mb-2">
 														<a href="" class="">{{guid.title}}</a>
 													</div>
-													<div class="d-flex flex-row align-items-center">
+													<!-- <div class="d-flex flex-row align-items-center">
 														<div class="d-flex flex-row align-items-center w-px-90">
 															<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-2">
 															<div class="small text-secondary">{{guid.view}} </div>
@@ -446,8 +502,8 @@
 															<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-2">
 															<div class="small text-secondary">{{guid.comment}} ответов</div>
 														</div>
-														<!-- <div class="text-secondary small">последний {{guid.date | fdate}}</div> -->
-													</div>
+														 <div class="text-secondary small">последний {{guid.date | fdate}}</div> 
+													</div> -->
 												</div>
 											</div>
 										</div>
@@ -463,12 +519,7 @@
 									<div class="h1 mb-0">
 										<a href="">Новости</a>
 									</div>
-									<div class="d-flex flex-row align-items-center">
-										<img src="https://i.snag.gy/sU7jur.jpg" alt="" class="mr-2">
-										<div class="font-weight-bold dotted-link mb-1">
-											<a href="">Написать</a>
-										</div>
-									</div>
+									
 								</div>
 								<ul class="list-unstyled ">
 									<li class="d-flex flex-row mb-4" v-for="(newitem, index) in news">
@@ -476,7 +527,7 @@
 											<div class="small mb-1">
 												<a href="" class="text-dark">{{newitem.title}}</a>
 											</div>
-											<div class="text-secondary small">{{newitem.date | fdate}} {{newitem.author}}</div>
+											<div class="text-secondary small">{{newitem.date | fdate}} <a href="">{{newitem.author}}</a></div>
 										</div>
 										<div class="ml-3">
 											<img :src="newitem.img" alt="">
@@ -502,9 +553,8 @@
 								</ul>
 								<ul class="list-unstyled">
 									<li class="media mb-3" v-for="(user, index) in topUsers">
-										<img class="mr-3 img-60" :src="user.img">
-										<div class="media-body">
-											<div class="font-weight-bold">{{user.rate}}</div>
+										<img class="mr-3 img-60 rounded-circle " :src="user.img">
+										<div class="media-body align-self-center">
 											<div class="">
 												<a href="" class=" ">{{user.name}}</a>
 											</div>
@@ -525,7 +575,7 @@
 										<div class="media-body">
 											<div class="font-weight-bold">Активист</div>
 											<div class="small">Дается за 250 комментариев за последние 3 месяца</div>
-											<div class="small text-secondary">7 минут назад Антон</div>
+											<div class="small text-secondary">7 минут назад <a href="">Антон</a></div>
 										</div>
 									</li>
 									<li class="media mb-4">
@@ -533,7 +583,7 @@
 										<div class="media-body">
 											<div class="font-weight-bold">Признание</div>
 											<div class="small">Дается за 100 лайков </div>
-											<div class="small text-secondary">7 минут назад Василий</div>
+											<div class="small text-secondary">7 минут назад <a href="">Василий</a></div>
 										</div>
 									</li>
 									<li class="media mb-4">
@@ -541,7 +591,7 @@
 										<div class="media-body">
 											<div class="font-weight-bold">Учитель</div>
 											<div class="small">Дается за 100 лайков или дислайков чужим комментариям</div>
-											<div class="small text-secondary">7 минут назад Александра</div>
+											<div class="small text-secondary">7 минут назад <a href="">Александра</a></div>
 										</div>
 									</li>
 								</ul>
@@ -584,7 +634,10 @@
 	<script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
 	<script src="https://unpkg.com/dayjs@1.6.9/dayjs.min.js"></script>
 	<script src="https://unpkg.com/dayjs@1.6.9/plugin/relativeTime.js"></script>
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 	<script src="js/ru.js"></script>
+
 	<script src="js/custom.js"></script>
 </body>
 </html>
