@@ -463,3 +463,14 @@ margin-right: .5rem;
 .ask-list .swiper-container{
   height: 450px;
 }
+
+.swiper-scrollbar {
+
+    background: rgba(0,0,0,.08);
+}
+
+.swiper-scrollbar-drag {
+
+    background: rgba(0,0,0,.15);
+
+}
