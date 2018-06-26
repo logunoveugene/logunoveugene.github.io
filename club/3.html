@@ -321,50 +321,7 @@
 							</div>
 						</div>
 						
-						<div class="card mb-4">
-							<div class="card-body">
-								<div class="d-flex flex-row align-items-center justify-content-between mb-4">
-									<div class="h1 mb-0">
-										<a href="">Вопросы пользователей</a>
-									</div>
-									<div class="d-flex flex-row align-items-center">
-										<img src="https://i.snag.gy/6EW0zx.jpg" alt="" class="mr-2">
-										<div class="font-weight-bold dotted-link mb-1">
-											<a href="">Спросить</a>
-										</div>
-									</div>
-								</div>
-								<div class="ask-list">
-									<ul class="list-unstyled mb-4">
-										<li class="media pb-4 b-b-1" v-for="(ask, index) in orderedAsks" v-if="index == 0">
-											<img class="mr-4" :src="ask.img">
-											<div class="media-body">
-												<div class="mt-0 mb-1">{{ask.product}}</div>
-												<div class="small"><a href="" class="text-dark">{{ask.desc}}</a></div>
-												<div class="d-flex flex-row align-items-center justify-content-between mt-2">
-													<a href="#" class="dotted-link small ">Ответить</a>
-													<div class="text-secondary small">{{ask.date | fdate}} <a href="">{{ask.author}}</a></div>
-												</div>
-											</div>
-										</li>
-									</ul>
-									<local-swiper ref="awesomeSwiperB" :options="swiperOptionB">
-										<local-slide v-for="(ask, index) in orderedAsks" v-if="index != 0">
-											<div class="d-flex flex-column mb-2">
-												<div class="mt-0 mb-2">{{ask.product}}</div>
-												<div class="small"><a href="" class="text-dark">{{ask.desc}}</a></div>
-												<div class="d-flex flex-row align-items-center justify-content-between mt-auto">
-													<a href="#" class="dotted-link small ">Ответить</a>
-													<div class="text-secondary small">{{ask.date | fdate}} <a href="">{{ask.author}}</a></div>
-												</div>
-											</div>
-										</local-slide>
-										<div class="swiper-button-prev" slot="button-prev"></div>
-										<div class="swiper-button-next" slot="button-next"></div>
-									</local-swiper>
-								</div>
-							</div>
-						</div>
+						
 						<div class="card">
 							<div class="card-body">
 								<div class="d-flex flex-row align-items-center justify-content-between mb-4">
@@ -511,6 +468,50 @@
 						</div>
 					</div>
 					<div class="col-12 col-lg-4">
+						<div class="card mb-4">
+							<div class="card-body">
+								<div class="d-flex flex-row align-items-center justify-content-between mb-4">
+									<div class="h1 mb-0">
+										<a href="">Вопросы</a>
+									</div>
+									<div class="d-flex flex-row align-items-center">
+										<img src="https://i.snag.gy/6EW0zx.jpg" alt="" class="mr-2">
+										<div class="font-weight-bold dotted-link mb-1">
+											<a href="">Спросить</a>
+										</div>
+									</div>
+								</div>
+								<div class="ask-list">
+									<ul class="list-unstyled mb-4">
+										<li class="media pb-4 b-b-1" v-for="(ask, index) in orderedAsks" v-if="index == 0">
+											<!-- <img class="mr-4" :src="ask.img"> -->
+											<div class="media-body">
+												<div class="mt-0 mb-1">{{ask.product}}</div>
+												<div class="small"><a href="" class="text-dark">{{ask.desc}}</a></div>
+												<div class="d-flex flex-row align-items-center justify-content-between mt-2">
+													<a href="#" class="dotted-link small ">Ответить</a>
+													<div class="text-secondary small">{{ask.date | fdate}} <a href="">{{ask.author}}</a></div>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<local-swiper ref="awesomeSwiperB" :options="swiperOptionB">
+										<local-slide v-for="(ask, index) in orderedAsks" v-if="index != 0">
+											<div class="d-flex flex-column mb-2">
+												<div class="mt-0 mb-2">{{ask.product}}</div>
+												<div class="small"><a href="" class="text-dark">{{ask.desc}}</a></div>
+												<div class="d-flex flex-row align-items-center justify-content-between mt-auto">
+													<a href="#" class="dotted-link small ">Ответить</a>
+													<div class="text-secondary small">{{ask.date | fdate}} <a href="">{{ask.author}}</a></div>
+												</div>
+											</div>
+										</local-slide>
+										<div class="swiper-button-prev" slot="button-prev"></div>
+										<div class="swiper-button-next" slot="button-next"></div>
+									</local-swiper>
+								</div>
+							</div>
+						</div>
 						<div class="card mb-4">
 							<div class="card-body">
 								<div class="d-flex flex-row align-items-center justify-content-between mb-4">

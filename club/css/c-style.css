@@ -249,10 +249,11 @@ height: auto;
 }
 
 .main-post{
-  background: url("https://i.snag.gy/sKhtWl.jpg");
+  background: url("https://s.dns-shop.ru/up/blog/cache/popup/17734_42.1529861665.jpg");
   padding: 2rem;
-box-shadow: inset 0 -200px 190px -110px rgba(0,0,0,.5);
-    height: 260px;
+box-shadow: inset 0 -250px 190px -110px rgba(0,0,0,.5);
+    height: 447px;
+        background-size: 100%;
 
 }
 
