@@ -460,3 +460,6 @@ margin-right: .5rem;
   opacity: .1;
 }
 
+.ask-list .swiper-container{
+  height: 450px;
+}
