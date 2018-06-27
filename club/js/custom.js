@@ -59,7 +59,7 @@
           answer:0
         },
         live:"showlive",
-        windowWidth: 0,
+
 
         promoreg:true,
 
@@ -111,10 +111,10 @@
           this.live = "";
         },
         getWindowWidth(event) {
-        console.log('here')
-        return document.documentElement.clientWidth;
-    },
-    
+          console.log('here')
+          return document.documentElement.clientWidth;
+        },
+
         liveon:function () {
           this.live = "showlive";
         },
@@ -134,12 +134,12 @@
           return value;
         },
       },
-  mounted() {
-    this.$nextTick(function() {
-        window.addEventListener('resize', this.getWindowWidth());
+      mounted() {
+        this.$nextTick(function() {
+          window.addEventListener('resize', this.getWindowWidth());
 
-    })
-  },
+        })
+      },
 
       computed: {
         orderedAsks: function () {
@@ -151,9 +151,9 @@
         swiperB() {
           return this.$refs.awesomeSwiperB.swiper
         },
-    windowWidth() {
-        return this.getWindowWidth();
-    }
+        windowWidth() {
+          return this.getWindowWidth();
+        }
 
 
 
