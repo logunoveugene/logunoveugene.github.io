@@ -444,33 +444,28 @@
 										</div>
 										<div class="row mb-4">
 											<div class="col-4 d-flex flex-column" v-for="(guid, index) in guids">
+												<img :src="guid.img" alt="">
 												<div class="post-image-wrap mb-3">
-													<img :src="guid.img" alt="" class="post-image">
-													<div class="post-rating">
-														<div class="d-flex flex-row align-items-center justify-content-around">
-															<div class="d-flex flex-row align-items-center ">
-																<img src="https://i.snag.gy/Fi9pUx.jpg" class="mr-1" alt="">
-																<div class="small text-success ">{{guid.rating}} </div>
-															</div>
-															
-															
-														</div>
-													</div>
-													<img :src="guid.img" alt="" class="blured-img">
+													
+													
 												</div>
-												<div class="media-body">
+												<div class="d-flex flex-column media-body">
 													<div class="small text-secondary mb-1">{{guid.date | fdate}} <a href="">{{guid.author}}</a></div>
 													<div class="mb-2">
 														<a href="" class="">{{guid.title}}</a>
 													</div>
-													<div class="d-flex flex-row align-items-center">
+													<div class="d-flex flex-row align-items-center mt-auto">
+														<div class="d-flex flex-row align-items-center mr-4 rating-plate">
+																<img src="https://i.snag.gy/Fi9pUx.jpg" class="mr-2" alt="">
+																<div class="small text-success font-weight-bold ">{{post.rating}} </div>
+															</div>
 														<div class="d-flex flex-row align-items-center w-px-90">
 															<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-2">
 															<div class="small text-secondary">{{guid.view}} </div>
 														</div>
 														<div class="d-flex flex-row align-items-center mr-1">
 															<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-2">
-															<div class="small text-secondary">{{guid.comment}} ответов</div>
+															<div class="small text-secondary">{{guid.comment}}</div>
 														</div>
 														<!-- 
 														 <div class="text-secondary small">последний {{guid.date | fdate}}</div> -->
