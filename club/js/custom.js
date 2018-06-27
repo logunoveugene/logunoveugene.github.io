@@ -142,7 +142,7 @@
         },
 
         swidth: function () {
-            this.width = screen.width;
+            return screen.width;
         },
         sliveee: function () {
             if (this.width < 1300) {
