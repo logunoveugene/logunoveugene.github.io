@@ -415,10 +415,10 @@ position: relative;
 
 .badge-green{
 border: 1px solid #dcdcdc;
-border-radius: 0rem;
-padding: .35rem .25rem .25rem .25rem;
+border-radius: .25rem;
+padding: .3rem .3rem .2rem .3rem;
 font-size: 10px;
-color: #00a000;
+color: #28a74b;
 text-transform: uppercase;
 margin-right: .5rem;
 }
