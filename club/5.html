@@ -66,17 +66,11 @@
 							<div class="" v-for="(post, index) in posts">
 								<div class="py-3 bb-1">
 									<div class="row">
-
 										<div class="col-12 d-flex flex-column ">
-
 											<div class="h3 ">
-
 												<a href="">{{post.title}}</a>
 											</div>
 											<div class="d-flex flex-row align-items-center mb-3">
-
-
-
 												<div class="d-flex flex-row ">
 													<div class="" v-for="(tag, index) in post.tags"  v-if="index == 1">
 														<div class="  ">
@@ -88,24 +82,20 @@
 												</div>
 											</div>
 											<div class="post-image-wrap mb-3" >
-
 												<div class="post-rating">
 													<div class="badge-blue">
-
 														Pro-обзор
-
 													</div>
 												</div>
 												<img :src="post.fullimg" alt="" class="rounded img-fluid">
-
 											</div> 
 											<div class="text-dark mb-2 short-text">{{post.desc }}</div>
 											<div class="d-flex flex-row align-items-center justify-content-between mb-3">
-												<div class="d-flex flex-row align-items-center mr-4 rating-plate">
+												<div class="d-flex flex-row align-items-center  rating-plate">
 													<img src="https://i.snag.gy/Fi9pUx.jpg" class="mr-2" alt="">
 													<div class="small text-success font-weight-bold ">{{post.rating}} </div>
 												</div>
-												<div class="d-flex flex-row align-items-center mr-4 ">
+												<div class="d-flex flex-row align-items-center  ">
 													<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-2">
 													<div class="small text-secondary">{{post.view}}</div>
 												</div>
@@ -119,92 +109,79 @@
 											</div>	
 										</div>
 									</div>
-								</div>
-								
-
+								</div>	
 							</div>
 						</div>
 						<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-							<div class="h1 mb-2">Записи в блогах</div>
-							<ul class="nav nav-tabs m-card-0  px-3 bg-white " id="myTab" role="tablist">
-								<li class="nav-item">
-									<a class="nav-link active" id="ask-tab" data-toggle="tab" href="#ask" role="tab" aria-controls="ask" aria-selected="true">Свежие</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" id="comment-tab" data-toggle="tab" href="#comment" role="tab" aria-controls="comment" aria-selected="false">Лучшие</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" id="comment-tab" data-toggle="tab" href="#comment" role="tab" aria-controls="comment" aria-selected="false">Обсуждаемые</a>
-								</li>
-							</ul>
-							<div class="tab-content" id="myTabContent">
-								<div class="tab-pane fade show active" id="ask" role="tabpanel">
-									<div class="d-flex flex-row align-items-center justify-content-between p-3 bg-white shadow-plate-lg m-card-0">
-										<div class="">
-											<div class="h3 mb-0">
-												<a href="">Всего 78 постов</a>
-											</div>
-											<div class="">6 за сегодня</div>
-										</div>
-										<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#addAsk">Создать блог</button>
-									</div>
-									<div class="" v-for="(post, index) in posts">
-										<div class=" m-card-0 p-3 py-4" :class="post.type">
-											<button type="button" v-if="post.type == 'alert-post'" class="close" aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											</button>
-											<div v-if="post.type == 'alert-post'" class="text-secondary small mb-2">Закрепленная запись</div>
-											<div class="h3">
-												<a href="">{{post.title}}</a>
-											</div>
-											<div class="d-inline-block mr-1" v-for="(tag, index) in post.tags">
-												<div class="text-secondary small mb-3">{{tag}}</div>
-											</div>
-											<img v-if="post.img != 0" :src="post.img" alt="" class="img-fluid mb-3">
-											<div class="text-dark mb-3">{{post.desc}}</div>
-											<div class="d-flex flex-column">
-												<div class="d-flex flex-row align-items-center justify-content-between mb-3">
-													<button type="button" class="btn btn-secondary">Читать далее</button>
-													<div class="d-flex flex-row align-items-center">
-														<div class="d-flex flex-row align-items-center ">
-															<div class="small text-secondary">{{post.date | fdate}}</div>
-														</div>
-													</div>
-												</div>
-												<div class="d-flex flex-row align-items-center justify-content-between">
-													<div class="d-flex flex-row ">
-														<div class="d-flex flex-row align-items-center mr-4">
-															<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-2">
-															<div class="small text-secondary">{{post.view}}</div>
-														</div>
-														<div class="d-flex flex-row align-items-center mr-4">
-															<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-2">
-															<div class="small text-secondary">{{post.comment}}</div>
-														</div>
-													</div>
-													<img src="https://i.snag.gy/59HDhw.jpg" alt="">
-												</div>
-											</div>
-										</div>
+
+
+							<div class="d-flex flex-row align-items-center justify-content-between mb-0">
+									<div class="h1 mb-0">
+										<a href="">Новости</a>
 									</div>
 								</div>
+							<div class="" v-for="(newitem, index) in news">
+								<div class="py-3 bb-1">
+									<div class="row">
+										<div class="col-12 d-flex flex-column ">
+											<div class="h3 mb-3">
+												<a href="">{{newitem.title}}</a>
+											</div>
+											<!-- <div class="d-flex flex-row align-items-center mb-3">
+												<div class="d-flex flex-row ">
+													<div class="" v-for="(tag, index) in post.tags"  v-if="index == 1">
+														<div class="  ">
+															<a class="text-secondary" href="">
+																{{tag}} 
+															</a>
+														</div>
+													</div>
+												</div>
+											</div> -->
+											<div class="post-image-wrap mb-3" >
+												
+												<img :src="newitem.fullimg" alt="" class="rounded img-fluid">
+											</div> 
+											<div class="text-dark mb-2 short-text">{{newitem.desc }}</div>
+											<div class="d-flex flex-row align-items-center justify-content-between mb-3">
+												<div class="d-flex flex-row align-items-center  rating-plate">
+													<img src="https://i.snag.gy/Fi9pUx.jpg" class="mr-2" alt="">
+													<div class="small text-success font-weight-bold ">{{newitem.rating}} </div>
+												</div>
+												<div class="d-flex flex-row align-items-center  ">
+													<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-2">
+													<div class="small text-secondary">{{newitem.view}}</div>
+												</div>
+												<div class="d-flex flex-row align-items-center ">
+													<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-2">
+													<div class="small text-secondary">{{newitem.comment}} </div>
+												</div>	
+											</div>
+											<div class="d-flex flex-row align-items-center ">
+												<div class="small text-secondary">{{newitem.date | fdate}} <a href="">{{newitem.author}}</a></div>
+											</div>	
+										</div>
+									</div>
+								</div>	
 							</div>
+
+							
+							
 						</div>
 						<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-							<div class="d-flex flex-row align-items-center m-card-0 shadow-plate-lg mb-2 px-3 pb-2">
+							<div class="d-flex flex-row align-items-center m-card-0 mb-2 px-3 pb-2">
 								<div class="h1 mb-0">Прямой эфир</div>
 								<div class="ml-3  pulse"></div>
 							</div>
-							<ul class="list-unstyled pt-3">
-								<li class="media mb-3 " v-for="(live, index) in lives">
+							<ul class="list-unstyled small">
+								<li class="media mb-4 " v-for="(live, index) in lives">
 									<div class="media-body">
-										<div class=" live-type mb-1">{{live.type}}</div>
-										<br>
+										<div class="  mb-1">{{live.type}}</div>
 										<a href="" class="">{{live.title}}</a>
 										<div class="">{{live.desc}}
 										</div>
 										<div class="d-flex flex-row align-items-center justify-content-between mt-2">
-											<a class="dotted-link small ">Ответить</a>
+											<a class="dotted-link small " href="">Ответить</a>
 											<div class="text-secondary small">{{live.date | fdate}} {{live.author}}</div>
 										</div>
 									</div>
@@ -221,10 +198,10 @@
 						<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Блоги</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Вопросы</a>
+						<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Новости</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Новости</a>
+						<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Вопросы</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Эфир</a>

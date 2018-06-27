@@ -187,27 +187,47 @@
     "author" : "Apple",
     "date" : "2018-06-16T21:17:42",
     "img" : "https://i.snag.gy/OGb9uk.jpg",
-    "title" : "Apple планирует собрать 45 миллионов предзаказов на самый дорогой iPhone"
+    "fullimg" : "https://s.dns-shop.ru/up/blog/cache/full/17762.1529868946.jpg",
+    "title" : "Apple планирует собрать 45 миллионов предзаказов на самый дорогой iPhone",
+    "comment" : 95,
+    "rating" : 56,
+    "view": 15
   }, {
     "author" : "Asus Russia",
     "date" : "2018-06-16T21:17:42",
     "img" : "https://i.snag.gy/S1WY0D.jpg",
-    "title" : "ASUS ROG Phone: что мы знаем о самом крутом смартфоне для геймеров"
+    "fullimg" : "https://s.dns-shop.ru/up/blog/cache/full/17762.1529868946.jpg",
+    "title" : "ASUS ROG Phone: что мы знаем о самом крутом смартфоне для геймеров",
+    "comment" : 95,
+    "rating" : 56,
+    "view": 15
   }, {
     "author" : "DNS club",
     "date" : "2018-06-16T21:17:42",
     "img" : "https://i.snag.gy/MkIvGs.jpg",
-    "title" : "Нейросеть представит мир в 3D без посторонней помощи"
+    "fullimg" : "https://s.dns-shop.ru/up/blog/cache/full/17762.1529868946.jpg",
+    "title" : "Нейросеть представит мир в 3D без посторонней помощи",
+    "comment" : 95,
+    "rating" : 56,
+    "view": 15
   }, {
     "author" : "E-com news",
     "date" : "2018-06-16T21:17:42",
     "img" : "https://i.snag.gy/qfLkgx.jpg",
-    "title" : "AliExpress откроет пункты самовывоза по всей России"
+    "fullimg" : "https://s.dns-shop.ru/up/blog/cache/full/17762.1529868946.jpg",
+    "title" : "AliExpress откроет пункты самовывоза по всей России",
+    "comment" : 95,
+    "rating" : 56,
+    "view": 15
   }, {
     "author" : "Владимир",
     "date" : "2018-06-16T21:17:42",
     "img" : "https://i.snag.gy/j67HV9.jpg",
-    "title" : "iPhone SE 2 не выйдет в этом году. Или вообще никогда"
+    "fullimg" : "https://s.dns-shop.ru/up/blog/cache/full/17762.1529868946.jpg",
+    "title" : "iPhone SE 2 не выйдет в этом году. Или вообще никогда",
+    "comment" : 95,
+    "rating" : 56,
+    "view": 15
   } ],
   "posts" : [ null, {
     "author" : "Виктор",
