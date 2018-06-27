@@ -128,6 +128,7 @@
           return value;
         },
       },
+
       computed: {
         orderedAsks: function () {
           return _.orderBy(this.asks, 'date', 'desc' )
@@ -138,17 +139,11 @@
         swiperB() {
           return this.$refs.awesomeSwiperB.swiper
         },
+
         liveplate: function () {
-          if ($(window).width() < 1300) {
-            this.live = "";
-          } else{
-             this.live = "showlive";
-
-
-          }
-        }
+         return $(window).width() 
        
-
+        }
       }
     });
 
