@@ -59,7 +59,7 @@
           answer:0
         },
         live:"showlive",
-        width: 0,
+        windowWidth: 0,
 
         promoreg:true,
 
