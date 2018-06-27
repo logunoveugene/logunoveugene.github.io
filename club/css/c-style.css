@@ -10,6 +10,10 @@ body {
   cursor: pointer;
 }
 
+.rounded {
+    border-radius: .5rem!important;
+}
+
 
 .live{
   display: none;
@@ -472,7 +476,7 @@ opacity: 1!important;
   overflow: hidden;
 }
 
-.short-text:after{
+/*.short-text:after{
   content: '';
       display: inline-block;
   position: absolute;
@@ -481,7 +485,7 @@ width: 3rem;
 bottom: 1.5rem;
 right: 0;
 background: linear-gradient(to right,rgba(0,0,0,0), rgba(256,256,256,1) );
-}
+}*/
 
 .rating-plate{
     background-color: #e8fbe8;
