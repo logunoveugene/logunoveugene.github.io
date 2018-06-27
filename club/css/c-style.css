@@ -425,8 +425,8 @@ margin-right: .5rem;
 
 .badge-white{
 border: 1px solid white;
-border-radius: 0rem;
-padding: .35rem .25rem .25rem .25rem;
+border-radius: .25rem;
+padding: .3rem .3rem .2rem .3rem;
 font-size: 10px;
 color: white;
 text-transform: uppercase;
