@@ -335,20 +335,22 @@
 									<div class="pb-5">
 										<div class="row">
 											<div class="col-4 ">
-												<img :src="post.img" alt="" class="post-image">
-												<!-- <div class="post-image-wrap">
+												
+												
+												<div class="post-image-wrap" >
 													
 													<div class="post-rating">
 														<div class="d-flex flex-row align-items-center justify-content-around">
 															
-															
+															Pro-обзор
 															
 														</div>
 													</div>
 													<img :src="post.img" alt="" class="blured-img">
-												</div> -->
+													
+												</div> 
 											</div>
-											<div class="col-8 d-flex flex-column">
+											<div class="col-8 d-flex flex-column ">
 												
 												<!-- <div class="mb-2" ><div v-for="(badge, index) in post.badges" :class="badge.style" class="badge ">{{badge.name}}</div></div> -->
 												
@@ -362,15 +364,13 @@
 														</div>
 													</div> -->
 												
-												<div class="h3">
+												<div class="h3 ">
 
 													<a href="">{{post.title}}</a>
 												</div>
 												<div class="d-flex flex-row align-items-center mb-2">
-													<div class="mr-2" v-if="index ==  1">
-														<div class="badge-green d-inline-block">Pro-обзор</div>
-													</div>
 													
+
 													
 													<div class="d-flex flex-row ">
 														<div class="" v-for="(tag, index) in post.tags"  v-if="index == 1">

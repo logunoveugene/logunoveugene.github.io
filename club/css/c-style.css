@@ -375,40 +375,41 @@ width: 280px;
 
 .post-image-wrap{
 position: relative;
-    overflow: hidden;
 
-    border-radius: 8px;
-    height: 197px;
 
 }
+
+
 .post-image {
     z-index: 100;
-    position: relative;
+    position: absolute;
+    top: 47px;
 }
 
 .blured-img {
     z-index: 1;
     position: absolute;
-    top: 50px;
+    top: 0;
     left: 0;
-    filter: blur(10px);
+
 }
 
 .post-rating {
-    z-index: 5;
+z-index: 5;
     position: absolute;
-    background-color: white;
-    width: calc(100% - 20px);
+    background-color: rgba(0,0,0,.2);
+    border: 1px solid white;
+    width: auto;
     text-align: center;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 5%;
+    /* transform: translateX(-50%); */
     margin-top: 10px;
     border-radius: 4px;
     box-shadow: 0 4px 5px rgba(0,0,0,0.1);
-    color: #14af04;
-        font-size: 14px;
-    font-weight: 700;
-    padding: 3px 15px;
+    color: #ffffff;
+    font-size: 12px;
+    /* font-weight: 700; */
+    padding: 1px 9px;
 
 }
 
