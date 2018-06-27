@@ -59,6 +59,7 @@
           answer:0
         },
         live:"showlive",
+        width: 0,
 
         promoreg:true,
 
@@ -140,10 +141,16 @@
           return this.$refs.awesomeSwiperB.swiper
         },
 
-        liveplate: function () {
-         return $(window).width() 
-       
+        swidth: function () {
+            this.width = screen.width;
+        },
+        sliveee: function () {
+            if (this.width < 1300) {
+               this.live = "";
+            }  
         }
+
+
       }
     });
 
