@@ -335,25 +335,21 @@
 									<div class="pb-5">
 										<div class="row">
 											<div class="col-4 ">
-												<div class="post-image-wrap">
-													<img :src="post.img" alt="" class="post-image">
+												<img :src="post.img" alt="" class="post-image">
+												<!-- <div class="post-image-wrap">
+													
 													<div class="post-rating">
 														<div class="d-flex flex-row align-items-center justify-content-around">
-															<div class="d-flex flex-row align-items-center ">
-																<img src="https://i.snag.gy/Fi9pUx.jpg" class="mr-1" alt="">
-																<div class="small text-success ">{{post.rating}} </div>
-															</div>
+															
 															
 															
 														</div>
 													</div>
 													<img :src="post.img" alt="" class="blured-img">
-												</div>
+												</div> -->
 											</div>
 											<div class="col-8 d-flex flex-column">
-												<div class="mb-2" v-if="index ==  1">
-													<div class="badge-green d-inline-block">Pro-обзор</div>
-												</div>
+												
 												<!-- <div class="mb-2" ><div v-for="(badge, index) in post.badges" :class="badge.style" class="badge ">{{badge.name}}</div></div> -->
 												
 												<!-- <div class="d-flex flex-row mb-2">
@@ -370,7 +366,11 @@
 
 													<a href="">{{post.title}}</a>
 												</div>
-												<div class="d-flex flex-row align-items-center mb-2 justify-content-between">
+												<div class="d-flex flex-row align-items-center mb-2">
+													<div class="mr-2" v-if="index ==  1">
+														<div class="badge-green d-inline-block">Pro-обзор</div>
+													</div>
+													
 													
 													<div class="d-flex flex-row ">
 														<div class="" v-for="(tag, index) in post.tags"  v-if="index == 1">
@@ -386,15 +386,19 @@
 												</div>
 												
 												
-												<div class="text-dark mb-2">{{post.desc | text180}}</div>
+												<div class="text-dark mb-2 short-text">{{post.desc }}</div>
 												<div class="d-flex flex-row align-items-center justify-content-between">
 													<div class="d-flex flex-row align-items-center ">
+														<div class="d-flex flex-row align-items-center mr-4 rating-plate">
+																<img src="https://i.snag.gy/Fi9pUx.jpg" class="mr-2" alt="">
+																<div class="small text-success font-weight-bold ">{{post.rating}} </div>
+															</div>
 													<div class="d-flex flex-row align-items-center mr-4 ">
-																<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-1">
+																<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-2">
 																<div class="small text-secondary">{{post.view}}</div>
 															</div>
 															<div class="d-flex flex-row align-items-center ">
-																<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-1">
+																<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-2">
 																<div class="small text-secondary">{{post.comment}} </div>
 															</div>
 															</div>
