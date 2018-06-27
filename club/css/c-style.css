@@ -395,21 +395,10 @@ position: relative;
 }
 
 .post-rating {
-z-index: 5;
+    z-index: 5;
     position: absolute;
-    background-color: rgba(0,0,0,.2);
-    border: 1px solid white;
-    width: auto;
-    text-align: center;
-    left: 5%;
-    /* transform: translateX(-50%); */
-    margin-top: 10px;
-    border-radius: 4px;
-    box-shadow: 0 4px 5px rgba(0,0,0,0.1);
-    color: #ffffff;
-    font-size: 12px;
-    /* font-weight: 700; */
-    padding: 1px 9px;
+
+    padding: .5rem;
 
 }
 
@@ -425,7 +414,7 @@ margin-right: .5rem;
 }
 
 .badge-white{
-border: 1px solid white;
+
 border-radius: .25rem;
 padding: .3rem .3rem .2rem .3rem;
 font-size: 10px;
