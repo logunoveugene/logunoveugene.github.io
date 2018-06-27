@@ -397,9 +397,7 @@ position: relative;
 .post-rating {
     z-index: 5;
     position: absolute;
-
-    padding: .5rem;
-
+    padding: .75rem;
 }
 
 
@@ -414,15 +412,13 @@ margin-right: .5rem;
 }
 
 .badge-white{
-
-
-border-radius: .25rem;
-padding: .3rem .3rem .2rem .3rem;
-font-size: 10px;
-color: white;
-text-transform: uppercase;
-margin-right: .5rem;
-background-color: rgba(0,0,0,.3);
+  border-radius: .15rem;
+    padding: .3rem .3rem .2rem .3rem;
+    font-size: 10px;
+    color: white;
+    text-transform: uppercase;
+    margin-right: .5rem;
+    background-color: rgba(0,0,0,.3);
 }
 
 
