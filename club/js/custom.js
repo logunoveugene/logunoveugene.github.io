@@ -129,6 +129,13 @@
           return value;
         },
       },
+      mounted() {
+        this.$nextTick(() => {
+          window.addEventListener('resize', () => {
+            this.width = window.innerWidth
+          });
+        })
+      },
 
       computed: {
         orderedAsks: function () {
@@ -141,14 +148,7 @@
           return this.$refs.awesomeSwiperB.swiper
         },
 
-        swidth: function () {
-            return screen.width;
-        },
-        sliveee: function () {
-            if (this.width < 1300) {
-               this.live = "";
-            }  
-        }
+        
 
 
       }
