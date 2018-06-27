@@ -110,6 +110,11 @@
         liveoff:function () {
           this.live = "";
         },
+        getWindowWidth(event) {
+        console.log('here')
+        return document.documentElement.clientWidth;
+    },
+    
         liveon:function () {
           this.live = "showlive";
         },
@@ -129,13 +134,12 @@
           return value;
         },
       },
-      mounted() {
-        this.$nextTick(() => {
-          window.addEventListener('resize', () => {
-            this.width = window.innerWidth
-          });
-        })
-      },
+  mounted() {
+    this.$nextTick(function() {
+        window.addEventListener('resize', this.getWindowWidth());
+
+    })
+  },
 
       computed: {
         orderedAsks: function () {
@@ -147,8 +151,10 @@
         swiperB() {
           return this.$refs.awesomeSwiperB.swiper
         },
+    windowWidth() {
+        return this.getWindowWidth();
+    }
 
-        
 
 
       }
