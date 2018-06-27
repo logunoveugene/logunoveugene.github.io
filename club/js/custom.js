@@ -137,7 +137,18 @@
         },
         swiperB() {
           return this.$refs.awesomeSwiperB.swiper
+        },
+        liveplate: function () {
+          if ($(window).width() < 1300) {
+            this.live = "";
+          } else{
+             this.live = "showlive";
+
+
+          }
         }
+       
+
       }
     });
 
