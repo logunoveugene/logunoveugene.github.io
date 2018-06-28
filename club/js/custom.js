@@ -78,7 +78,7 @@
 
           },
           swiperOptionC: {
-            spaceBetween:30,
+            spaceBetween:16,
             slidesPerView: 'auto',
             mousewheel: true,
             direction:"vertical",
