@@ -33,7 +33,7 @@ height: 100vh;
 }
 
 
-@media (min-width: 1300px){
+@media (min-width: 1440px){
 .showlive.main-layout{
   padding-right: 280px;
 }

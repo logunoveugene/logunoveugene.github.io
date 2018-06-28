@@ -156,7 +156,7 @@
         handleResize() {
           this.window.width = window.innerWidth;
           this.window.height = window.innerHeight;
-          if (this.window.width < 1300) {
+          if (this.window.width < 1440) {
             this.live = "";
           }
         }
