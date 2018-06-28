@@ -52,10 +52,8 @@
 				<div class="row-12 pt-3">
 					<div class="tab-content" id="pills-tabContent">
 						<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-							<div class="d-flex flex-row align-items-center justify-content-between mb-0">
-								<div class="h1 mb-0">
-									<a href="">Блоги</a>
-								</div>
+							<div class="d-flex flex-row align-items-center justify-content-between mb-3">
+								<div class="h1 mb-0">Блоги</div>
 								<div class="d-flex flex-row align-items-center">
 									<img src="https://i.snag.gy/sU7jur.jpg" alt="" class="mr-2">
 									<div class="font-weight-bold dotted-link mb-1">
@@ -63,13 +61,12 @@
 									</div>
 								</div>
 							</div>
+							<button class="btn btn-secondary btn-block mb-2">Фильтры</button>
 							<div class="" v-for="(post, index) in posts">
 								<div class="py-3 bb-1">
 									<div class="row">
 										<div class="col-12 d-flex flex-column ">
-											<div class="h3 ">
-												<a href="">{{post.title}}</a>
-											</div>
+											<div class="h3 "><a href="">{{post.title}}</a></div>
 											<div class="d-flex flex-row align-items-center mb-3">
 												<div class="d-flex flex-row ">
 													<div class="" v-for="(tag, index) in post.tags" v-if="index == 1">
@@ -114,9 +111,7 @@
 						</div>
 						<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 							<div class="d-flex flex-row align-items-center justify-content-between mb-0">
-								<div class="h1 mb-0">
-									<a href="">Новости</a>
-								</div>
+								<div class="h1 mb-0">Новости</div>
 							</div>
 							<div class="" v-for="(newitem, index) in news">
 								<div class="py-3 bb-1">
@@ -166,9 +161,7 @@
 						</div>
 						<div class="tab-pane fade" id="ask-tab" role="tabpanel" aria-labelledby="pills-ask-tab">
 							<div class="d-flex flex-row align-items-center justify-content-between ">
-								<div class="h1 mb-0">
-									<a href="">Вопросы</a>
-								</div>
+								<div class="h1 mb-0">Вопросы</div>
 								<div class="d-flex flex-row align-items-center">
 									<img src="https://i.snag.gy/6EW0zx.jpg" alt="" class="mr-2">
 									<div class="font-weight-bold dotted-link mb-1">
@@ -474,13 +467,13 @@
                             <div class="col-12 col-lg-4">
                             	<div class="card mb-4">
                             		<div class="card-body">
-                            			<div class="d-flex flex-row align-items-center justify-content-between mb-4">
+                            			<div class="d-flex flex-row align-items-center justify-content-between mb-2">
                             				<div class="h1 mb-0">
                             					<a href="">Новости</a>
                             				</div>
                             			</div>
-                            			<ul class="list-unstyled ">
-                            				<li class="d-flex flex-row mb-4" v-for="(newitem, index) in news">
+                            			<ul class="list-unstyled mb-0">
+                            				<li class="d-flex flex-row py-2" v-for="(newitem, index) in news">
                             					<div class="">
                             						<div class="small mb-1">
                             							<a href="" class="text-dark">{{newitem.title}}</a>
