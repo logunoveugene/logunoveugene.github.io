@@ -66,7 +66,7 @@
 													 
 							<!-- <button class="btn btn-secondary btn-block mb-2">Выбрать тему</button> -->
 							<div class="" v-for="(post, index) in posts">
-								<div class="py-3 bb-1">
+								<div class="py-4 bb-1">
 									<div class="row">
 										<div class="col-12 d-flex flex-column ">
 											<div class="h3 "><a href="">{{post.title}}</a></div>
@@ -98,7 +98,7 @@
 													<img src="https://i.snag.gy/Fi9pUx.jpg" class="mr-2" alt="">
 													<div class="small text-success font-weight-bold ">{{post.rating}} </div>
 												</div>
-												<div class="d-flex flex-row align-items-center  ">
+												<div class="d-flex flex-row align-items-center ml-auto mr-4">
 													<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-2">
 													<div class="small text-secondary">{{post.view}}</div>
 												</div>
@@ -118,7 +118,7 @@
 							</div>
 							<button type="button" class="btn btn-secondary btn-block mb-2">Выбрать раздел</button>
 							<div class="" v-for="(newitem, index) in news">
-								<div class="py-3 bb-1">
+								<div class="py-4 bb-1">
 									<div class="row">
 										<div class="col-12 d-flex flex-column ">
 											<div class="h3 mb-3">
@@ -174,11 +174,11 @@
 								</div>
 							</div>
 							<button type="button" class="btn btn-secondary btn-block mb-2">Выбрать раздел</button>
-							<div v-for="(ask, index) in orderedAsks" v-if="index != 0" class="py-3 bb-1">
+							<div v-for="(ask, index) in orderedAsks" v-if="index != 0" class="py-4 bb-1">
 								<div class="d-flex flex-column">
-									<div class="mt-0 mb-2">{{ask.product}}</div>
+									<div class="mt-0 mb-2 small">{{ask.product}}</div>
 									<div class="mb-3">
-										<a href="" class="text-dark">{{ask.desc}}</a>
+										<a href="" class="">{{ask.desc}}</a>
 									</div>
 									<div class="d-flex flex-row align-items-center justify-content-between mt-auto">
 										<a href="#" class="dotted-link small ">Ответить</a>
@@ -200,7 +200,7 @@
 							<ul class="list-unstyled ">
 								<li class="media py-3 bb-1" v-for="(live, index) in lives">
 									<div class="media-body">
-										<div class="  mb-1">{{live.type}}</div>
+										<div class=" small mb-1">{{live.type}}</div>
 										<a href="" class="">{{live.title}}</a>
 										<div class="mb-3">{{live.desc}}
 										</div>
@@ -345,7 +345,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="" v-for="(post, index) in posts">
+								<div class="" v-for="(post, index) in posts" v-if="index != 0">
 									<div class="pb-5">
 										<div class="row">
 											<div class="col-4 ">
@@ -407,7 +407,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="forum-plate mb-5" v-if="index == 2 ">
+										<div class="forum-plate mb-5" v-if="index == 3 ">
 											<div class="h2 my-4">
 												<a href="">Горячее обсуждение</a>
 											</div>
@@ -431,7 +431,7 @@
 												</li>
 											</ul>
 										</div>
-										<div class="forum-plate " v-if="index == 5">
+										<div class="forum-plate " v-if="index == 6">
 											<div class="h2 my-4">
 												<a href="">Гайды</a>
 											</div>
@@ -479,7 +479,7 @@
                             				</div>
                             			</div>
                             			<ul class="list-unstyled mb-0">
-                            				<li class="d-flex flex-row py-2" v-for="(newitem, index) in news">
+                            				<li class="d-flex flex-row my-1  py-2" v-for="(newitem, index) in news">
                             					<div class="">
                             						<div class="small mb-1">
                             							<a href="" class="text-dark">{{newitem.title}}</a>
@@ -509,12 +509,12 @@
                             					</div>
                             				</div>
                             			</div>
-                            			<div class="ask-list">
+                            			<div class="ask-list small" >
                             				<local-swiper ref="awesomeSwiperC" :options="swiperOptionC">
-                            					<local-slide v-for="(ask, index) in orderedAsks" v-if="index != 0">
+                            					<local-slide v-for="(ask, index) in orderedAsks" >
                             						<div class="d-flex flex-column mb-2">
-                            							<div class="mt-0 mb-1">{{ask.product}}</div>
-                            							<div class="small mb-1">
+                            							<div class="mt-0 mb-1 ">{{ask.product}}</div>
+                            							<div class=" mb-1">
                             								<a href="" class="text-dark">{{ask.desc}}</a>
                             							</div>
                             							<div class="d-flex flex-row align-items-center justify-content-between mt-auto">

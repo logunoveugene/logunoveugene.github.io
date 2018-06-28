@@ -185,49 +185,49 @@
   } ],
   "news" : [ {
     "author" : "Apple",
-    "date" : "2018-06-16T21:17:42",
-    "img" : "https://i.snag.gy/OGb9uk.jpg",
-    "fullimg" : "https://s.dns-shop.ru/up/blog/cache/full/17762.1529868946.jpg",
-    "title" : "Apple планирует собрать 45 миллионов предзаказов на самый дорогой iPhone",
     "comment" : 95,
+    "date" : "2018-06-16T21:17:42",
+    "fullimg" : "https://s.dns-shop.ru/up/blog/cache/full/17736.1529482951.jpg",
+    "img" : "https://i.snag.gy/OGb9uk.jpg",
     "rating" : 56,
-    "view": 15
+    "title" : "Apple планирует собрать 45 миллионов предзаказов на самый дорогой iPhone",
+    "view" : 15
   }, {
     "author" : "Asus Russia",
-    "date" : "2018-06-16T21:17:42",
-    "img" : "https://i.snag.gy/S1WY0D.jpg",
-    "fullimg" : "https://s.dns-shop.ru/up/blog/cache/full/17762.1529868946.jpg",
-    "title" : "ASUS ROG Phone: что мы знаем о самом крутом смартфоне для геймеров",
     "comment" : 95,
+    "date" : "2018-06-16T21:17:42",
+    "fullimg" : "https://s.dns-shop.ru/up/blog/cache/full/17668.1527844920.jpg",
+    "img" : "https://i.snag.gy/S1WY0D.jpg",
     "rating" : 56,
-    "view": 15
+    "title" : "ASUS ROG Phone: что мы знаем о самом крутом смартфоне для геймеров",
+    "view" : 15
   }, {
     "author" : "DNS club",
-    "date" : "2018-06-16T21:17:42",
-    "img" : "https://i.snag.gy/MkIvGs.jpg",
-    "fullimg" : "https://s.dns-shop.ru/up/blog/cache/full/17762.1529868946.jpg",
-    "title" : "Нейросеть представит мир в 3D без посторонней помощи",
     "comment" : 95,
+    "date" : "2018-06-16T21:17:42",
+    "fullimg" : "https://s.dns-shop.ru/up/blog/cache/full/17621.1526896824.jpg",
+    "img" : "https://i.snag.gy/MkIvGs.jpg",
     "rating" : 56,
-    "view": 15
+    "title" : "Нейросеть представит мир в 3D без посторонней помощи",
+    "view" : 15
   }, {
     "author" : "E-com news",
-    "date" : "2018-06-16T21:17:42",
-    "img" : "https://i.snag.gy/qfLkgx.jpg",
-    "fullimg" : "https://s.dns-shop.ru/up/blog/cache/full/17762.1529868946.jpg",
-    "title" : "AliExpress откроет пункты самовывоза по всей России",
     "comment" : 95,
+    "date" : "2018-06-16T21:17:42",
+    "fullimg" : "https://s.dns-shop.ru/up/blog/cache/full/17762.1529868946.jpg",
+    "img" : "https://i.snag.gy/qfLkgx.jpg",
     "rating" : 56,
-    "view": 15
+    "title" : "AliExpress откроет пункты самовывоза по всей России",
+    "view" : 15
   }, {
     "author" : "Владимир",
-    "date" : "2018-06-16T21:17:42",
-    "img" : "https://i.snag.gy/j67HV9.jpg",
-    "fullimg" : "https://s.dns-shop.ru/up/blog/cache/full/17762.1529868946.jpg",
-    "title" : "iPhone SE 2 не выйдет в этом году. Или вообще никогда",
     "comment" : 95,
+    "date" : "2018-06-16T21:17:42",
+    "fullimg" : "https://s.dns-shop.ru/up/blog/cache/full/17762.1529868946.jpg",
+    "img" : "https://i.snag.gy/j67HV9.jpg",
     "rating" : 56,
-    "view": 15
+    "title" : "iPhone SE 2 не выйдет в этом году. Или вообще никогда",
+    "view" : 15
   } ],
   "posts" : [ null, {
     "author" : "Виктор",
@@ -241,7 +241,7 @@
     "comment" : 9,
     "date" : "2018-06-09T18:31:42",
     "desc" : "Всем привет! Не так давно я написал обзор Vertex Impress Nero довольно интересного недорого смартфона с экраном 18:9 и металлическим корпусом. А сегодня речь пойдет о другом продукте того же бренда, а именно о защищенном смартфоне Vertex Impress Tor. Но для начала – немного лирики.",
-    "fullimg" : "https://s.dns-shop.ru/up/blog/cache/full/17762.1529868946.jpg",
+    "fullimg" : "https://s.dns-shop.ru/up/blog/cache/full/17776.1530120261.jpg",
     "img" : "https://i.snag.gy/E7Ki6a.jpg",
     "rating" : 86,
     "tags" : [ "Обзоры", "Смартфоны и аксессуары" ],
@@ -316,6 +316,25 @@
     "tags" : [ "Обзоры", "Принтеры" ],
     "title" : "Как выбрать адаптер Wi-Fi (2018)",
     "view" : 65
+  }, 
+  {
+    "author" : "Виктор",
+    "badges" : [ {
+      "name" : "перевод",
+      "style" : "badge-green"
+    }, {
+      "name" : "Новинки март '18",
+      "style" : "badge-orange"
+    } ],
+    "comment" : 9,
+    "date" : "2018-06-09T18:31:42",
+    "desc" : "Всем привет! Не так давно я написал обзор Vertex Impress Nero довольно интересного недорого смартфона с экраном 18:9 и металлическим корпусом. А сегодня речь пойдет о другом продукте того же бренда, а именно о защищенном смартфоне Vertex Impress Tor. Но для начала – немного лирики.",
+    "fullimg" : "https://s.dns-shop.ru/up/blog/cache/full/17776.1530120261.jpg",
+    "img" : "https://i.snag.gy/E7Ki6a.jpg",
+    "rating" : 86,
+    "tags" : [ "Обзоры", "Смартфоны и аксессуары" ],
+    "title" : "Обзор Vertex Impress Tor: бюджетный смартфон с «гражданским» дизайном и железом от Qualcomm!",
+    "view" : 269
   }, {
     "author" : "Мария",
     "badges" : [ {
