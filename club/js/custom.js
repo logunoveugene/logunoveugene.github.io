@@ -60,10 +60,10 @@
             answer:0
           },
           live:"showlive",
-           window: {
-              width: 0,
-              height: 0
-            },
+          window: {
+            width: 0,
+            height: 0
+          },
 
           promoreg:true,
 
@@ -101,13 +101,13 @@
 
       },
 
-     created() {
-    window.addEventListener('resize', this.handleResize)
-    this.handleResize();
-  },
-  destroyed() {
-    window.removeEventListener('resize', this.handleResize)
-  },
+      created() {
+        window.addEventListener('resize', this.handleResize)
+        this.handleResize();
+      },
+      destroyed() {
+        window.removeEventListener('resize', this.handleResize)
+      },
 
       filters: {
         fdate: function(value) {
@@ -154,9 +154,12 @@
           this.live = "showlive";
         },
         handleResize() {
-      this.window.width = window.innerWidth;
-      this.window.height = window.innerHeight;
-    }
+          this.window.width = window.innerWidth;
+          this.window.height = window.innerHeight;
+          if (this.window.width < 1300) {
+            this.live = "";
+          }
+        }
 
       }
     });
