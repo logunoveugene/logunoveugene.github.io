@@ -50,37 +50,42 @@
         LocalSlide: VueAwesomeSwiper.swiperSlide,
       },
 
-      data: {
-        newAsk: {
-          product:"",
-          img: "",
-          desc:"",
-          author:"",
-          answer:0
-        },
-        live:"showlive",
+      data: function() {
+        return {
+          newAsk: {
+            product:"",
+            img: "",
+            desc:"",
+            author:"",
+            answer:0
+          },
+          live:"showlive",
+           window: {
+              width: 0,
+              height: 0
+            },
 
+          promoreg:true,
 
-        promoreg:true,
+          swiperOptionB: {
 
-        swiperOptionB: {
+            spaceBetween:30,
+            slidesPerView: 'auto',
+            navigation: {
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
+            }
 
-          spaceBetween:30,
-          slidesPerView: 'auto',
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          }
-
-        },
-        swiperOptionC: {
-          spaceBetween:30,
-          slidesPerView: 'auto',
-          mousewheel: true,
-          direction:"vertical",
-          scrollbar: {
-            el: '.swiper-scrollbar',
-            hide: true
+          },
+          swiperOptionC: {
+            spaceBetween:30,
+            slidesPerView: 'auto',
+            mousewheel: true,
+            direction:"vertical",
+            scrollbar: {
+              el: '.swiper-scrollbar',
+              hide: true
+            }
           }
         }
       },
@@ -96,6 +101,41 @@
 
       },
 
+     created() {
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize();
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.handleResize)
+  },
+
+      filters: {
+        fdate: function(value) {
+          return dayjs().from(dayjs(value));
+        },
+        text180:function(value) {
+          var sliced = value.slice(0,170);
+          if (sliced.length < value.length) {
+            return sliced += '...';
+          }
+          return value;
+        }
+      },
+      
+
+      computed: {
+        orderedAsks: function () {
+          return _.orderBy(this.asks, 'date', 'desc' )
+        },
+        orderedPosts: function () {
+          return _.orderBy(this.posts, 'date', 'desc' )
+        },
+        swiperB() {
+          return this.$refs.awesomeSwiperB.swiper
+        },
+
+
+      },
       methods: {
         addAsk: function () {
           this.newAsk.date = dayjs().format();
@@ -110,52 +150,13 @@
         liveoff:function () {
           this.live = "";
         },
-        getWindowWidth(event) {
-          console.log('here')
-          return document.documentElement.clientWidth;
-        },
-
         liveon:function () {
           this.live = "showlive";
         },
-
-      },
-
-      filters: {
-        fdate: function(value) {
-          return dayjs().from(dayjs(value));
-        },
-        text180:function(value) {
-
-          var sliced = value.slice(0,170);
-          if (sliced.length < value.length) {
-            return sliced += '...';
-          }
-          return value;
-        },
-      },
-      mounted() {
-        this.$nextTick(function() {
-          window.addEventListener('resize', this.getWindowWidth());
-
-        })
-      },
-
-      computed: {
-        orderedAsks: function () {
-          return _.orderBy(this.asks, 'date', 'desc' )
-        },
-        orderedPosts: function () {
-          return _.orderBy(this.posts, 'date', 'desc' )
-        },
-        swiperB() {
-          return this.$refs.awesomeSwiperB.swiper
-        },
-        windowWidth() {
-          return this.getWindowWidth();
-        }
-
-
+        handleResize() {
+      this.window.width = window.innerWidth;
+      this.window.height = window.innerHeight;
+    }
 
       }
     });
