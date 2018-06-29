@@ -45,7 +45,6 @@
 						<div class="d-flex flex-row align-items-center justify-content-between">
 							<img src="https://i.snag.gy/23I0JN.jpg" alt="">
 							<img class="logo " src="https://i.snag.gy/p4txCj.jpg" alt="">
-							
 							<img src="https://i.snag.gy/7rBCoa.jpg" alt="">
 						</div>
 					</div>
@@ -358,17 +357,7 @@
 												</div>
 											</div>
 											<div class="col-8 d-flex flex-column ">
-												<!-- <div class="mb-2" ><div v-for="(badge, index) in post.badges" :class="badge.style" class="badge ">{{badge.name}}</div></div> -->
-                                                    <!-- <div class="d-flex flex-row mb-2">
-														<div class="" v-for="(tag, index) in post.tags"  v-if="index == 0">
-															<div class="">
-																<a class="text-secondary" href="">
-																	{{tag}} 
-																</a>
-															</div>
-														</div>
-													</div> -->
-													<div class="h3 title">
+												<div class="h3 title">
 														<a href="" >{{post.title}}</a>
 													</div>
 													<div class="d-flex flex-row align-items-center mb-2">
@@ -385,15 +374,18 @@
 													<div class="d-flex flex-row align-items-center justify-content-between">
 														<div class="d-flex flex-row align-items-center ">
 															<div class="d-flex flex-row align-items-center mr-4 rating-plate">
-																<img src="https://i.snag.gy/Fi9pUx.jpg" class="mr-2" alt="">
+																<div class="icon-thumb-up text-success pt-1 mr-2"></div>
+															<!-- 	<img src="https://i.snag.gy/Fi9pUx.jpg" class="mr-2" alt=""> -->
 																<div class="small text-success font-weight-bold ">{{post.rating}} </div>
 															</div>
 															<div class="d-flex flex-row align-items-center mr-4 ">
-																<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-2">
+																<div class="icon-open-eye text-secondary pt-1 mr-2"></div>
+															<!-- 	<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-2"> -->
 																<div class="small text-secondary">{{post.view}}</div>
 															</div>
 															<div class="d-flex flex-row align-items-center ">
-																<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-2">
+																<div class="icon-chat-bubble text-secondary pt-1 mr-2"></div>
+										<!-- 						<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-2"> -->
 																<div class="small text-secondary">{{post.comment}} </div>
 															</div>
 														</div>
@@ -417,11 +409,11 @@
 														<a href="" class="">{{forum.title}}</a>
 														<div class="d-flex flex-row align-items-center">
 															<div class="d-flex flex-row align-items-center w-px-90">
-																<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-2">
+																<div class="icon-open-eye text-secondary pt-1 mr-2"></div>
 																<div class="small text-secondary">{{forum.view}} </div>
 															</div>
 															<div class="d-flex flex-row align-items-center mr-1">
-																<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-2">
+																<div class="icon-chat-bubble text-secondary pt-1 mr-2"></div>
 																<div class="small text-secondary">{{forum.comment}} ответов</div>
 															</div>
 															<div class="text-secondary small">последний {{forum.date | fdate}}</div>
@@ -447,15 +439,15 @@
 														</div>
 														<div class="d-flex flex-row align-items-center mt-auto">
 															<div class="d-flex flex-row align-items-center mr-4 rating-plate">
-																<img src="https://i.snag.gy/Fi9pUx.jpg" class="mr-2" alt="">
+																<div class="icon-thumb-up text-success pt-1 mr-2"></div>
 																<div class="small text-success font-weight-bold ">{{post.rating}} </div>
 															</div>
 															<div class="d-flex flex-row align-items-center w-px-90">
-																<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-2">
+																<div class="icon-open-eye text-secondary pt-1 mr-2"></div>
 																<div class="small text-secondary">{{guid.view}} </div>
 															</div>
 															<div class="d-flex flex-row align-items-center mr-1">
-																<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-2">
+																<div class="icon-chat-bubble text-secondary pt-1 mr-2"></div>
 																<div class="small text-secondary">{{guid.comment}}</div>
 															</div>
                                                             <!-- 
