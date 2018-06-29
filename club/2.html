@@ -6,30 +6,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0">
 	<!-- Yandex.Metrika counter -->
 	<script type="text/javascript" >
-	    (function (d, w, c) {
-	        (w[c] = w[c] || []).push(function() {
-	            try {
-	                w.yaCounter49414636 = new Ya.Metrika2({
-	                    id:49414636,
-	                    clickmap:true,
-	                    trackLinks:true,
-	                    accurateTrackBounce:true,
-	                    webvisor:true
-	                });
-	            } catch(e) { }
-	        });
+		(function (d, w, c) {
+			(w[c] = w[c] || []).push(function() {
+				try {
+					w.yaCounter49414636 = new Ya.Metrika2({
+						id:49414636,
+						clickmap:true,
+						trackLinks:true,
+						accurateTrackBounce:true,
+						webvisor:true
+					});
+				} catch(e) { }
+			});
 
-	        var n = d.getElementsByTagName("script")[0],
-	            s = d.createElement("script"),
-	            f = function () { n.parentNode.insertBefore(s, n); };
-	        s.type = "text/javascript";
-	        s.async = true;
-	        s.src = "https://mc.yandex.ru/metrika/tag.js";
+			var n = d.getElementsByTagName("script")[0],
+			s = d.createElement("script"),
+			f = function () { n.parentNode.insertBefore(s, n); };
+			s.type = "text/javascript";
+			s.async = true;
+			s.src = "https://mc.yandex.ru/metrika/tag.js";
 
-	        if (w.opera == "[object Opera]") {
-	            d.addEventListener("DOMContentLoaded", f, false);
-	        } else { f(); }
-	    })(document, window, "yandex_metrika_callbacks2");
+			if (w.opera == "[object Opera]") {
+				d.addEventListener("DOMContentLoaded", f, false);
+			} else { f(); }
+		})(document, window, "yandex_metrika_callbacks2");
 	</script>
 	<noscript><div><img src="https://mc.yandex.ru/watch/49414636" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 	<!-- /Yandex.Metrika counter -->
@@ -150,7 +150,7 @@
 											<div class="h3 mb-3">
 												<a href="">{{newitem.title}}</a>
 											</div>
-                      
+
 											<div class="post-image-wrap mb-2">
 												<img :src="newitem.fullimg" alt="" class="rounded img-fluid">
 											</div>
@@ -291,17 +291,17 @@
 						<div class="col-4 ">
 							<div class="d-flex flex-row align-items-center justify-content-between">
 								
-									<div class="d-flex flex-row align-items-center">
-										<img class="mr-2 " src="https://i.snag.gy/hla2bk.jpg">
-										<a href="">Написать в блог</a>
-									</div>
-									<div class="d-flex flex-row align-items-center ">
-										<img class="mr-2 " src="https://i.snag.gy/zoTIys.jpg">
-										<a href="">Задать вопрос</a>
-									</div>
-									<div class="">
-										<img src="https://i.snag.gy/7rBCoa.jpg" alt="">
-									</div>
+								<div class="d-flex flex-row align-items-center">
+									<img class="mr-2 " src="https://i.snag.gy/hla2bk.jpg">
+									<a href="">Опубликовать</a>
+								</div>
+								<div class="d-flex flex-row align-items-center ">
+									<img class="mr-2 " src="https://i.snag.gy/zoTIys.jpg">
+									<a href="">Задать вопрос</a>
+								</div>
+								<div class="">
+									<img src="https://i.snag.gy/7rBCoa.jpg" alt="">
+								</div>
 
 
 							</div>
@@ -342,11 +342,11 @@
 				</div>
 				<div class="row">
 					<div class="col-12 col-lg-8">
-						<div class="card mb-4">
-							<div class="card-body p-0">
-								<div class="main-post d-flex flex-column ">
+						<div class="card main-post mb-0 rounded-top">
+							<div class="card-body d-flex p-0">
+								<div class=" d-flex flex-column ">
 									<div class="mb-2 mt-auto">
-										<div class=" badge-orange d-inline-block">Лучшее за день</div>
+										<div class=" badge-orange d-inline-block">Рекомендовано редакцией</div>
 									</div>
 									<div class="h1 w-75">
 										<a href="" class="text-white">Обзор ADATA XPG Spectrix D41 3200 PC4-25600. Кому 8 ГБ скоростной радуги?</a>
@@ -367,20 +367,33 @@
 								</div>
 							</div>
 						</div>
-						<div class="card mb-5">
+						<div class="card mb-5 rounded-bottom">
 							<div class="card-body">
-								<div class="d-flex flex-row align-items-center justify-content-between mb-4">
+								<div class="d-flex flex-row align-items-center justify-content-between mb-0">
 									<div class="h1 mb-0">
-										<a href="">Блоги</a>
+										<a href="">Публикации</a>
 									</div>
-									<!-- <div class="d-flex flex-row align-items-center">
-										<img src="https://i.snag.gy/sU7jur.jpg" alt="" class="mr-2">
+									<div class="d-flex flex-row align-items-center">
+										
 										<div class="font-weight-bold dotted-link mb-1">
-											<a href="">Написать</a>
+											<a href="">Все разделы</a>
 										</div>
-									</div> -->
+									</div>
 								</div>
-								<div class="" v-for="(post, index) in posts" v-if="(index != 0) && (index < 7)">
+								<div class="pb-2">
+									<ul class="nav nav-tabs mb-4 " id="myTab" role="tablist">
+										<li class="nav-item">
+											<a class="nav-link active mr-4" >Лучшее </a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link mr-4">Популярное</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link mr-4">Весь поток</a>
+										</li>
+									</ul>
+								</div>
+								<div class="" v-for="(post, index) in posts" v-if="index != 0">
 									<div class="pb-5">
 										<div class="row">
 											<div class="col-4 ">
@@ -395,98 +408,98 @@
 											</div>
 											<div class="col-8 d-flex flex-column ">
 												<div class="h3 title">
-														<a href="" >{{post.title}}</a>
-													</div>
-													<div class="d-flex flex-row align-items-center mb-2">
-														<div class="d-flex flex-row ">
-															<div class="" v-for="(tag, index) in post.tags" v-if="index == 1">
-																<div class="  ">
-																	<a class="text-secondary" href="">{{tag}} 
-																	</a>
-																</div>
+													<a href="" >{{post.title}}</a>
+												</div>
+												<div class="d-flex flex-row align-items-center mb-2">
+													<div class="d-flex flex-row ">
+														<div class="" v-for="(tag, index) in post.tags" v-if="index == 1">
+															<div class="  ">
+																<a class="text-secondary" href="">{{tag}} 
+																</a>
 															</div>
 														</div>
 													</div>
-													<div class="text-dark mb-2 short-text">{{post.desc }}</div>
-													<div class="d-flex flex-row align-items-center justify-content-between">
-														<div class="d-flex flex-row align-items-center ">
-															<div class="d-flex flex-row align-items-center mr-4 rating-plate">
-																<div class="icon-thumb-up text-success pt-1 mr-2"></div>
+												</div>
+												<div class="text-dark mb-2 short-text">{{post.desc }}</div>
+												<div class="d-flex flex-row align-items-center justify-content-between">
+													<div class="d-flex flex-row align-items-center ">
+														<div class="d-flex flex-row align-items-center mr-4 rating-plate">
+															<div class="icon-thumb-up text-success pt-1 mr-2"></div>
 															<!-- 	<img src="https://i.snag.gy/Fi9pUx.jpg" class="mr-2" alt=""> -->
-																<div class="small text-success font-weight-bold ">{{post.rating}} </div>
-															</div>
-															<div class="d-flex flex-row align-items-center mr-4 ">
-																<div class="icon-open-eye text-secondary pt-1 mr-2"></div>
+															<div class="small text-success font-weight-bold ">{{post.rating}} </div>
+														</div>
+														<div class="d-flex flex-row align-items-center mr-4 ">
+															<div class="icon-open-eye text-secondary pt-1 mr-2"></div>
 															<!-- 	<img src="https://i.snag.gy/vUm5at.jpg" alt="" class="mr-2"> -->
-																<div class="small text-secondary">{{post.view}}</div>
-															</div>
-															<div class="d-flex flex-row align-items-center ">
-																<div class="icon-chat-bubble text-secondary pt-1 mr-2"></div>
-										<!-- 						<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-2"> -->
-																<div class="small text-secondary">{{post.comment}} </div>
-															</div>
+															<div class="small text-secondary">{{post.view}}</div>
 														</div>
 														<div class="d-flex flex-row align-items-center ">
-															<div class="small text-secondary">
-																{{post.date | fdate}} <a href="">{{post.author}}</a>
-															</div>
+															<div class="icon-chat-bubble text-secondary pt-1 mr-2"></div>
+															<!-- 						<img src="https://i.snag.gy/RQU1ZA.jpg" alt="" class="mr-2"> -->
+															<div class="small text-secondary">{{post.comment}} </div>
+														</div>
+													</div>
+													<div class="d-flex flex-row align-items-center ">
+														<div class="small text-secondary">
+															{{post.date | fdate}} <a href="">{{post.author}}</a>
 														</div>
 													</div>
 												</div>
 											</div>
 										</div>
-										<div class="bb-5 bt-5  mb-5" v-if="index == 3 ">
-											<div class="h2 my-4">
-												<a href="">Горячее обсуждение</a>
-											</div>
-											<ul class="list-unstyled mb-0 pb-3">
-												<li class="media mb-4 " v-for="(forum, index) in forums">
-													<img :src="forum.img" alt="" class="mr-4 mt-1">
-													<div class="media-body">
-														<a href="" class="">{{forum.title}}</a>
-														<div class="d-flex flex-row align-items-center">
-															<div class="d-flex flex-row align-items-center w-px-90">
-																<div class="icon-open-eye text-secondary pt-1 mr-2"></div>
-																<div class="small text-secondary">{{forum.view}} </div>
-															</div>
-															<div class="d-flex flex-row align-items-center mr-1">
-																<div class="icon-chat-bubble text-secondary pt-1 mr-2"></div>
-																<div class="small text-secondary">{{forum.comment}} ответов</div>
-															</div>
-															<div class="text-secondary small">последний {{forum.date | fdate}}</div>
-														</div>
-													</div>
-												</li>
-											</ul>
+									</div>
+									<div class="bb-5 bt-5  mb-5" v-if="index == 5 ">
+										<div class="h2 my-4">
+											<a href="">Горячее обсуждение</a>
 										</div>
-										<div class="bt-5 " v-if="index == 6">
-											<div class="h2 my-4">
-												<a href="">Гайды</a>
-											</div>
-											<div class="row ">
-												<div class="col-4 d-flex flex-column" v-for="(guid, index) in guids">
-													<img :src="guid.img" alt="" class="rounded">
-													<div class="post-image-wrap mb-3"></div>
-													<div class="d-flex flex-column media-body">
-														<div class="small text-secondary mb-1">
-															{{guid.date | fdate}} <a href="">{{guid.author}}</a>
+										<ul class="list-unstyled mb-0 pb-3">
+											<li class="media mb-4 " v-for="(forum, index) in forums">
+												<img :src="forum.img" alt="" class="mr-4 mt-1">
+												<div class="media-body">
+													<a href="" class="">{{forum.title}}</a>
+													<div class="d-flex flex-row align-items-center">
+														<div class="d-flex flex-row align-items-center w-px-90">
+															<div class="icon-open-eye text-secondary pt-1 mr-2"></div>
+															<div class="small text-secondary">{{forum.view}} </div>
 														</div>
-														<div class="mb-2">
-															<a href="" class="">{{guid.title}}</a>
+														<div class="d-flex flex-row align-items-center mr-1">
+															<div class="icon-chat-bubble text-secondary pt-1 mr-2"></div>
+															<div class="small text-secondary">{{forum.comment}} ответов</div>
 														</div>
-														<div class="d-flex flex-row align-items-center mt-auto">
-															<div class="d-flex flex-row align-items-center mr-4 rating-plate">
-																<div class="icon-thumb-up text-success pt-1 mr-2"></div>
-																<div class="small text-success font-weight-bold ">{{post.rating}} </div>
-															</div>
-															<div class="d-flex flex-row align-items-center w-px-90">
-																<div class="icon-open-eye text-secondary pt-1 mr-2"></div>
-																<div class="small text-secondary">{{guid.view}} </div>
-															</div>
-															<div class="d-flex flex-row align-items-center mr-1">
-																<div class="icon-chat-bubble text-secondary pt-1 mr-2"></div>
-																<div class="small text-secondary">{{guid.comment}}</div>
-															</div>
+														<div class="text-secondary small">последний {{forum.date | fdate}}</div>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+									<div class="bt-5 " v-if="index == 10">
+										<div class="h2 my-4">
+											<a href="">Гайды</a>
+										</div>
+										<div class="row ">
+											<div class="col-4 d-flex flex-column" v-for="(guid, index) in guids">
+												<img :src="guid.img" alt="" class="rounded">
+												<div class="post-image-wrap mb-3"></div>
+												<div class="d-flex flex-column media-body">
+													<div class="small text-secondary mb-1">
+														{{guid.date | fdate}} <a href="">{{guid.author}}</a>
+													</div>
+													<div class="mb-2">
+														<a href="" class="">{{guid.title}}</a>
+													</div>
+													<div class="d-flex flex-row align-items-center mt-auto">
+														<div class="d-flex flex-row align-items-center mr-4 rating-plate">
+															<div class="icon-thumb-up text-success pt-1 mr-2"></div>
+															<div class="small text-success font-weight-bold ">{{post.rating}} </div>
+														</div>
+														<div class="d-flex flex-row align-items-center w-px-90">
+															<div class="icon-open-eye text-secondary pt-1 mr-2"></div>
+															<div class="small text-secondary">{{guid.view}} </div>
+														</div>
+														<div class="d-flex flex-row align-items-center mr-1">
+															<div class="icon-chat-bubble text-secondary pt-1 mr-2"></div>
+															<div class="small text-secondary">{{guid.comment}}</div>
+														</div>
                                                             <!-- 
                                                             	<div class="text-secondary small">последний {{guid.date | fdate}}</div> -->
                                                             </div>
