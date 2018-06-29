@@ -63,7 +63,6 @@
 							</div>
 
 							<button type="button" class="btn btn-secondary btn-block mb-2">Выбрать раздел</button>
-							<!-- <button class="btn btn-secondary btn-block mb-2">Выбрать тему</button> -->
 							<div class="" v-for="(post, index) in posts">
 								<div class="py-4 bb-1">
 									<div class="row">
@@ -122,17 +121,7 @@
 											<div class="h3 mb-3">
 												<a href="">{{newitem.title}}</a>
 											</div>
-                                                <!-- <div class="d-flex flex-row align-items-center mb-3">
-												<div class="d-flex flex-row ">
-													<div class="" v-for="(tag, index) in post.tags"  v-if="index == 1">
-														<div class="  ">
-															<a class="text-secondary" href="">
-																{{tag}} 
-															</a>
-														</div>
-													</div>
-												</div>
-											</div> -->
+                      
 											<div class="post-image-wrap mb-2">
 												<img :src="newitem.fullimg" alt="" class="rounded img-fluid">
 											</div>
