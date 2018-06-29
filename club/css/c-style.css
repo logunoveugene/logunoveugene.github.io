@@ -2,6 +2,11 @@ body {
     font-family: "PT Sans";
 }
 
+.logo {
+    height: 24px;
+    width: auto;
+}
+
 .form-control.search {
     border-radius: .5rem;
     background: white url('https://i.snag.gy/7rBCoa.jpg') no-repeat 97% 50%;
@@ -133,10 +138,7 @@ h4, .h4 {
     width: 90px;
 }
 
-.logo {
-    height: 24px;
-    width: auto;
-}
+
 
 .shadow-plate {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.05);
