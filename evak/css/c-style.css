@@ -1,0 +1,34 @@
+   html, body {
+      position: relative;
+      height: 100%;
+    }  
+.swiper-container {
+      width: 100%;
+      height: 100%;
+
+    }
+   .swiper-slide {
+
+ position: relative;
+    }
+
+    .first-screen{
+        background-image:url(http://cargomart.ru/static/img/bg-index-1dac94d24783a310fda676a6bcdcf5e7.jpg);
+        height: 100vh;
+        width: 100vw;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        background-size: cover; 
+    }
+    .main-title{
+        font-family: 'Montserrat', sans-serif;
+        font-size: 56px;
+        font-weight: 700;
+        color:#fff;
+    }
+
+    .btn-group-lg>.btn, .btn-lg {
+    padding: 1rem 1.5rem;
+
+}
