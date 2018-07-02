@@ -267,7 +267,22 @@ h4, .h4 {
 }
 
 .post-image-wrap {
+
     position: relative;
+    max-height: 180px;
+    overflow: hidden;
+/*        box-shadow: 0 15px 30px -10px rgba(0,0,0,0.3);*/
+        z-index: 500;
+}
+
+
+.blured-bg{
+position: absolute;
+    top: 20px;
+    left: 38px;
+    z-index: 5;
+    max-height: 160px;
+    filter: blur(20px);
 }
 
 .post-rating {
@@ -335,9 +350,7 @@ h4, .h4 {
     transition: all .5s;
 }
 
-.rounded:hover {
-    box-shadow: 0 15px 30px -10px rgba(0,0,0,0.3);
-}
+
 
 .title:hover + .rounded {
     border-radius: .5rem!important;
