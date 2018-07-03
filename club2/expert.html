@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Помощь экспертам</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript" >
+		(function (d, w, c) {
+			(w[c] = w[c] || []).push(function() {
+				try {
+					w.yaCounter49414636 = new Ya.Metrika2({
+						id:49414636,
+						clickmap:true,
+						trackLinks:true,
+						accurateTrackBounce:true,
+						webvisor:true
+					});
+				} catch(e) { }
+			});
+
+			var n = d.getElementsByTagName("script")[0],
+			s = d.createElement("script"),
+			f = function () { n.parentNode.insertBefore(s, n); };
+			s.type = "text/javascript";
+			s.async = true;
+			s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+			if (w.opera == "[object Opera]") {
+				d.addEventListener("DOMContentLoaded", f, false);
+			} else { f(); }
+		})(document, window, "yandex_metrika_callbacks2");
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/49414636" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
+	<link rel="stylesheet prefetch" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css" rel="stylesheet">
+	<link href="https://file.myfontastic.com/QetMhtPrQUo9korwEw7VkX/icons.css" rel="stylesheet">
+	<link href="css/c-style.css" rel="stylesheet">
+</head>
+<body>
+	<div id="app" class="main-layout" :class="live">
+		<div class="live" v-if="live == 'showlive'">
+			<div class="bg-light p-2">
+				<div class="d-flex small c-pointer" v-on:click="liveoff">Скрыть</div>
+			</div>
+			<div class="d-flex flex-row align-items-center p-3">
+				<div class="h1 mb-0">Прямой эфир</div>
+				<div class="ml-3  pulse"></div>
+			</div>
+			<div class="scrol-plate">
+				<ul class="list-unstyled small">
+					<li class="media mb-4 " v-for="(live, index) in lives">
+						<div class="media-body">
+							<div class="  mb-1">{{live.type}}</div>
+							<a href="" class="">{{live.title}}</a>
+							<div class="">{{live.desc}}
+							</div>
+							<div class="d-flex flex-row align-items-center justify-content-between mt-2">
+								<a class="dotted-link small " href="">Ответить</a>
+								<div class="text-secondary small">{{live.date | fdate}} {{live.author}}</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="text-center mb-3">Загрузка</div>
+			</div>
+		</div>
+		<div class="d-lg-none">
+			<div class="container">
+				<div class="row bb-1 py-3">
+					<div class="col-12">
+						<div class="d-flex flex-row align-items-center justify-content-between">
+							<img src="https://i.snag.gy/23I0JN.jpg" alt="">
+							<img class="logo " src="https://i.snag.gy/p4txCj.jpg" alt="">
+							<img src="https://i.snag.gy/7rBCoa.jpg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="row-12 pt-3">
+					<div class="tab-content" id="pills-tabContent">
+						<div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+							<div class="d-flex flex-row align-items-center justify-content-between mb-3">
+								<div class="h1 mb-0">Блоги</div>
+								<div class="d-flex flex-row align-items-center">
+									<img src="https://i.snag.gy/sU7jur.jpg" alt="" class="mr-2">
+									<div class="font-weight-bold dotted-link mb-1">
+										<a href="">Написать</a>
+									</div>
+								</div>
+							</div>
+
+							<button type="button" class="btn btn-secondary btn-block mb-2">Выбрать раздел</button>
+							<div class="" v-for="(post, index) in posts">
+								<div class="py-4 bb-1">
+									<div class="row">
+										<div class="col-12 d-flex flex-column ">
+											<div class="h3 "><a href="">{{post.title}}</a></div>
+											<div class="d-flex flex-row align-items-center mb-3">
+												<div class="d-flex flex-row ">
+													<div class="" v-for="(tag, index) in post.tags" v-if="index == 1">
+														<div class="  ">
+															<a class="text-secondary" href="">{{tag}} 
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="post-image-wrap mb-3">
+												<div class="post-rating">
+													<div class="badge-blue">Pro-обзор</div>
+												</div>
+												<img :src="post.fullimg" alt="" class="rounded img-fluid">
+											</div>
+											<div class="text-dark mb-2 short-text">{{post.desc }}</div>
+											<div class="d-flex flex-row align-items-center mb-3">
+												<div class="small text-secondary">
+													{{post.date | fdate}} <a href="">{{post.author}}</a>
+												</div>
+											</div>
+											<div class="d-flex flex-row align-items-center justify-content-between mb-0">
+												<div class="d-flex flex-row align-items-center  rating-plate">
+													<div class="icon-thumb-up text-success pt-1 mr-2"></div>
+													<div class="small text-success font-weight-bold ">{{post.rating}} </div>
+												</div>
+												<div class="d-flex flex-row align-items-center ml-auto mr-4">
+													<div class="icon-open-eye text-secondary pt-1 mr-2"></div>
+													<div class="small text-secondary">{{post.view}}</div>
+												</div>
+												<div class="d-flex flex-row align-items-center ">
+													<div class="icon-chat-bubble text-secondary pt-1 mr-2"></div>
+													<div class="small text-secondary">{{post.comment}} </div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+							<div class="d-flex flex-row align-items-center justify-content-between mb-3">
+								<div class="h1 mb-0">Новости</div>
+							</div>
+							<button type="button" class="btn btn-secondary btn-block mb-2">Выбрать раздел</button>
+							<div class="" v-for="(newitem, index) in news">
+								<div class="py-4 bb-1">
+									<div class="row">
+										<div class="col-12 d-flex flex-column ">
+											<div class="h3 mb-3">
+												<a href="">{{newitem.title}}</a>
+											</div>
+
+											<div class="post-image-wrap mb-2">
+												<img :src="newitem.fullimg" alt="" class="rounded img-fluid">
+											</div>
+											<div class="text-dark mb-2 short-text">{{newitem.desc }}</div>
+											<div class="d-flex flex-row align-items-center mb-3">
+												<div class="small text-secondary">
+													{{newitem.date | fdate}} <a href="">{{newitem.author}}</a>
+												</div>
+											</div>
+											<div class="d-flex flex-row align-items-center justify-content-between mb-0">
+												<div class="d-flex flex-row align-items-center rating-plate">
+													<div class="icon-thumb-up text-success pt-1 mr-2"></div>
+													<div class="small text-success font-weight-bold ">{{newitem.rating}} </div>
+												</div>
+												<div class="d-flex flex-row align-items-center  ml-auto mr-4">
+													<div class="icon-open-eye text-secondary pt-1 mr-2"></div>
+													<div class="small text-secondary">{{newitem.view}}</div>
+												</div>
+												<div class="d-flex flex-row align-items-center ">
+													<div class="icon-chat-bubble text-secondary pt-1 mr-2"></div>
+													<div class="small text-secondary">{{newitem.comment}} </div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade show active" id="ask-tab" role="tabpanel" aria-labelledby="pills-ask-tab">
+							<div class="d-flex flex-row align-items-center justify-content-between mb-3">
+								<div class="h1 mb-0">Вопросы</div>
+								<div class="d-flex flex-row align-items-center">
+									<img src="https://i.snag.gy/6EW0zx.jpg" alt="" class="mr-2">
+									<div class="font-weight-bold dotted-link mb-1">
+										<a href="">Спросить</a>
+									</div>
+								</div>
+							</div>
+							<button type="button" class="btn btn-secondary btn-block mb-2">Выбрать раздел</button>
+							<div v-for="(ask, index) in orderedAsks" v-if="index != 0" class="py-4 bb-1">
+								<div class="d-flex flex-column">
+									<div class="mt-0 mb-2 small">{{ask.product}}</div>
+									<div class="mb-3">
+										<a href="" class="">{{ask.desc}}</a>
+									</div>
+									<div class="d-flex flex-row align-items-center justify-content-between mt-auto">
+										<a href="#" class="dotted-link small ">Ответить</a>
+										<div class="text-secondary small">
+											{{ask.date | fdate}} <a href="">{{ask.author}}</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+							<!-- <button type="button" class="btn btn-secondary btn-block mb-5 pb-2">Показать все</button> -->
+						</div>
+						<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+							<div class="d-flex flex-row align-items-center mb-3">
+								<div class="h1 mb-0">Прямой эфир</div>
+								<div class="ml-3  pulse"></div>
+							</div>
+							<button type="button" class="btn btn-secondary btn-block mb-2">Выбрать раздел</button>
+							<ul class="list-unstyled ">
+								<li class="media py-4 bb-1" v-for="(live, index) in lives">
+									<div class="media-body">
+										<div class=" small mb-1">{{live.type}}</div>
+										<a href="" class="mb-1">{{live.title}}</a>
+										<div class="mb-3">{{live.desc}}
+										</div>
+										<div class="d-flex flex-row align-items-center justify-content-between mt-2">
+											<a class="dotted-link small " href="">Ответить</a>
+											<div class="text-secondary small">{{live.date | fdate}} <a href="">{{live.author}}</a></div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<button type="button" class="btn btn-secondary btn-block">Показать все</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bottom-plate fixed-bottom">
+				<ul class="nav nav-pills nav-justified" id="pills-tab" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link " id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="false">Блоги</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Новости</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" id="pills-ask-tab" data-toggle="pill" href="#ask-tab" role="tab" aria-controls="ask-tab" aria-selected="true">Вопросы</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Эфир </a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="bg-light d-none d-lg-block">
+			<div class="bg-light">
+				<div class="container ">
+					<div class="row py-2">
+						<div class="col-8">
+							<div class="d-flex flex-row align-items-center mr-5">
+								<div class="small text-secondary mr-3">DNS</div>
+								<div class="small text-secondary mr-3">DNS Технопоинт</div>
+								<div class="small text-secondary mr-3">DNS Сервис</div>
+							</div>
+							<div class="d-flex flex-row align-items-center mr-5"></div>
+						</div>
+						<div class="col-4 " >
+							<div class="d-flex flex-row align-items-center justify-content-between">
+								<div class="small text-secondary ">
+									<img class="mr-2 mb-1" src="https://i.snag.gy/35Eqzh.jpg" alt="">Тур по сайту
+								</div>
+								<div class="small text-secondary c-pointer" v-on:click="liveon" v-if="live == ''">
+									<img class="mr-2 mb-1" src="https://i.snag.gy/iNKObg.jpg" alt="">Эфир
+								</div>
+								<div class="small text-secondary font-weight-bold">Вход | Регистрация</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bg-white shadow-plate mb-4 sticky-top ">
+				<div class="container">
+					<div class="row py-4">
+						<div class="col-8 d-flex flex-row align-items-center ">
+							<img class="logo mr-5" src="https://i.snag.gy/p4txCj.jpg" alt="">
+							<div class="d-flex flex-row align-items-center justify-content-around  w-100">
+								<a class=" px-1" href="#">Блоги</a>
+								<a class=" px-1" href="#">Помощь эксперта</a>
+								<a class=" px-1" href="#">Новости</a>
+								<a class=" px-1 mr-4" href="#">Участники</a>
+							</div>
+							<!-- <img class="ml-auto" src="https://i.snag.gy/7rBCoa.jpg" alt=""> -->
+						</div>
+						<div class="col-4 ">
+							<div class="d-flex flex-row align-items-center justify-content-between">
+								
+								<div class="d-flex flex-row align-items-center">
+									<img class="mr-2 " src="https://i.snag.gy/hla2bk.jpg">
+									<a href="">Опубликовать</a>
+								</div>
+								<div class="d-flex flex-row align-items-center ">
+									<img class="mr-2 " src="https://i.snag.gy/zoTIys.jpg">
+									<a href="">Задать вопрос</a>
+								</div>
+								<div class="">
+									<img src="https://i.snag.gy/7rBCoa.jpg" alt="">
+								</div>
+
+
+							</div>
+
+
+							
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="card mb-5">
+							<div class="card-body">
+								<div class="d-flex flex-row align-items-center mb-4">
+									<div class="h1 mb-0">
+										Помощь эксперта
+									</div>
+								</div>
+								<div class="form-row mb-5">
+									<div class="col-6">
+										<input type="text" class="form-control " placeholder="Поиск по вопросам"> 
+									</div>
+									<div class="col-3">
+										<select class="custom-select ">
+											<option selected>Тема вопроса</option>
+											<option value="1">One</option>
+											<option value="2">Two</option>
+											<option value="3">Three</option>
+										</select>
+									</div>
+									<div class="col-3">
+										<button type="button" class="btn btn-light">
+											<div class="icon-settings setting-button-icon"></div>
+										</button>
+									</div>
+									
+									
+								</div>
+								<div class="row">
+									<div class="col-12">
+										<div class="ask-list">
+									<ul class="list-unstyled mb-4">
+										<li class="media py-4 bb-1" v-for="(ask, index) in orderedAsks" >
+											<div class="ask-item-image-wrap mr-5 text-center">
+												<img class=" ask-item-image" :src="ask.img">
+											</div>
+											<div class="media-body">
+												<div class="d-flex flex-row align-items-center ">
+													<div class="mr-2 small">{{ask.product}}</div>
+													<span class="text-secondary">|</span>
+													<div class="small ml-2 ">{{ask.type}}</div>
+												</div>
+												<div class=""><a href="" class="">{{ask.desc}}</a></div>
+												<div class="d-flex flex-row align-items-center justify-content-between mt-2">
+													<a href="#" class="dotted-link small ">Ответить</a>
+													<div class="text-secondary small">{{ask.date | fdate}} <a href="">{{ask.author}}</a></div>
+												</div>
+											</div>
+										</li>
+									</ul>
+			
+								</div>
+									</div>
+								</div>
+								
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- lakfjlkdfjlsdjflkadfslakfjlkdfjlsdjflkadfslakfjlkdfjlsdjflkadfslakfjlkdfjlsdjflkadfs -->
+
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
+	<script src="https://unpkg.com/vue"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue-awesome-swiper@3.1.2/dist/vue-awesome-swiper.js"></script>
+	<script src="https://gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+	<script src="https://unpkg.com/vuefire/dist/vuefire.js"></script>
+	<script src="https://unpkg.com/dayjs@1.6.9/dayjs.min.js"></script>
+	<script src="https://unpkg.com/dayjs@1.6.9/plugin/relativeTime.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+	<script src="js/ru.js"></script>
+	<script src="js/custom.js"></script>
+</body>
+</html>
