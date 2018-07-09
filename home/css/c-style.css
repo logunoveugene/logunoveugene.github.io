@@ -175,26 +175,37 @@ h4, .h4 {
 }
 
 .benefit_bonus{
-        background: #fff url(https://i.snag.gy/dRSKOJ.jpg) no-repeat 240% 160%;
+        background: #fff url(https://i.snag.gy/dRSKOJ.jpg) no-repeat 240% 140%;
     background-size: 80%;
 
 }
 
 .benefit_bonus:hover{
-        background: #fff url(https://cdn.dribbble.com/users/796725/screenshots/3731828/coin.gif) no-repeat 240% 160%;
+        background: #fff url(https://cdn.dribbble.com/users/796725/screenshots/3731828/coin.gif) no-repeat 240% 140%;
     background-size: 80%;
 }
 
 
 
+
 .benefit_builder{
-     background: #fff url(https://i.snag.gy/Lt6diI.jpg) no-repeat 172% 290%;
-    background-size: 70%;
+      background: #fff url(https://i.snag.gy/MRxyLE.jpg) no-repeat 94% 10%;
+    background-size: 20%;
 }
 
 
 .benefit_builder:hover{
-        background: #fff url(https://cdn.dribbble.com/users/982993/screenshots/3554801/like_v3.gif) no-repeat 172% 290%;
+         background: #fff url(https://s1.gifyu.com/images/transform.gif) no-repeat 94% 10%;
+    background-size: 20%;
+}
+.benefit_order{
+     background: #fff url(https://i.snag.gy/Lt6diI.jpg) no-repeat 172% 250%;
+    background-size: 70%;
+}
+
+
+.benefit_order:hover{
+        background: #fff url(https://cdn.dribbble.com/users/982993/screenshots/3554801/like_v3.gif) no-repeat 172% 250%;
     background-size: 70%;
 }
 
