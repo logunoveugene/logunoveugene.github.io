@@ -13,6 +13,33 @@ body {
 .rounded {
     border-radius: .5rem!important;
 }
+
+.nav-link {
+    white-space: nowrap;
+    padding: 1rem 0 ;
+    margin-right: 2.5rem;
+}
+
+.nav {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.nav-link {
+
+    padding: .5rem 0;
+
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+          border-color: rgb(246, 246, 246);
+    box-shadow: inset 0 -2px orange;
+    background: none;
+    color: orange;
+}
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+       border-color: rgb(246, 246, 246);
+}
 .bg-light {
     background-color: #f6f6f6!important;
 }
