@@ -1,0 +1,229 @@
+body {
+    font-family: "PT Sans";
+    -webkit-font-smoothing:antialiased;
+}
+
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 12px;
+    padding-left: 12px;
+}
+
+.bg-light {
+    background-color: #f6f6f6!important;
+}
+.card-body {
+    padding: 2rem;
+}
+
+a {
+    color: #0D61AF;
+    transition: all .2s;
+}
+
+a:hover {
+    color: #FC5808;
+    text-decoration: none;
+}
+
+h1, .h1 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+h2, .h2 {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+h3, .h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+
+h4, .h4 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+}
+
+.small {
+    font-size: 0.875rem;
+}
+
+.lh-12{
+    line-height: 1.2;
+}
+
+.btn-secondary {
+    border: 1px solid #D9D9D9;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+/*    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);*/
+    color: black;
+    padding: .5rem 0.75rem;
+}
+
+
+
+.btn-secondary:hover {
+    background: #FC8507;
+    color: #FFF;
+    border: 1px solid #FC8507;
+    transition: .4s;
+}
+
+.btn-primary {
+    background: linear-gradient(0deg, #FC8507 0%, #FD9B09 100%);
+    box-shadow: 0 4px 5px 0 #D9D9D9;
+    color: white;
+    font-weight: 700;
+    padding: .5rem 0.75rem;
+    border-radius: 8px;
+    border: none;
+}
+
+
+.card {
+    border-radius: .5rem;
+    border: none;
+    position: relative;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+    transition: .5s;
+}
+
+.card.float:hover {
+
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+}
+
+
+.card.float:hover .btn-secondary{
+  background: #FC8507;
+    color: #FFF;
+    border: 1px solid #FC8507;
+    transition: .4s;
+}
+
+
+.bb-1 {
+    border-bottom: 1px solid #eee;
+}
+
+.bb-5 {
+    border-bottom: 5px solid #eee;
+}
+
+.bt-5 {
+    border-top: 5px solid #eee;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+}
+
+
+
+.category__image{
+    height: 120px;
+    margin-bottom: 24px;
+    align-items: flex-end;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+
+
+
+
+
+
+.action_bonus{
+    background: #fff url("https://i.snag.gy/75tnw1.jpg") no-repeat 100% bottom;
+    height: 200px;
+}
+.action_sale{
+    background: #fff url("https://i.snag.gy/dxSlBo.jpg") no-repeat 90% bottom;
+        height: 200px;
+}
+.action_gift{
+    background: #fff url("https://i.snag.gy/jiz1EN.jpg") no-repeat 50% bottom;
+        height: 200px;
+}
+
+.benefit_bonus{
+        background: #fff url(https://i.snag.gy/dRSKOJ.jpg) no-repeat 240% 160%;
+    background-size: 80%;
+
+}
+
+.benefit_bonus:hover{
+        background: #fff url(https://cdn.dribbble.com/users/796725/screenshots/3731828/coin.gif) no-repeat 240% 160%;
+    background-size: 80%;
+}
+
+
+
+.benefit_builder{
+     background: #fff url(https://i.snag.gy/Lt6diI.jpg) no-repeat 172% 290%;
+    background-size: 70%;
+}
+
+
+.benefit_builder:hover{
+        background: #fff url(https://cdn.dribbble.com/users/982993/screenshots/3554801/like_v3.gif) no-repeat 172% 290%;
+    background-size: 70%;
+}
+
+.head{
+    height: 100px;
+         background: #fff url(https://i.snag.gy/TSf6en.jpg) no-repeat center;
+             box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+}
+
+
+.w-20{
+    width: 20%
+}
+
+.product-plate-image__wrap{
+    height: 170px;
+       position: relative;
+       margin-bottom: 24px;
+
+}
+.product-plate-image{
+    max-height: 100%;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+        max-width: 100%;
+   
+
+
+}
+
