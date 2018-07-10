@@ -239,9 +239,11 @@ h4, .h4 {
 }
 
 .head{
-    height: 100px;
-         background: #fff url(https://i.snag.gy/TSf6en.jpg) no-repeat center;
+    height: 104px;
+         background: #fff url(https://i.snag.gy/je8N5v.jpg) no-repeat center;
              box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+             z-index: 5000000;
+    position: relative;
 }
 
 
