@@ -269,3 +269,16 @@ h4, .h4 {
 
 }
 
+.brand__item{
+    filter: grayscale(100%);
+    opacity:  .4;
+    transition: .5s;
+    cursor: pointer;
+}
+
+
+.brand__item:hover{
+    filter: none;
+    opacity:  1;
+}
+
