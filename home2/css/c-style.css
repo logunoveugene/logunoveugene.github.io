@@ -408,7 +408,7 @@ h4, .h4 {
       width: 100%;
       padding: 0;
 
-      background-color: #f6f6f6;
+      background-color: #fc8908;
       color: black;
     }
     .cd-morph-dropdown::before {
@@ -429,12 +429,13 @@ h4, .h4 {
       padding: 0 2rem 0 0;
       height: 60px;
       line-height: 60px;
-      color: #666;
+      color: #fff;
       font-size: 1rem;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       -webkit-transition: opacity .2s;
       transition: opacity .2s;
+      font-weight: 700;
     }
     .cd-morph-dropdown.is-dropdown-visible .main-nav > ul > li > a {
       /* main navigation hover effect - on hover, reduce opacity of elements not hovered over */
