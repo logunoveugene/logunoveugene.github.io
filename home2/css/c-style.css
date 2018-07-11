@@ -240,7 +240,7 @@ h4, .h4 {
 
 .head{
     height: 104px;
-         background: #fff url(https://i.snag.gy/je8N5v.jpg) no-repeat center;
+         background: #fff url(https://i.snag.gy/svxqIU.jpg) no-repeat center;
              box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
              z-index: 5000000;
     position: relative;
@@ -407,7 +407,7 @@ h4, .h4 {
       top: 0;
       width: 100%;
       padding: 0;
-      text-align: center;
+
       background-color: #f6f6f6;
       color: black;
     }
@@ -418,7 +418,7 @@ h4, .h4 {
       display: none;
     }
     .cd-morph-dropdown .main-nav {
-      display: inline-block;
+      display: block;
     }
     .cd-morph-dropdown .main-nav > ul > li {
       display: inline-block;
@@ -426,7 +426,7 @@ h4, .h4 {
     }
     .cd-morph-dropdown .main-nav > ul > li > a {
       display: block;
-      padding: 0 1rem;
+      padding: 0 2rem 0 0;
       height: 60px;
       line-height: 60px;
       color: #666;
@@ -485,23 +485,28 @@ h4, .h4 {
     .no-csstransitions .cd-morph-dropdown .dropdown-list {
       display: none;
     }
-    .cd-morph-dropdown .dropdown-list::before {
+ .dropdown-mark::before {
       /* dropdown top triangle */
-      content: '';
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      right: auto;
-      -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-      transform: translateX(-50%);
-      height: 0;
-      width: 0;
-      border: 8px solid transparent;
-      border-bottom-color: #FFFFFF;
-      opacity: 0;
-      -webkit-transition: opacity .3s;
-      transition: opacity .3s;
+    content: '';
+    position: relative;
+    display: block!important;
+    bottom: 100%;
+    left: 50%;
+    right: auto;
+    top: -15px;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    height: 10px;
+    width: 10px;
+    border: 8px solid transparent;
+    border-bottom-color: #FFFFFF;
+    opacity: 0;
+    -webkit-transition: opacity .3s;
+    transition: opacity .3s;
+
+    z-index: 100000;
+    opacity: 1;
     }
     .cd-morph-dropdown .dropdown-list > ul {
       position: relative;
@@ -535,14 +540,14 @@ h4, .h4 {
       visibility: visible;
     }
     .cd-morph-dropdown .dropdown.move-left .content {
-      -webkit-transform: translateX(-100px);
-      -ms-transform: translateX(-100px);
-      transform: translateX(-100px);
+      -webkit-transform: translateX(-10px);
+      -ms-transform: translateX(-10px);
+      transform: translateX(-10px);
     }
     .cd-morph-dropdown .dropdown.move-right .content {
-      -webkit-transform: translateX(100px);
-      -ms-transform: translateX(100px);
-      transform: translateX(100px);
+      -webkit-transform: translateX(10px);
+      -ms-transform: translateX(10px);
+      transform: translateX(10px);
     }
  
     .cd-morph-dropdown .content {
@@ -551,7 +556,8 @@ h4, .h4 {
       transition: transform .3s;
       transition: transform .3s, -webkit-transform .3s;
       text-align: left;
-         width: 510px;
+         width: 100vw;
+  height: 300px;
       padding: 1.5rem 1.5rem 0 1.5rem;
     }
 
@@ -562,8 +568,8 @@ h4, .h4 {
       position: absolute;
       top: 0;
       left: 0;
-      height: 1px;
-      width: 1px;
+      height: 300px;
+      width: 100vw;
       background: #FFFFFF;
       opacity: 0;
       -webkit-transition: opacity .3s;
@@ -592,8 +598,8 @@ h4, .h4 {
       position: absolute;
       top: 0;
       left: 0;
-      height: 1px;
-      width: 1px;
+    height: 300px;
+      width: 100vw;
       background: #FFFFFF;
       opacity: 0;
       transition: opacity .3s;

@@ -6,6 +6,7 @@ jQuery(document).ready(function($){
     this.mainNavigation = this.element.find('.main-nav');
     this.mainNavigationItems = this.mainNavigation.find('.has-dropdown');
     this.dropdownList = this.element.find('.dropdown-list');
+    this.dropdownMark = this.element.find('.dropdown-mark');
     this.dropdownWrappers = this.dropdownList.find('.dropdown');
     this.dropdownItems = this.dropdownList.find('.content');
     this.dropdownBg = this.dropdownList.find('.bg-layer');
@@ -82,21 +83,30 @@ jQuery(document).ready(function($){
 
   morphDropdown.prototype.updateDropdown = function(dropdownItem, height, width, left) {
     this.dropdownList.css({
-        '-moz-transform': 'translateX(' + left + 'px)',
-        '-webkit-transform': 'translateX(' + left + 'px)',
-      '-ms-transform': 'translateX(' + left + 'px)',
-      '-o-transform': 'translateX(' + left + 'px)',
-      'transform': 'translateX(' + left + 'px)',
+      //   '-moz-transform': 'translateX(' + left + 'px)',
+      //   '-webkit-transform': 'translateX(' + left + 'px)',
+      // '-ms-transform': 'translateX(' + left + 'px)',
+      // '-o-transform': 'translateX(' + left + 'px)',
+      // 'transform': 'translateX(' + left + 'px)',
       'width': width+'px',
       'height': height+'px'
     });
 
+    this.dropdownMark.css({
+        '-moz-transform': 'translateX(' + left + 'px)',
+        '-webkit-transform': 'translateX(' + left + 'px)',
+      '-ms-transform': 'translateX(' + left + 'px)',
+      '-o-transform': 'translateX(' + left + 'px)',
+      'transform': 'translateX(' + left + 'px)'
+
+    });
+
     this.dropdownBg.css({
-      '-moz-transform': 'scaleX(' + width + ') scaleY(' + height + ')',
-        '-webkit-transform': 'scaleX(' + width + ') scaleY(' + height + ')',
-      '-ms-transform': 'scaleX(' + width + ') scaleY(' + height + ')',
-      '-o-transform': 'scaleX(' + width + ') scaleY(' + height + ')',
-      'transform': 'scaleX(' + width + ') scaleY(' + height + ')'
+      // '-moz-transform': 'scaleX(' + width + ') scaleY(' + height + ')',
+      //   '-webkit-transform': 'scaleX(' + width + ') scaleY(' + height + ')',
+      // '-ms-transform': 'scaleX(' + width + ') scaleY(' + height + ')',
+      // '-o-transform': 'scaleX(' + width + ') scaleY(' + height + ')',
+      // 'transform': 'scaleX(' + width + ') scaleY(' + height + ')'
     });
   };
 
