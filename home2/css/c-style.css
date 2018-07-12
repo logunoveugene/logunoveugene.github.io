@@ -240,9 +240,9 @@ h4, .h4 {
 }
 
 .head{
-    height: 104px;
-         background: #fff url(https://i.snag.gy/svxqIU.jpg) no-repeat center;
-             box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
+    height: 57px;
+         background: #fff url(https://i.snag.gy/NqBFiU.jpg) no-repeat center;
+             
              z-index: 5000000;
     position: relative;
 }
@@ -310,6 +310,7 @@ h4, .h4 {
     position: relative;
     height: 60px;
     background-color: #007bff;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.25);
   }
   .cd-morph-dropdown::before {
     /* never visible - used in JS to check mq */
@@ -430,7 +431,7 @@ h4, .h4 {
       padding: 0 2rem 0 0;
       height: 60px;
       line-height: 60px;
-      color: #333;
+      color: #0D61AF;
       font-size: 0.875rem;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -611,3 +612,17 @@ h4, .h4 {
       transition: transform .3s, opacity .3s;
     }
   }
+
+
+
+  .search-input{
+    width: 240px;
+    height: 60px;
+    border: none;
+    border-radius: 0;
+    padding: .5rem;
+    font-size: 0.875rem;
+    background: url("https://i.snag.gy/B5h4Cv.jpg") no-repeat center right;
+  }
+
+  .search-input:focus { outline: none; }
