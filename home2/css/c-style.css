@@ -241,7 +241,7 @@ h4, .h4 {
 
 .head{
     height: 57px;
-         background: #fff url(https://i.snag.gy/NqBFiU.jpg) no-repeat center;
+         background: #fff url(https://i.snag.gy/LzKinG.jpg) no-repeat center;
              
              z-index: 5000000;
     position: relative;
@@ -502,7 +502,7 @@ h4, .h4 {
     height: 10px;
     width: 10px;
     border: 8px solid transparent;
-    border-bottom-color: #FFFFFF;
+    border-bottom-color: #f6f6f6;
     opacity: 0;
     -webkit-transition: opacity .3s;
     transition: opacity .3s;
@@ -572,7 +572,7 @@ h4, .h4 {
       left: 0;
       height: 300px;
       width: 100vw;
-      background: #FFFFFF;
+      background: #f6f6f6;
       opacity: 0;
       -webkit-transition: opacity .3s;
       transition: opacity .3s;
@@ -602,7 +602,7 @@ h4, .h4 {
       left: 0;
     height: 300px;
       width: 100vw;
-      background: #FFFFFF;
+      background: #f6f6f6;
       opacity: 0;
       transition: opacity .3s;
       transform-origin: top left;
@@ -613,7 +613,9 @@ h4, .h4 {
     }
   }
 
-
+.p-rel{
+  position: relative;
+}
 
   .search-input{
     width: 240px;
@@ -622,7 +624,17 @@ h4, .h4 {
     border-radius: 0;
     padding: .5rem;
     font-size: 0.875rem;
-    background: url("https://i.snag.gy/B5h4Cv.jpg") no-repeat center right;
+    background: #fff url("https://i.snag.gy/B5h4Cv.jpg") no-repeat center right;
+    transition: .5s;
+    position: absolute;
+    right: 0;
   }
 
-  .search-input:focus { outline: none; }
+  .search-input:focus  { 
+    outline: none; 
+    width: 1180px;
+    z-index: 5000;
+    
+
+  }
+
