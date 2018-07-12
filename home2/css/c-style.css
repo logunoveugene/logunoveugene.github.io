@@ -193,15 +193,15 @@ h4, .h4 {
 
 .action_bonus{
     background: #fff url("https://i.snag.gy/75tnw1.jpg") no-repeat 100% bottom;
-    height: 200px;
+    height: 190px;
 }
 .action_sale{
     background: #fff url("https://i.snag.gy/dxSlBo.jpg") no-repeat 90% bottom;
-        height: 200px;
+        height: 190px;
 }
 .action_gift{
     background: #fff url("https://i.snag.gy/jiz1EN.jpg") no-repeat 50% bottom;
-        height: 200px;
+        height: 190px;
 }
 
 .benefit_bonus{
@@ -259,12 +259,12 @@ h4, .h4 {
 
 }
 .product-plate-image{
-    max-height: 100%;
+    max-height: 80%;
     position: absolute;
     top: 50%;
     left:50%;
     transform: translate(-50%, -50%);
-        max-width: 100%;
+        max-width: 80%;
    
 
 
@@ -506,9 +506,12 @@ h4, .h4 {
     opacity: 0;
     -webkit-transition: opacity .3s;
     transition: opacity .3s;
-
     z-index: 100000;
-    opacity: 1;
+  
+    }
+
+    .cd-morph-dropdown.is-dropdown-visible .dropdown-mark::before {
+      opacity: 1;
     }
     .cd-morph-dropdown .dropdown-list > ul {
       position: relative;
@@ -638,3 +641,10 @@ h4, .h4 {
 
   }
 
+
+
+.main-slider{
+/*  background: url(https://i.snag.gy/NTAW7G.jpg) no-repeat center;*/
+      background-color: #fff;
+  height: 200px; 
+}
