@@ -641,6 +641,18 @@ h4, .h4 {
 
   }
 
+.main-catalog{
+  position: absolute;
+  right: 0;
+}
+
+.acton-link{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 15px;
+}
 
 
 .main-slider{
