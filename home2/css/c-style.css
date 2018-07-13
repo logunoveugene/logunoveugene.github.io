@@ -193,25 +193,25 @@ h4, .h4 {
 
 .action_bonus{
     background: #fff url("https://i.snag.gy/75tnw1.jpg") no-repeat 100% bottom;
-    height: 190px;
+    height: 200px;
 }
 .action_sale{
     background: #fff url("https://i.snag.gy/dxSlBo.jpg") no-repeat 90% bottom;
-        height: 190px;
+        height: 200px;
 }
 .action_gift{
     background: #fff url("https://i.snag.gy/jiz1EN.jpg") no-repeat 50% bottom;
-        height: 190px;
+        height: 200px;
 }
 
 .benefit_bonus{
-        background: #fff url(https://i.snag.gy/dRSKOJ.jpg) no-repeat 240% 140%;
+        background: #fff url(https://i.snag.gy/dRSKOJ.jpg) no-repeat 240%  130%;
     background-size: 80%;
 
 }
 
 .benefit_bonus:hover{
-        background: #fff url(https://cdn.dribbble.com/users/796725/screenshots/3731828/coin.gif) no-repeat 240% 140%;
+        background: #fff url(https://cdn.dribbble.com/users/796725/screenshots/3731828/coin.gif) no-repeat 240%  130%;
     background-size: 80%;
 }
 
@@ -622,8 +622,8 @@ h4, .h4 {
     position: relative;
 }
 .head2{
-    height: 86px;
-    background: #fff url(https://i.snag.gy/Fa5omO.jpg) no-repeat center top;
+    height: 92px;
+    background: #fff url(https://i.snag.gy/45RkA0.jpg) no-repeat center top;
              
              z-index: 5000000;
     position: relative;
@@ -660,7 +660,7 @@ h4, .h4 {
 }
 
 .acton-link-wrap{
-    width: 135px;
+    width: 192px;
 
 }
 .acton-link{
