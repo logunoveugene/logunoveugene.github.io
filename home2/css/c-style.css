@@ -672,6 +672,8 @@ h4, .h4 {
 .has-dropdown {
     display: inline-block;
     font-size: 0.875rem;
+    height: 60px;
+    padding: 20px 0px;
 }
 
 
