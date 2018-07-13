@@ -151,3 +151,17 @@ jQuery(document).ready(function($){
     };
   }
 });
+
+
+
+
+
+var mySwiper = new Swiper('.swiper-container', {
+   navigation: {
+        nextEl: '.sw-button-next',
+        prevEl: '.sw-button-prev',
+      },
+          slidesPerView: 4
+
+
+});

@@ -555,7 +555,7 @@ h4, .h4 {
       transition: transform .3s;
       transition: transform .3s, -webkit-transform .3s;
       text-align: left;
-         width: 100vw;
+      width: 100vw;
   height: 300px;
       padding: 1.5rem 1.5rem 0 1.5rem;
     }
@@ -680,3 +680,63 @@ h4, .h4 {
       background-color: #fff;
   height: 200px; 
 }
+
+
+
+
+
+
+
+
+
+.sw-button-prev, .sw-container-rtl .sw-button-next {
+    left: 2rem;
+    right: auto;
+    transform: translateX(-10px);
+  
+}
+
+.sw-button-next, .sw-container-rtl .sw-button-prev {
+right: 2rem;
+    left: auto;
+   transform: translateX(10px);
+
+}
+
+
+
+.arrow-control:hover .sw-button-next, .arrow-control:hover .sw-button-prev {
+
+
+transform: translateX(0);
+opacity: 1
+
+}
+
+
+.sw-button-next, .sw-button-prev {
+    position: absolute;
+    top: 50%;
+        height: 35px;
+    width: 35px;
+    margin-top: -22px;
+    z-index: 10;
+    cursor: pointer;
+    background: #fff;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
+    opacity: 0;
+      transition: opacity .3s,  transform .3s;
+    border-radius: 50%;
+}
+
+.sw-button-next:hover, .sw-button-prev:hover{
+ background: #fc8908;
+ color:#fff;
+ transition: color .2s,  background .2s;
+}
+
+
+
+
+
+
