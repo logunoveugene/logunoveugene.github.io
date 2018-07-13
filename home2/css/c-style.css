@@ -736,7 +736,9 @@ opacity: 1
 }
 
 
-
+.swiper-set{
+  overflow: hidden;
+}
 
 
 

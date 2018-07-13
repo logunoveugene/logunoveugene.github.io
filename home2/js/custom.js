@@ -156,11 +156,12 @@ jQuery(document).ready(function($){
 
 
 
-var mySwiper = new Swiper('.swiper-container', {
+var mySwiper = new Swiper('.swiper-set', {
    navigation: {
         nextEl: '.sw-button-next',
         prevEl: '.sw-button-prev',
       },
+      
           slidesPerView: 4
 
 
