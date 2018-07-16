@@ -1,0 +1,126 @@
+body {
+    font-family: "PT Sans";
+    -webkit-font-smoothing: antialiased;
+}
+/*разметка шапки*/
+.header{
+    box-shadow: 0px 1px 24px 0px rgba(0, 0, 0, 0.14);
+}
+
+.header__container{
+    display: flex;
+    display: -ms-flexbox;
+}
+
+.header__block{
+    -ms-flex-direction: column;
+    flex-direction: column;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.header__block--grow{
+    flex-grow: 1;
+}
+
+.header__top-line{
+    /*    padding: .5rem 0;*/
+    height: 57px;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 0.875rem;
+}
+
+.header__bottom-line {
+    height: 40px;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/*каталог*/
+
+.header__main-nav-title{
+    width: 230px;
+    
+
+}
+.main-nav-title{
+  border-radius: 4px;
+  background-color: rgb(252, 137, 8);
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 700;
+  padding:10px;
+  display: flex;
+  display: -ms-flexbox;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+.main-nav-title--open{
+  border-radius: 4px 4px 0 0;
+  cursor: default;
+}
+
+.main-nav-title__icon{
+    margin-right: .75rem;
+    padding-top: .25rem;
+}
+
+
+
+
+/*Поиск */
+
+.header__search-form{
+    width: 100%;
+}
+
+.search-form{
+    display: flex;
+}
+
+
+.search-form__field{
+  border-radius: 4px 0 0 4px  ;
+  border: 1px solid rgb(210, 210, 210);
+  border-right:  0;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 40px;
+  padding:10px;
+
+}
+.search-form__select{
+  border-radius: 0 ;
+  border: 1px solid rgb(210, 210, 210);
+  background-color: rgb(255, 255, 255);
+  width: 150px;
+  border-left: 0;
+  border-right:  0;
+  height: 40px;
+  padding:10px;
+}
+.search-form__submit{
+  border-radius:  0 4px 4px 0 ;
+  border: 1px solid rgb(210, 210, 210);
+  border-left: 0;
+  background-color: rgb(255, 255, 255);
+  width: 70px;
+  height: 40px;
+  padding:10px;
+
+}
+
