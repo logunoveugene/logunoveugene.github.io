@@ -29,7 +29,7 @@
 
       data: function() {
         return {
-          swiperOptionB: {
+          awesomeSwiperA: {
             spaceBetween:30,
             slidesPerView: 'auto',
             navigation: {

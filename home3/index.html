@@ -31,15 +31,13 @@
 								<div class="main-nav__desc">Каталог</div>
 							</div>
 							<div class="header__main-nav-list">
-								<ul class="nav-list">
+								<ul class="nav-list nav-list--open">
 									<li class="nav-list__item" v-for="(mainNavItem) in mainNavs">{{mainNavItem.title}}</li>
 								</ul>
 							</div>
-
 						</div>
 					</div>
 				</div>
-
 				<div class="header__block header__block--grow mr-5">
 					<div class="header__top-line">
 						<div class="header__city">
@@ -71,7 +69,6 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="header__block ">
 					<div class="header__top-line">
 						<div class="header__phone">8-800-77-07-999</div>
@@ -106,7 +103,17 @@
 				</div>
 			</div>
 		</div>
+		<div class="container">
+			<div class="card">
+				<div class="card-body">
+					 <local-swiper ref="awesomeSwiperB" :options="swiperOptionB">
+				        <local-slide v-for="(mainbanner) in mainbanners"><img :src="mainbanner.img" alt=""></local-slide>
+				        <div class="swiper-pagination"  slot="pagination"></div>
+				    </local-swiper>
 
+				</div>
+			</div>
+		</div>
 	</div>
 
 

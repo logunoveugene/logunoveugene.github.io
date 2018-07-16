@@ -40,6 +40,7 @@ textarea, select, input, button { outline: none; }
 .header{
     box-shadow: 0px 1px 24px 0px rgba(0, 0, 0, 0.14);
     background-color: rgb(256, 256, 256);
+    margin-bottom: 1rem;
 }
 
 .header__container{
@@ -119,9 +120,8 @@ textarea, select, input, button { outline: none; }
 .header__main-nav-list{
     position: absolute;
     top: 40px;
-    border-radius: 0 0 4px 4px;
-    background-color: #fff;
     width: 100%;
+    z-index: 100;
 
 }
 
@@ -131,6 +131,13 @@ textarea, select, input, button { outline: none; }
     list-style: none;
     box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.05);
     border-radius: 4px;
+    border-radius: 0 0 4px 4px; 
+    background-color: #fff; 
+    display: none;
+}
+
+.nav-list--open{
+    display: block;
 }
 
 .nav-list__item {
@@ -146,8 +153,6 @@ textarea, select, input, button { outline: none; }
     margin-left: 1.5rem;
 
 }
-
-
 
 
 /*Поиск */
@@ -222,6 +227,19 @@ textarea, select, input, button { outline: none; }
 
 }
 
+
+
+
+/*помойка*/
+
+.card {
+    border-radius: .25rem;
+    border: none;
+    position: relative;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+    transition: .5s;
+    overflow: hidden;
+}
 
 
 
