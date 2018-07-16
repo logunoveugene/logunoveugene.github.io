@@ -31,14 +31,9 @@
 								<div class="main-nav__desc">Каталог</div>
 							</div>
 							<div class="header__main-nav-list">
-								<div class="nav-list">
-									<ul>
-										<li v-for="(mainNavItem) in mainNavs">
-											{{mainNavItem}}
-										</li>
-									</ul>
-								
-								</div>
+								<ul class="nav-list">
+									<li class="nav-list__item" v-for="(mainNavItem) in mainNavs">{{mainNavItem.title}}</li>
+								</ul>
 							</div>
 
 						</div>

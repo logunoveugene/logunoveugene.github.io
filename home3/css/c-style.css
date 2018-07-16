@@ -121,9 +121,24 @@ textarea, select, input, button { outline: none; }
     top: 40px;
     border-radius: 0 0 4px 4px;
     background-color: #fff;
+    width: 100%;
 
 }
 
+.nav-list{
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+}
+
+.nav-list__item {
+    padding: 10px 0 10px 35px;
+    font-size: .875rem;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
 
 
 /*навигация над поиском*/
@@ -179,6 +194,7 @@ textarea, select, input, button { outline: none; }
   width: 70px;
   height: 40px;
   padding:8px 15px;
+  cursor: pointer;
 
 }
 
