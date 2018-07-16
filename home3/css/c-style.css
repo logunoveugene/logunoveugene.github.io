@@ -1,10 +1,12 @@
 body {
     font-family: "PT Sans";
     -webkit-font-smoothing: antialiased;
+    background-color: rgb(246, 246, 246);
 }
 /*разметка шапки*/
 .header{
     box-shadow: 0px 1px 24px 0px rgba(0, 0, 0, 0.14);
+    background-color: rgb(256, 256, 256);
 }
 
 .header__container{
@@ -50,7 +52,7 @@ body {
 
 .header__main-nav-title{
     width: 230px;
-    
+
 
 }
 .main-nav-title{
@@ -68,6 +70,7 @@ body {
   -ms-flex-align: center;
   align-items: center;
   cursor: pointer;
+  position: relative;
 }
 .main-nav-title--open{
   border-radius: 4px 4px 0 0;
@@ -78,8 +81,6 @@ body {
     margin-right: .75rem;
     padding-top: .25rem;
 }
-
-
 
 
 /*Поиск */
@@ -113,6 +114,7 @@ body {
   height: 40px;
   padding:10px;
 }
+
 .search-form__submit{
   border-radius:  0 4px 4px 0 ;
   border: 1px solid rgb(210, 210, 210);
