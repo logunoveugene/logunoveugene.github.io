@@ -83,12 +83,13 @@ textarea, select, input, button { outline: none; }
 
 /*каталог*/
 
-.header__main-nav-title{
+.header__main-nav{
     width: 230px;
+    position: relative;
 
 
 }
-.main-nav-title{
+.main-nav{
   border-radius: 4px;
   background-color: rgb(252, 137, 8);
   width: 100%;
@@ -105,24 +106,33 @@ textarea, select, input, button { outline: none; }
   cursor: pointer;
   position: relative;
 }
-.main-nav-title--open{
+.main-nav--open{
   border-radius: 4px 4px 0 0;
   cursor: default;
 }
 
-.main-nav-title__icon{
+.main-nav__icon{
     margin-right: .75rem;
     padding-top: .25rem;
 }
 
+.header__main-nav-list{
+    position: absolute;
+    top: 40px;
+    border-radius: 0 0 4px 4px;
+    background-color: #fff;
+
+}
 
 
-/*навигация*/
 
+/*навигация над поиском*/
 .nav__link{
     margin-left: 1.5rem;
 
 }
+
+
 
 
 /*Поиск */

@@ -23,13 +23,24 @@
 						</div>
 					</div>
 					<div class="header__bottom-line">
-						<div class="header__main-nav-title">
-							<div class="main-nav-title main-nav-title--open">
-								<div class="main-nav-title__icon">
+						<div class="header__main-nav">
+							<div class="main-nav main-nav--open">
+								<div class="main-nav__icon">
 									<div class="icon-line-menu"></div>
 								</div>
-								<div class="main-nav-title__desc">Каталог</div>
-							</div> 
+								<div class="main-nav__desc">Каталог</div>
+							</div>
+							<div class="header__main-nav-list">
+								<div class="nav-list">
+									<ul>
+										<li v-for="(mainNavItem) in mainNavs">
+											{{mainNavItem}}
+										</li>
+									</ul>
+								
+								</div>
+							</div>
+
 						</div>
 					</div>
 				</div>

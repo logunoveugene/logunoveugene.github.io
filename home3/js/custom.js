@@ -3,7 +3,7 @@
     var config = {
     apiKey: "AIzaSyCMbnQPl_26yGxXdElx-Vx1ZGkoC8vTsZI",
     authDomain: "homepage-fed4c.firebaseapp.com",
-    databaseURL: "https://homepage-fed4c.firebaseio.com",
+    databaseURL: "https://homepage-fed4c.firebaseio.com"
     }
 
 
