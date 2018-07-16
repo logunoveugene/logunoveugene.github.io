@@ -4,7 +4,7 @@
 	<title>Главная</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=0">
-	
+
 	<link rel="stylesheet prefetch" href="css/bootstrap.min.css">
 	<link href="css/swiper.min.css" rel="stylesheet">
 	<link href="css/c-style.css" rel="stylesheet">
@@ -104,12 +104,97 @@
 			</div>
 		</div>
 		<div class="container">
-			<div class="card">
-					 <local-swiper ref="awesomeSwiperB" :options="swiperOptionB">
-				        <local-slide v-for="(mainbanner) in mainbanners"><img :src="mainbanner.img" alt=""></local-slide>
-				        <div class="swiper-pagination"  slot="pagination"></div>
-				    </local-swiper>
+			<div class="container__main-right">
+				<div class="card mb-3">
+					<swiper :options="mainBannerOption">
+						<swiper-slide v-for="(mainbanner, index) in mainbanners" :key="index">
+							<img  :src="mainbanner.img" alt="">
+						</swiper-slide>
+						<div class="swiper-pagination" slot="pagination"></div>
+						<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
+						<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
+					</swiper>
+				</div>
+				<div class="row mb-3">
+					<div class="col-4">
+						<div class="card  benefit_order">
+							<div class="card-body">
+								<div class="h2">Акции</div>
+								<div class="small  mb-2 text-secondary">
+									Сотни уникальных предложений,<br>скидки,  рассрочки, кэшбэк
+								</div>
+								<div class="d-flex">
+									<a href="" class="small mr-3">Все акции</a>
+									<a href="" class="small">Товары со скидками</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card  benefit_builder">
+							<div class="card-body ">
+								<div class="h2 mb-2">Конфигуратор ПК</div>
+								<div class="small mb-2 text-secondary">
+									Собери компьютер сам - легко <br>и без проблем с совместимостью.
+								</div>
+								<div class="d-flex">
+									<a href="" class="small mr-3">Собрать самому</a>
+									<a href="" class="small">Cмотреть сборки</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card  benefit_bonus">
+							<div class="card-body">
+								<div class="h2">Программа ProZaPass</div>
+								<div class="small  mb-2 text-secondary">
+									Получай бонусы за покупки и оплачивай <br>ими до 100% стоимости заказа.
+								</div>
+								<div class="d-flex">
+									<a href="" class="small mr-3">Регистрация в программе</a>
+									<a href="" class="small">Подробнее</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card mb-3">
+					<div class="card-body">
+						<div class="h2 mb-4">Самое время покупать</div>
+						<swiper :options="setsOption">
+							<swiper-slide v-for="(set, index) in sets" :key="index">
+								<div class="d-flex">
+									<img  :src="set.img" alt="" class="mr-3">
+									<div class="d-flex flex-column">
+										<div class="small mb-2">{{set.title}}</div>
+										<div class="h4 mb-0">от {{set.price}} р.</div>
+									</div>
+								</div>
+							</swiper-slide>
+							<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
+							<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
+						</swiper>
+					</div>
+				</div>
+				<div class="card mb-3">
+					<div class="card-body">
+						<div class="h2 mb-4">Лучшее за неделю</div>
+						<swiper :options="setsOption">
+							<swiper-slide v-for="(product, index) in products" :key="index">
+								<div class="d-flex flex-column">
+									<div class=""><img  :src="product.img" alt="" class="mb-3"></div>
+									<div class="small mb-2">{{product.title}}</div>
+									<div class="h4 mb-0">{{product.price}} р.</div>
+								</div>
+							</swiper-slide>
+							<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
+							<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
+						</swiper>
+					</div>
+				</div>
 			</div>
+			<div class="container__main-left"></div>
 		</div>
 	</div>
 
