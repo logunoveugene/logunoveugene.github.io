@@ -32,7 +32,8 @@
 							</div>
 							<div class="header__main-nav-list">
 								<ul class="nav-list nav-list--open">
-									<li class="nav-list__item" v-for="(mainNavItem) in mainNavs">{{mainNavItem.title}}</li>
+
+									<li class="nav-list__item" v-for="(mainNavItem) in mainNavs"> <img class="nav-list__img" :src="mainNavItem.img" alt="">{{mainNavItem.title}}</li>
 								</ul>
 							</div>
 						</div>
@@ -111,8 +112,8 @@
 							<img  :src="mainbanner.img" alt="">
 						</swiper-slide>
 						<div class="swiper-pagination" slot="pagination"></div>
-						<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
-						<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
+						<div class="ml-4 sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
+						<div class="mr-4 sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
 					</swiper>
 				</div>
 				<div class="row mb-3">
@@ -182,8 +183,10 @@
 										<div class="d-flex" >
 											<img  :src="aircond.img" alt="" class="mr-3">
 											<div class="d-flex flex-column">
-												<div class="small mb-2">{{aircond.title}}</div>
-												<div class="h4 mb-0">от {{aircond.price}} р.</div>
+												<div class="small mb-2">
+													<div class="link link--color-grey">{{aircond.title}}</div>
+												</div>
+												<div class="h4 mb-0">от {{aircond.price | formatedNumber}} р.</div>
 											</div>
 										</div>
 									</swiper-slide>
@@ -198,7 +201,7 @@
 											<img  :src="boilerP.img" alt="" class="mr-3">
 											<div class="d-flex flex-column">
 												<div class="small mb-2">{{boilerP.title}}</div>
-												<div class="h4 mb-0">от {{boilerP.price}} р.</div>
+												<div class="h4 mb-0">от {{boilerP.price | formatedNumber}} р.</div>
 											</div>
 										</div>
 									</swiper-slide>
@@ -235,10 +238,10 @@
 											<div class="product-plate__image-wrap">
 												<img  :src="product.img" alt="" class="product-plate__image">
 											</div>
-											<div class="product-plate__link small mb-3">
+											<div class="product-plate__link small mb-2">
 												<a href="" class="link link--color-grey">{{product.title}}</a>
 											</div>
-											<div class="h4 mb-0">{{product.price}} р.</div>
+											<div class="h4 mb-0">{{product.price | formatedNumber}} р.</div>
 										</div>
 									</swiper-slide>
 									<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
@@ -339,7 +342,19 @@
 				</div>
 
 			</div>
-			<div class="container__main-left"></div>
+			<div class="container__main-left">
+				<div class="card mb-4">
+					<div class="px-3 small py-2 text-center">
+					<div class="link link--color-grey">Уцененные товары</div>
+				</div>
+				</div>
+				<div class="card">
+					<div class="card-body">
+						<div class="h2">Новости</div>
+						<img src="https://i.snag.gy/jmrV5E.jpg" alt="">
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 

@@ -22,6 +22,9 @@ a:hover {
 }
 
 /*ссылки*/
+.link{
+    cursor: pointer;
+}
 .link--color-grey{
   color: #4E4E4E;
   transition: .2s;
@@ -150,12 +153,21 @@ a:hover {
 }
 
 .nav-list__item {
-  padding: 10px 0 10px 40px;
+    padding: 10px 0 10px 45px;
   font-size: .875rem;
   border-bottom: 1px solid #eee;
   cursor: pointer;
+  position: relative;
 }
-
+.nav-list__item:hover{
+   color: #FC5808;;
+}
+.nav-list__img{
+    position: absolute;
+    max-width: 21px;
+    left: 11px;
+    opacity: .3
+}
 
 /*навигация над поиском*/
 .nav__link{
@@ -243,6 +255,13 @@ a:hover {
 .container__main-right{
   padding-left: 247px;
 }
+
+.container__main-left {
+    position: absolute;
+    top: 830px;
+    width: 230px;
+}
+
 .card {
   border-radius: .25rem;
   border: none;

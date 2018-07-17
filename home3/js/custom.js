@@ -75,7 +75,10 @@ observeParents: true,
         return sliced += '...';
       }
       return value;
-    }
+    },
+    formatedNumber: function(value) {
+          return value.toLocaleString();
+        }
   },
 
 
