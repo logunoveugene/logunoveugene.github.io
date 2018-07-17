@@ -41,13 +41,21 @@ var main = new Vue({
         }
       },
       setsOption: {
-slidesPerView: 3,
-          spaceBetween: 30,      
+        slidesPerView: 3,
+        spaceBetween: 30,      
         navigation: {
           nextEl: '.sw-button-next',
           prevEl: '.sw-button-prev'
         }
-      }
+      },
+      productOption: {
+        slidesPerView: 4,
+        spaceBetween: 30,      
+        navigation: {
+          nextEl: '.sw-button-next',
+          prevEl: '.sw-button-prev'
+        }
+      },
     }
   },
 

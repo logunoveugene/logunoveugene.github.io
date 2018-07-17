@@ -5,6 +5,15 @@ body {
 }
 textarea, select, input, button { outline: none; }
 
+a{
+    color: #0d61af;
+      transition: .2s;
+}
+
+a:hover {
+  color: #FC5808;
+  text-decoration: none;
+}
 
 @media (min-width: 1200px){
   .container {
@@ -243,6 +252,12 @@ textarea, select, input, button { outline: none; }
   overflow: hidden;
 }
 
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.5rem;
+}
+
 h1, .h1 {
     font-size: 1.5rem;
     line-height: 1.5;
@@ -289,14 +304,14 @@ h4, .h4 {
 }
 
 .sw-button-prev, .sw-container-rtl .sw-button-next {
-  left: 2rem;
+  left: .5rem;
   right: auto;
   transform: translateX(-10px);
   
 }
 
 .sw-button-next, .sw-container-rtl .sw-button-prev {
-  right: 2rem;
+  right: .5rem;
   left: auto;
   transform: translateX(10px);
 
@@ -319,6 +334,7 @@ h4, .h4 {
   opacity: 0;
   transition: opacity .3s,  transform .3s;
   border-radius: 50%;
+  text-align: center;
 }
 
 .sw-button-next:hover, .sw-button-prev:hover{
@@ -326,6 +342,50 @@ h4, .h4 {
  color:#fff;
  transition: color .2s,  background .2s;
 }
+
+
+/*плитка товара*/
+
+.product-plate__image-wrap{
+    height: 170px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.product-plate__image{
+        max-height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 80%;
+}
+
+.product-plate__link{
+    height: 45px;
+    overflow: hidden;
+}
+
+
+
+.brand__item {
+    filter: grayscale(100%);
+    opacity: .4;
+    transition: .5s;
+    cursor: pointer;
+    width: 75%;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #000;
+    background-color: #eee;
+}
+
+.nav-link {
+    padding: .25rem .75rem;
+    font-size: .875rem;
+}
+
 
 
 
