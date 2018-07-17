@@ -42,6 +42,8 @@ var main = new Vue({
       },
       setsOption: {
         slidesPerView: 3,
+        observer: true,
+observeParents: true,
         spaceBetween: 30,      
         navigation: {
           nextEl: '.sw-button-next',

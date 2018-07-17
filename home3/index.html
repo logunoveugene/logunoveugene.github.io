@@ -178,12 +178,12 @@
 						<div class="tab-content pt-2" id="pills-tabContent">
 							<div class="tab-pane fade show active" id="hot" role="tabpanel" aria-labelledby="pills-home-tab">
 								<swiper :options="setsOption" v-for="(set, index) in sets" :key="index">
-									<swiper-slide v-for = "tag in set.air" :key="index">
+									<swiper-slide v-for = "(aircond, index) in set.air" :key="index">
 										<div class="d-flex" >
-											<img  :src="tag.img" alt="" class="mr-3">
+											<img  :src="aircond.img" alt="" class="mr-3">
 											<div class="d-flex flex-column">
-												<div class="small mb-2">{{tag.title}}</div>
-												<div class="h4 mb-0">от {{tag.price}} р.</div>
+												<div class="small mb-2">{{aircond.title}}</div>
+												<div class="h4 mb-0">от {{aircond.price}} р.</div>
 											</div>
 										</div>
 									</swiper-slide>
@@ -191,7 +191,21 @@
 									<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
 								</swiper>
 							</div>
-							<div class="tab-pane fade" id="water" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+							<div class="tab-pane fade" id="water" role="tabpanel" aria-labelledby="pills-profile-tab">
+								<swiper :options="setsOption" v-for="(set, index) in sets" :key="index">
+									<swiper-slide v-for = "(boilerP, index) in set.boiler" :key="index">
+										<div class="d-flex" >
+											<img  :src="boilerP.img" alt="" class="mr-3">
+											<div class="d-flex flex-column">
+												<div class="small mb-2">{{boilerP.title}}</div>
+												<div class="h4 mb-0">от {{boilerP.price}} р.</div>
+											</div>
+										</div>
+									</swiper-slide>
+									<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
+									<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
+								</swiper>
+							</div>
 							<div class="tab-pane fade" id="weekend" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
 						</div>
 					</div>
