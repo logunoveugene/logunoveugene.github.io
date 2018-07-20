@@ -1,20 +1,20 @@
 "digest" : [
 {
-	"position" :
-	"title" : 
-	"date" : 
-	"autor" :
-	"format" :
-	"source" :
+	"position" : 1,
+	"title" : "Возвращение легендарной Nokia и смартфон с выдвижной камерой",
+	"date" : "2018-06-16T21:17:43",
+	"autor" : "Виктор",
+	"format" : "Текст",
+	"source" : "Technews",
 	"tags" : [{
-
+	"name" : "Смартфоны"
 	}],
-	"teaser" :
-	"img" :
-	"view" :
-	"comment" :
-	"like" :
-	"textColor" :
+	"teaser" : "Новый китайский смартфон побил рекорды «безрамочности», Nokia возродила легендарный «бананофон», Meizu представила интересный музыкальный флагман, плюс в мире появилось как минимум полдюжины очень годных ноутбуков на любой вкус.",
+	"img" : "https://i.snag.gy/nyT2VO.jpg",
+	"view" : 506,
+	"comment" : 2,
+	"like" : 14,
+	"textColor" : "#000",
 	"isLocked" : false
 }
 
