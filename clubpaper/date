@@ -1,0 +1,66 @@
+"digest" : [
+{
+	"position" :
+	"title" : 
+	"date" : 
+	"autor" :
+	"format" :
+	"source" :
+	"tags" : [{
+
+	}],
+	"teaser" :
+	"img" :
+	"view" :
+	"comment" :
+	"like" :
+	"textColor" :
+	"isLocked" : false
+}
+
+],
+
+"review" : [
+{
+	"title" : 
+	"date" : 
+	"autor" :
+	"format" :
+	"source" :
+	"tags" : [{
+
+	}],
+	"teaser" :
+	"img" :
+	"view" :
+	"comment" :
+	"like" :
+	"textColor" :
+	"isLocked" : false
+}
+
+],
+
+
+"discussions" : [
+{
+	"title" : 
+	"date" : 
+	"autor" :
+	"format" :
+	"source" :
+	"tags" : [{
+
+	}],
+	"teaser" :
+	"img" :
+	"view" :
+	"comment" :
+	"like" :
+	"textColor" :
+	"isLocked" : false
+}
+
+],
+
+
