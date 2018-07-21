@@ -55900,7 +55900,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n.post__image{\r\n    width: 100%;\r\n    max-width: 100%;\r\n    height: auto;\r\n    margin-bottom: 1rem;\r\n}\r\n.post__tags{\r\n    font-size: 11px;\r\n    text-transform: uppercase; \r\n}\r\n\r\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n.post__image{\r\n    width: 100%;\r\n    max-width: 100%;\r\n    height: auto;\r\n    margin-bottom: 1rem;\r\n}\r\n.post__tags{\r\n    font-size: 11px;\r\n    text-transform: uppercase; \r\n}\r\n\r\n", ""]);
 
 	// exports
 
@@ -55916,12 +55916,9 @@
 	    components: {
 	        postInfo: postInfo
 	    },
-	    props: ['post'],
+	    props: ['title'],
 	    data: function data() {
-	        return {
-	            image: this.post
-
-	        };
+	        return {};
 	    }
 	};
 
@@ -56022,7 +56019,7 @@
 /* 36 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n    <div class=\"post\" >\n  \n        <div class=\"post__tags\">\n            <div class=\"link link--color-grey\">{{image}}</div>\n        </div>\n        <div class=\"h2\"></div>\n        <post-info \n \n        ></post-info>\n    </div>\n</div> \n\n";
+	module.exports = "\n    <div class=\"post\" >\n\n        <div class=\"post__tags\">\n            <div class=\"link link--color-grey\">{{title}}</div>\n        </div>\n        <div class=\"h2\"></div>\n        <post-info \n\n        ></post-info>\n    </div>\n</div> \n\n";
 
 /***/ })
 /******/ ]);
