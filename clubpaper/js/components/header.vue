@@ -33,7 +33,9 @@
         <div class="header__container container">
             <div class="header__bottom-grid row">
                 <div class="header__bottom-block col-2 d-lg-none">
-                    <img src="https://i.snag.gy/23I0JN.jpg" alt="">
+                    <div class="header__mobile-menu">
+                        <img src="https://i.snag.gy/23I0JN.jpg" alt="">
+                    </div>
                 </div>
                 <div class="header__bottom-block col-8 col-lg-8">
                     <img class="heaader__logo" src="https://i.snag.gy/p4txCj.jpg" alt="" > 
@@ -147,5 +149,10 @@ module.exports = {
 .header__search {
     text-align: right;
     width: 100%;
+}
+
+.header__mobile-menu{
+        justify-content: start;
+        width: 100%;
 }
 </style>
