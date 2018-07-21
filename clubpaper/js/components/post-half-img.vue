@@ -1,14 +1,12 @@
 <template>
-    <div class="post">
-        <img class="post__image" :src="posts.img" alt="">
+    <div class="post" >
+  
         <div class="post__tags">
-            <div class="link link--color-grey">{{posts.source}}</div>
+            <div class="link link--color-grey">{{image}}</div>
         </div>
-        <div class="h2">{{posts.title}}</div>
+        <div class="h2"></div>
         <post-info 
-        :view="posts.view"
-        :rating="posts.like"
-        :comment="posts.comment"
+ 
         ></post-info>
     </div>
 </div> 
@@ -21,9 +19,11 @@ module.exports = {
     components: {
         postInfo
     },
-    props: ['posts'],
+    props: ['post'],
     data: function() {
         return {
+            image: this.post
+
 
         }
     }

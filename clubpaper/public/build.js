@@ -55916,9 +55916,12 @@
 	    components: {
 	        postInfo: postInfo
 	    },
-	    props: ['posts'],
+	    props: ['post'],
 	    data: function data() {
-	        return {};
+	        return {
+	            image: this.post
+
+	        };
 	    }
 	};
 
@@ -56019,7 +56022,7 @@
 /* 36 */
 /***/ (function(module, exports) {
 
-	module.exports = "\n    <div class=\"post\">\n        <img class=\"post__image\" :src=\"posts.img\" alt=\"\">\n        <div class=\"post__tags\">\n            <div class=\"link link--color-grey\">{{posts.source}}</div>\n        </div>\n        <div class=\"h2\">{{posts.title}}</div>\n        <post-info \n        :view=\"posts.view\"\n        :rating=\"posts.like\"\n        :comment=\"posts.comment\"\n        ></post-info>\n    </div>\n</div> \n\n";
+	module.exports = "\n    <div class=\"post\" >\n  \n        <div class=\"post__tags\">\n            <div class=\"link link--color-grey\">{{image}}</div>\n        </div>\n        <div class=\"h2\"></div>\n        <post-info \n \n        ></post-info>\n    </div>\n</div> \n\n";
 
 /***/ })
 /******/ ]);
