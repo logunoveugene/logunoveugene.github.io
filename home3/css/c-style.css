@@ -177,9 +177,12 @@ a:hover {
 
 /*навигация над поиском*/
 .nav__link{
-  margin-left: 1.5rem;
-
+  margin-left: 1rem;
 }
+.nav__link:last-child{
+  margin-left: 0;
+}
+
 
 
 /*Поиск */
