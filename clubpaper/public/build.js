@@ -11088,7 +11088,7 @@
 /* 24 */
 /***/ (function(module, exports) {
 
-	module.exports = "{{posts}}\n   <div class=\"\" v-for=\"post in posts\" >\n   <div class=\"h2\">{{post.title}}</div>\n    <post-info></post-info>\n   </div> \n    \n\n\n";
+	module.exports = "{{posts}}\n   <div class=\"\">\n   <div class=\"h2\">{{posts.title}}</div>\n    <post-info></post-info>\n   </div> \n    \n\n\n";
 
 /***/ }),
 /* 25 */
