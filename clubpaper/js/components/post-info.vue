@@ -4,21 +4,21 @@
             <div class="post-info__icon">
                 <div class="icon-thumb-up"></div>
             </div>
-            <div class="post-info__count">121 </div>
+            <div class="post-info__count">{{rating}} </div>
         </div>
         <div class="post-info__views">
             <div class="post-info__icon">
                 <div class="icon-open-eye"></div>
             </div>
             
-            <div class="post-info__count">121</div>
+            <div class="post-info__count">{{view}}</div>
         </div>
         <div class="post-info__comments">
             <div class="post-info__icon">
                 <div class="icon-chat-bubble"></div>
             </div>
             
-            <div class="post-info__count">121 </div>
+            <div class="post-info__count">{{comment}} </div>
         </div>
     </div>
 
@@ -26,7 +26,7 @@
 
 <script>
 module.exports = {
-
+    props: ['view','rating','comment'],
     data: function() {
         return {
 

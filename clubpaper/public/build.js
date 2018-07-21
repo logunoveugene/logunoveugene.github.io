@@ -45,11 +45,11 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	var Vue = __webpack_require__(1);
-	var VueFire = __webpack_require__(25);
-	var firebase = __webpack_require__(26);
+	var VueFire = __webpack_require__(3);
+	var firebase = __webpack_require__(4);
 
-	var mainheader = __webpack_require__(3);
-	var postHalfImg = __webpack_require__(20);
+	var mainheader = __webpack_require__(20);
+	var postHalfImg = __webpack_require__(27);
 
 
 	var config = {
@@ -10528,572 +10528,6 @@
 /* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	var __vue_script__, __vue_template__
-	var __vue_styles__ = {}
-	__webpack_require__(4)
-	__vue_script__ = __webpack_require__(8)
-	if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
-	  console.warn("[vue-loader] js\\components\\header.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(9)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
-	if (__vue_template__) {
-	__vue_options__.template = __vue_template__
-	}
-	if (!__vue_options__.computed) __vue_options__.computed = {}
-	Object.keys(__vue_styles__).forEach(function (key) {
-	var module = __vue_styles__[key]
-	__vue_options__.computed[key] = function () { return module }
-	})
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  var id = "_v-51807fd5/header.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(5);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./header.vue", function() {
-				var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./header.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(6)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.header__top-line {\n    width: auto;\n    background-color: #f6f6f6;\n    padding: .5rem 0;\n\n}\n.header__top-grid{\n    -ms-flex-pack: distribute;\n    justify-content: space-between;\n    -ms-flex-direction: row;\n    flex-direction: row;\n    display: -ms-flexbox;\n    display: flex;\n}\n\n\n.header__bottom-line{\n   padding: 2rem 0;\n}\n.heaader__logo {\n    height: 20px;\n    width: auto;\n\n}\n\n\n.header__main-nav{\n    width: 100%;\n    -ms-flex-align: center;\n    align-items: center;\n    -ms-flex-pack: distribute;\n    justify-content: space-around;\n    -ms-flex-direction: row;\n    flex-direction: row;\n    display: -ms-flexbox;\n    display: flex;\n    font-size: 13px;\n    font-weight: 700;\n    text-transform: uppercase;\n    margin:0 3rem;\n}\n.header__bottom-block{\n    display: -ms-flexbox;\n    display: flex;\n    -ms-flex-pack: center;\n        justify-content: center;\n}\n.header__create-controls{\n    display: -ms-flexbox;\n    display: flex;\n}\n.header__create-controls-item {\n    -ms-flex-align: center;\n    align-items: center;\n    -ms-flex-direction: row;\n    flex-direction: row;\n    display: -ms-flexbox;\n    display: flex;\n    font-size: .875rem;\n    font-weight: 700;\n    margin-right: 3rem;\n\n}\n.header__create-controls-icon{\n    margin-right: .5rem\n}\n\n\n.header__search {\n    text-align: right;\n    width: 100%;\n}\n", ""]);
-
-	// exports
-
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	// css base code, injected by the css-loader
-	module.exports = function() {
-		var list = [];
-
-		// return the list of modules as css string
-		list.toString = function toString() {
-			var result = [];
-			for(var i = 0; i < this.length; i++) {
-				var item = this[i];
-				if(item[2]) {
-					result.push("@media " + item[2] + "{" + item[1] + "}");
-				} else {
-					result.push(item[1]);
-				}
-			}
-			return result.join("");
-		};
-
-		// import a list of modules into the list
-		list.i = function(modules, mediaQuery) {
-			if(typeof modules === "string")
-				modules = [[null, modules, ""]];
-			var alreadyImportedModules = {};
-			for(var i = 0; i < this.length; i++) {
-				var id = this[i][0];
-				if(typeof id === "number")
-					alreadyImportedModules[id] = true;
-			}
-			for(i = 0; i < modules.length; i++) {
-				var item = modules[i];
-				// skip already imported module
-				// this implementation is not 100% perfect for weird media query combinations
-				//  when a module is imported multiple times with different media queries.
-				//  I hope this will never occur (Hey this way we have smaller bundles)
-				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-					if(mediaQuery && !item[2]) {
-						item[2] = mediaQuery;
-					} else if(mediaQuery) {
-						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-					}
-					list.push(item);
-				}
-			}
-		};
-		return list;
-	};
-
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	var stylesInDom = {},
-		memoize = function(fn) {
-			var memo;
-			return function () {
-				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
-				return memo;
-			};
-		},
-		isOldIE = memoize(function() {
-			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
-		}),
-		getHeadElement = memoize(function () {
-			return document.head || document.getElementsByTagName("head")[0];
-		}),
-		singletonElement = null,
-		singletonCounter = 0,
-		styleElementsInsertedAtTop = [];
-
-	module.exports = function(list, options) {
-		if(false) {
-			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
-		}
-
-		options = options || {};
-		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-		// tags it will allow on a page
-		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
-
-		// By default, add <style> tags to the bottom of <head>.
-		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
-
-		var styles = listToStyles(list);
-		addStylesToDom(styles, options);
-
-		return function update(newList) {
-			var mayRemove = [];
-			for(var i = 0; i < styles.length; i++) {
-				var item = styles[i];
-				var domStyle = stylesInDom[item.id];
-				domStyle.refs--;
-				mayRemove.push(domStyle);
-			}
-			if(newList) {
-				var newStyles = listToStyles(newList);
-				addStylesToDom(newStyles, options);
-			}
-			for(var i = 0; i < mayRemove.length; i++) {
-				var domStyle = mayRemove[i];
-				if(domStyle.refs === 0) {
-					for(var j = 0; j < domStyle.parts.length; j++)
-						domStyle.parts[j]();
-					delete stylesInDom[domStyle.id];
-				}
-			}
-		};
-	}
-
-	function addStylesToDom(styles, options) {
-		for(var i = 0; i < styles.length; i++) {
-			var item = styles[i];
-			var domStyle = stylesInDom[item.id];
-			if(domStyle) {
-				domStyle.refs++;
-				for(var j = 0; j < domStyle.parts.length; j++) {
-					domStyle.parts[j](item.parts[j]);
-				}
-				for(; j < item.parts.length; j++) {
-					domStyle.parts.push(addStyle(item.parts[j], options));
-				}
-			} else {
-				var parts = [];
-				for(var j = 0; j < item.parts.length; j++) {
-					parts.push(addStyle(item.parts[j], options));
-				}
-				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
-			}
-		}
-	}
-
-	function listToStyles(list) {
-		var styles = [];
-		var newStyles = {};
-		for(var i = 0; i < list.length; i++) {
-			var item = list[i];
-			var id = item[0];
-			var css = item[1];
-			var media = item[2];
-			var sourceMap = item[3];
-			var part = {css: css, media: media, sourceMap: sourceMap};
-			if(!newStyles[id])
-				styles.push(newStyles[id] = {id: id, parts: [part]});
-			else
-				newStyles[id].parts.push(part);
-		}
-		return styles;
-	}
-
-	function insertStyleElement(options, styleElement) {
-		var head = getHeadElement();
-		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
-		if (options.insertAt === "top") {
-			if(!lastStyleElementInsertedAtTop) {
-				head.insertBefore(styleElement, head.firstChild);
-			} else if(lastStyleElementInsertedAtTop.nextSibling) {
-				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
-			} else {
-				head.appendChild(styleElement);
-			}
-			styleElementsInsertedAtTop.push(styleElement);
-		} else if (options.insertAt === "bottom") {
-			head.appendChild(styleElement);
-		} else {
-			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
-		}
-	}
-
-	function removeStyleElement(styleElement) {
-		styleElement.parentNode.removeChild(styleElement);
-		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
-		if(idx >= 0) {
-			styleElementsInsertedAtTop.splice(idx, 1);
-		}
-	}
-
-	function createStyleElement(options) {
-		var styleElement = document.createElement("style");
-		styleElement.type = "text/css";
-		insertStyleElement(options, styleElement);
-		return styleElement;
-	}
-
-	function addStyle(obj, options) {
-		var styleElement, update, remove;
-
-		if (options.singleton) {
-			var styleIndex = singletonCounter++;
-			styleElement = singletonElement || (singletonElement = createStyleElement(options));
-			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
-			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
-		} else {
-			styleElement = createStyleElement(options);
-			update = applyToTag.bind(null, styleElement);
-			remove = function() {
-				removeStyleElement(styleElement);
-			};
-		}
-
-		update(obj);
-
-		return function updateStyle(newObj) {
-			if(newObj) {
-				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
-					return;
-				update(obj = newObj);
-			} else {
-				remove();
-			}
-		};
-	}
-
-	var replaceText = (function () {
-		var textStore = [];
-
-		return function (index, replacement) {
-			textStore[index] = replacement;
-			return textStore.filter(Boolean).join('\n');
-		};
-	})();
-
-	function applyToSingletonTag(styleElement, index, remove, obj) {
-		var css = remove ? "" : obj.css;
-
-		if (styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = replaceText(index, css);
-		} else {
-			var cssNode = document.createTextNode(css);
-			var childNodes = styleElement.childNodes;
-			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
-			if (childNodes.length) {
-				styleElement.insertBefore(cssNode, childNodes[index]);
-			} else {
-				styleElement.appendChild(cssNode);
-			}
-		}
-	}
-
-	function applyToTag(styleElement, obj) {
-		var css = obj.css;
-		var media = obj.media;
-		var sourceMap = obj.sourceMap;
-
-		if (media) {
-			styleElement.setAttribute("media", media);
-		}
-
-		if (sourceMap) {
-			// https://developer.chrome.com/devtools/docs/javascript-debugging
-			// this makes source maps inside style tags work properly in Chrome
-			css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */';
-			// http://stackoverflow.com/a/26603875
-			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
-		}
-
-		if (styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = css;
-		} else {
-			while(styleElement.firstChild) {
-				styleElement.removeChild(styleElement.firstChild);
-			}
-			styleElement.appendChild(document.createTextNode(css));
-		}
-	}
-
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports) {
-
-	"use strict";
-
-	module.exports = {
-
-	    data: function data() {
-	        return {};
-	    }
-	};
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports) {
-
-	module.exports = "\n <div class=\"header\">\n    <div class=\"header__top-line d-none d-lg-block\">\n        <div class=\"header__container container\">\n            <div class=\"header__top-grid\">\n                <div class=\"header__project-nav\">\n                    <ul class=\"nav small\">\n                        <li class=\"nav__link\">\n                            <a class=\"link link--color-grey\" href=\"#\">DNS</a>\n                        </li>\n                        <li class=\"nav__link\">\n                            <a class=\"link link--color-grey\" href=\"#\">DNS Технопоинт</a>\n                        </li>\n                        <li class=\"nav__link\">\n                            <a class=\"link link--color-grey\" href=\"#\">DNS Сервис</a>\n                        </li>\n                    </ul>\n                </div>\n                <div class=\"header__project-nav\">\n                    <ul class=\"nav small\">\n                        <li class=\"nav__link\">\n                            <a class=\"link link--color-grey\" href=\"#\">Вход</a>\n                        </li>\n                        <li class=\"nav__link\">\n                            <a class=\"link link--color-grey\" href=\"#\">Регистрация</a>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"header__bottom-line\">\n        <div class=\"header__container container\">\n            <div class=\"header__bottom-grid row\">\n                <div class=\"header__bottom-block col-2 d-lg-none\">\n                    <img src=\"https://i.snag.gy/23I0JN.jpg\" alt=\"\">\n                </div>\n                <div class=\"header__bottom-block col-8 col-lg-8\">\n                    <img class=\"heaader__logo\" src=\"https://i.snag.gy/p4txCj.jpg\" alt=\"\" > \n                    <div class=\"header__main-nav d-none d-lg-flex\">\n                        <a href=\"#\" class=\"link link--color-grey\">Дайджест</a> \n                        <a href=\"#\" class=\"link link--color-grey\">Обзоры</a> \n                        <a href=\"#\" class=\"link link--color-grey\">Лайфхаки</a>\n                        <a href=\"#\" class=\"link link--color-grey \">Обсуждения</a>\n                    </div>\n                </div>\n                <div class=\"header__bottom-block col-2 col-lg-4\">\n                    <div class=\"header__create-controls d-none d-lg-flex\">\n                     <div class=\"header__create-controls-item\">\n                        <div class=\"header__create-controls-icon\">+</div>\n                        <a href=\"\" class=\"link link--color-grey\">Написать</a>\n                    </div>\n                    <div class=\"header__create-controls-item\">\n                        <div class=\"header__create-controls-icon\">?</div>\n                        <a href=\"\" class=\"link link--color-grey\">Спросить</a>\n                    </div>\n                </div>\n                <div class=\"header__search\">\n                   <img src=\"https://i.snag.gy/7rBCoa.jpg\" alt=\"\">\n               </div>\n           </div>\n       </div>\n   </div>\n</div>\n</div>\n\n";
-
-/***/ }),
-/* 10 */,
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	var __vue_styles__ = {}
-	__webpack_require__(16)
-	__vue_script__ = __webpack_require__(18)
-	if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
-	  console.warn("[vue-loader] js\\components\\post-info.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(19)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
-	if (__vue_template__) {
-	__vue_options__.template = __vue_template__
-	}
-	if (!__vue_options__.computed) __vue_options__.computed = {}
-	Object.keys(__vue_styles__).forEach(function (key) {
-	var module = __vue_styles__[key]
-	__vue_options__.computed[key] = function () { return module }
-	})
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  var id = "_v-037a30ba/post-info.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(17);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./post-info.vue", function() {
-				var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./post-info.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(6)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.post-info {\n    border: 1px solid #eee;\n    border-radius: .25rem;\n    padding: 0 .75rem;\n    -ms-flex-align: center;\n    align-items: center;\n    -ms-flex-direction: row;\n    flex-direction: row;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    background: #fff;\n}\n.post-info__rating{\n    margin-right: 1.5rem;\n    -ms-flex-align: center;\n    align-items: center;\n    display: -ms-flexbox;\n    display: flex;\n    color: #28a745;\n    font-weight: 700;\n}\n.post-info__views{\n    margin-right: 1.5rem;\n    -ms-flex-align: center;\n    align-items: center;\n    display: -ms-flexbox;\n    display: flex;\n    color: #6c757d;\n}\n.post-info__comments{\n    -ms-flex-align: center;\n    align-items: center;\n    display: -ms-flexbox;\n    display: flex;\n    color: #6c757d;\n}\n\n.post-info__icon{\n    padding-top: .25rem;\n    margin-right: .5rem;\n}\n.post-info__count{\n    font-size: .875rem;\n}\n\n", ""]);
-
-	// exports
-
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports) {
-
-	"use strict";
-
-	module.exports = {
-
-	    data: function data() {
-	        return {};
-	    }
-	};
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports) {
-
-	module.exports = "\n<div class=\"post-info\">\n    <div class=\"post-info__rating\">\n        <div class=\"post-info__icon\">\n            <div class=\"icon-thumb-up\"></div>\n        </div>\n        <div class=\"post-info__count\">121 </div>\n    </div>\n    <div class=\"post-info__views\">\n        <div class=\"post-info__icon\">\n            <div class=\"icon-open-eye\"></div>\n        </div>\n        \n        <div class=\"post-info__count\">121</div>\n    </div>\n    <div class=\"post-info__comments\">\n        <div class=\"post-info__icon\">\n            <div class=\"icon-chat-bubble\"></div>\n        </div>\n        \n        <div class=\"post-info__count\">121 </div>\n    </div>\n</div>\n\n";
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	var __vue_script__, __vue_template__
-	var __vue_styles__ = {}
-	__webpack_require__(21)
-	__vue_script__ = __webpack_require__(23)
-	if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
-	  console.warn("[vue-loader] js\\components\\post-half-img.vue: named exports in *.vue files are ignored.")}
-	__vue_template__ = __webpack_require__(24)
-	module.exports = __vue_script__ || {}
-	if (module.exports.__esModule) module.exports = module.exports.default
-	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
-	if (__vue_template__) {
-	__vue_options__.template = __vue_template__
-	}
-	if (!__vue_options__.computed) __vue_options__.computed = {}
-	Object.keys(__vue_styles__).forEach(function (key) {
-	var module = __vue_styles__[key]
-	__vue_options__.computed[key] = function () { return module }
-	})
-	if (false) {(function () {  module.hot.accept()
-	  var hotAPI = require("vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  var id = "_v-d7275bc4/post-half-img.vue"
-	  if (!module.hot.data) {
-	    hotAPI.createRecord(id, module.exports)
-	  } else {
-	    hotAPI.update(id, module.exports, __vue_template__)
-	  }
-	})()}
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(22);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(7)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./post-half-img.vue", function() {
-				var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./post-half-img.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(6)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.post-info {\n    border: 1px solid #eee;\n    border-radius: .25rem;\n    padding: 0 .75rem;\n    -ms-flex-align: center;\n    align-items: center;\n    -ms-flex-direction: row;\n    flex-direction: row;\n    display: -ms-inline-flexbox;\n    display: inline-flex;\n    background: #fff;\n}\n.post-info__rating{\n    margin-right: 1.5rem;\n    -ms-flex-align: center;\n    align-items: center;\n    display: -ms-flexbox;\n    display: flex;\n    color: #28a745;\n    font-weight: 700;\n}\n.post-info__views{\n    margin-right: 1.5rem;\n    -ms-flex-align: center;\n    align-items: center;\n    display: -ms-flexbox;\n    display: flex;\n    color: #6c757d;\n}\n.post-info__comments{\n    -ms-flex-align: center;\n    align-items: center;\n    display: -ms-flexbox;\n    display: flex;\n    color: #6c757d;\n}\n\n.post-info__icon{\n    padding-top: .25rem;\n    margin-right: .5rem;\n}\n.post-info__count{\n    font-size: .875rem;\n}\n\n", ""]);
-
-	// exports
-
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var postInfo = __webpack_require__(15);
-	module.exports = {
-	    components: {
-	        postInfo: postInfo
-	    },
-	    props: ['posts'],
-	    data: function data() {
-	        return {};
-	    }
-	};
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports) {
-
-	module.exports = "{{posts}}\n   <div class=\"\">\n   <div class=\"h2\">{{posts.title}}</div>\n    <post-info></post-info>\n   </div> \n    \n\n\n";
-
-/***/ }),
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
 	(function webpackUniversalModuleDefinition(root, factory) {
 		if(true)
 			module.exports = factory();
@@ -11450,21 +10884,21 @@
 	;
 
 /***/ }),
-/* 26 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-	__webpack_require__(27);
-	var firebase = _interopDefault(__webpack_require__(31));
-	__webpack_require__(34);
-	__webpack_require__(35);
-	__webpack_require__(37);
-	__webpack_require__(39);
-	__webpack_require__(40);
-	__webpack_require__(41);
+	__webpack_require__(5);
+	var firebase = _interopDefault(__webpack_require__(9));
+	__webpack_require__(12);
+	__webpack_require__(13);
+	__webpack_require__(15);
+	__webpack_require__(17);
+	__webpack_require__(18);
+	__webpack_require__(19);
 
 	/**
 	 * Copyright 2017 Google Inc.
@@ -11583,12 +11017,12 @@
 
 
 /***/ }),
-/* 27 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(setImmediate, global) {'use strict';
 
-	__webpack_require__(30);
+	__webpack_require__(8);
 
 	// Store setTimeout reference so promise-polyfill will be unaffected by
 	// other code modifying setTimeout (like sinon.useFakeTimers())
@@ -13118,10 +12552,10 @@
 	 * limitations under the License.
 	 */
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(28).setImmediate, (function() { return this; }())))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(6).setImmediate, (function() { return this; }())))
 
 /***/ }),
-/* 28 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -13177,7 +12611,7 @@
 	};
 
 	// setimmediate attaches itself to the global object
-	__webpack_require__(29);
+	__webpack_require__(7);
 	// On some exotic environments, it's not clear which object `setimmediate` was
 	// able to install onto.  Search each possibility in the same order as the
 	// `setimmediate` library.
@@ -13191,7 +12625,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 29 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -13384,7 +12818,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }()), __webpack_require__(2)))
 
 /***/ }),
-/* 30 */
+/* 8 */
 /***/ (function(module, exports) {
 
 	(function(self) {
@@ -13856,14 +13290,14 @@
 
 
 /***/ }),
-/* 31 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', { value: true });
 
-	var util = __webpack_require__(32);
+	var util = __webpack_require__(10);
 
 	/**
 	 * Copyright 2017 Google Inc.
@@ -14260,14 +13694,14 @@
 
 
 /***/ }),
-/* 32 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	Object.defineProperty(exports, '__esModule', { value: true });
 
-	var tslib_1 = __webpack_require__(33);
+	var tslib_1 = __webpack_require__(11);
 
 	/**
 	 * Copyright 2017 Google Inc.
@@ -16046,7 +15480,7 @@
 
 
 /***/ }),
-/* 33 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(global) {/*! *****************************************************************************
@@ -16294,10 +15728,10 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 34 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {(function() {var firebase = __webpack_require__(31).default;var g,aa=aa||{},k=this;function l(a){return"string"==typeof a}function ba(a){return"boolean"==typeof a}function ca(){}
+	/* WEBPACK VAR INJECTION */(function(global) {(function() {var firebase = __webpack_require__(9).default;var g,aa=aa||{},k=this;function l(a){return"string"==typeof a}function ba(a){return"boolean"==typeof a}function ca(){}
 	function da(a){var b=typeof a;if("object"==b)if(a){if(a instanceof Array)return"array";if(a instanceof Object)return b;var c=Object.prototype.toString.call(a);if("[object Window]"==c)return"object";if("[object Array]"==c||"number"==typeof a.length&&"undefined"!=typeof a.splice&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("splice"))return"array";if("[object Function]"==c||"undefined"!=typeof a.call&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("call"))return"function"}else return"null";
 	else if("function"==b&&"undefined"==typeof a.call)return"object";return b}function ea(a){return null===a}function fa(a){return"array"==da(a)}function ha(a){var b=da(a);return"array"==b||"object"==b&&"number"==typeof a.length}function n(a){return"function"==da(a)}function q(a){var b=typeof a;return"object"==b&&null!=a||"function"==b}var ia="closure_uid_"+(1E9*Math.random()>>>0),ja=0;function ka(a,b,c){return a.call.apply(a.bind,arguments)}
 	function la(a,b,c){if(!a)throw Error();if(2<arguments.length){var d=Array.prototype.slice.call(arguments,2);return function(){var c=Array.prototype.slice.call(arguments);Array.prototype.unshift.apply(c,d);return a.apply(b,c)}}return function(){return a.apply(b,arguments)}}function r(a,b,c){Function.prototype.bind&&-1!=Function.prototype.bind.toString().indexOf("native code")?r=ka:r=la;return r.apply(null,arguments)}
@@ -16608,7 +16042,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 35 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -16617,10 +16051,10 @@
 
 	function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-	var util = __webpack_require__(32);
-	var logger = __webpack_require__(36);
-	var tslib_1 = __webpack_require__(33);
-	var firebase = _interopDefault(__webpack_require__(31));
+	var util = __webpack_require__(10);
+	var logger = __webpack_require__(14);
+	var tslib_1 = __webpack_require__(11);
+	var firebase = _interopDefault(__webpack_require__(9));
 
 	/**
 	 * Copyright 2017 Google Inc.
@@ -31967,7 +31401,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 36 */
+/* 14 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -32159,7 +31593,7 @@
 
 
 /***/ }),
-/* 37 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {'use strict';
@@ -32168,10 +31602,10 @@
 
 	function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-	var firebase = _interopDefault(__webpack_require__(31));
-	var logger = __webpack_require__(36);
-	var tslib_1 = __webpack_require__(33);
-	var webchannelWrapper = __webpack_require__(38);
+	var firebase = _interopDefault(__webpack_require__(9));
+	var logger = __webpack_require__(14);
+	var tslib_1 = __webpack_require__(11);
+	var webchannelWrapper = __webpack_require__(16);
 
 	/**
 	 * Copyright 2017 Google Inc.
@@ -49765,7 +49199,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 38 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {(function() {var g,goog=goog||{},k=this;function l(a){return"string"==typeof a}function n(a,b){a=a.split(".");b=b||k;for(var c=0;c<a.length;c++)if(b=b[a[c]],null==b)return null;return b}function aa(){}
@@ -49875,7 +49309,7 @@
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }),
-/* 39 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -49884,8 +49318,8 @@
 
 	function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-	var tslib_1 = __webpack_require__(33);
-	var firebase = _interopDefault(__webpack_require__(31));
+	var tslib_1 = __webpack_require__(11);
+	var firebase = _interopDefault(__webpack_require__(9));
 
 	/**
 	 * Copyright 2017 Google Inc.
@@ -50431,7 +49865,7 @@
 
 
 /***/ }),
-/* 40 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -50440,9 +49874,9 @@
 
 	function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-	var util = __webpack_require__(32);
-	var tslib_1 = __webpack_require__(33);
-	var firebase = _interopDefault(__webpack_require__(31));
+	var util = __webpack_require__(10);
+	var tslib_1 = __webpack_require__(11);
+	var firebase = _interopDefault(__webpack_require__(9));
 
 	/**
 	 * Copyright 2018 Google Inc.
@@ -52562,7 +51996,7 @@
 
 
 /***/ }),
-/* 41 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -52571,7 +52005,7 @@
 
 	function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-	var firebase = _interopDefault(__webpack_require__(31));
+	var firebase = _interopDefault(__webpack_require__(9));
 
 	/**
 	 * Copyright 2017 Google Inc.
@@ -56025,6 +55459,567 @@
 
 	exports.registerStorage = registerStorage;
 
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__webpack_require__(21)
+	__vue_script__ = __webpack_require__(25)
+	if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
+	  console.warn("[vue-loader] js\\components\\header.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(26)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-8db7113e/header.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(22);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(24)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./header.vue", function() {
+				var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./header.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(23)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n.header__top-line {\r\n    width: auto;\r\n    background-color: #f6f6f6;\r\n    padding: .5rem 0;\r\n\r\n}\r\n.header__top-grid{\r\n    -ms-flex-pack: distribute;\r\n    justify-content: space-between;\r\n    -ms-flex-direction: row;\r\n    flex-direction: row;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n}\r\n\r\n\r\n.header__bottom-line{\r\n   padding: 2rem 0;\r\n}\r\n.heaader__logo {\r\n    height: 20px;\r\n    width: auto;\r\n\r\n}\r\n\r\n\r\n.header__main-nav{\r\n    width: 100%;\r\n    -ms-flex-align: center;\r\n    align-items: center;\r\n    -ms-flex-pack: distribute;\r\n    justify-content: space-around;\r\n    -ms-flex-direction: row;\r\n    flex-direction: row;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    font-size: 13px;\r\n    font-weight: 700;\r\n    text-transform: uppercase;\r\n    margin:0 3rem;\r\n}\r\n.header__bottom-block{\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -ms-flex-pack: center;\r\n        justify-content: center;\r\n}\r\n.header__create-controls{\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n}\r\n.header__create-controls-item {\r\n    -ms-flex-align: center;\r\n    align-items: center;\r\n    -ms-flex-direction: row;\r\n    flex-direction: row;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    font-size: .875rem;\r\n    font-weight: 700;\r\n    margin-right: 3rem;\r\n\r\n}\r\n.header__create-controls-icon{\r\n    margin-right: .5rem\r\n}\r\n\r\n\r\n.header__search {\r\n    text-align: right;\r\n    width: 100%;\r\n}\r\n", ""]);
+
+	// exports
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	// css base code, injected by the css-loader
+	module.exports = function() {
+		var list = [];
+
+		// return the list of modules as css string
+		list.toString = function toString() {
+			var result = [];
+			for(var i = 0; i < this.length; i++) {
+				var item = this[i];
+				if(item[2]) {
+					result.push("@media " + item[2] + "{" + item[1] + "}");
+				} else {
+					result.push(item[1]);
+				}
+			}
+			return result.join("");
+		};
+
+		// import a list of modules into the list
+		list.i = function(modules, mediaQuery) {
+			if(typeof modules === "string")
+				modules = [[null, modules, ""]];
+			var alreadyImportedModules = {};
+			for(var i = 0; i < this.length; i++) {
+				var id = this[i][0];
+				if(typeof id === "number")
+					alreadyImportedModules[id] = true;
+			}
+			for(i = 0; i < modules.length; i++) {
+				var item = modules[i];
+				// skip already imported module
+				// this implementation is not 100% perfect for weird media query combinations
+				//  when a module is imported multiple times with different media queries.
+				//  I hope this will never occur (Hey this way we have smaller bundles)
+				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+					if(mediaQuery && !item[2]) {
+						item[2] = mediaQuery;
+					} else if(mediaQuery) {
+						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+					}
+					list.push(item);
+				}
+			}
+		};
+		return list;
+	};
+
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	/*
+		MIT License http://www.opensource.org/licenses/mit-license.php
+		Author Tobias Koppers @sokra
+	*/
+	var stylesInDom = {},
+		memoize = function(fn) {
+			var memo;
+			return function () {
+				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+				return memo;
+			};
+		},
+		isOldIE = memoize(function() {
+			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+		}),
+		getHeadElement = memoize(function () {
+			return document.head || document.getElementsByTagName("head")[0];
+		}),
+		singletonElement = null,
+		singletonCounter = 0,
+		styleElementsInsertedAtTop = [];
+
+	module.exports = function(list, options) {
+		if(false) {
+			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+		}
+
+		options = options || {};
+		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+		// tags it will allow on a page
+		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+		// By default, add <style> tags to the bottom of <head>.
+		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+
+		var styles = listToStyles(list);
+		addStylesToDom(styles, options);
+
+		return function update(newList) {
+			var mayRemove = [];
+			for(var i = 0; i < styles.length; i++) {
+				var item = styles[i];
+				var domStyle = stylesInDom[item.id];
+				domStyle.refs--;
+				mayRemove.push(domStyle);
+			}
+			if(newList) {
+				var newStyles = listToStyles(newList);
+				addStylesToDom(newStyles, options);
+			}
+			for(var i = 0; i < mayRemove.length; i++) {
+				var domStyle = mayRemove[i];
+				if(domStyle.refs === 0) {
+					for(var j = 0; j < domStyle.parts.length; j++)
+						domStyle.parts[j]();
+					delete stylesInDom[domStyle.id];
+				}
+			}
+		};
+	}
+
+	function addStylesToDom(styles, options) {
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			if(domStyle) {
+				domStyle.refs++;
+				for(var j = 0; j < domStyle.parts.length; j++) {
+					domStyle.parts[j](item.parts[j]);
+				}
+				for(; j < item.parts.length; j++) {
+					domStyle.parts.push(addStyle(item.parts[j], options));
+				}
+			} else {
+				var parts = [];
+				for(var j = 0; j < item.parts.length; j++) {
+					parts.push(addStyle(item.parts[j], options));
+				}
+				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+			}
+		}
+	}
+
+	function listToStyles(list) {
+		var styles = [];
+		var newStyles = {};
+		for(var i = 0; i < list.length; i++) {
+			var item = list[i];
+			var id = item[0];
+			var css = item[1];
+			var media = item[2];
+			var sourceMap = item[3];
+			var part = {css: css, media: media, sourceMap: sourceMap};
+			if(!newStyles[id])
+				styles.push(newStyles[id] = {id: id, parts: [part]});
+			else
+				newStyles[id].parts.push(part);
+		}
+		return styles;
+	}
+
+	function insertStyleElement(options, styleElement) {
+		var head = getHeadElement();
+		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+		if (options.insertAt === "top") {
+			if(!lastStyleElementInsertedAtTop) {
+				head.insertBefore(styleElement, head.firstChild);
+			} else if(lastStyleElementInsertedAtTop.nextSibling) {
+				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+			} else {
+				head.appendChild(styleElement);
+			}
+			styleElementsInsertedAtTop.push(styleElement);
+		} else if (options.insertAt === "bottom") {
+			head.appendChild(styleElement);
+		} else {
+			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+		}
+	}
+
+	function removeStyleElement(styleElement) {
+		styleElement.parentNode.removeChild(styleElement);
+		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+		if(idx >= 0) {
+			styleElementsInsertedAtTop.splice(idx, 1);
+		}
+	}
+
+	function createStyleElement(options) {
+		var styleElement = document.createElement("style");
+		styleElement.type = "text/css";
+		insertStyleElement(options, styleElement);
+		return styleElement;
+	}
+
+	function addStyle(obj, options) {
+		var styleElement, update, remove;
+
+		if (options.singleton) {
+			var styleIndex = singletonCounter++;
+			styleElement = singletonElement || (singletonElement = createStyleElement(options));
+			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+		} else {
+			styleElement = createStyleElement(options);
+			update = applyToTag.bind(null, styleElement);
+			remove = function() {
+				removeStyleElement(styleElement);
+			};
+		}
+
+		update(obj);
+
+		return function updateStyle(newObj) {
+			if(newObj) {
+				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+					return;
+				update(obj = newObj);
+			} else {
+				remove();
+			}
+		};
+	}
+
+	var replaceText = (function () {
+		var textStore = [];
+
+		return function (index, replacement) {
+			textStore[index] = replacement;
+			return textStore.filter(Boolean).join('\n');
+		};
+	})();
+
+	function applyToSingletonTag(styleElement, index, remove, obj) {
+		var css = remove ? "" : obj.css;
+
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = replaceText(index, css);
+		} else {
+			var cssNode = document.createTextNode(css);
+			var childNodes = styleElement.childNodes;
+			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+			if (childNodes.length) {
+				styleElement.insertBefore(cssNode, childNodes[index]);
+			} else {
+				styleElement.appendChild(cssNode);
+			}
+		}
+	}
+
+	function applyToTag(styleElement, obj) {
+		var css = obj.css;
+		var media = obj.media;
+		var sourceMap = obj.sourceMap;
+
+		if (media) {
+			styleElement.setAttribute("media", media);
+		}
+
+		if (sourceMap) {
+			// https://developer.chrome.com/devtools/docs/javascript-debugging
+			// this makes source maps inside style tags work properly in Chrome
+			css += '\n/*# sourceURL=' + sourceMap.sources[0] + ' */';
+			// http://stackoverflow.com/a/26603875
+			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+		}
+
+		if (styleElement.styleSheet) {
+			styleElement.styleSheet.cssText = css;
+		} else {
+			while(styleElement.firstChild) {
+				styleElement.removeChild(styleElement.firstChild);
+			}
+			styleElement.appendChild(document.createTextNode(css));
+		}
+	}
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports) {
+
+	"use strict";
+
+	module.exports = {
+
+	    data: function data() {
+	        return {};
+	    }
+	};
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports) {
+
+	module.exports = "\n <div class=\"header\">\n    <div class=\"header__top-line d-none d-lg-block\">\n        <div class=\"header__container container\">\n            <div class=\"header__top-grid\">\n                <div class=\"header__project-nav\">\n                    <ul class=\"nav small\">\n                        <li class=\"nav__link\">\n                            <a class=\"link link--color-grey\" href=\"#\">DNS</a>\n                        </li>\n                        <li class=\"nav__link\">\n                            <a class=\"link link--color-grey\" href=\"#\">DNS Технопоинт</a>\n                        </li>\n                        <li class=\"nav__link\">\n                            <a class=\"link link--color-grey\" href=\"#\">DNS Сервис</a>\n                        </li>\n                    </ul>\n                </div>\n                <div class=\"header__project-nav\">\n                    <ul class=\"nav small\">\n                        <li class=\"nav__link\">\n                            <a class=\"link link--color-grey\" href=\"#\">Вход</a>\n                        </li>\n                        <li class=\"nav__link\">\n                            <a class=\"link link--color-grey\" href=\"#\">Регистрация</a>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n    <div class=\"header__bottom-line\">\n        <div class=\"header__container container\">\n            <div class=\"header__bottom-grid row\">\n                <div class=\"header__bottom-block col-2 d-lg-none\">\n                    <img src=\"https://i.snag.gy/23I0JN.jpg\" alt=\"\">\n                </div>\n                <div class=\"header__bottom-block col-8 col-lg-8\">\n                    <img class=\"heaader__logo\" src=\"https://i.snag.gy/p4txCj.jpg\" alt=\"\" > \n                    <div class=\"header__main-nav d-none d-lg-flex\">\n                        <a href=\"#\" class=\"link link--color-grey\">Дайджест</a> \n                        <a href=\"#\" class=\"link link--color-grey\">Обзоры</a> \n                        <a href=\"#\" class=\"link link--color-grey\">Лайфхаки</a>\n                        <a href=\"#\" class=\"link link--color-grey \">Обсуждения</a>\n                    </div>\n                </div>\n                <div class=\"header__bottom-block col-2 col-lg-4\">\n                    <div class=\"header__create-controls d-none d-lg-flex\">\n                     <div class=\"header__create-controls-item\">\n                        <div class=\"header__create-controls-icon\">+</div>\n                        <a href=\"\" class=\"link link--color-grey\">Написать</a>\n                    </div>\n                    <div class=\"header__create-controls-item\">\n                        <div class=\"header__create-controls-icon\">?</div>\n                        <a href=\"\" class=\"link link--color-grey\">Спросить</a>\n                    </div>\n                </div>\n                <div class=\"header__search\">\n                   <img src=\"https://i.snag.gy/7rBCoa.jpg\" alt=\"\">\n               </div>\n           </div>\n       </div>\n   </div>\n</div>\n</div>\n\n";
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__webpack_require__(28)
+	__vue_script__ = __webpack_require__(30)
+	if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
+	  console.warn("[vue-loader] js\\components\\post-half-img.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(36)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-1e4df5dc/post-half-img.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(29);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(24)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./post-half-img.vue", function() {
+				var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./post-half-img.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(23)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n.post{}\r\n\r\n", ""]);
+
+	// exports
+
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var postInfo = __webpack_require__(31);
+	module.exports = {
+	    components: {
+	        postInfo: postInfo
+	    },
+	    props: ['posts'],
+	    data: function data() {
+	        return {};
+	    }
+	};
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	var __vue_styles__ = {}
+	__webpack_require__(32)
+	__vue_script__ = __webpack_require__(34)
+	if (Object.keys(__vue_script__).some(function (key) { return key !== "default" && key !== "__esModule" })) {
+	  console.warn("[vue-loader] js\\components\\post-info.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(35)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	var __vue_options__ = typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports
+	if (__vue_template__) {
+	__vue_options__.template = __vue_template__
+	}
+	if (!__vue_options__.computed) __vue_options__.computed = {}
+	Object.keys(__vue_styles__).forEach(function (key) {
+	var module = __vue_styles__[key]
+	__vue_options__.computed[key] = function () { return module }
+	})
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "_v-7f7196d2/post-info.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(33);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(24)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./post-info.vue", function() {
+				var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/vue-loader/lib/style-rewriter.js!../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./post-info.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(23)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n.post-info {\r\n    border: 1px solid #eee;\r\n    border-radius: .25rem;\r\n    padding: 0 .75rem;\r\n    -ms-flex-align: center;\r\n    align-items: center;\r\n    -ms-flex-direction: row;\r\n    flex-direction: row;\r\n    display: -ms-inline-flexbox;\r\n    display: inline-flex;\r\n    background: #fff;\r\n}\r\n.post-info__rating{\r\n    margin-right: 1.5rem;\r\n    -ms-flex-align: center;\r\n    align-items: center;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    color: #28a745;\r\n    font-weight: 700;\r\n}\r\n.post-info__views{\r\n    margin-right: 1.5rem;\r\n    -ms-flex-align: center;\r\n    align-items: center;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    color: #6c757d;\r\n}\r\n.post-info__comments{\r\n    -ms-flex-align: center;\r\n    align-items: center;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    color: #6c757d;\r\n}\r\n\r\n.post-info__icon{\r\n    padding-top: .25rem;\r\n    margin-right: .5rem;\r\n}\r\n.post-info__count{\r\n    font-size: .875rem;\r\n}\r\n\r\n", ""]);
+
+	// exports
+
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	module.exports = {
+	    props: ['view', 'rating', 'comment'],
+	    data: function data() {
+	        return {};
+	    }
+	};
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports) {
+
+	module.exports = "\n<div class=\"post-info\">\n    <div class=\"post-info__rating\">\n        <div class=\"post-info__icon\">\n            <div class=\"icon-thumb-up\"></div>\n        </div>\n        <div class=\"post-info__count\">{{rating}} </div>\n    </div>\n    <div class=\"post-info__views\">\n        <div class=\"post-info__icon\">\n            <div class=\"icon-open-eye\"></div>\n        </div>\n        \n        <div class=\"post-info__count\">{{view}}</div>\n    </div>\n    <div class=\"post-info__comments\">\n        <div class=\"post-info__icon\">\n            <div class=\"icon-chat-bubble\"></div>\n        </div>\n        \n        <div class=\"post-info__count\">{{comment}} </div>\n    </div>\n</div>\n\n";
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports) {
+
+	module.exports = "\n    <div class=\"post\">\n    <div class=\"post__image\">\n        <img class=\"img-fluid\" :src=\"posts.img\" alt=\"\">\n    </div>\n     \n     <div class=\"h2\">{{posts.title}}</div>\n     <post-info \n     :view=\"posts.view\"\n     :rating=\"posts.like\"\n     :comment=\"posts.comment\"\n     ></post-info>\n     </div>\n</div> \n\n";
 
 /***/ })
 /******/ ]);

@@ -1,10 +1,17 @@
-<template>{{posts}}
-   <div class="">
-   <div class="h2">{{posts.title}}</div>
-    <post-info></post-info>
-   </div> 
-    
-
+<template>
+    <div class="post">
+    <div class="post__image">
+        <img class="img-fluid" :src="posts.img" alt="">
+    </div>
+     
+     <div class="h2">{{posts.title}}</div>
+     <post-info 
+     :view="posts.view"
+     :rating="posts.like"
+     :comment="posts.comment"
+     ></post-info>
+     </div>
+</div> 
 
 </template>
 
@@ -24,49 +31,6 @@ module.exports = {
 </script>
 
 <style>
-.post-info {
-    border: 1px solid #eee;
-    border-radius: .25rem;
-    padding: 0 .75rem;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    background: #fff;
-}
-.post-info__rating{
-    margin-right: 1.5rem;
-    -ms-flex-align: center;
-    align-items: center;
-    display: -ms-flexbox;
-    display: flex;
-    color: #28a745;
-    font-weight: 700;
-}
-.post-info__views{
-    margin-right: 1.5rem;
-    -ms-flex-align: center;
-    align-items: center;
-    display: -ms-flexbox;
-    display: flex;
-    color: #6c757d;
-}
-.post-info__comments{
-    -ms-flex-align: center;
-    align-items: center;
-    display: -ms-flexbox;
-    display: flex;
-    color: #6c757d;
-}
-
-.post-info__icon{
-    padding-top: .25rem;
-    margin-right: .5rem;
-}
-.post-info__count{
-    font-size: .875rem;
-}
+.post{}
 
 </style>
