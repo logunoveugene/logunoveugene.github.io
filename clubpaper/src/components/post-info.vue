@@ -4,7 +4,7 @@
             <div class="post-info__icon">
                 <div class="icon-thumb-up"></div>
             </div>
-            <div class="post-info__count">{{rating}} </div>
+            <div class="post-info__count">{{like}} </div>
         </div>
         <div class="post-info__views">
             <div class="post-info__icon">
@@ -25,13 +25,26 @@
 </template>
 
 <script>
-module.exports = {
-    props: ['view','rating','comment'],
-    data: function() {
-        return {
+export default  {
+    props: { 
+        like: {
+          type: null,
+          default: ""
+      },
+      view: {
+          type: null,
+          default: ""
+      },
+      comment: {
+          type: null,
+          default: ""
+      }
+  },
+  data: function() {
+    return {
 
-        }
     }
+}
 }
 </script>
 

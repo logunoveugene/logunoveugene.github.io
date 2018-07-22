@@ -1,9 +1,8 @@
-var Vue = require('vue');
-var VueFire = require('vuefire');
-var firebase = require('firebase');
-
-var mainheader = require('vue!./components/header.vue');
-var postHalfImg = require('vue!./components/post-half-img.vue');
+import Vue  from  'vue/dist/vue.js'
+import VueFire from 'vuefire'
+import firebase from 'firebase'
+import mainheader from './components/header.vue'
+import postHalfImg from './components/post-half-img.vue'
 
 
 var config = {
@@ -20,17 +19,14 @@ var liveRef = firebase.database().ref('live');
 var usersRef = firebase.database().ref('top-users');
 var reviewRef = firebase.database().ref('review');
 
-Vue.config.devtools = true;
+Vue.config.productionTip = false
 
 
 Vue.use(VueFire);
 
 new Vue({
 	el: '#app',
-	components: {
-		mainheader,
-		postHalfImg,
-	},
+	
 	firebase: {
 		digest: digestRef,
 		discussions: discussionsRef,
@@ -39,6 +35,10 @@ new Vue({
 		review: reviewRef
 
 	},
+	components: {
+		mainheader,
+		postHalfImg,
+	}
 })
 
 
