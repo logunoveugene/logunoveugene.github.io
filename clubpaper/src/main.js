@@ -5,6 +5,7 @@ import mainheader from './components/header.vue'
 
 
 
+
 import postHalfImg from './components/post-half-img.vue'
 import postImg from './components/post-img.vue'
 import postText from './components/post-text.vue'
@@ -27,6 +28,15 @@ var usersRef = firebase.database().ref('top-users');
 var reviewRef = firebase.database().ref('review');
 
 Vue.config.productionTip = false
+
+
+
+// Vue.prototype.$colorThief = new window.ColorThief();
+
+
+
+
+
 
 
 Vue.use(VueFire);

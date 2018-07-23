@@ -72,7 +72,6 @@
 
 			colorimg: function () {
 		
-
 				return true
 			}
 		} 
