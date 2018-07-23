@@ -32,10 +32,6 @@
 <script>
 	import postInfo from './post-info.vue'
 	import postTag from './post-tag.vue'
-	import * as Vibrant from 'node-vibrant'
-
-
- Vibrant.from('https://i.snag.gy/nyT2VO.jpg').getPalette((err, palette) => console.log(palette));
 
 
 	export default {
