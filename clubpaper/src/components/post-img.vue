@@ -1,3 +1,4 @@
+
 <template>
 	<div class="post">
 		<div class="post-image" >

@@ -3,6 +3,7 @@ import VueFire from 'vuefire'
 import firebase from 'firebase'
 import mainheader from './components/header.vue'
 
+// import colorThief from 'colorThief'
 
 
 import postHalfImg from './components/post-half-img.vue'
@@ -10,6 +11,7 @@ import postImg from './components/post-img.vue'
 import postText from './components/post-text.vue'
 import postLock from './components/post-lock.vue'
 import postBlogImg from './components/post-blog-img.vue'
+
 
 
 var config = {
