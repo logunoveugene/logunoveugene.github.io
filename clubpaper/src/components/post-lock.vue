@@ -1,24 +1,26 @@
 <template>
 	<div class="post">
-		<div class="post-half" >
-			<div class="post-half__image-wrap">
-				<img class="post-half__image" :src="post.img" alt="">
-			</div>
+	<div class="post-lock" >
+		<div class="post-lock__info">
 			<post-tag 
 			:source="post.source"
 			:format="post.format"
 			:tags="post.tags" 
 			></post-tag>
 
-			<div class="post-half__title  mb-3 h2">{{post.title}}</div>
+			<div class="post-lock__title">{{post.title}}</div>
+
+
 			<post-info 
 			:like="post.like"
 			:comment="post.comment"
 			:view="post.view" 
 			></post-info>
 		</div>
+		
 	</div>
 
+</div>
 </template>
 
 <script>
@@ -65,16 +67,32 @@
 </script>
 
 <style>
-.post-half__image-wrap{
-	overflow: hidden;
-	border-radius: .5rem;
-	margin-bottom: 1rem;
-}
-.post-half__image{
-	width: 100%;
-	max-width: 100%;
-	height: auto;
+.post-lock{
+	background: #FFFFFF;
+	border: 5px solid #FFA000;
+	box-shadow: 0 5px 30px 0 rgba(228,117,0,0.08);
+	border-radius: 8px;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding: 2rem;
 
+}
+
+.post-lock__info{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	height: auto;
+}
+
+.post-lock__title{
+	font-size: 36px;
+	font-weight: 700;
+	line-height: 42px;
+	margin-bottom: 1.5rem;
+/*	width: calc(100% - 4rem)*/
 }
 
 

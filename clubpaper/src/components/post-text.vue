@@ -1,16 +1,15 @@
 <template>
-	<div class="post">
-		<div class="post-half" >
-			<div class="post-half__image-wrap">
-				<img class="post-half__image" :src="post.img" alt="">
-			</div>
+	<div class="post" >
+		<div class="post-text">
 			<post-tag 
 			:source="post.source"
 			:format="post.format"
 			:tags="post.tags" 
 			></post-tag>
 
-			<div class="post-half__title  mb-3 h2">{{post.title}}</div>
+			<div class="post-text__title  mb-3 h2">{{post.title}}</div>
+			<div class="small mb-3">{{post.teaser}}</div>
+
 			<post-info 
 			:like="post.like"
 			:comment="post.comment"
@@ -18,7 +17,6 @@
 			></post-info>
 		</div>
 	</div>
-
 </template>
 
 <script>
@@ -65,17 +63,7 @@
 </script>
 
 <style>
-.post-half__image-wrap{
-	overflow: hidden;
-	border-radius: .5rem;
-	margin-bottom: 1rem;
-}
-.post-half__image{
-	width: 100%;
-	max-width: 100%;
-	height: auto;
 
-}
 
 
 </style>

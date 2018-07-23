@@ -1,8 +1,8 @@
 <template>
-	<div class="post">
-		<div class="post-half" >
-			<div class="post-half__image-wrap">
-				<img class="post-half__image" :src="post.img" alt="">
+	<div class="post-blog">
+		<div class="post-blog-img" >
+			<div class="post-blog-img__image-wrap">
+				<img class="post-blog-img__image" :src="post.img" alt="">
 			</div>
 			<post-tag 
 			:source="post.source"
@@ -10,7 +10,10 @@
 			:tags="post.tags" 
 			></post-tag>
 
-			<div class="post-half__title  mb-3 h2">{{post.title}}</div>
+			<div class="post-blog-img__title  mb-3 h2">{{post.title}}</div>
+			<div class="small mb-3">
+				Автор: <a class="link link--color-blue" href="">{{post.autor}}</a>
+			</div>
 			<post-info 
 			:like="post.like"
 			:comment="post.comment"
@@ -65,12 +68,21 @@
 </script>
 
 <style>
-.post-half__image-wrap{
-	overflow: hidden;
+.post-blog-img{
+	background: #fff;
+	padding: 1rem;
 	border-radius: .5rem;
-	margin-bottom: 1rem;
+
+
 }
-.post-half__image{
+
+.post-blog-img__image-wrap{
+	overflow: hidden;
+	border-radius: .5rem  .5rem 0 0;
+
+	margin: -1rem -1rem 1rem -1rem;
+}
+.post-blog-img__image{
 	width: 100%;
 	max-width: 100%;
 	height: auto;

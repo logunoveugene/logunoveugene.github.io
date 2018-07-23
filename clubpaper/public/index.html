@@ -1,37 +1,146 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>clubpaper</title>
-      <link rel="stylesheet prefetch" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="c-style.css">
-  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
-  <link href="https://file.myfontastic.com/QetMhtPrQUo9korwEw7VkX/icons.css" rel="stylesheet">
-  </head>
-  <body>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<link rel="icon" href="<%= BASE_URL %>favicon.ico">
+	<title>clubpaper</title>
+	<link rel="stylesheet prefetch" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="c-style.css">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+	<link href="https://file.myfontastic.com/QetMhtPrQUo9korwEw7VkX/icons.css" rel="stylesheet">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js"></script>
+</head>
+<body>
+	<div id="app">
+		<mainheader></mainheader>
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="layout__title layout__title--orange">Дайджест</div>
+				</div>
+			</div>
+			<div class="row mb-5">
+				<div class="col-12 col-md-6 col-lg-4">
+					<post-half-img :post="digest[0]"></post-half-img>
+				</div>
+				<div class="col-12 col-md-6   col-lg-4">
+					<post-img :post="digest[1]"></post-img> 
+				</div>
+				<div class="col-12 col-sm-12  col-lg-4">
+					<div class="mt-lg-4">
+						<post-text :post="digest[2]"></post-text >
+					</div>
+				</div>
 
-    <div id="app">
-    <mainheader></mainheader>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="layout__title">Дайджест</div>
-          
-        </div>
-        <div class="col-12 col-md-4">
-          <post-half-img   
-            :post="digest[0]" 
-          ></post-half-img>
- 
-        </div>
-        
+				<div class="col-12 col-sm-12  col-lg-8">
+					<post-lock :post="digest[3]">
+					</post-img> 
+				</div>
+				<div class="col-12 col-sm-6  col-lg-4">
+					<post-half-img :post="digest[4]"></post-half-img>
+				</div>
 
-      </div>
-    </div>
-  </div>
-    <!-- built files will be auto injected -->
-  </body>
+				<div class="col-12 col-sm-6  col-lg-4">
+					<post-half-img :post="digest[5]" ></post-half-img>
+				</div>
+				<div class="col-12 col-sm-6  col-lg-4">
+					<div class="mt-lg-4">
+						<post-text :post="digest[6]"></post-text >
+					</div>
+				</div>
+				<div class="col-12 col-sm-6  col-lg-4">
+					<div class="mt-lg-4">
+						<post-text :post="digest[7]"></post-text >
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bg-light">
+			<div class="container">
+				<div class="row pt-5">
+					<div class="col-12">
+						<div class="layout__title layout__title--blue">Обзоры</div>
+					</div>
+					<div class="col-12 col-sm-6 col-lg-4 ">
+						<div class="blog__item">
+							<post-blog-img :post="review[0]"></post-half-img>
+						</div>
+						<div class="blog__item">
+							<post-blog-img :post="review[1]"></post-half-img>
+						</div>
+					</div>
+					<div class="col-12 col-sm-6 col-lg-4 ">
+						<div class="blog__item">
+							<post-blog-img :post="review[2]"></post-half-img>
+						</div>
+						<div class="blog__item">
+							<post-blog-img :post="review[3]"></post-half-img>
+						</div>
+					</div>
+					<div class="col-12 col-sm-6 col-lg-4 ">
+						<div class="blog__item">
+							<post-blog-img :post="review[4]"></post-half-img>
+						</div>
+						<div class="blog__item">
+							<post-blog-img :post="review[5]"></post-half-img>
+						</div>
+					</div>
+
+					</div>
+					
+
+				</div>
+			</div>
+			
+	
+
+
+		<div class="container">
+			<div class="row pt-5">
+				<div class="col-12">
+					<div class="layout__title layout__title--orange">Лайфхаки</div>
+				</div>
+			</div>
+			<div class="row mb-5">
+				<div class="col-12 col-md-6 col-lg-4">
+					<post-half-img :post="digest[0]"></post-half-img>
+				</div>
+				<div class="col-12 col-md-6   col-lg-4">
+					<post-half-img :post="digest[1]"></post-half-img> 
+				</div>
+				<div class="col-12 col-sm-12  col-lg-4">
+					<div class="mt-lg-4">
+						<post-text :post="digest[2]"></post-text >
+					</div>
+				</div>
+
+				
+				<div class="col-12 col-sm-6  col-lg-4">
+					<post-half-img :post="digest[4]"></post-half-img>
+				</div>
+
+				<div class="col-12 col-sm-6  col-lg-4">
+					<post-half-img :post="digest[5]" ></post-half-img>
+				</div>
+				<div class="col-12 col-sm-6  col-lg-4">
+					<div class="mt-lg-4">
+						<post-text :post="digest[6]"></post-text >
+					</div>
+				</div>
+				<div class="col-12 col-sm-6  col-lg-4">
+					<div class="mt-lg-4">
+						<post-text :post="digest[7]"></post-text >
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	<!-- built files will be auto injected -->
+
+
+</body>
 </html>
