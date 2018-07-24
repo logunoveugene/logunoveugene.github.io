@@ -16,7 +16,7 @@
                         </li>
                     </ul>
                 </div>
-                 <div class="small text-secondary c-pointer" v-on:click="liveon" v-if="live == ''">Эфир</div>
+                 <div class="small text-secondary c-pointer" v-on:click="$emit('liveonp')" v-if="live == ''">Эфир</div>
                 <div class="header__project-nav">
                    
                     <ul class="nav small">
