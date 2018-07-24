@@ -1,26 +1,26 @@
 <template>
 	<div class="post">
-	<div class="post-lock" >
-		<div class="post-lock__info">
-			<post-tag 
-			:source="post.source"
-			:format="post.format"
-			:tags="post.tags" 
-			></post-tag>
+		<div class="post-lock" >
+			<div class="post-lock__info">
+				<post-tag 
+				:source="post.source"
+				:format="post.format"
+				:tags="post.tags" 
+				></post-tag>
 
-			<div class="post-lock__title">{{post.title}}</div>
+				<div class="post-lock__title">{{post.title}}</div>
 
 
-			<post-info 
-			:like="post.like"
-			:comment="post.comment"
-			:view="post.view" 
-			></post-info>
+				<post-info 
+				:like="post.like"
+				:comment="post.comment"
+				:view="post.view" 
+				></post-info>
+			</div>
+			
 		</div>
-		
-	</div>
 
-</div>
+	</div>
 </template>
 
 <script>
@@ -92,7 +92,14 @@
 	font-weight: 700;
 	line-height: 42px;
 	margin-bottom: 1.5rem;
-/*	width: calc(100% - 4rem)*/
+	/*	width: calc(100% - 4rem)*/
+}
+
+@media (max-width: 768px){
+	.post-lock__title{
+		font-size: 28px;
+		line-height: 34px;
+	}
 }
 
 

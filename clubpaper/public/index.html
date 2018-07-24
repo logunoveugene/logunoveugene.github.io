@@ -18,41 +18,44 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<div class="layout__title layout__title--orange">Дайджест</div>
+					<a href="" class="layout__title-link">
+						<div class="layout__title layout__title--orange">Дайджест</div>
+						<button class="layout__title-button"><span class="icon-arrow-right"></span></button>
+					</a>
 				</div>
 			</div>
 			<div class="row mb-5">
 				<div class="col-12 col-md-6 col-lg-4">
-					<post-half-img :post="digest[0]"></post-half-img>
+					<post-half-img :post="digest[1]"></post-half-img>
 				</div>
 				<div class="col-12 col-md-6   col-lg-4">
 					<post-img :post="digest[1]"></post-img> 
 				</div>
 				<div class="col-12 col-sm-12  col-lg-4">
 					<div class="mt-lg-4">
-						<post-text :post="digest[2]"></post-text >
+						<post-text :post="digest[1]"></post-text >
 					</div>
 				</div>
 
 				<div class="col-12 col-sm-12  col-lg-8">
-					<post-lock :post="digest[3]">
+					<post-lock :post="digest[1]">
 					</post-img> 
 				</div>
 				<div class="col-12 col-sm-6  col-lg-4">
-					<post-half-img :post="digest[4]"></post-half-img>
+					<post-half-img :post="digest[1]"></post-half-img>
 				</div>
 
 				<div class="col-12 col-sm-6  col-lg-4">
-					<post-half-img :post="digest[5]" ></post-half-img>
+					<post-half-img :post="digest[1]" ></post-half-img>
 				</div>
 				<div class="col-12 col-sm-6  col-lg-4">
 					<div class="mt-lg-4">
-						<post-text :post="digest[6]"></post-text >
+						<post-text :post="digest[1]"></post-text >
 					</div>
 				</div>
 				<div class="col-12 col-sm-6  col-lg-4">
 					<div class="mt-lg-4">
-						<post-text :post="digest[7]"></post-text >
+						<post-text :post="digest[1]"></post-text >
 					</div>
 				</div>
 			</div>
@@ -61,86 +64,128 @@
 			<div class="container">
 				<div class="row pt-5">
 					<div class="col-12">
-						<div class="layout__title layout__title--blue">Обзоры</div>
+						<a href="" class="layout__title-link">
+							<div class="layout__title layout__title--blue">Обзоры</div>
+							<button class="layout__title-button"><span class="icon-arrow-right"></span></button>
+						</a>
 					</div>
-					<div class="col-12 col-sm-6 col-lg-4 ">
-						<div class="blog__item">
-							<post-blog-img :post="review[0]"></post-half-img>
-						</div>
-						<div class="blog__item">
-							<post-blog-img :post="review[1]"></post-half-img>
-						</div>
-					</div>
-					<div class="col-12 col-sm-6 col-lg-4 ">
-						<div class="blog__item">
-							<post-blog-img :post="review[2]"></post-half-img>
-						</div>
-						<div class="blog__item">
-							<post-blog-img :post="review[3]"></post-half-img>
-						</div>
-					</div>
-					<div class="col-12 col-sm-6 col-lg-4 ">
-						<div class="blog__item">
-							<post-blog-img :post="review[4]"></post-half-img>
-						</div>
-						<div class="blog__item">
-							<post-blog-img :post="review[5]"></post-half-img>
-						</div>
-					</div>
+					<div class="col-12">
+						<div class="blog__wrap">
+							<div class="blog__item">
+								<post-blog-lock :post="review[2]"></post-blog-lock>
+								
+							</div>
+							<div class="blog__item">
+								<post-blog-text :post="review[0]"></post-blog-text>
+							</div>
 
-					</div>
-					
+							<div class="blog__item">
+								<post-blog-text :post="review[3]"></post-blog-text>
+							</div>
+							<div class="blog__item">
+								<post-blog-img :post="review[1]"></post-blog-img>
+								
+							</div>
 
+							<div class="blog__item">
+								<post-blog-text :post="review[4]"></post-blog-text>
+							</div>
+							<div class="blog__item">
+								<post-blog-img :post="review[5]"></post-blog-img>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
-			
-	
-
-
+		</div>
 		<div class="container">
 			<div class="row pt-5">
 				<div class="col-12">
-					<div class="layout__title layout__title--orange">Лайфхаки</div>
+					<a href="" class="layout__title-link">
+						<div class="layout__title layout__title--orange">Лайфхаки</div>
+						<button class="layout__title-button"><span class="icon-arrow-right"></span></button>
+					</a>
 				</div>
 			</div>
 			<div class="row mb-5">
+				<div class="col-12 col-sm-12  col-lg-4">
+					
+					<post-img :post="digest[2]"></post-img >
+					
+				</div>
 				<div class="col-12 col-md-6 col-lg-4">
 					<post-half-img :post="digest[0]"></post-half-img>
 				</div>
 				<div class="col-12 col-md-6   col-lg-4">
 					<post-half-img :post="digest[1]"></post-half-img> 
 				</div>
-				<div class="col-12 col-sm-12  col-lg-4">
-					<div class="mt-lg-4">
-						<post-text :post="digest[2]"></post-text >
-					</div>
-				</div>
-
 				
+
+
 				<div class="col-12 col-sm-6  col-lg-4">
 					<post-half-img :post="digest[4]"></post-half-img>
 				</div>
 
 				<div class="col-12 col-sm-6  col-lg-4">
-					<post-half-img :post="digest[5]" ></post-half-img>
+					<post-img :post="digest[5]" ></post-img>
 				</div>
-				<div class="col-12 col-sm-6  col-lg-4">
+				<div class="col-12 col-sm-12  col-lg-4">
 					<div class="mt-lg-4">
 						<post-text :post="digest[6]"></post-text >
 					</div>
 				</div>
-				<div class="col-12 col-sm-6  col-lg-4">
-					<div class="mt-lg-4">
-						<post-text :post="digest[7]"></post-text >
-					</div>
+
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row pt-5">
+				<div class="col-12">
+					<a href="" class="layout__title-link">
+						<div class="layout__title layout__title--orange">Обсуждения</div>
+						<button class="layout__title-button"><span class="icon-arrow-right"></span></button>
+					</a>
 				</div>
+			</div>
+			<div class="row mb-5">
+				<div class="col-12 col-md-8 col-lg-8">
+					<div class="discussions">
+						<div class="discussions__item" v-for="discussion in discussions">
+							<div class="d-flex"> 
+								<div class="discussions__img-wrap">
+									<img :src="discussion.img" alt="" class="discussions__img">
+								</div>
+								<div class="discussions__info">
+									<div class="discussions__ small mb-2">{{discussion.date}}</div>
+									<div class="discussions__title h2">
+										<a href="" class="link link--color-black">{{discussion.title}}</a>
+									</div>
+									<div class="discussions__source small mb-2">
+										<a href="" class="link link--color-grey">{{discussion.source}}</a>
+									</div>
+									<div class="discussions__teaser small mb-3">{{discussion.teaser}}</div>
+									<post-info 
+										:like="11"
+										:comment="26"
+										:view="6" 
+										></post-info>
+								</div>
+
+							</div>
+							
+
+						</div>
+					</div>
+					
+				</div>
+
 			</div>
 		</div>
 
 
 	</div>
 	<!-- built files will be auto injected -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.0.1/color-thief.min.js"></script>
 
 </body>
 </html>

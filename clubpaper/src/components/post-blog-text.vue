@@ -1,16 +1,17 @@
 <template>
-	<div class="post">
-		<div class="post-half" >
-			<div class="post-half__image-wrap" v-bind:style="{ backgroundColor: post.bgColor,  backgroundImage: 'url(' +  post.img + ')'}" >
-				
-			</div>
-			<post-tag 
-			:source="post.source"
+	<div class="post-blog">
+		<div class="post-blog-text">
+			<post-tag  class="justify-content-center" :source="post.source"
 			:format="post.format"
 			:tags="post.tags" 
 			></post-tag>
 
-			<div class="post-half__title  mb-3 h2">{{post.title}}</div>
+			<div class="post-blog-text__title  mb-3 h2">{{post.title}}</div>
+			<div class="small mb-3">
+				Автор: <a class="link link--color-blue" href="">{{post.autor}}</a>
+			</div>
+			<div class="small mb-3">{{post.teaser}}</div>
+
 			<post-info 
 			:like="post.like"
 			:comment="post.comment"
@@ -65,24 +66,15 @@
 </script>
 
 <style>
-.post-half__image-wrap{
-	overflow: hidden;
+.post-blog-text{
+	background: #fff;
+	padding: 2.5rem 1.5rem 2rem 1.5rem;
 	border-radius: .5rem;
-	margin-bottom: 1rem;
-	width: 100%;
-	max-width: 100%;
-	height: auto;
-	min-height: 170px;
-	background-position: center  bottom;
-	background-repeat: no-repeat;
-	background-size: cover;
+	text-align: center;
+
 }
 
-@media (max-width: 768px){
-.post-half__image-wrap{
-    background-position: center  ;
-}
-}
+
 
 
 </style>

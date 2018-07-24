@@ -12,8 +12,9 @@ import postImg from './components/post-img.vue'
 import postText from './components/post-text.vue'
 import postLock from './components/post-lock.vue'
 import postBlogImg from './components/post-blog-img.vue'
-
-
+import postBlogLock from './components/post-blog-lock.vue'
+import postBlogText from './components/post-blog-text.vue'
+import postInfo from './components/post-info.vue'
 
 var config = {
 	apiKey: "AIzaSyDKEuRv-KeOvSoGOJQESrAq4HIPUk_Ya_4",
@@ -60,7 +61,10 @@ new Vue({
 		postImg,
 		postText,
 		postLock,
-		postBlogImg
+		postBlogImg,
+		postBlogLock,
+		postBlogText,
+		postInfo
 	}
 })
 

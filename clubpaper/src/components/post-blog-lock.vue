@@ -1,16 +1,21 @@
 <template>
-	<div class="post">
-		<div class="post-half" >
-			<div class="post-half__image-wrap" v-bind:style="{ backgroundColor: post.bgColor,  backgroundImage: 'url(' +  post.img + ')'}" >
-				
+	<div class="post-blog">
+		<div class="post-blog-lock" >
+			<div class="post-blog-lock__image-wrap">
+				<img class="post-blog-lock__image" :src="post.img" alt="">
 			</div>
-			<post-tag 
-			:source="post.source"
+			<post-tag  class="justify-content-center" :source="post.source"
 			:format="post.format"
 			:tags="post.tags" 
 			></post-tag>
 
-			<div class="post-half__title  mb-3 h2">{{post.title}}</div>
+			<div class="post-blog-lock__title  mb-3 h2">{{post.title}}</div>
+			<div class="small mb-3">
+				Автор: <a class="link link--color-blue" href="">{{post.autor}}</a>
+			</div>
+			<div class="small mb-3">{{post.teaser}}</div>
+
+
 			<post-info 
 			:like="post.like"
 			:comment="post.comment"
@@ -65,23 +70,28 @@
 </script>
 
 <style>
-.post-half__image-wrap{
-	overflow: hidden;
+.post-blog-lock{
+	background: #fff;
+	padding: 1.5rem;
 	border-radius: .5rem;
-	margin-bottom: 1rem;
-	width: 100%;
-	max-width: 100%;
-	height: auto;
-	min-height: 170px;
-	background-position: center  bottom;
-	background-repeat: no-repeat;
-	background-size: cover;
+	text-align: center;
+	border: 5px solid #FFA000;
+	box-shadow: 0 5px 30px 0 rgba(0,0,0,0.08);
+
+
 }
 
-@media (max-width: 768px){
-.post-half__image-wrap{
-    background-position: center  ;
+.post-blog-lock__image-wrap{
+	overflow: hidden;
+	border-radius: .5rem  .5rem 0 0;
+	margin-bottom: 1.5rem;
+	
 }
+.post-blog-lock__image{
+	width: auto;
+	max-width: 100%;
+	height: auto;
+
 }
 
 

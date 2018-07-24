@@ -4,8 +4,7 @@
 			<div class="post-blog-img__image-wrap">
 				<img class="post-blog-img__image" :src="post.img" alt="">
 			</div>
-			<post-tag 
-			:source="post.source"
+			<post-tag  class="justify-content-center"			:source="post.source"
 			:format="post.format"
 			:tags="post.tags" 
 			></post-tag>
@@ -14,6 +13,9 @@
 			<div class="small mb-3">
 				Автор: <a class="link link--color-blue" href="">{{post.autor}}</a>
 			</div>
+			<div class="small mb-3">{{post.teaser}}</div>
+
+
 			<post-info 
 			:like="post.like"
 			:comment="post.comment"
@@ -70,8 +72,9 @@
 <style>
 .post-blog-img{
 	background: #fff;
-	padding: 1rem;
+	padding: 1.5rem 1.5rem 2rem 1.5rem;
 	border-radius: .5rem;
+	text-align: center;
 
 
 }
@@ -79,11 +82,11 @@
 .post-blog-img__image-wrap{
 	overflow: hidden;
 	border-radius: .5rem  .5rem 0 0;
-
-	margin: -1rem -1rem 1rem -1rem;
+	margin-bottom: 1.5rem;
+	
 }
 .post-blog-img__image{
-	width: 100%;
+	width: auto;
 	max-width: 100%;
 	height: auto;
 

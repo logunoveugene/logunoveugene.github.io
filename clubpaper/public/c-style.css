@@ -6,26 +6,30 @@ body {
 /*ссылки*/
 .link{
   cursor: pointer;
-}
-.link--color-grey{
-  color: #4E4E4E;
   transition: .2s;
 }
 
-.link--color-grey:hover{
+.link:hover{
   color: #FC5808;
   text-decoration: none;
 }
+
+.link--color-grey{
+  color: #4E4E4E;
+}
+
 
 .link--color-blue{
   color: #0d61af;
-  transition: .2s;
+ 
+}
+.link--color-black{
+  color: #000;
+ 
 }
 
-.link--color-blue:hover {
-  color: #FC5808;
-  text-decoration: none;
-}
+
+
 
 
 .link--dropdown{
@@ -76,10 +80,40 @@ h4, .h4 {
 .small {
   font-size: 0.875rem;
 }
+
+
+.layout__title-link{
+  display: inline-flex;
+}
+
+.layout__title-link:hover{
+  text-decoration: none;
+}
+
+.layout__title-link:hover .layout__title-button{
+ box-shadow: 0 4px 15px 0 rgba(0,0,0,0.15);
+}
+
+.layout__title-link:hover .layout__title{
+ color: #444;
+}
+
 .layout__title{
   font-size: 48px;
   font-weight: 700;
   margin-bottom: 2rem;
+  color: #000;
+}
+
+.layout__title-button{
+  background: #FFFFFF;
+  border: 1px solid rgba(0,0,0,0.10);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.05);
+  border-radius: 8px;
+  padding: 10px 12px 5px;
+  height: 42px;
+  margin: 16px;
+
 }
 
 .layout__title--orange:after{
@@ -123,16 +157,78 @@ h4, .h4 {
   height: 100%;
 }
 
+.post-blog{
+  padding-bottom: 40px;
+  height: 100%;
+}
 
 .blog__wrap{
-
-
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  column-count: 1;
+  -webkit-column-gap: 40px;
+  -moz-column-gap: 40px;
+  column-gap: 40px;
+  orphans: 1;
+  widows: 1;
 }
+@media (min-width: 768px){
+  .blog__wrap{
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-gap: 40px;
+  -moz-column-gap: 40px;
+  column-gap: 40px;
+  orphans: 1;
+  widows: 1;
+}
+}
+
+@media (min-width: 992px){
+  .blog__wrap{
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+  -webkit-column-gap: 40px;
+  -moz-column-gap: 40px;
+  column-gap: 40px;
+  orphans: 1;
+  widows: 1;
+}
+}
+
 
 .blog__item{
-
-
+  display: inline-block;
 }
+
+
+.discussions__item {
+    margin-bottom: 2.5rem;
+}
+
+.discussions__img-wrap {
+    margin-right: 3rem;
+}
+
+.discussions__img {
+    width: 150px;
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
