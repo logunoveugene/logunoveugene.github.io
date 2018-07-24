@@ -34,14 +34,6 @@ Vue.config.productionTip = false
 
 
 
-// Vue.prototype.$colorThief = new window.ColorThief();
-
-
-
-
-
-
-
 Vue.use(VueFire);
 
 new Vue({
@@ -55,6 +47,25 @@ new Vue({
 		review: reviewRef
 
 	},
+	data: function() {
+		return {
+
+			live:"showlive",
+			window: {
+				width: 0,
+				height: 0
+			},
+			promoreg:true
+		}
+	},
+	created() {
+		window.addEventListener('resize', this.handleResize)
+		this.handleResize();
+	},
+	destroyed() {
+		window.removeEventListener('resize', this.handleResize)
+	},
+
 	components: {
 		mainheader,
 		postHalfImg,
@@ -65,6 +76,23 @@ new Vue({
 		postBlogLock,
 		postBlogText,
 		postInfo
+	},
+	methods: {
+
+		liveoff:function () {
+			this.live = "";
+		},
+		liveon:function () {
+			this.live = "showlive";
+		},
+		handleResize() {
+			this.window.width = window.innerWidth;
+			this.window.height = window.innerHeight;
+			if (this.window.width < 1440) {
+				this.live = "";
+			}
+		}
+
 	}
 })
 

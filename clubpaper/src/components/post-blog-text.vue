@@ -6,9 +6,9 @@
 			:tags="post.tags" 
 			></post-tag>
 
-			<div class="post-blog-text__title  mb-3 h2"><a href="" class="link link--color-black">{{post.title}}</a></div>
+			<div class="post-blog-text__title  mb-3 h2"><a href="#" class="link link--color-black">{{post.title}}</a></div>
 			<div class="small mb-3">
-				Автор: <a class="link link--color-blue" href="">{{post.autor}}</a>
+				Автор: <a class="link link--color-blue" href="#">{{post.autor}}</a>
 			</div>
 			<div class="small mb-3">{{post.teaser}}</div>
 

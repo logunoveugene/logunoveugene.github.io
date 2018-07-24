@@ -10,7 +10,7 @@
 			:tags="post.tags" 
 			></post-tag>
 
-			<div class="post-half__title  mb-3 h2"><a href="" class="link link--color-black">{{post.title}}</a></div>
+			<div class="post-half__title  mb-3 h2"><a href="#" class="link link--color-black">{{post.title}}</a></div>
 			<post-info 
 			:like="post.like"
 			:comment="post.comment"

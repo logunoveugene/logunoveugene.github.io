@@ -16,7 +16,9 @@
                         </li>
                     </ul>
                 </div>
+                 <div class="small text-secondary c-pointer" v-on:click="liveon" v-if="live == ''">Эфир</div>
                 <div class="header__project-nav">
+                   
                     <ul class="nav small">
                         <li class="nav__link">
                             <a class="link link--color-grey" href="#">Вход</a>
@@ -49,12 +51,16 @@
                 <div class="header__bottom-block col-2 col-lg-4">
                     <div class="header__create-controls d-none d-lg-flex">
                      <div class="header__create-controls-item">
-                        <div class="header__create-controls-icon">+</div>
-                        <a href="" class="link link--color-grey">Написать</a>
+                        <div class="header__create-controls-icon">
+                            <div class="icon-pen"></div>
+                        </div>
+                        <a href="#" class="link link--color-grey">Написать</a>
                     </div>
                     <div class="header__create-controls-item">
-                        <div class="header__create-controls-icon">?</div>
-                        <a href="" class="link link--color-grey">Спросить</a>
+                        <div class="header__create-controls-icon">
+                            <div class="icon-ask"></div>
+                        </div>
+                        <a href="#" class="link link--color-grey">Спросить</a>
                     </div>
                 </div>
                 <div class="header__search">
@@ -70,7 +76,12 @@
 
 <script>
 export default {
-
+ props: { 
+        live: {
+          type: null,
+          default: "showlive"
+      }
+  },
     data: function() {
         return {
            
@@ -97,7 +108,7 @@ export default {
 
 
 .header__bottom-line{
-   padding: 2rem 0;
+   padding: 3rem 0 2rem;
 }
 .heaader__logo {
     height: 20px;
