@@ -19,12 +19,20 @@
             </div>
             
             <div class="post-info__count">{{comment}} </div>
+            <div class="post-info__activity" v-if="lastactivity">ответов, последний {{lastactivity | fdate}}</div> 
         </div>
     </div>
 
 </template>
 
 <script>
+    import dayjs from 'dayjs'
+    import relativeTime from 'dayjs/plugin/relativeTime'
+    import 'dayjs/locale/ru' 
+
+    dayjs.locale('ru') 
+    dayjs.extend(relativeTime)
+
 export default  {
     props: { 
         like: {
@@ -38,9 +46,18 @@ export default  {
       comment: {
           type: null,
           default: ""
+      },
+      lastactivity: {
+          type: null,
+          default: ""
       }
   },
-  data: function() {
+  filters: {
+    fdate: function(value) {
+      return dayjs().to(dayjs(value));
+  }
+},
+data: function() {
     return {
 
     }
@@ -91,6 +108,10 @@ export default  {
     margin-right: .5rem;
 }
 .post-info__count{
+    font-size: .875rem;
+}
+.post-info__activity{
+    margin-left: .25rem;
     font-size: .875rem;
 }
 

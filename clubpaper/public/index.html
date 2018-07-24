@@ -24,7 +24,7 @@
 					</a>
 				</div>
 			</div>
-			<div class="row mb-5">
+			<div class="row">
 				<div class="col-12 col-md-6 col-lg-4">
 					<post-half-img :post="digest[1]"></post-half-img>
 				</div>
@@ -36,7 +36,20 @@
 						<post-text :post="digest[1]"></post-text >
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="bg-light mb-5">
+			<div class="container">
+				<div class="row ">
+					<div class="col-12">
+						1
+					</div>
+				</div>
+			</div>
+		</div>
 
+		<div class="container">
+			<div class="row">
 				<div class="col-12 col-sm-12  col-lg-8">
 					<post-lock :post="digest[1]">
 					</post-img> 
@@ -139,7 +152,7 @@
 		</div>
 
 		<div class="container">
-			<div class="row pt-5">
+			<div class="row">
 				<div class="col-12">
 					<a href="" class="layout__title-link">
 						<div class="layout__title layout__title--orange">Обсуждения</div>
@@ -148,7 +161,7 @@
 				</div>
 			</div>
 			<div class="row mb-5">
-				<div class="col-12 col-md-8 col-lg-8">
+				<div class="col-12 col-md-12 col-lg-8">
 					<div class="discussions">
 						<div class="discussions__item" v-for="discussion in discussions">
 							<div class="d-flex"> 
@@ -164,11 +177,16 @@
 										<a href="" class="link link--color-grey">{{discussion.source}}</a>
 									</div>
 									<div class="discussions__teaser small mb-3">{{discussion.teaser}}</div>
-									<post-info 
-										:like="11"
-										:comment="26"
-										:view="6" 
+									<div class="d-flex align-items-center">
+										<post-info  
+										:like="discussion.like"
+										:comment="discussion.comment"
+										:view="discussion.view" 
+										:lastactivity="discussion.lastactivity" 
 										></post-info>
+										<a href="" class=" ml-3 link link--color-blue small"> Ответить</a>
+									</div>
+									
 								</div>
 
 							</div>
