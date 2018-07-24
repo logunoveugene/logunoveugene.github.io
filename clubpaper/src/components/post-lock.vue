@@ -8,7 +8,7 @@
 				:tags="post.tags" 
 				></post-tag>
 
-				<div class="post-lock__title">{{post.title}}</div>
+				<div class="post-lock__title"><a href="" class="link link--color-black">{{post.title}}</a></div>
 
 
 				<post-info 
