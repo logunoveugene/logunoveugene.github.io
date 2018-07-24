@@ -152,16 +152,12 @@
 		</div>
 
 		<div class="container">
-			<div class="row">
-				<div class="col-12">
+			<div class="row mb-5">
+				<div class="col-12 col-md-12 col-lg-8">
 					<a href="" class="layout__title-link">
 						<div class="layout__title layout__title--orange">Обсуждения</div>
 						<button class="layout__title-button"><span class="icon-arrow-right"></span></button>
 					</a>
-				</div>
-			</div>
-			<div class="row mb-5">
-				<div class="col-12 col-md-12 col-lg-8">
 					<div class="discussions">
 						<div class="discussions__item" v-for="discussion in discussions">
 							<div class="d-flex"> 
@@ -196,6 +192,83 @@
 					</div>
 					
 				</div>
+				
+				<div class="col-12 col-lg-4  ">
+					<div class="row">
+						<div class="col-12 col-md-6 col-lg-12">
+							<div class="card mb-3">
+								<div class="card-body">
+									<div class="h1 mb-3">Последние награды</div>
+									<ul class="list-unstyled">
+										<li class="media mb-4">
+											<img class="mr-3 " src="https://i.snag.gy/2KJYFl.jpg">
+											<div class="media-body">
+												<div class="font-weight-bold">Активист</div>
+												<div class="small">Дается за 250 комментариев за последние 3 месяца</div>
+												<div class="small text-secondary">
+													7 минут назад <a href="">Антон</a>
+												</div>
+											</div>
+										</li>
+										<li class="media mb-4">
+											<img class="mr-3 " src="https://i.snag.gy/sXIjOr.jpg">
+											<div class="media-body">
+												<div class="font-weight-bold">Признание</div>
+												<div class="small">Дается за 100 лайков </div>
+												<div class="small text-secondary">
+													7 минут назад <a href="">Василий</a>
+												</div>
+											</div>
+										</li>
+										<li class="media mb-4">
+											<img class="mr-3 " src="https://i.snag.gy/pSKLce.jpg">
+											<div class="media-body">
+												<div class="font-weight-bold">Учитель</div>
+												<div class="small">Дается за 100 лайков или дислайков чужим комментариям</div>
+												<div class="small text-secondary">
+													7 минут назад <a href="">Александра</a>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<button type="button" class="btn btn-secondary btn-block">Все награды</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-md-6 col-lg-12">
+							<div class="card mb-4">
+								<div class="card-body">
+									<div class="h1 mb-1">Лидеры</div>
+									<ul class="nav nav-tabs  mb-4 bg-white " id="myTab" role="tablist">
+										<li class="nav-item">
+											<a class="nav-link active" aria-selected="true">Неделя</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" aria-selected="false">Месяц</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" aria-selected="false">Все время</a>
+										</li>
+									</ul>
+									<ul class="list-unstyled">
+										<li class="media mb-3" v-for="(user, index) in topUsers">
+											<img class="mr-3 img-60 rounded-circle " :src="user.img">
+											<div class="media-body align-self-center">
+												<div class="">
+													<a href="" class=" ">{{user.name}}</a>
+												</div>
+												<div class="small d-inline-block">{{user.count}} баллов</div>
+												<div class="text-success small d-inline-block">+ {{user.up}}</div>
+											</div>
+										</li>
+									</ul>
+									<button type="button" class="btn btn-secondary btn-block">Весь список</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
 
 			</div>
 		</div>

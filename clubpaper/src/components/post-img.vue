@@ -16,7 +16,7 @@
 						:color="post.textColor"
 						></post-tag>
 
-						<div class="post__title  mb-3 h2" v-bind:style="{ textShadow: '0 2px 5px'+ post.bgColor, color: post.textColor }"><a href="" class="link link--color-black">{{post.title}}</a></div>
+						<div class="post__title  mb-3 h2" v-bind:style="{ textShadow: '0 2px 5px'+ post.bgColor, color: post.textColor }"><a href="" v-bind:style="{ color: post.textColor }" class="link link--color-black">{{post.title}}</a></div>
 						<div class="mt-auto">
 							<post-info 
 							:like="post.like"
