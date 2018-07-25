@@ -126,6 +126,7 @@
 
 
 
+
 .heaader__logo {
 	height: 20px;
 	width: auto;
@@ -155,6 +156,13 @@
 	text-transform: uppercase;
 	margin:0 3rem;
 }
+
+.header__bottom-grid {
+    display: flex;
+    align-items: center;
+}
+
+
 .header__bottom-block{
 	display: flex;
 	justify-content: center;
