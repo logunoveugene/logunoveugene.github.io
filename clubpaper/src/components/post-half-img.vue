@@ -78,11 +78,11 @@
 	background-size: cover;
 }
 
-@media (max-width: 768px){
+/*@media (max-width: 768px){
 .post-half__image-wrap{
     background-position: center  ;
 }
-}
+}*/
 
 
 </style>

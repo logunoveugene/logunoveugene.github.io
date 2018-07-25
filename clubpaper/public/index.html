@@ -17,7 +17,9 @@
 
 		<div class="live" v-if="live == 'showlive'">
 			<div class="bg-light p-2">
-				<div class="d-flex small c-pointer" v-on:click="liveoff">Скрыть</div>
+				<div class="d-flex small" v-on:click="liveoff">
+					<a href="#" class="link link--color-grey">Скрыть</a>
+				</div>
 			</div>
 			<div class="d-flex flex-row align-items-center p-3">
 				<div class="h1 mb-0">Прямой эфир</div>
@@ -33,7 +35,7 @@
 							</div>
 							<div class="d-flex flex-row align-items-center justify-content-between mt-2">
 								<a class="link link--color-blue small " href="">Ответить</a>
-								<div class="text-secondary small">{{live.author}}</div>
+								<div class="text-secondary small"><a href="#" class="link link--color-blue">{{live.author}}</a> {{live.date | fdate}}</div>
 							</div>
 						</div>
 					</li>
@@ -68,20 +70,25 @@
 				</div>
 			</div>
 		</div>
-		<div class="bg-light mb-5">
+		<div class="layout--bg-grey mb-5">
 			<div class="container py-5">
-				<div class="d-flex">
-					<div class="h2 mb-4 mr-4">Клуб DNS – центр онлайн компетенции</div> 
-					<a href="#" class="link link--color-blue">Тур по сайту</a>
+				<div class="d-flex mb-4 pb-2">
+					<div class="h1 mr-4">Вступай в ДНС клуб, у нас хорошо</div> 
+					<div class="small pt-1">
+						<a href="#" class="link link--color-blue">Тур по сайту</a>
+					</div>
 				</div>
 
 				<div class="row ">
 					<div class="col-12 col-lg-3">
 						<div class="d-flex align-items-center mb-4 mb-lg-0">
 							<div class="mr-3">
-								<img src="https://i.snag.gy/bZSirm.jpg" alt="">
+								<img src="https://i.snag.gy/uTZ2Vg.jpg" alt="">
 							</div>
-							<div class="small">Отвечай на вопросы, публикуй обзоры и стань звездой клуба</div>
+							<div class="benefit-item__info">
+								<div class="">Читай – у нас есть что!</div>
+								<div class="small">тысячи бомбическийх статей и обзоров. </div>
+							</div>
 						</div>
 						
 					</div>
@@ -90,21 +97,27 @@
 							<div class="mr-3">
 								<img src="https://i.snag.gy/bZSirm.jpg" alt="">
 							</div>
-							<div class="small">Отвечай на вопросы, публикуй обзоры и стань звездой клуба</div>
+							<div class="benefit-item__info">
+								<div class="">Пиши – стань звездой</div>
+								<div class="small">публикуй обзоры, отвечай на вопросы</div>
+							</div>
 						</div>
 						
 					</div>
 					<div class="col-12 col-lg-3">
 						<div class="d-flex align-items-center mb-4 mb-lg-0">
 							<div class="mr-3">
-								<img src="https://i.snag.gy/bZSirm.jpg" alt="">
+								<img src="https://i.snag.gy/iO4wqJ.jpg" alt="">
 							</div>
-							<div class="small">Отвечай на вопросы, публикуй обзоры и стань звездой клуба</div>
+							<div class="benefit-item__info">
+								<div class="">Получай награды</div>
+								<div class="small">будь активным – прокачивай свой уровень</div>
+							</div>
 						</div>
 						
 					</div>
 					<div class="col-12 col-lg-3">
-						<div class="btn btn-block btn-primary ">Зарегистрироваться</div>
+						<div class="btn btn-block btn--color-blue">Зарегистрироваться</div>
 						
 					</div>
 				</div>
@@ -136,7 +149,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="bg-light">
+		<div class="layout--bg-grey ">
 			<div class="container">
 				<div class="row pt-5">
 					<div class="col-12">
@@ -215,7 +228,7 @@
 		</div>
 
 		<div class="container">
-			<div class="row mb-5">
+			<div class="row ">
 				<div class="col-12 col-md-12 col-lg-8">
 					<a href="#" class="layout__title-link">
 						<div class="layout__title layout__title--orange">Обсуждения</div>
@@ -228,7 +241,7 @@
 									<img :src="discussion.img" alt="" class="discussions__img">
 								</div>
 								<div class="discussions__info">
-									<div class="discussions__ small mb-2">{{discussion.date}}</div>
+									<div class="discussions__ small mb-2">{{discussion.date | fdate}}</div>
 									<div class="discussions__title h2">
 										<a href="#" class="link link--color-black">{{discussion.title}}</a>
 									</div>
@@ -258,8 +271,9 @@
 				
 				<div class="col-12 col-lg-4">
 					<div class="row">
-						<div class="col-12 col-md-6 col-lg-12">
-							<div class="card-block mb-3">
+
+						<div class="col-12 col-md-6 col-lg-12 order-2 order-lg-1">
+							<div class="card-block mb-4">
 								<div class="card-block__body">
 									<div class="h1 mb-3">Последние награды</div>
 									<ul class="list-unstyled">
@@ -294,38 +308,41 @@
 											</div>
 										</li>
 									</ul>
-									<button type="button" class="btn btn-secondary btn-block">Все награды</button>
+									<button type="button" class="btn btn--color-white btn-block">Все награды</button>
 								</div>
 							</div>
 						</div>
-						<div class="col-12 col-md-6 col-lg-12">
+						<div class="col-12 col-md-6 col-lg-12 order-3 order-lg-2">
 							<div class="card-block mb-4">
 								<div class="card-block__body">
-									<div class="h1 mb-1">Лидеры</div>
-									<ul class="nav nav-tabs  mb-4 bg-white " id="myTab" role="tablist">
-										<li class="nav-item">
-											<a class="nav-link active" aria-selected="true">Неделя</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" aria-selected="false">Месяц</a>
-										</li>
-										<li class="nav-item">
-											<a class="nav-link" aria-selected="false">Все время</a>
-										</li>
-									</ul>
+									<div class="h1 mb-3">Лидеры</div>
+									<nav class="nav nav-pills nav-justified mb-4 small">
+										<a class="pill-item link pill-item--active " href="#">Неделя</a>
+										<a class="pill-item link" href="#">Месяц</a>
+										<a class="pill-item link" href="#">Все время</a>
+									</nav>
 									<ul class="list-unstyled">
 										<li class="media mb-3" v-for="(user, index) in topUsers">
 											<img class="mr-3 img-60 rounded-circle " :src="user.img">
 											<div class="media-body align-self-center">
 												<div class="">
-													<a href="#" class=" ">{{user.name}}</a>
+													<a href="#" class="link link--color-blue">{{user.name}}</a>
 												</div>
 												<div class="small d-inline-block">{{user.count}} баллов</div>
 												<div class="text-success small d-inline-block">+ {{user.up}}</div>
 											</div>
 										</li>
 									</ul>
-									<button type="button" class="btn btn-secondary btn-block">Весь список</button>
+									<button type="button" class="btn btn--color-white btn-block">Весь список</button>
+								</div>
+							</div>
+						</div>
+						<div class="col-12 col-md-12 col-lg-12 order-1 order-lg-2">
+							<div class="card-block mb-3">
+								<div class="card-block__body">
+									<div class="h1 mb-2">Опросы</div>
+									<div class="small mb-3">Пожалуйста, ответьте на несколько вопросов</div>
+									<button type="button" class="btn btn--color-blue btn-block">Пройти опрос</button>
 								</div>
 							</div>
 						</div>
@@ -335,6 +352,61 @@
 
 			</div>
 		</div>
+		<div class="layout--bg-grey mb-5">
+			<div class="container py-5">
+				<div class="d-flex mb-4 pb-2">
+					<div class="h1 mr-4">Вступай в ДНС клуб, у нас хорошо</div> 
+					<div class="small pt-1">
+						<a href="#" class="link link--color-blue">Тур по сайту</a>
+					</div>
+				</div>
+
+				<div class="row ">
+					<div class="col-12 col-lg-3">
+						<div class="d-flex align-items-center mb-4 mb-lg-0">
+							<div class="mr-3">
+								<img src="https://i.snag.gy/uTZ2Vg.jpg" alt="">
+							</div>
+							<div class="benefit-item__info">
+								<div class=" mb-1">Читай – у нас есть что!</div>
+								<div class="small">тысячи бомбическийх статей и обзоров. </div>
+							</div>
+						</div>
+						
+					</div>
+					<div class="col-12 col-lg-3">
+						<div class="d-flex align-items-center mb-4 mb-lg-0">
+							<div class="mr-3">
+								<img src="https://i.snag.gy/bZSirm.jpg" alt="">
+							</div>
+							<div class="benefit-item__info">
+								<div class=" mb-1">Пиши – стань звездой</div>
+								<div class="small">публикуй обзоры, отвечай на вопросы</div>
+							</div>
+						</div>
+						
+					</div>
+					<div class="col-12 col-lg-3">
+						<div class="d-flex align-items-center mb-4 mb-lg-0">
+							<div class="mr-3">
+								<img src="https://i.snag.gy/iO4wqJ.jpg" alt="">
+							</div>
+							<div class="benefit-item__info">
+								<div class=" mb-1">Получай награды</div>
+								<div class="small">будь активным – прокачивай свой уровень</div>
+							</div>
+						</div>
+						
+					</div>
+					<div class="col-12 col-lg-3">
+						<div class="btn btn-block btn--color-blue">Зарегистрироваться</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+
 
 
 	</div>

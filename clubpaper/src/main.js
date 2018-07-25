@@ -3,8 +3,13 @@ import VueFire from 'vuefire'
 import firebase from 'firebase'
 import mainheader from './components/header.vue'
 
-// import colorThief from 'colorThief'
 
+  import dayjs from 'dayjs'
+    import relativeTime from 'dayjs/plugin/relativeTime'
+    import 'dayjs/locale/ru' 
+
+    dayjs.locale('ru') 
+    dayjs.extend(relativeTime)
 
 
 import postHalfImg from './components/post-half-img.vue'
@@ -77,6 +82,11 @@ new Vue({
 		postBlogText,
 		postInfo
 	},
+	filters: {
+      fdate: function(value) {
+        return dayjs().to(dayjs(value));
+      }
+    },
 	methods: {
 
 		liveoff:function () {

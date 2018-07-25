@@ -2,6 +2,7 @@
 <template>
 	<div class="post">
 		<div class="post-image" >
+
 			<div class="post-image__image-wrap" v-bind:style="{  backgroundImage: 'url(' +  post.img + ')'}" >
 				<!-- <img class="post-image__image" :src="post.img" alt=""> -->
 				<div class="post-image__gradient-wrap" v-bind:style="{ boxShadow: 'inset 0px 170px 100px -60px ' +  post.bgColor}" >
@@ -28,6 +29,7 @@
 					</div>
 				</div>
 			</div>
+
 
 		</div>
 
@@ -105,11 +107,11 @@
 
 }
 
-@media (max-width: 768px){
+/*@media (max-width: 768px){
 	.post-image__image-wrap{
 		background-position: center  ;
 	}
-}
+}*/
 
 .post-image__gradient-wrap{
 	padding: 2rem;
