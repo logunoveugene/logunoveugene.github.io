@@ -30,9 +30,13 @@ var config = {
 firebase.initializeApp(config);
 
 var digestRef = firebase.database().ref('digest');
+var lifehackRef = firebase.database().ref('lifehack');
+
 var discussionsRef = firebase.database().ref('discussions');
 var liveRef = firebase.database().ref('live');
 var usersRef = firebase.database().ref('top-users');
+var levelRef = firebase.database().ref('users-level');
+
 var reviewRef = firebase.database().ref('review');
 
 Vue.config.productionTip = false
@@ -46,9 +50,11 @@ new Vue({
 	
 	firebase: {
 		digest: digestRef,
+		lifehack: lifehackRef,
 		discussions: discussionsRef,
 		lives: liveRef,
 		topUsers: usersRef,
+		usersLevel: levelRef,
 		review: reviewRef
 
 	},

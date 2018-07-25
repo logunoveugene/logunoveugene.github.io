@@ -199,28 +199,28 @@
 			<div class="row mb-5">
 				<div class="col-12 col-sm-12  col-lg-4">
 					
-					<post-img :post="digest[2]"></post-img >
+					<post-img :post="lifehack[2]"></post-img >
 					
 				</div>
 				<div class="col-12 col-md-6 col-lg-4">
-					<post-half-img :post="digest[0]"></post-half-img>
+					<post-half-img :post="lifehack[0]"></post-half-img>
 				</div>
 				<div class="col-12 col-md-6   col-lg-4">
-					<post-half-img :post="digest[1]"></post-half-img> 
+					<post-half-img :post="lifehack[1]"></post-half-img> 
 				</div>
 				
 
 
 				<div class="col-12 col-sm-6  col-lg-4">
-					<post-half-img :post="digest[4]"></post-half-img>
+					<post-half-img :post="lifehack[4]"></post-half-img>
 				</div>
 
 				<div class="col-12 col-sm-6  col-lg-4">
-					<post-img :post="digest[5]" ></post-img>
+					<post-img :post="lifehack[5]" ></post-img>
 				</div>
 				<div class="col-12 col-sm-12  col-lg-4">
 					<div class="mt-lg-4">
-						<post-text :post="digest[6]"></post-text >
+						<post-text :post="lifehack[0]"></post-text >
 					</div>
 				</div>
 
@@ -241,7 +241,7 @@
 									<img :src="discussion.img" alt="" class="discussions__img">
 								</div>
 								<div class="discussions__info">
-									<div class="discussions__ small mb-2">{{discussion.date | fdate}}</div>
+									<div class="discussions__ small mb-2">Автор: <a class="link link--color-blue mr-2" href="#">{{discussion.autor}}</a> {{discussion.date | fdate}}</div>
 									<div class="discussions__title h2">
 										<a href="#" class="link link--color-black">{{discussion.title}}</a>
 									</div>
@@ -277,37 +277,18 @@
 								<div class="card-block__body">
 									<div class="h1 mb-3">Последние награды</div>
 									<ul class="list-unstyled">
-										<li class="media mb-4">
-											<img class="mr-3 " src="https://i.snag.gy/2KJYFl.jpg">
-											<div class="media-body">
-												<div class="font-weight-bold">Активист</div>
-												<div class="small">Дается за 250 комментариев за последние 3 месяца</div>
-												<div class="small text-secondary">
-													7 минут назад <a href="#">Антон</a>
+										<li class="media mb-3" v-for="(userLevel, index) in usersLevel">
+											<img class="mr-3 img-60 rounded-circle " :src="userLevel.img">
+											<div class="media-body align-self-center">
+												<div class="">
+													<a href="#" class="link link--color-blue">{{userLevel.name}}</a>
 												</div>
-											</div>
-										</li>
-										<li class="media mb-4">
-											<img class="mr-3 " src="https://i.snag.gy/sXIjOr.jpg">
-											<div class="media-body">
-												<div class="font-weight-bold">Признание</div>
-												<div class="small">Дается за 100 лайков </div>
-												<div class="small text-secondary">
-													7 минут назад <a href="#">Василий</a>
-												</div>
-											</div>
-										</li>
-										<li class="media mb-4">
-											<img class="mr-3 " src="https://i.snag.gy/pSKLce.jpg">
-											<div class="media-body">
-												<div class="font-weight-bold">Учитель</div>
-												<div class="small">Дается за 100 лайков или дислайков чужим комментариям</div>
-												<div class="small text-secondary">
-													7 минут назад <a href="#">Александра</a>
-												</div>
+												<div class="small">Достигнут {{userLevel.rate}} уровень</div>
+												<div class="small"> {{userLevel.date | fdate}}</div>
 											</div>
 										</li>
 									</ul>
+									
 									<button type="button" class="btn btn--color-white btn-block">Все награды</button>
 								</div>
 							</div>
@@ -319,9 +300,10 @@
 									<nav class="nav nav-pills nav-justified mb-4 small">
 										<a class="pill-item link pill-item--active " href="#">Неделя</a>
 										<a class="pill-item link" href="#">Месяц</a>
-										<a class="pill-item link" href="#">Все время</a>
+										<!-- <a class="pill-item link" href="#">Все время</a> -->
 									</nav>
 									<ul class="list-unstyled">
+
 										<li class="media mb-3" v-for="(user, index) in topUsers">
 											<img class="mr-3 img-60 rounded-circle " :src="user.img">
 											<div class="media-body align-self-center">

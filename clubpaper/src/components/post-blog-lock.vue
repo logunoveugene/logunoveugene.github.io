@@ -11,7 +11,7 @@
 
 			<div class="post-blog-lock__title  mb-3 h2"><a href="#" class="link link--color-black">{{post.title}}</a></div>
 			<div class="small mb-3">
-				Автор: <a class="link link--color-blue" href="#">{{post.autor}}</a>
+				Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
 			</div>
 			<div class="small mb-3">{{post.teaser}}</div>
 
@@ -30,6 +30,12 @@
 	import postInfo from './post-info.vue'
 	import postTag from './post-tag.vue'
 
+	import dayjs from 'dayjs'
+	import relativeTime from 'dayjs/plugin/relativeTime'
+	import 'dayjs/locale/ru' 
+
+	dayjs.locale('ru') 
+	dayjs.extend(relativeTime)
 	export default {
 		components: {
 			postInfo,
@@ -56,6 +62,11 @@
 						view: ""
 					}
 				}
+			}
+		},
+		filters: {
+			fdate: function(value) {
+				return dayjs().to(dayjs(value));
 			}
 		},
 
