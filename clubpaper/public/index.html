@@ -237,7 +237,7 @@
 						<button class="layout__title-button"><span class="icon-arrow-right"></span></button>
 					</a>
 					<div class="discussions">
-						<div class="discussions__item" v-for="discussion in discussions">
+						<div class="discussions__item" v-for="(discussion, index) in discussions">
 							<div class="d-flex"> 
 								<div class="discussions__img-wrap">
 									<img :src="discussion.img" alt="" class="discussions__img">
@@ -260,9 +260,20 @@
 										></post-info>
 										<a href="#" class="link link--color-blue small mb-3"> Ответить</a>
 									</div>
+								</div>
+							</div>
+							<div class="mt-4 mb-4" v-if="index=='0'" >
+								<div class="bg-light p-4">
+									<div class="h1 ">Нужна помощь?</div>
+									<div class="small mb-3">Найди ответ на любой вопрос о компьютерах,  электорнике или бытовой технике</div>
+									<div class="d-flex align-items-center">
+										<div class="btn btn--color-white mr-3 ">Задать вопрос</div>
+										<div class="small">
+											<a href="" class="link link--color-blue">Подробнее о сервисе</a>
+										</div>
+									</div>
 									
 								</div>
-
 							</div>
 							
 
