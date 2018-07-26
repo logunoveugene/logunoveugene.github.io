@@ -367,6 +367,7 @@
 							<div class="card-block mb-3">
 								<div class="card-block__body">
 									<div class="h1 mb-2">Результаты опроса</div>
+									<div class="small mb-1">от 12 июня 2018г.</div>
 									<div class="small mb-3">Какой гаджет вы считаете лучшим новогодним подарком?</div>
 									<div class="mb-4">
 										<div class="mb-2 " v-for="survey in surveys" >
@@ -377,8 +378,6 @@
 											<div class="poll-line" v-bind:style="{ width: survey.rate + '%'}"></div>
 										</div>
 									</div>
-
-
 									<button type="button" class="btn btn--color-white btn-block">Все опросы</button>
 								</div>
 							</div>
