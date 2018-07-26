@@ -13,7 +13,11 @@
 			<div class="small mb-3">
 				Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
 			</div>
-			<div class="small mb-3">{{post.teaser}}</div>
+
+			<post-teaser
+			:teaser="post.teaser">
+			</post-teaser>
+		
 
 
 			<post-info 
@@ -29,6 +33,7 @@
 <script>
 	import postInfo from './post-info.vue'
 	import postTag from './post-tag.vue'
+	import postTeaser from './post-teaser.vue'
 
 	import dayjs from 'dayjs'
 	import relativeTime from 'dayjs/plugin/relativeTime'
@@ -39,7 +44,8 @@
 	export default {
 		components: {
 			postInfo,
-			postTag
+			postTag,
+			postTeaser
 		},
 		props: {
 			post: {
@@ -86,7 +92,7 @@
 	padding: 1.5rem;
 	border-radius: .5rem;
 	text-align: center;
-	border: 5px solid #FFA000;
+/*	border: 5px solid #FFA000;*/
 
 
 }
