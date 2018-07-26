@@ -39,6 +39,8 @@ var levelRef = firebase.database().ref('users-level');
 
 var reviewRef = firebase.database().ref('review');
 
+var surveyRef = firebase.database().ref('survey');
+
 Vue.config.productionTip = false
 
 
@@ -55,6 +57,7 @@ new Vue({
 		lives: liveRef,
 		topUsers: usersRef,
 		usersLevel: levelRef,
+		surveys: surveyRef,
 		review: reviewRef
 
 	},

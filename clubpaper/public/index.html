@@ -6,6 +6,35 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link rel="icon" href="<%= BASE_URL %>favicon.ico">
 	<title>clubpaper</title>
+	<!-- Yandex.Metrika counter -->
+	<script type="text/javascript" >
+		(function (d, w, c) {
+			(w[c] = w[c] || []).push(function() {
+				try {
+					w.yaCounter49738453 = new Ya.Metrika({
+						id:49738453,
+						clickmap:true,
+						trackLinks:true,
+						accurateTrackBounce:true,
+						webvisor:true
+					});
+				} catch(e) { }
+			});
+
+			var n = d.getElementsByTagName("script")[0],
+			s = d.createElement("script"),
+			f = function () { n.parentNode.insertBefore(s, n); };
+			s.type = "text/javascript";
+			s.async = true;
+			s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+			if (w.opera == "[object Opera]") {
+				d.addEventListener("DOMContentLoaded", f, false);
+			} else { f(); }
+		})(document, window, "yandex_metrika_callbacks");
+	</script>
+	<noscript><div><img src="https://mc.yandex.ru/watch/49738453" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+	<!-- /Yandex.Metrika counter -->
 	
 	<link rel="stylesheet prefetch" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="c-style.css">
@@ -120,7 +149,7 @@
 
 						</div>
 						<div class="col-12 col-lg-3">
-							<div class="btn btn-block btn--color-blue">Зарегистрироваться</div>
+							<div class="btn btn-block btn--color-blue">Вступить в Клуб</div>
 
 						</div>
 					</div>
@@ -337,9 +366,20 @@
 						<div class="col-12 col-md-12 col-lg-12 order-1 order-lg-2">
 							<div class="card-block mb-3">
 								<div class="card-block__body">
-									<div class="h1 mb-2">Опросы</div>
-									<div class="small mb-3">Пожалуйста, ответьте на несколько вопросов</div>
-									<button type="button" class="btn btn--color-blue btn-block">Пройти опрос</button>
+									<div class="h1 mb-2">Результаты опроса</div>
+									<div class="small mb-3">Какой гаджет вы считаете лучшим новогодним подарком?</div>
+									<div class="mb-4">
+										<div class="mb-2 " v-for="survey in surveys" >
+											<div class=" d-flex justify-content-between">
+												<div class="small pb-1">{{survey.title}}</div>
+												<div class="small">{{survey.rate}}%</div>
+											</div>
+											<div class="poll-line" v-bind:style="{ width: survey.rate + '%'}"></div>
+										</div>
+									</div>
+
+
+									<button type="button" class="btn btn--color-white btn-block">Все опросы</button>
 								</div>
 							</div>
 						</div>
@@ -400,7 +440,7 @@
 
 						</div>
 						<div class="col-12 col-lg-3">
-							<div class="btn btn-block btn--color-blue">Зарегистрироваться</div>
+							<div class="btn btn-block btn--color-blue">Вступить в Клуб</div>
 
 						</div>
 					</div>

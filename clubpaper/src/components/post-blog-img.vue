@@ -4,7 +4,7 @@
 			<div class="post-blog-img__image-wrap">
 				<img class="post-blog-img__image" :src="post.img" alt="">
 			</div>
-			<post-tag  class="justify-content-center"			:source="post.source"
+			<post-tag  class="justify-content-center" :source="post.source"
 			:format="post.format"
 			:tags="post.tags" 
 			></post-tag>
@@ -13,7 +13,9 @@
 			<div class="small mb-3">
 				Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
 			</div>
-			<div class="small mb-3">{{post.teaser}}</div>
+			<post-teaser
+			:teaser="post.teaser">
+			</post-teaser>
 
 
 			<post-info 
@@ -29,6 +31,7 @@
 <script>
 	import postInfo from './post-info.vue'
 	import postTag from './post-tag.vue'
+	import postTeaser from './post-teaser.vue'
 
 	import dayjs from 'dayjs'
 	import relativeTime from 'dayjs/plugin/relativeTime'
@@ -41,7 +44,8 @@
 	export default {
 		components: {
 			postInfo,
-			postTag
+			postTag,
+			postTeaser
 		},
 		props: {
 			post: {

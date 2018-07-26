@@ -10,7 +10,9 @@
 			<div class="small mb-3">
 				Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
 			</div>
-			<div class="small mb-3">{{post.teaser}}</div>
+			<post-teaser
+			:teaser="post.teaser">
+			</post-teaser>
 
 			<post-info 
 			:like="post.like"
@@ -25,6 +27,7 @@
 <script>
 	import postInfo from './post-info.vue'
 	import postTag from './post-tag.vue'
+	import postTeaser from './post-teaser.vue'
 
 
 	import dayjs from 'dayjs'
@@ -37,7 +40,8 @@
 	export default {
 		components: {
 			postInfo,
-			postTag
+			postTag,
+			postTeaser
 		},
 		props: {
 			post: {
