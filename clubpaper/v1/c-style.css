@@ -113,7 +113,7 @@ h4, .h4 {
 .layout__title-link{
 	display: inline-flex;
 	align-items: center;
-	margin-bottom: 2rem;
+	margin-bottom: 1rem;
 }
 
 .layout__title-link:hover{
