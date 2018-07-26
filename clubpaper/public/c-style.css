@@ -49,8 +49,8 @@ body {
 .pill-item{
 	color: #4E4E4E;
 	display: block;
-    padding: .5rem 1rem;
-    border-radius: .5rem;
+	padding: .5rem 1rem;
+	border-radius: .5rem;
 
 }
 
@@ -113,7 +113,7 @@ h4, .h4 {
 .layout__title-link{
 	display: inline-flex;
 	align-items: center;
-		margin-bottom: 2rem;
+	margin-bottom: 2rem;
 }
 
 .layout__title-link:hover{
@@ -281,13 +281,6 @@ h4, .h4 {
 	}
 
 
-
-
-
-
-
-
-
 	/*прямой эфир        */
 
 	.live {
@@ -311,15 +304,31 @@ h4, .h4 {
 		width: 0px;
 	}
 
+
+	.main-layout{
+		transition: .3s;
+	}
+
 	@media (min-width: 1440px) {
 		.showlive.main-layout {
 			padding-right: 280px;
+
 		}
 
 		.live {
 			display: block;
 		}
 	}
+
+
+	.side-enter-active, .side-leave-active {
+		transition:  .3s;
+	}
+	.side-enter, .side-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+
+		transform: translateX(280px);
+	}
+
 
 	.pulse {
 		display: block;
@@ -446,9 +455,9 @@ h4, .h4 {
 
 
 
-.benefit-item__info{
-	line-height: 1.3;
-}
+	.benefit-item__info{
+		line-height: 1.3;
+	}
 
 
 

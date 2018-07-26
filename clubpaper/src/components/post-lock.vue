@@ -70,7 +70,6 @@
 .post-lock{
 	background: #FFFFFF;
 	border: 5px solid #FFA000;
-	box-shadow: 0 5px 30px 0 rgba(228,117,0,0.08);
 	border-radius: 8px;
 	height: 100%;
 	display: flex;

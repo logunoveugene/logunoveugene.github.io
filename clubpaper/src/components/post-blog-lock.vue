@@ -87,7 +87,6 @@
 	border-radius: .5rem;
 	text-align: center;
 	border: 5px solid #FFA000;
-	box-shadow: 0 5px 30px 0 rgba(0,0,0,0.08);
 
 
 }
