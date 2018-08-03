@@ -4,12 +4,14 @@ import firebase from 'firebase'
 import mainheader from './components/header.vue'
 
 
-  import dayjs from 'dayjs'
-    import relativeTime from 'dayjs/plugin/relativeTime'
-    import 'dayjs/locale/ru' 
 
-    dayjs.locale('ru') 
-    dayjs.extend(relativeTime)
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+import 'dayjs/locale/ru' 
+
+dayjs.locale('ru') 
+dayjs.extend(relativeTime)
+
 
 
 import postHalfImg from './components/post-half-img.vue'
@@ -46,6 +48,9 @@ Vue.config.productionTip = false
 
 
 Vue.use(VueFire);
+
+
+
 
 new Vue({
 	el: '#app',
@@ -90,12 +95,14 @@ new Vue({
 		postBlogLock,
 		postBlogText,
 		postInfo
+		
+
 	},
 	filters: {
-      fdate: function(value) {
-        return dayjs().to(dayjs(value));
-      }
-    },
+		fdate: function(value) {
+			return dayjs().to(dayjs(value));
+		}
+	},
 	methods: {
 
 		liveoff:function () {
@@ -113,6 +120,33 @@ new Vue({
 		}
 
 	}
-})
+});
+
+
+(function() {
+  'use strict';
+
+  var section = document.querySelectorAll(".section");
+  var sections = {};
+  var i = 0;
+
+  Array.prototype.forEach.call(section, function(e) {
+    sections[e.id] = e.offsetTop;
+  });
+
+  window.onscroll = function() {
+    var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+
+    for (i in sections) {
+      if (sections[i] <= scrollPosition) {
+        document.querySelector('.bottom-menu__item--active').setAttribute('class', 'bottom-menu__item');
+        document.querySelector('a[href*=' + i + ']').setAttribute('class', 'bottom-menu__item bottom-menu__item--active');
+      }
+    }
+  };
+})();
+
+
+
 
 
