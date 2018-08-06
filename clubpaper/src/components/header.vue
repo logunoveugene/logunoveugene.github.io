@@ -19,7 +19,10 @@
 						</div>
 					</div>
 					<div class="header__top-block col-2 col-lg-4">
-						<div class="small" v-on:click="$emit('liveonp')" v-if="live == ''"><a href="#" class="link link--color-grey">Прямой эфир</a></div>
+						<div class="small" v-on:click="$emit('liveonp')" v-if="live == ''"><a href="#" class="link link--color-grey">Эфир</a></div>
+						<div class="small">
+							<a href="#" class="link link--color-grey">Тур по сайту</a>
+						</div>
 						<div class="header__user-nav">
 							<ul class="nav small">
 								<li class="nav__link">
@@ -151,7 +154,7 @@
 .fixed-plate{
 	position: fixed;
 
-display: none;
+	display: none;
 }
 .fixed-plate.is-fixed{
 	position: fixed;
@@ -209,7 +212,7 @@ display: none;
 .header__user-nav{
 	text-align: right;
 	justify-content: flex-end;
-	flex-grow: 1;
+
 	display: flex;
 }
 
