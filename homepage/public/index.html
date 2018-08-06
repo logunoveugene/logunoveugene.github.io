@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Главная</title>
+	
+	<link rel="stylesheet prefetch" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="c-style.css">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+	<link href="https://file.myfontastic.com/QetMhtPrQUo9korwEw7VkX/icons.css" rel="stylesheet">
+	
+</head>
+<body>
+	<div id="app">
+		<div class="header">
+			<div class="header__top-line">
+				<div class="header__container container">
+					<div class="header__row row">
+						<div class="header__block col-3">
+							<div class="header__city ">
+								<div class="header__city-link">
+									<a class="link link--color-grey" href="#">Владивосток</a>
+								</div>
+							</div>
+						</div>
+						<div class="header__block col-9">
+							<div class="header__nav ">
+								<ul class="nav">
+									<li class="nav__link">
+										<a class="link link--color-grey link--dropdown" href="#">Магазины</a>
+									</li>
+									<li class="nav__link">
+										<a class="link link--color-grey link--dropdown" href="#">Покупателям</a>
+									</li>
+									<li class="nav__link">
+										<a class="link link--color-grey link--dropdown" href="#">Наши проекты</a>
+									</li>
+								</ul>
+							</div>
+							<div class="header__phone">
+								<div class="header__phone-number">8-800-77-07-999</div>
+								<div class="header__phone-time">(c 03:00 до 22:00)</div>
+							</div>
+							<div class="header__user-auth">
+								<div class="header__sign-in-link">
+									<a class="link link--color-grey" href="#">Вход</a>
+								</div>
+								<div class="header__sign-up-link">
+									<a class="link link--color-grey" href="#">Регистрация</a>
+								</div>  
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header__bottom-line">
+				<div class="header__container container">
+					<div class="header__row row">
+						<div class="header__block col-3">
+							<div class="header__logo ">
+								<img src="https://i.snag.gy/iSpaHI.jpg" class="mr-2" alt="">
+								<img src="https://i.snag.gy/ktOpuU.jpg" alt="">
+							</div>
+						</div>
+						<div class="header__block col-4 col-lg-5">
+							<div class="header__search-form">
+								<input type="text" class="header__search-form-field" placeholder="Поиск среди более 100 000 товаров">
+								<button class="header__search-form-submit">Найти</button>
+
+							</div>
+						</div>
+						<div class="header__block col-5 col-lg-4">
+							<div class="header__store-control">
+								<div class="header__store-control__icon">
+									<div class="icon-cart"></div>
+								</div>
+								<div class="header__store-control__desc">Сравнение</div>
+							</div>
+							<div class="header__store-control">
+								<div class="header__store-control__icon">
+									<div class="icon-cart"></div>
+								</div>
+								<div class="header__store-control__desc">Избранное</div>
+							</div>
+							<div class="header__store-control">
+								<div class="header__store-control__icon">
+									<div class="icon-cart"></div>
+								</div>
+								<div class="header__store-control__desc">Корзина</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main-layout">
+			<div class="container">
+				<div class="row">
+					<div class="col-3">
+						<div class="card">
+							<div class="card-body">
+								h
+							</div>
+						</div>
+					</div>
+					<div class="col-9">
+						<div class="row">
+							<div class="col-8">
+								<div class="card mb-3">
+									<local-swiper :options="mainBannerOption">
+										<local-slide v-for="(mainbanner, index) in mainbanners" :key="index">
+											<img  :src="mainbanner.img" alt="">
+										</local-slide>
+										<div class="swiper-pagination" slot="pagination"></div>
+										<div class="ml-4 sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
+										<div class="mr-4 sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
+									</local-swiper>
+								</div>
+							</div>
+							<div class="col-4">
+								<div class="card">
+									<div class="card-body">1</div>
+								</div>
+							</div>
+							<div class="col-12">
+								<div class="h2">Актуальные предложения</div>
+								<div class="card mb-3">
+									<div class="card-body">
+										<div class="d-flex justify-content-between align-items-center mb-4">
+
+											<ul class="nav nav-pills " id="pills-tab" role="tablist">
+												<li class="nav-item">
+													<a class="link--color-grey link nav-link active" id="pills-home-tab" data-toggle="pill" href="#hot" role="tab" aria-controls="hot" aria-selected="true">Спасаемся от жары</a>
+												</li>
+												<li class="nav-item">
+													<a class="link--color-grey link nav-link" id="pills-profile-tab" data-toggle="pill" href="#water" role="tab" aria-controls="water" aria-selected="false">Горячей воде быть!</a>
+												</li>
+												<li class="nav-item">
+													<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#weekend" role="tab" aria-controls="weekend" aria-selected="false">С собой в отпуск</a>
+												</li>
+											</ul>
+										</div>
+										<div class="tab-content pt-2" id="pills-tabContent">
+											<div class="tab-pane fade show active" id="hot" role="tabpanel" aria-labelledby="pills-home-tab">
+												<local-swiper :options="setsOption" v-for="(set, index) in sets" :key="index">
+													<local-slide v-for = "(aircond, index) in set.air" :key="index">
+														<div class="d-flex" >
+															<img  :src="aircond.img" alt="" class="mr-3">
+															<div class="d-flex flex-column">
+																<div class="small mb-2">
+																	<div class="link link--color-grey">{{aircond.title}}</div>
+																</div>
+																<div class="h4 mb-0">от {{aircond.price }} р.</div>
+															</div>
+														</div>
+													</local-slide>
+													<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
+													<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
+												</local-swiper>
+											</div>
+											<div class="tab-pane fade" id="water" role="tabpanel" aria-labelledby="pills-profile-tab">
+												<local-swiper :options="setsOption" v-for="(set, index) in sets" :key="index">
+													<local-slide v-for = "(boilerP, index) in set.boiler" :key="index">
+														<div class="d-flex" >
+															<img  :src="boilerP.img" alt="" class="mr-3">
+															<div class="d-flex flex-column">
+																<div class="small mb-2">{{boilerP.title}}</div>
+																<div class="h4 mb-0">от {{boilerP.price }} р.</div>
+															</div>
+														</div>
+													</local-slide>
+													<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
+													<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
+												</local-swiper>
+											</div>
+											<div class="tab-pane fade" id="weekend" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="card">
+									<div class="card-body">1</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="card">
+									<div class="card-body">1</div>
+								</div>
+							</div>
+						</div>
+
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<!-- built files will be auto injected -->
+</body>
+</html>
