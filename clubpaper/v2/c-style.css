@@ -536,15 +536,20 @@ h4, .h4 {
 
 }
 
-.bottom-menu__item--active{
+a.bottom-menu__item.active{
 	color: #fff;
 	background-color: #0088e2;
+	text-decoration: none;
 }
 
-.bottom-menu__item{
+
+
+a.bottom-menu__item{
 	flex-grow: 1; 
 	text-align: center;
 	padding: 10px 8px;
+	text-decoration: none;
+	color: #0d61af;
 }
 
 

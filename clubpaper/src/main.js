@@ -9,6 +9,8 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 
 
+import Scrollspy from 'vue2-scrollspy';
+
 
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
@@ -38,15 +40,13 @@ firebase.initializeApp(config);
 
 var digestRef = firebase.database().ref('digest');
 var lifehackRef = firebase.database().ref('lifehack');
-
 var discussionsRef = firebase.database().ref('discussions');
 var liveRef = firebase.database().ref('live');
 var usersRef = firebase.database().ref('top-users');
 var levelRef = firebase.database().ref('users-level');
-
 var reviewRef = firebase.database().ref('review');
-
 var surveyRef = firebase.database().ref('survey');
+
 
 Vue.config.productionTip = false
 
@@ -54,6 +54,7 @@ Vue.config.productionTip = false
 
 Vue.use(VueFire);
 
+Vue.use(Scrollspy);
 
 
 
@@ -155,28 +156,28 @@ new Vue({
 });
 
 
-(function() {
-	'use strict';
+// (function() {
+// 	'use strict';
 
-	var section = document.querySelectorAll(".section");
-	var sections = {};
-	var i = 0;
+// 	var section = document.querySelectorAll(".section");
+// 	var sections = {};
+// 	var i = 0;
 
-	Array.prototype.forEach.call(section, function(e) {
-		sections[e.id] = e.offsetTop;
-	});
+// 	Array.prototype.forEach.call(section, function(e) {
+// 		sections[e.id] = e.offsetTop;
+// 	});
 
-	window.onscroll = function() {
-		var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+// 	window.onscroll = function() {
+// 		var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
 
-		for (i in sections) {
-			if (sections[i] <= scrollPosition) {
-				document.querySelector('.bottom-menu__item--active').setAttribute('class', 'bottom-menu__item');
-				document.querySelector('a[href*=' + i + ']').setAttribute('class', 'bottom-menu__item bottom-menu__item--active');
-			}
-		}
-	};
-})();
+// 		for (i in sections) {
+// 			if (sections[i] <= scrollPosition) {
+// 				document.querySelector('.bottom-menu__item--active').setAttribute('class', 'bottom-menu__item');
+// 				document.querySelector('a[href*=' + i + ']').setAttribute('class', 'bottom-menu__item bottom-menu__item--active');
+// 			}
+// 		}
+// 	};
+// })();
 
 
 
