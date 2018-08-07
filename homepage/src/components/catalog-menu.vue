@@ -35,12 +35,23 @@
 .catalog-menu__item {
     height: 100%;
     padding-left: 1.5rem;
+    cursor: pointer;
 }
 
+.catalog-menu__item:hover {
+background: #eee;
+}
+.catalog-menu__item:first-child{
+      margin-top: .75rem;
+}
+
+.catalog-menu__item:last-child{
+      padding-bottom: .25rem;
+}
 
 .catalog-menu__item-img {
   font-size: 32px;
   color: #FF860F;
-  height: 32px;
+  height: 37px;
 }
 </style>
