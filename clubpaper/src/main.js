@@ -5,6 +5,11 @@ import mainheader from './components/header.vue'
 
 
 
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+
+
+
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import 'dayjs/locale/ru' 
@@ -74,6 +79,31 @@ new Vue({
 				width: 0,
 				height: 0
 			},
+			lifehackOption: {
+				slidesPerView: 3,
+				spaceBetween: 40,
+				pagination: {
+							el: '.swiper-pagination',
+						},
+				breakpoints: {
+					992: {
+						slidesPerView: 2,
+						spaceBetween: 40,
+						pagination: {
+							el: '.swiper-pagination',
+						},
+					},
+					768: {
+						slidesPerView: 1,
+						spaceBetween: 40
+					}
+				},
+				navigation: {
+					nextEl: '.sw-button-next',
+					prevEl: '.sw-button-prev'
+				}
+
+			},
 			promoreg:true
 		}
 	},
@@ -94,7 +124,9 @@ new Vue({
 		postBlogImg,
 		postBlogLock,
 		postBlogText,
-		postInfo
+		postInfo,
+		swiper,
+		swiperSlide
 		
 
 	},
@@ -124,26 +156,26 @@ new Vue({
 
 
 (function() {
-  'use strict';
+	'use strict';
 
-  var section = document.querySelectorAll(".section");
-  var sections = {};
-  var i = 0;
+	var section = document.querySelectorAll(".section");
+	var sections = {};
+	var i = 0;
 
-  Array.prototype.forEach.call(section, function(e) {
-    sections[e.id] = e.offsetTop;
-  });
+	Array.prototype.forEach.call(section, function(e) {
+		sections[e.id] = e.offsetTop;
+	});
 
-  window.onscroll = function() {
-    var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+	window.onscroll = function() {
+		var scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
 
-    for (i in sections) {
-      if (sections[i] <= scrollPosition) {
-        document.querySelector('.bottom-menu__item--active').setAttribute('class', 'bottom-menu__item');
-        document.querySelector('a[href*=' + i + ']').setAttribute('class', 'bottom-menu__item bottom-menu__item--active');
-      }
-    }
-  };
+		for (i in sections) {
+			if (sections[i] <= scrollPosition) {
+				document.querySelector('.bottom-menu__item--active').setAttribute('class', 'bottom-menu__item');
+				document.querySelector('a[href*=' + i + ']').setAttribute('class', 'bottom-menu__item bottom-menu__item--active');
+			}
+		}
+	};
 })();
 
 

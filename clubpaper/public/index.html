@@ -52,7 +52,7 @@
 					</div>
 				</div>
 				<div class="d-flex flex-row align-items-center p-3">
-					<div class="h1 mb-0">Прямой эфир</div>
+					<div class="h1 mb-0">В эфире</div>
 					<div class="ml-3  pulse"></div>
 				</div>
 				<div class="scrol-plate">
@@ -239,49 +239,56 @@
 				</div>
 			</div>
 		</div>
-		
-		<div id="lifehack"  class="container section">
-			<div class="row pt-5">
-				<div class="col-12">
-					<a href="#" class="layout__title-link">
-						<div class="layout__title layout__title--orange">
-							<div class="layout__title-text">Лайфхаки</div>
-						</div>
-						<button class="layout__title-button"><span class="icon-arrow-right"></span></button>
-					</a>
-				</div>
-			</div>
-			<div class="row mb-5">
-				<div class="col-12 col-sm-12  col-lg-4">
-
-					<post-img :post="lifehack[2]"></post-img >
-
-				</div>
-				<div class="col-12 col-md-6 col-lg-4">
-					<post-half-img :post="lifehack[0]"></post-half-img>
-				</div>
-				<div class="col-12 col-md-6   col-lg-4">
-					<post-half-img :post="lifehack[1]"></post-half-img> 
-				</div>
-
-
-
-				<div class="col-12 col-sm-6  col-lg-4">
-					<post-half-img :post="lifehack[4]"></post-half-img>
-				</div>
-
-				<div class="col-12 col-sm-6  col-lg-4">
-					<post-img :post="lifehack[5]" ></post-img>
-				</div>
-				<div class="col-12 col-sm-12  col-lg-4">
-					<div class="mt-lg-4">
-						<post-text :post="lifehack[0]"></post-text >
+		<div id="lifehack" class="layout--hidden-content section">
+			<div   class="container ">
+				<div class="row pt-5">
+					<div class="col-12">
+						<a href="#" class="layout__title-link">
+							<div class="layout__title layout__title--orange">
+								<div class="layout__title-text">Лайфхаки</div>
+							</div>
+							<button class="layout__title-button"><span class="icon-arrow-right"></span></button>
+						</a>
 					</div>
 				</div>
+				<div class="row mb-5">
+					<div class="col-12">
 
+						<swiper class="livehack-slider" :options="lifehackOption">
+
+							<swiper-slide>
+								<post-img :post="lifehack[0]"></post-img >
+							</swiper-slide>
+
+							<swiper-slide>
+								<post-img  :post="lifehack[1]"></post-img >
+							</swiper-slide>
+
+							<swiper-slide>
+								<post-img  :post="lifehack[2]"></post-img> 
+							</swiper-slide>
+
+							<swiper-slide>
+								<post-img :post="lifehack[3]"></post-img >
+							</swiper-slide>
+
+							<swiper-slide>
+								<post-img  :post="lifehack[4]" ></post-img>
+							</swiper-slide>
+
+							<swiper-slide>
+								<post-img  :post="lifehack[5]"></post-img >
+							</swiper-slide>
+							<div class="swiper-pagination"  slot="pagination"></div>
+							<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
+							<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
+
+						</swiper> 
+
+					</div>
+				</div>
 			</div>
-		</div>
-
+		</div>	
 		<div id="discussion"  class="container section">
 			<div class="row pt-5">
 				<div class="col-12 col-md-12 col-lg-8">

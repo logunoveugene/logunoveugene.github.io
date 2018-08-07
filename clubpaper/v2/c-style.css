@@ -109,6 +109,13 @@ h4, .h4 {
 	background-color: #f6f6f6;
 }
 
+.layout--bg-blue {
+	background-color: #e3f5fb;
+}
+.bg-brightest-orange{
+	background-color: #FFF7DA;
+}
+
 
 .layout__title-link{
 	display: inline-flex;
@@ -143,7 +150,7 @@ h4, .h4 {
 }
 
 .layout__title--blue{
-	background: #f6f6f6;
+	background: #e3f5fb;
 }
 
 @media (min-width: 768px){
@@ -236,6 +243,7 @@ h4, .h4 {
 	padding-bottom: 2rem;
 	height: 100%;
 }
+
 
 .post-blog{
 	padding-bottom: 32px;
@@ -538,5 +546,73 @@ h4, .h4 {
 	text-align: center;
 	padding: 10px 8px;
 }
+
+
+
+
+
+
+
+
+/*-----------------слайдер*/
+
+.layout--hidden-content{
+	overflow: hidden;
+}
+.swiper-container.livehack-slider{
+    overflow: visible;
+}
+.swiper-container{
+  width: 100%;
+}
+
+.sw-button-prev, .sw-container-rtl .sw-button-next {
+  left: 1.5rem;
+  right: auto;
+
+  transform: translateX(-10px) translateY(-50%);
+  
+}
+
+.sw-button-next, .sw-container-rtl .sw-button-prev {
+  right: 1.5rem;
+  left: auto;
+  transform: translateX(10px) translateY(-50%) ;
+
+}
+
+.swiper-container:hover .sw-button-next, .swiper-container:hover .sw-button-prev {
+  transform: translateX(0) translateY(-50%);
+  opacity: 1
+}
+.sw-button-next, .sw-button-prev {
+  position: absolute;
+  top: 50%;
+  height: 35px;
+  width: 35px;
+  margin-top: -22px;
+  z-index: 10;
+  cursor: pointer;
+  background: #fff;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
+  opacity: 0;
+  transition: opacity .3s,  transform .3s;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.sw-button-next:hover, .sw-button-prev:hover{
+ background: #fc8908;
+ color:#fff;
+ transition: color .2s,  background .2s;
+}
+
+
+.swiper-pagination.swiper-pagination-bullets{
+	position: relative;
+}
+
+
+
 
 
