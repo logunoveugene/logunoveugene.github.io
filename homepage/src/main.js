@@ -4,6 +4,9 @@ import firebase from 'firebase'
 import mainheader from './components/header.vue'
 
 
+import catalogmenu from './components/catalog-menu.vue'
+
+
 
 
 
@@ -40,6 +43,7 @@ new Vue({
     mainheader,
     LocalSwiper: swiper,
     LocalSlide: swiperSlide,
+    catalogmenu
   },
 
   data: function() {

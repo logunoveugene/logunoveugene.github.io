@@ -1,6 +1,6 @@
 <template>
 	<div class="header">
-		<div class="header__top-line">
+		<div class="header__top-line d-none d-lg-flex">
 			<div class="header__container container">
 				<div class="header__row row">
 					<div class="header__block col-3">
@@ -42,38 +42,44 @@
 		</div>
 		<div class="header__bottom-line">
 			<div class="header__container container">
-				<div class="header__row row">
-					<div class="header__block col-3">
-						<div class="header__logo ">
-							<img src="https://i.snag.gy/iSpaHI.jpg" class="mr-2" alt="">
-							<img src="https://i.snag.gy/ktOpuU.jpg" alt="">
+				<div class="header__row ">
+					<div class="flex-shrink-1 d-lg-none">
+						<div class="header__mobile-menu">
+							<div class="icon-menu"></div>
+							
 						</div>
 					</div>
-					<div class="header__block col-4 col-lg-5">
+					<div class="header__block flex-shrink-1">
+						<div class="header__logo ">
+							<img src="https://i.snag.gy/iSpaHI.jpg" class="header__logo-main"  alt="">
+							<img src="https://i.snag.gy/ktOpuU.jpg" class="header__logo-desc ml-2 d-none d-lg-block " alt="">
+						</div>
+					</div>
+					<div class="header__block  flex-grow-1">
 						<div class="header__search-form">
-							<input type="text" class="header__search-form-field" placeholder="Поиск среди более 100 000 товаров">
-							<button class="header__search-form-submit">Найти</button>
+							<input type="search" class="header__search-form-field" placeholder="Поиск среди более 100 000 товаров">
+							<button class="header__search-form-submit">0</button>
 
 						</div>
 					</div>
-					<div class="header__block col-5 col-lg-4">
-						<div class="header__store-control">
+					<div class="header__block  flex-shrink-1">
+						<div class="header__store-control d-none d-lg-flex">
 							<div class="header__store-control__icon">
 								<div class="icon-cart"></div>
 							</div>
 							<div class="header__store-control__desc">Сравнение</div>
 						</div>
-						<div class="header__store-control">
+						<div class="header__store-control d-none d-lg-flex">
 							<div class="header__store-control__icon">
 								<div class="icon-cart"></div>
 							</div>
 							<div class="header__store-control__desc">Избранное</div>
 						</div>
-						<div class="header__store-control">
+						<div class="header__store-control ">
 							<div class="header__store-control__icon">
 								<div class="icon-cart"></div>
 							</div>
-							<div class="header__store-control__desc">Корзина</div>
+							<div class="header__store-control__desc d-none d-lg-flex">Корзина</div>
 						</div>
 
 					</div>
@@ -102,12 +108,27 @@
 </script>
 
 <style>
+@media (max-width: 992px){
+	.col-shrink{
+		flex: 0 0 auto;
+		max-width: 100%;
+		display: flex;
+		width: auto;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+}
+
 .header{
 	box-shadow: 0px 1px 24px 0px rgba(0, 0, 0, 0.14);
 	background-color: rgb(256, 256, 256);
 	margin-bottom: 1.5rem;
 }
 
+.header__row{
+	flex-wrap: nowrap;
+	display: flex;
+}
 .header__top-line{
 	height: 35px;
 	background-color: rgb(246, 246, 246);
@@ -141,10 +162,24 @@
 	margin-right: .5rem;
 }
 
+.header__mobile-menu{
+	display: flex;
+	align-items: center;
+	height: 100%;
+	margin: 0 8px;
+	padding-top: 7px;
+	color: #999;
+}
+
 .header__logo {
 	display: flex;
 	align-items: center;
+	margin: 0 8px;
 }
+@media (max-width: 992px){
+.header__logo-main{
+	width: 60px;
+}}
 
 .header__store-control {
 	display: flex;
@@ -159,6 +194,7 @@
 .header__search-form{
 	width: 100%;
 	display: flex;
+	margin: 0 8px;
 }
 
 
