@@ -147,6 +147,8 @@ h4, .h4 {
 	color: #000;
 	background: #fff;
 	line-height: 52px;
+	display: flex;
+    align-items: center;
 }
 
 .layout__title--blue{
@@ -168,13 +170,18 @@ h4, .h4 {
 }
 
 .layout__title-button{
-	background: #FFFFFF;
-	border: 1px solid rgba(0,0,0,0.10);
-	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.05);
-	border-radius: 8px;
-	padding: 7px 8px 5px;
-	height: 34px;
-	margin-left: 1rem;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.05);
+    border-radius: 8px;
+    padding: 7px 8px 5px;
+    height: 34px;
+    width: 34px;
+    margin: .75rem .75rem .75rem 1rem;
+    font-size: 16px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
 
 
 }

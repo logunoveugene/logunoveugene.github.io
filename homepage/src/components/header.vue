@@ -1,34 +1,40 @@
 <template>
 	<div class="header">
-		<div class="header__top-line d-none d-lg-block">
+		<div class="header__top-line">
 			<div class="header__container container">
-				<div class="header__top-grid row">
-					<div class="header__top-block col-8 col-lg-8">
-						<div class="header__project-nav">
-							<ul class="nav small">
+				<div class="header__row row">
+					<div class="header__block col-3">
+						<div class="header__city ">
+							<div class="header__city-link">
+								<a class="link link--color-grey" href="#">Владивосток</a>
+							</div>
+						</div>
+					</div>
+					<div class="header__block col-9">
+						<div class="header__nav ">
+							<ul class="nav">
 								<li class="nav__link">
-									<a class="link link--color-grey" href="#">DNS</a>
+									<a class="link link--color-grey link--dropdown" href="#">Магазины</a>
 								</li>
 								<li class="nav__link">
-									<a class="link link--color-grey" href="#">DNS Технопоинт</a>
+									<a class="link link--color-grey link--dropdown" href="#">Покупателям</a>
 								</li>
 								<li class="nav__link">
-									<a class="link link--color-grey" href="#">DNS Сервис</a>
+									<a class="link link--color-grey link--dropdown" href="#">Наши проекты</a>
 								</li>
 							</ul>
 						</div>
-					</div>
-					<div class="header__top-block col-2 col-lg-4">
-						<div class="small" v-on:click="$emit('liveonp')" v-if="live == ''"><a href="#" class="link link--color-grey">Прямой эфир</a></div>
-						<div class="header__user-nav">
-							<ul class="nav small">
-								<li class="nav__link">
-									<a class="link link--color-grey" href="#">Вход</a>
-								</li>
-								<li class="nav__link">
-									<a class="link link--color-grey" href="#">Регистрация</a>
-								</li>
-							</ul>
+						<div class="header__phone">
+							<div class="header__phone-number">8-800-77-07-999</div>
+							<div class="header__phone-time">(c 03:00 до 22:00)</div>
+						</div>
+						<div class="header__user-auth">
+							<div class="header__sign-in-link">
+								<a class="link link--color-grey" href="#">Вход</a>
+							</div>
+							<div class="header__sign-up-link">
+								<a class="link link--color-grey" href="#">Регистрация</a>
+							</div>  
 						</div>
 					</div>
 				</div>
@@ -36,89 +42,44 @@
 		</div>
 		<div class="header__bottom-line">
 			<div class="header__container container">
-				<div class="header__bottom-grid row">
-					<div class="header__bottom-block col-2 d-lg-none">
-						<div class="header__mobile-menu">
-							<img src="https://i.snag.gy/23I0JN.jpg" alt="">
+				<div class="header__row row">
+					<div class="header__block col-3">
+						<div class="header__logo ">
+							<img src="https://i.snag.gy/iSpaHI.jpg" class="mr-2" alt="">
+							<img src="https://i.snag.gy/ktOpuU.jpg" alt="">
 						</div>
 					</div>
-					<div class="header__bottom-block col-8 col-lg-8">
-						<img class="heaader__logo" src="https://i.snag.gy/p4txCj.jpg" alt="" > 
-						<div class="header__main-nav d-none d-lg-flex">
-							<a href="#" class="link link--color-grey">Дайджест</a> 
-							<a href="#" class="link link--color-grey">Обзоры</a> 
-							<a href="#" class="link link--color-grey">Лайфхаки</a>
-							<a href="#" class="link link--color-grey ">Обсуждения</a>
+					<div class="header__block col-4 col-lg-5">
+						<div class="header__search-form">
+							<input type="text" class="header__search-form-field" placeholder="Поиск среди более 100 000 товаров">
+							<button class="header__search-form-submit">Найти</button>
+
 						</div>
 					</div>
-					<div class="header__bottom-block col-2 col-lg-4">
-						<div class="header__create-controls d-none d-lg-flex">
-							<div class="header__create-controls-item">
-								<div class="header__create-controls-icon">
-									<div class="icon-pen"></div>
-								</div>
-								<a href="#" class="link link--color-grey">Написать</a>
+					<div class="header__block col-5 col-lg-4">
+						<div class="header__store-control">
+							<div class="header__store-control__icon">
+								<div class="icon-cart"></div>
 							</div>
-							<div class="header__create-controls-item">
-								<div class="header__create-controls-icon">
-									<div class="icon-ask"></div>
-								</div>
-								<a href="#" class="link link--color-grey">Спросить</a>
+							<div class="header__store-control__desc">Сравнение</div>
+						</div>
+						<div class="header__store-control">
+							<div class="header__store-control__icon">
+								<div class="icon-cart"></div>
 							</div>
+							<div class="header__store-control__desc">Избранное</div>
 						</div>
-						<div class="header__search">
-							<img src="https://i.snag.gy/7rBCoa.jpg" alt="">
+						<div class="header__store-control">
+							<div class="header__store-control__icon">
+								<div class="icon-cart"></div>
+							</div>
+							<div class="header__store-control__desc">Корзина</div>
 						</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
-
-
-		<fixed-header class="main-layout" :class="live" :threshold="60" :fixed.sync="isFixed">
-			<div class="fixed-plate" :class="{ 'is-fixed': isFixed }">
-				<div class="header__fixed-bottom-line">
-					<div class="header__container container">
-						<div class="header__bottom-grid row">
-							<div class="header__bottom-block col-2 d-lg-none">
-								<div class="header__mobile-menu">
-									<img src="https://i.snag.gy/23I0JN.jpg" alt="">
-								</div>
-							</div>
-							<div class="header__bottom-block col-8 col-lg-8">
-								<img class="heaader__logo" src="https://i.snag.gy/p4txCj.jpg" alt="" > 
-								<div class="header__main-nav d-none d-lg-flex">
-									<a href="#" class="link link--color-grey">Дайджест</a> 
-									<a href="#" class="link link--color-grey">Обзоры</a> 
-									<a href="#" class="link link--color-grey">Лайфхаки</a>
-									<a href="#" class="link link--color-grey ">Обсуждения</a>
-								</div>
-							</div>
-							<div class="header__bottom-block col-2 col-lg-4">
-								<div class="header__create-controls d-none d-lg-flex">
-									<div class="header__create-controls-item">
-										<div class="header__create-controls-icon">
-											<div class="icon-pen"></div>
-										</div>
-										<a href="#" class="link link--color-grey">Написать</a>
-									</div>
-									<div class="header__create-controls-item">
-										<div class="header__create-controls-icon">
-											<div class="icon-ask"></div>
-										</div>
-										<a href="#" class="link link--color-grey">Спросить</a>
-									</div>
-								</div>
-								<div class="header__search">
-									<img src="https://i.snag.gy/7rBCoa.jpg" alt="">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</fixed-header>
-		
 	</div>
 
 </template>
@@ -131,12 +92,7 @@
 		components: {
 			FixedHeader
 		},
-		props: { 
-			live: {
-				type: null,
-				default: "showlive"
-			}
-		},
+
 		data: function() {
 			return {
 				isFixed: false
@@ -146,128 +102,91 @@
 </script>
 
 <style>
-
-
-.fixed-plate{
-	position: fixed;
-
-display: none;
-}
-.fixed-plate.is-fixed{
-	position: fixed;
-	top:0;
-
-	z-index: 100;
-	width: 100%;
-	background-color: #fff;
-	display: block;
-}
-.header__fixed-bottom-line{
-	padding: 1rem 0;
-	box-shadow: 0 0 15px rgba(0,0,0,.1);
+.header{
+	box-shadow: 0px 1px 24px 0px rgba(0, 0, 0, 0.14);
+	background-color: rgb(256, 256, 256);
+	margin-bottom: 1.5rem;
 }
 
-.header__top-line {
-	width: auto;
-	background-color: #f6f6f6;
-	padding: .5rem 0;
+.header__top-line{
+	height: 35px;
+	background-color: rgb(246, 246, 246);
+	font-size: 0.875rem;
+	display: flex;
+	align-items: center;
 
 }
-.header__top-grid{
-	-ms-flex-pack: distribute;
+
+.header__bottom-line {
+	height: 65px;
+	display: flex;
+	align-items: center;
+}
+
+.header__block{
+	display: flex;
 	justify-content: space-between;
-	-ms-flex-direction: row;
-	flex-direction: row;
-	display: -ms-flexbox;
+}
+.header__phone{
 	display: flex;
 }
-.header__top-block{
-	justify-content: space-between;
-	flex-direction: row;
+.header__phone-number{
+	margin-right: .5rem;
+}
+
+.header__user-auth{
+	display: flex;
+}
+.header__sign-in-link{
+	margin-right: .5rem;
+}
+
+.header__logo {
+	display: flex;
+	align-items: center;
+}
+
+.header__store-control {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+.header__store-control__icon {
+	margin-right: .5rem;
+}
+
+
+.header__search-form{
+	width: 100%;
 	display: flex;
 }
 
-.header__bottom-line{
-	padding: 1rem 0;
+
+.header__search-form-field:focus, .header__search-form-field:focus ~ .header__search-form-submit   {
+	border-color: #fca608;
 }
 
-@media (min-width: 992px) {
-	.header__bottom-line{
-		padding: 3rem 0 2rem;
-	}
+.header__search-form-field{
+	border-radius: 8px 0 0 8px  ;
+	border: 1px solid rgb(210, 210, 210);
+	border-right:  0;
+	background-color: rgb(255, 255, 255);
+	width: 100%;
+	height: 40px;
+	padding:8px 15px;
+
 }
 
-
-
-
-.heaader__logo {
-	height: 20px;
+.header__search-form-submit{
+	border-radius:  0 8px 8px 0 ;
+	border: 1px solid rgb(210, 210, 210);
+	border-left: 0;
+	background-color: rgb(255, 255, 255);
 	width: auto;
+	height: 40px;
+	padding: 7px 15px;
+	cursor: pointer;
 
 }
 
-.header__user-nav{
-	text-align: right;
-	justify-content: flex-end;
-	flex-grow: 1;
-	display: flex;
-}
-
-
-.header__main-nav{
-	width: 100%;
-	-ms-flex-align: center;
-	align-items: center;
-	-ms-flex-pack: distribute;
-	justify-content: space-around;
-	-ms-flex-direction: row;
-	flex-direction: row;
-	display: -ms-flexbox;
-	display: flex;
-	font-size: 13px;
-	font-weight: 700;
-	text-transform: uppercase;
-	margin:0 3rem;
-}
-
-.header__bottom-grid {
-	display: flex;
-	align-items: center;
-}
-
-
-.header__bottom-block{
-	display: flex;
-	justify-content: center;
-}
-.header__create-controls{
-	display: -ms-flexbox;
-	display: flex;
-}
-.header__create-controls-item {
-	-ms-flex-align: center;
-	align-items: center;
-	-ms-flex-direction: row;
-	flex-direction: row;
-	display: -ms-flexbox;
-	display: flex;
-	font-size: .875rem;
-	font-weight: 700;
-	margin-right: 3rem;
-
-}
-.header__create-controls-icon{
-	margin-right: .5rem
-}
-
-
-.header__search {
-	text-align: right;
-	width: 100%;
-}
-
-.header__mobile-menu{
-	justify-content: start;
-	width: 100%;
-}
 </style>

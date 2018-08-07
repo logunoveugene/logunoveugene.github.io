@@ -1,6 +1,12 @@
 import Vue  from  'vue/dist/vue.js'
 import VueFire from 'vuefire'
 import firebase from 'firebase'
+import mainheader from './components/header.vue'
+
+
+
+
+
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
 
@@ -31,6 +37,7 @@ new Vue({
 	el: '#app',
 	
   components: {
+    mainheader,
     LocalSwiper: swiper,
     LocalSlide: swiperSlide,
   },
