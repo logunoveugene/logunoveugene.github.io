@@ -85,6 +85,7 @@ new Vue({
 				spaceBetween: 40,
 				pagination: {
 							el: '.swiper-pagination',
+							clickable: true
 						},
 				breakpoints: {
 					992: {
