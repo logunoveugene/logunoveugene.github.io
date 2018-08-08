@@ -57,8 +57,8 @@
 					</div>
 					<div class="header__block  flex-grow-1">
 						<div class="header__search-form">
-							<input type="search" class="header__search-form-field" placeholder="Поиск среди более 100 000 товаров">
-							<button class="header__search-form-submit">0</button>
+							<input type="search" class="header__search-form-field" placeholder="Поиск по каталогу">
+							<button class="header__search-form-submit"><span class="icon-search"></span></button>
 
 						</div>
 					</div>
@@ -108,16 +108,7 @@
 </script>
 
 <style>
-@media (max-width: 992px){
-	.col-shrink{
-		flex: 0 0 auto;
-		max-width: 100%;
-		display: flex;
-		width: auto;
-		padding-right: 10px;
-		padding-left: 10px;
-	}
-}
+
 
 .header{
 	box-shadow: 0px 1px 24px 0px rgba(0, 0, 0, 0.14);
@@ -142,6 +133,15 @@
 	height: 65px;
 	display: flex;
 	align-items: center;
+}
+
+@media (max-width: 992px){
+	.header__bottom-line{
+		height: 55px;
+	}
+	.header{
+			margin-bottom: 1rem;
+	}
 }
 
 .header__block{
@@ -176,10 +176,7 @@
 	align-items: center;
 	margin: 0 8px;
 }
-@media (max-width: 992px){
-.header__logo-main{
-	width: 60px;
-}}
+
 
 .header__store-control {
 	display: flex;
@@ -187,9 +184,12 @@
 	cursor: pointer;
 }
 .header__store-control__icon {
-	margin-right: .5rem;
+	margin-right: .75rem; 
+	color: #aaa;
+	padding: 7px 0 0 8px;
+	font-size: 19px;
+	height: 32px;
 }
-
 
 .header__search-form{
 	width: 100%;
@@ -199,7 +199,7 @@
 
 
 .header__search-form-field:focus, .header__search-form-field:focus ~ .header__search-form-submit   {
-	border-color: #fca608;
+	
 }
 
 .header__search-form-field{
@@ -209,7 +209,7 @@
 	background-color: rgb(255, 255, 255);
 	width: 100%;
 	height: 40px;
-	padding:8px 15px;
+	padding:8px 0 8px  15px;
 
 }
 
@@ -218,10 +218,40 @@
 	border: 1px solid rgb(210, 210, 210);
 	border-left: 0;
 	background-color: rgb(255, 255, 255);
-	width: auto;
+	width: 40px;
 	height: 40px;
-	padding: 7px 15px;
+
 	cursor: pointer;
+	color: #ababab;
+	padding-top: 10px;
+
+}
+
+@media (max-width: 992px){
+	.header__logo-main{
+		width: 60px;
+		    padding-top: 2px;
+	}
+
+	.header__search-form-field{
+background: rgba(0,0,0,.05);
+		height: 36px;
+padding: 7px 0 6px 10px;
+		font-size: 14px;
+				border: none;
+
+	}
+
+	.header__search-form-submit{
+		width: 40px;
+		height:36px;
+background: rgba(0,0,0,.05);
+		padding-top: 8px;
+		border: none;
+
+	}
+
+
 
 }
 
