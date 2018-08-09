@@ -40,52 +40,56 @@
 				</div>
 			</div>
 		</div>
-		<div class="header__bottom-line">
-			<div class="header__container container">
-				<div class="header__row ">
-					<div class="flex-shrink-1 d-lg-none">
-						<div class="header__mobile-menu">
-							<div class="icon-menu"></div>
-							
+
+		<fixed-header class="main-layout"  :threshold="60" :fixed.sync="isFixed">
+			<div class="header__bottom-line">
+				<div class="header__container container">
+					<div class="header__row ">
+						<div class="flex-shrink-1 d-lg-none">
+							<div class="header__mobile-menu">
+								<div class="icon-menu"></div>
+								
+							</div>
 						</div>
-					</div>
-					<div class="header__block flex-shrink-1">
-						<div class="header__logo ">
-							<img src="https://i.snag.gy/iSpaHI.jpg" class="header__logo-main"  alt="">
-							<img src="https://i.snag.gy/ktOpuU.jpg" class="header__logo-desc ml-2 d-none d-lg-block " alt="">
+						<div class="header__block flex-shrink-1">
+							<div class="header__logo ">
+								<img src="https://i.snag.gy/iSpaHI.jpg" class="header__logo-main"  alt="">
+								<img src="https://i.snag.gy/ktOpuU.jpg" class="header__logo-desc ml-2 d-none d-lg-block " alt="">
+							</div>
 						</div>
-					</div>
-					<div class="header__block  flex-grow-1">
-						<div class="header__search-form">
-							<input type="search" class="header__search-form-field" placeholder="Поиск по каталогу">
-							<button class="header__search-form-submit"><span class="icon-search"></span></button>
+						<div class="header__block  flex-grow-1">
+							<div class="header__search-form">
+								<input type="search" class="header__search-form-field" placeholder="Поиск по каталогу">
+								<button class="header__search-form-submit"><span class="icon-search"></span></button>
+
+							</div>
+						</div>
+						<div class="header__block  flex-shrink-1">
+							<div class="header__store-control d-none d-lg-flex">
+								<div class="header__store-control__icon">
+									<div class="icon-cart"></div>
+								</div>
+								<div class="header__store-control__desc">Сравнение</div>
+							</div>
+							<div class="header__store-control d-none d-lg-flex">
+								<div class="header__store-control__icon">
+									<div class="icon-cart"></div>
+								</div>
+								<div class="header__store-control__desc">Избранное</div>
+							</div>
+							<div class="header__store-control ">
+								<div class="header__store-control__icon">
+									<div class="icon-cart"></div>
+								</div>
+								<div class="header__store-control__desc d-none d-lg-flex">Корзина</div>
+							</div>
 
 						</div>
-					</div>
-					<div class="header__block  flex-shrink-1">
-						<div class="header__store-control d-none d-lg-flex">
-							<div class="header__store-control__icon">
-								<div class="icon-cart"></div>
-							</div>
-							<div class="header__store-control__desc">Сравнение</div>
-						</div>
-						<div class="header__store-control d-none d-lg-flex">
-							<div class="header__store-control__icon">
-								<div class="icon-cart"></div>
-							</div>
-							<div class="header__store-control__desc">Избранное</div>
-						</div>
-						<div class="header__store-control ">
-							<div class="header__store-control__icon">
-								<div class="icon-cart"></div>
-							</div>
-							<div class="header__store-control__desc d-none d-lg-flex">Корзина</div>
-						</div>
-
 					</div>
 				</div>
 			</div>
-		</div>
+		</fixed-header>
+		
 	</div>
 
 </template>
@@ -140,7 +144,7 @@
 		height: 55px;
 	}
 	.header{
-			margin-bottom: 1rem;
+		margin-bottom: 1rem;
 	}
 }
 
@@ -230,22 +234,22 @@
 @media (max-width: 992px){
 	.header__logo-main{
 		width: 60px;
-		    padding-top: 2px;
+		padding-top: 2px;
 	}
 
 	.header__search-form-field{
-background: rgba(0,0,0,.05);
+		background: rgba(0,0,0,.05);
 		height: 36px;
-padding: 7px 0 6px 10px;
+		padding: 7px 0 6px 10px;
 		font-size: 14px;
-				border: none;
+		border: none;
 
 	}
 
 	.header__search-form-submit{
 		width: 40px;
 		height:36px;
-background: rgba(0,0,0,.05);
+		background: rgba(0,0,0,.05);
 		padding-top: 8px;
 		border: none;
 

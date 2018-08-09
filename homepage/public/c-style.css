@@ -103,6 +103,9 @@ h5, .h5 {
 .small {
 	font-size: 0.875rem;
 }
+.extrasmall{
+	font-size: .75rem;
+}
 
 /* ------------------Кнопки---------------*/
 
@@ -191,10 +194,25 @@ h5, .h5 {
 		border-radius: 0;
 
 	}
+	.card-body {
+		flex: 1 1 auto;
+		padding: 1rem;
+	}	
 }
 
 
 /*Главный слайдер*/
+
+
+
+.mainbanner  .swiper-slide img{
+	width: 100%
+
+}
+
+
+
+
 .swiper-container{
 	width: 100%;
 }
@@ -202,19 +220,19 @@ h5, .h5 {
 .sw-button-prev, .sw-container-rtl .sw-button-next {
 	left: .5rem;
 	right: auto;
-	transform: translateX(-10px);
+	transform: translateX(-10px) translateY(-50%);
 
 }
 
 .sw-button-next, .sw-container-rtl .sw-button-prev {
 	right: .5rem;
 	left: auto;
-	transform: translateX(10px);
+	transform: translateX(10px) translateY(-50%);
 
 }
 
 .swiper-container:hover .sw-button-next, .swiper-container:hover .sw-button-prev {
-	transform: translateX(0);
+	transform: translateX(0) translateY(-50%);
 	opacity: 1
 }
 .sw-button-next, .sw-button-prev {
@@ -222,7 +240,6 @@ h5, .h5 {
 	top: 50%;
 	height: 35px;
 	width: 35px;
-	margin-top: -22px;
 	z-index: 10;
 	cursor: pointer;
 	background: #fff;
@@ -246,8 +263,8 @@ h5, .h5 {
 .main-banner-mob .swiper-slide{
 	width: auto;
 	margin-left: 10px;
-	    border-radius: .5rem;
-    overflow: hidden;
+	border-radius: .5rem;
+	overflow: hidden;
 }
 
 
@@ -273,8 +290,46 @@ h5, .h5 {
 	white-space: nowrap;
 }
 
+
+.product-swiper.swiper-container-horizontal > .swiper-scrollbar {
+	position: relative;
+
+	left: 0; 
+	bottom: 3px;
+	z-index: 50;
+	height: 3px;
+	width: 100%;
+	margin-top: 1.5rem;
+}
+
+
+.product-swiper .swiper-scrollbar-drag {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	background: rgba(0, 0, 0, 0.15);
+	border-radius: 10px;
+	left: 0;
+	top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 /*----табы слайдера */
 
+
+.nav.nav-pills {
+	padding: 1.5rem  1.5rem  0  1.5rem ;
+}
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
 	color: #000;
@@ -284,8 +339,20 @@ h5, .h5 {
 .nav-link {
 	padding: .25rem .75rem;
 	font-size: .875rem;
+	margin-right: .5rem;
+
 }
 
+@media (max-width: 992px){
+	.nav-link {
+background:#fff;
+
+}
+.nav.nav-pills {
+	padding:  10px ;
+}
+
+}
 
 /*.  промоблок магазинов*/
 .shop-promo__title{
@@ -305,3 +372,143 @@ h5, .h5 {
 .servise-mobile-promo__cabinet{
 	border-right: 1px solid #eee;
 }
+
+/* ------слайдер-----наборы--------*/
+@media (max-width: 992px){
+
+.sets-slider__title {
+    font-size: 14px;
+}
+	.swiper-slide.sets-slider__slide{
+	width: 240px;
+	height: 120px;
+	margin-left: 10px;
+}
+.sets-slider__img{
+	width: 100px;
+	height: auto;
+}
+
+
+.swiper-container.sets-slider.swiper-container-horizontal{
+	overflow: visible;
+}
+
+
+}
+
+.sets-slider__title{
+	line-height: 1.2
+}
+
+
+
+
+
+/*плитка товара*/
+@media (max-width: 992px){
+
+	.product-plate__link{
+		font-size: 14px;
+	}
+}
+
+
+.product-plate__image-wrap{
+	height: 150px;
+	position: relative;
+	margin-bottom: 8px;
+}
+
+.product-plate__image{
+	max-height: 80%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 90%;
+}
+
+.product-plate__link{
+	height: 46px;
+	overflow: hidden;
+}
+.product-plate__rating-wrap{
+	overflow: hidden;
+	height: 22px;
+}
+
+
+.product-plate__rating-wrap .rate span{
+	padding-right: 0.25rem;
+}
+
+
+/*-----------------------акциии*/
+
+.action__icon-wrap {
+    position: absolute;
+    right: 1.75rem;
+    font-size: 30px;
+    color: #ff860f;
+}
+
+
+/*---------блоги*/
+.post{
+	padding-bottom: 2rem;
+	height: 100%;
+}
+
+
+.post-blog{
+	padding-bottom: 20px;
+	height: 100%;
+}
+
+.blog__wrap{
+	-webkit-column-count: 1;
+	-moz-column-count: 1;
+	column-count: 1;
+	-webkit-column-gap: 40px;
+	-moz-column-gap: 40px;
+	column-gap: 40px;
+	orphans: 1;
+	widows: 1;
+}
+@media (min-width: 768px){
+	.blog__wrap{
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+		-webkit-column-gap: 32px;
+		-moz-column-gap: 32px;
+		column-gap: 32px;
+		orphans: 1;
+		widows: 1;
+	}
+}
+
+@media (min-width: 992px){
+	.blog__wrap{
+		-webkit-column-count: 4;
+		-moz-column-count: 4;
+		column-count: 4;
+		-webkit-column-gap: 20px;
+		-moz-column-gap: 20px;
+		column-gap: 20px;
+		orphans: 1;
+		widows: 1;
+	}
+}
+
+
+
+
+
+.blog__item{
+	display: inline-block;
+	width: 100%
+}
+
+

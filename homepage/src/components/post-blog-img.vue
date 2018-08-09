@@ -9,13 +9,11 @@
 			:tags="post.tags" 
 			></post-tag>
 
-			<div class="post-blog-img__title mb-3 h2"><a href="#" class="link link--color-black">{{post.title}}</a></div>
+			<div class="post-blog-img__title mb-2 "><a href="#" class="link link--color-black">{{post.title}}</a></div>
 			<div class="small mb-3">
 				Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
 			</div>
-			<post-teaser
-			:teaser="post.teaser">
-			</post-teaser>
+			
 
 
 			<post-info 
@@ -92,6 +90,7 @@
 	padding: 1.5rem 1.5rem 2rem 1.5rem;
 	border-radius: .5rem;
 	text-align: center;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
 
 
 }
@@ -100,6 +99,9 @@
 	overflow: hidden;
 	border-radius: .5rem  .5rem 0 0;
 	margin-bottom: 1.5rem;
+	max-width: 60%;
+	margin-right: auto;
+	margin-left: auto;
 	
 }
 .post-blog-img__image{

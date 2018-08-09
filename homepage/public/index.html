@@ -16,7 +16,6 @@
 <body>
 	<div id="app">
 		<mainheader></mainheader>
-
 		
 
 
@@ -32,10 +31,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12 mb-3 d-lg-none">
-						<div  v-ripple  class="card ">
+						<div  v-ripple  class="card card-mobile ">
 							<div class="shop-promo p-3 d-flex align-items-center justify-content-between">
 								<div class="d-flex flex-column">
-									<div class="shop-promo__title d-flex align-items-center">68 магазинов в Москве 
+									<div class="shop-promo__title d-flex align-items-center">68 магазинов в г. Москва 
 										<div class="shop-promo__title-arrow">
 											<span class="icon-arrow-right"></span>
 										</div>
@@ -45,20 +44,18 @@
 								<div class="ml-2">
 									<img src="https://i.snag.gy/snbflK.jpg" alt="" class="shop-promo__img">
 								</div>
-								
-								
 							</div>
 						</div>
 					</div>
 					<div class="col-12 mb-3 d-lg-none">
-						<div  class="card 	 ">
+						<div  class="card card-mobile 	 ">
 							<div class="servise-mobile-promo d-flex">
-							<div v-ripple  class="servise-mobile-promo__cabinet text-center flex-fill p-3"> Личный кабинет</div>
-							<div v-ripple  class="servise-mobile-promo__configurator text-center flex-fill p-3"> Конфигуратор ПК</div>
+								<div v-ripple  class="servise-mobile-promo__cabinet text-center flex-fill p-3"> Личный кабинет</div>
+								<div v-ripple  class="servise-mobile-promo__configurator text-center flex-fill p-3">Мои заказы</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-12 col-lg-3 mb-4 mb-lg-0">
+					<div class="col-12 col-lg-3 mb-lg-0">
 						<div class="card card-mobile h-100 ">
 							<catalogmenu :catalog="mainNavs"></catalogmenu>
 						</div>
@@ -67,7 +64,7 @@
 						<div class="row">
 							<div class="col-12 col-lg-8 d-none d-lg-block">
 								<div class="card ">
-									<local-swiper :options="mainBannerOption">
+									<local-swiper class="mainbanner" :options="mainBannerOption">
 										<local-slide v-for="(mainbanner, index) in mainbanners" :key="index">
 											<img  :src="mainbanner.img" alt="">
 										</local-slide>
@@ -77,54 +74,68 @@
 									</local-swiper>
 								</div>
 							</div>
-							<div class="col-12 col-lg-4">
+							<div class="col-12 col-lg-4 d-none d-lg-block">
 								<div class="card h-100">
 									<div class="card-body">
 										<div class="d-flex flex-column">
-											<div class="h4 mb-3">Акции</div>
-											<ul class="list-unstyled small">
+
+											<div class="h4 pt-2 mb-2">Акции</div>
+											<div class="action__icon-wrap">
+												<div class="icon-action"></div>
+											</div>
+											
+											
+											
+											<ul class="list-unstyled mb-0 small">
 												<li><a href="#" class="link link--color-grey">Товары со скидкой</a></li>
 												<li><a href="#" class="link link--color-grey">Рассрочка или бонусы</a></li>
 												<li><a href="#" class="link link--color-grey">Выгодный бонус</a></li>
+												<li><a href="#" class="link link--color-grey">Гарантия лучшей цены</a></li>
 											</ul>
-											<button class="btn btn-outline-warning">Все акции</button>
+
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-12">
+							<div class="d-none d-lg-block col-12">
 								<div class="h2 pt-4">Актуальные предложения</div>
-								<div class="card mb-3">
-									<div class="card-body">
-										<div class="d-flex justify-content-between align-items-center mb-4">
-											<local-swiper class="tab-swiper" :options="tabswipe">
-												<local-slide>
-													<ul class="nav nav-pills " id="pills-tab" role="tablist">
-														<li class="nav-item">
-															<a class="link--color-grey link nav-link active" id="pills-home-tab" data-toggle="pill" href="#hot" role="tab" aria-controls="hot" aria-selected="true">Спасаемся от жары</a>
-														</li>
-														<li class="nav-item">
-															<a class="link--color-grey link nav-link" id="pills-profile-tab" data-toggle="pill" href="#water" role="tab" aria-controls="water" aria-selected="false">Горячей воде быть!</a>
-														</li>
-														<li class="nav-item">
-															<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#weekend" role="tab" aria-controls="weekend" aria-selected="false">С собой в отпуск</a>
-														</li>
-													</ul>
-												</local-slide>
 
-											</local-swiper>
-										</div>
-										<div class="tab-content pt-2" id="pills-tabContent">
+								<div class="card mb-3">
+									<local-swiper class="tab-swiper" :options="tabswipe">
+										<local-slide>
+											<ul class="nav nav-pills" id="pills-tab" role="tablist">
+												<li class="nav-item">
+													<a class="link--color-grey link nav-link active">Спасаемся от жары</a>
+												</li>
+												<li class="nav-item">
+													<a class="link--color-grey link nav-link" >Горячей воде быть!</a>
+												</li>
+												<li class="nav-item">
+													<a class="link--color-grey link nav-link" >С собой в отпуск</a>
+												</li>
+												<li class="nav-item">
+													<a class="link--color-grey link nav-link">Выходные на даче</a>
+												</li>
+												<li class="nav-item">
+													<a class="link--color-grey link nav-link">Для топового ПК</a>
+												</li>
+											</ul>
+										</local-slide>
+
+									</local-swiper>
+									<div class="card-body">
+										
+										<div class="tab-content py-2" id="pills-tabContent">
 											<div class="tab-pane fade show active" id="hot" role="tabpanel" aria-labelledby="pills-home-tab">
-												<local-swiper :options="setsOption" v-for="(set, index) in sets" :key="index">
-													<local-slide v-for = "(aircond, index) in set.air" :key="index">
-														<div class="d-flex" >
-															<img  :src="aircond.img" alt="" class="mr-3">
+												<local-swiper  class="sets-slider" :options="setsOption" v-for="(set, index) in sets" :key="index">
+													<local-slide class="sets-slider__slide" v-for = "(aircond, index) in set.air" :key="index">
+														<div class="d-flex align-items-center" >
+															<img  :src="aircond.img" alt="" class="sets-slider__img mr-3">
 															<div class="d-flex flex-column">
-																<div class="small mb-2">
+																<div class="mb-2 sets-slider__title">
 																	<div class="link link--color-grey">{{aircond.title}}</div>
 																</div>
-																<div class="font-weight-bold  mb-0">от {{aircond.price }} р.</div>
+																<div class="font-weight-bold  mb-0">от {{aircond.price }} ₽</div>
 															</div>
 														</div>
 													</local-slide>
@@ -132,33 +143,78 @@
 													<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
 												</local-swiper>
 											</div>
-											<div class="tab-pane fade" id="water" role="tabpanel" aria-labelledby="pills-profile-tab">
-												<local-swiper :options="setsOption" v-for="(set, index) in sets" :key="index">
-													<local-slide v-for = "(boilerP, index) in set.boiler" :key="index">
-														<div class="d-flex" >
-															<img  :src="boilerP.img" alt="" class="mr-3">
-															<div class="d-flex flex-column">
-																<div class="small mb-2">{{boilerP.title}}</div>
-																<div class="font-weight-bold mb-0">от {{boilerP.price }} р.</div>
-															</div>
-														</div>
-													</local-slide>
-													<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
-													<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
-												</local-swiper>
-											</div>
-											<div class="tab-pane fade" id="weekend" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+
 										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-6">
-								<div class="card">
-									<div class="card-body">
-										<div class="h4">Регистрируйся на сайте</div>
-										<div class="small w-75 mb-4">Получай бонусы и спецпредложения, сохраняй и отслеживай заказы</div>
+							<div class="overflow-layout">
+								<div class="d-lg-none col-12">
+									<div class="h2 pt-4">Актуальные предложения</div>
+									<div class="card-mobile">
+										<local-swiper class="tab-swiper" :options="tabswipe">
+											<local-slide>
+												<ul class="nav nav-pills" id="pills-tab" role="tablist">
+													<li class="nav-item">
+														<a class="link--color-grey link nav-link active" id="pills-home-tab" data-toggle="pill" href="#hot" role="tab" aria-controls="hot" aria-selected="true">Спасаемся от жары</a>
+													</li>
+													<li class="nav-item">
+														<a class="link--color-grey link nav-link" id="pills-profile-tab" data-toggle="pill" href="#water" role="tab" aria-controls="water" aria-selected="false">Горячей воде быть!</a>
+													</li>
+													<li class="nav-item">
+														<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#weekend" role="tab" aria-controls="weekend" aria-selected="false">С собой в отпуск</a>
+													</li>
+													<li class="nav-item">
+														<a class="link--color-grey link nav-link" id="pills-profile-tab" data-toggle="pill" href="#water" role="tab" aria-controls="water" aria-selected="false">Выходные на даче</a>
+													</li>
+													<li class="nav-item">
+														<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#weekend" role="tab" aria-controls="weekend" aria-selected="false">Для топового ПК</a>
+													</li>
+												</ul>
+											</local-slide>
 
-										<div class="small">
+										</local-swiper>
+
+
+										<div class="tab-content pb-2" id="pills-tabContent">
+											<div class="tab-pane fade show active" id="hot" role="tabpanel" aria-labelledby="pills-home-tab">
+												<local-swiper  class="sets-slider" :options="setsOption" v-for="(set, index) in sets" :key="index">
+													<local-slide v-ripple class="sets-slider__slide" v-for = "(aircond, index) in set.air" :key="index">
+														<div class="card h-100">
+															<div class="card-body align-items-center  d-flex">
+																<div class="d-flex align-items-center" >
+																	<img  :src="aircond.img" alt="" class="sets-slider__img mr-3">
+																	<div class="d-flex flex-column">
+																		<div class="mb-2 sets-slider__title">
+																			<div class="link link--color-grey">{{aircond.title}}</div>
+																		</div>
+																		<div class="font-weight-bold  mb-0">от {{aircond.price }} ₽</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</local-slide>
+
+												</local-swiper>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+
+
+
+							<div class="col-6 mt-3 d-none d-lg-block">
+								<div class="card h-100">
+									<div class="card-body d-flex flex-column ">
+										<div class="action__icon-wrap">
+											<img src="https://i.snag.gy/3ryB6X.jpg" alt="">
+										</div>
+										<div class="h4 mb-2 pt-2">Регистрируйся на сайте</div>
+										<div class="small mb-3">Получай бонусы и спецпредложения,<br> сохраняй и отслеживай заказы</div>
+
+										<div class="small mt-auto">
 											<ul class="nav">
 												<li class="nav__link">
 													<a href="#" class="link link--color-blue">Войти</a>
@@ -171,13 +227,16 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-6">
-								<div class="card">
-									<div class="card-body">
-										<div class="h4">Собери свой компьютер</div>
-										<div class="small w-75 mb-4">Простой инструмент без проблем с совместимостью</div>
+							<div class="col-6 mt-3 d-none d-lg-block">
+								<div class="card h-100">
+									<div class="card-body d-flex flex-column ">
+										<div class="action__icon-wrap">
+											<img src="https://i.snag.gy/F80tWP.jpg" alt="">
+										</div>
+										<div class="h4 mb-2 pt-2">Собери свой компьютер</div>
+										<div class="small mb-3">Простой инструмент без проблем <br>с совместимостью</div>
 
-										<div class="small">
+										<div class="small mt-auto">
 											<ul class="nav">
 												<li class="nav__link">
 													<a href="#" class="link link--color-blue">Собрать</a>
@@ -192,28 +251,268 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-12 mt-4">
-						<div class="card">
-							<div class="card-body">
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								<br>
-								1
+
+
+
+					<div class="col-12 d-none d-lg-block">
+						<div class="row">
+							<div class=" col-12 col-lg-9 mt-4">
+								<div class="h2 ">Лучшие предложения</div>
+								<div class=" card-mobile">
+								
+</div>
+								<div class="card ">
+									<local-swiper class="tab-swiper" :options="tabswipe">
+										<local-slide>
+											<ul class="nav nav-pills " id="pills-tab" role="tablist">
+												<li class="nav-item">
+													<a class="link--color-grey link nav-link active" id="pills-home-tab" data-toggle="pill" href="#popular" role="tab" aria-controls="popular" aria-selected="true">Популярные</a>
+												</li>
+												<li class="nav-item">
+													<a class="link--color-grey link nav-link" id="pills-profile-tab" data-toggle="pill" href="#comments" role="tab" aria-controls="comments" aria-selected="false">Новинки</a>
+												</li>
+												<li class="nav-item">
+													<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#new-product" role="tab" aria-controls="new-product" aria-selected="false">Обсуждаемые</a>
+												</li>
+												<li class="nav-item">
+													<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#new-product" role="tab" aria-controls="new-product" aria-selected="false">Хиты продаж</a>
+												</li>
+											</ul>
+										</local-slide>
+
+									</local-swiper>
+									
+									<div class="card-body">
+										<div class="tab-content" id="pills-tabContent">
+											<div class="tab-pane fade show active" id="popular" role="tabpanel" aria-labelledby="pills-home-tab">
+												<local-swiper class="product-swiper"  :options="productOption">
+													<local-slide  v-for="(product, index) in products" :key="index">
+														<div class="product-plate d-flex flex-column">
+															<div class="product-plate__image-wrap">
+																<img  :src="product.img" alt="" class="product-plate__image">
+															</div>
+															<div class="product-plate__link  mb-2">
+																<a href="" class="link link--color-grey">{{product.title}}</a>
+															</div>
+															<div class="product-plate__social d-flex align-items-center mb-2">
+																<div class="product-plate__rating-wrap">
+																	<Rate :value="product.rating"  size='14px'   length="5" theme="#FEB909"></Rate> 
+																</div>
+																<div class="extrasmall ml-2">
+																	<a href="" class="link link--color-blue">{{product.reviewcount}}</a>
+																</div>
+																<!-- 	<div class="small"><div class="icon-chat-bubble"></div></div> -->
+															</div>
+															<div class="h3 mb-0">{{product.price}} ₽</div>
+														</div>
+													</local-slide>
+													<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
+													<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
+
+													<div class="swiper-scrollbar" slot="scrollbar"></div>
+												</local-swiper>
+											</div>
+											<div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+											<div class="tab-pane fade" id="new-product" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div class="col-12 col-lg-3 mt-4">
+								<div class="d-flex h-100 flex-column">
+									<div class="h2 ">Новости</div>
+									<div class="card flex-grow-1">
+										<div class="card-body">1</div>
+									</div>
+								</div>
+							</div>
+	</div>
+
+							</div>
+
+
+
+
+
+
+
+
+
+
+
+	<div class="overflow-layout">
+					<div class="col-12 d-lg-none">
+						<div class="row">
+							<div class=" col-12 col-lg-9 mt-4">
+								<div class="h2 ">Лучшие предложения</div>
+								<div class=" card-mobile">
+								<local-swiper class="tab-swiper" :options="tabswipe">
+										<local-slide>
+											<ul class="nav nav-pills " id="pills-tab" role="tablist">
+												<li class="nav-item">
+													<a class="link--color-grey link nav-link active" id="pills-home-tab" data-toggle="pill" href="#popular" role="tab" aria-controls="popular" aria-selected="true">Популярные</a>
+												</li>
+												<li class="nav-item">
+													<a class="link--color-grey link nav-link" id="pills-profile-tab" data-toggle="pill" href="#comments" role="tab" aria-controls="comments" aria-selected="false">Новинки</a>
+												</li>
+												<li class="nav-item">
+													<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#new-product" role="tab" aria-controls="new-product" aria-selected="false">Обсуждаемые</a>
+												</li>
+												<li class="nav-item">
+													<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#new-product" role="tab" aria-controls="new-product" aria-selected="false">Хиты продаж</a>
+												</li>
+											</ul>
+										</local-slide>
+
+									</local-swiper>
+</div>
+								<div class="card ">
+									
+									<div class="card-body">
+										<div class="tab-content" id="pills-tabContent">
+											<div class="tab-pane fade show active" id="popular" role="tabpanel" aria-labelledby="pills-home-tab">
+												<local-swiper class="product-swiper"  :options="productmobOption">
+													<local-slide  v-for="(product, index) in products" :key="index">
+														<div class="product-plate d-flex flex-column">
+															<div class="product-plate__image-wrap">
+																<img  :src="product.img" alt="" class="product-plate__image">
+															</div>
+															<div class="product-plate__link  mb-2">
+																<a href="" class="link link--color-grey">{{product.title}}</a>
+															</div>
+															<div class="product-plate__social d-flex align-items-center mb-2">
+																<div class="product-plate__rating-wrap">
+																	<Rate :value="product.rating"  size='14px'   length="5" theme="#FEB909"></Rate> 
+																</div>
+																<div class="extrasmall ml-2">
+																	<a href="" class="link link--color-blue">{{product.reviewcount}}</a>
+																</div>
+																<!-- 	<div class="small"><div class="icon-chat-bubble"></div></div> -->
+															</div>
+															<div class="h3 mb-0">{{product.price}} ₽</div>
+														</div>
+													</local-slide>
+							
+													<div class="swiper-scrollbar" slot="scrollbar"></div>
+												</local-swiper>
+											</div>
+										
+										</div>
+
+									</div>
+								</div>
+							</div>
+	</div>
+
+							</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+							
+						</div>
+						<div class="row">
+							<div class=" col-12  mt-4">
+								<div class="h2 ">Вы недавно смотели</div>
+								<div class="card mb-3">
+									<div class="card-body">
+										<div class="tab-content" id="pills-tabContent">
+											<div class="tab-pane fade show active" id="popular" role="tabpanel" aria-labelledby="pills-home-tab">
+												<local-swiper class="product-swiper"  :options="productviewOption">
+													<local-slide  v-for="(product, index) in products" :key="index">
+														<div class="product-plate d-flex flex-column">
+															<div class="product-plate__image-wrap">
+																<img  :src="product.img" alt="" class="product-plate__image">
+															</div>
+															<div class="product-plate__link  mb-2">
+																<a href="" class="link link--color-grey">{{product.title}}</a>
+															</div>
+															<div class="product-plate__social d-flex align-items-center mb-2">
+																<div class="product-plate__rating-wrap">
+																	<Rate :value="product.rating"  size='14px' readonly="true" theme="#FEB909"></Rate> 
+																</div>
+																<div class="extrasmall ml-2">
+																	<a href="" class="link link--color-blue">{{product.reviewcount}}</a>
+																</div>
+																<!-- 	<div class="small"><div class="icon-chat-bubble"></div></div> -->
+															</div>
+															<div class="h3 mb-0">{{product.price}} ₽</div>
+														</div>
+													</local-slide>
+													<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
+													<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
+
+													<div class="swiper-scrollbar" slot="scrollbar"></div>
+												</local-swiper>
+											</div>
+											<div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+											<div class="tab-pane fade" id="new-product" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
+						<div class="h2 mt-4 ">ДНС клуб –  центр онлайн компетенции</div>
+						<div class="blog__wrap">
+							<div class="blog__item">
+								<post-blog-img :post="review[0]"></post-blog-img>
+							</div>
+							<div class="blog__item">
+								<post-blog-img :post="review[2]"></post-blog-img>
+
+							</div>
+							<div class="blog__item">
+								<post-blog-img :post="review[0]"></post-blog-img>
+							</div>
+
+							<div class="blog__item">
+								<post-blog-img :post="review[3]"></post-blog-img>
+							</div>
+							<div class="blog__item">
+								<post-blog-img :post="review[1]"></post-blog-img>
+
+							</div>
+							<div class="blog__item">
+								<post-blog-img :post="review[4]"></post-blog-img>
+							</div>
+							<div class="blog__item">
+								<post-blog-img :post="review[5]"></post-blog-img>
+							</div>
+						</div>
+
+						<slider-wrap></slider-wrap>
+
+
+
+
+
 					</div>
 				</div>
 			</div>
 		</div>
-
 	</div>
-	<!-- built files will be auto injected -->
+
+</div>
+<!-- built files will be auto injected -->
 </body>
 </html>

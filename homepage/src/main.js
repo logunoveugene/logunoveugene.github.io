@@ -2,9 +2,19 @@ import Vue  from  'vue/dist/vue.js'
 import VueFire from 'vuefire'
 import firebase from 'firebase'
 import mainheader from './components/header.vue'
-
-
 import catalogmenu from './components/catalog-menu.vue'
+
+
+
+import postBlogImg from './components/post-blog-img.vue'
+import postBlogLock from './components/post-blog-lock.vue'
+import postBlogText from './components/post-blog-text.vue'
+
+
+
+import sliderWrap from './components/slider-wrap.vue'
+
+
 
 import Ripple from 'vue-ripple-directive';
 
@@ -13,6 +23,8 @@ Ripple.zIndex = 55;
 Vue.directive('ripple', Ripple);
 
 
+import Rate from 'vue-tiny-rate';
+import Collapse from 'vue-collapse'
 
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
@@ -31,6 +43,8 @@ var mainbannersRef = firebase.database().ref('mainbanners');
 var productsmRef = firebase.database().ref('products');
 var setsRef = firebase.database().ref('sets');
 
+var reviewRef = firebase.database().ref('review');
+
 
 
 
@@ -48,7 +62,12 @@ new Vue({
 		mainheader,
 		LocalSwiper: swiper,
 		LocalSlide: swiperSlide,
-		catalogmenu
+		catalogmenu,
+		Rate,
+		postBlogImg,
+		postBlogLock,
+		postBlogText,
+		sliderWrap
 	},
 
 	data: function() {
@@ -67,9 +86,9 @@ new Vue({
 			mainBannerMobOption: {
 				slidesPerView: 'auto',
 				autoplay: {
-            delay: 3000,
-            disableOnInteraction: false
-          },
+					delay: 3000,
+					disableOnInteraction: false
+				},
 			},
 			tabswipe: {
 
@@ -78,6 +97,91 @@ new Vue({
 				slidesPerView: 'auto',
 				slidesOffsetAfter: 1,
 				freeMode: true
+
+
+			},
+			productOption: {
+				slidesPerView: 4,
+				spaceBetween: 30,
+				observer: true,
+				observeParents: true,
+				breakpoints: {
+
+					992: {
+						slidesPerView: 3,
+						spaceBetween: 30
+					},
+					768: {
+						slidesPerView: 2,
+						spaceBetween: 20
+					}
+				},  
+				navigation: {
+					nextEl: '.sw-button-next',
+					prevEl: '.sw-button-prev'
+				},
+				scrollbar: {
+					el: '.swiper-scrollbar',
+					hide: false
+				}
+
+
+			},
+
+
+
+			productmobOption: {
+				slidesPerView: 4,
+				spaceBetween: 30,
+				observer: true,
+				freeMode:true,
+				observeParents: true,
+				breakpoints: {
+
+					992: {
+						slidesPerView: 3,
+						spaceBetween: 30
+					},
+					768: {
+						slidesPerView: 2,
+						spaceBetween: 20
+					}
+				},  
+				navigation: {
+					nextEl: '.sw-button-next',
+					prevEl: '.sw-button-prev'
+				},
+				scrollbar: {
+					el: '.swiper-scrollbar',
+					hide: false
+				}
+
+
+			},
+			productviewOption: {
+				slidesPerView: 5,
+				spaceBetween: 30,
+				observer: true,
+				observeParents: true,
+				breakpoints: {
+
+					992: {
+						slidesPerView: 3,
+						spaceBetween: 30
+					},
+					768: {
+						slidesPerView: 2,
+						spaceBetween: 20
+					}
+				},  
+				navigation: {
+					nextEl: '.sw-button-next',
+					prevEl: '.sw-button-prev'
+				},
+				scrollbar: {
+					el: '.swiper-scrollbar',
+					hide: false
+				}
 
 
 			},
@@ -95,24 +199,16 @@ new Vue({
 				breakpoints: {
 
 					992: {
-						slidesPerView: 2,
-						spaceBetween: 30
+						slidesPerView: 'auto',
+						spaceBetween: 0
 					},
 					768: {
-						slidesPerView: 1,
-						spaceBetween: 20
+						slidesPerView: 'auto',
+						spaceBetween: 0
 					}
 
 				}
-			},
-			productOption: {
-				slidesPerView: 4,
-				spaceBetween: 30,      
-				navigation: {
-					nextEl: '.sw-button-next',
-					prevEl: '.sw-button-prev'
-				}
-			},
+			}
 		}
 	},
 
@@ -120,7 +216,8 @@ new Vue({
 		mainNavs: mainNavsRef,
 		mainbanners: mainbannersRef,
 		products: productsmRef,
-		sets: setsRef
+		sets: setsRef,
+		review: reviewRef
 	},
 
 	methods: {

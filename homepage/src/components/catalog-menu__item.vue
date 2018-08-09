@@ -1,0 +1,192 @@
+<template>
+	<div v-ripple  class="catalog-menu__item nav-list__item d-flex align-items-center " v-on:click="collapse = !collapse" > 
+
+		<div class="catalog-menu__item-img ">
+			<div :class="mainNavItem.img"></div>
+		</div>
+
+		<div class="catalog-menu__item-info d-flex flex-lg-column align-items-center align-items-lg-start w-100">
+			<div class="catalog-menu__item-info-title">{{mainNavItem.title}} </div>
+			<div class="catalog-menu__item-info-sub-cat-list small d-none d-lg-flex ">
+				<a v-ripple v-for="(subcat) in mainNavItem.subcategories" href="#"  class="catalog-menu__item-info-sub-cat link link--color-grey">{{subcat}}</a>
+			</div>
+		</div>
+		<div class="d-lg-none">
+			<div v-if="!collapse" class=" pt-1 icon-arrow-down"></div>
+			<div v-if="collapse" class=" pt-1 icon-arrow-up"></div>
+		</div>
+	</div>
+
+
+
+
+</template>
+
+<script>
+
+	export default  {
+		props: { 
+			mainNavItem: {
+				type: null,
+				default: ""
+			}
+			
+		},
+		data: function() {
+			return {
+				collapse: false
+			}
+		},
+		components: { 
+		}
+	}
+</script>
+
+<style>
+
+.catalog-menu__item:first-child{
+	margin-top: .75rem;
+}
+
+.catalog-menu__item:last-child{
+	padding-bottom: .25rem;
+	background: #F8F8F8;
+
+}
+
+
+.catalog-menu__item:last-child .catalog-menu__item-img {
+	color: #999;
+}
+
+.catalog-menu__item {
+	height: 100%;
+	padding: 0 1.5rem;
+	cursor: pointer;
+}
+
+
+.catalog-menu__item:hover {
+	background: rgba(0,0,0,0.05);
+}
+
+.catalog-menu__item-info-title{
+	white-space: nowrap; 
+	user-select:none;
+	line-height: 1.1;
+}
+
+
+.catalog-menu__item-info-sub-cat{
+	margin-right: .5rem;
+	white-space: nowrap; 
+	user-select:none;
+}
+
+.catalog-menu__item-img {
+	font-size: 32px;
+	color: #FF860F;
+	height: 37px;
+	margin-right: 1.5rem;
+}
+
+
+@media (max-width: 1200px){
+	.catalog-menu__item-img {
+		font-size: 26px;
+		color: #FF860F;
+		height: 37px;
+		margin-right: 1rem;
+	}
+	.catalog-menu__item {
+		height: 100%;
+		padding: 0 1rem;
+		cursor: pointer;
+	}
+
+	.catalog-menu__item-info-title{
+		font-size: 15px;
+	}
+
+
+	.catalog-menu__item:last-child {
+		padding-bottom: .0;
+
+	}
+
+}
+
+@media (max-width: 992px){
+
+	.catalog-menu__item-img {
+		font-size: 24px;
+		color: #FF860F;
+		height: 26px;
+		margin-right: .75rem;
+	}
+
+
+
+	.catalog-menu__item {
+		height: 100%;
+		min-height: 50px;
+		padding: 0 .75rem 0 .75rem;
+		cursor: pointer;
+		border-bottom: 1px solid #eee;
+		position: relative;
+
+	}
+
+
+	.catalog-menu__item-info-title{
+		margin-right: .5rem;
+
+		font-size:15px;
+	}
+
+/*.catalog-menu__item-info-title{
+	color:#0d61af;
+	}*/
+/*.catalog-menu__item:nth-child(1) .catalog-menu__item-info-title, .catalog-menu__item:nth-child(2) .catalog-menu__item-info-title,.catalog-menu__item:nth-child(3) .catalog-menu__item-info-title{
+		font-weight: 700;
+		}*/
+
+
+		.catalog-menu__item:first-child{
+			margin-top: 0;
+		}
+
+		.catalog-menu__item:last-child{
+			padding-bottom: 0;
+			background: #fff;
+		}
+
+		.catalog-menu__item:hover {
+			background: #fff;
+		}
+		.catalog-menu__item-info-sub-cat-list{
+			margin-left: auto;
+		}
+		.catalog-menu__item-info-sub-cat{
+			padding: .35rem .5rem;
+			border-radius: .25rem;
+			margin-left: .75rem;
+			margin-right: 0;
+			color:#999;
+			font-size: 13px;
+			border: 1px solid #eee;
+
+
+		}
+
+
+	}
+
+
+
+
+
+
+
+
+</style>
