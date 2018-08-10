@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "dayjs": "^1.7.4",
+    "fi-ripple": "^0.1.6",
     "firebase": "^5.3.0",
     "vue": "^2.5.16",
     "vue-awesome-swiper": "^3.1.3",

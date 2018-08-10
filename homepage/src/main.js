@@ -6,6 +6,8 @@ import catalogmenu from './components/catalog-menu.vue'
 
 
 
+
+
 import postBlogImg from './components/post-blog-img.vue'
 import postBlogLock from './components/post-blog-lock.vue'
 import postBlogText from './components/post-blog-text.vue'
@@ -15,12 +17,11 @@ import postBlogText from './components/post-blog-text.vue'
 import sliderWrap from './components/slider-wrap.vue'
 
 
+import Ripple from './libs/fi-ripple.js';
 
-import Ripple from 'vue-ripple-directive';
 
-Ripple.color = 'rgba(0, 0, 0, 0.02)';
-Ripple.zIndex = 55;
-Vue.directive('ripple', Ripple);
+
+Vue.directive('Ripple', Ripple);
 
 
 import Rate from 'vue-tiny-rate';
@@ -41,10 +42,11 @@ firebase.initializeApp(config);
 var mainNavsRef = firebase.database().ref('mainNavs');
 var mainbannersRef = firebase.database().ref('mainbanners');
 var productsmRef = firebase.database().ref('products');
+var productsviewmRef = firebase.database().ref('productsview');
 var setsRef = firebase.database().ref('sets');
 
 var reviewRef = firebase.database().ref('review');
-
+var newsRef = firebase.database().ref('news');
 
 
 
@@ -140,11 +142,11 @@ new Vue({
 
 					992: {
 						slidesPerView: 3,
-						spaceBetween: 30
+						spaceBetween: 0
 					},
 					768: {
 						slidesPerView: 2,
-						spaceBetween: 20
+						spaceBetween: 0
 					}
 				},  
 				navigation: {
@@ -211,13 +213,21 @@ new Vue({
 			}
 		}
 	},
+	  filters: {
+
+    formatedNumber: function(value) {
+          return value.toLocaleString();
+        }
+  },
 
 	firebase: {
 		mainNavs: mainNavsRef,
 		mainbanners: mainbannersRef,
 		products: productsmRef,
 		sets: setsRef,
-		review: reviewRef
+		review: reviewRef,
+		newslist: newsRef,
+		productsview: productsviewmRef
 	},
 
 	methods: {

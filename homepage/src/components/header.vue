@@ -51,7 +51,7 @@
 								
 							</div>
 						</div>
-						<div class="header__block flex-shrink-1">
+						<div class="header__block col-auto col-lg-3 p-0 flex-shrink-1">
 							<div class="header__logo ">
 								<img src="https://i.snag.gy/iSpaHI.jpg" class="header__logo-main"  alt="">
 								<img src="https://i.snag.gy/ktOpuU.jpg" class="header__logo-desc ml-2 d-none d-lg-block " alt="">
@@ -65,15 +65,17 @@
 							</div>
 						</div>
 						<div class="header__block  flex-shrink-1">
+							
+							
 							<div class="header__store-control d-none d-lg-flex">
 								<div class="header__store-control__icon">
-									<div class="icon-cart"></div>
+									<div class="icon-compare"></div>
 								</div>
 								<div class="header__store-control__desc">Сравнение</div>
 							</div>
 							<div class="header__store-control d-none d-lg-flex">
 								<div class="header__store-control__icon">
-									<div class="icon-cart"></div>
+									<div class="icon-heart"></div>
 								</div>
 								<div class="header__store-control__desc">Избранное</div>
 							</div>
@@ -112,7 +114,9 @@
 </script>
 
 <style>
-
+/*.header__logo{
+	width: 280px;
+}*/
 
 .header{
 	box-shadow: 0px 1px 24px 0px rgba(0, 0, 0, 0.14);
@@ -146,6 +150,10 @@
 	.header{
 		margin-bottom: 1rem;
 	}
+	.header__logo {
+margin: 0 10px;
+
+}
 }
 
 .header__block{
@@ -178,7 +186,7 @@
 .header__logo {
 	display: flex;
 	align-items: center;
-	margin: 0 8px;
+
 }
 
 
@@ -186,6 +194,7 @@
 	display: flex;
 	align-items: center;
 	cursor: pointer;
+	margin-left:  .75rem;
 }
 .header__store-control__icon {
 	margin-right: .75rem; 
@@ -198,7 +207,7 @@
 .header__search-form{
 	width: 100%;
 	display: flex;
-	margin: 0 8px;
+	margin: 0 5px;
 }
 
 
@@ -224,7 +233,6 @@
 	background-color: rgb(255, 255, 255);
 	width: 40px;
 	height: 40px;
-
 	cursor: pointer;
 	color: #ababab;
 	padding-top: 10px;

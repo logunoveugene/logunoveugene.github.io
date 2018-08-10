@@ -99,7 +99,7 @@
 	overflow: hidden;
 	border-radius: .5rem  .5rem 0 0;
 	margin-bottom: 1.5rem;
-	max-width: 60%;
+	max-width: 50%;
 	margin-right: auto;
 	margin-left: auto;
 	

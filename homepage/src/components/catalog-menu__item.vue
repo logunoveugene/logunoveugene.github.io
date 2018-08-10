@@ -1,23 +1,33 @@
 <template>
-	<div v-ripple  class="catalog-menu__item nav-list__item d-flex align-items-center " v-on:click="collapse = !collapse" > 
+	<div class=" catalog-menu__item nav-list__item  ">
+		<div v-ripple  class="catalog-menu__item-link-wrap d-flex align-items-center " v-on:click="collapseSubMenu" > 
 
-		<div class="catalog-menu__item-img ">
-			<div :class="mainNavItem.img"></div>
-		</div>
+			<div class="catalog-menu__item-img ">
+				<div :class="mainNavItem.img"></div>
+			</div>
 
-		<div class="catalog-menu__item-info d-flex flex-lg-column align-items-center align-items-lg-start w-100">
-			<div class="catalog-menu__item-info-title">{{mainNavItem.title}} </div>
-			<div class="catalog-menu__item-info-sub-cat-list small d-none d-lg-flex ">
-				<a v-ripple v-for="(subcat) in mainNavItem.subcategories" href="#"  class="catalog-menu__item-info-sub-cat link link--color-grey">{{subcat}}</a>
+			<div class="catalog-menu__item-info d-flex flex-lg-column align-items-center align-items-lg-start w-100">
+				<div class="catalog-menu__item-info-title">{{mainNavItem.title}} </div>
+				<div class="catalog-menu__item-info-sub-cat-list small d-none d-lg-flex ">
+					<a v-ripple v-for="(subcat) in mainNavItem.subcategories" href="#"  class="catalog-menu__item-info-sub-cat link link--color-grey">{{subcat}}</a>
+				</div>
+			</div>
+			<div class="d-lg-none">
+				<div v-if="!collapse" class=" pt-1 icon-arrow-down"></div>
+				<div v-if="collapse" class=" pt-1 icon-arrow-up"></div>
 			</div>
 		</div>
 		<div class="d-lg-none">
-			<div v-if="!collapse" class=" pt-1 icon-arrow-down"></div>
-			<div v-if="collapse" class=" pt-1 icon-arrow-up"></div>
+			<transition name="slide-fade">
+				<div v-if="collapse" class="">
+					<div class="px-5 small py-2">Подменю</div>
+					<div class="px-5 small py-2">Подменю</div>
+					<div class="px-5 small py-2">Подменю</div>
+					<div class="px-5 small py-2">Подменю</div>
+				</div>
+			</transition>
 		</div>
 	</div>
-
-
 
 
 </template>
@@ -30,11 +40,35 @@
 				type: null,
 				default: ""
 			}
-			
+
+		},
+		methods: {
+			handleResize() {
+				this.window.width = window.innerWidth;
+				this.window.height = window.innerHeight;
+
+			},
+			collapseSubMenu(){
+				if (this.window.width < 992) {
+					this.collapse = !this.collapse;
+				}
+			}
+
+		},
+		created() {
+			window.addEventListener('resize', this.handleResize)
+			this.handleResize();
+		},
+		destroyed() {
+			window.removeEventListener('resize', this.handleResize)
 		},
 		data: function() {
 			return {
-				collapse: false
+				collapse: false,
+				window: {
+					width: 0,
+					height: 0
+				},
 			}
 		},
 		components: { 
@@ -43,6 +77,29 @@
 </script>
 
 <style>
+
+
+
+/*-----------анимация */
+.slide-fade-enter-active {
+	transition: all .2s ease;
+}
+.slide-fade-leave-active {
+	transition: all .2s ease;
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active до версии 2.1.8 */ {
+
+	transform: translateX(-10px);
+	opacity: 0;
+}
+
+
+
+
+
+
+
 
 .catalog-menu__item:first-child{
 	margin-top: .75rem;
@@ -61,7 +118,7 @@
 
 .catalog-menu__item {
 	height: 100%;
-	padding: 0 1.5rem;
+
 	cursor: pointer;
 }
 
@@ -91,7 +148,15 @@
 }
 
 
+
+
+.catalog-menu__item-link-wrap{
+	padding: 0 1.5rem;
+	height: 100%;
+}
+
 @media (max-width: 1200px){
+
 	.catalog-menu__item-img {
 		font-size: 26px;
 		color: #FF860F;
@@ -100,7 +165,7 @@
 	}
 	.catalog-menu__item {
 		height: 100%;
-		padding: 0 1rem;
+
 		cursor: pointer;
 	}
 
@@ -114,9 +179,22 @@
 
 	}
 
+	.catalog-menu__item-link-wrap{
+
+		padding: 0 1rem;
+	}
+
+
+
 }
 
 @media (max-width: 992px){
+
+
+	.catalog-menu__item-link-wrap{
+		height: 50px;
+		padding: 0 .75rem 0 .75rem;
+	}
 
 	.catalog-menu__item-img {
 		font-size: 24px;
@@ -128,9 +206,9 @@
 
 
 	.catalog-menu__item {
-		height: 100%;
+		height: auto;
 		min-height: 50px;
-		padding: 0 .75rem 0 .75rem;
+
 		cursor: pointer;
 		border-bottom: 1px solid #eee;
 		position: relative;

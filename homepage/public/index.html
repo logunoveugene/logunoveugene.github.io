@@ -19,6 +19,8 @@
 		
 
 
+
+
 		<div class="main-layout">
 			<div class="overflow-layout">
 				<local-swiper class="main-banner-mob mb-3 d-lg-none " :options="mainBannerMobOption">
@@ -31,10 +33,18 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-12 mb-3 d-lg-none">
+						<div  class="card card-mobile 	 ">
+							<div class="servise-mobile-promo d-flex">
+								<div v-ripple  class="servise-mobile-promo__cabinet text-center flex-fill py-2 px-3"> <div class="py-1">Все акции</div></div>
+								<div v-ripple  class="servise-mobile-promo__configurator text-center flex-fill py-2 px-3"><div class="py-1">Товары со скидками</div></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 mb-3 d-lg-none">
 						<div  v-ripple  class="card card-mobile ">
 							<div class="shop-promo p-3 d-flex align-items-center justify-content-between">
 								<div class="d-flex flex-column">
-									<div class="shop-promo__title d-flex align-items-center">68 магазинов в г. Москва 
+									<div class="shop-promo__title pt-1 d-flex align-items-center">68 магазинов в г. Москва 
 										<div class="shop-promo__title-arrow">
 											<span class="icon-arrow-right"></span>
 										</div>
@@ -47,14 +57,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-12 mb-3 d-lg-none">
-						<div  class="card card-mobile 	 ">
-							<div class="servise-mobile-promo d-flex">
-								<div v-ripple  class="servise-mobile-promo__cabinet text-center flex-fill p-3"> Личный кабинет</div>
-								<div v-ripple  class="servise-mobile-promo__configurator text-center flex-fill p-3">Мои заказы</div>
-							</div>
-						</div>
-					</div>
+					
 					<div class="col-12 col-lg-3 mb-lg-0">
 						<div class="card card-mobile h-100 ">
 							<catalogmenu :catalog="mainNavs"></catalogmenu>
@@ -76,15 +79,13 @@
 							</div>
 							<div class="col-12 col-lg-4 d-none d-lg-block">
 								<div class="card h-100">
-									<div class="card-body">
-										<div class="d-flex flex-column">
+									<div class="card-body h-100">
+										<div class="d-flex flex-column h-100">
 
 											<div class="h4 pt-2 mb-2">Акции</div>
 											<div class="action__icon-wrap">
 												<div class="icon-action"></div>
 											</div>
-											
-											
 											
 											<ul class="list-unstyled mb-0 small">
 												<li><a href="#" class="link link--color-grey">Товары со скидкой</a></li>
@@ -92,11 +93,19 @@
 												<li><a href="#" class="link link--color-grey">Выгодный бонус</a></li>
 												<li><a href="#" class="link link--color-grey">Гарантия лучшей цены</a></li>
 											</ul>
+											<div class=" mt-auto d-none d-xl-block">
+												<button class="btn btn-outl-orange ">Все акции</button>
+											</div>
 
 										</div>
 									</div>
 								</div>
 							</div>
+
+
+
+
+
 							<div class="d-none d-lg-block col-12">
 								<div class="h2 pt-4">Актуальные предложения</div>
 
@@ -135,7 +144,7 @@
 																<div class="mb-2 sets-slider__title">
 																	<div class="link link--color-grey">{{aircond.title}}</div>
 																</div>
-																<div class="font-weight-bold  mb-0">от {{aircond.price }} ₽</div>
+																<div class="font-weight-bold  mb-0">от {{aircond.price  | formatedNumber }} ₽</div>
 															</div>
 														</div>
 													</local-slide>
@@ -150,7 +159,7 @@
 							</div>
 							<div class="overflow-layout">
 								<div class="d-lg-none col-12">
-									<div class="h2 pt-4">Актуальные предложения</div>
+									<div class="h2 mb-0  pt-4">Актуальные предложения</div>
 									<div class="card-mobile">
 										<local-swiper class="tab-swiper" :options="tabswipe">
 											<local-slide>
@@ -179,8 +188,8 @@
 										<div class="tab-content pb-2" id="pills-tabContent">
 											<div class="tab-pane fade show active" id="hot" role="tabpanel" aria-labelledby="pills-home-tab">
 												<local-swiper  class="sets-slider" :options="setsOption" v-for="(set, index) in sets" :key="index">
-													<local-slide v-ripple class="sets-slider__slide" v-for = "(aircond, index) in set.air" :key="index">
-														<div class="card h-100">
+													<local-slide  class="sets-slider__slide" v-for = "(aircond, index) in set.air" :key="index">
+														<div  v-ripple class="card h-100">
 															<div class="card-body align-items-center  d-flex">
 																<div class="d-flex align-items-center" >
 																	<img  :src="aircond.img" alt="" class="sets-slider__img mr-3">
@@ -188,7 +197,7 @@
 																		<div class="mb-2 sets-slider__title">
 																			<div class="link link--color-grey">{{aircond.title}}</div>
 																		</div>
-																		<div class="font-weight-bold  mb-0">от {{aircond.price }} ₽</div>
+																		<div class="font-weight-bold  mb-0">от {{aircond.price  | formatedNumber}} ₽</div>
 																	</div>
 																</div>
 															</div>
@@ -202,6 +211,36 @@
 									</div>
 								</div>
 							</div>
+
+							<div class="col-12 mt-3 d-lg-none">
+								<div class="card card-mobile h-100">
+									<div class="card-body ">
+										<div class="d-flex align-items-center justify-content-between">
+
+											<div class="d-flex flex-column">
+												<div class="mb-1 pt-1 shop-promo__title ">Собери свой компьютер</div>
+
+												<div class="small mt-auto">
+													<ul class="nav">
+														<li class="nav__link">
+															<a href="#" class="link link--color-blue">Собрать</a>
+														</li>
+														<li class="nav__link">
+															<a href="#" class="link link--color-blue">Пользовательские сборки</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<div class="ml-2">
+												<img src="https://i.snag.gy/snbflK.jpg" alt="" class="shop-promo__img">
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+
+
 
 
 
@@ -255,262 +294,338 @@
 
 
 					<div class="col-12 d-none d-lg-block">
-						<div class="row">
-							<div class=" col-12 col-lg-9 mt-4">
-								<div class="h2 ">Лучшие предложения</div>
-								<div class=" card-mobile">
-								
-</div>
-								<div class="card ">
-									<local-swiper class="tab-swiper" :options="tabswipe">
-										<local-slide>
-											<ul class="nav nav-pills " id="pills-tab" role="tablist">
-												<li class="nav-item">
-													<a class="link--color-grey link nav-link active" id="pills-home-tab" data-toggle="pill" href="#popular" role="tab" aria-controls="popular" aria-selected="true">Популярные</a>
-												</li>
-												<li class="nav-item">
-													<a class="link--color-grey link nav-link" id="pills-profile-tab" data-toggle="pill" href="#comments" role="tab" aria-controls="comments" aria-selected="false">Новинки</a>
-												</li>
-												<li class="nav-item">
-													<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#new-product" role="tab" aria-controls="new-product" aria-selected="false">Обсуждаемые</a>
-												</li>
-												<li class="nav-item">
-													<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#new-product" role="tab" aria-controls="new-product" aria-selected="false">Хиты продаж</a>
-												</li>
-											</ul>
-										</local-slide>
+						<div class="row mt-5">
+							<div class=" col-12 col-lg-9 ">
+								<div class="d-flex h-100 flex-column">
+									<div class="h2 ">Лучшие предложения</div>
 
-									</local-swiper>
-									
-									<div class="card-body">
-										<div class="tab-content" id="pills-tabContent">
-											<div class="tab-pane fade show active" id="popular" role="tabpanel" aria-labelledby="pills-home-tab">
-												<local-swiper class="product-swiper"  :options="productOption">
-													<local-slide  v-for="(product, index) in products" :key="index">
-														<div class="product-plate d-flex flex-column">
-															<div class="product-plate__image-wrap">
-																<img  :src="product.img" alt="" class="product-plate__image">
-															</div>
-															<div class="product-plate__link  mb-2">
-																<a href="" class="link link--color-grey">{{product.title}}</a>
-															</div>
-															<div class="product-plate__social d-flex align-items-center mb-2">
-																<div class="product-plate__rating-wrap">
-																	<Rate :value="product.rating"  size='14px'   length="5" theme="#FEB909"></Rate> 
-																</div>
-																<div class="extrasmall ml-2">
-																	<a href="" class="link link--color-blue">{{product.reviewcount}}</a>
-																</div>
-																<!-- 	<div class="small"><div class="icon-chat-bubble"></div></div> -->
-															</div>
-															<div class="h3 mb-0">{{product.price}} ₽</div>
-														</div>
-													</local-slide>
-													<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
-													<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
+									<div class="card flex-grow-1 ">
+										<local-swiper class="tab-swiper" :options="tabswipe">
+											<local-slide>
+												<ul class="nav nav-pills " id="pills-tab" role="tablist">
+													<li class="nav-item">
+														<a class="link--color-grey link nav-link active" id="pills-home-tab" data-toggle="pill" href="#popular" role="tab" aria-controls="popular" aria-selected="true">Популярные</a>
+													</li>
+													<li class="nav-item">
+														<a class="link--color-grey link nav-link" id="pills-profile-tab" data-toggle="pill" href="#comments" role="tab" aria-controls="comments" aria-selected="false">Новинки</a>
+													</li>
+													<li class="nav-item">
+														<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#new-product" role="tab" aria-controls="new-product" aria-selected="false">Обсуждаемые</a>
+													</li>
+													<li class="nav-item">
+														<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#new-product" role="tab" aria-controls="new-product" aria-selected="false">Хиты продаж</a>
+													</li>
+												</ul>
+											</local-slide>
 
-													<div class="swiper-scrollbar" slot="scrollbar"></div>
-												</local-swiper>
+										</local-swiper>
+
+										<div class="card-body">
+											<div class="tab-content" id="pills-tabContent">
+												<div class="tab-pane fade show active" id="popular" role="tabpanel" aria-labelledby="pills-home-tab">
+													<local-swiper class="product-swiper"  :options="productOption">
+														<local-slide  v-for="(product, index) in products" :key="index">
+															<div class="product-plate d-flex flex-column">
+																<div class="product-plate__image-wrap">
+																	<img  :src="product.img" alt="" class="product-plate__image">
+																</div>
+																<div class="product-plate__link  mb-2">
+																	<a href="" class="link link--color-grey">{{product.title}}</a>
+																</div>
+																<div class="product-plate__social d-flex align-items-center mb-2">
+																	<div class="product-plate__rating-wrap">
+																		<Rate :value="product.rating"  size='14px'   length="5" theme="#FEB909"></Rate> 
+																	</div>
+																	<div class="extrasmall ml-2">
+																		<a href="" class="link link--color-blue">{{product.reviewcount}}</a>
+																	</div>
+																	<!-- 	<div class="small"><div class="icon-chat-bubble"></div></div> -->
+																</div>
+																<div class="h3 mb-0">{{product.price | formatedNumber}} ₽</div>
+															</div>
+														</local-slide>
+														<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
+														<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
+
+														<div class="swiper-scrollbar" slot="scrollbar"></div>
+													</local-swiper>
+												</div>
+												<div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+												<div class="tab-pane fade" id="new-product" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
 											</div>
-											<div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
-											<div class="tab-pane fade" id="new-product" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
-										</div>
 
+										</div>
 									</div>
 								</div>
 							</div>
-							<div class="col-12 col-lg-3 mt-4">
+
+
+
+
+
+							<div class="col-12 col-lg-3 ">
 								<div class="d-flex h-100 flex-column">
 									<div class="h2 ">Новости</div>
 									<div class="card flex-grow-1">
-										<div class="card-body">1</div>
-									</div>
-								</div>
-							</div>
-	</div>
+										<div class="card-body">
+											<div class="d-flex mb-3" v-for="newsitem in newslist" >
 
-							</div>
+												<div class="mr-3 d-xl-block d-none">
+													<img class="" :src="newsitem.img" alt="">
+												</div>
+												<div class="d-flex flex-column">
+													<div class="small mb-1"><a href="#" class="link link--color-grey">{{newsitem.title}}</a></div>
+													<div class="small text-secondary mb-2">{{newsitem.date}}</div>
 
+												</div>
 
-
-
-
-
-
-
-
-
-
-	<div class="overflow-layout">
-					<div class="col-12 d-lg-none">
-						<div class="row">
-							<div class=" col-12 col-lg-9 mt-4">
-								<div class="h2 ">Лучшие предложения</div>
-								<div class=" card-mobile">
-								<local-swiper class="tab-swiper" :options="tabswipe">
-										<local-slide>
-											<ul class="nav nav-pills " id="pills-tab" role="tablist">
-												<li class="nav-item">
-													<a class="link--color-grey link nav-link active" id="pills-home-tab" data-toggle="pill" href="#popular" role="tab" aria-controls="popular" aria-selected="true">Популярные</a>
-												</li>
-												<li class="nav-item">
-													<a class="link--color-grey link nav-link" id="pills-profile-tab" data-toggle="pill" href="#comments" role="tab" aria-controls="comments" aria-selected="false">Новинки</a>
-												</li>
-												<li class="nav-item">
-													<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#new-product" role="tab" aria-controls="new-product" aria-selected="false">Обсуждаемые</a>
-												</li>
-												<li class="nav-item">
-													<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#new-product" role="tab" aria-controls="new-product" aria-selected="false">Хиты продаж</a>
-												</li>
-											</ul>
-										</local-slide>
-
-									</local-swiper>
-</div>
-								<div class="card ">
-									
-									<div class="card-body">
-										<div class="tab-content" id="pills-tabContent">
-											<div class="tab-pane fade show active" id="popular" role="tabpanel" aria-labelledby="pills-home-tab">
-												<local-swiper class="product-swiper"  :options="productmobOption">
-													<local-slide  v-for="(product, index) in products" :key="index">
-														<div class="product-plate d-flex flex-column">
-															<div class="product-plate__image-wrap">
-																<img  :src="product.img" alt="" class="product-plate__image">
-															</div>
-															<div class="product-plate__link  mb-2">
-																<a href="" class="link link--color-grey">{{product.title}}</a>
-															</div>
-															<div class="product-plate__social d-flex align-items-center mb-2">
-																<div class="product-plate__rating-wrap">
-																	<Rate :value="product.rating"  size='14px'   length="5" theme="#FEB909"></Rate> 
-																</div>
-																<div class="extrasmall ml-2">
-																	<a href="" class="link link--color-blue">{{product.reviewcount}}</a>
-																</div>
-																<!-- 	<div class="small"><div class="icon-chat-bubble"></div></div> -->
-															</div>
-															<div class="h3 mb-0">{{product.price}} ₽</div>
-														</div>
-													</local-slide>
-							
-													<div class="swiper-scrollbar" slot="scrollbar"></div>
-												</local-swiper>
 											</div>
-										
-										</div>
-
-									</div>
-								</div>
-							</div>
-	</div>
-
-							</div>
-	</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-							
-						</div>
-						<div class="row">
-							<div class=" col-12  mt-4">
-								<div class="h2 ">Вы недавно смотели</div>
-								<div class="card mb-3">
-									<div class="card-body">
-										<div class="tab-content" id="pills-tabContent">
-											<div class="tab-pane fade show active" id="popular" role="tabpanel" aria-labelledby="pills-home-tab">
-												<local-swiper class="product-swiper"  :options="productviewOption">
-													<local-slide  v-for="(product, index) in products" :key="index">
-														<div class="product-plate d-flex flex-column">
-															<div class="product-plate__image-wrap">
-																<img  :src="product.img" alt="" class="product-plate__image">
-															</div>
-															<div class="product-plate__link  mb-2">
-																<a href="" class="link link--color-grey">{{product.title}}</a>
-															</div>
-															<div class="product-plate__social d-flex align-items-center mb-2">
-																<div class="product-plate__rating-wrap">
-																	<Rate :value="product.rating"  size='14px' readonly="true" theme="#FEB909"></Rate> 
-																</div>
-																<div class="extrasmall ml-2">
-																	<a href="" class="link link--color-blue">{{product.reviewcount}}</a>
-																</div>
-																<!-- 	<div class="small"><div class="icon-chat-bubble"></div></div> -->
-															</div>
-															<div class="h3 mb-0">{{product.price}} ₽</div>
-														</div>
-													</local-slide>
-													<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
-													<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
-
-													<div class="swiper-scrollbar" slot="scrollbar"></div>
-												</local-swiper>
-											</div>
-											<div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
-											<div class="tab-pane fade" id="new-product" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+											
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="h2 mt-4 ">ДНС клуб –  центр онлайн компетенции</div>
-						<div class="blog__wrap">
-							<div class="blog__item">
-								<post-blog-img :post="review[0]"></post-blog-img>
-							</div>
-							<div class="blog__item">
-								<post-blog-img :post="review[2]"></post-blog-img>
-
-							</div>
-							<div class="blog__item">
-								<post-blog-img :post="review[0]"></post-blog-img>
-							</div>
-
-							<div class="blog__item">
-								<post-blog-img :post="review[3]"></post-blog-img>
-							</div>
-							<div class="blog__item">
-								<post-blog-img :post="review[1]"></post-blog-img>
-
-							</div>
-							<div class="blog__item">
-								<post-blog-img :post="review[4]"></post-blog-img>
-							</div>
-							<div class="blog__item">
-								<post-blog-img :post="review[5]"></post-blog-img>
-							</div>
-						</div>
-
-						<slider-wrap></slider-wrap>
-
-
-
-
 
 					</div>
+
+
+
+
+
+
+
+
+
+
+
+					<div class="overflow-layout pb-1">
+						<div class="col-12 d-lg-none">
+							<div class="row">
+								<div class=" col-12 col-lg-9 mt-4">
+									<div class="h2 mb-0 ">Лучшие предложения</div>
+									<div class=" card-mobile">
+										<local-swiper class="tab-swiper" :options="tabswipe">
+											<local-slide>
+												<ul class="nav nav-pills " id="pills-tab" role="tablist">
+													<li class="nav-item">
+														<a class="link--color-grey link nav-link active" id="pills-home-tab" data-toggle="pill" href="#popular" role="tab" aria-controls="popular" aria-selected="true">Популярные</a>
+													</li>
+													<li class="nav-item">
+														<a class="link--color-grey link nav-link" id="pills-profile-tab" data-toggle="pill" href="#comments" role="tab" aria-controls="comments" aria-selected="false">Новинки</a>
+													</li>
+													<li class="nav-item">
+														<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#new-product" role="tab" aria-controls="new-product" aria-selected="false">Обсуждаемые</a>
+													</li>
+													<li class="nav-item">
+														<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#new-product" role="tab" aria-controls="new-product" aria-selected="false">Хиты продаж</a>
+													</li>
+												</ul>
+											</local-slide>
+
+										</local-swiper>
+									</div>
+									<div class="card ">
+
+										<div class="pt-3">
+											<div class="tab-content" id="pills-tabContent">
+												<div class="tab-pane fade show active" id="popular" role="tabpanel" aria-labelledby="pills-home-tab">
+													<local-swiper class="product-swiper-mobile"  :options="productmobOption">
+														<local-slide  v-for="(product, index) in products" :key="index">
+															<div class="product-plate d-flex flex-column">
+																<div class="product-plate__image-wrap">
+																	<img  :src="product.img" alt="" class="product-plate__image">
+																</div>
+																<div class="product-plate__link  mb-2">
+																	<a href="" class="link link--color-grey">{{product.title}}</a>
+																</div>
+																<div class="product-plate__social d-flex align-items-center mb-2">
+																	<div class="product-plate__rating-wrap">
+																		<Rate :value="product.rating"  size='14px'   length="5" theme="#FEB909"></Rate> 
+																	</div>
+																	<div class="extrasmall ml-2">
+																		<a href="" class="link link--color-blue">{{product.reviewcount}}</a>
+																	</div>
+																	<!-- 	<div class="small"><div class="icon-chat-bubble"></div></div> -->
+																</div>
+																<div class="h3 mb-0">{{product.price  | formatedNumber}}} ₽</div>
+															</div>
+														</local-slide>
+
+														<div class="swiper-scrollbar" slot="scrollbar"></div>
+													</local-swiper>
+												</div>
+
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
 				</div>
+<!-- выжоывжпожвыжоывжпожвыжоывжпожвыжоывжпожвыжоывжпожвыжоывжпожвыжоывжпожвыжоывжпож -->
+<div class="h2 mt-4 mb-0 ">Будь в курсе</div>
+<div class="d-lg-none card-mobile ">
+				<ul class="nav nav-pills " id="pills-tab" role="tablist">
+					<li class="nav-item">
+						<a class="link--color-grey link nav-link active" id="pills-home-tab" data-toggle="pill" href="#popular" role="tab" aria-controls="popular" aria-selected="true">Новости</a>
+					</li>
+					<li class="nav-item">
+						<a class="link--color-grey link nav-link" id="pills-profile-tab" data-toggle="pill" href="#comments" role="tab" aria-controls="comments" aria-selected="false">Обзоры</a>
+					</li>
+
+				</ul>
+				</div>
+				<div class="card card-mobile d-lg-none">
+					<div v-ripple  class="catalog-menu__item d-flex align-items-center justify-content-between" v-for="newsitem in newslist" >
+						<div class="  py-2 px-3"> 
+							<div class="py-1 small">{{newsitem.title}}</div>
+						</div>
+						<div class="icon-arrow-right pt-1 pr-2"></div>
+					</div>
+				
+				</div>
+
+
+
+
+				<div class="row d-none d-lg-block">
+					<div class=" col-12  mt-5">
+						<div class="h2 ">Вы недавно смотрели</div>
+						<div class="card mb-3">
+							<div class="card-body">
+								<div class="tab-content" id="pills-tabContent">
+									<div class="tab-pane fade show active" id="popular" role="tabpanel" aria-labelledby="pills-home-tab">
+										<local-swiper class="product-swiper"  :options="productviewOption">
+											<local-slide  v-for="(product, index) in productsview" :key="index">
+												<div class="product-plate d-flex flex-column">
+													<div class="product-plate__image-wrap">
+														<img  :src="product.img" alt="" class="product-plate__image">
+													</div>
+													<div class="product-plate__link  mb-2">
+														<a href="" class="link link--color-grey">{{product.title}}</a>
+													</div>
+													<div class="product-plate__social d-flex align-items-center mb-2">
+														<div class="product-plate__rating-wrap">
+															<Rate :value="product.rating"  size='14px' readonly="true" theme="#FEB909"></Rate> 
+														</div>
+														<div class="extrasmall ml-2">
+															<a href="" class="link link--color-blue">{{product.reviewcount}}</a>
+														</div>
+														<!-- 	<div class="small"><div class="icon-chat-bubble"></div></div> -->
+													</div>
+													<div class="h3 mb-0">{{product.price  | formatedNumber}} ₽</div>
+												</div>
+											</local-slide>
+											<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
+											<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
+
+											<div class="swiper-scrollbar" slot="scrollbar"></div>
+										</local-swiper>
+									</div>
+									<div class="tab-pane fade" id="comments" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+									<div class="tab-pane fade" id="new-product" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row d-lg-none mb-4">
+					<div class=" col-12  mt-4">
+						<div class="h2 ">Вы недавно смотрели</div>
+						<div class="card ">
+
+							<div class="pt-3">
+								<div class="tab-content" id="pills-tabContent">
+									<div class="tab-pane fade show active" id="popular" role="tabpanel" aria-labelledby="pills-home-tab">
+										<local-swiper class="product-swiper-mobile"  :options="productmobOption">
+											<local-slide  v-for="(product, index) in productsview" :key="index">
+												<div class="product-plate d-flex flex-column">
+													<div class="product-plate__image-wrap">
+														<img  :src="product.img" alt="" class="product-plate__image">
+													</div>
+													<div class="product-plate__link  mb-2">
+														<a href="" class="link link--color-grey">{{product.title}}</a>
+													</div>
+													<div class="product-plate__social d-flex align-items-center mb-2">
+														<div class="product-plate__rating-wrap">
+															<Rate :value="product.rating"  size='14px'   length="5" theme="#FEB909"></Rate> 
+														</div>
+														<div class="extrasmall ml-2">
+															<a href="" class="link link--color-blue">{{product.reviewcount}}</a>
+														</div>
+														<!-- 	<div class="small"><div class="icon-chat-bubble"></div></div> -->
+													</div>
+													<div class="h3 mb-0">{{product.price  | formatedNumber}} ₽</div>
+												</div>
+											</local-slide>
+
+											<div class="swiper-scrollbar" slot="scrollbar"></div>
+										</local-swiper>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+						
+					</div>
+				</div>
+
+
+
+
+
+
+
+				<div class="d-none d-lg-block">	
+					<div class="h2 mt-5  ">ДНС клуб –  центр онлайн компетенции</div>
+					<div class="blog__wrap">
+						<div class="blog__item">
+							<post-blog-img :post="review[0]"></post-blog-img>
+						</div>
+						<div class="blog__item">
+							<post-blog-img :post="review[1]"></post-blog-img>
+
+						</div>
+						<div class="blog__item">
+							<post-blog-img :post="review[2]"></post-blog-img>
+						</div>
+
+						<div class="blog__item">
+							<post-blog-img :post="review[3]"></post-blog-img>
+						</div>
+						<div class="blog__item">
+							<post-blog-img :post="review[4]"></post-blog-img>
+
+						</div>
+						<div class="blog__item">
+							<post-blog-img :post="review[5]"></post-blog-img>
+						</div>
+						<div class="blog__item">
+							<post-blog-img :post="review[0]"></post-blog-img>
+						</div>
+						<div class="blog__item">
+							<post-blog-img :post="review[1]"></post-blog-img>
+						</div>
+					</div>
+
+
+				</div>
+
+
+
+
 			</div>
 		</div>
 	</div>
+</div>
+</div>
 
 </div>
 <!-- built files will be auto injected -->
