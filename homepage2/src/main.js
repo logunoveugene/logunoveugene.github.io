@@ -4,13 +4,22 @@ import firebase from 'firebase'
 import mainheader from './components/header.vue'
 import catalogmenu from './components/catalog-menu.vue'
 
+import blogList from './components/blog-list.vue'
 
 
 
+import VueLazyload from 'vue-lazyload'
 
-import postBlogImg from './components/post-blog-img.vue'
-import postBlogLock from './components/post-blog-lock.vue'
-import postBlogText from './components/post-blog-text.vue'
+Vue.use(VueLazyload, {
+	lazyComponent: true,
+	observer: true,
+
+  // optional
+  observerOptions: {
+	rootMargin: '0px',
+	threshold: 0.1
+	}
+});
 
 
 
@@ -25,7 +34,7 @@ Vue.directive('Ripple', Ripple);
 
 
 import Rate from 'vue-tiny-rate';
-import Collapse from 'vue-collapse'
+
 
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
@@ -66,9 +75,7 @@ new Vue({
 		LocalSlide: swiperSlide,
 		catalogmenu,
 		Rate,
-		postBlogImg,
-		postBlogLock,
-		postBlogText,
+		blogList,
 		sliderWrap
 	},
 
@@ -213,12 +220,12 @@ new Vue({
 			}
 		}
 	},
-	  filters: {
+	filters: {
 
-    formatedNumber: function(value) {
-          return value.toLocaleString();
-        }
-  },
+		formatedNumber: function(value) {
+			return value.toLocaleString();
+		}
+	},
 
 	firebase: {
 		mainNavs: mainNavsRef,
@@ -230,11 +237,7 @@ new Vue({
 		productsview: productsviewmRef
 	},
 
-	methods: {
 
-
-
-	}
 });
 
 
