@@ -19,31 +19,33 @@ input:focus, button:focus {
 }
 
 
- .btn-outl-orange{
+.btn-outl-orange{
 	background: #FFFFFF;
 	border: 1px solid #FC7B08;
 	color:#FC7B08;
 	padding: .5rem 1rem;
 	transition: .2s;
- }
+}
 
 
- .btn-outl-orange:hover{
+.btn-outl-orange:hover{
 	background: #FF902D linear-gradient(-180deg, rgba(255,188,11,0.99) 0%, #FF7400 100%);
 	box-shadow: inset 0 -2px 0 0 rgba(0,0,0,0.20);
 	color:#fff;
 	border: 1px solid #FC7B08;
- }
+}
 
 
 
- .btn-outl-orange:active{
+.btn-outl-orange:active{
 	background: #FC7B08;
 	box-shadow: inset 0 2px 0 0 rgba(0,0,0,0.20);
 	color:#fff;
 	border: 1px solid #FC7B08;
 
 }
+
+
 
 
 
@@ -57,7 +59,7 @@ input:focus, button:focus {
 }
 .col-auto{
 	width: auto;
-		padding-right: 10px;
+	padding-right: 10px;
 	padding-left: 10px;
 }
 
@@ -74,25 +76,26 @@ input:focus, button:focus {
 
 
 @media (min-width: 576px){
-.container {
-    max-width: 100%;
-}}
+	.container {
+		max-width: 100%;
+	}
+}
 
 @media (min-width: 768px){
-.container {
-    max-width: 100%;
-}}
+	.container {
+		max-width: 100%;
+	}
+}
 @media (min-width: 992px){
-.container {
-    max-width: 960px;
-}}
+	.container {
+		max-width: 960px;
+	}
+}
 @media (min-width: 1200px){
 	.container {
 		max-width: 1200px;
 	}
 }
-
-
 
 .overflow-layout{
 	overflow: hidden;
@@ -129,6 +132,17 @@ input:focus, button:focus {
 	right: 0;    
 }
 
+.link--pill{
+	border-radius: .25rem;
+	padding: .25rem .75rem;
+	background-color: #fff;
+	display: block;
+}
+.link--pill-active{
+	background-color: #eee;
+}
+
+
 
 /*-----------------------типографика*/
 h1, .h1 {
@@ -163,7 +177,7 @@ h5, .h5 {
 
 .small {
 	font-size: 0.875rem;
-	    line-height: 1.4;
+	line-height: 1.4;
 }
 .extrasmall{
 	font-size: .75rem;
@@ -182,55 +196,9 @@ h5, .h5 {
 
 
 
-/* ------------------Кнопки---------------*/
-
-.btn.btn--color-blue{
-	background: #1D9DE8 linear-gradient(180deg, #14BDF0 0%, #008EF8 100%);
-	border-radius: 8px;
-	color:#fff;
-	padding: .5rem 1rem;
-	font-weight: 700;
-	border: none;
-	transition: .2s;
-
-}
-.btn--color-blue:hover{
-	background: #1D9DE8 linear-gradient(180deg, #39D1FF 0%, #1287DE 72%);
-	box-shadow: inset 0 -2px 0 0 rgba(0,0,0,0.20);
-
-}
-.btn--color-blue:active{
-	background: #1D9DE8;
-	box-shadow: inset 0 2px 0 0 rgba(0,0,0,0.20);
-}
-.btn.btn--color-white{
-	background: #FFFFFF;
-	border: 1px solid #D9D9D9;
-	border-radius: 8px;
-	color:#000;
-	padding: .5rem 1rem;
-	font-weight: 700;
-	transition: .2s;
-}
-.btn--color-white:hover{
-	background: #FF902D linear-gradient(-180deg, rgba(255,188,11,0.99) 0%, #FF7400 100%);
-	box-shadow: inset 0 -2px 0 0 rgba(0,0,0,0.20);
-	color:#fff;
-	border: 1px solid #FC7B08;
-}
-.btn--color-white:active{
-	background: #FC7B08;
-	box-shadow: inset 0 2px 0 0 rgba(0,0,0,0.20);
-	color:#fff;
-	border: 1px solid #FC7B08;
-
-}
 
 
-
-
-
-/*------------Навигация*/
+/*------------Навигация(горизонтальный список)*/
 .nav {
 	display: -ms-flexbox;
 	display: flex;
@@ -247,6 +215,14 @@ h5, .h5 {
 .nav__link:last-child{
 	margin-right: 0;
 }
+
+
+
+
+
+
+
+
 /*-------карточка*/
 
 .card {
@@ -428,36 +404,6 @@ h5, .h5 {
 
 
 
-/*----табы слайдера */
-
-
-.nav.nav-pills {
-	padding: 1.5rem  1.5rem  0  1.5rem ;
-}
-
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-	color: #000;
-	background-color: #eee;
-}
-
-.nav-link {
-	padding: .25rem .75rem;
-	font-size: .875rem;
-	margin-right: .5rem;
-
-}
-
-@media (max-width: 992px){
-	.nav-link {
-		background:#fff;
-
-	}
-	.nav.nav-pills {
-		padding:  10px ;
-	}
-
-}
-
 /*.  промоблок магазинов*/
 .shop-promo__title{
 	line-height: 16px
@@ -559,7 +505,7 @@ h5, .h5 {
 }
 
 
-/*---------блоги*/
+
 
 
 

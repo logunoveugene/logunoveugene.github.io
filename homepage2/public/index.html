@@ -19,7 +19,7 @@
 		<div class="main-layout">
 			<div class="overflow-layout  d-lg-none">
 				<local-swiper class="main-banner-mob mb-3" :options="mainBannerMobOption">
-					<local-slide   v-for="(mainbanner, index) in mainbanners" :key="index">
+					<local-slide  v-for="(mainbanner, index) in mainbanners" :key="index">
 						<img :src="mainbanner.img" alt="">
 					</local-slide>
 				</local-swiper>
@@ -68,8 +68,12 @@
 											<img  :src="mainbanner.img" alt="">
 										</local-slide>
 										<div class="swiper-pagination" slot="pagination"></div>
-										<div class="ml-4 sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
-										<div class="mr-4 sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
+										<div class="ml-4 sw-button-prev" slot="button-prev">
+											<div class="icon-arrow-left pt-2"></div>
+										</div>
+										<div class="mr-4 sw-button-next" slot="button-next">
+											<div class="icon-arrow-right pt-2"></div>
+										</div>
 									</local-swiper>
 								</div>
 							</div>
@@ -104,23 +108,24 @@
 								<div class="card mb-3">
 									<local-swiper class="tab-swiper" :options="tabswipe">
 										<local-slide>
-											<ul class="nav nav-pills" id="pills-tab" role="tablist">
-												<li class="nav-item">
-													<a class="link--color-grey link nav-link active">Спасаемся от жары</a>
+											<ul class="nav">
+												<li class="nav__link">
+													<a class="link link--pill link--color-grey link--pill-active">Спасаемся от жары</a>
 												</li>
-												<li class="nav-item">
-													<a class="link--color-grey link nav-link">Горячей воде быть!</a>
+												<li class="nav__link">
+													<a class="link link--pill link--color-grey">Горячей воде быть!</a>
 												</li>
-												<li class="nav-item">
-													<a class="link--color-grey link nav-link">С собой в отпуск</a>
+												<li class="nav__link">
+													<a class="link link--pill link--color-grey">С собой в отпуск</a>
 												</li>
-												<li class="nav-item">
-													<a class="link--color-grey link nav-link">Выходные на даче</a>
+												<li class="nav__link">
+													<a class="link link--pill link--color-grey">Выходные на даче</a>
 												</li>
-												<li class="nav-item">
-													<a class="link--color-grey link nav-link">Для топового ПК</a>
+												<li class="nav__link">
+													<a class="link link--pill link--color-grey">Для топового ПК</a>
 												</li>
 											</ul>
+
 										</local-slide>
 									</local-swiper>
 									<div class="card-body">
@@ -153,21 +158,21 @@
 									<div class="card-mobile">
 										<local-swiper class="tab-swiper" :options="tabswipe">
 											<local-slide>
-												<ul class="nav nav-pills" id="pills-tab" role="tablist">
-													<li class="nav-item">
-														<a class="link--color-grey link nav-link active">Спасаемся от жары</a>
+												<ul class="nav">
+													<li class="nav__link">
+														<a class="link link--pill link--color-grey link--pill-active">Спасаемся от жары</a>
 													</li>
-													<li class="nav-item">
-														<a class="link--color-grey link nav-link">Горячей воде быть!</a>
+													<li class="nav__link">
+														<a class="link link--pill link--color-grey">Горячей воде быть!</a>
 													</li>
-													<li class="nav-item">
-														<a class="link--color-grey link nav-link">С собой в отпуск</a>
+													<li class="nav__link">
+														<a class="link link--pill link--color-grey">С собой в отпуск</a>
 													</li>
-													<li class="nav-item">
-														<a class="link--color-grey link nav-link">Выходные на даче</a>
+													<li class="nav__link">
+														<a class="link link--pill link--color-grey">Выходные на даче</a>
 													</li>
-													<li class="nav-item">
-														<a class="link--color-grey link nav-link">Для топового ПК</a>
+													<li class="nav__link">
+														<a class="link link--pill link--color-grey">Для топового ПК</a>
 													</li>
 												</ul>
 											</local-slide>
@@ -289,18 +294,18 @@
 									<div class="card flex-grow-1 ">
 										<local-swiper class="tab-swiper" :options="tabswipe">
 											<local-slide>
-												<ul class="nav nav-pills " id="pills-tab" role="tablist">
-													<li class="nav-item">
-														<a class="link--color-grey link nav-link active" id="pills-home-tab" data-toggle="pill" href="#popular" role="tab" aria-controls="popular" aria-selected="true">Популярные</a>
+												<ul class="nav" >
+													<li class="nav__link">
+														<a class="link link--pill link--color-grey link--pill-active" >Популярные</a>
 													</li>
-													<li class="nav-item">
-														<a class="link--color-grey link nav-link" id="pills-profile-tab" data-toggle="pill" href="#comments" role="tab" aria-controls="comments" aria-selected="false">Новинки</a>
+													<li class="nav__link">
+														<a class="link link--pill link--color-grey" >Новинки</a>
 													</li>
-													<li class="nav-item">
-														<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#new-product" role="tab" aria-controls="new-product" aria-selected="false">Обсуждаемые</a>
+													<li class="nav__link">
+														<a class="link link--pill link--color-grey" >Обсуждаемые</a>
 													</li>
-													<li class="nav-item">
-														<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#new-product" role="tab" aria-controls="new-product" aria-selected="false">Хиты продаж</a>
+													<li class="nav__link">
+														<a class="link link--pill link--color-grey">Хиты продаж</a>
 													</li>
 												</ul>
 											</local-slide>
@@ -316,7 +321,7 @@
 																<div class="product-plate__image-wrap">
 																	<img  :src="product.img" alt="" class="product-plate__image">
 																</div>
-																<div class="product-plate__link  mb-2">
+																<div class="product-plate__link mb-2">
 																	<a href="" class="link link--color-grey">{{product.title}}</a>
 																</div>
 																<div class="product-plate__social d-flex align-items-center mb-2">
@@ -385,8 +390,8 @@
 
 
 
-	
-			<lazy-component>
+
+
 					<div class="overflow-layout pb-1">
 						<div class="col-12 d-lg-none">
 							<div class="row">
@@ -395,18 +400,18 @@
 									<div class=" card-mobile">
 										<local-swiper class="tab-swiper" :options="tabswipe">
 											<local-slide>
-												<ul class="nav nav-pills " id="pills-tab" role="tablist">
-													<li class="nav-item">
-														<a class="link--color-grey link nav-link active" id="pills-home-tab" data-toggle="pill" href="#popular" role="tab" aria-controls="popular" aria-selected="true">Популярные</a>
+												<ul class="nav" >
+													<li class="nav__link">
+														<a class="link link--pill link--color-grey link--pill-active" >Популярные</a>
 													</li>
-													<li class="nav-item">
-														<a class="link--color-grey link nav-link" id="pills-profile-tab" data-toggle="pill" href="#comments" role="tab" aria-controls="comments" aria-selected="false">Новинки</a>
+													<li class="nav__link">
+														<a class="link link--pill link--color-grey" >Новинки</a>
 													</li>
-													<li class="nav-item">
-														<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#new-product" role="tab" aria-controls="new-product" aria-selected="false">Обсуждаемые</a>
+													<li class="nav__link">
+														<a class="link link--pill link--color-grey" >Обсуждаемые</a>
 													</li>
-													<li class="nav-item">
-														<a class="link--color-grey link nav-link" id="pills-contact-tab" data-toggle="pill" href="#new-product" role="tab" aria-controls="new-product" aria-selected="false">Хиты продаж</a>
+													<li class="nav__link">
+														<a class="link link--pill link--color-grey">Хиты продаж</a>
 													</li>
 												</ul>
 											</local-slide>
@@ -454,31 +459,32 @@
 						</div>
 					</div>
 				</div>
-				
-				<!-- выжоывжпожвыжоывжпожвыжоывжпожвыжоывжпожвыжоывжпожвыжоывжпожвыжоывжпожвыжоывжпож -->
-					<lazy-component>
-				<div class="h2 mt-4 mb-0">Будь в курсе</div>
-				<div class="d-lg-none card-mobile">
-					<ul class="nav nav-pills">
-						<li class="nav-item">
-							<a class="link--color-grey link nav-link active">Новости</a>
-						</li>
-						<li class="nav-item">
-							<a class="link--color-grey link nav-link">Обзоры</a>
-						</li>
-					</ul>
-				</div>
-				<div class="card card-mobile d-lg-none">
-					<div v-ripple class="catalog-menu__item d-flex align-items-center justify-content-between" v-for="newsitem in newslist">
-						<div class="py-2 px-3"> 
-							<div class="py-1 small">{{newsitem.title}}</div>
-						</div>
-						<div class="icon-arrow-right pt-1 pr-2"></div>
-					</div>
-				</div>
 
-	</lazy-component>
-		
+
+				<!-- выжоывжпожвыжоывжпожвыжоывжпожвыжоывжпожвыжоывжпожвыжоывжпожвыжоывжпожвыжоывжпож -->
+				<lazy-component>
+					<div class="h2 mt-4 mb-0">Будь в курсе</div>
+					<div class="d-lg-none card-mobile">
+						<ul class="nav nav-pills">
+							<li class="nav-item">
+								<a class="link--color-grey link nav-link active">Новости</a>
+							</li>
+							<li class="nav-item">
+								<a class="link--color-grey link nav-link">Обзоры</a>
+							</li>
+						</ul>
+					</div>
+					<div class="card card-mobile d-lg-none">
+						<div v-ripple class="catalog-menu__item d-flex align-items-center justify-content-between" v-for="newsitem in newslist">
+							<div class="py-2 px-3"> 
+								<div class="py-1 small">{{newsitem.title}}</div>
+							</div>
+							<div class="icon-arrow-right pt-1 pr-2"></div>
+						</div>
+					</div>
+
+				</lazy-component>
+
 
 				<lazy-component>
 					<div class="row d-none d-lg-block">
@@ -522,8 +528,8 @@
 						</div>
 					</div>
 
-		</lazy-component>
-			<lazy-component>
+				</lazy-component>
+				<lazy-component>
 					<div class="row d-lg-none mb-4">
 						<div class=" col-12  mt-4">
 							<div class="h2 ">Вы недавно смотрели</div>
@@ -566,7 +572,7 @@
 					</div>
 
 
-		</lazy-component>
+				</lazy-component>
 
 				<lazy-component>
 					<div class="d-none d-lg-block">	
