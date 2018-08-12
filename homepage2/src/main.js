@@ -7,6 +7,8 @@ import catalogmenu from './components/catalog-menu.vue'
 import blogList from './components/blog-list.vue'
 
 
+import sliderWrap from './components/slider-wrap.vue'
+
 
 import VueLazyload from 'vue-lazyload'
 
@@ -16,14 +18,14 @@ Vue.use(VueLazyload, {
 
   // optional
   observerOptions: {
-	rootMargin: '0px',
-	threshold: 0.1
-	}
+  	rootMargin: '0px',
+  	threshold: 0.1
+  }
 });
 
 
 
-import sliderWrap from './components/slider-wrap.vue'
+
 
 
 import Ripple from './libs/fi-ripple.js';
@@ -66,6 +68,7 @@ Vue.use(VueFire);
 
 
 
+
 new Vue({
 	el: '#app',
 	
@@ -81,6 +84,8 @@ new Vue({
 
 	data: function() {
 		return {
+			currentTab: 'Posts',
+			tabs: ['Posts', 'Archive'],
 			mainBannerOption: {
 				centeredSlides: true,
 				pagination: {
@@ -220,6 +225,7 @@ new Vue({
 			}
 		}
 	},
+
 	filters: {
 
 		formatedNumber: function(value) {

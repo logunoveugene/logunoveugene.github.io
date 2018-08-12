@@ -1,23 +1,47 @@
 <template>
-	<div class="slider-wrap">
 
-		я слайдер
+
+	<div class="">
+		<button
+		v-for="tab in tabs"
+		v-bind:key="tab"
+		v-bind:class="['tab-button', { active: currentTab === tab }]"
+		v-on:click="currentTab = tab"
+		>{{ tab }}</button>
+
+		<keep-alive>
+			<component
+			v-bind:is="currentTabComponent"
+			class="tab"
+			></component>
+		</keep-alive>
 	</div>
-
 </template>
 
 <script>
-	//import postInfo from './post-info.vue'
-	//import postTag from './post-tag.vue'
 
-	export default {
-		// components: {
-		// 	postInfo,
 
-		// },
+
+
+export default {
+	components: {
+		tab-archive:{ 
+			template: '<div>Archive component</div>' 
+		},
+		tab-posts:{
+			tab-archive:{ 
+				template: '<div>Archive component2</div>' 
+			},
+
+		},
 		props: {
 			post: {
 				type: null
+			}
+		},
+		computed: {
+			currentTabComponent: function () {
+				return 'tab-' + this.currentTab.toLowerCase()
 			}
 		},
 
@@ -27,28 +51,5 @@
 	</script>
 
 	<style>
-	.slider-wrap{
-		border-radius: .5rem;
-		border: none;
-		position: relative;
-		box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
-		transition: .5s;
-		overflow: hidden;
-		padding: 1.5rem;
-		background-color:  #fff;
-	}
-
-	@media (max-width: 992px){
-		.slider-wrap{
-			border-radius: 0;
-			border: none;
-			position: relative;
-			box-shadow: none;
-			overflow: hidden;
-			padding: 0rem;
-			margin: 0 -10px;
-			background-color: inherit;
-		}
-	}
 
 	</style>

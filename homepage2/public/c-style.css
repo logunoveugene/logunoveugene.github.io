@@ -200,19 +200,39 @@ h5, .h5 {
 
 /*------------Навигация(горизонтальный список)*/
 .nav {
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
 	padding-left: 0;
 	margin-bottom: 0;
 	list-style: none;
 }
 
+.nav--horizontal {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.nav--vertical {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
 .nav__link{
+	
+}
+
+.nav__link--horizontal{
 	margin-right: 1rem;
 }
-.nav__link:last-child{
+
+.nav__link--vertical{
+	margin-bottom: .25rem;
+}
+
+.nav__link--vertical:last-child{
+	margin-bottom: 0;
+}
+
+.nav__link--horizontal:last-child{
 	margin-right: 0;
 }
 

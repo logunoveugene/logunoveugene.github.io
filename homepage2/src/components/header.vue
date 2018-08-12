@@ -1,4 +1,4 @@
-<template>
+ <template>
 	<div class="header">
 		<div class="header__top-line d-none d-lg-flex">
 			<div class="header__container container">
@@ -12,14 +12,14 @@
 					</div>
 					<div class="header__block col-9">
 						<div class="header__nav ">
-							<ul class="nav">
-								<li class="nav__link">
+							<ul class="nav nav--horizontal">
+								<li class="nav__link nav__link--horizontal">
 									<a class="link link--color-grey link--dropdown" href="#">Магазины</a>
 								</li>
-								<li class="nav__link">
+								<li class="nav__link nav__link--horizontal">
 									<a class="link link--color-grey link--dropdown" href="#">Покупателям</a>
 								</li>
-								<li class="nav__link">
+								<li class="nav__link nav__link--horizontal">
 									<a class="link link--color-grey link--dropdown" href="#">Наши проекты</a>
 								</li>
 							</ul>
