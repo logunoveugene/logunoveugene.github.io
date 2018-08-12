@@ -25,11 +25,11 @@
 
 export default {
 	components: {
-		tab-archive:{ 
+		tabArchive:{ 
 			template: '<div>Archive component</div>' 
 		},
-		tab-posts:{
-			tab-archive:{ 
+		tabPosts:{
+	
 				template: '<div>Archive component2</div>' 
 			},
 
