@@ -84,8 +84,7 @@ new Vue({
 
 	data: function() {
 		return {
-			currentTab: 'Posts',
-			tabs: ['Posts', 'Archive'],
+
 			mainBannerOption: {
 				centeredSlides: true,
 				pagination: {
