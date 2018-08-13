@@ -14,7 +14,7 @@
 	</div>
 
 	<div class="card">
-		<div v-ripple class="catalog-menu__item d-flex align-items-center justify-content-between" v-for="post in curentData">
+		<div v-ripple class="catalog-menu__item d-flex align-items-center justify-content-between" v-for="(post, index) in curentData" :key="index">
 			<div class="py-2 px-3"> 
 				<div class="py-1 small">{{post.title}}</div>
 			</div>
@@ -33,43 +33,43 @@
 
 
 
-	export default {
+export default {
 
-		data: function() {
-			return {
-				currentTab: 'Новости',
-				curentIndex: 0,
-				tabs: ['Новости', 'Обзоры'],
-			}
+	data: function() {
+		return {
+			currentTab: 'Новости',
+			curentIndex: 0,
+			tabs: ['Новости', 'Обзоры'],
+		}
+	},
+
+
+	props: {
+		rewiewslist: {
+			type: null
 		},
-
-
-		props: {
-			rewiewslist: {
-				type: null
-			},
-			mynewslist: {
-				type: null
-			}
-
-		},
-		computed: {
-			currentTabComponent: function () {
-				return 'tab' + this.curentIndex
-			},
-
-			curentData: function () {
-				if (this.curentIndex == 0) {
-					return this.mynewslist
-				}
-				if (this.curentIndex == 1) {
-					return this.rewiewslist
-				}
-
-			},
+		mynewslist: {
+			type: null
 		}
 
+	},
+	computed: {
+		currentTabComponent: function () {
+			return 'tab' + this.curentIndex
+		},
+
+		curentData: function () {
+			if (this.curentIndex == 0) {
+				return this.mynewslist
+			}
+			if (this.curentIndex == 1) {
+				return this.rewiewslist
+			}
+
+		},
 	}
+
+}
 </script>
 
 <style>

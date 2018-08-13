@@ -1,122 +1,122 @@
  <template>
- 	<div class="header">
- 		<div class="header__top-line d-none d-lg-flex">
- 			<div class="header__container container">
- 				<div class="header__row row">
- 					<div class="header__block col-3">
- 						<div class="header__city ">
- 							<div class="header__city-link">
- 								<a class="link link--color-grey" href="#">Владивосток</a>
- 							</div>
- 						</div>
- 					</div>
- 					<div class="header__block col-9">
- 						<div class="header__nav ">
- 							<ul class="nav nav--horizontal">
- 								<li class="nav__link nav__link--horizontal">
- 									<a class="link link--color-grey link--dropdown" href="#">Магазины</a>
- 								</li>
- 								<li class="nav__link nav__link--horizontal">
- 									<a class="link link--color-grey link--dropdown" href="#">Покупателям</a>
- 								</li>
- 								<li class="nav__link nav__link--horizontal">
- 									<a class="link link--color-grey link--dropdown" href="#">Наши проекты</a>
- 								</li>
- 							</ul>
- 						</div>
- 						<div class="header__phone">
- 							<div class="header__phone-number">8-800-77-07-999</div>
- 							<div class="header__phone-time">(c 03:00 до 22:00)</div>
- 						</div>
- 						<div class="header__user-auth">
- 							<div class="header__sign-in-link">
- 								<a class="link link--color-grey" href="#">Вход</a>
- 							</div>
- 							<div class="header__sign-up-link">
- 								<a class="link link--color-grey" href="#">Регистрация</a>
- 							</div>  
- 						</div>
- 					</div>
- 				</div>
- 			</div>
- 		</div>
+	<div class="header">
+		<div class="header__top-line d-none d-lg-flex">
+			<div class="header__container container">
+				<div class="header__row row">
+					<div class="header__block col-3">
+						<div class="header__city ">
+							<div class="header__city-link">
+								<a class="link link--color-grey" href="#">Владивосток</a>
+							</div>
+						</div>
+					</div>
+					<div class="header__block col-9">
+						<div class="header__nav ">
+							<ul class="nav nav--horizontal">
+								<li class="nav__link nav__link--horizontal">
+									<a class="link link--color-grey link--dropdown" href="#">Магазины</a>
+								</li>
+								<li class="nav__link nav__link--horizontal">
+									<a class="link link--color-grey link--dropdown" href="#">Покупателям</a>
+								</li>
+								<li class="nav__link nav__link--horizontal">
+									<a class="link link--color-grey link--dropdown" href="#">Наши проекты</a>
+								</li>
+							</ul>
+						</div>
+						<div class="header__phone">
+							<div class="header__phone-number">8-800-77-07-999</div>
+							<div class="header__phone-time">(c 03:00 до 22:00)</div>
+						</div>
+						<div class="header__user-auth">
+							<div class="header__sign-in-link">
+								<a class="link link--color-grey" href="#">Вход</a>
+							</div>
+							<div class="header__sign-up-link">
+								<a class="link link--color-grey" href="#">Регистрация</a>
+							</div>  
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
- 		<fixed-header class="main-layout"  :threshold="60" :fixed.sync="isFixed">
- 			<div class="header__bottom-line">
- 				<div class="header__container container">
- 					<div class="header__row ">
+		<fixed-header class="main-layout"  :threshold="60" :fixed.sync="isFixed">
+			<div class="header__bottom-line">
+				<div class="header__container container">
+					<div class="header__row ">
 
- 						<div class="header__block col-auto col-lg-3 p-0 flex-shrink-1">
- 							<div class="header__logo ">
- 								<img src="https://i.snag.gy/iSpaHI.jpg" class="header__logo-main"  alt="">
- 								<img src="https://i.snag.gy/ktOpuU.jpg" class="header__logo-desc ml-2 d-none d-lg-block " alt="">
- 							</div>
- 						</div>
- 						<div class="header__block  flex-grow-1 d-none d-md-block">
- 							<div class="header__search-form ">
- 								<input type="search" class="header__search-form-field" placeholder="Поиск по каталогу">
- 								<button class="header__search-form-submit"><span class="icon-search"></span></button>
+						<div class="header__block col-auto col-lg-3 p-0 flex-shrink-1">
+							<div class="header__logo ">
+								<img src="https://i.snag.gy/iSpaHI.jpg" class="header__logo-main"  alt="">
+								<img src="https://i.snag.gy/ktOpuU.jpg" class="header__logo-desc ml-2 d-none d-lg-block " alt="">
+							</div>
+						</div>
+						<div class="header__block  flex-grow-1 d-none d-md-block">
+							<div class="header__search-form ">
+								<input type="search" class="header__search-form-field" placeholder="Поиск по каталогу">
+								<button class="header__search-form-submit"><span class="icon-search"></span></button>
 
- 							</div>
- 						</div>
+							</div>
+						</div>
 
 
- 						<div class="header__block flex-shrink-1 ml-auto d-md-none">
- 							<div class="header__search-icon">
- 								<div class="icon-search"></div>
- 							</div>
- 						</div>
+						<div class="header__block flex-shrink-1 ml-auto d-md-none">
+							<div class="header__search-icon">
+								<div class="icon-search"></div>
+							</div>
+						</div>
 
- 						<div class="header__block  flex-shrink-1">
- 							<div class="header__store-control d-none d-lg-flex">
- 								<div class="header__store-control__icon">
- 									<div class="icon-compare"></div>
- 								</div>
- 								<div class="header__store-control__desc">Сравнение</div>
- 							</div>
- 							<div class="header__store-control d-none d-lg-flex">
- 								<div class="header__store-control__icon">
- 									<div class="icon-heart"></div>
- 								</div>
- 								<div class="header__store-control__desc">Избранное</div>
- 							</div>
- 							<div class="header__store-control ">
- 								<div class="header__store-control__icon">
- 									<div class="icon-cart"></div>
- 								</div>
- 								<div class="header__store-control__desc d-none d-lg-flex">Корзина</div>
- 							</div>
- 						</div>
- 						<div class="flex-shrink-1 d-lg-none">
- 							<div class="header__mobile-menu px-2">
- 								<div class="icon-menu"></div>
+						<div class="header__block  flex-shrink-1">
+							<div class="header__store-control d-none d-lg-flex">
+								<div class="header__store-control__icon">
+									<div class="icon-compare"></div>
+								</div>
+								<div class="header__store-control__desc">Сравнение</div>
+							</div>
+							<div class="header__store-control d-none d-lg-flex">
+								<div class="header__store-control__icon">
+									<div class="icon-heart"></div>
+								</div>
+								<div class="header__store-control__desc">Избранное</div>
+							</div>
+							<div class="header__store-control ">
+								<div class="header__store-control__icon">
+									<div class="icon-cart"></div>
+								</div>
+								<div class="header__store-control__desc d-none d-lg-flex">Корзина</div>
+							</div>
+						</div>
+						<div class="flex-shrink-1 d-lg-none">
+							<div class="header__mobile-menu px-2">
+								<div class="icon-menu"></div>
 
- 							</div>
- 						</div>
- 					</div>
- 				</div>
- 			</div>
- 		</fixed-header>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</fixed-header>
 
- 	</div>
+	</div>
 
  </template>
 
  <script>
 
- 	import FixedHeader from 'vue-fixed-header'
+ import FixedHeader from 'vue-fixed-header'
 
- 	export default {
- 		components: {
- 			FixedHeader
- 		},
+ export default {
+	components: {
+		FixedHeader
+	},
 
- 		data: function() {
- 			return {
- 				isFixed: false
- 			}
- 		}
- 	}
+	data: function() {
+		return {
+			isFixed: false
+		}
+	}
+ }
  </script>
 
  <style>
@@ -279,4 +279,4 @@
 
 	}
 
-</style>
+	</style>

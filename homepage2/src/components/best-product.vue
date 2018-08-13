@@ -25,63 +25,61 @@
 
 <script>
 
-	import productSlider from './product-slider.vue'
+import productSlider from './product-slider.vue'
 
-	import { swiper, swiperSlide } from 'vue-awesome-swiper'
-	import 'swiper/dist/css/swiper.css'
-
-
-	export default {
-
-		components: {
-			productSlider,
-			LocalSwiper: swiper,
-			LocalSlide: swiperSlide,
-		},
-
-		data: function() {
-			return {
-				currentTab: 'Популярные',
-				curentIndex: 0,
-				tabs: ['Популярные','Новинки','Обсуждаемые','Хиты продаж'],
-				tabswipe: {
-
-					preventClicks :true,
-					preventClicksPropagation: true,
-					slidesPerView: 'auto',
-					slidesOffsetAfter: 1,
-					freeMode: true
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 
 
-				},
+export default {
 
-			}
-		},
+	components: {
+		productSlider,
+		LocalSwiper: swiper,
+		LocalSlide: swiperSlide,
+	},
+
+	data: function() {
+		return {
+			currentTab: 'Популярные',
+			curentIndex: 0,
+			tabs: ['Популярные','Новинки','Обсуждаемые','Хиты продаж'],
+			tabswipe: {
+
+				preventClicks :true,
+				preventClicksPropagation: true,
+				slidesPerView: 'auto',
+				slidesOffsetAfter: 1,
+				freeMode: true
 
 
-		props: {
-			slide: {
-				type: null
+			},
 
-
-			}
 		}
+	},
 
 
+	props: {
+		slide: {
+			type: null
 
 
-
-
-
-
+		}
 	}
+
+
+
+
+
+
+
+
+}
 </script>
 
 <style>
 
-	.tab-swiper__slide{
-		margin-left: 10px;
-	}
+
 .slider-block{
 	border-radius: .5rem;
 	position: relative;
@@ -97,7 +95,10 @@
 	.slider-block{
 		background-color: inherit;
 		padding: 0;
-			box-shadow: none;
+		box-shadow: none;
+	}
+	.tab-swiper__slide{
+		margin-left: 10px;
 	}
 }
 </style>
