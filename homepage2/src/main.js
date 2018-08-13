@@ -7,8 +7,9 @@ import catalogmenu from './components/catalog-menu.vue'
 import blogList from './components/blog-list.vue'
 
 
-import sliderWrap from './components/slider-wrap.vue'
-
+import setsBlock from './components/sets-block.vue'
+import bestProduct from './components/best-product.vue'
+import newsBlock from './components/news-block.vue'
 
 import VueLazyload from 'vue-lazyload'
 
@@ -79,7 +80,9 @@ new Vue({
 		catalogmenu,
 		Rate,
 		blogList,
-		sliderWrap
+		setsBlock,
+		bestProduct,
+		newsBlock
 	},
 
 	data: function() {

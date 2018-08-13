@@ -20,10 +20,11 @@
 		<div class="d-lg-none">
 			<transition name="slide-fade">
 				<div v-if="collapse" class="">
-					<div class="px-5 small py-2">Подменю</div>
-					<div class="px-5 small py-2">Подменю</div>
-					<div class="px-5 small py-2">Подменю</div>
-					<div class="px-5 small py-2">Подменю</div>
+					<div v-ripple  class="pl-5 pr-1 small py-2 catalog-menu__subcat-item  d-flex  align-items-center justify-content-between" v-for="(subcatFull) in mainNavItem.subcategoriesFull">
+						<div class="">{{subcatFull}}</div>
+						<div class="h5 mb-0 icon-arrow-right pt-1 pr-2"></div>
+					</div>
+				
 				</div>
 			</transition>
 		</div>
@@ -220,6 +221,15 @@
 		margin-right: .5rem;
 
 		font-size:15px;
+	}
+
+
+
+	.catalog-menu__subcat-item {
+		    height: auto;
+    min-height: 50px;
+    cursor: pointer;
+    border-top: 1px solid #eee;
 	}
 
 /*.catalog-menu__item-info-title{

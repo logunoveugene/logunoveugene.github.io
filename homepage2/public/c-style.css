@@ -443,35 +443,6 @@ h5, .h5 {
 	border-right: 1px solid #eee;
 }
 
-/* ------слайдер-----наборы--------*/
-@media (max-width: 992px){
-
-	.sets-slider__title {
-		font-size: 14px;
-	}
-	.swiper-slide.sets-slider__slide{
-		width: 240px;
-		height: 120px;
-		margin-left: 10px;
-		padding-bottom: .25rem;
-	}
-	.sets-slider__img{
-		width: 100px;
-		height: auto;
-	}
-
-
-	.swiper-container.sets-slider.swiper-container-horizontal{
-		overflow: visible;
-	}
-
-
-}
-
-.sets-slider__title{
-	line-height: 1.2
-}
-
 
 
 
@@ -561,3 +532,34 @@ h5, .h5 {
 	opacity: .08
 }
 
+
+
+
+
+
+
+
+
+
+/*--------новости*/
+
+
+
+
+
+
+
+.news-block__title-button{
+background: #fff;
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.05);
+    border-radius: 8px;
+    padding: 3px 0 0 3px;
+    height: 24px;
+    width: 24px;
+    margin-left: .5rem;
+    font-size: 16px;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+}
