@@ -61,20 +61,16 @@
 						</div>
 
 
-						<div class="header__block flex-shrink-1 ml-auto d-md-none">
-							<div class="header__search-icon">
-								<div class="icon-search"></div>
-							</div>
-						</div>
+						
 
-						<div class="header__block  flex-shrink-1">
-							<div class="header__store-control d-none d-lg-flex">
+						<div class="header__block  flex-shrink-1 d-none d-lg-flex">
+							<div class="header__store-control">
 								<div class="header__store-control__icon">
 									<div class="icon-compare"></div>
 								</div>
 								<div class="header__store-control__desc">Сравнение</div>
 							</div>
-							<div class="header__store-control d-none d-lg-flex">
+							<div class="header__store-control">
 								<div class="header__store-control__icon">
 									<div class="icon-heart"></div>
 								</div>
@@ -84,11 +80,25 @@
 								<div class="header__store-control__icon">
 									<div class="icon-cart"></div>
 								</div>
-								<div class="header__store-control__desc d-none d-lg-flex">Корзина</div>
+								<div class="header__store-control__desc">Корзина</div>
 							</div>
 						</div>
-						<div class="flex-shrink-1 d-lg-none">
-							<div class="header__mobile-menu px-2">
+
+
+
+						<div class="flex-shrink-1 ml-auto d-md-none">
+							<div v-ripple  class="header__mobile-icon">
+								<div class="icon-search"></div>
+							</div>
+						</div>
+						<div  class="flex-shrink-1 d-lg-none">
+							<div v-ripple   class="header__mobile-icon">
+								<div class="icon-cart"></div>
+
+							</div>
+						</div>
+						<div  class="flex-shrink-1 d-lg-none">
+							<div v-ripple  class="header__mobile-icon">
 								<div class="icon-menu"></div>
 
 							</div>
@@ -273,6 +283,13 @@
 			padding-top: 8px;
 			border: none;
 
+		}
+		.header__mobile-icon{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 12px 16px 8px;
+    color: #999;
 		}
 
 

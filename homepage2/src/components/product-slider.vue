@@ -65,10 +65,12 @@
 
 						992: {
 							slidesPerView: 3,
+							freeMode: true,
 							spaceBetween: 30
 						},
 						768: {
 							slidesPerView: 2,
+							freeMode: true,
 							spaceBetween: 20
 						}
 					},  

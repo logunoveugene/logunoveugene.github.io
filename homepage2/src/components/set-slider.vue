@@ -90,7 +90,7 @@
 		background-color: #fff;
 		padding: 1rem;
 		margin-left: 10px;
-		width: 240px;
+		width: 260px;
 		height: 120px;
 
 
