@@ -1,7 +1,7 @@
 <template>
 	<div class="">
 		<local-swiper  class="sets-slider" :options="setsOption" >
-			<local-slide  class="sets-slider__slide"  v-for="(slide, index) in slideinfo" >
+			<local-slide  class="sets-slider__slide"  v-for="(slide, index) in slideinfo" :key="index" >
 				<img  :src="slide.img" alt="" class="sets-slider__img mr-3">
 				<div class="d-flex flex-column">
 					<div class="mb-2 sets-slider__title">

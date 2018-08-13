@@ -9,7 +9,7 @@
 			<div class="catalog-menu__item-info d-flex flex-lg-column align-items-center align-items-lg-start w-100">
 				<div class="catalog-menu__item-info-title">{{mainNavItem.title}} </div>
 				<div class="catalog-menu__item-info-sub-cat-list small d-none d-lg-flex ">
-					<a v-ripple v-for="(subcat) in mainNavItem.subcategories" href="#"  class="catalog-menu__item-info-sub-cat link link--color-grey">{{subcat}}</a>
+					<a v-ripple v-for="(subcat, index) in mainNavItem.subcategories" :key="index" href="#"  class="catalog-menu__item-info-sub-cat link link--color-grey">{{subcat}}</a>
 				</div>
 			</div>
 			<div class="d-lg-none">
