@@ -13,7 +13,7 @@
 		</ul>
 	</div>
 
-	<div class="card">
+	<div class="bg-white">
 		<div v-ripple class="catalog-menu__item d-flex align-items-center justify-content-between" v-for="(post, index) in curentData" :key="index">
 			<div class="py-2 px-3"> 
 				<div class="py-1 small">{{post.title}}</div>
