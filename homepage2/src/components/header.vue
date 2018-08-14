@@ -52,7 +52,7 @@
 								<img src="https://i.snag.gy/ktOpuU.jpg" class="header__logo-desc ml-2 d-none d-lg-block " alt="">
 							</div>
 						</div>
-						<div class="header__block  flex-grow-1 d-none d-md-block">
+						<div class="header__block  flex-grow-1 d-none d-md-flex">
 							<div class="header__search-form ">
 								<input type="search" class="header__search-form-field" placeholder="Поиск по каталогу">
 								<button class="header__search-form-submit"><span class="icon-search"></span></button>
@@ -224,6 +224,7 @@
 		width: 100%;
 		display: flex;
 		margin: 0 5px;
+		align-items: center;
 	}
 
 
