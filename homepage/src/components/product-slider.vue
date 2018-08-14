@@ -63,7 +63,7 @@
 					observeParents: true,
 					breakpoints: {
 
-						992: {
+						1200: {
 							slidesPerView: 3,
 							freeMode: true,
 							spaceBetween: 30
