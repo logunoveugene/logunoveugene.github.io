@@ -9,7 +9,7 @@
 			<div class="catalog-menu__item-info d-flex flex-lg-column align-items-center align-items-lg-start w-100">
 				<div class="catalog-menu__item-info-title">{{mainNavItem.title}} </div>
 				<div class="catalog-menu__item-info-sub-cat-list small d-none d-lg-flex ">
-					<a v-ripple v-for="(subcat) in mainNavItem.subcategories" href="#"  class="catalog-menu__item-info-sub-cat link link--color-grey">{{subcat}}</a>
+					<a v-ripple v-for="(subcat, index) in mainNavItem.subcategories" :key="index" href="#"  class="catalog-menu__item-info-sub-cat link link--color-grey">{{subcat}}</a>
 				</div>
 			</div>
 			<div class="d-lg-none">
@@ -20,10 +20,11 @@
 		<div class="d-lg-none">
 			<transition name="slide-fade">
 				<div v-if="collapse" class="">
-					<div class="px-5 small py-2">Подменю</div>
-					<div class="px-5 small py-2">Подменю</div>
-					<div class="px-5 small py-2">Подменю</div>
-					<div class="px-5 small py-2">Подменю</div>
+					<div v-ripple  class="pl-5 pr-1 small py-2 catalog-menu__subcat-item  d-flex  align-items-center justify-content-between" v-for="(subcatFull, index) in mainNavItem.subcategoriesFull" :key="index">
+						<div class="">{{subcatFull}}</div>
+						<div class="h5 mb-0 icon-arrow-right pt-1 pr-2"></div>
+					</div>
+				
 				</div>
 			</transition>
 		</div>
@@ -220,6 +221,15 @@
 		margin-right: .5rem;
 
 		font-size:15px;
+	}
+
+
+
+	.catalog-menu__subcat-item {
+			height: auto;
+	min-height: 50px;
+	cursor: pointer;
+	border-top: 1px solid #eee;
 	}
 
 /*.catalog-menu__item-info-title{

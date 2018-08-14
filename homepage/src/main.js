@@ -4,17 +4,27 @@ import firebase from 'firebase'
 import mainheader from './components/header.vue'
 import catalogmenu from './components/catalog-menu.vue'
 
+import blogList from './components/blog-list.vue'
+
+
+import setsBlock from './components/sets-block.vue'
+import bestProduct from './components/best-product.vue'
+import newsBlock from './components/news-block.vue'
+
+import VueLazyload from 'vue-lazyload'
+
+Vue.use(VueLazyload, {
+	lazyComponent: true,
+	observer: true,
+	observerOptions: {
+	rootMargin: '0px',
+	threshold: 0.1
+	}
+});
 
 
 
 
-import postBlogImg from './components/post-blog-img.vue'
-import postBlogLock from './components/post-blog-lock.vue'
-import postBlogText from './components/post-blog-text.vue'
-
-
-
-import sliderWrap from './components/slider-wrap.vue'
 
 
 import Ripple from './libs/fi-ripple.js';
@@ -25,7 +35,7 @@ Vue.directive('Ripple', Ripple);
 
 
 import Rate from 'vue-tiny-rate';
-import Collapse from 'vue-collapse'
+
 
 
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
@@ -57,6 +67,7 @@ Vue.use(VueFire);
 
 
 
+
 new Vue({
 	el: '#app',
 	
@@ -66,14 +77,15 @@ new Vue({
 		LocalSlide: swiperSlide,
 		catalogmenu,
 		Rate,
-		postBlogImg,
-		postBlogLock,
-		postBlogText,
-		sliderWrap
+		blogList,
+		setsBlock,
+		bestProduct,
+		newsBlock
 	},
 
 	data: function() {
 		return {
+
 			mainBannerOption: {
 				centeredSlides: true,
 				pagination: {
@@ -213,12 +225,13 @@ new Vue({
 			}
 		}
 	},
-	  filters: {
 
-    formatedNumber: function(value) {
-          return value.toLocaleString();
-        }
-  },
+	filters: {
+
+		formatedNumber: function(value) {
+			return value.toLocaleString();
+		}
+	},
 
 	firebase: {
 		mainNavs: mainNavsRef,
@@ -230,11 +243,7 @@ new Vue({
 		productsview: productsviewmRef
 	},
 
-	methods: {
 
-
-
-	}
 });
 
 
