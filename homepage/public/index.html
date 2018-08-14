@@ -76,7 +76,7 @@
 							<div class="shop-promo__desc small">большинство работает с 9:00 до 21:00</div>
 						</div>
 						<div class="ml-2">
-							<img src="https://i.snag.gy/snbflK.jpg" alt="" class="shop-promo__img">
+							<img src="https://rondi.ru/homepage/img/map.svg" alt="" class="shop-promo__img">
 						</div>
 					</div>
 				</div>
@@ -176,7 +176,7 @@
 												</div>
 											</div>
 											<div class="ml-2">
-												<img src="https://i.snag.gy/3v9zHk.jpg" alt="" class="shop-promo__img">
+												<img src="https://rondi.ru/homepage/img/chip.svg" alt="" class="shop-promo__img">
 											</div>
 
 										</div>
@@ -192,7 +192,8 @@
 								<div class="card h-100">
 									<div class="card-body d-flex flex-column ">
 										<div class="action__icon-wrap">
-											<img src="https://i.snag.gy/1qjXvP.jpg" alt="">
+											<img class="d-none d-xl-block" src="https://i.snag.gy/1qjXvP.jpg" alt="">
+											<img class="d-xl-none" src="https://i.snag.gy/31YUZs.jpg" alt="">
 										</div>
 										<div class="h4 mb-2 pt-2">Регистрируйся на сайте</div>
 										<div class="small mb-3">Получай бонусы и спецпредложения,<br> сохраняй и отслеживай заказы</div>
@@ -214,7 +215,8 @@
 								<div class="card h-100">
 									<div class="card-body d-flex flex-column ">
 										<div class="action__icon-wrap">
-											<img src="https://i.snag.gy/R1yFuk.jpg" alt="">
+											<img class="d-none d-xl-block" src="https://i.snag.gy/5xfgEX.jpg" alt="">
+											<img class="d-xl-none" src="https://i.snag.gy/ntujpk.jpg" alt="">
 										</div>
 										<div class="h4 mb-2 pt-2">Собери свой компьютер</div>
 										<div class="small mb-3">Простой инструмент без проблем <br>с совместимостью</div>
@@ -298,92 +300,46 @@
 
 
 				<lazy-component>
-					<div class="row d-none d-lg-block">
+					<div class="row">
 						<div class="col-12 mt-5">
 							<div class="h2">Вы недавно смотрели</div>
-							<div class="card mb-3">
-								<div class="card-body">
-									<div class="tab-content" id="pills-tabContent">
-										<div class="tab-pane fade show active" id="popular" role="tabpanel" aria-labelledby="pills-home-tab">
-											<local-swiper class="product-swiper"  :options="productviewOption">
-												<local-slide  v-for="(product, index) in productsview" :key="index">
-													<div class="product-plate d-flex flex-column">
-														<div class="product-plate__image-wrap">
-															<img  :src="product.img" alt="" class="product-plate__image">
-														</div>
-														<div class="product-plate__link  mb-2">
-															<a href="" class="link link--color-grey">{{product.title}}</a>
-														</div>
-														<div class="product-plate__social d-flex align-items-center mb-2">
-															<div class="product-plate__rating-wrap">
-																<Rate :value="product.rating"  size='14px' readonly="true" theme="#FEB909"></Rate> 
-															</div>
-															<div class="extrasmall ml-2">
-																<a href="" class="link link--color-blue">{{product.reviewcount}}</a>
-															</div>
-															<!-- 	<div class="small"><div class="icon-chat-bubble"></div></div> -->
-														</div>
-														<div class="h3 mb-0">{{product.price  | formatedNumber}} ₽</div>
-													</div>
-												</local-slide>
-												<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
-												<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
 
-												<div class="swiper-scrollbar" slot="scrollbar"></div>
-											</local-swiper>
+							<div class="slider-block overflow-layout">
+								<div class="product-swiper__wrap">
+								<local-swiper class="product-swiper "  :options="productviewOption">
+									<local-slide  v-for="(product, index) in productsview" :key="index">
+										<div class="product-plate d-flex flex-column">
+											<div class="product-plate__image-wrap">
+												<img  :src="product.img" alt="" class="product-plate__image">
+											</div>
+											<div class="product-plate__link  mb-2">
+												<a href="" class="link link--color-grey">{{product.title}}</a>
+											</div>
+											<div class="product-plate__social d-flex align-items-center mb-2">
+												<div class="product-plate__rating-wrap">
+													<Rate :value="product.rating"  size='14px' readonly="true" theme="#FEB909"></Rate> 
+												</div>
+												<div class="extrasmall ml-2">
+													<a href="" class="link link--color-blue">{{product.reviewcount}}</a>
+												</div>
+												<!-- 	<div class="small"><div class="icon-chat-bubble"></div></div> -->
+											</div>
+											<div class="h3 mb-0">{{product.price  | formatedNumber}} ₽</div>
 										</div>
-
-									</div>
+									</local-slide>
+									<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
+									<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
+									<div class="swiper-scrollbar" slot="scrollbar"></div>
+								</local-swiper>
 								</div>
 							</div>
+
+
 						</div>
 					</div>
 
 				</lazy-component>
-				<lazy-component>
-					<div class="row d-lg-none mb-4">
-						<div class=" col-12  mt-4">
-							<div class="h2 ">Вы недавно смотрели</div>
-							<div class="card ">
 
-								<div class="pt-3">
-									<div class="tab-content" id="pills-tabContent">
-										<div class="tab-pane fade show active" id="popular" role="tabpanel" aria-labelledby="pills-home-tab">
-											<local-swiper class="product-swiper-mobile"  :options="productmobOption">
-												<local-slide  v-for="(product, index) in productsview" :key="index">
-													<div class="product-plate d-flex flex-column">
-														<div class="product-plate__image-wrap">
-															<img  :src="product.img" alt="" class="product-plate__image">
-														</div>
-														<div class="product-plate__link  mb-2">
-															<a href="" class="link link--color-grey">{{product.title}}</a>
-														</div>
-														<div class="product-plate__social d-flex align-items-center mb-2">
-															<div class="product-plate__rating-wrap">
-																<Rate :value="product.rating"  size='14px'  length="5" theme="#FEB909"></Rate> 
-															</div>
-															<div class="extrasmall ml-2">
-																<a href="" class="link link--color-blue">{{product.reviewcount}}</a>
-															</div>
-															<!-- 	<div class="small"><div class="icon-chat-bubble"></div></div> -->
-														</div>
-														<div class="h3 mb-0">{{product.price  | formatedNumber}} ₽</div>
-													</div>
-												</local-slide>
-												<div class="swiper-scrollbar" slot="scrollbar"></div>
-											</local-swiper>
-										</div>
-
-									</div>
-
-								</div>
-							</div>
-
-						</div>
-					</div>
-
-
-				</lazy-component>
 
 
 
@@ -434,17 +390,6 @@
 						</div>
 					</div>
 				</div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 			</div>

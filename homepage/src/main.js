@@ -1,6 +1,8 @@
 import Vue  from  'vue/dist/vue.js'
 import VueFire from 'vuefire'
 import firebase from 'firebase'
+
+
 import mainheader from './components/header.vue'
 import catalogmenu from './components/catalog-menu.vue'
 

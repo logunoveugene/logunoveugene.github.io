@@ -418,7 +418,18 @@ h5, .h5 {
 
 
 
-
+.product-swiper.desctop-plate{
+	border-radius: .5rem;
+    border: none;
+    position: relative;
+    -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+    -webkit-transition: .5s;
+    transition: .5s;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 1.5rem;
+}
 
 
 

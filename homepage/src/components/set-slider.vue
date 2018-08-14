@@ -1,8 +1,10 @@
 <template>
 	<div class="">
 		<local-swiper  class="sets-slider" :options="setsOption" >
-			<local-slide  class="sets-slider__slide"  v-for="(slide, index) in slideinfo" :key="index" >
-				<img  :src="slide.img" alt="" class="sets-slider__img mr-3">
+			<local-slide  class="sets-slider__slide"  v-for="(slide, index) in slideinfo.set" :key="index" >
+				<div class="mr-3">
+					<img  :src="slide.img" alt="" class="sets-slider__img">
+				</div>
 				<div class="d-flex flex-column">
 					<div class="mb-2 sets-slider__title">
 						<div class="link link--color-grey">{{slide.title}}</div>
@@ -27,7 +29,12 @@
 		},
 		props: {
 			slideinfo: {
-				type: null
+				type: Object,
+				default: function () {
+					return {}
+
+					
+				}
 			}
 		},
 
@@ -78,6 +85,10 @@
 	margin-bottom: .25rem;
 
 }
+.sets-slider__img{
+		width: 100px;
+		height: auto;
+	}
 
 @media (max-width: 992px){
 	.sets-slider__slide{
@@ -100,10 +111,7 @@
 		font-size: 14px;
 	}
 
-	.sets-slider__img{
-		width: 100px;
-		height: auto;
-	}
+	
 
 }
 

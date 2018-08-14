@@ -17,7 +17,7 @@
 
 	<keep-alive>
 		<set-slider 
-		:slideinfo="slide[curentIndex].set"
+		:slideinfo="slide[curentIndex]"
 		></set-slider>
 	</keep-alive>
 </div>
@@ -61,7 +61,10 @@
 
 		props: {
 			slide: {
-				type: null
+				type: Array,
+				default: function () {
+					return ['label', 'value']
+				}
 
 
 			}

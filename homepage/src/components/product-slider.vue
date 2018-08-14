@@ -2,7 +2,7 @@
 	<div class="product-swiper__wrap">
 
 		<local-swiper class="product-swiper"  :options="productOption">
-			<local-slide  v-for="(product, index) in slideinfo" :key="index">
+			<local-slide  v-for="(product, index) in slideinfo.product" :key="index">
 				<div class="product-plate d-flex flex-column">
 					<div class="product-plate__image-wrap">
 						<img  :src="product.img" alt="" class="product-plate__image">
@@ -50,7 +50,10 @@
 		},
 		props: {
 			slideinfo: {
-				type: null
+				type: Object,
+				default: function () {
+					return {}
+				}
 			}
 		},
 

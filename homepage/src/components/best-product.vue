@@ -17,7 +17,7 @@
 
 	<keep-alive>
 		<product-slider
-		:slideinfo="slide[curentIndex].product"
+		:slideinfo="slide[curentIndex] "
 		></product-slider>
 	</keep-alive>
 </div>
@@ -25,56 +25,58 @@
 
 <script>
 
-import productSlider from './product-slider.vue'
+	import productSlider from './product-slider.vue'
 
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
-import 'swiper/dist/css/swiper.css'
-
-
-export default {
-
-	components: {
-		productSlider,
-		LocalSwiper: swiper,
-		LocalSlide: swiperSlide,
-	},
-
-	data: function() {
-		return {
-			currentTab: 'Популярные',
-			curentIndex: 0,
-			tabs: ['Популярные','Новинки','Обсуждаемые','Хиты продаж'],
-			tabswipe: {
-
-				preventClicks :true,
-				preventClicksPropagation: true,
-				slidesPerView: 'auto',
-				slidesOffsetAfter: 1,
-				freeMode: true
+	import { swiper, swiperSlide } from 'vue-awesome-swiper'
+	import 'swiper/dist/css/swiper.css'
 
 
-			},
+	export default {
 
+		components: {
+			productSlider,
+			LocalSwiper: swiper,
+			LocalSlide: swiperSlide,
+		},
+		props: {
+			slide: {
+				type: Array,
+				default: function () {
+					return ['label', 'value']
+				}
+
+
+			}
+		},
+
+		data: function() {
+			return {
+				currentTab: 'Популярные',
+				curentIndex: 0,
+				tabs: ['Популярные','Новинки','Обсуждаемые','Хиты продаж'],
+				tabswipe: {
+
+					preventClicks :true,
+					preventClicksPropagation: true,
+					slidesPerView: 'auto',
+					slidesOffsetAfter: 1,
+					freeMode: true
+
+
+				},
+
+			}
 		}
-	},
 
 
-	props: {
-		slide: {
-			type: null
 
 
-		}
+
+
+
+
+
 	}
-
-
-
-
-
-
-
-
-}
 </script>
 
 <style>
