@@ -15,12 +15,19 @@ import newsBlock from './components/news-block.vue'
 
 import VueLazyload from 'vue-lazyload'
 
+
+
+
+
+
+
+
 Vue.use(VueLazyload, {
 	lazyComponent: true,
 	observer: true,
 	observerOptions: {
-	rootMargin: '0px',
-	threshold: 0.1
+		rootMargin: '0px',
+		threshold: 0.1
 	}
 });
 
@@ -83,6 +90,8 @@ new Vue({
 		setsBlock,
 		bestProduct,
 		newsBlock
+		
+		
 	},
 
 	data: function() {
@@ -224,7 +233,9 @@ new Vue({
 					}
 
 				}
-			}
+			},
+
+
 		}
 	},
 
