@@ -1,7 +1,7 @@
 <template>
 	<div class="">
-		<local-swiper  class="sets-slider" :options="setsOption" >
-			<local-slide  class="sets-slider__slide"  v-for="(slide, index) in slideinfo.set" :key="index" >
+		<set-swiper  class="sets-slider" :options="setsOption" >
+			<set-slide  class="sets-slider__slide"  v-for="(slide, index) in slideinfo.set" :key="index" >
 				<div class="mr-3">
 					<img  :src="slide.img" alt="" class="sets-slider__img">
 				</div>
@@ -11,8 +11,8 @@
 					</div>
 					<div class="font-weight-bold  mb-0">от {{slide.price | formatedNumber}}  ₽</div>
 				</div>
-			</local-slide>
-		</local-swiper>
+			</set-slide>
+		</set-swiper>
 	</div>
 
 </template>
@@ -23,8 +23,8 @@
 
 	export default {
 		components: {
-			LocalSwiper: swiper,
-			LocalSlide: swiperSlide,
+			setSwiper: swiper,
+			setSlide: swiperSlide,
 
 		},
 		props: {

@@ -435,6 +435,25 @@ h5, .h5 {
 
 
 
+.mainbanner .swiper-pagination {
+
+    text-align: right;
+    padding: 0 .875rem;
+}
+
+
+.mainbanner  .swiper-pagination-bullet {
+    background: #bdbdbd;
+
+}
+
+
+.mainbanner  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #F47021;
+}
+
+
 /*.  промоблок магазинов*/
 .shop-promo__title{
 	line-height: 16px
@@ -499,12 +518,6 @@ h5, .h5 {
 
 /*-----------------------акциии*/
 
-.action__icon-wrap {
-	position: absolute;
-	right: 1.75rem;
-	font-size: 30px;
-	color: #ff860f;
-}
 
 
 
@@ -578,6 +591,32 @@ background: #fff;
 
 
 
+
+
+
+.action__icon-wrap {
+	position: absolute;
+	right: 1.75rem;
+	font-size: 30px;
+	color: #ff860f;
+	text-align: right;
+}
+
+
+
+.promo__service-img {
+	width: 100%;
+	height: auto;
+}
+
+
+
+@media (max-width: 1200px){
+.promo__service-img {
+	width: 70%;
+	height: auto;
+}
+}
 
 
 

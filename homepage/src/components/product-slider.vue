@@ -1,8 +1,8 @@
 <template>
 	<div class="product-swiper__wrap">
 
-		<local-swiper class="product-swiper"  :options="productOption">
-			<local-slide  v-for="(product, index) in slideinfo.product" :key="index">
+		<product-swiper class="product-swiper"  :options="productOption">
+			<product-slide  v-for="(product, index) in slideinfo.product" :key="index">
 				<div class="product-plate d-flex flex-column">
 					<div class="product-plate__image-wrap">
 						<img  :src="product.img" alt="" class="product-plate__image">
@@ -21,12 +21,12 @@
 					</div>
 					<div class="h3 mb-0">{{product.price | formatedNumber}} ₽</div>
 				</div>
-			</local-slide>
+			</product-slide>
 			<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
 			<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
 
 			<div class="swiper-scrollbar" slot="scrollbar"></div>
-		</local-swiper>
+		</product-swiper>
 
 
 
@@ -43,8 +43,8 @@
 	import Rate from 'vue-tiny-rate';
 	export default {
 		components: {
-			LocalSwiper: swiper,
-			LocalSlide: swiperSlide,
+			productSwiper: swiper,
+			productSlide: swiperSlide,
 			Rate
 
 		},

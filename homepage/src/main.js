@@ -101,7 +101,7 @@ new Vue({
 				centeredSlides: true,
 				pagination: {
 					el: '.swiper-pagination',
-					type: 'fraction'
+					clickable: true
 				},
 				navigation: {
 					nextEl: '.sw-button-next',
