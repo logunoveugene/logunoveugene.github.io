@@ -1,0 +1,63 @@
+@font-face { 
+	font-family: "DINPro";
+	src: url(../fonts/DINWebPro-Bold.woff) format("woff");
+	font-weight: 700;
+}
+
+@font-face { 
+	font-family: "DINPro";
+	src: url(../fonts/DINWebPro.woff) format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+
+
+
+
+body{
+	background-color: #76b900;
+	color: #fff;
+	text-align: center;
+	font-family: 'DINPro', sans-serif; ;
+}
+
+.dns-header {
+	background: #fff;
+	text-align: left;
+}
+
+.logo{
+	cursor: pointer;
+}
+
+.logo__img{
+	height: auto;
+	width: 160px;
+	padding: 15px 0;
+}
+
+.g-logo{
+
+}
+
+.g__title{
+	font-size: 30px;
+	font-weight: 700;
+}
+
+@media (min-width: 768px){
+	.g__title{
+		font-size: 60px;
+		font-weight: 700;
+	}
+}
+
+.g__subtitle{
+	font-size: 36px;
+	font-weight: 700;
+}
+
+.g__subtitle2{
+	font-size: 24px;
+}
+
