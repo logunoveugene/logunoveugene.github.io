@@ -1,6 +1,6 @@
 <template>
 	<ul>
-		<li  v-for="(post, index) in posts" :key="index">{{post.title}}
+		<li  v-for="post in posts" :key="post.id">{{post.title}}
 				<nuxt-link :to="{path:'/post/'+ post.id }">ьщку</nuxt-link>	
 		</li>
 	</ul>
