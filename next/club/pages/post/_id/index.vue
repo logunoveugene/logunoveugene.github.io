@@ -1,15 +1,30 @@
 <template>
-<h1>{{post.title}} </h1>
+	<div class="">
+		<cm :info="post"></cm>
+		<h1>{{ post.title }}</h1>
+		<pre>{{ post.body }}</pre>
+	</div>
 </template>
 <script>
 
-import fetch from 'isomorphic-fetch'
+import axios from 'axios'
+import cm from '~/components/AppLogo.vue'
+
 
 export default {
-async asyncData({ params }) {
-	const responce =  await fetch('https://club-paper.firebaseio.com/digest/'+params.id+'.json');
-	const post = await responce.json();
-	return { post };
-}
+	components: {
+		cm
+
+	},
+	async asyncData({ params }) {
+		const { data } = await axios.get(`https://club-paper.firebaseio.com/digest/${params.id}.json`)
+		return { post: data }
+	},
+	head() {
+		return {
+			title: this.post.title
+		}
+	}
 }
 </script>
+

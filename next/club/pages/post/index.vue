@@ -7,14 +7,13 @@
 </template>
 
 <script>
-import fetch from 'isomorphic-fetch'
 
+import axios from 'axios'
 export default {
-async asyncData() {
-	const responce =  await fetch('https://club-paper.firebaseio.com/digest.json?orderBy="$key"&limitToLast=3');
-	const posts = await responce.json();
-	return { posts };
-}
-}
+  async asyncData() {
+    const { data } = await axios.get(`https://club-paper.firebaseio.com/digest.json`)
+    return { posts: data }
+  }
+   }
 </script>
 
