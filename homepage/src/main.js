@@ -17,7 +17,9 @@ import VueLazyload from 'vue-lazyload'
 
 
 
+import VModal from 'vue-js-modal'
 
+Vue.use(VModal)
 
 
 
@@ -236,6 +238,14 @@ new Vue({
 			},
 
 
+		}
+	},
+	methods: {
+		show () {
+			this.$modal.show('hello-world');
+		},
+		hide () {
+			this.$modal.hide('hello-world');
 		}
 	},
 

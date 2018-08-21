@@ -621,6 +621,11 @@ background: #fff;
 
 
 
+.v--modal-overlay .v--modal-box {
+    border-radius: 8px;
+}
+
+
 
 
 
