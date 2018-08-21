@@ -148,7 +148,7 @@
 
 .catalog-menu__item-img {
 	font-size: 32px;
-	color: #999;
+	color: #FC7B08;
 	height: 37px;
 	margin-right: 1.5rem;
 }
