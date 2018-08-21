@@ -128,6 +128,11 @@
 	background: rgba(0,0,0,0.05);
 }
 
+.catalog-menu__item:hover  .catalog-menu__item-img {
+		color: #FC7B08;
+}
+
+
 .catalog-menu__item-info-title{
 	white-space: nowrap; 
 	user-select:none;
@@ -143,7 +148,7 @@
 
 .catalog-menu__item-img {
 	font-size: 32px;
-	color: #FF860F;
+	color: #999;
 	height: 37px;
 	margin-right: 1.5rem;
 }
