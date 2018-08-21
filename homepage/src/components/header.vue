@@ -44,15 +44,20 @@
 			</div>
 
 			<div class="fixed-plate" :class="{ 'is-fixed': isFixed }">
-				<div class="header__bottom-line">
+				<div class="header__bottom-line" v-bind:class="{ technopoint: isTp }">
 					<div class="header__container container">
 						<div class="header__row ">
 
-							<div class="header__block col-auto col-lg-3 p-0 flex-shrink-1">
-								<div class="header__logo ">
+							<div class="header__block col-auto col-lg-3 p-0 flex-shrink-1" @click="isTp =! isTp">
+								<div class="header__logo " v-if="!isTp">
 									<img src="https://i.snag.gy/iSpaHI.jpg" class="header__logo-main"  alt="">
 									<img src="https://i.snag.gy/ktOpuU.jpg" class="header__logo-desc ml-2 d-none d-lg-block " alt="">
 								</div>
+								<div class="header__logo" v-if="isTp">
+									<img src="https://as.technopoint.ru/assets/549eb8cf/images/theme/logo.png" class="header__logo-main"  alt="">
+								</div>
+
+
 							</div>
 							<div class="header__block  flex-grow-1 d-none d-md-flex">
 								<div class="header__search-form ">
@@ -136,7 +141,8 @@
 		data: function() {
 			return {
 				isFixed: false,
-				isDrawer:false
+				isDrawer:false,
+				isTp: false
 
 			}
 		}
@@ -194,8 +200,10 @@
 	.header{
 		box-shadow: 0px 1px 24px 0px rgba(0, 0, 0, 0.14);
 		background-color: rgb(256, 256, 256);
-		margin-bottom: 1.5rem;
+position: relative;
 		height: 100px;
+		z-index: 100;
+		display: block;
 	}
 
 	.header__row{
@@ -216,6 +224,16 @@
 		display: flex;
 		align-items: center;
 	}
+
+	.header__bottom-line.technopoint{
+		background: rgba(76,47,117,0.9) ;
+		color: #fff;
+	}
+	.technopoint .header__store-control__icon{
+		color: #fff;
+	}
+
+
 
 	@media (max-width: 992px){
 		.header{
