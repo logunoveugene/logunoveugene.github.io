@@ -3,7 +3,8 @@
 		<div   v-ripple  class="catalog-menu__item-link-wrap d-flex align-items-center " v-on:click="collapseSubMenu" > 
 
 			<div class="catalog-menu__item-img ">
-				<div :class="mainNavItem.img"></div>
+				<!-- <div :class="mainNavItem.img"></div> -->
+				<img :src="mainNavItem.imgr" alt="">
 			</div>
 
 			<div class="catalog-menu__item-info d-flex flex-lg-column align-items-center align-items-lg-start w-100">
