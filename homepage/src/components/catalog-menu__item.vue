@@ -2,9 +2,9 @@
 	<div class=" catalog-menu__item nav-list__item  ">
 		<div   v-ripple  class="catalog-menu__item-link-wrap d-flex align-items-center " v-on:click="collapseSubMenu" > 
 
-			<div class="catalog-menu__item-img ">
+			<div class=" ">
 				<!-- <div :class="mainNavItem.img"></div> -->
-				<img :src="mainNavItem.imgr" alt="">
+				<img :src="mainNavItem.imgr" alt="" class="catalog-menu__item-img">
 			</div>
 
 			<div class="catalog-menu__item-info d-flex flex-lg-column align-items-center align-items-lg-start w-100">
@@ -109,7 +109,7 @@
 
 .catalog-menu__item:last-child{
 	padding-bottom: .25rem;
-	background: #F8F8F8;
+	border-top: 1px solid #eee;
 
 }
 
@@ -150,7 +150,8 @@
 .catalog-menu__item-img {
 	font-size: 32px;
 	color: #FC7B08;
-	height: 37px;
+	height: 32px;
+	width: 32px;
 	margin-right: 1.5rem;
 }
 
@@ -213,7 +214,8 @@ box-shadow: 0 0 15px rgba(0,0,0,0.2)
 	.catalog-menu__item-img {
 		font-size: 24px;
 		color: #FF860F;
-		height: 26px;
+		height: 24px;
+		width: 24px;
 		margin-right: .75rem;
 	}
 
