@@ -46,8 +46,8 @@
 					observeParents: true,
 					spaceBetween: 30,      
 					navigation: {
-						nextEl: '.sw-button-next',
-						prevEl: '.sw-button-prev'
+						nextEl: '.sets-slider .sw-button-next',
+						prevEl: '.sets-slider .sw-button-prev'
 					},
 					breakpoints: {
 						1200: {
