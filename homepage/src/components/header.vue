@@ -364,7 +364,7 @@
 		}
 
 		.header__search-form-field{
-			background: rgba(,0,0,.5);
+			background: rgba(0,0,0,.05);
 			height: 36px;
 			padding: 7px 0 6px 10px;
 			font-size: 14px;
