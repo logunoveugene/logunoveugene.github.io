@@ -1,6 +1,6 @@
 <template>
 	<div class=" catalog-menu__item nav-list__item  ">
-		<div v-ripple  class="catalog-menu__item-link-wrap d-flex align-items-center " v-on:click="collapseSubMenu" > 
+		<div   v-ripple  class="catalog-menu__item-link-wrap d-flex align-items-center " v-on:click="collapseSubMenu" > 
 
 			<div class="catalog-menu__item-img ">
 				<div :class="mainNavItem.img"></div>
@@ -19,7 +19,7 @@
 		</div>
 		<div class="d-lg-none">
 			<transition name="slide-fade">
-				<div v-if="collapse" class="">
+				<div v-if="collapse" v-bind:class="{ catalogMenu__subcatWrap: collapse }">
 					<div v-ripple  class="pl-5 pr-1 small py-2 catalog-menu__subcat-item  d-flex  align-items-center justify-content-between" v-for="(subcatFull, index) in mainNavItem.subcategoriesFull" :key="index">
 						<div class="">{{subcatFull}}</div>
 						<div class="h5 mb-0 icon-arrow-right pt-1 pr-2"></div>
@@ -159,6 +159,13 @@
 .catalog-menu__item-link-wrap{
 	padding: 0 1.5rem;
 	height: 100%;
+}
+.catalog-menu__item-link-wrap.active{
+box-shadow: 0 0 15px rgba(0,0,0,0.2)
+}
+
+.catalogMenu__subcatWrap{
+	box-shadow: inset 0 0 15px rgba(0,0,0,0.2);
 }
 
 @media (max-width: 1200px){

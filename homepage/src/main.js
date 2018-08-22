@@ -98,7 +98,7 @@ new Vue({
 
 	data: function() {
 		return {
-
+			isTp: false,
 			mainBannerOption: {
 				centeredSlides: true,
 				pagination: {

@@ -9,12 +9,12 @@ input:focus, button:focus {
 }
 
 .form__basic-field{
-	 border-radius: 8px;
-    border: 1px solid rgb(210, 210, 210);
-    background-color: rgb(255, 255, 255);
-    width: 100%;
-    height: 64px;
-    padding: 8px 0 8px 15px;
+	border-radius: 8px;
+	border: 1px solid rgb(210, 210, 210);
+	background-color: rgb(255, 255, 255);
+	width: 100%;
+	height: 64px;
+	padding: 8px 0 8px 15px;
 }
 
 
@@ -427,15 +427,15 @@ h5, .h5 {
 
 .product-swiper.desctop-plate{
 	border-radius: .5rem;
-    border: none;
-    position: relative;
-    -webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
-    -webkit-transition: .5s;
-    transition: .5s;
-    overflow: hidden;
-    background-color: #fff;
-    padding: 1.5rem;
+	border: none;
+	position: relative;
+	-webkit-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+	-webkit-transition: .5s;
+	transition: .5s;
+	overflow: hidden;
+	background-color: #fff;
+	padding: 1.5rem;
 }
 
 
@@ -444,20 +444,20 @@ h5, .h5 {
 
 .mainbanner .swiper-pagination {
 
-    text-align: right;
-    padding: 0 .875rem;
+	text-align: right;
+	padding: 0 .875rem;
 }
 
 
 .mainbanner  .swiper-pagination-bullet {
-    background: #bdbdbd;
+	background: #bdbdbd;
 
 }
 
 
 .mainbanner  .swiper-pagination-bullet-active {
-    opacity: 1;
-    background: #F47021;
+	opacity: 1;
+	background: #F47021;
 }
 
 
@@ -581,18 +581,18 @@ h5, .h5 {
 
 
 .news-block__title-button{
-background: #fff;
-    border: 1px solid rgba(0,0,0,.1);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,.05);
-    border-radius: 8px;
-    padding: 3px 0 0 3px;
-    height: 24px;
-    width: 24px;
-    margin-left: .5rem;
-    font-size: 16px;
-    line-height: 1;
-    display: inline-flex;
-    align-items: center;
+	background: #fff;
+	border: 1px solid rgba(0,0,0,.1);
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,.05);
+	border-radius: 8px;
+	padding: 3px 0 0 3px;
+	height: 24px;
+	width: 24px;
+	margin-left: .5rem;
+	font-size: 16px;
+	line-height: 1;
+	display: inline-flex;
+	align-items: center;
 }
 
 
@@ -619,17 +619,21 @@ background: #fff;
 
 
 @media (max-width: 1200px){
-.promo__service-img {
-	width: 70%;
-	height: auto;
-}
+	.promo__service-img {
+		width: 60%;
+		height: auto;
+	}
+
+	.action__icon-wrap {
+		right: 1rem;
+	}
 }
 
 
 
 
 .v--modal-overlay .v--modal-box {
-    border-radius: 8px;
+	border-radius: 8px;
 }
 
 

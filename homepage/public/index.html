@@ -62,7 +62,7 @@
 		</modal>
 
 
-		<mainheader></mainheader>
+		<mainheader :is-tp="isTp" v-on:tptodns="isTp =! isTp"></mainheader>
 
 		<div class="main-layout">
 			<div class="overflow-layout  d-lg-none">
@@ -99,7 +99,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="card rounded-0 d-none d-lg-block">
+			<div class="card rounded-0 d-none d-lg-block" v-if="isTp">
 				<div class="card-body">
 					<div class="d-flex">
 
@@ -117,7 +117,7 @@
 										<img class="pickup__img " src="https://i.snag.gy/7dyf0S.jpg" alt="">
 									Дождитесь очереди и получите заказ</div>
 								</div>
-								<div class="py-2">
+								<div class="p-2">
 									<div class="col-5 d-flex p-0">
 										<div class=" header__search-form m-0 h-100  mr-3">
 											<input type="text" placeholder="Введите номер заказа" class="form__basic-field">
