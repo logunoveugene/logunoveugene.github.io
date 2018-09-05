@@ -187,10 +187,56 @@ h5, .h5 {
 	margin-right: 30px;
 }
 
-.header__menu.ml-auto {
+.header__menu {
     font-size: 20px;
     line-height: 17px;
+    z-index: 1000;
+
 }
+
+/*меню*/
+#menu {
+  display: none;
+}
+
+
+
+.header__nav {
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  width: 80vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  transition: left 500ms ease;
+  box-shadow: 0 0 20px rgba(0,0,0,.1);
+   z-index: 0;
+}
+#menu:checked ~ .header__nav {
+  left: 0px;
+  transition: left 500ms ease;
+}
+
+#menu:checked ~ .header__menu-i::before {
+	content: '';
+	display: block;
+    position: fixed;
+    width: 100vh;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    background: rgba(0,0,0,.2);
+}
+
+
+
+
+
+
+
+
 
 .hero{
 	background-color: #FD6600;
