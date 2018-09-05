@@ -166,7 +166,7 @@ h5, .h5 {
 
 .header__logo-img{
 	height: auto;
-	width: 120px;
+	width: 130px;
 }
 
 @media (min-width: 768px) {
@@ -187,13 +187,17 @@ h5, .h5 {
 	margin-right: 30px;
 }
 
+.header__menu.ml-auto {
+    font-size: 20px;
+    line-height: 17px;
+}
 
 .hero{
 	background-color: #FD6600;
 }
 
 .poins{
-	background-image: linear-gradient(to top, #f6f6f6 50%, #FD6600 50% );
+	background-image: linear-gradient(to top, #f6f6f6 70%, #FD6600 70% );
 	margin-bottom: 3rem;
 }
 
