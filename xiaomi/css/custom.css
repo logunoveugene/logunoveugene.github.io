@@ -176,14 +176,12 @@ h5, .h5 {
 }
 
 .header__city-link{
-	padding: 5px 10px;
 	font-size: 14px;
 	border-radius: 4px;
 	display: inline-block;
 }
 
 .header__phone{
-	text-align: right;
 	margin-right: 30px;
 }
 
@@ -198,8 +196,6 @@ h5, .h5 {
 #menu {
   display: none;
 }
-
-
 
 .header__nav {
   position: fixed;
