@@ -333,6 +333,9 @@ h5, .h5 {
 .product{
 	margin-bottom: 3rem;
 }
+.product__plate{
+	border-bottom: 1px solid #eee;
+}
 
 .product__title{
 	font-size: 24px;
@@ -369,6 +372,11 @@ h5, .h5 {
 	padding-left: 0;
 	list-style: none;
 	font-size: .875rem;
+}
+
+.product-item__service-item{
+    display: inline;
+    background: rgba(256,256,256,0.7);
 }
 
 .feedback{
