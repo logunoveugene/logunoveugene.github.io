@@ -232,6 +232,9 @@ h5, .h5 {
 
 #menu:checked ~ .header__menu-i .icon-cancel{
 	display: block;
+	position: fixed;
+	top: 28px;
+    right: 18px;
 }
 
 
