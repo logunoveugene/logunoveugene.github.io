@@ -12,43 +12,26 @@
 </head>
 <body>
 	<div class="header">
-		<div class="header-container container d-flex align-items-center">
-			<a class="header__logo" href="https://service.dns-shop.ru/">
-				<img class="header__logo-img" src="img/logo-dns.png" alt="">
-			</a>
-			<div class="header__city-link d-none d-md-block">
-				<a class="link link--color-grey link--dropdown" href="#">Владивосток</a>
-			</div>
-			<div class="header__contact ml-auto d-md-flex align-items-center d-none">
-				<div class="header__phone text-right">
+		<div class="header-container container d-flex flex-column flex-md-row align-items-center justify-content-between">
+			<div class="header__top-line d-flex w-100 justify-content-between justify-content-md-start py-3">
+				<a class="header__logo" href="https://service.dns-shop.ru/">
+					<img class="header__logo-img" src="img/logo-dns.png" alt="">
+				</a>
+				<div class="header__city-link">
+					<a class="link link--color-grey link--dropdown" href="#">Владивосток</a>
+				</div>
+			</div>	
+			
+			<div class="header__contact  d-flex align-items-center w-100 justify-content-between justify-content-md-end py-3">
+				<div class="header__phone text-left text-md-right">
 					<div class="header__phone-number font-weight-bold">8-800-77-07-999</div>
 					<div class="header__phone-time small">c 10:00 до 05:00</div>
 				</div>
 				<div class="header__feedback-button">
-					<button class="button button--color-orange button--size-sm" href="#">Обратная связь</button>
+					<a class="button button--color-orange button--size-sm" href="#feedback">Обратная связь</a>
 				</div>
 			</div>
-			<div class="header__menu ml-auto d-md-none">
-				<input type="checkbox" id="menu"/>
-				<label for="menu" class="header__menu-i mb-0 p-2">
-					<span class="icon-bars"></span>
-					<span class="icon-cancel"></span>
-				</label>
-				<div class="header__nav">
-					<div class="header__side-menu-wrap p-4">
-						<div class="header__city-link mb-4">
-							<a class="link link--color-grey" href="#">Владивосток</a>
-						</div>
-						<div class="header__phone mb-4">
-							<div class="header__phone-number font-weight-bold">8-800-77-07-999</div>
-							<div class="header__phone-time small">c 10:00 до 05:00</div>
-						</div>
-						<div class="header__feedback-button mb-4">
-							<button class="button button--color-orange button--size-sm" href="#">Обратная связь</button>
-						</div>
-					</div>
-				</div>
-			</div>
+
 		</div>
 	</div>
 	
@@ -137,7 +120,7 @@
 		<div class="product__containet container">
 			<div class="product__row row">
 				<div class="product__col col-12">
-					<div class="product__title">Ремонт и обслуживание техники Xiaomi</div>
+					<div class="product__title">Ремонт техники Xiaomi с гарантией на 3 месяца</div>
 				</div>
 				<div class="product__col col-12 col-md-6">
 					<div class="product__plate">
@@ -145,16 +128,33 @@
 							<div class="plate__body">
 								<div class="plate__product-item">
 									<div class="product-item product-item--phone">
-										<div class="product-item__title">Смартфоны</div>
+										<div class="product-item__title">
+											<a class="link link--color-grey" href="https://service.dns-shop.ru/serviceCatalog/category/category/?uid=5482bd6d7fd94e77&alias=smartfon">Смартфоны</a>
+										</div>
 										<ul class="product-item__service">
-											<li >
-												<div class="product-item__service-item">Замена компонентов</div>
+											<li class="product-item__service-item-wrap" >
+												<a 	class="link link--color-grey product-item__service-item" 
+												href="https://service.dns-shop.ru/serviceCatalog/category/product/?uid=561de8e2c1c73330&alias=zamena-kamery">Замена камеры</a>
 											</li>
-											<li>
-												<div class="product-item__service-item">Ремонт любой сложности</div>
+											<li class="product-item__service-item-wrap">
+												<a 	class="link link--color-grey product-item__service-item" 
+												href="https://service.dns-shop.ru/serviceCatalog/category/product/?uid=9029bc3080ab3330&alias=zamena-akkumulatora">Замена аккумулятора</a>
 											</li>
-											<li>
-												<div class="product-item__service-item">Гарантия на проведенные работы - 3 месяца</div>
+											<li class="product-item__service-item-wrap">
+												<a 	class="link link--color-grey product-item__service-item" 
+												href="https://service.dns-shop.ru/serviceCatalog/category/product/?uid=9029bc3180ab3330&alias=zamena-ekrana-sensor">Замена экрана (сенсор)</a>
+											</li>
+											<li class="product-item__service-item-wrap">
+												<a 	class="link link--color-grey product-item__service-item" 
+												href="https://service.dns-shop.ru/serviceCatalog/category/product/?uid=9029bc3280ab3330&alias=zamena-ekrana-lcd">Замена экрана (LCD)</a>
+											</li>
+											<li class="product-item__service-item-wrap">
+												<a 	class="link link--color-grey product-item__service-item" 
+												href="https://service.dns-shop.ru/serviceCatalog/category/product/?uid=9029bc3380ab3330&alias=zamena-materinskoj-platy">Замена материнской платы</a>
+											</li>
+											<li class="product-item__service-item-wrap">
+												<a 	class="link link--color-grey product-item__service-item" 
+												href="https://service.dns-shop.ru/serviceCatalog/category/product/?uid=9029bc3480ab3330&alias=zamena-detali-korpusa">Замена детали корпуса</a>
 											</li>
 										</ul>
 
@@ -170,16 +170,29 @@
 							<div class="plate__body">
 								<div class="plate__product-item">
 									<div class="product-item product-item--tablet">
-										<div class="product-item__title">Планшеты</div>
+										<div class="product-item__title">
+											<a class="link link--color-grey" href="https://service.dns-shop.ru/serviceCatalog/category/category/?uid=a90d20357fd84e77&alias=planshet">Планшеты</a>
+										</div>
 										<ul class="product-item__service">
-											<li >
-												<div class="product-item__service-item">Замена компонентов</div>
+											<li  class="product-item__service-item-wrap">
+												<a 	class="link link--color-grey product-item__service-item" 
+												href="https://service.dns-shop.ru/serviceCatalog/category/product/?uid=615a275fbc633330&alias=zamena-akkumulatora">Замена аккумулятора</a>
 											</li>
-											<li>
-												<div class="product-item__service-item">Ремонт любой сложности</div>
+											<li class="product-item__service-item-wrap">
+												<a 	class="link link--color-grey product-item__service-item" 
+												href="https://service.dns-shop.ru/serviceCatalog/category/product/?uid=fd983e96bc623330&alias=zamena-ekrana-sensor">Замена экрана (сенсор)</a>
 											</li>
-											<li>
-												<div class="product-item__service-item">Гарантия на проведенные работы - 3 месяца</div>
+											<li class="product-item__service-item-wrap">
+												<a 	class="link link--color-grey product-item__service-item" 
+												href="https://service.dns-shop.ru/serviceCatalog/category/product/?uid=d9c8bacfbc623330&alias=zamena-ekrana-lcd">Замена экрана (LCD)</a>
+											</li>
+											<li class="product-item__service-item-wrap">
+												<a 	class="link link--color-grey product-item__service-item" 
+												href="https://service.dns-shop.ru/serviceCatalog/category/product/?uid=b15f618fbc623330&alias=zamena-materinskoj-platy">Замена материнской платы</a>
+											</li>
+											<li class="product-item__service-item-wrap">
+												<a 	class="link link--color-grey product-item__service-item" 
+												href="https://service.dns-shop.ru/serviceCatalog/category/product/?uid=902dd52fbc623330&alias=zamena-detali-korpusa">Замена детали корпуса</a>
 											</li>
 										</ul>
 									</div>
@@ -191,7 +204,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="feedback">
+	<div class="feedback" id="feedback">
 		<div class="feedback__container container">
 			<div class="feedback__title">Обратная связь</div>
 			<div class="feedback__plate">
