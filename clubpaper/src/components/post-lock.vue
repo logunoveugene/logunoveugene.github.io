@@ -68,8 +68,8 @@
 
 <style>
 .post-lock{
-	background: #FFFFFF;
-    border: 3px solid #ff9c00;
+	background: #f6f6f6;
+    border: 1px solid #eee;
 	border-radius: 8px;
 	height: 100%;
 	display: flex;

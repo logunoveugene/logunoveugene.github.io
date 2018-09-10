@@ -65,7 +65,7 @@
 		<mainheader :is-tp="isTp" v-on:tptodns="isTp =! isTp"></mainheader>
 
 		<div class="main-layout">
-			<div class="overflow-layout  d-lg-none">
+			<div class="overflow-layout d-lg-none">
 				<local-swiper class="main-banner-mob mb-3" :options="mainBannerMobOption">
 					<local-slide  v-for="(mainbanner, index) in mainbanners" :key="index">
 						<img :src="mainbanner.img" alt="">
@@ -171,7 +171,7 @@
 									<div class="card-body h-100">
 										<div class="d-flex flex-column h-100">
 
-											<div class="h4 pt-2 mb-2">
+											<div class="h4 pt-1 mb-2">
 												<div class="flex align-items-center">
 													<a href="#" class="link link--color-grey"> Акции
 														<span class="news-block__title-button d-xl-none">
@@ -241,7 +241,7 @@
 											<img class="promo__service-img " src="https://rondi.ru/homepage/img/cabinet.png" alt="">
 
 										</div>
-										<div class="h4 mb-2 pt-2">Регистрируйся на сайте</div>
+										<div class="h4 mb-2 pt-1">Регистрируйся на сайте</div>
 										<div class="small mb-3">Получай бонусы и спецпредложения,<br> сохраняй и отслеживай заказы</div>
 
 										<div class="small mt-auto">
@@ -264,7 +264,7 @@
 											<img class="promo__service-img " src="https://rondi.ru/homepage/img/configurator.png" alt="">
 
 										</div>
-										<div class="h4 mb-2 pt-2">Собери свой компьютер</div>
+										<div class="h4 mb-2 pt-1">Собери свой компьютер</div>
 										<div class="small mb-3">Простой инструмент без проблем <br>с совместимостью</div>
 
 										<div class="small mt-auto">
@@ -335,7 +335,7 @@
 								<div class="icon-startup-1"></div>
 							</div>
 							<div class="d-flex flex-column">
-								<div class="">Широкая сеть</div>
+								<div class="h3 mb-0">Широкая сеть</div>
 								<div class="small">более 1400 магазинов по всей России</div>
 							</div>
 
@@ -347,7 +347,7 @@
 								<div class="icon-planets"></div>
 							</div>
 							<div class="d-flex flex-column">
-								<div class="">Огромный ассортимент</div>
+								<div class="h3 mb-0">Огромный ассортимент</div>
 								<div class="small">более 100 000 наименований товаров</div>
 							</div>
 
@@ -359,7 +359,7 @@
 								<div class="icon-astronaut"></div>
 							</div>
 							<div class="d-flex flex-column">
-								<div class="">Гарантия от производителя</div>
+								<div class="h3 mb-0">Гарантия от производителя</div>
 								<div class="small">только официальные поставки</div>
 							</div>
 

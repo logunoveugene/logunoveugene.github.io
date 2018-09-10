@@ -76,7 +76,7 @@ export default {
 .slider-block{
 	border-radius: .5rem;
 	position: relative;
-	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.16);
 	transition: .5s;
 	overflow: hidden;
 	background-color: #fff;

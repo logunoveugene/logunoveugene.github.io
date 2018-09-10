@@ -85,7 +85,7 @@
   align-items: center;
   display: -ms-flexbox;
   display: flex;
-  color: #28a745;
+  color: #6BA833;
   font-weight: 700;
 }
 .post-info__views{
