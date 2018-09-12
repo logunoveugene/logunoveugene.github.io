@@ -121,7 +121,7 @@
 									<div class="col-5 d-flex p-0">
 										<div class=" header__search-form m-0 h-100  mr-3">
 											<input type="text" placeholder="Введите номер заказа" class="form__basic-field">
-										
+
 										</div>
 										<div class="d-flex align-items-center">
 											<button class="btn btn-outl-orange h-100" v-on:click="show">Получить заказ</button>
@@ -204,7 +204,7 @@
 							</div>
 
 							<div class="col-12">
-								<div class="h2 pt-4">Актуальные предложения</div>
+								<div class="h2 pt-4 mb-3">Актуальные предложения</div>
 								<sets-block :slide="sets"></sets-block>
 							</div>
 							<div class="col-12 mt-4 d-lg-none">
@@ -295,13 +295,13 @@
 						<div class="row mt-4 mt-lg-5">
 							<div class=" col-12 col-lg-9  ">
 								<div class="d-flex h-100 flex-column">
-									<div class="h2 ">Лучшие предложения</div>
+									<div class="h2 mb-3">Лучшие предложения</div>
 									<best-product :slide="products"></best-product>
 								</div>
 							</div>
 							<div class="col-12 col-lg-3 d-none d-lg-block ">
 								<div class="d-flex h-100 flex-column">
-									<div class="news-block__title-link	 h2 flex align-items-center">
+									<div class="news-block__title-link	 h2 mb-3 flex align-items-center">
 										<a href="" class="link link--color-grey">Новости 
 											<span class="news-block__title-button">
 												<span class="icon-arrow-right"></span>
@@ -328,8 +328,8 @@
 
 				</div>
 
-		<div class="row mt-5 d-none d-lg-flex">
-					<div class="col-12 col-lg-4">
+				<div class=" mt-5 d-none d-lg-flex justify-content-between">
+					<div class="">
 						<div class="d-flex">
 							<div class="mr-3 h1 text-secondary">
 								<div class="icon-startup-1"></div>
@@ -341,7 +341,7 @@
 
 						</div>
 					</div>
-					<div class="col-12 col-lg-4">
+					<div class="">
 						<div class="d-flex">
 							<div class="mr-3 h1 text-secondary">
 								<div class="icon-planets"></div>
@@ -353,7 +353,7 @@
 
 						</div>
 					</div>
-					<div class="col-12 col-lg-4">
+					<div class="">
 						<div class="d-flex">
 							<div class="mr-3 h1 text-secondary">
 								<div class="icon-astronaut"></div>
@@ -384,8 +384,8 @@
 
 				<lazy-component>
 					<div class="row">
-						<div class="col-12 mt-5">
-							<div class="h2">Вы недавно смотрели</div>
+						<div class="col-12 mt-4">
+							<div class="h2 mb-3">Вы недавно смотрели</div>
 
 							<div class="slider-block overflow-layout">
 								<div class="product-swiper__wrap">
@@ -393,8 +393,12 @@
 										<local-slide  v-for="(product, index) in productsview" :key="index">
 											<div class="product-plate d-flex flex-column">
 												<div class="product-plate__image-wrap">
+													<div v-if="index==1"  class="product__vobler-item">Лучшая цена</div>
+
+													<img v-if="index==1" class="product__vobler-rounded" src="https://i.snag.gy/QG4KOn.jpg" alt="">
 													<img  :src="product.img" alt="" class="product-plate__image">
 												</div>
+
 												<div class="product-plate__link  mb-2">
 													<a href="" class="link link--color-grey">{{product.title}}</a>
 												</div>
@@ -405,9 +409,35 @@
 													<div class="extrasmall ml-2">
 														<a href="" class="link link--color-blue">{{product.reviewcount}}</a>
 													</div>
-													<!-- 	<div class="small"><div class="icon-chat-bubble"></div></div> -->
+													<div class="ml-3 d-flex align-items-center extrasmall ml-1">
+														<a href="" class="link link--color-blue">
+															<span class="icon__wrap">
+																<span class="icon__img small mr-1 icon-chat-bubble"></span>
+															</span>
+															
+														{{product.comment}}</a>
+													</div>
 												</div>
-												<div class="h3 mb-0">{{product.price  | formatedNumber}} ₽</div>
+												<div class="product-plate__price d-flex flex-column">
+													<div class="d-flex">
+														<div v-if="product.oldprice" class="product__old-price extrasmall mb-0 mr-2">{{product.oldprice | formatedNumber }} ₽</div>
+														<div v-if="product.oldprice" class="extrasmall mb-0 text-danger">выгода {{product.oldprice-product.price | formatedNumber }} ₽</div>
+													</div>
+													<div class="d-flex mt-auto">
+														<div class="h3 mb-0  ">{{product.price  | formatedNumber}} ₽</div>
+														<div v-if="index==2" class="ml-2 badge-info__wrap">
+															<div class="badge badge-info">бонус 1 500</div>
+														</div>
+													</div>
+													
+													
+													
+													
+												</div>
+												
+												
+												
+												
 											</div>
 										</local-slide>
 										<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
@@ -423,12 +453,12 @@
 
 				</lazy-component>
 
-		
+
 
 
 				<lazy-component>
 					<div class="d-none d-lg-block">	
-						<div class="h2 mt-5">ДНС клуб –  центр онлайн компетенции</div>
+						<div class="h2 mb-3 mt-5">ДНС клуб –  центр онлайн компетенции</div>
 						<blog-list :review="review"></blog-list>
 					</div>
 				</lazy-component>
@@ -442,10 +472,11 @@
 
 			</div>
 		</div>
+
+		<myfooter></myfooter>
 	</div>
 </div>
 </div>
-
 
 
 

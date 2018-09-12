@@ -8,6 +8,7 @@ import catalogmenu from './components/catalog-menu.vue'
 
 import blogList from './components/blog-list.vue'
 
+import myfooter from './components/footer.vue'
 
 import setsBlock from './components/sets-block.vue'
 import bestProduct from './components/best-product.vue'
@@ -91,7 +92,8 @@ new Vue({
 		blogList,
 		setsBlock,
 		bestProduct,
-		newsBlock
+		newsBlock,
+		myfooter
 		
 		
 	},
@@ -190,14 +192,19 @@ new Vue({
 				spaceBetween: 30,
 				observer: true,
 				observeParents: true,
+				freeMode: true,
 				breakpoints: {
 
+	1200: {
+						slidesPerView: 4,
+						spaceBetween: 30
+					},
 					992: {
 						slidesPerView: 3,
 						spaceBetween: 30
 					},
 					768: {
-						slidesPerView: 2,
+						slidesPerView: "auto",
 						spaceBetween: 20
 					}
 				},  

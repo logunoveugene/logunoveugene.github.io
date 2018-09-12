@@ -6,13 +6,11 @@
 			:tags="post.tags" 
 			></post-tag>
 
-			<div class="post-blog-text__title  mb-3 h2"><a href="#" class="link link--color-black">{{post.title}}</a></div>
+			<div class="post-blog-text__title h5 mb-3 h2"><a href="#" class="link link--color-black">{{post.title}}</a></div>
 			<div class="small mb-3">
 				Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
 			</div>
-			<post-teaser
-			:teaser="post.teaser">
-			</post-teaser>
+
 
 			<post-info 
 			:like="post.like"
@@ -85,7 +83,6 @@ filters: {
 .post-blog-text{
 	background: #fff;
 	padding: 2.5rem 1.5rem 2rem 1.5rem;
-	border-radius: .5rem;
 	text-align: center;
 
 }

@@ -52,7 +52,7 @@
 
 .post__tag-item{
 	white-space: nowrap;
-	margin-right: 1rem;
+	margin: 0 .5rem;
 
 
 }

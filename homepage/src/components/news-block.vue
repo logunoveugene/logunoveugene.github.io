@@ -17,6 +17,7 @@
 		<div v-ripple class="catalog-menu__item d-flex align-items-center justify-content-between" v-for="(post, index) in curentData" :key="index">
 			<div class="py-2 px-3"> 
 				<div class="py-1 small">{{post.title}}</div>
+				<div class="extrasmall text-secondary">{{post.date}}</div>
 			</div>
 			<div class="icon-arrow-right pt-1 pr-2"></div>
 		</div>

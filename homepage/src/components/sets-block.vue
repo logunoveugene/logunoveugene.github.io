@@ -7,7 +7,8 @@
 					v-for="(tab, index) in tabs"
 					v-bind:key="tab"
 					v-on:click="currentTab = tab; curentIndex = index">
-					<a class="link link--pill link--color-grey " 
+					<a class="link link--pill link--color-grey "
+					:title="tab" 
 					v-bind:class="[{ 'link--pill-active': currentTab === tab }]" >{{ tab }}</a>
 				</li>
 			</ul>

@@ -5,21 +5,51 @@
 			<product-slide  v-for="(product, index) in slideinfo.product" :key="index">
 				<div class="product-plate d-flex flex-column">
 					<div class="product-plate__image-wrap">
+						<div v-if="index==3"  class="product__vobler-item">Лучшая цена</div>
+
+						<img v-if="index==0" class="product__vobler-rounded" src="https://i.snag.gy/QG4KOn.jpg" alt="">
 						<img  :src="product.img" alt="" class="product-plate__image">
 					</div>
-					<div class="product-plate__link mb-2">
+
+					<div class="product-plate__link  mb-2">
 						<a href="" class="link link--color-grey">{{product.title}}</a>
 					</div>
 					<div class="product-plate__social d-flex align-items-center mb-2">
 						<div class="product-plate__rating-wrap">
-							<Rate :value="product.rating"  size='14px'   length="5" theme="#FEB909"></Rate> 
+							<Rate :value="product.rating"  size='14px' readonly="true" theme="#FEB909"></Rate> 
 						</div>
 						<div class="extrasmall ml-2">
 							<a href="" class="link link--color-blue">{{product.reviewcount}}</a>
 						</div>
-						<!-- 	<div class="small"><div class="icon-chat-bubble"></div></div> -->
+						<div class="ml-3 d-flex align-items-center extrasmall ml-1">
+							<a href="" class="link link--color-blue">
+								<span class="icon__wrap">
+									<span class="icon__img small mr-1 icon-chat-bubble"></span>
+								</span>
+
+							{{product.comment}}</a>
+						</div>
 					</div>
-					<div class="h3 mb-0">{{product.price | formatedNumber}} ₽</div>
+					<div class="product-plate__price d-flex flex-column">
+						<div class="d-flex">
+							<div v-if="product.oldprice" class="product__old-price extrasmall mb-0 mr-2">{{product.oldprice | formatedNumber }} ₽</div>
+							<div v-if="product.oldprice" class="extrasmall mb-0 text-danger">выгода {{product.oldprice-product.price | formatedNumber }} ₽</div>
+						</div>
+						<div class="d-flex mt-auto">
+							<div class="h3 mb-0  ">{{product.price  | formatedNumber}} ₽</div>
+							<div v-if="index==4" class="ml-2 badge-info__wrap">
+								<div class="badge badge-info">бонус 1 500</div>
+							</div>
+						</div>
+
+
+
+
+					</div>
+
+
+
+
 				</div>
 			</product-slide>
 			<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
@@ -72,7 +102,7 @@
 							spaceBetween: 30
 						},
 						768: {
-							slidesPerView: 2,
+							slidesPerView: "auto",
 							freeMode: true,
 							spaceBetween: 20
 						}
@@ -83,7 +113,9 @@
 					},
 					scrollbar: {
 						el: '.swiper-scrollbar',
-						hide: false
+						hide: true,
+						draggable: true
+
 					}
 
 

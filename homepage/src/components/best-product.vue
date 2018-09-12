@@ -6,9 +6,11 @@
 					<li class="nav__link nav__link--horizontal"
 					v-for="(tab, index) in tabs"
 					v-bind:key="tab"
-					v-on:click="currentTab = tab; curentIndex = index">
+					v-on:click="currentTab = tab; curentIndex = index"
+					>
 					<a class="link link--pill link--color-grey " 
-					v-bind:class="[{ 'link--pill-active': currentTab === tab }]" >{{ tab }}</a>
+					v-bind:class="[{ 'link--pill-active': currentTab === tab }]"
+					:title="tab"  >{{ tab }}</a>
 				</li>
 			</ul>
 

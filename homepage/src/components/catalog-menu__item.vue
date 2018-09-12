@@ -167,7 +167,8 @@ box-shadow: 0 0 15px rgba(0,0,0,0.2)
 }
 
 .catalogMenu__subcatWrap{
-	box-shadow: inset 0 0 15px rgba(0,0,0,0.2);
+	box-shadow: inset 0px 15px 15px -15px rgba(0,0,0,0.2), inset 0px -15px 15px -15px rgba(0,0,0,0.2);
+	
 }
 
 @media (max-width: 1200px){
@@ -175,7 +176,7 @@ box-shadow: 0 0 15px rgba(0,0,0,0.2)
 	.catalog-menu__item-img {
 		font-size: 26px;
 		color: #FF860F;
-		height: 37px;
+		height: auto;
 		margin-right: 1rem;
 	}
 	.catalog-menu__item {
