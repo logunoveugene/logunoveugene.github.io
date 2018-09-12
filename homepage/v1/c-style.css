@@ -37,7 +37,6 @@ input:focus, button:focus {
 
 .btn-outl-orange:hover{
 	background: #FF902D linear-gradient(-180deg, rgba(255,188,11,0.99) 0%, #FF7400 100%);
-	box-shadow: inset 0 -2px 0 0 rgba(0,0,0,0.20);
 	color:#fff;
 	border: 1px solid #FC7B08;
 }
@@ -111,7 +110,7 @@ input:focus, button:focus {
 /*---------------------------------ссылки*/
 .link{
 	cursor: pointer;
-	transition: .2s;
+/*	transition: .2s;*/
 }
 .link:hover{
 	color: #FC5808!important;
@@ -144,10 +143,31 @@ input:focus, button:focus {
 	padding: .25rem .75rem;
 	background-color: #fff;
 	display: block;
+	text-align:center;
+		display:inline-block;
 }
+
+
 .link--pill-active{
 	background-color: #eee;
+	font-weight: 700;
+	cursor: inherit;
 }
+
+.link--pill-active:hover{
+	color: inherit!important;
+
+	text-decoration: none;
+}
+
+		.link--pill:after {
+			display: block;
+			content: attr(title);
+			font-weight: bold;
+			height: 0;
+			overflow: hidden;
+			visibility: hidden;
+		}
 
 
 
@@ -256,9 +276,10 @@ h5, .h5 {
 	border-radius: .5rem;
 	border: none;
 	position: relative;
-	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+	box-shadow: 0 1px 2px 0 rgba(0,0,0,0.16);
 	transition: .5s;
 	overflow: hidden;
+
 }
 .card--no-round{
 	border-radius: 0;
@@ -485,10 +506,25 @@ h5, .h5 {
 
 
 /*плитка товара*/
+
+@media (max-width: 768px){
+
+.product-swiper .swiper-slide {
+	width: 200px;
+}
+}
+
+.product-plate__link{
+	height: 41px;
+	overflow: hidden;
+	line-height: 1.2;
+}
+
 @media (max-width: 992px){
 
 	.product-plate__link{
 		font-size: 14px;
+		height: 32px;
 	}
 }
 
@@ -496,22 +532,19 @@ h5, .h5 {
 .product-plate__image-wrap{
 	height: 150px;
 	position: relative;
-	margin-bottom: 8px;
+	margin-bottom: 12px;
 }
 
 .product-plate__image{
-	max-height: 80%;
+	max-height: 70%;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	max-width: 90%;
+	max-width: 70%;
 }
 
-.product-plate__link{
-	height: 46px;
-	overflow: hidden;
-}
+
 .product-plate__rating-wrap{
 	overflow: hidden;
 	height: 22px;
@@ -522,6 +555,9 @@ h5, .h5 {
 	padding-right: 0.25rem;
 }
 
+.product-plate__price{
+	height: 45px;
+}
 
 /*-----------------------акциии*/
 
@@ -645,5 +681,82 @@ h5, .h5 {
 	margin-right: 1rem;
 }
 
+
+
+.text-danger{
+	color:#FC5808!important;
+}
+
+.badge-info{
+background: #EBF7FD;
+    color: #1164B0;
+    box-shadow: 0px 1px 0 #C1E0FA;
+    border-radius: 50px;
+    padding: 5px 7px;
+    font-weight: 500;
+    margin-top: -2px;
+
+}
+
+.badge-info__wrap{
+	margin-top: -2px;
+}
+
+.product__old-price {
+  position: relative;
+
+}
+
+.product__old-price:before {
+  border-bottom: 1px solid #666;
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 50%;
+  transform: rotate(-12deg);
+}
+
+
+
+.icon__wrap{
+	position: relative;
+	width: 15px;
+	height: 15px;
+	    display: inline-block;
+
+}
+.icon__img{
+	position: absolute;
+	top: 4px;
+
+}
+
+.product__vobler-item{
+	position: absolute;
+    bottom:  0;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+  
+  background-color: #ffe2df;
+    color: #bf2c20;
+}
+
+.product__vobler-item-top{
+	position: absolute;
+    top:  0;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+  text-transform: uppercase;
+
+    color: #00;
+}
+
+.product__vobler-rounded{
+		position: absolute;
+    top:  0;
+    z-index: 600;
+}
 
 
