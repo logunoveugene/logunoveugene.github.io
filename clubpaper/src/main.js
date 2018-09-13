@@ -58,6 +58,8 @@ Vue.use(Scrollspy);
 
 
 
+
+
 new Vue({
 	el: '#app',
 	
@@ -84,9 +86,9 @@ new Vue({
 				slidesPerView: 3,
 				spaceBetween: 40,
 				pagination: {
-							el: '.swiper-pagination',
-							clickable: true
-						},
+					el: '.swiper-pagination',
+					clickable: true
+				},
 				breakpoints: {
 					992: {
 						slidesPerView: 2,
@@ -142,6 +144,7 @@ new Vue({
 		liveoff:function () {
 			this.live = "";
 		},
+		
 		liveon:function () {
 			this.live = "showlive";
 		},

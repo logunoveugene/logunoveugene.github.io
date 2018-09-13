@@ -21,7 +21,7 @@
 		<div class="d-lg-none">
 			<transition name="slide-fade">
 				<div v-if="collapse" v-bind:class="{ catalogMenu__subcatWrap: collapse }">
-					<div v-ripple  class="pl-5 pr-1 small py-2 catalog-menu__subcat-item  d-flex  align-items-center justify-content-between" v-for="(subcatFull, index) in mainNavItem.subcategoriesFull" :key="index">
+					<div v-ripple  class="pl-5 pr-1  py-2 catalog-menu__subcat-item  d-flex  align-items-center justify-content-between" v-for="(subcatFull, index) in mainNavItem.subcategoriesFull" :key="index">
 						<div class="">{{subcatFull}}</div>
 						<div class="h5 mb-0 icon-arrow-right pt-1 pr-2"></div>
 					</div>
@@ -120,13 +120,16 @@
 
 .catalog-menu__item {
 	height: 100%;
-
+flex: 1 1 auto;
+display: flex;
 	cursor: pointer;
+	flex-direction: column;
 }
 
 
 .catalog-menu__item:hover {
 	background: rgba(0,0,0,0.05);
+	transition:  background ease .1s;
 }
 
 .catalog-menu__item:hover  .catalog-menu__item-img {
@@ -138,7 +141,9 @@
 	white-space: nowrap; 
 	user-select:none;
 	line-height: 1.1;
+	font-size: 16px;
 }
+
 
 
 .catalog-menu__item-info-sub-cat{
@@ -160,7 +165,8 @@
 
 .catalog-menu__item-link-wrap{
 	padding: 0 1.5rem;
-	height: 100%;
+	width:  100%;
+	flex: 1 1 auto!important;
 }
 .catalog-menu__item-link-wrap.active{
 box-shadow: 0 0 15px rgba(0,0,0,0.2)
@@ -235,8 +241,7 @@ box-shadow: 0 0 15px rgba(0,0,0,0.2)
 
 	.catalog-menu__item-info-title{
 		margin-right: .5rem;
-
-		font-size:15px;
+		font-size:16px;
 	}
 
 

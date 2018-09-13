@@ -7,8 +7,11 @@
  					<div class="header__row row">
  						<div class="header__block col-3">
  							<div class="header__city ">
- 								<div class="header__city-link">
- 									<a class="link link--color-grey" href="#">Владивосток</a>
+ 								<div class="header__city-link align-items-center">
+ 									<div class="header__city-link-icon">
+ 										<div class="icon-placeholder-1"></div>
+ 									</div>
+ 									<a class="link link--color-white" href="#">Владивосток</a>
  								</div>
  							</div>
  						</div>
@@ -16,13 +19,13 @@
  							<div class="header__nav ">
  								<ul class="nav nav--horizontal">
  									<li class="nav__link nav__link--horizontal">
- 										<a class="link link--color-grey link--dropdown" href="#">Магазины</a>
+ 										<a class="link link--color-white link--dropdown" href="#">Магазины</a>
  									</li>
  									<li class="nav__link nav__link--horizontal">
- 										<a class="link link--color-grey link--dropdown" href="#">Покупателям</a>
+ 										<a class="link link--color-white link--dropdown" href="#">Покупателям</a>
  									</li>
  									<li class="nav__link nav__link--horizontal">
- 										<a class="link link--color-grey link--dropdown" href="#">Наши проекты</a>
+ 										<a class="link link--color-white link--dropdown" href="#">Наши проекты</a>
  									</li>
  								</ul>
  							</div>
@@ -32,10 +35,10 @@
  							</div>
  							<div class="header__user-auth">
  								<div class="header__sign-in-link">
- 									<a class="link link--color-grey" href="#">Вход</a>
+ 									<a class="link link--color-white" href="#">Вход</a>
  								</div>
  								<div class="header__sign-up-link">
- 									<a class="link link--color-grey" href="#">Регистрация</a>
+ 									<a class="link link--color-white" href="#">Регистрация</a>
  								</div>  
  							</div>
  						</div>
@@ -46,16 +49,35 @@
  			<div class="fixed-plate" :class="{ 'is-fixed': isFixed }">
  				<div class="header__bottom-line" v-bind:class="{ technopoint: isTp }">
  					<div class="header__container container">
- 						<div class="header__row ">
+ 						<div class="header__row row   header__row--bg-fill">
 
- 							<div class="header__block col-auto col-lg-3 p-0 flex-shrink-1" @click="$emit('tptodns')">
- 								<div class="header__logo " v-if="!isTp">
- 									<img src="https://i.snag.gy/iSpaHI.jpg" class="header__logo-main"  alt="">
- 									<img src="https://i.snag.gy/ktOpuU.jpg" class="header__logo-desc ml-2" alt="">
+ 							<div class="header__block col-auto col-lg-3 flex-shrink-1" >
+ 								<div class="header__logo w-100" >
+ 									<img v-if="isTp" @click="$emit('tptodns')" src="https://as.technopoint.ru/assets/549eb8cf/images/theme/logo.png" class="header__logo-tp"  alt="">
+ 									<img @click="$emit('tptodns')" src="https://i.snag.gy/iSpaHI.jpg" class="header__logo-main"  alt="" v-if="!isTp">
+ 									<div class="p-relative w-100">
+ 										<transition name="fade">
+ 											<img v-if="!showcatalog && !isTp" src="https://i.snag.gy/ktOpuU.jpg" class="header__logo-desc ml-2 d-none d-lg-block" alt="" >
+
+ 											
+ 										</transition>
+ 										<transition name="fadebutton">
+ 											<div v-if="showcatalog" class="btn btn-orange d-none d-lg-inline-block ml-auto"  v-on:click="showcatalogList = !showcatalogList">
+ 												<div class="d-flex align-items-center">
+ 													<div class="header__catalog-button-icon icon-menu"></div>
+ 													Каталог  <span class="d-none d-xl-block ml-1"> товаров</span> 
+ 												</div>
+ 											</div>
+ 										</transition>
+ 									</div>
+ 									
+ 									
+
+
  								</div>
- 								<div class="header__logo" v-if="isTp">
- 									<img src="https://as.technopoint.ru/assets/549eb8cf/images/theme/logo.png" class="header__logo-tp"  alt="">
- 								</div>
+ 								
+
+ 								
 
 
  							</div>
@@ -105,12 +127,19 @@
  								</div>
  							</div>
  							<div  class="flex-shrink-1 d-lg-none">
- 								<div v-ripple   v-on:click="isDrawer = !isDrawer" class="header__mobile-icon">
+ 								<div v-ripple  v-on:click="isDrawer = !isDrawer" class="header__mobile-icon">
  									<div class="icon-menu"></div>
 
  								</div>
  							</div>
  						</div>
+
+
+ 						<transition name="drop">
+ 							<div  v-if="showcatalogList && showcatalog"  class="header__drop-catalog ">
+ 								<catalogmenu   :catalog="catalogitem"></catalogmenu>
+ 							</div>
+ 						</transition>
  					</div>
  				</div>
  			</div>
@@ -132,13 +161,23 @@
  <script>
 
  	import FixedHeader from 'vue-fixed-header'
+ 	import catalogmenu from './catalog-menu.vue'
 
  	export default {
  		components: {
- 			FixedHeader
+ 			FixedHeader,
+ 			catalogmenu
  		},
+
+
  		props: {
  			isTp: {
+ 				type: null
+ 			},
+ 			showcatalog: {
+ 				type: null
+ 			},
+ 			catalogitem: {
  				type: null
  			}
  		},
@@ -147,6 +186,8 @@
  			return {
  				isFixed: false,
  				isDrawer:false,
+
+ 				showcatalogList: false
 
 
  			}
@@ -158,6 +199,59 @@
 /*.header__logo{
 	width: 280px;
 	}*/
+
+	.header__city-link{
+		display: flex;
+
+	}
+	.header__city-link-icon{
+		margin-right: .25rem;
+		color: #777;
+		height: 17px;
+
+	}
+
+	.fade-enter-active, .fade-leave-active {
+		transition: opacity .3s;
+	}
+	.fade-enter, .fade-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+		opacity: 0;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+	}
+
+	.fadebutton-enter-active, .fadebutton-leave-active {
+		transition: opacity .3s;
+	}
+	.fadebutton-enter, .fadebutton-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+		opacity: 0;
+		position: absolute;
+		top: 50%;
+		right:  0;
+		transform: translateY(-50%);
+	}
+
+
+
+
+
+
+	.drop-enter-active, .drop-leave-active {
+		transform: translateY(0);
+		transition: all .2s;
+		opacity: 1;
+
+	}
+	.drop-enter, .drop-leave-to /* .fade-leave-active до версии 2.1.8 */ {
+		display: block;
+		background: red;
+		height: 15px;
+		overflow: hidden;
+		transform: translateY(-20%);
+		opacity: 0;
+	}
 
 
 
@@ -214,13 +308,15 @@
 	.header__row{
 		flex-wrap: nowrap;
 		display: flex;
+		
 	}
 	.header__top-line{
 		height: 35px;
-		background-color: rgb(246, 246, 246);
+		background-color: #333;
 		font-size: 0.875rem;
 		display: flex;
 		align-items: center;
+		color:#fff;
 
 	}
 
@@ -231,8 +327,12 @@
 	}
 
 	.header__bottom-line.technopoint{
-		background: rgba(76,47,117,0.9) ;
+		background: rgba(76,47,117,1) ;
 		color: #fff;
+	}
+
+	.technopoint .header__row{
+		background: rgba(76,47,117,1) ;
 	}
 	.technopoint .header__store-control__icon{
 		color: #fff;
@@ -275,6 +375,9 @@
 	}
 	.header__sign-in-link{
 		margin-right: .5rem;
+		padding-right: .5rem;
+		border-right: 1px solid #666;
+
 	}
 
 	.header__mobile-menu{
@@ -289,6 +392,7 @@
 	.header__logo {
 		display: flex;
 		align-items: center;
+
 
 	}
 
@@ -348,8 +452,16 @@
 		color: #aaa;
 		font-size: 18px;
 	}
+	.header__row--bg-fill{
+		background-color: #fff;
+		height: 65px;
+	}
 
 	@media (max-width: 992px){
+		.header__row--bg-fill{
+			background-color: #fff;
+			height: auto;
+		}
 		.header__logo-main{
 			width: 60px;
 			padding-top: 2px;
@@ -409,5 +521,40 @@
 
 
 	}
+
+	.header__drop-catalog{
+
+		height: 580px;
+		background: #fff;
+		position: absolute;
+		top: 52px;
+		box-shadow: 0 15px 15px rgba(0,0,0,0.1), inset 0 35px 15px -15px rgba(0,0,0,0.1);
+		width: 280px;
+		border-radius: 0 0 8px 8px;
+		display: block;
+		z-index: -1;
+	}
+	.header__catalog-button-icon{
+		line-height: 12px;
+		margin-right: 14px;
+
+
+	}
+	.p-relative{
+		position: relative;
+		display: flex;
+	}
+/*.header__drop-catalog:after{
+    content: "";
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,.6);
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -500;
+}*/
+
 
 </style>

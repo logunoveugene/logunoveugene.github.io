@@ -62,9 +62,9 @@
 		</modal>
 
 
-		<mainheader :is-tp="isTp" v-on:tptodns="isTp =! isTp"></mainheader>
+		<mainheader :catalogitem="mainNavs" :is-tp="isTp" :showcatalog="showCatalog" v-on:tptodns="isTp =! isTp"></mainheader>
 
-		<div class="main-layout">
+		<div class="main-layout" v-scroll="handleScroll">
 			<div class="overflow-layout d-lg-none">
 				<local-swiper class="main-banner-mob mb-3" :options="mainBannerMobOption">
 					<local-slide  v-for="(mainbanner, index) in mainbanners" :key="index">
@@ -75,10 +75,10 @@
 					<div  class="card card--no-round">
 						<div class="servise-mobile-promo d-flex">
 							<div v-ripple class="servise-mobile-promo__cabinet text-center flex-fill py-2 px-3">
-								<div class="py-1">Все акции</div>
+								<div class="py-1">Акции</div>
 							</div>
 							<div v-ripple class="servise-mobile-promo__configurator text-center flex-fill py-2 px-3">
-								<div class="py-1">Товары со скидками</div>
+								<div class="py-1">Cкидки</div>
 							</div>
 						</div>
 					</div>
@@ -99,7 +99,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="card rounded-0 d-none d-lg-block" v-if="isTp">
+			<div class="card rounded-0 d-none d-lg-block" v-if="isTp" >
 				<div class="card-body">
 					<div class="d-flex">
 
@@ -186,13 +186,13 @@
 											</div>
 											<ul class="nav nav--vertical small">
 												<li class="nav__link nav__link--vertical">
-													<a href="#" class="link link--color-grey">Товары со скидкой</a>
+													<a href="#" class="link link--color-grey">Товары со скидкой – 17 </a>
 												</li>
 												<li class="nav__link nav__link--vertical">
-													<a href="#" class="link link--color-grey">Рассрочка или бонусы</a>
+													<a href="#" class="link link--color-grey">Рассрочка или бонусы – 45</a>
 												</li>
 												<li class="nav__link nav__link--vertical">
-													<a href="#" class="link link--color-grey">Выгодный бонус</a>
+													<a href="#" class="link link--color-grey">Выгодный бонус – 18</a>
 												</li>
 											</ul>
 											<div class=" mt-auto d-none d-xl-block">

@@ -2,7 +2,7 @@
 	<div class="slider-block overflow-layout  flex-grow-1 ">
 		<local-swiper class="tab-swiper mb-3 mb-lg-4" :options="tabswipe">
 			<local-slide class="tab-swiper__slide">
-				<ul class="nav nav--horizontal small" >
+				<ul class="nav nav--horizontal " >
 					<li class="nav__link nav__link--horizontal"
 					v-for="(tab, index) in tabs"
 					v-bind:key="tab"
@@ -15,6 +15,8 @@
 			</ul>
 
 		</local-slide>
+		<div class="tab-button-prev" slot="button-prev"></div>
+			<div class="tab-button-next" slot="button-next"></div>
 	</local-swiper>
 
 	<keep-alive>
@@ -62,6 +64,10 @@
 					preventClicksPropagation: true,
 					slidesPerView: 'auto',
 					slidesOffsetAfter: 1,
+					navigation: {
+						nextEl: '.tab-button-next',
+						prevEl: '.tab-button-prev'
+					},
 					freeMode: true
 
 

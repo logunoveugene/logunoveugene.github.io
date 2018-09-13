@@ -1,7 +1,7 @@
 <template>
 	<div class="slider-block overflow-layout ">
 		<div class="tab-swiper__slide mb-3 mt-2">
-			<ul class="nav nav--horizontal small" >
+			<ul class="nav nav--horizontal " >
 				<li class="nav__link nav__link--horizontal"
 				v-for="(tab, index) in tabs"
 				v-bind:key="tab"
@@ -14,7 +14,7 @@
 	</div>
 
 	<div class="bg-white">
-		<div v-ripple class="catalog-menu__item d-flex align-items-center justify-content-between" v-for="(post, index) in curentData" :key="index">
+		<div v-ripple class="new__item d-flex align-items-center justify-content-between" v-for="(post, index) in curentData" :key="index">
 			<div class="py-2 px-3"> 
 				<div class="py-1 small">{{post.title}}</div>
 				<div class="extrasmall text-secondary">{{post.date}}</div>
@@ -34,46 +34,52 @@
 
 
 
-export default {
+	export default {
 
-	data: function() {
-		return {
-			currentTab: 'Новости',
-			curentIndex: 0,
-			tabs: ['Новости', 'Обзоры'],
-		}
-	},
-
-
-	props: {
-		rewiewslist: {
-			type: null
-		},
-		mynewslist: {
-			type: null
-		}
-
-	},
-	computed: {
-		currentTabComponent: function () {
-			return 'tab' + this.curentIndex
-		},
-
-		curentData: function () {
-			if (this.curentIndex == 0) {
-				return this.mynewslist
+		data: function() {
+			return {
+				currentTab: 'Новости',
+				curentIndex: 0,
+				tabs: ['Новости', 'Обзоры'],
 			}
-			if (this.curentIndex == 1) {
-				return this.rewiewslist
+		},
+
+
+		props: {
+			rewiewslist: {
+				type: null
+			},
+			mynewslist: {
+				type: null
 			}
 
 		},
+		computed: {
+			currentTabComponent: function () {
+				return 'tab' + this.curentIndex
+			},
+
+			curentData: function () {
+				if (this.curentIndex == 0) {
+					return this.mynewslist
+				}
+				if (this.curentIndex == 1) {
+					return this.rewiewslist
+				}
+
+			},
+		}
+
 	}
-
-}
 </script>
 
 <style>
+
+
+.new__item {
+	border-bottom: 1px solid #eee;
+}
+
 .slider-block{
 	border-radius: .5rem;
 	position: relative;

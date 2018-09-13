@@ -76,6 +76,16 @@ Vue.config.productionTip = false
 
 Vue.use(VueFire);
 
+Vue.directive('scroll', {
+	inserted: function (el, binding) {
+		let f = function (evt) {
+			if (binding.value(evt, el)) {
+				window.removeEventListener('scroll', f)
+			}
+		}
+		window.addEventListener('scroll', f)
+	}
+})
 
 
 
@@ -101,6 +111,7 @@ new Vue({
 	data: function() {
 		return {
 			isTp: false,
+			showCatalog: false,
 			mainBannerOption: {
 				centeredSlides: true,
 				pagination: {
@@ -195,7 +206,7 @@ new Vue({
 				freeMode: true,
 				breakpoints: {
 
-	1200: {
+					1200: {
 						slidesPerView: 4,
 						spaceBetween: 30
 					},
@@ -214,7 +225,7 @@ new Vue({
 				},
 				scrollbar: {
 					el: '.swiper-scrollbar',
-					hide: false
+					hide: true
 				}
 
 
@@ -253,7 +264,15 @@ new Vue({
 		},
 		hide () {
 			this.$modal.hide('hello-world');
-		}
+		},
+		handleScroll: function (evt, el) {
+			if (window.scrollY > 700) {
+				this.showCatalog = true;
+			} else{
+				this.showCatalog = false;
+			}
+			
+		},
 	},
 
 	filters: {
