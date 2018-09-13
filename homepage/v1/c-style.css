@@ -30,9 +30,20 @@ input:focus, button:focus {
 	background: #FFFFFF;
 	border: 1px solid #FC7B08;
 	color:#FC7B08;
-	padding: .5rem 1rem;
+	padding: 7px 1rem;
 	transition: .2s;
 }
+.btn-orange{
+	background: #FF902D linear-gradient(-1deg, #FC8507 0%, #FD9B09 100%);
+
+	border: 1px solid #FC7B08;
+	color:#fff;
+	padding: 7px 1rem;
+	transition: .2s;
+}
+
+
+
 
 
 .btn-outl-orange:hover{
@@ -110,7 +121,7 @@ input:focus, button:focus {
 /*---------------------------------ссылки*/
 .link{
 	cursor: pointer;
-/*	transition: .2s;*/
+	transition: .3s;
 }
 .link:hover{
 	color: #FC5808!important;
@@ -118,6 +129,10 @@ input:focus, button:focus {
 }
 .link--color-grey{
 	color: #4E4E4E;
+}
+
+.link--color-white{
+	color: #fff;
 }
 
 .link--color-blue{
@@ -138,14 +153,22 @@ input:focus, button:focus {
 	right: 0;    
 }
 
+
+
 .link--pill{
 	border-radius: .25rem;
-	padding: .25rem .75rem;
+	padding: .35rem .75rem;
 	background-color: #fff;
 	display: block;
 	text-align:center;
 		display:inline-block;
 }
+
+@media (min-width: 992px){
+.link--pill{
+	padding: .25rem .75rem;
+}
+	}
 
 
 .link--pill-active{
@@ -320,6 +343,25 @@ h5, .h5 {
 	width: 100%;
 }
 
+
+.sw-button-next, .sw-button-prev {
+		display: none;
+	position: absolute;
+	top: 50%;
+	height: 48px;
+	width: 48px;
+	z-index: 100;
+	cursor: pointer;
+	background: #fff;
+	box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
+	opacity: 0;
+	transition: opacity .3s,  transform .3s;
+	border-radius: 50%;
+	text-align: center;
+	padding-top: .5rem;
+
+	}
+
 .sw-button-prev, .sw-container-rtl .sw-button-next {
 	left: .5rem;
 	right: auto;
@@ -338,20 +380,15 @@ h5, .h5 {
 	transform: translateX(0) translateY(-50%);
 	opacity: 1
 }
+@media (min-width: 992px){
+
 .sw-button-next, .sw-button-prev {
-	position: absolute;
-	top: 50%;
-	height: 35px;
-	width: 35px;
-	z-index: 10;
-	cursor: pointer;
-	background: #fff;
-	box-shadow: 0 5px 15px 0 rgba(0,0,0,0.15);
-	opacity: 0;
-	transition: opacity .3s,  transform .3s;
-	border-radius: 50%;
-	text-align: center;
+	display: block;
+
 }
+}
+
+
 
 .sw-button-next:hover, .sw-button-prev:hover{
 	background: #fc8908;
@@ -393,6 +430,36 @@ h5, .h5 {
 .tab-swiper .nav-item{
 	white-space: nowrap;
 }
+
+
+
+
+.tab-button-prev{
+	background: linear-gradient(to right, #fff, rgba(0,0,0,0));
+    height: 36px;
+    width: 40px;
+    position: absolute;
+    z-index: 500;
+    top: 0;
+    left: 0;
+}
+.tab-button-next{
+	background: linear-gradient(to left, #f6f6f6, rgba(0,0,0,0));
+    height: 36px;
+    width: 40px;
+    position: absolute;
+    z-index: 500;
+    top: 0;
+      right:  0;
+}
+
+
+.tab-button-next.swiper-button-disabled, .tab-button-prev.swiper-button-disabled {
+	background: none;
+
+}
+
+
 
 
 .product-swiper.swiper-container-horizontal > .swiper-scrollbar {
