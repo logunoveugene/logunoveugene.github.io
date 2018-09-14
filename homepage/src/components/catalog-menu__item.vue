@@ -147,7 +147,7 @@ display: flex;
 
 
 .catalog-menu__item-info-sub-cat{
-	margin-right: .5rem;
+	margin-right: .75rem;
 	white-space: nowrap; 
 	user-select:none;
 }

@@ -205,9 +205,12 @@
 
 	}
 	.header__city-link-icon{
-		margin-right: .25rem;
+
 		color: #777;
-		height: 17px;
+
+		    height: 15px;
+    margin-right: .5rem;
+    font-size: 12px;
 
 	}
 

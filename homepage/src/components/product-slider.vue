@@ -16,7 +16,7 @@
 					</div>
 					<div class="product-plate__social d-flex align-items-center mb-2">
 						<div class="product-plate__rating-wrap">
-							<Rate :value="+product.rating"  size='14px' readonly="true" theme="#FEB909"></Rate> 
+							<Rate :value="+product.rating"  size='14px' readonly="true" theme="#f48615"></Rate> 
 						</div>
 						<div class="extrasmall ml-2">
 							<a href="" class="link link--color-blue">{{product.reviewcount}}</a>
@@ -53,8 +53,8 @@
 
 				</div>
 			</product-slide>
-			<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left pt-2"></div></div>
-			<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right pt-2"></div></div>
+			<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left "></div></div>
+			<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right "></div></div>
 
 			<div class="swiper-scrollbar" slot="scrollbar"></div>
 		</product-swiper>

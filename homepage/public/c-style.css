@@ -156,7 +156,7 @@ input:focus, button:focus {
 
 
 .link--pill{
-	border-radius: .25rem;
+	border-radius: .5rem;
 	padding: .35rem .75rem;
 	background-color: #fff;
 	display: block;
@@ -359,8 +359,19 @@ h5, .h5 {
 	border-radius: 50%;
 	text-align: center;
 	padding-top: .5rem;
+	font-size: 21px;
 
 	}
+
+.sw-button-prev .icon-arrow-left, .sw-button-next .icon-arrow-right {
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+
+}
+
 
 .sw-button-prev, .sw-container-rtl .sw-button-next {
 	left: .5rem;
@@ -838,8 +849,7 @@ background: #EBF7FD;
 
 .promo-block__ufo:hover{
 	background: #fff  url(https://s1.gifyu.com/images/ufo-3.gif) no-repeat right 16px;
-	box-shadow: 0 5px 10px 0 rgba(0,0,0,0.08);
-	transform: translateY(-3px);
+
 }
 
 
@@ -849,8 +859,7 @@ background: #EBF7FD;
 
 .promo-block__alien:hover{
 	background: #fff  url(https://s1.gifyu.com/images/alien2.gif) no-repeat right 16px;
-	box-shadow: 0 5px 10px 0 rgba(0,0,0,0.08);
-	transform: translateY(-3px);
+
 }
 
 
