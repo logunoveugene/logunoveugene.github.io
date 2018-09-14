@@ -25,7 +25,7 @@
 						<div class="">{{subcatFull}}</div>
 						<div class="h5 mb-0 icon-arrow-right pt-1 pr-2"></div>
 					</div>
-				
+
 				</div>
 			</transition>
 		</div>
@@ -120,8 +120,8 @@
 
 .catalog-menu__item {
 	height: 100%;
-flex: 1 1 auto;
-display: flex;
+	flex: 1 1 auto;
+	display: flex;
 	cursor: pointer;
 	flex-direction: column;
 }
@@ -133,7 +133,7 @@ display: flex;
 }
 
 .catalog-menu__item:hover  .catalog-menu__item-img {
-		color: #FC7B08;
+	color: #FC7B08;
 }
 
 
@@ -169,7 +169,7 @@ display: flex;
 	flex: 1 1 auto!important;
 }
 .catalog-menu__item-link-wrap.active{
-box-shadow: 0 0 15px rgba(0,0,0,0.2)
+	box-shadow: 0 0 15px rgba(0,0,0,0.2)
 }
 
 .catalogMenu__subcatWrap{
@@ -247,10 +247,10 @@ box-shadow: 0 0 15px rgba(0,0,0,0.2)
 
 
 	.catalog-menu__subcat-item {
-			height: auto;
-	min-height: 50px;
-	cursor: pointer;
-	border-top: 1px solid #eee;
+		height: auto;
+		min-height: 50px;
+		cursor: pointer;
+		border-top: 1px solid #eee;
 	}
 
 /*.catalog-menu__item-info-title{
@@ -290,11 +290,6 @@ box-shadow: 0 0 15px rgba(0,0,0,0.2)
 
 
 	}
-
-
-
-
-
 
 
 

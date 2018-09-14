@@ -43,13 +43,7 @@
 							</div>
 						</div>
 
-
-
-
 					</div>
-
-
-
 
 				</div>
 			</product-slide>
