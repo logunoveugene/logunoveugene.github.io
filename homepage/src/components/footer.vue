@@ -108,7 +108,7 @@
 					<div class="d-block d-lg-none">
 						<div class="h5 mt-4">Оставайтесь на связи</div>
 					</div>
-					<div class="footer__phone d-flex align-items-center">
+					<div class="footer__phone d-flex align-items-center flex-wrap">
 						<div class="footer__phone-num">8-800-77-07-999</div>
 						<div class="footer__phone-desc">(c 03:00 до 22:00)</div>
 					</div>
@@ -145,7 +145,7 @@
 
 					</div>
 
-					<div class="d-flex  py-3 py-lg-0">
+					<div class="d-flex flex-wrap py-3 py-lg-0">
 						<div class="">
 							<img src="https://as.dns-shop.ru/assets/80328d4a/images/theme/footer-mobile-app-icons/google-play.png" alt="" class="mb-2 mr-3">
 						</div>
@@ -226,10 +226,11 @@
 }
 .footer__phone-num{
 	font-size: 18px;
+		margin-right: .5rem;
 }
 .footer__phone-desc{
 	font-size: 14px;
-	margin-left: .5rem;
+
 }
 
 .footer__adress-link{

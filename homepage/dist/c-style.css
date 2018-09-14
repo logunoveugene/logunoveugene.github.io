@@ -827,3 +827,37 @@ background: #EBF7FD;
 }
 
 
+
+
+
+
+
+.promo-block__ufo{
+	background:#fff url(https://i.snag.gy/xafw3W.jpg) no-repeat right 16px;
+}
+
+.promo-block__ufo:hover{
+	background: #fff  url(https://s1.gifyu.com/images/ufo-3.gif) no-repeat right 16px;
+	box-shadow: 0 5px 10px 0 rgba(0,0,0,0.08);
+	transform: translateY(-3px);
+}
+
+
+.promo-block__alien{
+	background:#fff url(https://i.snag.gy/wb0Ap5.jpg) no-repeat right 16px;
+}
+
+.promo-block__alien:hover{
+	background: #fff  url(https://s1.gifyu.com/images/alien2.gif) no-repeat right 16px;
+	box-shadow: 0 5px 10px 0 rgba(0,0,0,0.08);
+	transform: translateY(-3px);
+}
+
+
+@media (max-width: 1200px){
+	
+.promo-block__ufo, .promo-block__alien {
+	background-size: 100px;
+}
+
+}
