@@ -111,6 +111,7 @@ new Vue({
 	data: function() {
 		return {
 			isTp: false,
+			isAlert:true,
 			showCatalog: false,
 			mainBannerOption: {
 				centeredSlides: true,

@@ -1,6 +1,36 @@
 <template>
 	<div class="footer">
 		<div class="footer__container container">
+			<div class="footer__row  row">
+				<div class="footer__col col-12">
+					<form class="footer__subscribe d-flex align-items-lg-center flex-column flex-lg-row">
+						<div class="footer__subscribe-title  d-flex align-items-center">
+							<div class="footer__subscribe-icon">
+								<div class="icon-mail-send"></div>
+							</div>
+							Подпишитесь! Новинки, скидки, предложения!
+						</div>
+						<div class="footer__subscribe-form  d-flex align-items-center  ">
+							<input type="email" class="footer__form-field mr-3" placeholder="Введите e-mail">
+							<button type="submit" class="btn btn-outl-grey">Подписаться</button>
+						</div>
+					</form>
+				</div> 
+			</div>
+			<div class="footer__project d-flex  flex-wrap justify-content-around justify-content-lg-between">
+				<div class="footer__project-img-wrap">
+					<img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/dns.png" alt="" class="footer__project-img">
+				</div>
+				<div class="footer__project-img-wrap">
+					<img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/tp.png" alt="" class="footer__project-img">
+				</div>
+				<div class="footer__project-img-wrap">
+					<img src="https://i.snag.gy/PvDfIj.jpg" alt="" class="footer__project-img">
+				</div>
+				<div class="footer__project-img-wrap">
+					<img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/clubexp.png" alt="" class="footer__project-img">
+				</div>
+			</div>
 			<div class="footer__row row">
 				<div class="footer__col col-12 col-lg">
 					<div class="footer__col-head  ">Компания DNS</div>
@@ -173,10 +203,22 @@
 
 <style>
 
+
+.footer__subscribe{
+	border-bottom: 1px solid #444;
+	padding-bottom: 1.5rem;
+	margin-bottom: .25rem;
+
+}
+.footer__subscribe-icon{
+	font-size: 43px;
+	line-height: 30px;
+	margin-right: 1rem;
+}
 .footer{
 	background: #333;
 	padding-top: 0;
-	margin-top: 2rem;
+	margin-top: 1rem;
 	color:#fff;
 
 }
@@ -186,7 +228,7 @@
 	font-size: 14px;
 	width: 100%;
 	padding: .75rem 0;
-	border-bottom:  1px solid #444;
+	border-top:  1px solid #444;
 	font-weight: 500;
 	position: relative;
 }
@@ -197,25 +239,7 @@
 	position: absolute;
 	right: 0;
 }
-@media (min-width: 992px){
-	.footer{
 
-		padding-top: 3rem;
-	}
-	.footer__col-head:after{
-		content: "";
-	}
-	.footer__col-head {
-		margin-bottom: 1rem;
-		font-size: 18px;
-		font-weight: 500;
-		padding: 0;
-		border-bottom: none;
-		color: #fff;
-
-	}
-
-}
 
 .footer__menu-item{
 	margin-bottom: .5rem;
@@ -226,7 +250,7 @@
 }
 .footer__phone-num{
 	font-size: 18px;
-		margin-right: .5rem;
+	margin-right: .5rem;
 }
 .footer__phone-desc{
 	font-size: 14px;
@@ -250,9 +274,104 @@
 }
 
 .footer__copyright{
-padding: 1rem 0;
-border-top: 1px solid #555;
+	padding: 1rem 0;
+	border-top: 1px solid #444;
 }
+
+.footer__form-field {
+	border-radius: 8px;
+	border: 1px solid #999;
+	background-color: #444;
+	width: 100%;
+	height: 40px;
+	padding: 8px 0 8px 15px;
+	color: #fff;
+}
+.footer__subscribe-form{
+	width: 100%;
+}
+.footer__subscribe-title{
+	width: 100%;
+	padding: 1rem 0;
+	font-size: 1.125rem;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.footer__project{
+   padding: 1rem 0 0 0;
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.footer__project-img {
+    opacity: .7;
+    height: 17px;
+    width: auto;
+    margin-bottom: 1.5rem;
+
+}
+.footer__project-img:hover{
+	  opacity: 1;
+}
+
+.footer__project-img-wrap{
+	width: 50%;
+}
+
+@media (min-width: 768px){
+	.footer__project-img-wrap{
+	width: auto;
+}
+
+
+
+}
+@media (min-width: 992px){
+	.footer__project{
+/*	padding-bottom: 2rem;*/
+	border-bottom:  1px solid #444;
+	margin-bottom: 2rem;
+}
+	.footer{
+
+		padding-top: 1.5rem;
+	}
+
+	.footer__subscribe-title {
+
+    padding: .25rem 0 0 0;
+
+}
+	.footer__col-head:after{
+		content: "";
+	}
+	.footer__col-head {
+		margin-bottom: 1rem;
+		font-size: 18px;
+		font-weight: 500;
+		padding: 0;
+		border-top: none;
+		color: #fff;
+
+	}
+	.footer__subscribe{
+	border-bottom: 1px solid #444;
+	padding-bottom: 1.5rem;
+margin-bottom: 1rem;
+
+}
+
+.footer__subscribe-form{
+	width: 50%
+}
+.footer__subscribe-title{
+	width: 50%
+}
+
+
+}
+
 
 
 </style>
