@@ -14,8 +14,8 @@
 				</div>
 			</div>
 			<div class="d-lg-none">
-				<div v-if="!collapse" class=" pt-1 icon-arrow-down"></div>
-				<div v-if="collapse" class=" pt-1 icon-arrow-up"></div>
+				<div v-if="!collapse" class=" pt-1 pr-2 icon-arrow-down"></div>
+				<div v-if="collapse" class=" pt-1 pr-2 icon-arrow-up"></div>
 			</div>
 		</div>
 		<div class="d-lg-none">
@@ -23,7 +23,7 @@
 				<div v-if="collapse" v-bind:class="{ catalogMenu__subcatWrap: collapse }">
 					<div v-ripple  class="pl-5 pr-1  py-2 catalog-menu__subcat-item  d-flex  align-items-center justify-content-between" v-for="(subcatFull, index) in mainNavItem.subcategoriesFull" :key="index">
 						<div class="">{{subcatFull}}</div>
-						<div class="h5 mb-0 icon-arrow-right pt-1 pr-2"></div>
+						<div class="h5 mb-0 icon-arrow-right pt-1 pr-3"></div>
 					</div>
 
 				</div>

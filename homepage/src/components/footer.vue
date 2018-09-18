@@ -306,7 +306,7 @@
 
 .footer__project-img {
     opacity: .7;
-    height: 17px;
+    height: 14px;
     width: auto;
     margin-bottom: 1.5rem;
 
@@ -333,10 +333,18 @@
 	border-bottom:  1px solid #444;
 	margin-bottom: 2rem;
 }
+.footer__project-img {
+
+    height: 17px;
+
+
+}
+
 	.footer{
 
 		padding-top: 1.5rem;
 	}
+
 
 	.footer__subscribe-title {
 
