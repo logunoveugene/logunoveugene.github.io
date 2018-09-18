@@ -486,18 +486,18 @@ h5, .h5 {
 
 
 .tab-button-prev{
-	background: linear-gradient(to right, #fff, rgba(0,0,0,0));
+	background: linear-gradient(to right, #ccc, rgba(0,0,0,0));
 	height: 36px;
-	width: 40px;
+	width: 20px;
 	position: absolute;
 	z-index: 500;
 	top: 0;
 	left: 0;
 }
 .tab-button-next{
-	background: linear-gradient(to left, #f6f6f6, rgba(0,0,0,0));
+	background: linear-gradient(to left, #ccc, rgba(0,0,0,0));
 	height: 36px;
-	width: 40px;
+	width: 20px;
 	position: absolute;
 	z-index: 500;
 	top: 0;

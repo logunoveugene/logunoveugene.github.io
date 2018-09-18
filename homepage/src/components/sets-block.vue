@@ -52,6 +52,7 @@
 					preventClicks :true,
 					preventClicksPropagation: true,
 					slidesPerView: 'auto',
+					watchOverflow: true,
 					slidesOffsetAfter: 1,
 					navigation: {
 						nextEl: '.tab-button-next',
@@ -101,6 +102,7 @@
 
 @media (max-width: 992px){
 	.slider-block{
+		border-radius: 0;
 		background-color: inherit;
 		padding: 0;
 		box-shadow: none;

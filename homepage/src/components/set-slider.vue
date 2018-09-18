@@ -46,7 +46,8 @@
 					slidesPerView: 3,
 					observer: true,
 					observeParents: true,
-					spaceBetween: 30,      
+					spaceBetween: 30,    
+					watchOverflow: true,  
 					navigation: {
 						nextEl: '.sets-slider .sw-button-next',
 						prevEl: '.sets-slider .sw-button-prev'

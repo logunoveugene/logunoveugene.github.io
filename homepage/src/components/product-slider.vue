@@ -90,6 +90,7 @@
 					spaceBetween: 30,
 					observer: true,
 					observeParents: true,
+					watchOverflow: true,
 					breakpoints: {
 
 						1200: {

@@ -115,6 +115,7 @@ new Vue({
 			showCatalog: false,
 			mainBannerOption: {
 				centeredSlides: true,
+				watchOverflow: true,
 				pagination: {
 					el: '.swiper-pagination',
 					clickable: true
@@ -126,6 +127,7 @@ new Vue({
 			},
 			mainBannerMobOption: {
 				slidesPerView: 'auto',
+				watchOverflow: true,
 				autoplay: {
 					delay: 3000,
 					disableOnInteraction: false
@@ -134,6 +136,7 @@ new Vue({
 			tabswipe: {
 
 				preventClicks :true,
+				watchOverflow: true,
 				preventClicksPropagation: true,
 				slidesPerView: 'auto',
 				slidesOffsetAfter: 1,
@@ -145,6 +148,7 @@ new Vue({
 				slidesPerView: 4,
 				spaceBetween: 30,
 				observer: true,
+				watchOverflow: true,
 				observeParents: true,
 				breakpoints: {
 
@@ -174,6 +178,7 @@ new Vue({
 			productmobOption: {
 				slidesPerView: 4,
 				spaceBetween: 30,
+				watchOverflow: true,
 				observer: true,
 				freeMode:true,
 				observeParents: true,
@@ -203,6 +208,7 @@ new Vue({
 				slidesPerView: 5,
 				spaceBetween: 30,
 				observer: true,
+				watchOverflow: true,
 				observeParents: true,
 				freeMode: true,
 				breakpoints: {
@@ -236,6 +242,7 @@ new Vue({
 			setsOption: {
 				slidesPerView: 3,
 				observer: true,
+				watchOverflow: true,
 				observeParents: true,
 				spaceBetween: 30,      
 				navigation: {

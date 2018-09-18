@@ -93,6 +93,7 @@
 
 @media (max-width: 992px){
 	.slider-block{
+		border-radius: 0rem;
 		background-color: inherit;
 		padding: 0;
 		box-shadow: none;
