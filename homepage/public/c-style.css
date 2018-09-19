@@ -177,6 +177,27 @@ input:focus, button:focus {
 		border-bottom: 0;
 	}
 
+.link--pill-active:hover{
+	color: inherit!important;
+
+	text-decoration: none;
+}
+
+.link--pill:after {
+	display: block;
+	content: attr(title);
+	font-weight: bold;
+	height: 0;
+	overflow: hidden;
+	visibility: hidden;
+}
+
+.link--pill-active{
+	background-color: #ddd;
+	font-weight: 700;
+	cursor: inherit;
+}
+
 
 
 
@@ -198,28 +219,6 @@ input:focus, button:focus {
 	border-bottom: 0;
 }
 
-}
-
-
-.link--pill-active{
-	background-color: #eee;
-	font-weight: 700;
-	cursor: inherit;
-}
-
-.link--pill-active:hover{
-	color: inherit!important;
-
-	text-decoration: none;
-}
-
-.link--pill:after {
-	display: block;
-	content: attr(title);
-	font-weight: bold;
-	height: 0;
-	overflow: hidden;
-	visibility: hidden;
 }
 
 
@@ -503,6 +502,18 @@ h5, .h5 {
 	top: 0;
 	right:  0;
 }
+
+@media (min-width: 992px){
+.tab-button-prev{
+	background: linear-gradient(to right, #fff, rgba(0,0,0,0));
+}
+
+.tab-button-next{
+	background: linear-gradient(to left, #fff, rgba(0,0,0,0));
+}	
+}
+
+
 
 
 .tab-button-next.swiper-button-disabled, .tab-button-prev.swiper-button-disabled {
