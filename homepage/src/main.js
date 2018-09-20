@@ -102,6 +102,8 @@ new Vue({
 		mainheader,
 		LocalSwiper: swiper,
 		LocalSlide: swiperSlide,
+		LogoSwiper: swiper,
+		LogoSlide: swiperSlide,
 		catalogmenu,
 	
 		blogList,
@@ -151,7 +153,7 @@ new Vue({
 			},
 
 			shopLogoOption: {
-				slidesPerView: 8,
+				slidesPerView: 6,
 				spaceBetween: 30,
 				observer: true,
 				watchOverflow: true,
@@ -160,7 +162,7 @@ new Vue({
 				breakpoints: {
 
 					1200: {
-						slidesPerView: 6,
+						slidesPerView: 4,
 						spaceBetween: 30
 					},
 					992: {
@@ -168,17 +170,13 @@ new Vue({
 						spaceBetween: 30
 					},
 					768: {
-						slidesPerView: "auto",
+						slidesPerView: 3,
 						spaceBetween: 20
 					}
 				},  
 				navigation: {
 					nextEl: '.sw-button-next',
 					prevEl: '.sw-button-prev'
-				},
-				scrollbar: {
-					el: '.swiper-scrollbar',
-					hide: true
 				}
 
 

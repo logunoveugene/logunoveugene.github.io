@@ -983,25 +983,84 @@ h5, .h5 {
 
 
 
-
+.shop-logo{
+	display: block;
+    height: 60px;
+    width: 70px;
+}
 .shop-logo__image{
     height: auto;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    padding: 4px;
     margin: auto;
     max-height: 100%;
     max-width: 100%;
     width: auto;
     filter: grayscale(100%);
     opacity: .5;
+    transition: .5s;
+}
+.shop-logo__image:hover{
+    filter: none;
+    opacity: 1;
 }
 
 .shop-logo__image-wrap{
 	display: block;
-    height: 60px;
-    width: 209px;
+    height: 40px;
+    width: 70px;
 	}    
+
+
+	@media (min-width: 992px){
+		.shop-logo{
+	display: block;
+    height: 60px;
+    width: 120px;
+}
+	.shop-logo__image-wrap{
+	display: block;
+    height: 40px;
+    width: 120px;
+	}    
+
+}
+
+
+
+.shop-logo-swiper{
+
+	box-shadow: none;
+	align-items: center;
+	display: flex;
+	margin-bottom: .25rem;
+
+}
+
+@media (max-width: 992px){
+	.swiper-container.shop-logo-swiper{
+		border-radius: .5rem;
+		border: none;
+		position: relative;
+		box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+		transition: .5s;
+		overflow: hidden;
+		background-color: #fff;
+		padding: 1rem;
+
+	}
+
+	.shop-logo-swiper__wrap{
+		padding: 0 10px 4px;
+
+	}
+
+
+}
+
+
+@media (max-width: 768px){
+
+	.shop-logo-swiper .swiper-slide {
+		width: 70px;
+	}
+}
+
