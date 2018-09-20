@@ -167,11 +167,11 @@
 								</div>
 							</div>
 							<div class="col-12 col-lg-4 d-none d-lg-flex">
-								<div class="card card--decorated align-self-stretch flex-fill">
+								<div class="card align-self-stretch flex-fill">
 									<div class="card-body h-100">
 										<div class="d-flex flex-column h-100">
 
-											<div class="h4 pt-2 mb-2">
+											<div class="h3 pt-2 mb-2">
 												<div class="flex align-items-center">
 													<a href="#" class="link link--color-grey"> Акции
 														<span class="news-block__title-button d-xl-none">
@@ -426,7 +426,9 @@
 												</div>
 												<div class="product-plate__social d-flex align-items-center mb-2">
 													<div class="product-plate__rating-wrap">
-														<Rate :value="product.rating"  size='14px' readonly="true" theme="#f48615"></Rate> 
+														<!-- <Rate :value="product.rating"  size='14px' readonly="true" theme="#f48615"></Rate>  -->
+														<rate :length="5" :value="product.rating" :readonly="true" />
+
 													</div>
 													<div class="extrasmall ml-2">
 														<a href="" class="link link--color-blue">{{product.reviewcount}}</a>
@@ -451,11 +453,13 @@
 															<div class="badge badge-info">бонус 1 500</div>
 														</div>
 													</div>
+
 													
 													
 													
 													
 												</div>
+										
 												
 												
 												

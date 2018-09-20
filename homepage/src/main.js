@@ -20,6 +20,12 @@ import VueLazyload from 'vue-lazyload'
 
 import VModal from 'vue-js-modal'
 
+import rate from 'vue-rate';
+
+Vue.use(rate)
+
+
+
 Vue.use(VModal)
 
 
@@ -46,7 +52,7 @@ import Ripple from './libs/fi-ripple.js';
 Vue.directive('Ripple', Ripple);
 
 
-import Rate from 'vue-tiny-rate';
+
 
 
 
@@ -98,7 +104,7 @@ new Vue({
 		LocalSwiper: swiper,
 		LocalSlide: swiperSlide,
 		catalogmenu,
-		Rate,
+	
 		blogList,
 		setsBlock,
 		bestProduct,

@@ -16,7 +16,7 @@
 					</div>
 					<div class="product-plate__social d-flex align-items-center mb-2">
 						<div class="product-plate__rating-wrap">
-							<Rate :value="+product.rating"  size='14px' readonly="true" theme="#f48615"></Rate> 
+							<rate :length="5" v-model="product.rating" :readonly="true" />
 						</div>
 						<div class="extrasmall ml-2">
 							<a href="" class="link link--color-blue">{{product.reviewcount}}</a>
@@ -65,13 +65,12 @@
 <script>
 	import { swiper, swiperSlide } from 'vue-awesome-swiper'
 	import 'swiper/dist/css/swiper.css'
-	import Rate from 'vue-tiny-rate';
+
 
 	export default {
 		components: {
 			productSwiper: swiper,
-			productSlide: swiperSlide,
-			Rate
+			productSlide: swiperSlide
 
 		},
 		props: {
