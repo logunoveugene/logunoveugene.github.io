@@ -983,3 +983,25 @@ h5, .h5 {
 
 
 
+
+.shop-logo__image{
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 4px;
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    filter: grayscale(100%);
+    opacity: .5;
+}
+
+.shop-logo__image-wrap{
+	display: block;
+    height: 60px;
+    width: 209px;
+	}    

@@ -75,8 +75,7 @@ var setsRef = firebase.database().ref('sets');
 
 var reviewRef = firebase.database().ref('review');
 var newsRef = firebase.database().ref('news');
-
-
+var logosRef = firebase.database().ref('logos');
 
 Vue.config.productionTip = false
 
@@ -150,6 +149,45 @@ new Vue({
 
 
 			},
+
+			shopLogoOption: {
+				slidesPerView: 8,
+				spaceBetween: 30,
+				observer: true,
+				watchOverflow: true,
+				observeParents: true,
+				freeMode: true,
+				breakpoints: {
+
+					1200: {
+						slidesPerView: 6,
+						spaceBetween: 30
+					},
+					992: {
+						slidesPerView: 4,
+						spaceBetween: 30
+					},
+					768: {
+						slidesPerView: "auto",
+						spaceBetween: 20
+					}
+				},  
+				navigation: {
+					nextEl: '.sw-button-next',
+					prevEl: '.sw-button-prev'
+				},
+				scrollbar: {
+					el: '.swiper-scrollbar',
+					hide: true
+				}
+
+
+			},
+
+
+
+
+
 			productOption: {
 				slidesPerView: 4,
 				spaceBetween: 30,
@@ -303,7 +341,8 @@ new Vue({
 		sets: setsRef,
 		review: reviewRef,
 		newslist: newsRef,
-		productsview: productsviewmRef
+		productsview: productsviewmRef,
+		logos: logosRef
 	},
 
 
