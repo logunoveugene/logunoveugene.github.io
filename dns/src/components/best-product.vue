@@ -24,6 +24,7 @@
 		:slideinfo="slide[curentIndex] "
 		></product-slider>
 	</keep-alive>
+
 </div>
 </template>
 
@@ -48,8 +49,6 @@
 				default: function () {
 					return ['label', 'value']
 				}
-
-
 			}
 		},
 
