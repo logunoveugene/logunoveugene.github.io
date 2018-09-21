@@ -21,6 +21,7 @@
     "vue-lazyload": "^1.2.6",
     "vue-rate": "^2.2.0",
     "vue-ripple-directive": "^2.0.1",
+    "vue-router": "^3.0.1",
     "vue-tiny-rate": "^0.1.6",
     "vuefire": "^1.4.5"
   },

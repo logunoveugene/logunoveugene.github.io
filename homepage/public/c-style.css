@@ -997,6 +997,7 @@ h5, .h5 {
     filter: grayscale(100%);
     opacity: .5;
     transition: .5s;
+    cursor: pointer;
 }
 .shop-logo__image:hover{
     filter: none;

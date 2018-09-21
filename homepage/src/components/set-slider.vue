@@ -12,9 +12,10 @@
 					<div class="font-weight-bold  mb-0">от {{slide.price | formatedNumber}}  ₽</div>
 				</div>
 			</set-slide>
-			<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left "></div></div>
+		<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left "></div></div>
 			<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right "></div></div>
 		</set-swiper>
+			
 	</div>
 
 </template>
