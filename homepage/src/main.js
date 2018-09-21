@@ -1,4 +1,8 @@
 import Vue  from  'vue/dist/vue.js'
+
+
+
+
 import VueFire from 'vuefire'
 import firebase from 'firebase'
 
@@ -39,9 +43,6 @@ Vue.use(VueLazyload, {
 		threshold: 0.1
 	}
 });
-
-
-
 
 
 
@@ -105,7 +106,7 @@ new Vue({
 		LogoSwiper: swiper,
 		LogoSlide: swiperSlide,
 		catalogmenu,
-	
+
 		blogList,
 		setsBlock,
 		bestProduct,
@@ -173,7 +174,8 @@ new Vue({
 						slidesPerView: 3,
 						spaceBetween: 20
 					}
-				},  
+				},  	
+
 				navigation: {
 					nextEl: '.sw-button-next',
 					prevEl: '.sw-button-prev'
