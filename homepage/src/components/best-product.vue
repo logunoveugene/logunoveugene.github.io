@@ -22,6 +22,7 @@
 	<keep-alive>
 		<product-slider
 		:slideinfo="slide[curentIndex] "
+		:activetab ="currentTab"
 		></product-slider>
 	</keep-alive>
 </div>
