@@ -1,22 +1,6 @@
 <template>
 	<div class="footer">
 		<div class="footer__container container">
-			<div class="footer__row  row">
-				<div class="footer__col col-12">
-					<form class="footer__subscribe d-flex align-items-lg-center flex-column flex-lg-row">
-						<div class="footer__subscribe-title  d-flex align-items-center">
-							<div class="footer__subscribe-icon">
-								<div class="icon-mail-send"></div>
-							</div>
-							Подпишитесь! Новинки, скидки, предложения!
-						</div>
-						<div class="footer__subscribe-form  d-flex align-items-center  ">
-							<input type="email" class="footer__form-field mr-3" placeholder="Введите e-mail">
-							<button type="submit" class="btn btn-outl-grey">Подписаться</button>
-						</div>
-					</form>
-				</div> 
-			</div>
 			<div class="footer__project d-flex  flex-wrap justify-content-around justify-content-lg-between">
 				<div class="footer__project-img-wrap">
 					<img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/dns.png" alt="" class="footer__project-img">
@@ -169,21 +153,18 @@
 								<span class="icon-youtube-play"></span>
 							</a>
 						</div>
+					</div>
+					<div class="footer__subscribe-title flex-column">
 
-
-
-
+						<div class="mb-1">Будь в курсе важных событий</div>
+						<div class="small">Узнавайте о новинках и акциях первыми</div>
+					</div>
+					<div class="footer__subscribe-form  d-flex align-items-center  ">
+						<input type="email" class="footer__form-field mr-3" placeholder="Введите e-mail">
+						<button type="submit" class="btn btn-outl-grey"><i class="footer__icon-level-down icon-level-down"></i></button>
 					</div>
 
-					<div class="d-flex flex-wrap py-3 py-lg-0">
-						<div class="">
-							<img src="https://as.dns-shop.ru/assets/80328d4a/images/theme/footer-mobile-app-icons/google-play.png" alt="" class="mb-2 mr-3">
-						</div>
-						<div class="">
-							<img src="https://as.dns-shop.ru/assets/80328d4a/images/theme/footer-mobile-app-icons/app-store.png" alt="" class="mb-2">
-						</div>
-						
-					</div>
+
 
 				</div>
 				<div class="col-12 mt-4">
@@ -262,7 +243,7 @@
 }
 
 .footer__social{
-	margin-bottom: 1rem;
+	margin-bottom: 2rem;
 }
 .footer__social-item-link {
 	font-size: 18px;
@@ -282,20 +263,19 @@
 	border-radius: 8px;
 	border: 1px solid #999;
 	background-color: #444;
-	width: 100%;
 	height: 40px;
 	padding: 8px 0 8px 15px;
 	color: #fff;
+	width: inherit;
 }
 .footer__subscribe-form{
 	width: 100%;
 }
 .footer__subscribe-title{
 	width: 100%;
-	padding: 1rem 0;
-	font-size: 1.125rem;
+	margin-bottom: 1rem;
 	line-height: 1.3;
-	font-weight: 700;
+
 }
 
 .footer__project{
@@ -372,14 +352,21 @@
 
 	}
 
-	.footer__subscribe-form{
-		width: 50%
-	}
-	.footer__subscribe-title{
-		width: 50%
-	}
 
 
+
+
+}
+
+
+
+.footer__icon-level-down{
+	font-size: 17px;
+	line-height: 19px;
+	height: 24px;
+	color: #999;
+	display: block;
+	padding-top: 4px;
 }
 
 

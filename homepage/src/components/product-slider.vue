@@ -5,38 +5,37 @@
 
             <product-slide v-if="activetab =='Новинки'">
                 <div class="all-product">
+                    <div class="d-flex align-items-center h5 mb-3">
+                        <div class=" ">Только свежее  </div><div class="all-product__icon-ask icon-ask"></div>
+                    </div>
 
 
                     <ul class="nav nav--vertical ">
                         <li class="nav__link nav__link--vertical">
-                            <a href="#" class="link link--color-grey"><span class="">Samsung</span><span class="text-black-50 ml-1">15</span> </a>
+                            <a href="#" class="link link--color-grey"><span class="">Samsung</span><span
+                                    class="text-black-50 ml-1">15</span> </a>
                         </li>
                         <li class="nav__link nav__link--vertical">
-                            <a href="#" class="link link--color-grey"><span class="">Apple</span> <span class="text-black-50 ml-1">48</span> </a>
+                            <a href="#" class="link link--color-grey"><span class="">Apple</span> <span
+                                    class="text-black-50 ml-1">48</span> </a>
                         </li>
                         <li class="nav__link nav__link--vertical">
-                            <a href="#" class="link link--color-grey"><span class="">Asus</span> <span class="text-black-50 ml-1">12</span> </a>
+                            <a href="#" class="link link--color-grey"><span class="">Asus</span> <span
+                                    class="text-black-50 ml-1">12</span> </a>
                         </li>
                         <li class="nav__link nav__link--vertical">
-                            <a href="#" class="link link--color-grey"><span class="">Xiaomi</span> <span class="text-black-50 ml-1">36</span> </a>
+                            <a href="#" class="link link--color-grey"><span class="">Xiaomi</span> <span
+                                    class="text-black-50 ml-1">36</span> </a>
                         </li>
-                        <li class="nav__link nav__link--vertical">
-                            <a href="#" class="link link--color-grey"><span class="">GoPro</span> <span class="text-black-50 ml-1">2</span> </a>
-                        </li>
+                        <!--<li class="nav__link nav__link&#45;&#45;vertical">-->
+                            <!--<a href="#" class="link link&#45;&#45;color-grey"><span class="">GoPro</span> <span-->
+                                    <!--class="text-black-50 ml-1">2</span> </a>-->
+                        <!--</li>-->
 
                     </ul>
                     <div class="mt-auto">
                         <button class="btn btn-outl-orange">Все новинки</button>
                     </div>
-                    <!--<div class="product-plate d-flex flex-column w-100">-->
-                        <!--<div class="product-plate__image-wrap">-->
-                            <!--<img src="https://i.snag.gy/defuOt.jpg" class="all-roduct__img">-->
-                        <!--</div>-->
-                        <!--<div class="product-plate__link w-100  mb-2">-->
-                            <!--<a href="" class="link w-100 link&#45;&#45;color-blue">Смотреть все</a>-->
-                            <!--<div class="small mt-2 text-muted">486 товаров</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
 
                 </div>
             </product-slide>
@@ -89,6 +88,42 @@
 
                 </div>
 
+            </product-slide>
+            <product-slide v-if="activetab =='Новинки'">
+                <div class="all-product">
+                    <div class="d-flex align-items-center h5 mb-3">
+                        <div class=" ">Только свежее  </div><div class="all-product__icon-ask icon-ask"></div>
+                    </div>
+
+
+                    <ul class="nav nav--vertical ">
+                        <li class="nav__link nav__link--vertical">
+                            <a href="#" class="link link--color-grey"><span class="">Samsung</span><span
+                                    class="text-black-50 ml-1">15</span> </a>
+                        </li>
+                        <li class="nav__link nav__link--vertical">
+                            <a href="#" class="link link--color-grey"><span class="">Apple</span> <span
+                                    class="text-black-50 ml-1">48</span> </a>
+                        </li>
+                        <li class="nav__link nav__link--vertical">
+                            <a href="#" class="link link--color-grey"><span class="">Asus</span> <span
+                                    class="text-black-50 ml-1">12</span> </a>
+                        </li>
+                        <li class="nav__link nav__link--vertical">
+                            <a href="#" class="link link--color-grey"><span class="">Xiaomi</span> <span
+                                    class="text-black-50 ml-1">36</span> </a>
+                        </li>
+                        <!--<li class="nav__link nav__link&#45;&#45;vertical">-->
+                        <!--<a href="#" class="link link&#45;&#45;color-grey"><span class="">GoPro</span> <span-->
+                        <!--class="text-black-50 ml-1">2</span> </a>-->
+                        <!--</li>-->
+
+                    </ul>
+                    <div class="mt-auto">
+                        <button class="btn btn-outl-orange">Все новинки</button>
+                    </div>
+
+                </div>
             </product-slide>
 
 
@@ -193,15 +228,14 @@
     .all-product {
         height: 290px;
         border: 1px solid #eee;
-        padding:  1.5rem;
+        padding: 1.5rem;
         display: flex;
         flex-direction: column;
         border-radius: .5rem;
 
-
     }
 
-    .all-roduct__img{
+    .all-roduct__img {
         max-width: 40%;
         opacity: 0.1;
         margin-top: 23px;
@@ -209,7 +243,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-      }
+    }
 
     @media (max-width: 992px) {
         .product-swiper {
@@ -229,6 +263,13 @@
 
         }
 
+    }
+    .all-product__icon-ask{
+    font-size: 24px;
+    line-height: 22px;
+    height: 24px;
+    margin-left: .25rem;
+    color: #999;
     }
 
 
