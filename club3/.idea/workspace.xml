@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b39141c9-0450-4cd0-ac3d-79269bcec368" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/dns-club/public/c-style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dns-club/src/components/efir.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dns-club/src/components/header.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dns-club/src/components/post-block/post-half-img.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dns-club/src/components/post-block/post-wide.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dns-club/src/filters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dns-club/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/dns-club/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dns-club/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/dns-club/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dns-club/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dns-club/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dns-club/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/dns-club/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dns-club/src/components/HelloWorld.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dns-club/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dns-club/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dns-club/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/dns-club/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dns-club/public/c-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/dns-club/public/c-style.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +20,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="1" />
+          <entry key="css" value="2" />
           <entry key="html" value="1" />
           <entry key="js" value="6" />
           <entry key="json" value="3" />
@@ -42,7 +29,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="1" />
+          <entry key="CSS" value="2" />
           <entry key="HTML" value="1" />
           <entry key="JSON" value="3" />
           <entry key="JavaScript" value="6" />
@@ -51,6 +38,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="css" value="2" />
           <entry key="html" value="1" />
           <entry key="js" value="136" />
           <entry key="json" value="5" />
@@ -59,6 +47,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="CSS" value="2" />
           <entry key="HTML" value="1" />
           <entry key="JSON" value="5" />
           <entry key="JavaScript" value="136" />
@@ -151,15 +140,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dns-club/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dns-club/src/components/post-block/post-half-img.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="496">
@@ -171,11 +151,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dns-club/src/components/post-block/parts/post-info.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
               <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dns-club/public/c-style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="249" column="21" selection-start-line="249" selection-start-column="21" selection-end-line="249" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -206,7 +195,6 @@
       <list>
         <option value="$PROJECT_DIR$/dns-club/src/components/HelloWorld.vue" />
         <option value="$PROJECT_DIR$/dns-club/public/index.html" />
-        <option value="$PROJECT_DIR$/dns-club/public/c-style.css" />
         <option value="$PROJECT_DIR$/dns-club/src/components/efir.vue" />
         <option value="$PROJECT_DIR$/dns-club/src/components/header.vue" />
         <option value="$PROJECT_DIR$/dns-club/src/App.vue" />
@@ -219,6 +207,7 @@
         <option value="$PROJECT_DIR$/dns-club/src/components/post-block/post-wide.vue" />
         <option value="$PROJECT_DIR$/dns-club/src/components/post-block/post-half-img.vue" />
         <option value="$PROJECT_DIR$/dns-club/src/views/Home.vue" />
+        <option value="$PROJECT_DIR$/dns-club/public/c-style.css" />
       </list>
     </option>
   </component>
@@ -236,7 +225,7 @@
       <path value="$PROJECT_DIR$/dns-club/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="7" />
     <option name="y" value="26" />
     <option name="width" value="1920" />
@@ -337,15 +326,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1538532230030</updated>
-      <workItem from="1538532231433" duration="20263000" />
+      <workItem from="1538532231433" duration="20333000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20263000" />
+    <option name="totallyTimeSpent" value="20333000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="7" y="26" width="1920" height="1001" extended-state="1" />
+    <frame x="7" y="26" width="1920" height="1001" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
@@ -380,13 +369,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="96" selection-start-line="10" selection-start-column="96" selection-end-line="10" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dns-club/public/c-style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="579" lean-forward="true" selection-start-line="579" selection-end-line="579" />
         </state>
       </provider>
     </entry>
@@ -534,6 +516,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dns-club/public/c-style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="249" column="21" selection-start-line="249" selection-start-column="21" selection-end-line="249" selection-end-column="21" />
         </state>
       </provider>
     </entry>
