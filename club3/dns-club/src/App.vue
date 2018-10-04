@@ -1,29 +1,81 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="app">
+        <mainheader :live="live" v-on:liveon="liveon"></mainheader>
+        <efir-bar :live="live" v-on:liveoff="liveoff" ></efir-bar>
+        <div id="nav">
+            <router-link to="/">Home</router-link>
+            |
+            <router-link to="/about">About</router-link>
+        </div>
+        <transition name="fade">
+            <router-view/>
+        </transition>
     </div>
-    <router-view/>
-  </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+    import mainheader from "./components/header.vue"
+    import efir from "./components/efir.vue"
+
+    export default {
+        components: {
+            mainheader,
+            'efir-bar': efir
+
+        },
+        data: function () {
+            return {
+
+                live: "showlive",
+                window: {
+                    width: 0,
+                    height: 0
+                }
+
+            }
+        },
+        methods: {
+
+            liveoff: function () {
+                this.live = "";
+            },
+            liveon: function () {
+                this.live = "showlive";
+            },
+            handleResize() {
+                this.window.width = window.innerWidth;
+                this.window.height = window.innerHeight;
+                if (this.window.width < 1440) {
+                    this.live = "";
+                }
+            }
+
+        },
+
+        created() {
+            window.addEventListener('resize', this.handleResize)
+            this.handleResize();
+        },
+
+        destroyed() {
+            window.removeEventListener('resize', this.handleResize)
+        }
     }
-  }
-}
+
+
+</script>
+
+<style lang="scss">
+    .fade-enter-active, .fade-leave-active {
+        transition-property: opacity;
+        transition-duration: .25s;
+    }
+
+    .fade-enter-active {
+        transition-delay: .25s;
+    }
+
+    .fade-enter, .fade-leave-active {
+        opacity: 0
+    }
 </style>
