@@ -3,7 +3,7 @@
         <div class="post-lock"
              v-bind:style="{  backgroundImage: 'url(' +  post.img + ')', backgroundColor: post.bgColor,  boxShadow: 'inset 360px 0px 100px -60px ' +  post.bgColor}">
 
-            <div class="post-lock__info">
+            <div class="post-lock__info align-self-stretch">
                 <post-tag
                         :source="post.source"
                         :format="post.format"
@@ -14,6 +14,10 @@
                 <div class="post-lock__title">
                     <a v-bind:style="{ color: post.textColor }" href="#"
                        class="link link--color-black">{{post.title}}</a>
+                </div>
+                <div class="small mb-3" v-bind:style="{ color: post.textColor }">
+                    Автор: <a v-bind:style="{ color: post.textColor }" class="link link--color-blue mr-2" href="#">{{post.autor}}</a>
+                    {{post.date | fdate}}
                 </div>
                 <div class="mt-auto">
                     <post-info
@@ -85,6 +89,7 @@
         background-size: contain;
         background-position: right;
         background-repeat: no-repeat;
+        min-height: 300px;
 
     }
 
@@ -93,7 +98,7 @@
         flex-direction: column;
         text-align: left;
         align-items: start;
-        height: 100%;
+        align-self: stretch;
     }
 
     .post-lock__title {
@@ -101,7 +106,7 @@
         font-weight: 700;
         line-height: 24px;
         width: 40%;
-        margin-bottom: 1.5rem;
+        margin-bottom: .5rem;
         /*	width: calc(100% - 4rem)*/
     }
 

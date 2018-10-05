@@ -8,6 +8,9 @@
 			></post-tag>
 
 			<div class="post-text__title mb-3 h2"><a href="#" class="link link--color-black">{{post.title}}</a></div>
+			<div class="small mb-3">
+				Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
+			</div>
 			
 			<post-teaser
 			:teaser="post.teaser">

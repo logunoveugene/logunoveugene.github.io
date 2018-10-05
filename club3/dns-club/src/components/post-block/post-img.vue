@@ -1,14 +1,11 @@
 <template>
     <div class="post">
         <div class="post-image">
-
             <div class="post-image__image-wrap" v-bind:style="{  backgroundColor: post.bgColor, backgroundImage: 'url(' +  post.img + ')'}">
                 <div class="post-image__gradient-wrap"
                      v-bind:style="{ boxShadow: 'inset 0px 220px 100px -60px ' +  post.bgColor}">
                     <div class="post-image__info">
                         <div class="post__tags-wrap ">
-
-
                             <div class="post__fotmat-icon" v-bind:style="{ color: post.textColor }"
                                  v-if="post.format=='Видео'">
                                 <div class="icon-video"></div>
@@ -17,7 +14,6 @@
                                  v-if="post.format=='Фото'">
                                 <div class="icon-photo"></div>
                             </div>
-
                             <post-tag
                                     :source="post.source"
                                     :format="post.format"
@@ -29,6 +25,9 @@
 
                         <div class="post__title  mb-3 h2" v-bind:style="{ color: post.textColor }">
                             <a href="#" v-bind:style="{ color: post.textColor }" class="link link--color-black">{{post.title}}</a>
+                        </div>
+                        <div class="small mb-3">
+                            Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
                         </div>
                         <div class="mt-auto">
                             <post-info

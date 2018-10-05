@@ -8,6 +8,13 @@ import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
 
 
+import VTree from 'vue-tree-halower'
+
+Vue.use(VTree)
+
+
+
+
 
 Vue.config.productionTip = false
 

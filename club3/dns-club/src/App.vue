@@ -2,11 +2,6 @@
     <div id="app">
         <mainheader :live="live" v-on:liveon="liveon"></mainheader>
         <efir-bar :live="live" v-on:liveoff="liveoff" ></efir-bar>
-        <div id="nav">
-            <router-link to="/">Home</router-link>
-            |
-            <router-link to="/about">About</router-link>
-        </div>
         <transition name="fade">
             <router-view/>
         </transition>

@@ -1,5 +1,7 @@
 <template>
-<div class="post__teaser d-none d-md-inline-block">
+<div
+        v-bind:style="{ color: color }"
+        class="post__teaser d-none d-md-inline-block">
   {{teaser}}
 </div>
 
@@ -11,7 +13,11 @@ export default  {
         teaser: {
           type: null,
           default: ""
-      }
+      },
+        color:{
+            type: null,
+            default: ""
+        }
   },
   data: function() {
     return {
