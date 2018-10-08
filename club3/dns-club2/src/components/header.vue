@@ -41,97 +41,99 @@
         </div>
         <fixed-header class="main-layout" :class="live" :threshold="58" :fixed.sync="isFixed">
             <div class="fixed-plate" :class="{ 'is-fixed': isFixed }">
-        <div class="header__bottom-line">
-            <div class="header__container container">
-                <div class="header__bottom-grid row">
-                    <div class="header__bottom-block col-2 d-lg-none">
-                        <div class="header__mobile-menu">
+                <div class="header__bottom-line">
+                    <div class="header__container container">
+                        <div class="header__bottom-grid row">
+                            <div class="header__bottom-block col-2 d-lg-none">
+                                <div class="header__mobile-menu">
 
-                            <img src="https://i.snag.gy/23I0JN.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="header__bottom-block col-8 col-lg-8">
-                        <router-link to="/">
-                            <img class="heaader__logo" src="https://i.snag.gy/p4txCj.jpg" alt="">
-                        </router-link>
-
-                        <div class="header__main-nav d-none d-lg-flex">
-                            <a href="#" class="link link--color-grey">Дайджест</a>
-                            <router-link to="/review">
-                                <a href="#" class="link link--color-grey">Обзоры</a>
-                            </router-link>
-                            <a href="#" class="link link--color-grey">Лайфхаки</a>
-                            <router-link to="/discussions">
-                                <a href="#" class="link link--color-grey ">Обсуждения</a>
-                            </router-link>
-
-                        </div>
-                    </div>
-                    <div class="header__bottom-block col-2 col-lg-4">
-                        <div class="header__create-controls d-none d-lg-flex">
-                            <div class="header__create-controls-item">
-                                <div class="header__create-controls-icon">
-                                    <div class="icon-pen"></div>
+                                    <img src="https://i.snag.gy/23I0JN.jpg" alt="">
                                 </div>
-                                <a href="#" class="link link--color-grey">Написать</a>
                             </div>
-                            <div class="header__create-controls-item">
-                                <div class="header__create-controls-icon">
-                                    <div class="icon-ask"></div>
+                            <div class="header__bottom-block col-8 col-lg-8">
+                                <router-link to="/">
+                                    <img class="heaader__logo" src="https://i.snag.gy/p4txCj.jpg" alt="">
+                                </router-link>
+
+                                <div class="header__main-nav d-none d-lg-flex">
+                                    <a href="#" class="link link--color-grey">Дайджест</a>
+                                    <router-link to="/review">
+                                        <a href="#" class="link link--color-grey">Обзоры</a>
+                                    </router-link>
+                                    <a href="#" class="link link--color-grey">Лайфхаки</a>
+                                    <router-link to="/discussions">
+                                        <a href="#" class="link link--color-grey ">Обсуждения</a>
+                                    </router-link>
+
                                 </div>
-                                <a href="#" class="link link--color-grey">Спросить</a>
                             </div>
-                        </div>
-                        <div class="header__search">
-                            <img src="https://i.snag.gy/7rBCoa.jpg" alt="">
+                            <div class="header__bottom-block col-2 col-lg-4">
+                                <div class="header__create-controls d-none d-lg-flex">
+                                    <div class="header__create-controls-item">
+                                        <div class="header__create-controls-icon">
+                                            <div class="icon-pen"></div>
+                                        </div>
+                                        <router-link to="/newpost">
+                                            <a href="#" class="link link--color-grey">Написать</a>
+                                        </router-link>
+                                    </div>
+                                    <div class="header__create-controls-item">
+                                        <div class="header__create-controls-icon">
+                                            <div class="icon-ask"></div>
+                                        </div>
+                                        <a href="#" class="link link--color-grey">Спросить</a>
+                                    </div>
+                                </div>
+                                <div class="header__search">
+                                    <img src="https://i.snag.gy/7rBCoa.jpg" alt="">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-            </div>
         </fixed-header>
 
 
-                <!--<div class="header__fixed-bottom-line">-->
-                    <!--<div class="header__container container">-->
-                        <!--<div class="header__bottom-grid row">-->
-                            <!--<div class="header__bottom-block col-2 d-lg-none">-->
-                                <!--<div class="header__mobile-menu">-->
-                                    <!--<img src="https://i.snag.gy/23I0JN.jpg" alt="">-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="header__bottom-block col-8 col-lg-8">-->
-                                <!--<img class="heaader__logo" src="https://i.snag.gy/p4txCj.jpg" alt="">-->
-                                <!--<div class="header__main-nav d-none d-lg-flex">-->
-                                    <!--<a href="#" class="link link&#45;&#45;color-grey">Дайджест</a>-->
-                                    <!--<a href="#" class="link link&#45;&#45;color-grey">Обзоры</a>-->
-                                    <!--<a href="#" class="link link&#45;&#45;color-grey">Лайфхаки</a>-->
-                                    <!--<a href="#" class="link link&#45;&#45;color-grey ">Обсуждения</a>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="header__bottom-block col-2 col-lg-4">-->
-                                <!--<div class="header__create-controls d-none d-lg-flex">-->
-                                    <!--<div class="header__create-controls-item">-->
-                                        <!--<div class="header__create-controls-icon">-->
-                                            <!--<div class="icon-pen"></div>-->
-                                        <!--</div>-->
-                                        <!--<a href="#" class="link link&#45;&#45;color-grey">Написать</a>-->
-                                    <!--</div>-->
-                                    <!--<div class="header__create-controls-item">-->
-                                        <!--<div class="header__create-controls-icon">-->
-                                            <!--<div class="icon-ask"></div>-->
-                                        <!--</div>-->
-                                        <!--<a href="#" class="link link&#45;&#45;color-grey">Спросить</a>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-                                <!--<div class="header__search">-->
-                                    <!--<img src="https://i.snag.gy/7rBCoa.jpg" alt="">-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
+        <!--<div class="header__fixed-bottom-line">-->
+        <!--<div class="header__container container">-->
+        <!--<div class="header__bottom-grid row">-->
+        <!--<div class="header__bottom-block col-2 d-lg-none">-->
+        <!--<div class="header__mobile-menu">-->
+        <!--<img src="https://i.snag.gy/23I0JN.jpg" alt="">-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="header__bottom-block col-8 col-lg-8">-->
+        <!--<img class="heaader__logo" src="https://i.snag.gy/p4txCj.jpg" alt="">-->
+        <!--<div class="header__main-nav d-none d-lg-flex">-->
+        <!--<a href="#" class="link link&#45;&#45;color-grey">Дайджест</a>-->
+        <!--<a href="#" class="link link&#45;&#45;color-grey">Обзоры</a>-->
+        <!--<a href="#" class="link link&#45;&#45;color-grey">Лайфхаки</a>-->
+        <!--<a href="#" class="link link&#45;&#45;color-grey ">Обсуждения</a>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="header__bottom-block col-2 col-lg-4">-->
+        <!--<div class="header__create-controls d-none d-lg-flex">-->
+        <!--<div class="header__create-controls-item">-->
+        <!--<div class="header__create-controls-icon">-->
+        <!--<div class="icon-pen"></div>-->
+        <!--</div>-->
+        <!--<a href="#" class="link link&#45;&#45;color-grey">Написать</a>-->
+        <!--</div>-->
+        <!--<div class="header__create-controls-item">-->
+        <!--<div class="header__create-controls-icon">-->
+        <!--<div class="icon-ask"></div>-->
+        <!--</div>-->
+        <!--<a href="#" class="link link&#45;&#45;color-grey">Спросить</a>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="header__search">-->
+        <!--<img src="https://i.snag.gy/7rBCoa.jpg" alt="">-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
 
 
     </div>
@@ -161,9 +163,9 @@
 </script>
 
 <style>
-.header{
-    height: 141px;
-}
+    .header {
+        height: 70px;
+    }
 
     .fixed-plate {
         position: relative;
@@ -178,8 +180,9 @@
         background-color: #fff;
         display: block;
     }
-    .is-fixed .header__bottom-line{
-        padding: 1rem 0 ;
+
+    .is-fixed .header__bottom-line {
+        padding: 1rem 0;
         box-shadow: 0 0 15px rgba(0, 0, 0, .1);
     }
 
@@ -217,6 +220,10 @@
     @media (min-width: 992px) {
         .header__bottom-line {
             padding: 3rem 0 2rem;
+        }
+
+        .header {
+            height: 141px;
         }
     }
 

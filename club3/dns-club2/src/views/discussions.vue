@@ -6,22 +6,44 @@
                 <div class="col-12">
                     <div class="small mb-2">Клуб / Обсуждения</div>
                     <h1 class="page__title">Обсуждения</h1>
-
                 </div>
+
+
                 <div class="col-12 col-md-12 col-lg-8">
-                    <div class="d-flex justify-content-between mb-5 align-items-center ">
+                    <div class=" pb-3 mb-4">
+                        <div class=" card-block layout--bg-grey  p-4">
+                            <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
+                                <div class="d-flex flex-column mb-3 mb-md-0">
+                                    <div class="h2 mb-0">Нужна помощь?</div>
+                                    <div class="small">Найди ответ на любой вопрос о компьютерах, электорнике или
+                                        бытовой технике
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div class="btn btn--color-white ">Задать вопрос</div>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class=" d-flex   justify-content-between mb-5 align-items-center ">
                         <nav class="nav nav-pills nav-justified ">
                             <a class="pill-item link pill-item--active " href="#">Свежее</a>
                             <a class="pill-item link" href="#">Популярное</a>
                             <a class="pill-item link" href="#">Лучшее</a>
                         </nav>
-                        <!--<div class="">за сегодня</div>-->
-
+                        <div class="d-none d-md-flex ">за сегодня
+                            <div class="small pt-1 ml-1 text-secondary">
+                                <div class="icon-down"></div>
+                            </div>
+                        </div>
                     </div>
 
 
                     <div class="discussions">
-                        <div class="discussions__item" v-for="(discussion, index) in discussions">
+                        <div class="discussions__item" v-for="(discussion, index) in discussions" :key="index">
                             <div class="d-flex">
                                 <div class="discussions__img-wrap">
                                     <img :src="discussion.img" alt="" class="discussions__img">
@@ -77,33 +99,25 @@
                                         </div>
                                     </div>
                                     <div class="p-4 bb-1">
-                                        <div class="h4 mb-0 d-flex align-items-center justify-content-between">Бренд
+                                        <div class="h4 mb-0 d-flex align-items-center justify-content-between">Товары и
+                                            бренды
                                             <div class="icon-down" @click="brand=!brand"></div>
                                         </div>
                                         <div class="tree" v-if="brand">
                                             <input class="tree-search-input mb-0" type="text"
-                                                   placeholder="Поиск категории"/>
+                                                   placeholder="Упоминание товара"/>
+                                            <input class="tree-search-input mb-0" type="text"
+                                                   placeholder="Упоминание бренда"/>
 
                                         </div>
                                     </div>
-                                    <div class="p-4 bb-1">
+                                    <div class="p-4">
                                         <div class="h4 mb-0 d-flex align-items-center justify-content-between">Тип
                                             вопроса
-                                            <div class="icon-down" @click="brand=!brand"></div>
+                                            <div class="icon-down" @click="posttype=!posttype"></div>
                                         </div>
-                                        <div class="tree" v-if="brand">
-                                            <input class="tree-search-input mb-0" type="text"
-                                                   placeholder="Поиск категории"/>
+                                        <div class="tree" v-if="posttype">
 
-                                        </div>
-                                    </div>
-                                    <div class="p-4 bb-1">
-                                        <div class="h4 mb-0 d-flex align-items-center justify-content-between">Бренд
-                                            <div class="icon-down" @click="brand=!brand"></div>
-                                        </div>
-                                        <div class="tree" v-if="brand">
-                                            <input class="tree-search-input mb-0" type="text"
-                                                   placeholder="Поиск категории"/>
 
                                         </div>
                                     </div>
@@ -136,6 +150,7 @@
             return {
                 category: true,
                 brand: false,
+                posttype: false,
                 discussions: [],
                 topusers: [],
                 userslevel: [],
@@ -194,7 +209,7 @@
 
                         }]
                     }, {
-                        title: 'Компьютеры, игры, комплектующие',
+                        title: 'Майнинг',
                         expanded: false,
                         children: [{
                             title: 'node 1-1',

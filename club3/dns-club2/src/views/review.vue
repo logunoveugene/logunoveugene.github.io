@@ -5,7 +5,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="small mb-2">Клуб / Обзоры</div>
-                    <h1 class="page__title">Обзоры</h1>
+                    <h1 v-if="initSelected.length==0 || initSelected.length>1 " class="page__title">Обзоры</h1>
+                    <h1 v-if="initSelected.length==1" class="page__title">{{initSelected[0].title}}</h1>
 
                 </div>
                 <div class="col-12 col-md-12 col-lg-8">
@@ -15,62 +16,86 @@
                             <a class="pill-item link" href="#">Популярное</a>
                             <a class="pill-item link" href="#">Лучшее</a>
                         </nav>
-                        <!--<div class="">за сегодня</div>-->
+                        <div class="d-flex">за сегодня
+                            <div class="small pt-1 ml-1 text-secondary">
+                                <div class="icon-down"></div>
+                            </div>
+                        </div>
 
                     </div>
 
 
                     <div class="discussions">
-                        <div class="" v-for="(rev, index) in review">
+                        <div class="" v-for="(rev, index) in review" :key="index">
                             <postLarge :post="rev"></postLarge>
                         </div>
                     </div>
 
                 </div>
-                <div class="col-12 col-lg-4">
+                <div class="col-12 col-lg-4 ">
                     <div class="row">
-                        <div class="col-12 col-md-6 col-lg-12 order-2 order-lg-1">
+                        <div class="col-12 col-md-6 col-lg-12 mb-4">
                             <div class="card-block mb-4">
                                 <div class="">
                                     <div class="p-4 bb-1">
-                                        <div class="h4 mb-0 d-flex align-items-center justify-content-between">Тема
-                                            <div class="icon-down" @click="category=!category"></div>
+                                        <div @click="category=!category"
+                                             class="h4 mb-0 d-flex align-items-center justify-content-between">Тема
+                                            <div class="icon-down"></div>
                                         </div>
                                         <div class="tree" v-if="category">
-                                            <input class="tree-search-input" type="text" v-model.lazy="searchword"
-                                                   placeholder="Поиск категории"/>
+                                            <input class="tree-search-input"
+                                                   type="text"
+                                                   v-model.lazy="searchword"
+                                                   placeholder="Поиск категории"
+                                                   v-on:keyup.enter="search"
+                                            />
                                             <!--<button class=" tree-search-btn" type="button" @click="search">GO</button>-->
-                                            <v-tree ref='tree' :data='treeData1' :multiple="true" :halfcheck='true'/>
+                                            <v-tree ref='tree'
+                                                    :data='treeData1'
+                                                    :multiple="true"
+                                                    @node-check='selectedNodes'
+                                                    :halfcheck='true'
+                                                    @click="selectedNodes"/>
                                         </div>
                                     </div>
                                     <div class="p-4 bb-1">
-                                        <div class="h4 mb-0 d-flex align-items-center justify-content-between">Бренд
-                                            <div class="icon-down" @click="brand=!brand"></div>
+                                        <div @click="thame=!thame"
+                                             class="h4 mb-0 d-flex align-items-center justify-content-between">Рубрики
+                                            <div class="icon-down"></div>
                                         </div>
-                                        <div class="tree" v-if="brand">
-                                            <input class="tree-search-input mb-0" type="text"
-                                                   placeholder="Поиск категории"/>
+                                        <div class="tree" v-if="thame">
+                                            <div class="custom-control custom-checkbox mt-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                <label class="custom-control-label" for="customCheck1">Профессиональные
+                                                    обзоры</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mt-2">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                                <label class="custom-control-label" for="customCheck2">Любительские
+                                                    обзоры</label>
+                                            </div>
+
 
                                         </div>
                                     </div>
-                                    <div class="p-4 bb-1">
-                                        <div class="h4 mb-0 d-flex align-items-center justify-content-between">Тип
-                                            вопроса
-                                            <div class="icon-down" @click="brand=!brand"></div>
+                                    <div class="p-4">
+                                        <div @click="brand=!brand"
+                                             class="h4 mb-0 d-flex align-items-center justify-content-between">Формат
+                                            <div class="icon-down"></div>
                                         </div>
                                         <div class="tree" v-if="brand">
-                                            <input class="tree-search-input mb-0" type="text"
-                                                   placeholder="Поиск категории"/>
-
-                                        </div>
-                                    </div>
-                                    <div class="p-4 bb-1">
-                                        <div class="h4 mb-0 d-flex align-items-center justify-content-between">Бренд
-                                            <div class="icon-down" @click="brand=!brand"></div>
-                                        </div>
-                                        <div class="tree" v-if="brand">
-                                            <input class="tree-search-input mb-0" type="text"
-                                                   placeholder="Поиск категории"/>
+                                            <div class="custom-control custom-checkbox mt-4">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                                <label class="custom-control-label" for="customCheck3">Текст</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mt-2">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck4">
+                                                <label class="custom-control-label" for="customCheck4">Видео</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mt-2">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck5">
+                                                <label class="custom-control-label" for="customCheck5">Фото</label>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -79,6 +104,27 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-12">
+                            <div class="h1 mb-4">Самое обсуждаемое</div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <post-half-img :post="review[3]"></post-half-img>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <post-text-short :post="review[0]"></post-text-short>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <post-text-short :post="review[2]"></post-text-short>
+                                </div>
+                            </div>
+
+
+                        </div>
+
 
                     </div>
                 </div>
@@ -93,16 +139,20 @@
     // @ is an alias to /src
 
     import postLarge from '@/components/post-block/post-large.vue'
+    import postTextShort from '@/components/post-block/post-text-short.vue'
+    import postHalfImg from '@/components/post-block/post-half-img.vue'
 
     export default {
         name: 'review',
         components: {
-
+            postTextShort,
+            postHalfImg,
             postLarge
         },
         data: function () {
             return {
                 category: true,
+                thame: false,
                 brand: false,
                 review: [],
                 error: [],
@@ -177,6 +227,10 @@
 
             search() {
                 this.$refs.tree.searchNodes(this.searchword)
+            },
+            selectedNodes() {
+                this.initSelected = this.$refs.tree.getCheckedNodes()
+
             }
         },
         created() {

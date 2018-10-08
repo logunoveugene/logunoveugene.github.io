@@ -106,7 +106,7 @@ h4, .h4 {
 
 
 .layout--bg-grey {
-    background-color: #f6f6f6;
+    background-color: #f6f6f6!important;
 }
 
 .layout--bg-blue {
@@ -637,3 +637,38 @@ a.bottom-menu__item{
 }
 
 
+
+.custom-control-label::before{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #c3c3c3;
+    background: #fff;
+    border-radius: 4px;
+    top: 4px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+
+.custom-control-label:checked::after{
+    content: " ";
+    width: 18px;
+    height: 6px;
+    border: 2px solid #ffffff;
+    border-left: none;
+    border-top: none;
+    position: absolute;
+    top: 0;
+    left: 2px;
+    transform: scaleX(-1) rotate(50deg) translateY(0) translateX(0);
+}
+
+
+
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+    background: #ff8700;
+    border: none;
+}

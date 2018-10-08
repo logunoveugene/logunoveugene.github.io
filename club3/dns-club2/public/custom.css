@@ -1,5 +1,4 @@
 
-
 .fade-enter-active, .fade-leave-active {
     transition: opacity .2s
 }
@@ -8,7 +7,7 @@
     opacity: 0
 }
 
-.tree-search-input{
+.tree-search-input {
     width: 100%;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -65,6 +64,8 @@
     text-align: center;
     font-size: 14px;
     line-height: 14px;
+    position: absolute;
+    left: 20px;
 }
 
 .halo-tree .inputCheck.notAllNodes:before {
@@ -107,7 +108,7 @@
     top: 3px;
     left: 3px;
 
-    transform: scaleX(-1)  translateY(0) translateX(0);
+    transform: scaleX(-1) translateY(0) translateX(0);
 }
 
 .halo-tree .check {
@@ -134,7 +135,7 @@
 
 .halo-tree li {
     margin: 0;
-    padding: 7px 5px 7px 0px;
+    padding: 5px 5px 5px 0px;
     position: relative;
     list-style: none
 }
@@ -187,8 +188,8 @@
 }
 
 .halo-tree ul {
-    padding-left: 28px;
-    padding-top: 10px!important;
+    padding-left: 10px;
+    padding-top: 10px !important;
 }
 
 .halo-tree .tree-expand {
@@ -200,9 +201,9 @@
     border-radius: 2px;
     background: #fff;
     font-style: normal;
-
-    right: 0;
-    top: 7px;
+    position: absolute;
+    left: 0;
+    top: 0;
     opacity: .2;
     font-family: "mydns" !important;
 }
@@ -274,11 +275,11 @@
     padding: 3px;
     border-radius: 3px;
     cursor: pointer;
-    margin: 0 2px
+    margin: 0 2px;
+    margin-left: 40px;
+    display: block;
+
 }
-
-
-
 
 svg[data-v-e7743bdc] {
     height: 14px;
@@ -659,7 +660,7 @@ circle[data-v-e7743bdc]:nth-child(12n+12) {
     transform: translateY(-10px)
 }
 
-.box-checked.inputCheck{
+.box-checked.inputCheck {
     background: #ff8700;
     border: none;
 }
