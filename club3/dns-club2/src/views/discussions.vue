@@ -1,0 +1,261 @@
+<template>
+    <div class="about">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="small mb-2">Клуб / Обсуждения</div>
+                    <h1 class="page__title">Обсуждения</h1>
+
+                </div>
+                <div class="col-12 col-md-12 col-lg-8">
+                    <div class="d-flex justify-content-between mb-5 align-items-center ">
+                        <nav class="nav nav-pills nav-justified ">
+                            <a class="pill-item link pill-item--active " href="#">Свежее</a>
+                            <a class="pill-item link" href="#">Популярное</a>
+                            <a class="pill-item link" href="#">Лучшее</a>
+                        </nav>
+                        <!--<div class="">за сегодня</div>-->
+
+                    </div>
+
+
+                    <div class="discussions">
+                        <div class="discussions__item" v-for="(discussion, index) in discussions">
+                            <div class="d-flex">
+                                <div class="discussions__img-wrap">
+                                    <img :src="discussion.img" alt="" class="discussions__img">
+                                </div>
+                                <div class="discussions__info">
+                                    <div class="discussions__ small mb-2">Автор:
+                                        <a class="link link--color-blue mr-2"
+                                           href="#">{{discussion.autor}}</a>
+                                        {{discussion.date | fdate}}
+                                    </div>
+                                    <div class="discussions__title h2">
+                                        <a href="#" class="link link--color-black">{{discussion.title}}</a>
+                                    </div>
+
+                                    <div class="discussions__source small mb-2 d-flex align-items-center">
+                                        <!--<div class="discussions__source-icon-wrap">-->
+                                        <!--<div class="icon-dots-hor"></div>-->
+                                        <!--</div>-->
+
+
+                                        <a href="#" class="link link--color-grey">{{discussion.source}}</a>
+                                    </div>
+                                    <div class="discussions__teaser small mb-3">{{discussion.teaser}}</div>
+                                    <div class="d-flex flex-wrap align-items-center">
+                                        <post-info class="mr-3 mb-3"
+                                                   :like="discussion.like"
+                                                   :comment="discussion.comment"
+                                                   :view="discussion.view"
+                                                   :lastactivity="discussion.lastactivity"
+                                        ></post-info>
+                                        <a href="#" class="link link--color-blue small mb-3"> Ответить</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-12 order-2 order-lg-1">
+                            <div class="card-block mb-4">
+                                <div class="">
+                                    <div class="p-4 bb-1">
+                                        <div class="h4 mb-0 d-flex align-items-center justify-content-between">Тема
+                                            <div class="icon-down" @click="category=!category"></div>
+                                        </div>
+                                        <div class="tree" v-if="category">
+                                            <input class="tree-search-input" type="text" v-model.lazy="searchword"
+                                                   placeholder="Поиск категории"/>
+                                            <!--<button class=" tree-search-btn" type="button" @click="search">GO</button>-->
+                                            <v-tree ref='tree' :data='treeData1' :multiple="true" :halfcheck='true'/>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 bb-1">
+                                        <div class="h4 mb-0 d-flex align-items-center justify-content-between">Бренд
+                                            <div class="icon-down" @click="brand=!brand"></div>
+                                        </div>
+                                        <div class="tree" v-if="brand">
+                                            <input class="tree-search-input mb-0" type="text"
+                                                   placeholder="Поиск категории"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="p-4 bb-1">
+                                        <div class="h4 mb-0 d-flex align-items-center justify-content-between">Тип
+                                            вопроса
+                                            <div class="icon-down" @click="brand=!brand"></div>
+                                        </div>
+                                        <div class="tree" v-if="brand">
+                                            <input class="tree-search-input mb-0" type="text"
+                                                   placeholder="Поиск категории"/>
+
+                                        </div>
+                                    </div>
+                                    <div class="p-4 bb-1">
+                                        <div class="h4 mb-0 d-flex align-items-center justify-content-between">Бренд
+                                            <div class="icon-down" @click="brand=!brand"></div>
+                                        </div>
+                                        <div class="tree" v-if="brand">
+                                            <input class="tree-search-input mb-0" type="text"
+                                                   placeholder="Поиск категории"/>
+
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</template>
+<script>
+    // @ is an alias to /src
+    import postInfo from '@/components/post-block/parts/post-info.vue'
+
+
+    export default {
+        name: 'discussions',
+        components: {
+            postInfo
+        },
+        data: function () {
+            return {
+                category: true,
+                brand: false,
+                discussions: [],
+                topusers: [],
+                userslevel: [],
+                surveys: [],
+                error: [],
+                searchword: '',
+                initSelected: [],
+                treeData1: [
+                    {
+                        title: 'Компьютеры, игры, комплектующие',
+                        expanded: false,
+                        children: [{
+                            title: 'Ноутбуки и планшеты',
+                            expanded: false
+
+                        },
+                            {
+                                title: 'Компьютеры и периферия',
+                                expanded: false
+
+                            }, {
+                                title: 'Комплектующие для ПК',
+                                expanded: false
+
+                            }]
+                    }, {
+                        title: 'Цифровая техника',
+                        expanded: false,
+                        children: [{
+                            title: 'node 1-1',
+                            expanded: false
+
+                        }]
+                    }, {
+                        title: 'Бытовая техника',
+                        expanded: false,
+                        children: [{
+                            title: 'node 1-1',
+                            expanded: false
+
+                        }]
+                    }, {
+                        title: 'Красота и здоровье',
+                        expanded: false,
+                        children: [{
+                            title: 'node 1-1',
+                            expanded: false
+
+                        }]
+                    }, {
+                        title: 'Автотовары',
+                        expanded: false,
+                        children: [{
+                            title: 'node 1-1',
+                            expanded: false
+
+                        }]
+                    }, {
+                        title: 'Компьютеры, игры, комплектующие',
+                        expanded: false,
+                        children: [{
+                            title: 'node 1-1',
+                            expanded: false
+
+                        }]
+                    },
+
+
+                ],
+            }
+        },
+        methods: {
+
+
+            search() {
+                this.$refs.tree.searchNodes(this.searchword)
+            }
+        },
+        created() {
+            this.axios.get('https://club-route.firebaseio.com/discussions.json')
+                .then(response => {
+                    this.discussions = response.data
+                })
+                .catch(e => {
+                    this.error.push(e)
+                })
+            this.axios.get('https://club-route.firebaseio.com/top-users.json')
+                .then(response => {
+                    this.topusers = response.data
+                })
+                .catch(e => {
+                    this.error.push(e)
+                })
+            this.axios.get('https://club-route.firebaseio.com/users-level.json')
+                .then(response => {
+                    this.userslevel = response.data
+                })
+                .catch(e => {
+                    this.error.push(e)
+                })
+            this.axios.get('https://club-route.firebaseio.com/survey.json')
+                .then(response => {
+                    this.surveys = response.data
+                })
+                .catch(e => {
+                    this.error.push(e)
+                })
+        }
+
+    }
+</script>
+<style>
+
+    .discussions__source-icon-wrap {
+        border: 1px solid #eee;
+        width: 22px;
+        border-radius: 4px;
+        height: 22px;
+        margin-right: 9px;
+        padding: 2px 0 0 3px;
+        color: #999;
+    }
+</style>
