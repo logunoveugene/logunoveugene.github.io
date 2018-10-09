@@ -12,19 +12,19 @@
 
                     <ul class="nav nav--vertical ">
                         <li class="nav__link nav__link--vertical">
-                            <a href="#" class="link link--color-grey"><span class="">Samsung</span><span
+                            <a href="#" class="link link--color-grey"><span class="">Смартфоны</span><span
                                     class="text-black-50 ml-1">15</span> </a>
                         </li>
                         <li class="nav__link nav__link--vertical">
-                            <a href="#" class="link link--color-grey"><span class="">Apple</span> <span
+                            <a href="#" class="link link--color-grey"><span class="">Ноутбуки</span> <span
                                     class="text-black-50 ml-1">48</span> </a>
                         </li>
                         <li class="nav__link nav__link--vertical">
-                            <a href="#" class="link link--color-grey"><span class="">Asus</span> <span
+                            <a href="#" class="link link--color-grey"><span class="">Процессоры</span> <span
                                     class="text-black-50 ml-1">12</span> </a>
                         </li>
                         <li class="nav__link nav__link--vertical">
-                            <a href="#" class="link link--color-grey"><span class="">Xiaomi</span> <span
+                            <a href="#" class="link link--color-grey"><span class="">Видеокарты</span> <span
                                     class="text-black-50 ml-1">36</span> </a>
                         </li>
                         <!--<li class="nav__link nav__link&#45;&#45;vertical">-->

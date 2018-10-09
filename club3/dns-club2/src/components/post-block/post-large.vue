@@ -1,7 +1,7 @@
 <template>
     <div class="post">
         <div class="post-large">
-            <div class="post-large__title  mb-3 h1">
+            <div class="post-large__title  mb-3">
                 <a href="#" class="link link--color-black">{{post.title}}</a>
             </div>
             <div class="d-flex align-items-center justify-content-between mb-2">
@@ -9,9 +9,9 @@
                     Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
                 </div>
                 <post-tag class="d-none   "
-                        :source="post.source"
-                        :format="post.format"
-                        :tags="post.tags"
+                          :source="post.source"
+                          :format="post.format"
+                          :tags="post.tags"
                 ></post-tag>
             </div>
             <div class="mb-3">{{post.teaser}}</div>
@@ -112,6 +112,21 @@
     .post-large__img {
         width: 100%;
         height: auto;
+    }
+
+    .post-large__title {
+        font-size: 1.125rem;
+        line-height: 1.3;
+        font-weight: 700;
+
+    }
+
+    @media (min-width: 768px) {
+        .post-large__title {
+            font-size: 1.5rem;
+            line-height: 1.3;
+            font-weight: 700;
+        }
     }
 
     /*@media (max-width: 768px){

@@ -6,9 +6,14 @@
                 <input class="w-100" type="text" placeholder="Введите заголовок">
             </div>
             <div class="col-12 col-md-12 col-lg-8">
-                <medium-editor :text='text' :options='options' v-on:edit='processEditOperation' custom-tag='div'>
-                </medium-editor>
-                <div v-html="text"></div>
+                <quill-editor v-model="content"
+                              ref="myQuillEditor"
+                              :options="editorOption"
+                              @blur="onEditorBlur($event)"
+                              @focus="onEditorFocus($event)"
+                              @ready="onEditorReady($event)">
+                </quill-editor>
+                <div v-html="content"></div>
 
             </div>
             <div class="col-12 col-lg-4">
@@ -20,12 +25,24 @@
                 </div>
             </div>
 
+            <transition name="drawer-fade">
+                <div v-if="isDrawer" class="drawer">
+                    <div class="w-100 text-right">
+                        <button class="btn" v-on:click="isDrawer = !isDrawer">X</button>
+                    </div>
+
+                </div>
+
+            </transition>
+
         </div>
     </div>
 </template>
 
 <script>
-    import editor from 'vue2-medium-editor'
+
+
+    import { quillEditor } from 'vue-quill-editor'
 
     var options = {
         toolbar: {buttons: ['bold', 'strikethrough', 'h1']},
@@ -44,18 +61,51 @@
 
         name: 'newpost',
         components: {
-            'medium-editor': editor
+            quillEditor
         },
         data: function () {
             return {
-                text: text,
-                options: options
+                content: ' ',
+
+                editorOption: {
+                    theme: 'bubble',
+                    placeholder: "Начните писать вашу статью",
+                    modules: {
+                        toolbar: [
+                            ['bold', 'italic'],
+                            ['blockquote'],
+                            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                            [{ 'header': '1'},{ 'header': '2'},],
+                            ['link'],
+
+                        ]
+                    }
+
+                }
             }
         },
         methods: {
-            processEditOperation: function (operation) {
-                this.text = operation.api.origElements.innerHTML
+            onEditorBlur(quill) {
+                console.log('editor blur!', quill)
+            },
+            onEditorFocus(quill) {
+                console.log('editor focus!', quill)
+            },
+            onEditorReady(quill) {
+                console.log('editor ready!', quill)
+            },
+            onEditorChange({ quill, html, text }) {
+                console.log('editor change!', quill, html, text)
+                this.content = html
             }
+        },
+        computed: {
+            editor() {
+                return this.$refs.myQuillEditor.quill
+            }
+        },
+        mounted() {
+            console.log('this is current quill instance object', this.editor)
         }
 
     }

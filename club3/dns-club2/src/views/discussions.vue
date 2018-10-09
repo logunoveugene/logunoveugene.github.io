@@ -10,8 +10,8 @@
 
 
                 <div class="col-12 col-md-12 col-lg-8">
-                    <div class=" pb-3 mb-4">
-                        <div class=" card-block layout--bg-grey  p-4">
+                    <div class=" d-none d-lg-block mb-4">
+                        <div class=" card-block layout--bg-grey  p-4 ">
                             <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
                                 <div class="d-flex flex-column mb-3 mb-md-0">
                                     <div class="h2 mb-0">Нужна помощь?</div>
@@ -28,13 +28,21 @@
 
                         </div>
                     </div>
-                    <div class=" d-flex   justify-content-between mb-5 align-items-center ">
-                        <nav class="nav nav-pills nav-justified ">
+                    <div class="d-flex  d-block d-lg-none ">
+                        <div class="mr-3 w-100">
+                            <div class="btn btn--color-white mb-4 w-100" @click="show">Поиск вопроса</div>
+                        </div>
+                        <div class="mr-0">
+                            <div class="btn btn--color-white ">Задать вопрос</div>
+                        </div>
+                    </div>
+                    <div class="d-flex  justify-content-between mb-4 align-items-center small">
+                        <nav class="nav nav-pills nav-justified">
                             <a class="pill-item link pill-item--active " href="#">Свежее</a>
                             <a class="pill-item link" href="#">Популярное</a>
                             <a class="pill-item link" href="#">Лучшее</a>
                         </nav>
-                        <div class="d-none d-md-flex ">за сегодня
+                        <div class="d-none d-md-flex  ">за сегодня
                             <div class="small pt-1 ml-1 text-secondary">
                                 <div class="icon-down"></div>
                             </div>
@@ -133,6 +141,53 @@
             </div>
         </div>
 
+        <modal name="hello-world" :adaptive="true" width="100%" height="auto" scrollable="true">
+            <div class="layout--bg-grey p-3 d-flex align-items-center justify-content-between ">
+                <div class="h2 mb-0">Заголовок</div>
+                <div class="" @click="hide">
+                    <div class="h1 mb-0 icon-close"></div>
+                </div>
+            </div>
+            <div class="">
+                <div class="p-4 bb-1">
+                    <div class="h4 mb-0 d-flex align-items-center justify-content-between">Тема
+                        <div class="icon-down" @click="category=!category"></div>
+                    </div>
+                    <div class="tree" v-if="category">
+                        <input class="tree-search-input" type="text" v-model.lazy="searchword"
+                               placeholder="Поиск категории"/>
+                        <!--<button class=" tree-search-btn" type="button" @click="search">GO</button>-->
+                        <v-tree ref='tree' :data='treeData1' :multiple="true" :halfcheck='true'/>
+                    </div>
+                </div>
+                <div class="p-4 bb-1">
+                    <div class="h4 mb-0 d-flex align-items-center justify-content-between">Товары и
+                        бренды
+                        <div class="icon-down" @click="brand=!brand"></div>
+                    </div>
+                    <div class="tree" v-if="brand">
+                        <input class="tree-search-input mb-0" type="text"
+                               placeholder="Упоминание товара"/>
+                        <input class="tree-search-input mb-0" type="text"
+                               placeholder="Упоминание бренда"/>
+
+                    </div>
+                </div>
+                <div class="p-4">
+                    <div class="h4 mb-0 d-flex align-items-center justify-content-between">Тип
+                        вопроса
+                        <div class="icon-down" @click="posttype=!posttype"></div>
+                    </div>
+                    <div class="tree" v-if="posttype">
+
+
+                    </div>
+                </div>
+
+
+            </div>
+        </modal>
+
 
     </div>
 </template>
@@ -223,8 +278,12 @@
             }
         },
         methods: {
-
-
+            show() {
+                this.$modal.show('hello-world');
+            },
+            hide() {
+                this.$modal.hide('hello-world');
+            },
             search() {
                 this.$refs.tree.searchNodes(this.searchword)
             }

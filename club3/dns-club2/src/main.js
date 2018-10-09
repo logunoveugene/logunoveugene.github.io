@@ -9,7 +9,12 @@ import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
 
 
+import VModal from 'vue-js-modal'
+
+Vue.use(VModal)
+
 import VTree from 'vue-tree-halower'
+
 Vue.use(VTree)
 
 

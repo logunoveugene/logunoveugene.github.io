@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <div class="header__top-line d-none d-lg-block">
+        <div class="header__top-line d-none d-lg-block main-layout"  :class="live">
             <div class="header__container container">
                 <div class="header__top-grid row">
                     <div class="header__top-block col-8 col-lg-8">
