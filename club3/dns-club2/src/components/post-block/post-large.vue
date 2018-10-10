@@ -2,7 +2,9 @@
     <div class="post">
         <div class="post-large">
             <div class="post-large__title  mb-3">
-                <a href="#" class="link link--color-black">{{post.title}}</a>
+                <router-link :to="{ name: 'post', params: { id: post.title }}">
+                    <a href="#" class="link link--color-black">{{post.title}}</a>
+                </router-link>
             </div>
             <div class="d-flex align-items-center justify-content-between mb-2">
                 <div class="small mb-2 ">
