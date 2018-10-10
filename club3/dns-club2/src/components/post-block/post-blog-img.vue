@@ -5,7 +5,8 @@
              v-bind:style="{  backgroundColor: post.bgColor}">
             <div class="post-blog-img__img-wrap">
                 <img :src="post.img" class="post-blog-img__img" alt="">
-                <div v-bind:style="{ boxShadow: '0px -120px 120px -60px inset ' +  post.bgColor}" class="post-blog-img__img-shadow"></div>
+                <div v-bind:style="{ boxShadow: '0px -120px 120px -60px inset ' +  post.bgColor}"
+                     class="post-blog-img__img-shadow"></div>
 
             </div>
             <div class="post-blog-img__info-wrap">
@@ -17,9 +18,11 @@
                 ></post-tag>
 
                 <div class="post-blog-img__title mb-3 h2">
-                    <a href="#"
-                       v-bind:style="{ color: post.textColor }"
-                       class="link link--color-black">{{post.title}}</a>
+                    <router-link v-bind:style="{ color: post.textColor }"
+                                 class="link link--color-black"
+                                 :to="{ name: 'post', params: { id: post.id }}">
+                        {{post.title}}
+                    </router-link>
                 </div>
 
                 <div class="small mb-3" v-bind:style="{ color: post.textColor }">
@@ -100,7 +103,8 @@
         background-size: contain;
 
     }
-    .post-blog-img__img-wrap{
+
+    .post-blog-img__img-wrap {
         position: relative;
     }
 
@@ -108,7 +112,7 @@
         width: 100%;
     }
 
-    .post-blog-img__img-shadow{
+    .post-blog-img__img-shadow {
         position: absolute;
         width: 100%;
         height: 100%;

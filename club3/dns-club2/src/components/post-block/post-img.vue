@@ -1,7 +1,8 @@
 <template>
     <div class="post">
         <div class="post-image">
-            <div class="post-image__image-wrap" v-bind:style="{  backgroundColor: post.bgColor, backgroundImage: 'url(' +  post.img + ')'}">
+            <div class="post-image__image-wrap"
+                 v-bind:style="{  backgroundColor: post.bgColor, backgroundImage: 'url(' +  post.img + ')'}">
                 <div class="post-image__gradient-wrap"
                      v-bind:style="{ boxShadow: 'inset 0px 220px 100px -60px ' +  post.bgColor}">
                     <div class="post-image__info">
@@ -24,10 +25,15 @@
 
 
                         <div class="post__title  mb-3 h2" v-bind:style="{ color: post.textColor }">
-                            <a href="#" v-bind:style="{ color: post.textColor }" class="link link--color-black">{{post.title}}</a>
+                            <router-link class="link link--color-black"
+                                         v-bind:style="{ color: post.textColor }"
+                                         :to="{ name: 'post', params: { id: post.id }}">
+                                {{post.title}}
+                            </router-link>
                         </div>
                         <div class="small mb-3">
-                            Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
+                            Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date |
+                            fdate}}
                         </div>
                         <div class="mt-auto">
                             <post-info

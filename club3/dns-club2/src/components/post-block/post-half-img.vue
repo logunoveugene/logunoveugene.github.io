@@ -1,7 +1,8 @@
 <template>
     <div class="post">
-        <div class="post-half" >
-            <div class="post-half__image-wrap" v-bind:style="{ backgroundColor: post.bgColor,  backgroundImage: 'url(' +  post.img + ')'}" >
+        <div class="post-half">
+            <div class="post-half__image-wrap"
+                 v-bind:style="{ backgroundColor: post.bgColor,  backgroundImage: 'url(' +  post.img + ')'}">
                 <div class="post-half__fotmat-icon-wrap" v-bind:style="{ color: post.textColor}">
 
                     <div class="post-half__fotmat-icon" v-if="post.format=='Видео'">
@@ -19,7 +20,11 @@
                     :tags="post.tags"
             ></post-tag>
 
-            <div class="post-half__title  mb-3 h2"><a href="#" class="link link--color-black">{{post.title}}</a></div>
+            <div class="post-half__title  mb-3 h2">
+                <router-link class="link link--color-black" :to="{ name: 'post', params: { id: post.id }}">
+                    {{post.title}}
+                </router-link>
+            </div>
             <div class="small mb-3">
                 Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
             </div>
@@ -67,10 +72,8 @@
             }
         },
 
-        data: function() {
-            return {
-
-            }
+        data: function () {
+            return {}
         }
 
 
@@ -78,7 +81,7 @@
 </script>
 
 <style>
-    .post-half__image-wrap{
+    .post-half__image-wrap {
         overflow: hidden;
         border-radius: .5rem;
         margin-bottom: 1rem;
@@ -86,7 +89,7 @@
         max-width: 100%;
         height: auto;
         min-height: 170px;
-        background-position: center  center;
+        background-position: center center;
         background-repeat: no-repeat;
         background-size: cover;
     }
@@ -97,15 +100,14 @@
     }
     }*/
 
-    .post-half__fotmat-icon{
+    .post-half__fotmat-icon {
 
         display: inline-block;
         font-size: 23px;
         margin-right: 12px;
     }
 
-
-    .post-half__fotmat-icon-wrap{
+    .post-half__fotmat-icon-wrap {
         padding: 1.5rem 0 0 1.5rem;
 
     }

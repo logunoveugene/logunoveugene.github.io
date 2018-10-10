@@ -1,5 +1,5 @@
 <template>
-    <div class="post" >
+    <div class="post">
         <div class="post-text">
             <post-tag
                     :source="post.source"
@@ -7,11 +7,14 @@
                     :tags="post.tags"
             ></post-tag>
 
-            <div class="post-text__title mb-3 h2"><a href="#" class="link link--color-black">{{post.title}}</a></div>
+            <div class="post-text__title mb-3 h2">
+                <router-link class="link link--color-black" :to="{ name: 'post', params: { id: post.id }}">
+                    {{post.title}}
+                </router-link>
+            </div>
             <div class="small mb-3">
                 Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
             </div>
-
 
 
             <post-info
@@ -58,10 +61,8 @@
             }
         },
 
-        data: function() {
-            return {
-
-            }
+        data: function () {
+            return {}
         }
 
 
@@ -69,7 +70,6 @@
 </script>
 
 <style>
-
 
 
 </style>

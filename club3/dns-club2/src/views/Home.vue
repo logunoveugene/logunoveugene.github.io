@@ -81,12 +81,12 @@
 
                                 </div>
                                 <div class="blog__item">
-                                    <post-blog-text :post="review[0]"></post-blog-text>
+                                    <post-blog-text :post="digest[0]"></post-blog-text>
                                 </div>
                             </div>
                             <div class="col-12 col-md-6 col-lg-6">
                                 <div class="blog__item">
-                                    <post-blog-text :post="review[3]"></post-blog-text>
+                                    <post-blog-text :post="digest[3]"></post-blog-text>
                                 </div>
                                 <div class="blog__item">
                                     <post-blog-img :post="digest[1]"></post-blog-img>
@@ -100,7 +100,7 @@
 
                     <div class="col-12 col-md-12 col-lg-4">
                         <div class="blog__item">
-                            <post-blog-text :post="review[4]"></post-blog-text>
+                            <post-blog-text :post="digest[4]"></post-blog-text>
                         </div>
                         <div class="blog__item">
                             <post-blog-img :post="digest[3]"></post-blog-img>

@@ -12,8 +12,11 @@
                 ></post-tag>
 
                 <div class="post-lock__title">
-                    <a v-bind:style="{ color: post.textColor }" href="#"
-                       class="link link--color-black">{{post.title}}</a>
+                    <router-link class="link link--color-black"
+                                 v-bind:style="{ color: post.textColor }"
+                                 :to="{ name: 'post', params: { id: post.id }}">
+                        {{post.title}}
+                    </router-link>
                 </div>
                 <div class="small mb-3" v-bind:style="{ color: post.textColor }">
                     Автор: <a v-bind:style="{ color: post.textColor }" class="link link--color-blue mr-2" href="#">{{post.autor}}</a>

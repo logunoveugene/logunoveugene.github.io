@@ -5,8 +5,10 @@
                       :format="post.format"
                       :tags="post.tags"
             ></post-tag>
-
-            <div class="post-blog-text__title  mb-3 h2"><a href="#" class="link link--color-black">{{post.title}}</a>
+            <div class="post-blog-text__title  mb-3 h2">
+                <router-link class="link link--color-black" :to="{ name: 'post', params: { id: post.like }}">
+                    {{post.title}}
+                </router-link>
             </div>
             <div class="small mb-3">
                 Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
@@ -31,7 +33,6 @@
     import postTeaser from './parts/post-teaser.vue'
 
 
-
     export default {
 
 
@@ -52,6 +53,7 @@
                         comment: "",
                         date: "",
                         format: "",
+                        id: 5,
                         img: "",
                         isLocked: "",
                         like: "",
