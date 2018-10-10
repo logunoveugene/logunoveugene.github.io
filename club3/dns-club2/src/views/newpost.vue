@@ -24,15 +24,7 @@
                 </div>
             </div>
 
-            <transition name="drawer-fade">
-                <div v-if="isDrawer" class="drawer">
-                    <div class="w-100 text-right">
-                        <button class="btn" v-on:click="isDrawer = !isDrawer">X</button>
-                    </div>
 
-                </div>
-
-            </transition>
 
         </div>
     </div>
@@ -51,16 +43,20 @@
         data() {
             return {
                 name: 'register-modules-example',
-                content: `<p><img src="https://avatars.mds.yandex.net/get-ott/224348/2a000001656ce2519c59c0fb13d2b37e28da/150x225" width="500"></p>
-                  <br>
-                  <p><strong><em>Or drag/paste an image here.</em></strong></p>`,
+                content: '',
                 editorOption: {
+
+                    theme: 'bubble',
+                    placeholder: "Начните писать вашу статью",
                     modules: {
                         toolbar: [
-                            [{ 'size': ['small', false, 'large'] }],
+
                             ['bold', 'italic'],
+                            ['blockquote'],
                             [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-                            ['link', 'image']
+                            [{ 'header': '1'},{ 'header': '2'},],
+                            ['link'],
+                            ['image']
                         ],
                         history: {
                             delay: 1000,
@@ -80,14 +76,7 @@
                 }
             }
         },
-        mounted() {
-            this.content = `<p><strong><em>Click on the Image Below to resize!</em></strong></p><br>` + this.content
-        },
-        computed: {
-            contentCode() {
-                return hljs.highlightAuto(this.content).value
-            },
-        },
+
         methods: {
             onEditorBlur(editor) {
                 // console.log('editor blur!', editor)
