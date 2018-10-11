@@ -17,6 +17,8 @@ import VTree from 'vue-tree-halower'
 
 Vue.use(VTree)
 
+import rate from 'vue-rate';
+Vue.use(rate)
 
 
 import 'quill/dist/quill.core.css'
@@ -25,6 +27,13 @@ import 'quill/dist/quill.bubble.css'
 import VueQuillEditor from 'vue-quill-editor'
 Vue.use(VueQuillEditor )
 
+
+
+
+
+import CommentGrid from 'vue-comment-grid'
+
+Vue.use(CommentGrid)
 
 Vue.config.productionTip = false
 

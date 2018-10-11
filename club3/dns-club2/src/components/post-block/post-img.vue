@@ -31,8 +31,8 @@
                                 {{post.title}}
                             </router-link>
                         </div>
-                        <div class="small mb-3">
-                            Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date |
+                        <div class="small mb-3" v-bind:style="{ color: post.textColor }">
+                            Автор: <a v-bind:style="{ color: post.textColor }" class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date |
                             fdate}}
                         </div>
                         <div class="mt-auto">

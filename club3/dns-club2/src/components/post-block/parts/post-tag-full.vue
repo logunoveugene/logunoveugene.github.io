@@ -7,8 +7,8 @@
 			<a href="#" class="link link--color-grey" v-bind:style="{ color: color }">{{source}}</a>
 		</div>
 		
-		<div class="post__tag-item">
-			<a href="#" class="link link--color-grey" v-bind:style="{ color: color }">{{tags[0]}}</a>
+		<div class="post__tag-item" v-for="(tag,index) in tags" :key="index">
+			<a href="#" class="link link--color-grey" v-bind:style="{ color: color }">{{tag}}</a>
 		</div>
 	</div>
 </template>

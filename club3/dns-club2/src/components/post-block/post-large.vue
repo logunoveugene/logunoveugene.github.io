@@ -3,41 +3,25 @@
         <div class="post-large">
             <div class="post-large__title  mb-3">
                 <router-link class="link link--color-black" :to="{ name: 'post', params: { id: post.id }}">
-                   {{post.title}}
+                    {{post.title}}
                 </router-link>
             </div>
-            <div class="d-flex align-items-center justify-content-between mb-2">
+            <div class="d-flex align-items-start align-items-md-center flex-column flex-md-row justify-content-between mb-2">
                 <div class="small mb-2 ">
                     Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
                 </div>
-                <post-tag class="d-none   "
-                          :source="post.source"
-                          :format="post.format"
-                          :tags="post.tags"
-                ></post-tag>
+                <post-tag-full class="   "
+                               :source="post.source"
+                               :format="post.format"
+                               :tags="post.tags"
+                ></post-tag-full>
             </div>
             <div class="mb-3">{{post.teaser}}</div>
 
             <div class="post-large__img-wrap">
                 <img :src="post.img" alt="" class="post-large__img">
             </div>
-            <!--<div class="post-large__image-wrap"-->
-            <!--v-bind:style="{ backgroundColor: post.bgColor,  backgroundImage: 'url(' +  post.img + ')'}">-->
-            <!--<div class="post-large__fotmat-icon-wrap" v-bind:style="{ color: post.textColor}">-->
-
-            <!--<div class="post-large__fotmat-icon" v-if="post.format=='Видео'">-->
-            <!--<div class="icon-video"></div>-->
-            <!--</div>-->
-            <!--<div class="post-large__fotmat-icon" v-if="post.format=='Фото'">-->
-            <!--<div class="icon-photo"></div>-->
-            <!--</div>-->
-            <!--</div>-->
-
-            <!--</div>-->
-
-
             <post-info
-
                     :like="post.like"
                     :comment="post.comment"
                     :view="post.view"
@@ -49,13 +33,13 @@
 
 <script>
     import postInfo from './parts/post-info.vue'
-    import postTag from './parts/post-tag.vue'
+    import postTagFull from './parts/post-tag-full.vue'
     import postTeaser from './parts/post-teaser.vue'
 
     export default {
         components: {
             postInfo,
-            postTag,
+            postTagFull,
             postTeaser
         },
         props: {

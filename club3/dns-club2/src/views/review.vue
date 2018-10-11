@@ -4,7 +4,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="small mb-2">Клуб / Обзоры</div>
+                    <div class="small mb-3">
+                        <router-link class="link link--color-black"  to="/">Клуб</router-link>
+                        /
+                        <snap class="text-muted">Обзоры</snap>
+
+                    </div>
                     <h1 v-if="initSelected.length==0 || initSelected.length>1 " class="page__title">Обзоры</h1>
                     <h1 v-if="initSelected.length==1" class="page__title">{{initSelected[0].title}}</h1>
 

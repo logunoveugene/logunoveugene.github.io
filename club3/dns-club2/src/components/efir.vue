@@ -1,8 +1,8 @@
 <template>
     <div class="live" v-if="live == 'showlive'">
         <div class="bg-light p-2">
-            <div class="d-flex small" v-on:click="$emit('liveoff')">
-                <a href="#" class="link link--color-grey">Скрыть</a>
+            <div class="d-flex small link link--color-grey" v-on:click="$emit('liveoff')">
+               Скрыть
             </div>
         </div>
         <div class="d-flex flex-row align-items-center p-3">

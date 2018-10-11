@@ -1,6 +1,6 @@
 <template>
     <div class="header">
-        <div class="header__top-line d-none d-lg-block main-layout"  :class="live">
+        <div class="header__top-line d-none d-lg-block main-layout" :class="live">
             <div class="header__container container">
                 <div class="header__top-grid row">
                     <div class="header__top-block col-8 col-lg-8">
@@ -56,11 +56,15 @@
                                 </router-link>
 
                                 <div class="header__main-nav d-none d-lg-flex">
-                                    <a href="#" class="link link--color-grey">Дайджест</a>
+                                    <router-link to="/review">
+                                        <a href="#" class="link link--color-grey">Дайджест</a>
+                                    </router-link>
                                     <router-link to="/review">
                                         <a href="#" class="link link--color-grey">Обзоры</a>
                                     </router-link>
-                                    <a href="#" class="link link--color-grey">Лайфхаки</a>
+                                    <router-link to="/review">
+                                        <a href="#" class="link link--color-grey">Лайфхаки</a>
+                                    </router-link>
                                     <router-link to="/discussions">
                                         <a href="#" class="link link--color-grey ">Обсуждения</a>
                                     </router-link>
