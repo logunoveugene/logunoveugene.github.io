@@ -21,12 +21,16 @@ import rate from 'vue-rate';
 Vue.use(rate)
 
 
-import 'quill/dist/quill.core.css'
-import 'quill/dist/quill.snow.css'
-import 'quill/dist/quill.bubble.css'
-import VueQuillEditor from 'vue-quill-editor'
-Vue.use(VueQuillEditor )
+require('froala-editor/js/froala_editor.pkgd.min')
 
+// Require Froala Editor css files.
+require('froala-editor/css/froala_editor.pkgd.min.css')
+require('font-awesome/css/font-awesome.css')
+require('froala-editor/css/froala_style.min.css')
+
+// Import and use Vue Froala lib.
+import VueFroala from 'vue-froala-wysiwyg'
+Vue.use(VueFroala)
 
 
 

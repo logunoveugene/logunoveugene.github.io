@@ -6,13 +6,8 @@
                 <input class="w-100" type="text" placeholder="Введите заголовок">
             </div>
             <div class="col-12 col-md-12 col-lg-8">
-                <quill-editor v-model="content"
-                              :options="editorOption"
-                              @blur="onEditorBlur($event)"
-                              @focus="onEditorFocus($event)"
-                              @ready="onEditorReady($event)">
-                </quill-editor>
-                <div v-html="content"></div>
+                <froala :tag="'textarea'" :config="config" v-model="model"></froala>
+                <div v-html="model"></div>
 
             </div>
             <div class="col-12 col-lg-4">
@@ -33,47 +28,22 @@
 <script>
 
 
-    import VueQuillEditor, { Quill } from 'vue-quill-editor'
-    import { ImageDrop } from 'quill-image-drop-module'
-    import ImageResize from 'quill-image-resize-module'
-    Quill.register('modules/imageDrop', ImageDrop)
-    Quill.register('modules/imageResize', ImageResize)
+    import VueFroala from 'vue-froala-wysiwyg';
 
     export default {
         data() {
             return {
-                name: 'register-modules-example',
-                content: '',
-                editorOption: {
-
-                    theme: 'bubble',
-                    placeholder: "Начните писать вашу статью",
-                    modules: {
-                        toolbar: [
-
-                            ['bold', 'italic'],
-                            ['blockquote'],
-                            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-                            [{ 'header': '1'},{ 'header': '2'},],
-                            ['link'],
-                            ['image']
-                        ],
-                        history: {
-                            delay: 1000,
-                            maxStack: 50,
-                            userOnly: false
-                        },
-                        imageDrop: true,
-                        imageResize: {
-                            displayStyles: {
-                                backgroundColor: 'black',
-                                border: 'none',
-                                color: 'white'
-                            },
-                            modules: [ 'Resize', 'DisplaySize', 'Toolbar' ]
+                config: {
+                    toolbarInline: true,
+                    quickInsertButtons: ['image','video', 'table'],
+                    toolbarButtons: ['bold', 'italic', 'quote', 'paragraphFormat', 'insertLink', 'underline', 'formatOL', 'formatUL'],
+                    events: {
+                        'froalaEditor.initialized': function () {
+                            console.log('initialized')
                         }
                     }
-                }
+                },
+                model: ''
             }
         },
 
