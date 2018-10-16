@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="small mb-2">Клуб / Cоздание статьи</div>
-                <input class="w-100" type="text" placeholder="Введите заголовок">
+                <input class="w-100 new-post__title" type="text" placeholder="Введите заголовок">
             </div>
             <div class="col-12 col-md-12 col-lg-8">
                 <froala :tag="'textarea'" :config="config" v-model="model"></froala>
@@ -60,3 +60,5 @@
         }
     }
 </script>
+
+<
