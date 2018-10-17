@@ -7,8 +7,14 @@ import VueAxios from 'vue-axios'
 
 Vue.use(VueAxios, axios)
 
+import VTooltip from 'v-tooltip'
+
+Vue.use(VTooltip)
 
 
+import VModal from 'vue-js-modal'
+
+Vue.use(VModal)
 
 Vue.config.productionTip = false
 
