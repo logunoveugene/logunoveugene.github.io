@@ -288,7 +288,7 @@
                         <div class="h1 mb-4">Читайте также</div>
                         <swiper class="livehack-slider" :options="lifehackOption">
 
-                            <swiper-slide v-for="(post, index) in posts" key="index">
+                            <swiper-slide v-for="(post, index) in posts" :key="index">
                                 <post-img :post="post"></post-img>
                             </swiper-slide>
                             <div class="swiper-pagination" slot="pagination"></div>
@@ -304,20 +304,20 @@
                 </div>
             </div>
         </div>
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-12 col-lg-8">
-            <div class="h1">Комментарии</div>
-            <comment-grid
-                    baseURL="https://club-comment.firebaseio.com"
-                    apiKey="AIzaSyBugrOQJ_kK5qww87m_a0OltSOse2ur7_w"
-                    nodeName="nodeNameYouWant">
-            </comment-grid>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <div class="h1">Комментарии</div>
+                    <comment-grid
+                            baseURL="https://club-comment.firebaseio.com"
+                            apiKey="AIzaSyBugrOQJ_kK5qww87m_a0OltSOse2ur7_w"
+                            nodeName="nodeNameYouWant">
+                    </comment-grid>
+                </div>
+            </div>
+
+
         </div>
-    </div>
-
-
-</div>
 
     </div>
 </template>
@@ -530,57 +530,10 @@
         width: 100%;
     }
 
-    .livehack-slider.swiper-container .swiper-slide{
+    .livehack-slider.swiper-container .swiper-slide {
         width: 280px;
 
     }
 
-    .sw-button-prev, .sw-container-rtl .sw-button-next {
-        left: 1.5rem;
-        right: auto;
-
-        transform: translateX(-10px) translateY(-50%);
-
-    }
-
-    .sw-button-next, .sw-container-rtl .sw-button-prev {
-        right: 1.5rem;
-        left: auto;
-        transform: translateX(10px) translateY(-50%);
-
-    }
-
-    .swiper-container:hover .sw-button-next, .swiper-container:hover .sw-button-prev {
-        transform: translateX(0) translateY(-50%);
-        opacity: 1
-    }
-
-    .sw-button-next, .sw-button-prev {
-        position: absolute;
-        top: 50%;
-        height: 40px;
-        width: 40px;
-        margin-top: -22px;
-        z-index: 10;
-        cursor: pointer;
-        background: #fff;
-        box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
-        opacity: 0;
-        transition: opacity .3s, transform .3s;
-        border-radius: 50%;
-        text-align: center;
-
-        padding-top: .65rem;
-    }
-
-    .sw-button-next:hover, .sw-button-prev:hover {
-        background: #fc8908;
-        color: #fff;
-        transition: color .2s, background .2s;
-    }
-
-    .swiper-pagination.swiper-pagination-bullets {
-        position: relative;
-    }
 
 </style>

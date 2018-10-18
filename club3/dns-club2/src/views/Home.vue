@@ -29,6 +29,11 @@
 
 
         </div>
+        <div class="layout--bg-grey mb-5">
+            <div class="container">
+                <img src="https://i.snag.gy/PolRAM.jpg" alt="">
+            </div>
+        </div>
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-12  col-lg-8">
@@ -93,11 +98,8 @@
 
                                 </div>
                             </div>
-
                         </div>
-
                     </div>
-
                     <div class="col-12 col-md-12 col-lg-4">
                         <div class="blog__item">
                             <post-blog-text :post="digest[4]"></post-blog-text>
@@ -105,6 +107,37 @@
                         <div class="blog__item">
                             <post-blog-img :post="digest[3]"></post-blog-img>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="lifehack" class="layout--hidden-content section">
+            <div class="container pt-5">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="#" class="layout__title-link">
+                            <div class="layout__title layout__title--orange">
+                                <div class="layout__title-text">Лайфхаки</div>
+                                <button class="layout__title-button">
+                                    <span class="icon-arrow-right"></span>
+                                </button>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-12">
+                        <swiper class="livehack-slider" :options="lifehackOption">
+                            <swiper-slide v-for="(post, index) in lifehacks" :key="index">
+                                <post-img :post="post"></post-img>
+                            </swiper-slide>
+                            <div class="swiper-pagination" slot="pagination"></div>
+                            <div class="sw-button-prev" slot="button-prev">
+                                <div class="icon-arrow-left "></div>
+                            </div>
+                            <div class="sw-button-next" slot="button-next">
+                                <div class="icon-arrow-right"></div>
+                            </div>
+
+                        </swiper>
                     </div>
                 </div>
             </div>
@@ -117,46 +150,9 @@
                             <div class="layout__title-text">Обсуждения</div>
                             <button class="layout__title-button"><span class="icon-arrow-right"></span></button>
                         </div>
-
                     </a>
-
                     <div class="discussions">
-                        <div class="discussions__item" v-for="(discussion, index) in discussions" :key="index">
-                            <div class="d-flex">
-                                <div class="discussions__img-wrap">
-                                    <img :src="discussion.img" alt="" class="discussions__img">
-                                </div>
-                                <div class="discussions__info">
-                                    <div class="discussions__ small mb-2">Автор:
-                                        <a class="link link--color-blue mr-2"
-                                           href="#">{{discussion.autor}}</a>
-                                        {{discussion.date | fdate}}
-                                    </div>
-                                    <div class="discussions__title h2">
-                                        <a href="#" class="link link--color-black">{{discussion.title}}</a>
-                                    </div>
-
-                                    <div class="discussions__source small mb-2 d-flex align-items-center">
-                                        <!--<div class="discussions__source-icon-wrap">-->
-                                        <!--<div class="icon-dots-hor"></div>-->
-                                        <!--</div>-->
-
-
-                                        <a href="#" class="link link--color-grey">{{discussion.source}}</a>
-                                    </div>
-                                    <div class="discussions__teaser small mb-3">{{discussion.teaser}}</div>
-                                    <div class="d-flex flex-wrap align-items-center">
-                                        <post-info class="mr-3 mb-3"
-                                                   :like="discussion.like"
-                                                   :comment="discussion.comment"
-                                                   :view="discussion.view"
-                                                   :lastactivity="discussion.lastactivity"
-                                        ></post-info>
-                                        <a href="#" class="link link--color-blue small mb-3"> Ответить</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <disc-list-item :post="post" v-for="(post, index) in discussions" :key="index"></disc-list-item>
                     </div>
 
                 </div>
@@ -238,6 +234,7 @@
 </template>
 
 <script>
+
     // @ is an alias to /src
     import postHalfImg from '@/components/post-block/post-half-img.vue'
     import postImg from '@/components/post-block/post-img.vue'
@@ -245,6 +242,9 @@
     import postWide from '@/components/post-block/post-wide.vue'
     import postBlogImg from '@/components/post-block/post-blog-img.vue'
     import postBlogText from '@/components/post-block/post-blog-text.vue'
+    import DiscListItem from '@/components/post-block/disc-list-item.vue'
+    import {swiper, swiperSlide} from 'vue-awesome-swiper'
+    import 'swiper/dist/css/swiper.css'
 
     export default {
         name: 'home',
@@ -253,7 +253,10 @@
             postImg,
             postText,
             postWide,
+            DiscListItem,
             postBlogImg,
+            swiper,
+            swiperSlide,
             postBlogText
         },
         data: function () {
@@ -261,10 +264,37 @@
                 digest: [],
                 review: [],
                 discussions: [],
+                lifehacks: [],
                 topusers: [],
                 userslevel: [],
                 surveys: [],
-                error: []
+                error: [],
+                lifehackOption: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true
+                    },
+                    breakpoints: {
+                        992: {
+                            slidesPerView: 2,
+                            spaceBetween: 40,
+                            pagination: {
+                                el: '.swiper-pagination',
+                            },
+                        },
+                        768: {
+                            slidesPerView: "auto",
+                            spaceBetween: 40
+                        }
+                    },
+                    navigation: {
+                        nextEl: '.sw-button-next',
+                        prevEl: '.sw-button-prev'
+                    }
+
+                },
             }
         },
         created() {
@@ -299,6 +329,13 @@
             this.axios.get('https://club-route.firebaseio.com/digest.json')
                 .then(response => {
                     this.digest = response.data
+                })
+                .catch(e => {
+                    this.error.push(e)
+                })
+            this.axios.get('https://club-route.firebaseio.com/lifehack.json')
+                .then(response => {
+                    this.lifehacks = response.data
                 })
                 .catch(e => {
                     this.error.push(e)

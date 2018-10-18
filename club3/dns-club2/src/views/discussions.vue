@@ -1,31 +1,24 @@
 <template>
     <div class="about">
-
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="small mb-2">Клуб / Обсуждения</div>
                     <h1 class="page__title">Обсуждения</h1>
                 </div>
-
-
                 <div class="col-12 col-md-12 col-lg-8">
                     <div class=" d-none d-lg-block mb-4">
                         <div class=" card-block layout--bg-grey  p-4 ">
-                            <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
+                            <div class="d-flex flex-column ">
                                 <div class="d-flex flex-column mb-3 mb-md-0">
-                                    <div class="h2 mb-0">Нужна помощь?</div>
-                                    <div class="small">Найди ответ на любой вопрос о компьютерах, электорнике или
-                                        бытовой технике
-                                    </div>
+                                    <div class="h2 mb-2">Есть что обсудить или нужна помощь экспертов 😎?</div>
+                                    <div class="small mb-3">Пиши, справшивай, обсуждай – будь уверен, здесь тебе ответят.</div>
                                 </div>
                                 <div class="">
-                                    <div class="btn btn--color-white ">Задать вопрос</div>
+                                    <div class="btn btn--color-white mr-3 ">Задать вопрос</div>
+                                    <div class="btn btn--color-white ">Обсудить</div>
                                 </div>
-
                             </div>
-
-
                         </div>
                     </div>
                     <div class="d-flex  d-block d-lg-none ">
@@ -48,45 +41,8 @@
                             </div>
                         </div>
                     </div>
-
-
                     <div class="discussions">
-                        <div class="discussions__item" v-for="(discussion, index) in discussions" :key="index">
-                            <div class="d-flex">
-                                <div class="discussions__img-wrap">
-                                    <img :src="discussion.img" alt="" class="discussions__img">
-                                </div>
-                                <div class="discussions__info">
-                                    <div class="discussions__ small mb-2">Автор:
-                                        <a class="link link--color-blue mr-2"
-                                           href="#">{{discussion.autor}}</a>
-                                        {{discussion.date | fdate}}
-                                    </div>
-                                    <div class="discussions__title h2">
-                                        <a href="#" class="link link--color-black">{{discussion.title}}</a>
-                                    </div>
-
-                                    <div class="discussions__source small mb-2 d-flex align-items-center">
-                                        <!--<div class="discussions__source-icon-wrap">-->
-                                        <!--<div class="icon-dots-hor"></div>-->
-                                        <!--</div>-->
-
-
-                                        <a href="#" class="link link--color-grey">{{discussion.source}}</a>
-                                    </div>
-                                    <div class="discussions__teaser small mb-3">{{discussion.teaser}}</div>
-                                    <div class="d-flex flex-wrap align-items-center">
-                                        <post-info class="mr-3 mb-3"
-                                                   :like="discussion.like"
-                                                   :comment="discussion.comment"
-                                                   :view="discussion.view"
-                                                   :lastactivity="discussion.lastactivity"
-                                        ></post-info>
-                                        <a href="#" class="link link--color-blue small mb-3"> Ответить</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+<disc-list-item :post="post" v-for="(post, index) in discussions" :key="index"></disc-list-item>
                     </div>
 
                 </div>
@@ -194,11 +150,13 @@
 <script>
     // @ is an alias to /src
     import postInfo from '@/components/post-block/parts/post-info.vue'
+    import DiscListItem from "../components/post-block/disc-list-item";
 
 
     export default {
         name: 'discussions',
         components: {
+            DiscListItem,
             postInfo
         },
         data: function () {

@@ -97,49 +97,6 @@
                 </div>
             </div>
         </fixed-header>
-
-
-        <!--<div class="header__fixed-bottom-line">-->
-        <!--<div class="header__container container">-->
-        <!--<div class="header__bottom-grid row">-->
-        <!--<div class="header__bottom-block col-2 d-lg-none">-->
-        <!--<div class="header__mobile-menu">-->
-        <!--<img src="https://i.snag.gy/23I0JN.jpg" alt="">-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="header__bottom-block col-8 col-lg-8">-->
-        <!--<img class="heaader__logo" src="https://i.snag.gy/p4txCj.jpg" alt="">-->
-        <!--<div class="header__main-nav d-none d-lg-flex">-->
-        <!--<a href="#" class="link link&#45;&#45;color-grey">Дайджест</a>-->
-        <!--<a href="#" class="link link&#45;&#45;color-grey">Обзоры</a>-->
-        <!--<a href="#" class="link link&#45;&#45;color-grey">Лайфхаки</a>-->
-        <!--<a href="#" class="link link&#45;&#45;color-grey ">Обсуждения</a>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="header__bottom-block col-2 col-lg-4">-->
-        <!--<div class="header__create-controls d-none d-lg-flex">-->
-        <!--<div class="header__create-controls-item">-->
-        <!--<div class="header__create-controls-icon">-->
-        <!--<div class="icon-pen"></div>-->
-        <!--</div>-->
-        <!--<a href="#" class="link link&#45;&#45;color-grey">Написать</a>-->
-        <!--</div>-->
-        <!--<div class="header__create-controls-item">-->
-        <!--<div class="header__create-controls-icon">-->
-        <!--<div class="icon-ask"></div>-->
-        <!--</div>-->
-        <!--<a href="#" class="link link&#45;&#45;color-grey">Спросить</a>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="header__search">-->
-        <!--<img src="https://i.snag.gy/7rBCoa.jpg" alt="">-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-
-
     </div>
 
 </template>
