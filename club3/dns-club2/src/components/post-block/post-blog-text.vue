@@ -6,7 +6,7 @@
                       :tags="post.tags"
             ></post-tag>
             <div class="post-blog-text__title  mb-3 h2">
-                <router-link class="link link--color-black" :to="{ name: 'post', params: { id: post.like }}">
+                <router-link class="link link--color-black" :to="{ name: 'post', params: { id: post.id }}">
                     {{post.title}}
                 </router-link>
             </div>

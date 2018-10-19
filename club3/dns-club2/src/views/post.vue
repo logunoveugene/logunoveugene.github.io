@@ -8,7 +8,7 @@
                         /
                         <router-link class="link link--color-black" to="/review"> Обзоры</router-link>
                         /
-                        <snap class="text-muted">{{post.title}}</snap>
+                        <span class="text-muted">{{post.title}}</span>
                     </div>
                 </div>
                 <div class="col-12 col-lg-8">
@@ -265,9 +265,8 @@
                                         <img class="product-list__item-img" :src="product.img" alt="">
                                     </div>
                                 </div>
-
                             </div>
-                            <div class="p-4" v-if="post.products.length>3">
+                            <div class="p-4" v-if="post.products && post.products.length>3">
                                 <div class="d-flex align-items-center">
                                     <div class="icon-add pt-1 mr-2"></div>
                                     Смотерть все
@@ -307,17 +306,18 @@
         <div class="container mt-4">
             <div class="row">
                 <div class="col-12 col-lg-8">
-                    <div class="h1">Комментарии</div>
-                    <comment-grid
-                            baseURL="https://club-comment.firebaseio.com"
-                            apiKey="AIzaSyBugrOQJ_kK5qww87m_a0OltSOse2ur7_w"
-                            nodeName="nodeNameYouWant">
-                    </comment-grid>
+                    <div class="h1 mb-4">Комментарии
+                        <div class="d-inline text-muted">{{post.comment}}</div>
+                    </div>
+                    <comment-item v-for="comment in comments" :comment="comment" :key="comment.id"></comment-item>
+
+
                 </div>
             </div>
 
 
         </div>
+
 
     </div>
 </template>
@@ -327,6 +327,7 @@
     import postInfo from '@/components/post-block/parts/post-info.vue'
     import postTagFull from '@/components/post-block/parts/post-tag-full.vue'
     import postImg from '@/components/post-block/post-img.vue'
+    import commentItem from '@/components/comment-item.vue'
 
 
     import {swiper, swiperSlide} from 'vue-awesome-swiper'
@@ -339,6 +340,7 @@
             postTagFull,
             swiper,
             swiperSlide,
+            commentItem,
             postImg
         },
         data() {
@@ -346,6 +348,7 @@
                 name: 'register-modules-example',
                 post: {},
                 posts: {},
+                comments: {},
                 lifehackOption: {
                     slidesPerView: 3,
                     spaceBetween: 40,
@@ -384,6 +387,14 @@
                     this.error.push(e)
                 })
 
+            this.axios.get('https://club-route.firebaseio.com/comments.json?orderBy=%22postId%22&equalTo=' + this.$route.params.id)
+                .then(response => {
+                    this.comments = Object.values(response.data)
+                })
+                .catch(e => {
+                    this.error.push(e)
+                })
+
             this.axios.get('https://club-route.firebaseio.com/digest.json')
                 .then(response => {
                     this.posts = response.data
@@ -391,6 +402,10 @@
                 .catch(e => {
                     this.error.push(e)
                 })
+
+
+
+
         }
     }
 </script>
