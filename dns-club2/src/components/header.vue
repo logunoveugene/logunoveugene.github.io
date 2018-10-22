@@ -191,6 +191,7 @@
     .heaader__logo {
         height: 26px;
         width: auto;
+        margin-top: -5px;
 
     }
 
