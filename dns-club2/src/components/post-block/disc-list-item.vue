@@ -11,7 +11,7 @@
                     {{post.date | fdate}}
                 </div>
                 <div class="discussions__title h2">
-                    <router-link class="link link--color-black" :to="{ name: 'discussion', params: { id: post.id }}">{{post.title}}
+                    <router-link class="link link--color-black" :to="{ name: 'discussion', params: { id: post.id }}"><div class="" v-html="post.title"></div>
                     </router-link>
                 </div>
 
@@ -23,7 +23,9 @@
 
                     <a href="#" class="link link--color-grey">{{post.source}}</a>
                 </div>
-                <div class="discussions__teaser  mb-3">{{post.teaser}}</div>
+                <div class="discussions__teaser  mb-3">
+                    <div v-html="post.teaser"></div>
+                </div>
                 <div class="d-flex flex-wrap align-items-center">
                     <post-info class="mr-3 mb-3"
                                :like="post.like"

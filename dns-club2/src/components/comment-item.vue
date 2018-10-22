@@ -19,7 +19,6 @@
                         <div class="icon-dots-hor"></div>
                     </div>
                     <template slot="popover">
-
                         <div class="py-3 px-3 bb-1">Пожаловаться</div>
                         <div class="py-3 px-3  ">Заблокировать</div>
                     </template>
@@ -113,30 +112,7 @@
 
             }
         },
-        methods: {
-            showCommenMenu() {
-                this.$modal.show('dialog', {
-                    title: 'Меню',
-                    buttons: [
-                        {
-                            title: 'Пожаловаться',
-                            handler: () => {
-                                alert('Woot!')
-                            }
-                        },
-                        {
-                            title: 'Заблокирповать',       // Button title
-                            default: true,    // Will be triggered by default if 'Enter' pressed.
-                            handler: () => {
-                            } // Button click handler
-                        },
-                        {
-                            title: 'Close'
-                        }
-                    ]
-                })
-            }
-        }
+
     }
 </script>
 
@@ -233,8 +209,8 @@
             }
 
             &__comment-author-img {
-                width: 45px;
-                height: 45px;
+                width: 40px;
+                height: 40px;
 
             }
             &__child-wrap {

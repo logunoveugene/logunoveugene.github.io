@@ -14,13 +14,9 @@
                 <div class="col-12 col-lg-8">
 
                     <div class="page__title mb-4">{{post.title}}</div>
-                    <post-tag-full class=" mb-4  "
-                                   :source="post.source"
-                                   :format="post.format"
-                                   :tags="post.tags"
-                    ></post-tag-full>
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-4">
-                        <div class="d-flex align-items-center mb-2">
+
+                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
+                        <div class="d-flex align-items-center mb-3">
                             <div class="mr-3">
                                 <img class="post-item__author-img rounded-circle " :src="post.autorImg" alt="">
                             </div>
@@ -32,7 +28,7 @@
                                 <div class="small text-muted ">опубликованно {{post.date | fdate}}</div>
                             </div>
                         </div>
-                        <div class="mt-auto">
+                        <div class="mt-auto mb-2">
                             <post-info
                                     :like="post.like"
                                     :comment="post.comment"
@@ -40,7 +36,8 @@
                             ></post-info>
                         </div>
                     </div>
-                    <div class=" card-block layout--bg-grey  p-4 mb-4">
+
+                    <div class=" d-none d-lg-block card-block  layout--bg-grey  p-4 mb-4">
                         <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
                             <div class="d-flex flex-column">
                                 <div class="h2 mb-2">Содержание</div>
@@ -58,6 +55,50 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="d-block d-lg-none ">
+                        <div class="card-block  layout--bg-grey  card-block--full-mobile p-3 "
+                             @click="collapseHeadList=!collapseHeadList">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="">Содержание
+
+                                </div>
+                                <div v-if="!collapseHeadList" class="icon-down"></div>
+                                <div v-if="collapseHeadList" class="icon-up"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-4" v-if="collapseHeadList">
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="" class="link link--color-black">Упаковка и комплект поставки</a>
+                            </li>
+                            <li>
+                                <a href="" class="link link--color-black">Внешний вид</a>
+                            </li>
+                            <li>
+                                <a href="" class="link link--color-black">Технические характеристики</a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="d-block d-lg-none ">
+                        <div class="card-block card-block--full-mobile p-3 " @click="collapseProduct=!collapseProduct">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="">Упомянутые товары
+                                    <span v-if="post.products" class="text-muted ml-2">{{post.products.length}}</span>
+                                </div>
+                                <div v-if="!collapseProduct" class="icon-down"></div>
+                                <div v-if="collapseProduct" class="icon-up"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-4" v-if="collapseProduct">
+                        <product-list :products="post.products"></product-list>
+                    </div>
+
+
                     <div class="article pt-3">
                         <p>Здравствуйте, уважаемые читатели! В этом обзоре мы рассмотрим ноутбук от
                             компании Lenovo. Среди главных особенностей модели стильный дизайн, Full HD дисплей, а также
@@ -234,49 +275,15 @@
 
                     </div>
 
-
+                    <post-tag-full class=" mb-4  "
+                                   :source="post.source"
+                                   :format="post.format"
+                                   :tags="post.tags"
+                    ></post-tag-full>
                 </div>
-                <div class="col-12 col-lg-4">
-                    <div class="card-block sticky-sidebar">
-                        <div class="product-list">
-                            <div class="product-list__title px-4 ">
-                                Упоминания товаров
-                            </div>
-
-                            <div class="product-list__item p-4 bb-1" v-for="(product, index)  in post.products"
-                                 :key="index"
-                                 v-if="index<3">
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex flex-column">
-                                        <div class="h4">
-                                            {{product.title}}
-                                        </div>
-                                        <div class="product-plate__social d-flex align-items-center mb-3">
-                                            <div class="product-plate__rating-wrap">
-                                                <rate :length="5" v-model="product.rating" :readonly="true"/>
-                                            </div>
-                                            <div class="small ml-2">
-                                                <a href="" class="link link--color-blue">{{product.reviewcount}}</a>
-                                            </div>
-                                        </div>
-                                        <div class="">
-                                            <button type="button" class="btn btn--color-white ">Купить</button>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="ml-3 product-list__item-img-wrap">
-                                        <img class="product-list__item-img" :src="product.img" alt="">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="p-4" v-if="post.products && post.products.length>3">
-                                <div class="d-flex align-items-center">
-                                    <div class="icon-add pt-1 mr-2"></div>
-                                    Смотерть все
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-12 col-lg-4 d-none d-lg-block">
+                    <div class=" sticky-sidebar">
+                        <product-list :products="post.products"></product-list>
 
                     </div>
                 </div>
@@ -365,21 +372,25 @@
     import postImg from '@/components/post-block/post-img.vue'
     import commentItem from '@/components/comment-item.vue'
     import LightBox from 'vue-image-lightbox'
+    import productList from '@/components/product-list.vue'
 
 
     import {swiper, swiperSlide} from 'vue-awesome-swiper'
     import 'swiper/dist/css/swiper.css'
+    import ProductList from "../components/product-list";
 
 
     export default {
         components: {
+            ProductList,
             postInfo,
             LightBox,
             postTagFull,
             swiper,
             swiperSlide,
             commentItem,
-            postImg
+            postImg,
+            productList
         },
         data() {
             return {
@@ -388,6 +399,8 @@
                 posts: {},
                 comments: {},
                 commentText: "",
+                collapseHeadList: false,
+                collapseProduct: false,
                 config: {
                     toolbarInline: true,
                     placeholderText: 'Вам слово...',
@@ -560,28 +573,6 @@
         margin-right: 0;
     }
 
-    .product-list__item-img {
-        max-width: 100%;
-        height: auto;
-
-        max-height: 100%;
-        width: auto;
-    }
-
-    .product-list__item-img-wrap {
-        width: 80px;
-        height: 80px;
-        text-align: center;
-    }
-
-    .product-list__title {
-        text-transform: uppercase;
-        font-size: 12px;
-        color: #6BA833;
-        line-height: 14px;
-        padding-top: 28px;
-    }
-
     /*---------------------рейтинг*/
 
     .product-plate__rating-wrap .Rate__star[data-v-59a74259] {
@@ -589,8 +580,8 @@
     }
 
     .product-plate__rating-wrap .icon[data-v-59a74259] {
-        width: 14px;
-        height: 14px;
+        width: 11px;
+        height: 11px;
         margin: 0 5px 0 0;
     }
 

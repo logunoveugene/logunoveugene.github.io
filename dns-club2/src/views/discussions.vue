@@ -12,7 +12,9 @@
                             <div class="d-flex flex-column ">
                                 <div class="d-flex flex-column mb-3 mb-md-0">
                                     <div class="h2 mb-2">Есть что обсудить или нужна помощь экспертов 😎?</div>
-                                    <div class="small mb-3">Пиши, справшивай, обсуждай – будь уверен, здесь тебе ответят.</div>
+                                    <div class="small mb-3">Пиши, справшивай, обсуждай – будь уверен, здесь тебе
+                                        ответят.
+                                    </div>
                                 </div>
                                 <div class="">
                                     <div class="btn btn--color-white mr-3 ">Задать вопрос</div>
@@ -42,7 +44,7 @@
                         </div>
                     </div>
                     <div class="discussions">
-<disc-list-item :post="post" v-for="(post, index) in discussions" :key="index"></disc-list-item>
+                        <disc-list-item :post="post" v-for="(post, index) in discussions" :key="index"></disc-list-item>
                     </div>
 
                 </div>

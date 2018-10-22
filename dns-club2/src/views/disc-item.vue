@@ -11,69 +11,100 @@
 
                     </div>
                 </div>
-                <div class="col-12 col-lg-8">
 
-                    <div class="page__title mb-4">{{post.title}}</div>
 
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-4">
-                        <div class="d-flex align-items-center">
-                            <div class="mr-3">
+                <div class="col-12 col-lg-8 ">
+                    <div class="page__title mb-3">
+                        <div v-html="post.title"></div>
+                    </div>
+
+
+                    <div class="d-flex flex-column flex-md-row justify-content-between ">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="mr-3 d-none d-md-block">
                                 <img class="post-item__author-img rounded-circle " :src="post.autorImg" alt="">
                             </div>
                             <div class="d-flex flex-column">
-                                <a class="link link--color-black mr-2" href="#">{{post.autor}}</a>
-                                <div class="small text-muted ">опубликованно {{post.date | fdate}}</div>
+                                <div class="d-flex">
+                                    <img :src="post.autorImg" alt=""
+                                         class="comment__comment-author-img-mob rounded-circle">
+                                    <div class="">{{post.autor}}</div>
+                                </div>
+                                <div class="small  text-muted">{{post.date | fdate}}</div>
                             </div>
                         </div>
 
                     </div>
+
+
                     <div class="disc_teaser">
-                        {{post.teaser}}
+                        <div class="mb-4">
+                            <div v-html="post.teaser"></div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="comment__rate d-flex mr-4">
+
+                                <div class="comment__rate-up icon-thumb-up"></div>
+                                <div class="comment__rate-count small">{{post.like}}</div>
+                                <div class="comment__rate-down icon-thumb-down"></div>
+                            </div>
+
+                            <div class="small mr-3">
+                                <div v-if="!replyBox" class="link link--color-blue" @click="replyBox=!replyBox">
+                                    Ответить
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
+                    <div class="d-block d-lg-none ">
+                        <div class="card-block card-block--full-mobile p-3 " @click="collapseProduct=!collapseProduct">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="">Упомянутые товары
+                                    <span v-if="post.products" class="text-muted ml-2">{{post.products.length}}</span>
+                                </div>
+                                <div v-if="!collapseProduct" class="icon-down"></div>
+                                <div v-if="collapseProduct" class="icon-up"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-4" v-if="collapseProduct">
+                        <product-list :products="post.products"></product-list>
+                    </div>
+
+
+                    <div class="card-block card-block--full-mobile layout--bg-grey mb-5">
+                        <div class=" p-3">
+                            <div class="d-flex flex-column flex-md-row justify-content-between align-items-start  align-items-md-center">
+                                <div class="mb-3 mb-md-0">Знаете кого-то кто сможет ответить на вопрос? Поделитесь с ним
+                                    ссылкой
+                                </div>
+                                <img src="https://i.snag.gy/vqCKB1.jpg" alt="">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="mb-4" v-if="comments && comments.length>1">
+                        <div class="h1 mb-4">Ответы пользователей <span class="text-muted">4</span></div>
+                        <comment-item v-for="comment in comments" :comment="comment" :key="comment.id"></comment-item>
+
+                    </div>
+                    <div class="h1">Ваш ответ</div>
+                    <div class="comment__reply-box">
+                        <froala :tag="'textarea'" :config="config" v-model="replyText"></froala>
+                    </div>
+                    <button type="button" class="btn btn--color-white ">Опубликовать</button>
 
                 </div>
 
-                <div class="col-12 col-lg-4">
-                    <div class="card-block sticky-sidebar">
-                        <div class="product-list">
-                            <div class="product-list__title px-4 ">
+                <div class="col-12 col-lg-4 d-none d-lg-block">
+                    <div class="  sticky-sidebar">
+                        <div class="">
+                            <div class="mb-4 ">
                                 Упоминания товаров
                             </div>
-
-                            <div class="product-list__item p-4 bb-1" v-for="(product, index)  in post.products"
-                                 :key="index"
-                                 v-if="index<3">
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex flex-column">
-                                        <div class="h4">
-                                            {{product.title}}
-                                        </div>
-                                        <div class="product-plate__social d-flex align-items-center mb-3">
-                                            <div class="product-plate__rating-wrap">
-                                                <rate :length="5" v-model="product.rating" :readonly="true"/>
-                                            </div>
-                                            <div class="small ml-2">
-                                                <a href="" class="link link--color-blue">{{product.reviewcount}}</a>
-                                            </div>
-                                        </div>
-                                        <div class="">
-                                            <button type="button" class="btn btn--color-white ">Купить</button>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="ml-3 product-list__item-img-wrap">
-                                        <img class="product-list__item-img" :src="product.img" alt="">
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="p-4" v-if="post.products.length>3">
-                                <div class="d-flex align-items-center">
-                                    <div class="icon-add pt-1 mr-2"></div>
-                                    Смотерть все
-                                </div>
-                            </div>
+                            <product-list :products="post.products"></product-list>
                         </div>
 
                     </div>
@@ -81,20 +112,6 @@
 
 
             </div>
-        </div>
-
-        <div class="container ">
-            <div class="row">
-                <div class="col-12 col-lg-8">
-                    <div class="h1 mb-0">Ответы пользователей</div>
-                    <comment-grid
-                            baseURL="https://club-comment.firebaseio.com"
-                            apiKey="AIzaSyBugrOQJ_kK5qww87m_a0OltSOse2ur7_w"
-                            nodeName="nodeNameYouWant">
-                    </comment-grid>
-                </div>
-            </div>
-
         </div>
 
 
@@ -108,7 +125,8 @@
     import postInfo from '@/components/post-block/parts/post-info.vue'
     import postTagFull from '@/components/post-block/parts/post-tag-full.vue'
     import postImg from '@/components/post-block/post-img.vue'
-
+    import commentItem from '@/components/comment-item.vue'
+    import productList from '@/components/product-list.vue'
 
     import {swiper, swiperSlide} from 'vue-awesome-swiper'
     import 'swiper/dist/css/swiper.css'
@@ -120,7 +138,9 @@
             postTagFull,
             swiper,
             swiperSlide,
-            postImg
+            commentItem,
+            postImg,
+            productList
         },
         data() {
             return {
@@ -128,6 +148,18 @@
                 post: {},
                 posts: {},
                 error: "",
+                comments: {},
+                collapseProduct: false,
+                config: {
+                    toolbarInline: true,
+                    placeholderText: 'Вам слово...',
+                    heightMin: 80,
+                    charCounterMax: 140,
+                    quickInsertButtons: ['image', 'video', 'table'],
+                    toolbarButtons: ['bold', 'italic', 'quote', 'paragraphFormat', 'insertLink', 'underline', 'formatOL', 'formatUL'],
+
+                },
+                replyText: '',
                 lifehackOption: {
                     slidesPerView: 3,
                     spaceBetween: 40,
@@ -165,7 +197,13 @@
                 .catch(e => {
                     this.error.push(e)
                 })
-
+            this.axios.get('https://club-route.firebaseio.com/comments.json?orderBy=%22postId%22&equalTo=' + this.$route.params.id)
+                .then(response => {
+                    this.comments = Object.values(response.data)
+                })
+                .catch(e => {
+                    this.error.push(e)
+                })
             this.axios.get('https://club-route.firebaseio.com/digest.json')
                 .then(response => {
                     this.posts = response.data
@@ -178,14 +216,27 @@
 </script>
 
 <style>
+    .post-page .highlight {
+        background: #f8ffdd;
+
+        border-radius: 8px;
+    }
+
     .post-item__author-img {
-        max-width: 50px;
-        height: auto;
+        width: 40px;
+        height: 40px;
     }
 
     .disc_teaser {
-        margin-left: 66px;
-        margin-bottom: 2rem;
+        margin-left: 0px;
+        margin-bottom: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+        .disc_teaser {
+            margin-left: 56px;
+            margin-bottom: 2rem;
+        }
     }
 
     .article p:first-child {
@@ -196,28 +247,6 @@
         margin-right: 0;
     }
 
-    .product-list__item-img {
-        max-width: 100%;
-        height: auto;
-
-        max-height: 100%;
-        width: auto;
-    }
-
-    .product-list__item-img-wrap {
-        width: 80px;
-        height: 80px;
-        text-align: center;
-    }
-
-    .product-list__title {
-        text-transform: uppercase;
-        font-size: 12px;
-        color: #6BA833;
-        line-height: 14px;
-        padding-top: 28px;
-    }
-
     /*---------------------рейтинг*/
 
     .product-plate__rating-wrap .Rate__star[data-v-59a74259] {
@@ -225,8 +254,8 @@
     }
 
     .product-plate__rating-wrap .icon[data-v-59a74259] {
-        width: 14px;
-        height: 14px;
+        width: 11px;
+        height: 11px;
         margin: 0 5px 0 0;
     }
 
@@ -240,23 +269,6 @@
     }
 
     /*-----------------слайдер*/
-
-    .layout--hidden-content {
-        overflow: hidden;
-    }
-
-    .swiper-container.livehack-slider {
-        overflow: visible;
-    }
-
-    .swiper-container {
-        width: 100%;
-    }
-
-    .livehack-slider.swiper-container .swiper-slide {
-        width: 280px;
-
-    }
 
 
 </style>

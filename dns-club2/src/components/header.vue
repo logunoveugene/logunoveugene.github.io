@@ -184,7 +184,7 @@
         }
 
         .header {
-            height: 141px;
+            height: 160px;
         }
     }
 
