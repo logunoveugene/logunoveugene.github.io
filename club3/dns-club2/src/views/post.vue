@@ -25,7 +25,10 @@
                                 <img class="post-item__author-img rounded-circle " :src="post.autorImg" alt="">
                             </div>
                             <div class="d-flex flex-column">
-                                <a class="link link--color-black mr-2" href="#">{{post.autor}}</a>
+                                <div class="post__author-name">
+                                    <a class="link link--color-black mr-2" href="#">{{post.autor}}</a>
+                                </div>
+
                                 <div class="small text-muted ">опубликованно {{post.date | fdate}}</div>
                             </div>
                         </div>
@@ -146,6 +149,7 @@
                             записи и по-новому прослушать любимые качественные треки. Записи отлично звучат на ровном
                             эквалайзере. Для любителей «объективной» оценки звука производитель приводит график
                             АЧХ. </p>
+
 
                         <p>Во время работы, файлы, которые вы используете чаще всего, будут записываться на этот
                             накопитель.
@@ -309,6 +313,15 @@
                     <div class="h1 mb-4">Комментарии
                         <div class="d-inline text-muted">{{post.comment}}</div>
                     </div>
+                    <div class="mb-5">
+                    <div class="comment-block__adding-box">
+                        <froala :tag="'textarea'" :config="config" v-model="commentText"></froala>
+                    </div>
+
+                        <button type="button" class="btn btn--color-white ">Добавить комментарий</button>
+
+
+                    </div>
                     <comment-item v-for="comment in comments" :comment="comment" :key="comment.id"></comment-item>
 
 
@@ -316,6 +329,29 @@
             </div>
 
 
+        </div>
+        <div class="layout--hidden-content pt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="h1 mb-4">Самое популярное</div>
+                        <swiper class="livehack-slider" :options="lifehackOption">
+
+                            <swiper-slide v-for="(post, index) in posts" :key="index">
+                                <post-img :post="post"></post-img>
+                            </swiper-slide>
+                            <div class="swiper-pagination" slot="pagination"></div>
+                            <div class="sw-button-prev" slot="button-prev">
+                                <div class="icon-arrow-left "></div>
+                            </div>
+                            <div class="sw-button-next" slot="button-next">
+                                <div class="icon-arrow-right"></div>
+                            </div>
+
+                        </swiper>
+                    </div>
+                </div>
+            </div>
         </div>
 
 
@@ -328,6 +364,7 @@
     import postTagFull from '@/components/post-block/parts/post-tag-full.vue'
     import postImg from '@/components/post-block/post-img.vue'
     import commentItem from '@/components/comment-item.vue'
+    import LightBox from 'vue-image-lightbox'
 
 
     import {swiper, swiperSlide} from 'vue-awesome-swiper'
@@ -337,6 +374,7 @@
     export default {
         components: {
             postInfo,
+            LightBox,
             postTagFull,
             swiper,
             swiperSlide,
@@ -349,6 +387,38 @@
                 post: {},
                 posts: {},
                 comments: {},
+                commentText:"",
+                config: {
+                    toolbarInline: true,
+                    placeholderText: 'Вам слово...',
+                    heightMin: 80,
+                    charCounterMax: 140,
+                    quickInsertButtons: ['image', 'video', 'table'],
+                    toolbarButtons: ['bold', 'italic', 'quote', 'paragraphFormat', 'insertLink', 'underline', 'formatOL', 'formatUL'],
+                    events: {
+                        'froalaEditor.initialized': function (e, editor) {
+
+                            console.log(editor)
+                            console.log(editor.events.focus(true))
+
+
+                        }
+                    }
+                },
+                images: [
+                    {
+                        thumb: 'https://via.placeholder.com/160x90',
+                        src: 'https://via.placeholder.com/1600x900',
+                        caption: 'Описание'
+
+                    },
+                    {
+                        thumb: 'https://via.placeholder.com/160x90',
+                        src: 'https://via.placeholder.com/1600x900',
+                        caption: 'Описание2'
+
+                    }
+                ],
                 lifehackOption: {
                     slidesPerView: 3,
                     spaceBetween: 40,
@@ -404,16 +474,26 @@
                 })
 
 
-
-
         }
     }
 </script>
 
 <style>
+    .comment-block__adding-box{
+        border: 1px solid #e8e3e3;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        max-width: 100%;
+    }
+
     .post-item__author-img {
-        max-width: 50px;
-        height: auto;
+        width: 40px;
+        height: 40px;
+    }
+
+    .post__author-name {
+        line-height: 1.1;
     }
 
     .article blockquote {

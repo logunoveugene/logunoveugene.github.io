@@ -5,20 +5,26 @@ import "./filters"
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-
 Vue.use(VueAxios, axios)
 
 
 import VModal from 'vue-js-modal'
-
-Vue.use(VModal)
+Vue.use(VModal, {dialog: true})
 
 import VTree from 'vue-tree-halower'
-
 Vue.use(VTree)
 
 import rate from 'vue-rate';
 Vue.use(rate)
+
+
+import VTooltip from 'v-tooltip'
+Vue.use(VTooltip)
+
+
+import VueLazyLoad from 'vue-lazyload'
+Vue.use(VueLazyLoad)
+require('vue-image-lightbox/dist/vue-image-lightbox.min.css')
 
 
 require('froala-editor/js/froala_editor.pkgd.min')
@@ -30,9 +36,8 @@ require('froala-editor/css/froala_style.min.css')
 
 // Import and use Vue Froala lib.
 import VueFroala from 'vue-froala-wysiwyg'
+
 Vue.use(VueFroala)
-
-
 
 
 import CommentGrid from 'vue-comment-grid'

@@ -30,8 +30,56 @@
 
         </div>
         <div class="layout--bg-grey mb-5">
-            <div class="container">
-                <img src="https://i.snag.gy/PolRAM.jpg" alt="">
+            <div class="container py-4">
+                <div class="py-3">
+                    <div class="d-flex mb-3 ">
+                        <div class="h2 mr-4 ">Вступай в ДНС клуб, у нас хорошо</div>
+                        <div class="small d-none d-sm-block">
+                            <a href="#" class="link link--color-blue">Тур по сайту</a>
+                        </div>
+                        <button type="button " class="ml-auto close" v-on:click="promoreg = !promoreg" aria-label="Close">
+                            <span class="icon-close"></span>
+                        </button>
+                    </div>
+                    <div class="row ">
+                        <div class="col-12 col-lg-3">
+                            <div class="d-flex align-items-center mb-4 mb-lg-0">
+                                <div class="mr-3">
+                                    <img src="https://i.snag.gy/Q5Hx9n.jpg" alt="">
+                                </div>
+                                <div class="benefit-item__info">
+                                    <div class="small font-weight-bold">Читай – у нас есть что!</div>
+                                    <div class="small">тысячи бомбическийх статей и обзоров </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <div class="d-flex align-items-center mb-4 mb-lg-0">
+                                <div class="mr-3">
+                                    <img src="https://i.snag.gy/FEPRhf.jpg" alt="">
+                                </div>
+                                <div class="benefit-item__info">
+                                    <div class="small font-weight-bold">Пиши – стань звездой</div>
+                                    <div class="small">публикуй обзоры, отвечай на вопросы</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <div class="d-flex align-items-center mb-4 mb-lg-0">
+                                <div class="mr-3">
+                                    <img src="https://i.snag.gy/XdjqO4.jpg" alt="">
+                                </div>
+                                <div class="benefit-item__info">
+                                    <div class="small font-weight-bold">Получай награды</div>
+                                    <div class="small">будь активным – прокачивай свой уровень</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3">
+                            <div class="btn btn-block btn--color-blue">Вступить в Клуб</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="container">

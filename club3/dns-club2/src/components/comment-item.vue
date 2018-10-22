@@ -3,13 +3,30 @@
         <div class="mr-3 comment__comment-author-img-wrap">
             <img :src="comment.autorImg" alt="" class="comment__comment-author-img rounded-circle">
         </div>
-        <div class="d-flex flex-column">
-            <div class="d-flex">
-                <img :src="comment.autorImg" alt="" class="comment__comment-author-img-mob rounded-circle">
-                <div class="">{{comment.autor}}</div>
-            </div>
+        <div class="w-100 d-flex flex-column">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex flex-column">
+                    <div class="d-flex">
+                        <img :src="comment.autorImg" alt="" class="comment__comment-author-img-mob rounded-circle">
+                        <div class="">{{comment.autor}}</div>
+                    </div>
+                    <div class="small mb-2 text-muted">{{comment.date | fdate}}</div>
+                </div>
 
-            <div class="small mb-2 text-muted">{{comment.date | fdate}}</div>
+
+                <v-popover offset="0">
+                    <div class="comment__menu">
+                        <div class="icon-dots-hor"></div>
+                    </div>
+                    <template slot="popover">
+
+                        <div class="py-3 px-3 bb-1">Пожаловаться</div>
+                        <div class="py-3 px-3  ">Заблокировать</div>
+                    </template>
+                </v-popover>
+
+
+            </div>
             <div class="mb-3">{{comment.comment}}</div>
             <div class="d-flex">
                 <div class="comment__rate d-flex mr-4">
@@ -20,18 +37,35 @@
                 </div>
 
                 <div class="small mr-3">
-                    <div class="link link--color-blue">Ответить</div>
+                    <div v-if="!replyBox" class="link link--color-blue" @click="replyBox=!replyBox">Ответить</div>
+
                 </div>
                 <div class="small ml-auto">
-                    <div v-if="comment.child  && childExtend" class="link link--color-grey link--doted " @click="childExtend=!childExtend">Свернуть ответы
+                    <div v-if="comment.child  && childExtend" class="link link--color-grey link--doted "
+                         @click="childExtend=!childExtend">Свернуть ответы
                         {{comment.child.length}}
                     </div>
-                    <div v-if="comment.child  && !childExtend" class=" link link--color-grey link--doted " @click="childExtend=!childExtend">Развернуть ответы
+                    <div v-if="comment.child  && !childExtend" class=" link link--color-grey link--doted "
+                         @click="childExtend=!childExtend">Развернуть ответы
                         {{comment.child.length}}
                     </div>
                 </div>
-
-
+            </div>
+            <div class="mt-4" v-if="replyBox">
+                <div class="d-flex flex-column">
+                    <div class="h2">Добавление ответа</div>
+                    <div class="comment__reply-box">
+                        <froala :tag="'textarea'" :config="config" v-model="replyText"></froala>
+                    </div>
+                    <div class=" d-flex align-items-center">
+                        <button type="button" class="btn btn--color-white ">Опубликовать</button>
+                        <div class="small">
+                            <div v-if="replyBox" class=" ml-4 link link--color-grey" @click="replyBox=!replyBox">
+                                Отменить
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div v-if="comment.child && childExtend" class="comment__child-wrap mt-5">
@@ -39,7 +73,7 @@
             </div>
 
         </div>
-
+        <v-dialog/>
     </div>
 </template>
 
@@ -60,16 +94,80 @@
 
         data: function () {
             return {
-                childExtend: true
+                childExtend: true,
+                replyBox: false,
+                config: {
+                    toolbarInline: true,
+                    placeholderText: 'Вам слово...',
+                    heightMin: 80,
+                    charCounterMax: 140,
+                    quickInsertButtons: ['image', 'video', 'table'],
+                    toolbarButtons: ['bold', 'italic', 'quote', 'paragraphFormat', 'insertLink', 'underline', 'formatOL', 'formatUL'],
+                    events: {
+                        'froalaEditor.initialized': function (e, editor) {
 
+                            console.log(editor)
+                            console.log(editor.events.focus(true))
+
+
+                        }
+                    }
+                },
+                replyText: ''
+
+            }
+        },
+        methods: {
+            showCommenMenu() {
+                this.$modal.show('dialog', {
+                    title: 'Меню',
+                    buttons: [
+                        {
+                            title: 'Пожаловаться',
+                            handler: () => {
+                                alert('Woot!')
+                            }
+                        },
+                        {
+                            title: 'Заблокирповать',       // Button title
+                            default: true,    // Will be triggered by default if 'Enter' pressed.
+                            handler: () => {
+                            } // Button click handler
+                        },
+                        {
+                            title: 'Close'
+                        }
+                    ]
+                })
             }
         }
     }
 </script>
 
 <style lang="scss">
+    .fr-box {
+        position: relative;
+        max-width: 100%;
+        height: 100%;
+    }
+
+    .fr-box .fr-counter{
+        border:none;
+        top:0;
+        font-family: "PT Sans";
+        font-size: 14px;
+
+    }
     .comment {
         margin-bottom: 2rem;
+
+        &__reply-box {
+            border: 1px solid #e8e3e3;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            max-width: 100%;
+        }
 
         &:last-child {
             margin-bottom: 0;
@@ -115,6 +213,15 @@
                 opacity: 1;
             }
         }
+        &__menu {
+            font-size: 22px;
+            color: #ccc;
+            cursor: pointer;
+
+            &:hover {
+                color: #999;
+            }
+        }
     }
 
     @media (min-width: 768px) {
@@ -135,6 +242,116 @@
                 padding-left: 1rem;
                 border-left: 1px solid #eee;
             }
+        }
+    }
+
+    .tooltip {
+        display: block !important;
+        z-index: 10000;
+
+        .tooltip-inner {
+            background: black;
+            color: white;
+            border-radius: 16px;
+            padding: 0;
+        }
+
+        .tooltip-arrow {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            position: absolute;
+            margin: 5px;
+            border-color: black;
+            z-index: 1;
+        }
+
+        &[x-placement^="top"] {
+            margin-bottom: 5px;
+
+            .tooltip-arrow {
+                border-width: 5px 5px 0 5px;
+                border-left-color: transparent !important;
+                border-right-color: transparent !important;
+                border-bottom-color: transparent !important;
+                bottom: -5px;
+                left: calc(50% - 5px);
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+
+        &[x-placement^="bottom"] {
+            margin-top: 5px;
+
+            .tooltip-arrow {
+                border-width: 0 5px 5px 5px;
+                border-left-color: transparent !important;
+                border-right-color: transparent !important;
+                border-top-color: transparent !important;
+                top: -5px;
+                left: calc(50% - 5px);
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+
+        &[x-placement^="right"] {
+            margin-left: 5px;
+
+            .tooltip-arrow {
+                border-width: 5px 5px 5px 0;
+                border-left-color: transparent !important;
+                border-top-color: transparent !important;
+                border-bottom-color: transparent !important;
+                left: -5px;
+                top: calc(50% - 5px);
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
+        &[x-placement^="left"] {
+            margin-right: 5px;
+
+            .tooltip-arrow {
+                border-width: 5px 0 5px 5px;
+                border-top-color: transparent !important;
+                border-right-color: transparent !important;
+                border-bottom-color: transparent !important;
+                right: -5px;
+                top: calc(50% - 5px);
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
+        &.popover {
+            $color: #f9f9f9;
+            border: none;
+
+            .popover-inner {
+                background: #fff;
+                color: black;
+                border-radius: 5px;
+                box-shadow: 0 5px 30px rgba(black, .1);
+            }
+
+            .popover-arrow {
+                border-color: $color;
+            }
+        }
+
+        &[aria-hidden='true'] {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity .15s, visibility .15s;
+        }
+
+        &[aria-hidden='false'] {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity .15s;
         }
     }
 </style>

@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b39141c9-0450-4cd0-ac3d-79269bcec368" name="Default Changelist" comment="" />
+    <list default="true" id="b39141c9-0450-4cd0-ac3d-79269bcec368" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/dns-club2/club-route-export.json" beforeDir="false" afterPath="$PROJECT_DIR$/dns-club2/club-route-export.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dns-club2/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/dns-club2/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dns-club2/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/dns-club2/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dns-club2/src/components/comment-item.vue" beforeDir="false" afterPath="$PROJECT_DIR$/dns-club2/src/components/comment-item.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dns-club2/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/dns-club2/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dns-club2/src/views/newpost.vue" beforeDir="false" afterPath="$PROJECT_DIR$/dns-club2/src/views/newpost.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dns-club2/src/views/post.vue" beforeDir="false" afterPath="$PROJECT_DIR$/dns-club2/src/views/post.vue" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,11 +20,12 @@
     <session id="896165416">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -73,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dns-club2/src/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+            <state relative-caret-position="120">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -219,6 +228,7 @@
     <packageJsonPaths>
       <path value="$PROJECT_DIR$/dns-club/package.json" />
       <path value="$PROJECT_DIR$/dns-club2/package.json" />
+      <path value="$PROJECT_DIR$/dns-club2/vue-comment-grid/package.json" />
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
@@ -232,6 +242,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -282,7 +293,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -324,16 +334,17 @@
       <workItem from="1538957187711" duration="1234000" />
       <workItem from="1538958607898" duration="23485000" />
       <workItem from="1539073618884" duration="250000" />
+      <workItem from="1540177649378" duration="3000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66789000" />
+    <option name="totallyTimeSpent" value="66792000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1001" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18423855" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.185836" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -665,8 +676,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dns-club2/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
