@@ -21,11 +21,14 @@ Vue.use(rate)
 import VTooltip from 'v-tooltip'
 Vue.use(VTooltip)
 
+import Multiselect from 'vue-multiselect'
+Vue.component('multiselect', Multiselect)
 
 import VueLazyLoad from 'vue-lazyload'
 Vue.use(VueLazyLoad)
 require('vue-image-lightbox/dist/vue-image-lightbox.min.css')
 
+require('vue-multiselect/dist/vue-multiselect.min.css')
 
 require('froala-editor/js/froala_editor.pkgd.min')
 
