@@ -314,9 +314,9 @@
                         <div class="d-inline text-muted">{{post.comment}}</div>
                     </div>
                     <div class="mb-5">
-                    <div class="comment-block__adding-box">
-                        <froala :tag="'textarea'" :config="config" v-model="commentText"></froala>
-                    </div>
+                        <div class="comment-block__adding-box">
+                            <froala :tag="'textarea'" :config="config" v-model="commentText"></froala>
+                        </div>
 
                         <button type="button" class="btn btn--color-white ">Добавить комментарий</button>
 
@@ -387,7 +387,7 @@
                 post: {},
                 posts: {},
                 comments: {},
-                commentText:"",
+                commentText: "",
                 config: {
                     toolbarInline: true,
                     placeholderText: 'Вам слово...',
@@ -395,15 +395,7 @@
                     charCounterMax: 140,
                     quickInsertButtons: ['image', 'video', 'table'],
                     toolbarButtons: ['bold', 'italic', 'quote', 'paragraphFormat', 'insertLink', 'underline', 'formatOL', 'formatUL'],
-                    events: {
-                        'froalaEditor.initialized': function (e, editor) {
 
-                            console.log(editor)
-                            console.log(editor.events.focus(true))
-
-
-                        }
-                    }
                 },
                 images: [
                     {
@@ -479,7 +471,7 @@
 </script>
 
 <style>
-    .comment-block__adding-box{
+    .comment-block__adding-box {
         border: 1px solid #e8e3e3;
         border-radius: 8px;
         padding: 1rem;

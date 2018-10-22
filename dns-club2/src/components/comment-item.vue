@@ -68,7 +68,7 @@
                 </div>
             </div>
 
-            <div v-if="comment.child && childExtend" class="comment__child-wrap mt-5">
+            <div v-if="comment.child && childExtend" class="comment__child-wrap">
                 <comment-item v-for="comment in comment.child" :comment="comment" :key="comment.id"></comment-item>
             </div>
 
@@ -105,11 +105,7 @@
                     toolbarButtons: ['bold', 'italic', 'quote', 'paragraphFormat', 'insertLink', 'underline', 'formatOL', 'formatUL'],
                     events: {
                         'froalaEditor.initialized': function (e, editor) {
-
-                            console.log(editor)
-                            console.log(editor.events.focus(true))
-
-
+                            editor.events.focus(true)
                         }
                     }
                 },
@@ -151,13 +147,14 @@
         height: 100%;
     }
 
-    .fr-box .fr-counter{
-        border:none;
-        top:0;
+    .fr-box .fr-counter {
+        border: none;
+        top: 0;
         font-family: "PT Sans";
         font-size: 14px;
 
     }
+
     .comment {
         margin-bottom: 2rem;
 
@@ -187,6 +184,7 @@
         &__child-wrap {
             padding-left: 1rem;
             border-left: 1px solid #eee;
+            margin-top: 2rem;
         }
 
         &__rate-up {
@@ -213,6 +211,7 @@
                 opacity: 1;
             }
         }
+
         &__menu {
             font-size: 22px;
             color: #ccc;
@@ -241,7 +240,9 @@
             &__child-wrap {
                 padding-left: 1rem;
                 border-left: 1px solid #eee;
+                margin-top: 3rem;
             }
+
         }
     }
 
