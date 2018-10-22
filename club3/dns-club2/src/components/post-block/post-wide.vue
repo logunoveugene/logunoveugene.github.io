@@ -118,6 +118,13 @@
             font-size: 28px;
             line-height: 34px;
         }
+        .post-lock__title {
+            width: 100%;
+
+        }
+        .post-lock{
+            background-image:none!important;
+        }
     }
 
 
