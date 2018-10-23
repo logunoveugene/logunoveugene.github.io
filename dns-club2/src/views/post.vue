@@ -84,7 +84,8 @@
 
 
                     <div class="d-block d-lg-none ">
-                        <div v-ripple class="card-block card-block--full-mobile p-3 " @click="collapseProduct=!collapseProduct">
+                        <div v-ripple class="card-block card-block--full-mobile p-3 "
+                             @click="collapseProduct=!collapseProduct">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="">Упомянутые товары
                                     <span v-if="post.products" class="text-muted ml-2">{{post.products.length}}</span>
@@ -280,9 +281,22 @@
                                    :format="post.format"
                                    :tags="post.tags"
                     ></post-tag-full>
+
+
+                    <div class="d-flex justify-content-between ">
+                        <div class="d-flex">
+                            <div class="post__rate-up icon-thumb-up"></div>
+                            <div class="post__rate-count small">+{{post.like}}</div>
+                            <div class="post__rate-down icon-thumb-down"></div>
+                        </div>
+                        <div class="">
+                            <img src="https://i.snag.gy/vqCKB1.jpg" alt="">
+                        </div>
+                    </div>
                 </div>
                 <div class="col-12 col-lg-4 d-none d-lg-block">
                     <div class=" sticky-sidebar">
+                        <div class="mb-3">Упомянутые товары</div>
                         <product-list :products="post.products"></product-list>
 
                     </div>
@@ -612,6 +626,26 @@
     .livehack-slider.swiper-container .swiper-slide {
         width: 280px;
 
+    }
+
+    .post__rate-up {
+        font-size: 24px;
+        cursor: pointer;
+        color: #6BA833;
+        opacity: .7;
+    }
+
+    .post__rate-count {
+        margin: 0 14px;
+        font-size: 20px;
+    }
+
+    .post__rate-down {
+        font-size: 24px;
+        padding-top: 3px;
+        cursor: pointer;
+        color: #CC2E12;
+        opacity: .7;
     }
 
 

@@ -16,8 +16,9 @@
                 </div>
                 <div class="col-12 col-md-12 col-lg-8">
                     <div class="d-block d-lg-none">
-                        <div v-ripple class=" mb-4 card-block card-block--full-mobile p-3 " @click="searchPlate=!searchPlate">
-                            <div  class="d-flex justify-content-between align-items-center">
+                        <div v-ripple class=" mb-4 card-block card-block--full-mobile p-3 "
+                             @click="searchPlate=!searchPlate">
+                            <div class="d-flex justify-content-between align-items-center">
                                 <div class="">Настройка показа</div>
                                 <div v-if="!searchPlate" class="icon-down"></div>
                                 <div v-if="searchPlate" class="icon-up"></div>
@@ -25,7 +26,63 @@
                         </div>
                     </div>
                     <div class="mb-4" v-if="searchPlate">
-                        Поиск
+                        <div class="">
+                            <div class="pb-4 bb-1">
+                                <div class="h4 mb-0 d-flex align-items-center justify-content-between">Тема</div>
+                                <div class="tree">
+                                    <input class="tree-search-input"
+                                           type="text"
+                                           v-model.lazy="searchword"
+                                           placeholder="Поиск категории"
+                                           v-on:keyup.enter="search"
+                                    />
+                                    <!--<button class=" tree-search-btn" type="button" @click="search">GO</button>-->
+                                    <v-tree ref='tree'
+                                            :data='treeData1'
+                                            :multiple="true"
+                                            @node-check='selectedNodes'
+                                            :halfcheck='true'
+                                            @click="selectedNodes"/>
+                                </div>
+                            </div>
+                            <div class="py-4 bb-1">
+                                <div class="h4 mb-0 d-flex ">Рубрики</div>
+
+                                <div class="custom-control custom-checkbox mt-4">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label" for="customCheck1">Профессиональные
+                                        обзоры</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mt-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                    <label class="custom-control-label" for="customCheck2">Любительские
+                                        обзоры</label>
+                                </div>
+
+
+                            </div>
+                            <div class="py-4">
+                                <div
+                                        class="h4 mb-0 d-flex align-items-center justify-content-between">Формат
+
+                                </div>
+                                <div class="tree">
+                                    <div class="custom-control custom-checkbox mt-4">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                        <label class="custom-control-label" for="customCheck3">Текст</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mt-2">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck4">
+                                        <label class="custom-control-label" for="customCheck4">Видео</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mt-2">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck5">
+                                        <label class="custom-control-label" for="customCheck5">Фото</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="d-none d-lg-flex justify-content-between mb-4 align-items-center small ">
                         <nav class="nav nav-pills nav-justified">
