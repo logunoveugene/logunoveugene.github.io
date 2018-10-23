@@ -1,98 +1,187 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="small mb-2">Клуб / Cоздание статьи</div>
-                <input class="w-100 new-post__title" type="text" placeholder="Введите заголовок">
-            </div>
-            <div class="col-12 col-md-12 col-lg-8">
-                <froala :tag="'textarea'" :config="config" v-model="model"></froala>
-                <div v-html="model"></div>
+    <div class="">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="small mb-2">Клуб / Cоздание статьи</div>
+                    <input class="w-100 new-post__title" type="text" placeholder="Введите заголовок">
+                </div>
+                <div class="col-12 col-md-12 col-lg-8">
+                    <froala :tag="'textarea'" :config="config" v-model="model"></froala>
+                    <div v-html="model"></div>
 
-            </div>
-            <div class="col-12 col-lg-4">
-                <div class="card-block p-4 mb-4">
-                    <div class="">
-                        <div class="new-post__links mb-4">
-                            <div class="small text-muted mb-2">Упоминания в статье</div>
-                            <div class="new-post__links-item d-flex justify-content-between">
-                                <div class="new-post__links-item-title">Товары</div>
-                                <div class="new-post__links-item-amount">4
-                                    <div class="new-post__links-item-amount-add icon-add pt-2"></div>
-                                </div>
-                            </div>
-                            <div class="new-post__links-item d-flex justify-content-between">
-                                <div class="new-post__links-item-title">Категории</div>
-                                <div class="new-post__links-item-amount">2
-                                    <div class="new-post__links-item-amount-add icon-add pt-2"></div>
-                                </div>
-                            </div>
-                            <div class="new-post__links-item d-flex justify-content-between">
-                                <div class="new-post__links-item-title">Бренды</div>
-                                <div class="new-post__links-item-amount">4
-                                    <div class="new-post__links-item-amount-add icon-add pt-2"></div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="new-post__tags mb-4">
-                            <div class="small text-muted mb-1">Теги</div>
-                            <multiselect v-model="selected"
-                                         tag-placeholder="Добавить новый тег"
-                                         placeholder="Поиск по тегам"
-                                         selectLabel="Выбрать"
-                                         selectedLabel="Выбран"
-                                         deselectLabel="Удалить"
-                                         label="name"
-                                         track-by="code"
-                                         open-direction="bottom"
-                                         :options="options"
-                                         :multiple="true"
-                                         :taggable="true"
-                                         @tag="addTag">
-
-                            </multiselect>
-                        </div>
-                        <div class="new-post__tags mb-4">
-                            <div class="small text-muted mb-1">Рубрика</div>
-                            <multiselect v-model="selectedRub"
-                                         tag-placeholder="Добавить новый тег"
-                                         placeholder="Выберите рубрику"
-                                         selectLabel="Выбрать"
-                                         selectedLabel="Выбран"
-                                         deselectLabel="Отменить выбор"
-                                         label="name"
-                                         track-by="code"
-                                         open-direction="bottom"
-                                         :options="options"
-
-                                         @tag="addTag">
-
-                            </multiselect>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div class="mr-3">
-                                <div class="btn btn--color-orange">Опубликовать</div>
-                            </div>
-                            <div class="new-post__save-state small  ">
-                                <span class="font-weight-bold">Черновик сохранен</span> <br>
-                                только что
-                            </div>
-
-                        </div>
+                </div>
+                <div class="d-block d-lg-none">
+                    <div class="fixed-bottom">
+                        <div v-if="!readyToPublic" class="bg-orange text-white h2 mb-0 p-4" @click="showPublishModal">Готовы опубликовать?</div>
+                        <div v-if="readyToPublic" class="bg-orange text-white h2 mb-0 p-4" @click="showPublishModal">Опубликовать</div>
 
                     </div>
                 </div>
-                <div class="small">
-                    <ul class=" pl-4 list-unstyled">
-                        <li> <a href="#" class="link link--color-blue">Как задать вопрос, чтобы на него ответили</a></li>
-                        <li><a href="#" class="link link--color-blue">Как пользоваться редактором</a></li>
-                    </ul>
 
 
+                <div class="col-12 col-lg-4 d-none d-lg-block">
+                    <div class="card-block p-4 mb-4">
+                        <div class="">
+                            <div class="new-post__links mb-4">
+                                <div class="small text-muted mb-2">Упоминания в статье</div>
+                                <div class="new-post__links-item d-flex justify-content-between">
+                                    <div class="new-post__links-item-title">Товары</div>
+                                    <div class="new-post__links-item-amount">4
+                                        <div class="new-post__links-item-amount-add icon-add pt-2"></div>
+                                    </div>
+                                </div>
+                                <div class="new-post__links-item d-flex justify-content-between">
+                                    <div class="new-post__links-item-title">Категории</div>
+                                    <div class="new-post__links-item-amount">2
+                                        <div class="new-post__links-item-amount-add icon-add pt-2"></div>
+                                    </div>
+                                </div>
+                                <div class="new-post__links-item d-flex justify-content-between">
+                                    <div class="new-post__links-item-title">Бренды</div>
+                                    <div class="new-post__links-item-amount">4
+                                        <div class="new-post__links-item-amount-add icon-add pt-2"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="new-post__tags mb-4">
+                                <div class="small text-muted mb-1">Теги</div>
+                                <multiselect v-model="selected"
+                                             tag-placeholder="Добавить новый тег"
+                                             placeholder="Поиск по тегам"
+                                             selectLabel="Выбрать"
+                                             selectedLabel="Выбран"
+                                             deselectLabel="Удалить"
+                                             label="name"
+                                             track-by="code"
+                                             open-direction="bottom"
+                                             :options="options"
+                                             :multiple="true"
+                                             :taggable="true"
+                                             @tag="addTag">
+
+                                </multiselect>
+                            </div>
+                            <div class="new-post__tags mb-4">
+                                <div class="small text-muted mb-1">Рубрика</div>
+                                <multiselect v-model="selectedRub"
+                                             tag-placeholder="Добавить новый тег"
+                                             placeholder="Выберите рубрику"
+                                             selectLabel="Выбрать"
+                                             selectedLabel="Выбран"
+                                             deselectLabel="Отменить выбор"
+                                             label="name"
+                                             track-by="code"
+                                             open-direction="bottom"
+                                             :options="options"
+
+                                             @tag="addTag">
+
+                                </multiselect>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="mr-3">
+                                    <div class="btn btn--color-orange">Опубликовать</div>
+                                </div>
+                                <div class="new-post__save-state small  ">
+                                    <span class="font-weight-bold">Черновик сохранен</span> <br>
+                                    только что
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="small">
+                        <ul class=" pl-4 list-unstyled">
+                            <li><a href="#" class="link link--color-blue">Как задать вопрос, чтобы на него ответили</a>
+                            </li>
+                            <li><a href="#" class="link link--color-blue">Как пользоваться редактором</a></li>
+                        </ul>
+
+
+                    </div>
                 </div>
             </div>
         </div>
+        <modal name="publish" :adaptive="true" width="100%" height="100%" scrollable="true">
+            <div class="layout--bg-grey p-3 d-flex align-items-center justify-content-between ">
+                <div class="h2 mb-0">Публикация статьи</div>
+                <div class="" @click="hidePublishModal">
+                    <div class="h1 mb-0 icon-close"></div>
+                </div>
+            </div>
+            <div class="p-3 mb-5">
+                <div class="new-post__links mb-4">
+                    <div class="small text-muted mb-2">Упоминания в статье</div>
+                    <div class="new-post__links-item d-flex justify-content-between">
+                        <div class="new-post__links-item-title">Товары</div>
+                        <div class="new-post__links-item-amount">4
+                            <div class="new-post__links-item-amount-add icon-add pt-2"></div>
+                        </div>
+                    </div>
+                    <div class="new-post__links-item d-flex justify-content-between">
+                        <div class="new-post__links-item-title">Категории</div>
+                        <div class="new-post__links-item-amount">2
+                            <div class="new-post__links-item-amount-add icon-add pt-2"></div>
+                        </div>
+                    </div>
+                    <div class="new-post__links-item d-flex justify-content-between">
+                        <div class="new-post__links-item-title">Бренды</div>
+                        <div class="new-post__links-item-amount">4
+                            <div class="new-post__links-item-amount-add icon-add pt-2"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="new-post__tags mb-4">
+                    <div class="small text-muted mb-1">Теги</div>
+                    <multiselect v-model="selected"
+                                 tag-placeholder="Добавить новый тег"
+                                 placeholder="Поиск по тегам"
+                                 selectLabel="Выбрать"
+                                 selectedLabel="Выбран"
+                                 deselectLabel="Удалить"
+                                 label="name"
+                                 track-by="code"
+                                 open-direction="bottom"
+                                 :options="options"
+                                 :multiple="true"
+                                 :taggable="true"
+                                 @tag="addTag">
+
+                    </multiselect>
+                </div>
+                <div class="new-post__tags mb-4">
+                    <div class="small text-muted mb-1">Рубрика</div>
+                    <multiselect v-model="selectedRub"
+                                 tag-placeholder="Добавить новый тег"
+                                 placeholder="Выберите рубрику"
+                                 selectLabel="Выбрать"
+                                 selectedLabel="Выбран"
+                                 deselectLabel="Отменить выбор"
+                                 label="name"
+                                 track-by="code"
+                                 open-direction="bottom"
+                                 :options="options"
+
+                                 @tag="addTag">
+
+                    </multiselect>
+                </div>
+                <div class="d-flex align-items-center">
+
+                    <div class="new-post__save-state small  ">
+                        <span class="font-weight-bold">Черновик сохранен</span>
+                        только что
+                    </div>
+
+                </div>
+
+            </div>
+
+        </modal>
     </div>
 </template>
 
@@ -100,6 +189,7 @@
     export default {
         data() {
             return {
+                readyToPublic: false,
                 selected: [],
                 selectedRub: [],
                 options: [
@@ -126,6 +216,15 @@
         },
 
         methods: {
+            showPublishModal() {
+                this.$modal.show('publish');
+                this.readyToPublic=true
+
+            },
+            hidePublishModal() {
+                this.$modal.hide('publish');
+                this.readyToPublic=false
+            },
 
             addTag(newTag) {
                 const tag = {

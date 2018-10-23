@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="d-block d-lg-none ">
-                        <div class="card-block  layout--bg-grey  card-block--full-mobile p-3 "
+                        <div v-ripple class="card-block  layout--bg-grey  card-block--full-mobile p-3 "
                              @click="collapseHeadList=!collapseHeadList">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="">Содержание
@@ -84,7 +84,7 @@
 
 
                     <div class="d-block d-lg-none ">
-                        <div class="card-block card-block--full-mobile p-3 " @click="collapseProduct=!collapseProduct">
+                        <div v-ripple class="card-block card-block--full-mobile p-3 " @click="collapseProduct=!collapseProduct">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="">Упомянутые товары
                                     <span v-if="post.products" class="text-muted ml-2">{{post.products.length}}</span>
@@ -495,6 +495,7 @@
     .post-item__author-img {
         width: 40px;
         height: 40px;
+        background: #eee;
     }
 
     .post__author-name {

@@ -18,6 +18,11 @@ import rate from 'vue-rate';
 Vue.use(rate)
 
 
+import Ripple from './libs/fi-ripple.js';
+Vue.directive('Ripple', Ripple);
+
+
+
 import VTooltip from 'v-tooltip'
 Vue.use(VTooltip)
 

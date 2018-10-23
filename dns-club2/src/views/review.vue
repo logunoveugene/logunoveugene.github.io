@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="small mb-3">
-                        <router-link class="link link--color-black"  to="/">Клуб</router-link>
+                        <router-link class="link link--color-black" to="/">Клуб</router-link>
                         /
                         <snap class="text-muted">Обзоры</snap>
 
@@ -15,12 +15,19 @@
 
                 </div>
                 <div class="col-12 col-md-12 col-lg-8">
-                    <div class="d-flex  d-block d-lg-none ">
-                        <div class="w-100">
-                            <div class="btn btn--color-white mb-4 w-100" @click="show">Поиск обзора</div>
+                    <div class="d-block d-lg-none">
+                        <div v-ripple class=" mb-4 card-block card-block--full-mobile p-3 " @click="searchPlate=!searchPlate">
+                            <div  class="d-flex justify-content-between align-items-center">
+                                <div class="">Настройка показа</div>
+                                <div v-if="!searchPlate" class="icon-down"></div>
+                                <div v-if="searchPlate" class="icon-up"></div>
+                            </div>
                         </div>
                     </div>
-                    <div class="d-flex  justify-content-between mb-4 align-items-center small">
+                    <div class="mb-4" v-if="searchPlate">
+                        Поиск
+                    </div>
+                    <div class="d-none d-lg-flex justify-content-between mb-4 align-items-center small ">
                         <nav class="nav nav-pills nav-justified">
                             <a class="pill-item link pill-item--active " href="#">Свежее</a>
                             <a class="pill-item link" href="#">Популярное</a>
@@ -232,6 +239,7 @@
         data: function () {
             return {
                 category: true,
+                searchPlate: false,
                 thame: false,
                 brand: false,
                 review: [],
