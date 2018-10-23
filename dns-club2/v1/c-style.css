@@ -501,6 +501,18 @@ h4, .h4 {
 
 }
 
+.btn.btn--color-orange {
+    background: #FF902D ;
+    border-radius: 8px;
+    color: #fff;
+    padding: .5rem 1rem;
+    font-weight: 700;
+    border: none;
+    transition: .2s;
+}
+
+
+
 .btn--color-white:hover {
 
     background: #FF902D linear-gradient(-180deg, rgba(255, 188, 11, 0.99) 0%, #FF7400 100%);

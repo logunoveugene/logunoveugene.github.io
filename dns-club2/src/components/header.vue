@@ -52,7 +52,7 @@
                             </div>
                             <div class="header__bottom-block col-8 col-lg-8">
                                 <router-link to="/">
-                                    <img class="heaader__logo" src="https://i.snag.gy/orNbZ6.jpg" alt="">
+                                    <img class="heaader__logo" src="https://i.snag.gy/xrG5Ze.jpg" alt="">
                                 </router-link>
 
                                 <div class="header__main-nav d-none d-lg-flex">

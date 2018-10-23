@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <div class="p-4" v-if="products && products.length>3">
+        <div class="pt-3" v-if="products && products.length>3">
             <div class="d-flex align-items-center">
                 <div class="icon-add pt-1 mr-2"></div>
                 Смотерть все
