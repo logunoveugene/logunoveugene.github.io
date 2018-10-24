@@ -19,7 +19,6 @@
                     </div>
                 </div>
 
-
                 <div class="col-12 col-lg-4 d-none d-lg-block">
                     <div class="card-block p-4 mb-4">
                         <div class="">
@@ -99,8 +98,6 @@
                             </li>
                             <li><a href="#" class="link link--color-blue">Как пользоваться редактором</a></li>
                         </ul>
-
-
                     </div>
                 </div>
             </div>

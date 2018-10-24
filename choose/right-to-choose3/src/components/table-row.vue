@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div class="table__row-wrap">
         <div class="table__row d-flex flex-nowrap"
              :class="{ 'bg-light-red': districtInfo.stateChange==3,
              'bg-light-orange': districtInfo.stateChange==2,
@@ -49,9 +49,13 @@
             <div class="table__candidate-col d-flex flex-nowrap"
                  v-for="res in districtInfo.result"
                  :key="res.candidateId">
-                <div class="table__candidate-sub  d-inline-block ">{{res.GASResult | percent }}%
+                <div class="table__candidate-sub  d-inline-block ">
+                    <span v-if="isPercent">{{res.GASResult | percent }}%</span>
+                    <span v-if="!isPercent">{{res.GASResultAbs | number }}</span>
                 </div>
-                <div class="table__candidate-sub d-inline-block ">{{res.watcherResult | percent }}%
+                <div class="table__candidate-sub d-inline-block ">
+                    <span v-if="isPercent">{{res.watcherResult | percent }}%</span>
+                    <span v-if="!isPercent">{{res.watcherResultAbs | number}}</span>
                 </div>
             </div>
         </div>
@@ -99,9 +103,13 @@
                 <div class="table__candidate-col d-flex flex-nowrap"
                      v-for="res in districtInfo.result"
                      :key="res.candidateId">
-                    <div class="table__candidate-sub  d-inline-block ">{{res.GASResult | percent }}%
+                    <div class="table__candidate-sub  d-inline-block ">
+                        <span v-if="isPercent">{{res.GASResult | percent }}%</span>
+                        <span v-if="!isPercent">{{res.GASResultAbs | number }}</span>
                     </div>
-                    <div class="table__candidate-sub d-inline-block ">{{res.watcherResult | percent }}%
+                    <div class="table__candidate-sub d-inline-block ">
+                        <span v-if="isPercent">{{res.watcherResult | percent }}%</span>
+                        <span v-if="!isPercent">{{res.watcherResultAbs | number}}</span>
                     </div>
                 </div>
             </div>
@@ -141,7 +149,13 @@
                 type: null,
                 default: ''
 
+            },
+            isPercent:{
+                type: null,
+                default: ''
             }
+
+
         }
     }
 </script>
@@ -213,6 +227,8 @@
             border-radius: 4px;
             padding: 15px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 100vw;
+            width: 400px;
         }
 
         .tooltip-arrow {
@@ -286,10 +302,10 @@
         }
 
         &.popover {
-            $color: #f9f9f9;
+            border:none;
 
             .popover-inner {
-                background: $color;
+                background: #ffffff;
                 color: black;
                 padding: 24px;
                 border-radius: 5px;
@@ -297,7 +313,7 @@
             }
 
             .popover-arrow {
-                border-color: $color;
+                border-color: #ffffff;
             }
         }
 
@@ -313,4 +329,8 @@
             transition: opacity .15s;
         }
     }
+
+
+
+
 </style>

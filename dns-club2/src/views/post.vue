@@ -12,9 +12,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-8">
-
                     <div class="page__title mb-4">{{post.title}}</div>
-
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
                         <div class="d-flex align-items-center mb-3">
                             <div class="mr-3">
@@ -36,7 +34,6 @@
                             ></post-info>
                         </div>
                     </div>
-
                     <div class=" d-none d-lg-block card-block  layout--bg-grey  p-4 mb-4">
                         <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
                             <div class="d-flex flex-column">
@@ -55,7 +52,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="d-block d-lg-none ">
                         <div v-ripple class="card-block  layout--bg-grey  card-block--full-mobile p-3 "
                              @click="collapseHeadList=!collapseHeadList">
@@ -81,8 +77,6 @@
                             </li>
                         </ul>
                     </div>
-
-
                     <div class="d-block d-lg-none ">
                         <div v-ripple class="card-block card-block--full-mobile p-3 "
                              @click="collapseProduct=!collapseProduct">
@@ -155,7 +149,6 @@
                             трубками в подошве чуть более 1 мм. Качество обработки основания среднее.</p>
 
                         <img src="https://c.dns-shop.ru/thumb/st4/fit/750/843/21e7d8a686775d03577082a1e2371405/ed33b905cb5ff67476c59d144b0e0673201468271afc1c79ee2c92a7b0ca602e.jpg">
-
                         <p>Дисплей полуматовый, то есть убирает большинство бликов, но иногда может отражать размытые
                             очертания объектов.
                             Кристаллический эффект практически незаметен. Матрица – обычная TN, яркость начинает
@@ -273,16 +266,12 @@
                             расположена в
                             Пекине (КНР), а зарегистрирована компания в Гонконге.</p>
 
-
                     </div>
-
                     <post-tag-full class=" mb-4  "
                                    :source="post.source"
                                    :format="post.format"
                                    :tags="post.tags"
                     ></post-tag-full>
-
-
                     <div class="d-flex justify-content-between ">
                         <div class="d-flex">
                             <div class="post__rate-up icon-thumb-up"></div>
@@ -298,11 +287,8 @@
                     <div class=" sticky-sidebar">
                         <div class="mb-3">Упомянутые товары</div>
                         <product-list :products="post.products"></product-list>
-
                     </div>
                 </div>
-
-
             </div>
         </div>
         <div class="layout--hidden-content pt-5">
@@ -311,7 +297,6 @@
                     <div class="col-12">
                         <div class="h1 mb-4">Читайте также</div>
                         <swiper class="livehack-slider" :options="lifehackOption">
-
                             <swiper-slide v-for="(post, index) in posts" :key="index">
                                 <post-img :post="post"></post-img>
                             </swiper-slide>
@@ -322,7 +307,6 @@
                             <div class="sw-button-next" slot="button-next">
                                 <div class="icon-arrow-right"></div>
                             </div>
-
                         </swiper>
                     </div>
                 </div>
@@ -338,14 +322,9 @@
                         <div class="comment-block__adding-box">
                             <froala :tag="'textarea'" :config="config" v-model="commentText"></froala>
                         </div>
-
                         <button type="button" class="btn btn--color-white ">Добавить комментарий</button>
-
-
                     </div>
                     <comment-item v-for="comment in comments" :comment="comment" :key="comment.id"></comment-item>
-
-
                 </div>
             </div>
 

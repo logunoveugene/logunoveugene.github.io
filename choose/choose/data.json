@@ -1315,15 +1315,15 @@
       "consignment": ""
     }
   ],
-  "yik": [
+  "uik": [
     {
       "id": "403",
-      "districtId" :"05403".
+      "districtId": "05403",
       "stateHistory": 1,
       "stateChange": 1,
       "title": "УИК №403",
       "lastUpdate": "2018-06-16T21:17:43",
-      "type": "yik",
+      "type": "uik",
       "result": [
         {
           "candidateId": 1,
@@ -1352,6 +1352,233 @@
           "watcherResultAbs": "15421",
           "GASResult": "0.4819451155",
           "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "405",
+      "districtId": "05403",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "УИК №405",
+      "lastUpdate": "2018-06-16T21:17:43",
+      "type": "uik",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.72164701",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.48194512",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.72164701",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.48194512",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.721647011",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.481945115",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.7216470105",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.4819451155",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    }
+  ],
+  "uikDetals": [
+    {
+      "id": "403",
+      "districtId": "05403",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "УИК №403",
+      "lastUpdate": "2018-06-16T21:17:43",
+      "type": "uik",
+      "result": [
+        {
+          "title": "Наблюдатель КПРФ Александр Викторович Глебов – предварительно",
+          "value": [
+            {
+              "candidateId": 1,
+              "watcherResult": "40.72164701",
+              "watcherResultAbs": "105421"
+            },
+            {
+              "candidateId": 2,
+              "watcherResult": "28.72164701",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 3,
+              "watcherResult": "2.721647011",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 4,
+              "watcherResult": "0.7216470105",
+              "watcherResultAbs": "15421"
+            }
+          ]
+        },
+        {
+          "title": "Наблюдатель КПРФ Иван Михайлович Голубка – предварительно",
+          "value": [
+            {
+              "candidateId": 1,
+              "watcherResult": "40.72164701",
+              "watcherResultAbs": "105421"
+            },
+            {
+              "candidateId": 2,
+              "watcherResult": "28.72164701",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 3,
+              "watcherResult": "2.721647011",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 4,
+              "watcherResult": "0.7216470105",
+              "watcherResultAbs": "15421"
+            }
+          ]
+        },
+        {
+          "title": "Наблюдатель ЕР Виктор Анатольевич Аблапов – предварительно",
+          "value": [
+            {
+              "candidateId": 1,
+              "watcherResult": "40.72164701",
+              "watcherResultAbs": "105421"
+            },
+            {
+              "candidateId": 2,
+              "watcherResult": "28.72164701",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 3,
+              "watcherResult": "2.721647011",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 4,
+              "watcherResult": "0.7216470105",
+              "watcherResultAbs": "15421"
+            }
+          ]
+        },
+        {
+          "title": "Наблюдатель ЕР Андрей Петрович Брик – предварительно",
+          "value": [
+            {
+              "candidateId": 1,
+              "watcherResult": "40.72164701",
+              "watcherResultAbs": "105421"
+            },
+            {
+              "candidateId": 2,
+              "watcherResult": "28.72164701",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 3,
+              "watcherResult": "2.721647011",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 4,
+              "watcherResult": "0.7216470105",
+              "watcherResultAbs": "15421"
+            }
+          ]
+        },
+        {
+          "title": "Наблюдатель ЕР Андрей Петрович Брик – протокол",
+          "value": [
+            {
+              "candidateId": 1,
+              "watcherResult": "40.72164701",
+              "watcherResultAbs": "105421"
+            },
+            {
+              "candidateId": 2,
+              "watcherResult": "28.72164701",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 3,
+              "watcherResult": "2.721647011",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 4,
+              "watcherResult": "0.7216470105",
+              "watcherResultAbs": "15421"
+            }
+          ]
+        },
+        {
+          "title": "Данные ГАС Выборы",
+          "value": [
+            {
+              "candidateId": 1,
+              "watcherResult": "40.72164701",
+              "watcherResultAbs": "105421"
+            },
+            {
+              "candidateId": 2,
+              "watcherResult": "28.72164701",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 3,
+              "watcherResult": "2.721647011",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 4,
+              "watcherResult": "0.7216470105",
+              "watcherResultAbs": "15421"
+            }
+          ]
+        },
+        {
+          "title": "Данные ГАС Выборы от 18:28 16.12.18",
+          "value": [
+            {
+              "candidateId": 1,
+              "watcherResult": "40.72164701",
+              "watcherResultAbs": "105421"
+            },
+            {
+              "candidateId": 2,
+              "watcherResult": "28.72164701",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 3,
+              "watcherResult": "2.721647011",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 4,
+              "watcherResult": "0.7216470105",
+              "watcherResultAbs": "15421"
+            }
+          ]
         }
       ]
     }
