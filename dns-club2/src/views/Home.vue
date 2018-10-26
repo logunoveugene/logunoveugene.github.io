@@ -37,7 +37,8 @@
                         <div class="small d-none d-sm-block">
                             <a href="#" class="link link--color-blue">Тур по сайту</a>
                         </div>
-                        <button type="button " class="ml-auto close" v-on:click="promoreg = !promoreg" aria-label="Close">
+                        <button type="button " class="ml-auto close" v-on:click="promoreg = !promoreg"
+                                aria-label="Close">
                             <span class="icon-close"></span>
                         </button>
                     </div>
@@ -49,7 +50,7 @@
                                 </div>
                                 <div class="benefit-item__info">
                                     <div class="small font-weight-bold">Читай – у нас есть что!</div>
-                                    <div class="small">тысячи бомбическийх статей и обзоров </div>
+                                    <div class="small">тысячи бомбическийх статей и обзоров</div>
                                 </div>
                             </div>
                         </div>
@@ -277,7 +278,41 @@
 
             </div>
         </div>
-
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <a href="#" class="layout__title-link-test">
+                        <div class="layout__title-test layout__title--orange-test">
+                            <div class="layout__title-text-test">Обзоры</div>
+                            <div class="layout__title-text-test-shadow">Обзоры</div>
+                            <button class="layout__title-button">
+                                <span class="icon-arrow-right"></span>
+                            </button>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <post-half-img :post="digest[0]"></post-half-img>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <post-img :post="digest[2]"></post-img>
+                </div>
+                <div class="col-12 col-sm-12 col-lg-4">
+                    <div class="mt-lg-4">
+                        <post-text :post="digest[1]"></post-text>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layout--bg-grey mb-5">
+            <div class="container ">
+                <div class="">
+                    <img src="https://i.snag.gy/6rW85y.jpg" alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -399,3 +434,57 @@
 
     }
 </script>
+<style>
+
+
+
+
+
+
+
+    .layout__title-link-test {
+
+        margin-bottom: 1rem;
+        position: relative;
+        display: block;
+    }
+
+    .layout__title-link-test:hover {
+        text-decoration: none;
+    }
+
+    .layout__title-test {
+        font-size: 32px;
+        font-weight: 700;
+        color: #000;
+        line-height: 52px;
+        display: flex;
+        align-items: center;
+    }
+
+    .layout__title-text-test-shadow {
+        font-size: 20vw;
+        font-weight: 700;
+        font-family: 'Montserrat';
+        color: #eee;
+        z-index: -1;
+
+        position: absolute;
+
+    }
+
+    @media (min-width: 768px) {
+        .layout__title-text-test-shadow {
+            font-size: 130px;
+            font-weight: 700;
+            font-family: 'Montserrat';
+            color: #eee;
+            z-index: -1;
+
+            position: absolute;
+
+        }
+
+    }
+
+</style>

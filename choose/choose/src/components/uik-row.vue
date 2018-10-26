@@ -6,7 +6,9 @@
                  'color-blue': uik.stateHistory==2,
                  'color-orange': uik.stateHistory==3}">
         <div class="table__region  mr-4">
-            <div class="table__region-desc  d-inline-block">{{uik.title}}</div>
+            <router-link class="text-dark" :to="{ name: 'uik', params: { id: uik.id, title: uik.title }}">
+                <div class="table__region-desc  d-inline-block">{{uik.title}}</div>
+            </router-link>
             <img src="../assets/info.jpg"
                  v-if="uik.stateChange==3"
                  alt=""
@@ -29,7 +31,7 @@
                  class="table__region-desc-warning-img"
                  v-tooltip="{content:'Данные Этапа №1 и Этапа №2 значительно различаются (более 5%)'}">
 
-            <router-link :to="{ name: 'uik', params: { id: uik.id }}">
+            <router-link class="detal-info-wrap" :to="{ name: 'uik', params: { id: uik.id, title: uik.title }}">
                 <div class="detal-info">Детали</div>
             </router-link>
         </div>
@@ -67,6 +69,20 @@
     }
 </script>
 
-<style >
+<style>
+    .detal-info-wrap {
+        position: absolute;
+    }
 
+    .detal-info {
+        display: none;
+    }
+
+    .table__sub-row:hover .detal-info {
+        display: inline-block;
+        margin-left: 20px;
+        cursor: pointer;
+        border-bottom: 1px dotted #999;
+        color: #666;
+    }
 </style>

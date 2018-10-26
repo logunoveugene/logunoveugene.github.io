@@ -262,6 +262,28 @@ h4, .h4 {
     }
 }
 
+
+
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 100%
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 100%
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px
+    }
+}
+
+
 @media (min-width: 1200px) {
     .container {
         max-width: 1200px;
@@ -712,3 +734,6 @@ a.bottom-menu__item {
     user-select: none;
     opacity: .08
 }
+
+
+

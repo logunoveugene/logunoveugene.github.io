@@ -2,29 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b39141c9-0450-4cd0-ac3d-79269bcec368" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../choose/choose/data.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../choose/choose/src/components/uik-detal-row.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../choose/choose/src/components/uik-row.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../choose/choose/src/views/uik.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../choose/right-to-choose4/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../choose/right-to-choose4/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../choose/right-to-choose4/.idea/right-to-choose4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../choose/right-to-choose4/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../choose/right-to-choose4/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../choose/right-to-choose3/dist/css/app.b196be39.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../choose/right-to-choose3/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../choose/right-to-choose3/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../choose/right-to-choose3/dist/js/app.be4efed8.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../choose/right-to-choose3/dist/js/app.be4efed8.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../choose/right-to-choose3/district.json" beforeDir="false" afterPath="$PROJECT_DIR$/../choose/right-to-choose3/district.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../choose/right-to-choose3/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../choose/right-to-choose3/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../choose/right-to-choose3/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../choose/right-to-choose3/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../choose/right-to-choose3/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../choose/right-to-choose3/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../choose/right-to-choose3/src/components/HelloWorld.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../choose/right-to-choose3/src/components/table-row.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../choose/right-to-choose3/src/components/table-row.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../choose/right-to-choose3/src/filters.js" beforeDir="false" afterPath="$PROJECT_DIR$/../choose/right-to-choose3/src/filters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../choose/choose/.firebase/hosting.ZGlzdA.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../choose/choose/.firebase/hosting.ZGlzdA.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../choose/choose/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/../choose/choose/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../choose/choose/firebase.json" beforeDir="false" afterPath="$PROJECT_DIR$/../choose/choose/firebase.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../choose/choose/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../choose/choose/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../choose/choose/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../choose/choose/src/components/table-row.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../choose/choose/src/components/table-row.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../choose/choose/src/components/uik-row.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../choose/choose/src/components/uik-row.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../choose/choose/src/filters.js" beforeDir="false" afterPath="$PROJECT_DIR$/../choose/choose/src/filters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../choose/choose/src/views/About.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../choose/choose/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../choose/choose/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../choose/choose/src/views/uik.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../choose/choose/src/views/uik.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dns-club2/src/views/newpost.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../dns-club2/src/views/newpost.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dns-club2/src/views/post.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../dns-club2/src/views/post.vue" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,13 +25,14 @@
     <session id="896165416">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.21" value="1" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -86,7 +76,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -196,7 +186,7 @@
       <path value="$PROJECT_DIR$/dns-club/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1920" />
     <option name="height" value="1001" />
@@ -267,17 +257,18 @@
       <workItem from="1539073618884" duration="250000" />
       <workItem from="1540177649378" duration="3000" />
       <workItem from="1540365786729" duration="599000" />
+      <workItem from="1540517165619" duration="29000" />
+      <workItem from="1540517215833" duration="23000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67391000" />
+    <option name="totallyTimeSpent" value="67443000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1001" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1920" height="1001" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18743344" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19062833" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -290,7 +281,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.27722773" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.27722773" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />

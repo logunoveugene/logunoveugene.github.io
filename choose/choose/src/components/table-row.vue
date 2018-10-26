@@ -109,17 +109,7 @@
 
 <style lang="scss">
 
-    .detal-info {
-        display: none;
-    }
 
-    .table__sub-row:hover .detal-info {
-        display: inline-block;
-        margin-left: 20px;
-        cursor: pointer;
-        border-bottom: 1px dotted #999;
-        color: #666;
-    }
 
     .table__sub-row:hover .detal-info:hover {
         color: #333;
@@ -140,6 +130,8 @@
             margin-bottom: 2px;
             display: inline-block;
             margin-left: 10px;
+            position: absolute;
+            top: 4px;
 
             &:hover {
                 opacity: .6;

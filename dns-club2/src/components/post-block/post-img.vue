@@ -4,7 +4,7 @@
             <div class="post-image__image-wrap"
                  v-bind:style="{  backgroundColor: post.bgColor, backgroundImage: 'url(' +  post.img + ')'}">
                 <div class="post-image__gradient-wrap"
-                     v-bind:style="{ boxShadow: 'inset 0px 220px 100px -60px ' +  post.bgColor}">
+                     v-bind:style="{ boxShadow: 'inset 0px 250px 100px -60px ' +  post.bgColor}">
                     <div class="post-image__info">
                         <div class="post__tags-wrap ">
                             <div class="post__fotmat-icon" v-bind:style="{ color: post.textColor }"

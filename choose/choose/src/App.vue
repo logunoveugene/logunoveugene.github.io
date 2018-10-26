@@ -1,59 +1,134 @@
 <template>
     <div id="app">
         <nav class="navbar navbar-dark bg-blue-dark">
-            <router-link to="/"><span class="navbar-brand ml-3 mb-0 h1">Право на выбор</span></router-link>
-            <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center ">
-                <v-popover offset="5">
-                    <div class="ml-3 mb-3 mb-md-0  d-flex">
-                        <div class="mr-2">
-                            <img src="./assets/ask.jpg" alt="">
+            <div class="container">
+                <div class="d-flex align-items-center">
+                    <router-link to="/">
+                        <span v-if="$route.name=='home'" class="navbar-brand  mb-0 h1">Право на выбор</span>
+                        <div class="mr-2 p-2" v-if="$route.name=='uik'"><img src="./assets/back.png" alt=""></div>
+                    </router-link>
+                    <div v-if="$route.name=='uik'" class="text-white navbar-brand mb-0">УИК №{{$route.params.id}}</div>
+                    <div class="navbar__update-time d-none d-md-block small pt-1 text-white ml-4">Обновлено <br> 18:28 16.12.18 </div>
+                </div>
+
+                <div @click="modal=true" class="d-block d-md-none">
+                    <img class="p-2" src="./assets/menu.png" alt="">
+                </div>
+                <div class="d-none d-md-flex flex-column flex-md-row align-items-start align-items-md-center ">
+                    <v-popover offset="5">
+                        <div class="mb-3 mb-md-0  d-flex">
+                            <div class="mr-2">
+                                <img src="./assets/ask.jpg" alt="">
+                            </div>
+                            <div class="navbar__legend text-white">Обозначения</div>
                         </div>
-                        <div class="navbar__legend text-white">Обозначения</div>
+                        <template slot="popover">
+                            <div class="navbar__legend-item">
+                                <div class="navbar__legend-item-img color-blue ">УИК № 000</div>
+                                <div class="navbar__legend-item-desc">Данные Этапа №1 и Этапа №2 незначительно
+                                    различаются
+                                    (менее 5%)
+                                </div>
+
+                            </div>
+                            <div class="navbar__legend-item">
+                                <div class="navbar__legend-item-img color-orange">УИК № 000</div>
+                                <div class="navbar__legend-item-desc"> Данные Этапа №1 и Этапа №2 значительно
+                                    различаются
+                                    (более 5%)
+                                </div>
+                            </div>
+                            <div class="navbar__legend-item">
+                                <div class="navbar__legend-item-img bg-light-red ">УИК № 000</div>
+                                <div class="navbar__legend-item-desc">Данные от наблюдателей и в системе ГАС Выборы
+                                    различаются
+                                </div>
+                            </div>
+                            <div class="navbar__legend-item">
+                                <div class="bg-light-orange navbar__legend-item-img">УИК № 000</div>
+                                <div class="navbar__legend-item-desc">В системе ГАС Выборы найдено несколько версий
+                                    данных,
+                                    некоторые из них
+                                    отличаются от данных наблюдателей
+                                </div>
+                            </div>
+
+                        </template>
+                    </v-popover>
+                    <div class="mr-3 ml-3 text-white d-none d-md-block">|</div>
+                    <div class="btn-group btn-group-toggle btn-group-sm   mb-2 mb-md-0" data-toggle="buttons">
+                        <label @click="isPercent=true" class="btn btn-light  btn-secondary"
+                               :class="{active : isPercent}">
+                            <input type="radio" name="options" autocomplete="off" checked> Проценты
+                        </label>
+                        <label @click="isPercent=false" class="btn btn-light btn-secondary"
+                               :class="{active : !isPercent}">
+                            <input type="radio" name="options" autocomplete="off"> Абсолютные значения
+                        </label>
                     </div>
-                    <template slot="popover">
-                        <div class="navbar__legend-item">
-                            <div class="navbar__legend-item-img color-blue ">УИК № 000</div>
-                            <div class="navbar__legend-item-desc">Данные Этапа №1 и Этапа №2 незначительно различаются
-                                (менее 5%)
-                            </div>
-
-                        </div>
-                        <div class="navbar__legend-item">
-                            <div class="navbar__legend-item-img color-orange">УИК № 000</div>
-                            <div class="navbar__legend-item-desc"> Данные Этапа №1 и Этапа №2 значительно различаются
-                                (более 5%)
-                            </div>
-                        </div>
-                        <div class="navbar__legend-item">
-                            <div class="navbar__legend-item-img bg-light-red ">УИК № 000</div>
-                            <div class="navbar__legend-item-desc">Данные от наблюдателей и в системе ГАС Выборы
-                                различаются
-                            </div>
-                        </div>
-                        <div class="navbar__legend-item">
-                            <div class="bg-light-orange navbar__legend-item-img">УИК № 000</div>
-                            <div class="navbar__legend-item-desc">В системе ГАС Выборы найдено несколько версий данных,
-                                некоторые из них
-                                отличаются от данных наблюдателей
-                            </div>
-                        </div>
-
-                    </template>
-                </v-popover>
-                <div class="mr-3 ml-4 text-white d-none d-md-block">|</div>
-                <div class="btn-group btn-group-toggle btn-sm mx-2 mb-2 mb-md-0" data-toggle="buttons">
-                    <label @click="isPercent=true" class="btn btn-light btn-sm btn-secondary"
-                           :class="{active : isPercent}">
-                        <input type="radio" name="options" id="option1" autocomplete="off" checked> Проценты
-                    </label>
-                    <label @click="isPercent=false" class="btn btn-light btn-sm btn-secondary"
-                           :class="{active : !isPercent}">
-                        <input type="radio" name="options" id="option2" autocomplete="off"> Абсолютные значения
-                    </label>
                 </div>
             </div>
         </nav>
-        <router-view :isPercent="isPercent"></router-view>
+        <router-view :isPercent="isPercent" :scrolled="scrolled"></router-view>
+        <div v-if="modal" class="menu">
+            <div class="p-4 bg-light d-flex justify-content-between">
+                <div class="h5 mb-0">Право на выбор</div>
+                <div @click="modal = false" class="h5 mb-0 px-2">×</div>
+            </div>
+            <div class="menu__scroll">
+                <div class="p-4">
+                    <div class="h5">Обновлено  18:28 16.12.18</div>
+
+                </div>
+
+                <div class="px-4  mb-4">
+                    <div class="mb-3">Настройки показа</div>
+                    <div class="btn-group btn-group-toggle btn-group-sm   mb-2 mb-md-0" data-toggle="buttons">
+                        <label @click="isPercent=true" class="btn btn-light  btn-secondary"
+                               :class="{active : isPercent}">
+                            <input type="radio" name="options" autocomplete="off" checked> Проценты
+                        </label>
+                        <label @click="isPercent=false" class="btn btn-light btn-secondary"
+                               :class="{active : !isPercent}">
+                            <input type="radio" name="options" autocomplete="off"> Абсолютные значения
+                        </label>
+                    </div>
+                </div>
+                <div class="px-4 pb-4">
+                    <div class="mb-3">Обозначения</div>
+                    <div class="navbar__legend-item">
+                        <div class="navbar__legend-item-img color-blue ">УИК № 000</div>
+                        <div class="navbar__legend-item-desc">Данные Этапа №1 и Этапа №2 незначительно
+                            различаются
+                            (менее 5%)
+                        </div>
+
+                    </div>
+                    <div class="navbar__legend-item">
+                        <div class="navbar__legend-item-img color-orange">УИК № 000</div>
+                        <div class="navbar__legend-item-desc"> Данные Этапа №1 и Этапа №2 значительно
+                            различаются
+                            (более 5%)
+                        </div>
+                    </div>
+                    <div class="navbar__legend-item">
+                        <div class="navbar__legend-item-img bg-light-red ">УИК № 000</div>
+                        <div class="navbar__legend-item-desc">Данные от наблюдателей и в системе ГАС Выборы
+                            различаются
+                        </div>
+                    </div>
+                    <div class="navbar__legend-item">
+                        <div class="bg-light-orange navbar__legend-item-img">УИК № 000</div>
+                        <div class="navbar__legend-item-desc">В системе ГАС Выборы найдено несколько версий
+                            данных,
+                            некоторые из них
+                            отличаются от данных наблюдателей
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 </template>
 
@@ -64,13 +139,73 @@
         data() {
             return {
                 isPercent: true,
+                scrolled: false,
+                modal: false
             }
+        },
+        methods: {
+            handleScroll() {
+                this.scrolled = window.scrollY > 0;
+            }
+        },
+        created() {
+            window.addEventListener('scroll', this.handleScroll);
+        },
+        destroyed() {
+            window.removeEventListener('scroll', this.handleScroll);
         }
 
 
     }
 </script>
 <style lang="scss">
+    .menu {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        background: #fff;
+        z-index: 10000;
+    }
+
+    .menu__scroll {
+        width: 100%;
+        height: calc(100vh - 72px);
+        overflow: scroll;
+    }
+
+    body {
+        background: #f6f6f6;
+    }
+
+    .container {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    @media (min-width: 576px) {
+        .container {
+            max-width: 100%
+        }
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            max-width: 100%
+        }
+    }
+
+    @media (min-width: 992px) {
+        .container {
+            max-width: 100%
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .container {
+            max-width: 1140px
+        }
+    }
 
     .navbar {
         background: #152f81;
@@ -110,6 +245,9 @@
         &-brand {
             font-size: 1.5rem;
             font-weight: 700;
+        }
+        &__update-time{
+            line-height: 12px;
         }
     }
 
@@ -238,11 +376,13 @@
     .color-orange {
         color: #a75f00;
     }
+
     .bg-blue-light {
         background-color: #f0fcff;
-        box-shadow: 0 0 20px rgba(0, 0, 0, .1);
-        padding-bottom: 10px;
+        box-shadow: 0 17px 20px -20px rgba(0, 0, 0, 0.1);
+
     }
+
     .swiper-button-disabled {
         display: none;
     }
@@ -264,6 +404,7 @@
         background-repeat: no-repeat;
         background-color: #fff;
     }
+
     .swiper-slide {
         display: table;
     }

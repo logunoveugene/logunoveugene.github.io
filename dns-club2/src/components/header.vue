@@ -19,8 +19,9 @@
                         </div>
                     </div>
                     <div class="header__top-block col-2 col-lg-4">
-                        <div class="small" v-on:click="$emit('liveon')" v-if="live == ''"><a href="#"
-                                                                                             class="link link--color-grey">Эфир</a>
+                        <div class="small" v-on:click="$emit('liveon')" v-if="live == ''">
+                            <a href="#"
+                               class="link link--color-grey">Эфир</a>
                         </div>
                         <div class="small">
                             <a href="#" class="link link--color-grey">Тур по сайту</a>
@@ -43,14 +44,13 @@
             <div class="fixed-plate" :class="{ 'is-fixed': isFixed }">
                 <div class="header__bottom-line">
                     <div class="header__container container">
-                        <div class="header__bottom-grid row">
+                        <div class="header__bottom-grid t row">
                             <div class="header__bottom-block col-2 d-lg-none">
                                 <div class="header__mobile-menu">
-
                                     <img src="https://i.snag.gy/23I0JN.jpg" alt="">
                                 </div>
                             </div>
-                            <div class="header__bottom-block col-8 col-lg-8">
+                            <div class="header__bottom-block justify-content-lg-start col-8 col-lg-8">
                                 <router-link to="/">
                                     <img class="heaader__logo" src="https://i.snag.gy/xrG5Ze.jpg" alt="">
                                 </router-link>
@@ -68,30 +68,62 @@
                                     <router-link to="/discussions">
                                         <a href="#" class="link link--color-grey ">Обсуждения</a>
                                     </router-link>
-
                                 </div>
+
                             </div>
                             <div class="header__bottom-block col-2 col-lg-4">
-                                <div class="header__create-controls d-none d-lg-flex">
-                                    <div class="header__create-controls-item">
-                                        <div class="header__create-controls-icon">
-                                            <div class="icon-pen"></div>
+                                <transition name="fademy">
+                                    <div v-if="!isSearchExtend" class="header__create-controls d-none d-lg-flex">
+                                        <div class="header__create-controls-item">
+                                            <div class="header__create-controls-icon">
+                                                <div class="icon-pen"></div>
+                                            </div>
+                                            <router-link to="/newpost">
+                                                <a href="#" class="link link--color-grey">Написать</a>
+                                            </router-link>
                                         </div>
-                                        <router-link to="/newpost">
-                                            <a href="#" class="link link--color-grey">Написать</a>
-                                        </router-link>
-                                    </div>
-                                    <div class="header__create-controls-item">
-                                        <div class="header__create-controls-icon">
-                                            <div class="icon-ask"></div>
+                                        <div class="header__create-controls-item">
+                                            <div class="header__create-controls-icon">
+                                                <div class="icon-ask"></div>
+                                            </div>
+                                            <a href="#" class="link link--color-grey">Спросить</a>
                                         </div>
-                                        <a href="#" class="link link--color-grey">Спросить</a>
                                     </div>
-                                </div>
+                                </transition>
+
                                 <div class="header__search">
-                                    <img src="https://i.snag.gy/7rBCoa.jpg" alt="">
+                                    <img v-if="!isSearchExtend" @click="searchExtend" class="header__search-img"
+                                         src="https://i.snag.gy/7rBCoa.jpg" alt="">
+                                    <img v-if="isSearchExtend" @click="isSearchExtend = false"
+                                         class="header__search-img"
+                                         src="https://i.snag.gy/7rBCoa.jpg" alt="">
                                 </div>
+
                             </div>
+                            <transition name="fademy">
+                                <div v-if="isSearchExtend" class="header__search-extend">
+                                    <input placeholder="Поиск"
+                                           ref="headerSearchField"
+                                           type="text"
+                                           class="header__search-extend-field">
+
+
+                                    <v-popover offset="5">
+                                        <div class="header__search-extend-btn">по всему сайту
+                                            <div class="header__search-extend-btn-icon icon-down"></div>
+                                        </div>
+                                        <template slot="popover">
+                                            <div class="py-3 px-3 bb-1">В дайджесте</div>
+                                            <div class="py-3 px-3 bb-1">В обзорах</div>
+                                            <div class="py-3 px-3 bb-1">В лайфхаках</div>
+                                            <div class="py-3 px-3 bb-1">В обсуждениях</div>
+                                        </template>
+                                    </v-popover>
+
+                                </div>
+
+                            </transition>
+                            <!--@blur="isSearchExtend=false"-->
                         </div>
                     </div>
                 </div>
@@ -115,15 +147,38 @@
                 default: "showlive"
             }
         },
+        methods: {
+            searchExtend() {
+                this.isSearchExtend = true
+                this.$nextTick(function () {
+
+                    this.$refs.headerSearchField.focus();
+
+                })
+
+
+            }
+        },
         data: function () {
             return {
-                isFixed: false
+                isFixed: false,
+                isSearchExtend: false
             }
         }
     }
 </script>
 
 <style>
+    .fademy-enter-active, .fademy-leave-active {
+        transition: opacity .2s;
+    }
+
+    .fademy-enter, .fademy-leave-to /* .fade-leave-active до версии 2.1.8 */
+    {
+        opacity: 0;
+
+    }
+
     .header {
         height: 70px;
     }
@@ -160,7 +215,7 @@
     }
 
     .header__top-grid {
-        -ms-flex-pack: distribute;
+
         justify-content: space-between;
         -ms-flex-direction: row;
         flex-direction: row;
@@ -204,11 +259,8 @@
 
     .header__main-nav {
         width: 100%;
-        -ms-flex-align: center;
         align-items: center;
-        -ms-flex-pack: distribute;
         justify-content: space-around;
-        -ms-flex-direction: row;
         flex-direction: row;
         display: -ms-flexbox;
         display: flex;
@@ -221,6 +273,7 @@
     .header__bottom-grid {
         display: flex;
         align-items: center;
+        position: relative;
     }
 
     .header__bottom-block {
@@ -253,6 +306,52 @@
     .header__search {
         text-align: right;
         width: 100%;
+        cursor: pointer;
+    }
+
+    .header__search-img {
+        padding: .25rem;
+    }
+
+    .header__search-extend {
+        width: calc(100% - 290px);
+        max-width: calc(100vw - 120px);
+        position: absolute;
+        left: 230px;
+        top: -10px;
+        display: flex;
+        border-bottom: 1px solid #ddd;
+
+    }
+
+    .header__search-extend-field {
+
+        width: 100%;
+        border: none;
+
+        border-radius: 0px;
+        line-height: 16px;
+        padding: 12px 0 6px;
+        font-size: 16px;
+        outline: none;
+    }
+
+    .header__search-extend-btn {
+        border: 0;
+        background: #fff;
+        outline: none;
+        width: 150px;
+        line-height: 16px;
+        padding: 12px 0 6px;
+        cursor: pointer;
+        position: relative;
+    }
+    .header__search-extend-btn-icon.icon-down {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        font-size: 12px;
+        color: #999;
     }
 
     .header__mobile-menu {

@@ -1,23 +1,21 @@
 <template>
     <div class="home">
-        <div class="pt-4 bg-blue-light sticky-top">
-            <div class="container-fluid">
+        <div class=" bg-blue-light sticky-top">
+            <div class="container">
                 <swiper :options="swiperOption" ref="mySwiper">
                     <swiper-slide>
                         <div class="table">
-                            <div class="d-flex flex-nowrap">
+                            <div class="table__info pt-3 d-flex flex-nowrap">
                                 <div class="table__info-main  mr-4">
-                                    <div class="d-flex flex-column">
-                                        <div class="small">Обработано бюллетеней</div>
-                                        <div class="h5 mb-2">1088 (100%)</div>
-                                        <div class="small">Последнее обновление</div>
-                                        <div class="mb-3">18:28 16.12.18</div>
+                                    <div    class="d-flex flex-column">
+                                        <div class="small">Обработано 578 688 бюл.</div>
                                     </div>
                                 </div>
                                 <div v-for="candidate in candidates" :key="candidate.id"
-                                     class="table__info-candidate d-flex flex-column">
-                                    <div class="h6">{{candidate.name}}</div>
-                                    <div class="small">{{candidate.consignment}}</div>
+                                     class="uik__info-candidate d-flex flex-column">
+                                    <div v-if="candidate.name!='Недейств. бюллетени'" class="small font-weight-bold"> {{candidate.name | name}}</div>
+                                    <div v-if="candidate.name=='Недейств. бюллетени'" class="small font-weight-bold"> {{candidate.name}}</div>
+
                                 </div>
                             </div>
 
@@ -29,17 +27,16 @@
                 </swiper>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container bg-white">
             <div class="table__wrap">
                 <swiper :options="swiperOption" ref="mySwiper2">
                     <swiper-slide>
-                        <div class="table pt-4">
+                        <div class="table ">
                             <div class=" ">
-
                                 <div class="uik__sub-row d-flex flex-nowrap"
                                      v-for="(result, index) in uikDetals.result" :key="index">
                                     <div class="uik__info-title">{{result.title}}</div>
-                                    <div class="table__candidate-col d-flex flex-nowrap"
+                                    <div class="uik__info-col d-flex flex-nowrap"
                                          v-for="(value, index) in result.value"
                                          :key="index">
                                         <div class="table__candidate-sub  d-inline-block ">
@@ -124,15 +121,32 @@
     }
 
 </script>
-<style>
-.uik__sub-row{
-    height: 70px;
-    padding-left: 1rem;
-}
-
-    .uik__info-title{
-        width: 290px;
+<style lang="scss">
+    .uik__sub-row {
+        height: auto;
+        padding: 1rem 0;
         font-size: 14px;
+        &:hover {
+            background: #f2f2f2;
+        }
+
+    }
+
+    .uik__info-title {
+        font-size: 14px;
+
         padding-right: 1rem;
+        margin-right: 1.5rem !important;
+        width: 200px;
+        padding-left: 1rem;
+    }
+    .uik__info-col {
+        text-align: left;
+        width: 150px;
+        margin-right: 15px;
+    }
+    .uik__info-candidate{
+        width: 150px;
+        margin-right: 15px;
     }
 </style>

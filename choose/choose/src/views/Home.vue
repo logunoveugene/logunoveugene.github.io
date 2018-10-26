@@ -1,23 +1,21 @@
 <template>
     <div class="home">
-        <div class="pt-4 bg-blue-light sticky-top">
-            <div class="container-fluid">
+        <div class="container bg-blue-light sticky-top">
+            <div class="container  ">
                 <swiper :options="swiperOption" ref="mySwiper">
                     <swiper-slide>
                         <div class="table">
-                            <div class="table__info d-flex flex-nowrap">
+                            <div class="table__info pt-3 d-flex flex-nowrap">
                                 <div class="table__info-main  mr-4">
-                                    <div class="d-flex flex-column">
-                                        <div class="small">Обработано бюллетеней</div>
-                                        <div class="h5 mb-3">578 688 (72%)</div>
-                                        <div class="small">Последнее обновление</div>
-                                        <div class="">18:28 16.12.18</div>
+                                    <div    class="d-flex flex-column">
+                                        <div class="small">Обработано 578 688 бюл.</div>
                                     </div>
                                 </div>
                                 <div v-for="candidate in candidates" :key="candidate.id"
                                      class="table__info-candidate d-flex flex-column">
-                                    <div class="h6">{{candidate.name}}</div>
-                                    <div class="small">{{candidate.consignment}}</div>
+                                    <div v-if="candidate.name!='Недейств. бюллетени'" class="small font-weight-bold"> {{candidate.name | name}}</div>
+                                    <div v-if="candidate.name=='Недейств. бюллетени'" class="small font-weight-bold"> {{candidate.name}}</div>
+
                                 </div>
                             </div>
                             <div class="table__row-head mt-2 d-flex flex-nowrap">
@@ -31,7 +29,7 @@
                             <div class="table__row-region d-flex flex-nowrap ">
                                 <div class="table__region  mr-4">
                                     <img class="table__region-button"
-                                         src="https://i.snag.gy/3Kc1JH.jpg"
+                                         src="../assets/prim.jpg"
                                          alt="">
                                     <div class="table__region-desc">Всё Приморье</div>
                                 </div>
@@ -58,7 +56,7 @@
                 </swiper>
             </div>
         </div>
-        <div class="container-fluid">
+        <div class="container bg-white ">
             <div class="table__wrap">
                 <swiper :options="swiperOption" ref="mySwiper2">
                     <swiper-slide>
@@ -108,6 +106,10 @@
             isPercent: {
                 type: null,
                 default: ''
+            },
+            scrolled: {
+                type: null,
+                default: false
             }
         },
         updated() {
@@ -146,14 +148,16 @@
             position: relative;
         }
         &__row-region {
-            height: 50px;
-            padding: 13px 0;
+            height: 40px;
+            padding: 8px 0;
             font-weight: 700;
+            font-size: 14px;
 
         }
         &__row {
-            height: 50px;
-            padding: 13px 0;
+            height: 40px;
+            padding: 9px 0;
+            font-size: 14px;
 
             &:hover {
                 background: #f6f6f6;
@@ -161,32 +165,35 @@
 
         }
         &__row-head {
-            height: 50px;
-            padding: 17px 0;
+            height: 25px;
+            padding: 4px 0;
             font-size: 12px;
 
         }
 
         &__region {
             position: relative;
-            min-width: 290px;
+            width: 200px;
             padding-left: 1rem;
         }
         &__info {
             border-bottom: 1px solid #dff0f5;
-            padding-bottom: 16px;
+            padding-bottom: 12px;
         }
         &__info-main {
-            min-width: 290px;
+            min-width: 200px;
             padding-left: 1rem;
         }
         &__info-candidate {
-            width: 200px;
-            margin-right: 40px;
+            width: 190px;
+            margin-right: 15px;
         }
 
         &__region-desc {
             margin-left: 40px;
+            max-width: 85%;
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
 
         &__region-button {
@@ -199,8 +206,8 @@
 
         &__candidate-col {
             text-align: right;
-            width: 200px;
-            margin-right: 40px;
+            width: 190px;
+            margin-right: 15px;
         }
 
         &__candidate-sub {
