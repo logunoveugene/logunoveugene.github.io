@@ -61,7 +61,9 @@
                                         />
                                     </div>
                                     <div class="py-4 bb-1">
-                                        <div class="h1 mb-3 d-flex align-items-center justify-content-between ">Поиск по упоминаниям</div>
+                                        <div class="h1 mb-3 d-flex align-items-center justify-content-between ">Поиск по
+                                            упоминаниям
+                                        </div>
                                         <div class="filter__search-input-wrap mb-4">
                                             <input class="filter__search-input" type="text"
                                                    placeholder="Товар, бренд или категориям"/>
@@ -118,10 +120,27 @@
                         <div class="">
                             <div class="p-4 bb-1">
                                 <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Раздел</div>
-                                <category></category>
+                                <div v-if="!isCategory" class="">
+                                    <ul class="list-unstyled mb-2">
+                                        <li class="py-1">Майнинг</li>
+                                        <li class="py-1">Сборки ПК</li>
+                                        <li class="py-1">Основные комплектующие</li>
+                                        <li class="py-1">Телевизоры</li>
+                                        <li class="py-1">Видекарты</li>
+                                    </ul>
+                                    <div @click="isCategory=true" class="link link--doted link--color-blue">Все
+                                        разделы
+                                    </div>
+                                </div>
+
+                                <div class="" v-if="isCategory">
+                                    <category></category>
+                                </div>
                             </div>
                             <div class="p-4 bb-1">
-                                <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Поиск по упоминаниям</div>
+                                <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Поиск по
+                                    упоминаниям
+                                </div>
                                 <div class="small d-flex">
                                     <div class="mr-3">
                                         <a href="#" class="link link--doted link--color-grey">Товар</a>
@@ -132,8 +151,6 @@
                                     <div class="mr-3">
                                         <a href="#" class="link link--doted link--color-grey">Бренд</a>
                                     </div>
-
-
                                 </div>
 
                             </div>
@@ -151,9 +168,6 @@
     import category from "@//components/category.vue";
 
 
-
-
-
     export default {
         name: 'discussions',
         components: {
@@ -167,6 +181,7 @@
                 category: true,
                 searchPlate: false,
                 brand: false,
+                isCategory: false,
                 posttype: false,
                 discussions: [],
                 topusers: [],
