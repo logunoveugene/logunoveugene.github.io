@@ -7,16 +7,14 @@
              v-if="index<3">
             <div class="d-flex justify-content-between">
                 <div class="d-flex flex-column">
-                    <div class="h4">
+                    <div class="h4 mb-3">
                         {{product.title}}
                     </div>
-                    <div class="product-plate__social d-flex align-items-center mb-3">
-                        <div class="product-plate__rating-wrap">
-                            <rate :length="5" v-model="product.rating" :readonly="true"/>
+                    <div class="mb-3 small d-flex">
+                        <div class="mr-3">
+                            <a href="" class="link link--color-blue">12 упоминаний</a>
                         </div>
-                        <div class="small ml-2">
-                            <a href="" class="link link--color-blue">{{product.reviewcount}}</a>
-                        </div>
+                        <a href="" class="link link--color-blue">1 обзор</a>
                     </div>
                     <div class="">
                         <button type="button" class="btn btn--color-white ">Купить</button>

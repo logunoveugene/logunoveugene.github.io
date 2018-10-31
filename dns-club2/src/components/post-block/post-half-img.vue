@@ -18,6 +18,7 @@
                     :source="post.source"
                     :format="post.format"
                     :tags="post.tags"
+
             ></post-tag>
 
             <div class="post-half__title  mb-3 h2">
@@ -32,6 +33,7 @@
                     :like="post.like"
                     :comment="post.comment"
                     :view="post.view"
+                    border="false"
             ></post-info>
         </div>
     </div>

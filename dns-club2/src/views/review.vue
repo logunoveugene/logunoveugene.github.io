@@ -4,24 +4,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="small mb-3">
+                    <div class="small mb-2">
                         <router-link class="link link--color-black" to="/">Клуб</router-link>
                         /
                         <snap class="text-muted">Обзоры</snap>
-
                     </div>
                     <h1 v-if="initSelected.length==0 || initSelected.length>1 " class="page__title">Обзоры</h1>
                     <h1 v-if="initSelected.length==1" class="page__title">{{initSelected[0].title}}</h1>
-
                 </div>
                 <div class="col-12 col-md-12 col-lg-8">
                     <div class="d-block d-lg-none">
-                        <div v-ripple class=" mb-4 card-block card-block--full-mobile p-3 "
+                        <div v-ripple class="collapse-block  mb-3 card-block card-block--full-mobile "
                              @click="searchPlate=!searchPlate">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="">Настройка показа</div>
-                                <div v-if="!searchPlate" class="icon-down"></div>
-                                <div v-if="searchPlate" class="icon-up"></div>
+                                <div class="collapse-block__icon ">
+                                    <div v-if="!searchPlate" class="icon-down"></div>
+                                    <div v-if="searchPlate" class="icon-up"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -223,6 +223,7 @@
                         <!--<button class=" tree-search-btn" type="button" @click="search">GO</button>-->
                         <v-tree ref='tree'
                                 :data='treeData1'
+
                                 :multiple="true"
                                 @node-check='selectedNodes'
                                 :halfcheck='true'

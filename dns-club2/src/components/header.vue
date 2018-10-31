@@ -40,7 +40,7 @@
                 </div>
             </div>
         </div>
-        <fixed-header class="main-layout" :class="live" :threshold="58" :fixed.sync="isFixed">
+        <fixed-header class="main-layout" :class="live" :threshold="65" :fixed.sync="isFixed">
             <div class="fixed-plate" :class="{ 'is-fixed': isFixed }">
                 <div class="header__bottom-line">
                     <div class="header__container container">
@@ -52,21 +52,21 @@
                             </div>
                             <div class="header__bottom-block justify-content-lg-start col-8 col-lg-8">
                                 <router-link to="/">
-                                    <img class="heaader__logo" src="https://i.snag.gy/xrG5Ze.jpg" alt="">
+                                    <img class="heaader__logo" src="https://i.snag.gy/0aAx5r.jpg" alt="">
                                 </router-link>
 
                                 <div class="header__main-nav d-none d-lg-flex">
-                                    <router-link to="/review">
-                                        <a href="#" class="link link--color-grey">Дайджест</a>
+                                    <router-link to="/review" class="link link--color-grey">
+                                        Дайджест
                                     </router-link>
-                                    <router-link to="/review">
-                                        <a href="#" class="link link--color-grey">Обзоры</a>
+                                    <router-link to="/review" class="link link--color-grey">
+                                        Обзоры
                                     </router-link>
-                                    <router-link to="/review">
-                                        <a href="#" class="link link--color-grey">Лайфхаки</a>
+                                    <router-link to="/review" class="link link--color-grey">
+                                        Лайфхаки
                                     </router-link>
-                                    <router-link to="/discussions">
-                                        <a href="#" class="link link--color-grey ">Обсуждения</a>
+                                    <router-link to="/discussions" class="link link--color-grey">
+                                        Обсуждения
                                     </router-link>
                                 </div>
 
@@ -78,15 +78,15 @@
                                             <div class="header__create-controls-icon">
                                                 <div class="icon-pen"></div>
                                             </div>
-                                            <router-link to="/newpost">
-                                                <a href="#" class="link link--color-grey">Написать</a>
+                                            <router-link class="link link--color-grey" to="/newpost">Написать
                                             </router-link>
                                         </div>
                                         <div class="header__create-controls-item">
                                             <div class="header__create-controls-icon">
-                                                <div class="icon-ask"></div>
+                                                <div class="icon-speech-bubble-outline"></div>
                                             </div>
-                                            <a href="#" class="link link--color-grey">Спросить</a>
+                                            <router-link class="link link--color-grey" to="/newdesc">Обсудить
+                                            </router-link>
                                         </div>
                                     </div>
                                 </transition>
@@ -185,16 +185,19 @@
 
     .fixed-plate {
         position: relative;
+        opacity: 1;
+        background: #fff;
 
     }
 
     .fixed-plate.is-fixed {
         position: fixed;
         top: 0;
-        z-index: 100;
+        z-index: 1000;
         width: 100%;
         background-color: #fff;
         display: block;
+        opacity: 1;
     }
 
     .is-fixed .header__bottom-line {
@@ -314,21 +317,40 @@
     }
 
     .header__search-extend {
-        width: calc(100% - 290px);
-        max-width: calc(100vw - 120px);
+        width: calc(100% - 60px);
+        max-width: calc(100vw - 90px);
         position: absolute;
-        left: 230px;
+        left: 20px;
         top: -10px;
         display: flex;
         border-bottom: 1px solid #ddd;
+        background: #fff;
 
+    }
+
+    @media (min-width: 992px) {
+        .header__search-extend {
+            width: calc(100% - 250px);
+            max-width: calc(100vw - 120px);
+            position: absolute;
+            left: 190px;
+
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .header__search-extend {
+            width: calc(100% - 280px);
+            max-width: calc(100vw - 120px);
+            position: absolute;
+            left: 225px;
+        }
     }
 
     .header__search-extend-field {
 
         width: 100%;
         border: none;
-
         border-radius: 0px;
         line-height: 16px;
         padding: 12px 0 6px;
@@ -346,6 +368,7 @@
         cursor: pointer;
         position: relative;
     }
+
     .header__search-extend-btn-icon.icon-down {
         position: absolute;
         right: 20px;

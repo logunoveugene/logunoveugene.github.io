@@ -19,6 +19,7 @@
                         <div class="icon-dots-hor"></div>
                     </div>
                     <template slot="popover">
+                        <div class="py-3 px-3 bb-1">Скопировать ссылку</div>
                         <div class="py-3 px-3 bb-1">Пожаловаться</div>
                         <div class="py-3 px-3  ">Заблокировать</div>
                     </template>

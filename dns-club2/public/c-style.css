@@ -81,20 +81,20 @@ body {
 /*типографика*/
 h1, .h1 {
     font-size: 1.5rem;
-    line-height: 1.3;
+    line-height: 1.4;
     font-weight: 700;
 }
 
 h2, .h2 {
     font-size: 1.125rem;
-    line-height: 1.3;
+    line-height: 1.4;
     font-weight: 700;
 }
 
 h3, .h3 {
     font-size: 1.125rem;
     font-weight: 500;
-    line-height: 1.3rem;
+    line-height: 1.4rem;
 }
 
 h4, .h4 {
@@ -342,38 +342,7 @@ h4, .h4 {
     width: 100%
 }
 
-.discussions__item {
-    margin-bottom: 2.5rem;
-}
 
-.discussions__img-wrap {
-    margin-right: 3rem;
-    display: none;
-}
-
-.discussions__img {
-    width: 100px;
-    height: auto;
-}
-
-@media (min-width: 768px) {
-    .discussions__img-wrap {
-        display: block;
-    }
-
-}
-
-@media (min-width: 1200px) {
-    .discussions__img-wrap {
-        display: block;
-    }
-
-    .discussions__img {
-        width: 150px;
-        height: auto;
-    }
-
-}
 
 /*прямой эфир        */
 
@@ -735,5 +704,15 @@ a.bottom-menu__item {
     opacity: .08
 }
 
+
+.collapse-block{
+    padding:14px 20px;
+    position: relative;
+}
+.collapse-block__icon {
+    position: absolute;
+    right: 20px;
+    top: 16px;
+}
 
 

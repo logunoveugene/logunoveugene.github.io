@@ -1,5 +1,5 @@
 <template>
-  <div class="post-info">
+  <div class="post-info" :class="{'post-info--no-border': border}">
     <div class="post-info__rating">
       <div class="post-info__icon">
         <div class="icon-thumb-up"></div>
@@ -20,7 +20,7 @@
       </div>
 
       <div class="post-info__count">{{comment}} </div>
-      <div class="post-info__activity d-none d-sm-block" v-if="lastactivity">ответов, последний {{lastactivity | fdate}}</div> 
+      <!--<div class="post-info__activity d-none d-sm-block" v-if="lastactivity">ответов, последний {{lastactivity | fdate}}</div> -->
     </div>
   </div>
 
@@ -51,7 +51,11 @@
       lastactivity: {
         type: null,
         default: ""
-      }
+      },
+        border:{
+            type: null,
+            default: ""
+        }
     },
     filters: {
       fdate: function(value) {
@@ -78,6 +82,11 @@
   display: -ms-inline-flexbox;
   display: inline-flex;
   background: #fff;
+}
+.post-info--no-border{
+  border: none;
+  padding: 0;
+
 }
 .post-info__rating{
   margin-right: 1.5rem;

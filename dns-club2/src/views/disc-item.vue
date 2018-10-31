@@ -8,6 +8,12 @@
                         /
                         <router-link class="link link--color-black" to="/discussions">Обсуждения</router-link>
 
+                        <router-link v-if="post.source.parent" class="link link--color-black" to="/discussions"> /
+                            {{post.source.parent.title}}
+                        </router-link>
+                        <router-link v-if="post.source" class="link link--color-black" to="/discussions"> /
+                            {{post.source.title}}
+                        </router-link>
 
                     </div>
                 </div>
@@ -50,18 +56,18 @@
                             </div>
 
                             <div class="small mr-3">
-                                <div v-if="!replyBox" class="link link--color-blue" @click="replyBox=!replyBox">
+                                <div class="link link--color-blue">
                                     Ответить
                                 </div>
 
                             </div>
                         </div>
                     </div>
-                    <div class="d-block d-lg-none ">
+                    <div v-if="post.products" class="d-block d-lg-none ">
                         <div class="card-block card-block--full-mobile p-3 " @click="collapseProduct=!collapseProduct">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="">Упомянутые товары
-                                    <span v-if="post.products" class="text-muted ml-2">{{post.products.length}}</span>
+                                    <span class="text-muted ml-2">{{post.products.length}}</span>
                                 </div>
                                 <div v-if="!collapseProduct" class="icon-down"></div>
                                 <div v-if="collapseProduct" class="icon-up"></div>
@@ -98,10 +104,10 @@
 
                 </div>
 
-                <div class="col-12 col-lg-4 d-none d-lg-block">
-                    <div class="  sticky-sidebar">
+                <div v-if="post.products" class="col-12 col-lg-4 d-none d-lg-block">
+                    <div class="">
                         <div class="">
-                            <div class="mb-4 ">
+                            <div class="mb-3">
                                 Упоминания товаров
                             </div>
                             <product-list :products="post.products"></product-list>

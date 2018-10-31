@@ -6,11 +6,12 @@
                     {{post.title}}
                 </router-link>
             </div>
-            <div class="d-flex align-items-start align-items-md-center flex-column flex-md-row justify-content-between mb-2">
-                <div class="small mb-2 ">
-                    Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
+            <div class="d-flex align-items-start align-items-md-center flex-column flex-md-row justify-content-between">
+                <div class="small mb-3 d-flex align-items-center  ">
+                    <img :src="post.autorImg" alt="" class="post-large__author-img  rounded-circle">
+                    <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
                 </div>
-                <post-tag-full class="   "
+                <post-tag-full class="mb-3"
                                :source="post.source"
                                :format="post.format"
                                :tags="post.tags"
@@ -25,6 +26,7 @@
                     :like="post.like"
                     :comment="post.comment"
                     :view="post.view"
+                    border="false"
             ></post-info>
         </div>
     </div>
@@ -92,7 +94,7 @@
     .post-large__img-wrap {
         border-radius: 8px;
         overflow: hidden;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     .post-large__img {
@@ -131,6 +133,15 @@
     .post-large__fotmat-icon-wrap {
         padding: 1.5rem 0 0 1.5rem;
 
+    }
+
+
+    .post-large__author-img{
+        width: 20px;
+        height: 20px;
+        margin-right: .5rem;
+        display: block;
+        border-radius: 50%!important;
     }
 
 

@@ -3,7 +3,20 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="small mb-2">Клуб / Cоздание статьи</div>
+
+
+                    <div class="small mb-2 d-flex">
+                        <router-link class="link link--color-black" to="/">Клуб</router-link>
+                        <div class="mx-2">/</div>
+                        <router-link class="link link--color-black" to="/discussions">Обсуждения</router-link>
+                        <div class="mx-2">/</div>
+                        <div class=" ">Cоздание темы</div>
+
+                    </div>
+
+
+
+
                     <input class="w-100 new-post__title" type="text" placeholder="Введите заголовок">
                 </div>
                 <div class="col-12 col-md-12 col-lg-8">
@@ -27,7 +40,7 @@
                     <div class="card-block p-4 mb-4">
                         <div class="">
                             <div class="new-post__links mb-4">
-                                <div class="small text-muted mb-2">Упоминания в статье</div>
+                                <div class="small text-muted mb-2">Упоминания</div>
                                 <div class="new-post__links-item d-flex justify-content-between">
                                     <div class="new-post__links-item-title">Товары</div>
                                     <div class="new-post__links-item-amount">4
@@ -48,24 +61,6 @@
                                     </div>
                                 </div>
 
-                            </div>
-                            <div class="new-post__tags mb-4">
-                                <div class="small text-muted mb-1">Теги</div>
-                                <multiselect v-model="selected"
-                                             tag-placeholder="Добавить новый тег"
-                                             placeholder="Поиск по тегам"
-                                             selectLabel="Выбрать"
-                                             selectedLabel="Выбран"
-                                             deselectLabel="Удалить"
-                                             label="name"
-                                             track-by="code"
-                                             open-direction="bottom"
-                                             :options="options"
-                                             :multiple="true"
-                                             :taggable="true"
-                                             @tag="addTag">
-
-                                </multiselect>
                             </div>
                             <div class="new-post__tags mb-4">
                                 <div class="small text-muted mb-1">Рубрика</div>
@@ -253,7 +248,7 @@
                 config: {
                     toolbarInline: true,
                     minHeight: 500,
-                    placeholderText: 'Напишите вашу статью...',
+                    placeholderText: 'Добавьте описание...',
                     quickInsertButtons: ['image', 'video', 'table'],
                     toolbarButtons: ['bold', 'italic', 'quote', 'paragraphFormat', 'insertLink', 'underline', 'formatOL', 'formatUL'],
                     events: {

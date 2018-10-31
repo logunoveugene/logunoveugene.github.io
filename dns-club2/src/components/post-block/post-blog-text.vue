@@ -21,6 +21,7 @@
                     :like="post.like"
                     :comment="post.comment"
                     :view="post.view"
+                    border="false"
             ></post-info>
         </div>
     </div>

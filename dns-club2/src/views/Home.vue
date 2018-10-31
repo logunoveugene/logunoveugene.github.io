@@ -278,42 +278,7 @@
 
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <a href="#" class="layout__title-link-test">
-                        <div class="layout__title-test layout__title--orange-test">
-                            <div class="layout__title-text-test">Обзоры</div>
-                            <div class="layout__title-text-test-shadow">Обзоры</div>
-                            <button class="layout__title-button">
-                                <span class="icon-arrow-right"></span>
-                            </button>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-md-6 col-lg-4">
-                    <post-half-img :post="digest[0]"></post-half-img>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <post-img :post="digest[2]"></post-img>
-                </div>
-                <div class="col-12 col-sm-12 col-lg-4">
-                    <div class="mt-lg-4">
-                        <post-text :post="digest[1]"></post-text>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="layout--bg-grey mb-5">
-            <div class="container ">
-                <div class="">
-                    <img src="https://i.snag.gy/6rW85y.jpg" alt="" class="img-fluid">
-                </div>
-            </div>
-        </div>
-    </div>
+      </div>
 </template>
 
 <script>
