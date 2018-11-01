@@ -148,6 +148,7 @@
                     {
                         id: '3',
                         label: 'Бытовая техника',
+                        mcount: 79,
                         children: [{
                             id: '31',
                             label: 'aa',
@@ -159,6 +160,7 @@
                     {
                         id: '4',
                         label: 'Красота и здоровье',
+                        mcount: 41,
                         children: [{
                             id: '41',
                             label: 'aa',
@@ -170,6 +172,7 @@
                     {
                         id: '5',
                         label: 'Инструменты',
+                        mcount: 32,
                         children: [{
                             id: '51',
                             label: 'aa',
@@ -181,6 +184,7 @@
                     {
                         id: '6',
                         label: 'Для офиса',
+                        mcount: 45,
                         children: [{
                             id: '61',
                             label: 'aa',
@@ -192,6 +196,7 @@
                     {
                         id: '7',
                         label: 'Для авто',
+                        mcount: 78,
                         children: [{
                             id: '71',
                             label: 'aa',
@@ -203,6 +208,7 @@
                     {
                         id: '8',
                         label: 'Для офиса',
+                        mcount: 45,
                         children: [{
                             id: '81',
                             label: 'aa',

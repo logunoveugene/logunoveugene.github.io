@@ -12,22 +12,23 @@
                     </div>
                     <div class="small mb-2 text-muted">{{comment.date | fdate}}</div>
                 </div>
+                <div class="d-flex">
 
 
-                <v-popover offset="0">
-                    <div class="comment__menu">
-                        <div class="icon-dots-hor"></div>
-                    </div>
-                    <template slot="popover">
-                        <div class="py-3 px-3 bb-1">Скопировать ссылку</div>
-                        <div class="py-3 px-3 bb-1">Пожаловаться</div>
-                        <div class="py-3 px-3  ">Заблокировать</div>
-                    </template>
-                </v-popover>
-
+                    <v-popover offset="0">
+                        <div class="comment__menu">
+                            <div class="icon-dots-hor"></div>
+                        </div>
+                        <template slot="popover">
+                            <div class="py-3 px-3 bb-1">Скопировать ссылку</div>
+                            <div class="py-3 px-3 bb-1">Пожаловаться</div>
+                            <div class="py-3 px-3  ">Заблокировать</div>
+                        </template>
+                    </v-popover>
+                </div>
 
             </div>
-            <div class="mb-3">{{comment.comment}}</div>
+            <div class="mb-3" v-html="comment.comment"></div>
             <div class="d-flex">
                 <div class="comment__rate d-flex mr-4">
 
@@ -188,6 +189,16 @@
                 opacity: 1;
             }
         }
+        &__menu-share{
+            font-size: 18px;
+            color: #ccc;
+            cursor: pointer;
+
+            &:hover {
+                color: #999;
+            }
+        }
+
 
         &__menu {
             font-size: 22px;
@@ -222,6 +233,25 @@
 
         }
     }
+
+
+
+
+
+    .comment blockquote {
+        padding-left: 15px;
+        border-left: 3px solid #ff8700;
+        padding-bottom: 0;
+        margin-bottom: 2rem;
+        font-style: italic;
+
+    }
+
+    .comment p:last-child{
+        margin-bottom: 0;
+    }
+
+
 
 
 </style>

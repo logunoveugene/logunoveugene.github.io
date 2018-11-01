@@ -1,5 +1,5 @@
 <template>
-    <div class="post-page">
+    <div class="post-page mb-5">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -17,13 +17,10 @@
 
                     </div>
                 </div>
-
-
                 <div class="col-12 col-lg-8 ">
                     <div class="page__title mb-3">
                         <div v-html="post.title"></div>
                     </div>
-
 
                     <div class="d-flex flex-column flex-md-row justify-content-between ">
                         <div class="d-flex align-items-center mb-3">
@@ -39,9 +36,7 @@
                                 <div class="small  text-muted">{{post.date | fdate}}</div>
                             </div>
                         </div>
-
                     </div>
-
 
                     <div class="disc_teaser">
                         <div class="mb-4">
@@ -49,7 +44,6 @@
                         </div>
                         <div class="d-flex">
                             <div class="comment__rate d-flex mr-4">
-
                                 <div class="comment__rate-up icon-thumb-up"></div>
                                 <div class="comment__rate-count small">{{post.like}}</div>
                                 <div class="comment__rate-down icon-thumb-down"></div>
@@ -59,21 +53,24 @@
                                 <div class="link link--color-blue">
                                     Ответить
                                 </div>
+                            </div>
+                        </div>
+                    </div>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div v-if="post.products" class="d-block d-lg-none ">
-                        <div class="card-block card-block--full-mobile p-3 " @click="collapseProduct=!collapseProduct">
+                    <div class="d-block d-lg-none" v-if="post.products">
+                        <div v-ripple class="collapse-block card-block card-block--full-mobile "
+                             @click="collapseProduct=!collapseProduct">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="">Упомянутые товары
-                                    <span class="text-muted ml-2">{{post.products.length}}</span>
+                                <div class="">Упомянутые товары</div>
+                                <div class="collapse-block__icon ">
+                                    <div v-if="!collapseProduct" class="icon-down"></div>
+                                    <div v-if="collapseProduct" class="icon-up"></div>
                                 </div>
-                                <div v-if="!collapseProduct" class="icon-down"></div>
-                                <div v-if="collapseProduct" class="icon-up"></div>
                             </div>
                         </div>
                     </div>
+
+
                     <div class="my-4" v-if="collapseProduct">
                         <product-list :products="post.products"></product-list>
                     </div>
@@ -92,16 +89,47 @@
 
                     </div>
                     <div class="mb-4" v-if="comments && comments.length>1">
-                        <div class="h1 mb-4">Ответы пользователей <span class="text-muted">4</span></div>
-                        <comment-item v-for="comment in comments" :comment="comment" :key="comment.id"></comment-item>
 
-                    </div>
-                    <div class="h1">Ваш ответ</div>
-                    <div class="comment__reply-box">
-                        <froala :tag="'textarea'" :config="config" v-model="replyText"></froala>
-                    </div>
-                    <button type="button" class="btn btn--color-white ">Опубликовать</button>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="h1 mb-0">
+                                Ответы пользователей <span class="text-muted">{{comments.length}}</span>
+                            </div>
+                            <div class="d-none d-md-flex small">
+                                <div class="link link--color-grey link--doted mr-2">Последний</div>
+                                <div class="">от 15:44 12 сен. 2018г.</div>
+                            </div>
+                        </div>
+                        <div class="mb-3"></div>
 
+                        <paginate
+                                name="commentsP"
+                                :list="comments"
+                                :per="17"
+                        >
+                            <comment-item v-for="(comment, index) in paginated('commentsP')"
+                                          :comment="comment"
+                                          :key="index">
+                            </comment-item>
+                        </paginate>
+
+                        <div class="btn paginate__button btn-block mb-4 ">Показать еще</div>
+
+                        <paginate-links :limit="3"
+                                        for="commentsP"
+                                        :show-step-links="true"
+                                        :step-links="{
+                                            next: 'h',
+                                            prev: 'g'
+                                          }">
+                        </paginate-links>
+                    </div>
+                    <div class="d-none d-md-block">
+                        <div class="h1">Ваш ответ</div>
+                        <div class="comment__reply-box">
+                            <froala :tag="'textarea'" :config="config" v-model="replyText"></froala>
+                        </div>
+                        <button type="button" class="btn btn--color-white ">Опубликовать</button>
+                    </div>
                 </div>
 
                 <div v-if="post.products" class="col-12 col-lg-4 d-none d-lg-block">
@@ -115,12 +143,21 @@
 
                     </div>
                 </div>
-
-
             </div>
         </div>
+        <div class="fixed-bottom d-block d-md-none w-100">
+            <div class="d-flex fixed__plate">
+                <div v-ripple class="fixed__plate-answer d-flex align-items-cente  text-center p-3 ">
+                    <div class="fixed__plate-answer-icon">
+                        <div class="mr-2 icon-speech-bubble-outline"></div>
+                    </div>
+                    <div class="fixed__plate-answer-desc ">Ответить</div>
 
+                </div>
+                <div v-ripple class="fixed__plate-end p-3">К последнему сообщению</div>
+            </div>
 
+        </div>
     </div>
 
 
@@ -151,6 +188,7 @@
         data() {
             return {
                 name: 'register-modules-example',
+                paginate: ['commentsP'],
                 post: {},
                 posts: {},
                 error: "",
@@ -221,7 +259,37 @@
     }
 </script>
 
-<style>
+<style lang="scss">
+    .fixed__plate {
+        box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+        background: white;
+    }
+
+    .fixed__plate-answer {
+        background: #ff8700;
+        color: white;
+        min-width: 120px;
+        text-align: center;
+        position: relative;
+    }
+
+    .fixed__plate-answer-desc {
+        padding-left: 22px;
+    }
+    .fixed__plate-answer-icon {
+        position: absolute;
+        left: 1rem;
+        top: 1.2rem;
+    }
+
+    .fixed__plate-end {
+        background: white;
+        color: black;
+        text-align: center;
+        width: 100%;
+
+    }
+
     .post-page .highlight {
         background: #f8ffdd;
 
@@ -275,6 +343,98 @@
     }
 
     /*-----------------слайдер*/
+
+    .paginate__button {
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+        padding: 10px 17px 9px;
+        border-radius: 8px;
+        &:hover {
+            background: #fff6e5;
+        }
+    }
+
+    ul.paginate-links.commentsP {
+        margin-left: 0;
+        padding-left: 0;
+        overflow: hidden;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+        padding: 0;
+        border-radius: 8px;
+        display: inline-flex;
+        max-width: 100%;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+    }
+
+    li.number a, .right-arrow a, .left-arrow a {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        transition: .1s;
+        border-bottom: 3px solid #fff;
+        padding: 11px 13px 8px;
+
+        &:hover {
+            background: #fff6e5;
+            border-bottom: 3px solid #fff6e5;
+        }
+    }
+
+    li.number.active a {
+        border-bottom: 3px solid #e68c00;
+    }
+
+    li.number, .right-arrow, .left-arrow {
+
+        cursor: pointer;
+        display: flex;
+
+    }
+
+    .right-arrow {
+        position: absolute;
+        right: 0;
+        display: flex;
+        cursor: pointer;
+        font-family: "mydns" !important;
+    }
+
+    .left-arrow {
+        position: absolute;
+        left: 0;
+        display: flex;
+        cursor: pointer;
+        font-family: "mydns" !important;
+    }
+
+    .ellipses {
+        padding: 11px 5px 8px;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    li.right-arrow.disabled a {
+        opacity: .4;
+        cursor: not-allowed;
+        &:hover {
+            background: #fff;
+            border-bottom: 3px solid #fff;
+        }
+    }
+
+    li.left-arrow.disabled a {
+        opacity: .4;
+        cursor: not-allowed;
+        &:hover {
+            background: #fff;
+            border-bottom: 3px solid #fff;
+        }
+    }
 
 
 </style>

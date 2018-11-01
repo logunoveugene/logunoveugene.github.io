@@ -13,10 +13,6 @@
                         <div class=" ">Cоздание темы</div>
 
                     </div>
-
-
-
-
                     <input class="w-100 new-post__title" type="text" placeholder="Введите заголовок">
                 </div>
                 <div class="col-12 col-md-12 col-lg-8">
@@ -26,13 +22,12 @@
                 </div>
                 <div class="d-block d-lg-none">
                     <div class="fixed-bottom">
-                        <div v-if="!readyToPublic" class="bg-orange text-white h2 mb-0 p-4" @click="showPublishModal">
+                        <div v-if="!readyToPublic" class="bg-orange text-white  mb-0 p-3" @click="showPublishModal">
                             Готовы опубликовать?
                         </div>
-                        <div v-if="readyToPublic" class="bg-orange text-white h2 mb-0 p-4" @click="showPublishModal">
+                        <div v-if="readyToPublic" class="bg-orange text-white  mb-0 p-3" @click="showPublishModal">
                             Опубликовать
                         </div>
-
                     </div>
                 </div>
 
@@ -351,13 +346,30 @@
     }
 
     .new-post__title {
-        font-size: 36px;
+
+
+        font-size: 24px;
         font-weight: 700;
-        line-height: 44px;
+        margin-bottom: 1rem;
+        line-height: 28px;
         border: none;
         outline: none;
-        margin-bottom: 1rem;
     }
+
+    @media (min-width: 768px) {
+        .new-post__title {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 44px;
+            border: none;
+            outline: none;
+            margin-bottom: 1rem;
+
+
+        }
+
+    }
+
 
     .multiselect__tags {
         min-height: 40px;

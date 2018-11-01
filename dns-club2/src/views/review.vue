@@ -28,59 +28,25 @@
                     <div class="mb-4" v-if="searchPlate">
                         <div class="">
                             <div class="pb-4 bb-1">
-                                <div class="h4 mb-0 d-flex align-items-center justify-content-between">Тема</div>
-                                <div class="tree">
-                                    <input class="tree-search-input"
-                                           type="text"
-                                           v-model.lazy="searchword"
-                                           placeholder="Поиск категории"
-                                           v-on:keyup.enter="search"
-                                    />
-                                    <!--<button class=" tree-search-btn" type="button" @click="search">GO</button>-->
-                                    <v-tree ref='tree'
-                                            :data='treeData1'
-                                            :multiple="true"
-                                            @node-check='selectedNodes'
-                                            :halfcheck='true'
-                                            @click="selectedNodes"/>
-                                </div>
+                                <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
+                                <category></category>
                             </div>
                             <div class="py-4 bb-1">
-                                <div class="h4 mb-0 d-flex ">Рубрики</div>
-
-                                <div class="custom-control custom-checkbox mt-4">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    <label class="custom-control-label" for="customCheck1">Профессиональные
-                                        обзоры</label>
+                                <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Формат
                                 </div>
-                                <div class="custom-control custom-checkbox mt-2">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                    <label class="custom-control-label" for="customCheck2">Любительские
-                                        обзоры</label>
-                                </div>
+                                <div class="small d-flex">
 
-
-                            </div>
-                            <div class="py-4">
-                                <div
-                                        class="h4 mb-0 d-flex align-items-center justify-content-between">Формат
-
-                                </div>
-                                <div class="tree">
-                                    <div class="custom-control custom-checkbox mt-4">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                        <label class="custom-control-label" for="customCheck3">Текст</label>
+                                    <div class="mr-3">
+                                        <a href="#" class="link link--doted link--color-grey">Текст</a>
                                     </div>
-                                    <div class="custom-control custom-checkbox mt-2">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck4">
-                                        <label class="custom-control-label" for="customCheck4">Видео</label>
+                                    <div class="mr-3">
+                                        <a href="#" class="link link--doted link--color-grey">Видео</a>
                                     </div>
-                                    <div class="custom-control custom-checkbox mt-2">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck5">
-                                        <label class="custom-control-label" for="customCheck5">Фото</label>
+                                    <div class="mr-3">
+                                        <a href="#" class="link link--doted link--color-grey">Фото</a>
                                     </div>
-
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -111,66 +77,25 @@
                             <div class="card-block mb-4">
                                 <div class="">
                                     <div class="p-4 bb-1">
-                                        <div @click="category=!category"
-                                             class="h4 mb-0 d-flex align-items-center justify-content-between">Тема
-                                            <div class="icon-down"></div>
-                                        </div>
-                                        <div class="tree" v-if="category">
-                                            <input class="tree-search-input"
-                                                   type="text"
-                                                   v-model.lazy="searchword"
-                                                   placeholder="Поиск категории"
-                                                   v-on:keyup.enter="search"
-                                            />
-                                            <!--<button class=" tree-search-btn" type="button" @click="search">GO</button>-->
-                                            <v-tree ref='tree'
-                                                    :data='treeData1'
-                                                    :multiple="true"
-                                                    @node-check='selectedNodes'
-                                                    :halfcheck='true'
-                                                    @click="selectedNodes"/>
-                                        </div>
+                                        <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
+                                        <category></category>
                                     </div>
                                     <div class="p-4 bb-1">
-                                        <div @click="thame=!thame"
-                                             class="h4 mb-0 d-flex align-items-center justify-content-between">Рубрики
-                                            <div class="icon-down"></div>
+                                        <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Формат
                                         </div>
-                                        <div class="tree" v-if="thame">
-                                            <div class="custom-control custom-checkbox mt-4">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                <label class="custom-control-label" for="customCheck1">Профессиональные
-                                                    обзоры</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox mt-2">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                                <label class="custom-control-label" for="customCheck2">Любительские
-                                                    обзоры</label>
-                                            </div>
+                                        <div class="small d-flex">
 
+                                            <div class="mr-3">
+                                                <a href="#" class="link link--doted link--color-grey">Текст</a>
+                                            </div>
+                                            <div class="mr-3">
+                                                <a href="#" class="link link--doted link--color-grey">Видео</a>
+                                            </div>
+                                            <div class="mr-3">
+                                                <a href="#" class="link link--doted link--color-grey">Фото</a>
+                                            </div>
+                                        </div>
 
-                                        </div>
-                                    </div>
-                                    <div class="p-4">
-                                        <div @click="brand=!brand"
-                                             class="h4 mb-0 d-flex align-items-center justify-content-between">Формат
-                                            <div class="icon-down"></div>
-                                        </div>
-                                        <div class="tree" v-if="brand">
-                                            <div class="custom-control custom-checkbox mt-4">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                                <label class="custom-control-label" for="customCheck3">Текст</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox mt-2">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck4">
-                                                <label class="custom-control-label" for="customCheck4">Видео</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox mt-2">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck5">
-                                                <label class="custom-control-label" for="customCheck5">Фото</label>
-                                            </div>
-
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -200,84 +125,6 @@
 
             </div>
         </div>
-        <modal name="filter" :adaptive="true" width="100%" height="auto" scrollable="true">
-            <div class="layout--bg-grey p-3 d-flex align-items-center justify-content-between ">
-                <div class="h2 mb-0">Заголовок</div>
-                <div class="" @click="hide">
-                    <div class="h1 mb-0 icon-close"></div>
-                </div>
-            </div>
-            <div class="">
-                <div class="p-4 bb-1">
-                    <div @click="category=!category"
-                         class="h4 mb-0 d-flex align-items-center justify-content-between">Тема
-                        <div class="icon-down"></div>
-                    </div>
-                    <div class="tree" v-if="category">
-                        <input class="tree-search-input"
-                               type="text"
-                               v-model.lazy="searchword"
-                               placeholder="Поиск категории"
-                               v-on:keyup.enter="search"
-                        />
-                        <!--<button class=" tree-search-btn" type="button" @click="search">GO</button>-->
-                        <v-tree ref='tree'
-                                :data='treeData1'
-
-                                :multiple="true"
-                                @node-check='selectedNodes'
-                                :halfcheck='true'
-                                @click="selectedNodes"/>
-                    </div>
-                </div>
-                <div class="p-4 bb-1">
-                    <div @click="thame=!thame"
-                         class="h4 mb-0 d-flex align-items-center justify-content-between">Рубрики
-                        <div class="icon-down"></div>
-                    </div>
-                    <div class="tree" v-if="thame">
-                        <div class="custom-control custom-checkbox mt-4">
-                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                            <label class="custom-control-label" for="customCheck1">Профессиональные
-                                обзоры</label>
-                        </div>
-                        <div class="custom-control custom-checkbox mt-2">
-                            <input type="checkbox" class="custom-control-input" id="customCheck2">
-                            <label class="custom-control-label" for="customCheck2">Любительские
-                                обзоры</label>
-                        </div>
-
-
-                    </div>
-                </div>
-                <div class="p-4">
-                    <div @click="brand=!brand"
-                         class="h4 mb-0 d-flex align-items-center justify-content-between">Формат
-                        <div class="icon-down"></div>
-                    </div>
-                    <div class="tree" v-if="brand">
-                        <div class="custom-control custom-checkbox mt-4">
-                            <input type="checkbox" class="custom-control-input" id="customCheck3">
-                            <label class="custom-control-label" for="customCheck3">Текст</label>
-                        </div>
-                        <div class="custom-control custom-checkbox mt-2">
-                            <input type="checkbox" class="custom-control-input" id="customCheck4">
-                            <label class="custom-control-label" for="customCheck4">Видео</label>
-                        </div>
-                        <div class="custom-control custom-checkbox mt-2">
-                            <input type="checkbox" class="custom-control-input" id="customCheck5">
-                            <label class="custom-control-label" for="customCheck5">Фото</label>
-                        </div>
-
-                    </div>
-                </div>
-
-
-            </div>
-
-        </modal>
-
-
     </div>
 </template>
 <script>
@@ -286,13 +133,15 @@
     import postLarge from '@/components/post-block/post-large.vue'
     import postTextShort from '@/components/post-block/post-text-short.vue'
     import postHalfImg from '@/components/post-block/post-half-img.vue'
+    import category from "@//components/category.vue";
 
     export default {
         name: 'review',
         components: {
             postTextShort,
             postHalfImg,
-            postLarge
+            postLarge,
+            category
         },
         data: function () {
             return {

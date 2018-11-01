@@ -12,9 +12,9 @@
                     </div>
                     <div class="mb-3 small d-flex">
                         <div class="mr-3">
-                            <a href="" class="link link--color-blue">12 упоминаний</a>
+                            <a href="" class="link link--color-blue">Еще 12 тем</a>
                         </div>
-                        <a href="" class="link link--color-blue">1 обзор</a>
+                        <a href="" class="link link--color-blue">2 обзора</a>
                     </div>
                     <div class="">
                         <button type="button" class="btn btn--color-white ">Купить</button>

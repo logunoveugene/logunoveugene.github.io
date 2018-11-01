@@ -3,14 +3,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <a href="#" class="layout__title-link">
+                     <router-link to="/review" class="layout__title-link">
                         <div class="layout__title layout__title--orange">
                             <div class="layout__title-text">Дайджест</div>
                             <button class="layout__title-button">
                                 <span class="icon-arrow-right"></span>
                             </button>
                         </div>
-                    </a>
+                     </router-link>
                 </div>
             </div>
             <div class="row">
@@ -113,7 +113,7 @@
             <div class="container">
                 <div class="row pt-5">
                     <div class="col-12">
-                        <a href="#" class="layout__title-link">
+                        <router-link to="/review" class="layout__title-link">
                             <div class="layout__title layout__title--blue">
                                 <div class="layout__title-text">Обзоры</div>
                                 <button class="layout__title-button">
@@ -121,7 +121,7 @@
                                 </button>
                             </div>
 
-                        </a>
+                        </router-link>
                     </div>
                     <div class="col-12  col-lg-8">
                         <div class="blog__item">
@@ -164,14 +164,14 @@
             <div class="container pt-5">
                 <div class="row">
                     <div class="col-12">
-                        <a href="#" class="layout__title-link">
+                        <router-link to="/review" class="layout__title-link">
                             <div class="layout__title layout__title--orange">
                                 <div class="layout__title-text">Лайфхаки</div>
                                 <button class="layout__title-button">
                                     <span class="icon-arrow-right"></span>
                                 </button>
                             </div>
-                        </a>
+                        </router-link>
                     </div>
                     <div class="col-12">
                         <swiper class="livehack-slider" :options="lifehackOption">
@@ -194,12 +194,12 @@
         <div class="container py-5">
             <div class="row">
                 <div class="col-12 col-md-12 col-lg-8">
-                    <a href="#" class="layout__title-link">
+                    <router-link to="/discussions" class="layout__title-link">
                         <div class="layout__title layout__title--orange">
                             <div class="layout__title-text">Обсуждения</div>
                             <button class="layout__title-button"><span class="icon-arrow-right"></span></button>
                         </div>
-                    </a>
+                    </router-link>
                     <div class="discussions">
                         <disc-list-item :post="post" v-for="(post, index) in discussions" :key="index"></disc-list-item>
                     </div>

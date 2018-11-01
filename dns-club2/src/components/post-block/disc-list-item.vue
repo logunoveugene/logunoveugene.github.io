@@ -14,23 +14,22 @@
                     <!--<div class="discussions__source-icon-wrap">-->
                     <!--<div class="icon-dots-hor"></div>-->
                     <!--</div>-->
-                    <div class="discussions__ d-flex align-items-center small mb-2 mb-md-3 mr-4">
+                    <div class="discussions__ d-flex align-items-center small mb-2 mr-4">
                         <img :src="post.autorImg" alt="" class="discussions__author-img  rounded-circle">
                         <a class="link link--color-grey mr-2"
                            href="#">{{post.autor}}</a>
                         {{post.date | fdate}}
                     </div>
-                    <div class="mb-2 mb-md-3">
+                    <div class="mb-2 ">
                         <a href="#" class="link link--color-grey ">{{post.source.title}} </a>·
                         <a href="#" class="link link--color-grey ">{{post.source.parent.title}}</a>
                     </div>
-
 
                 </div>
                 <div class="discussions__teaser  mb-2">
                     <div v-html="post.teaser"></div>
                 </div>
-                <div class="d-flex flex-wrap align-items-center">
+                <div class="discussions__control d-flex flex-wrap align-items-center">
                     <post-info class="mr-3 mb-3"
                                :like="post.like"
                                :comment="post.comment"
@@ -153,4 +152,7 @@
         border-radius: 50% !important;
     }
 
+    /*.discussions__control, .discussions__teaser{*/
+        /*padding-left: 28px;*/
+    /*}*/
 </style>

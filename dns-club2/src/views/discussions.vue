@@ -3,15 +3,19 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="small mb-2">Клуб / Обсуждения</div>
+                    <div class="small mb-2 d-flex">
+                        <router-link class="link link--color-black" to="/">Клуб</router-link>
+                        <div class="mx-2">/</div>
+                        <router-link class="link link--color-black" to="/discussions">Обсуждения</router-link>
+                    </div>
                     <div class="d-flex align-items-center justify-content-between">
                         <h1 class="page__title ">Обсуждения</h1>
-                        <div class="d-lg-none d-block mb-3">
-                            <div class=" text-success d-inline-block mr-2 icon-add"></div>
-                            <div class="d-inline-block">Создать тему</div>
-                        </div>
-
-
+                        <router-link to="/newdesc" class="link link--color-grey">
+                            <div class="d-lg-none d-block mb-3">
+                                <div class=" text-success d-inline-block mr-2 icon-add"></div>
+                                <div class="d-inline-block">Создать тему</div>
+                            </div>
+                        </router-link>
                     </div>
                 </div>
                 <div class="col-12 col-md-12 col-lg-8">
@@ -24,10 +28,11 @@
                                         ответят.
                                     </div>
                                 </div>
-                                <div class="">
+                                <router-link to="/newdesc">
+
                                     <div class="btn btn--color-white mr-3 ">Создать тему</div>
 
-                                </div>
+                                </router-link>
                             </div>
                         </div>
                     </div>
@@ -47,54 +52,26 @@
                         </div>
                         <div class="mb-4 d-block d-lg-none" v-if="searchPlate">
                             <div class="">
-                                <div class="">
-                                    <div class="pb-4 bb-1">
-                                        <div class="h1 mb-3 d-flex align-items-center justify-content-between ">Раздел
-                                        </div>
-                                        <treeselect v-model="value"
-                                                    alwaysOpen="true"
-                                                    :multiple="true"
-                                                    :options="options"
-                                                    noResultsText="Ничего не найдено"
-                                                    placeholder="Найти раздел"
-                                                    :max-height="400"
-                                        />
+                                <div class="pb-3  bb-1">
+                                    <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
+                                    <category></category>
+                                </div>
+                                <div class=" py-3 bb-1">
+                                    <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Поиск по
+                                        упоминаниям
                                     </div>
-                                    <div class="py-4 bb-1">
-                                        <div class="h1 mb-3 d-flex align-items-center justify-content-between ">Поиск по
-                                            упоминаниям
+                                    <div class="small d-flex">
+                                        <div class="mr-3">
+                                            <a href="#" class="link link--doted link--color-grey">Товар</a>
                                         </div>
-                                        <div class="filter__search-input-wrap mb-4">
-                                            <input class="filter__search-input" type="text"
-                                                   placeholder="Товар, бренд или категориям"/>
-                                            <div class="filter__search-input-icon">
-                                                <div class="icon-search"></div>
-                                            </div>
+                                        <div class="mr-3">
+                                            <a href="#" class="link link--doted link--color-grey">Категория</a>
                                         </div>
-                                        <div class="h4 mb-3">Сегодня в тренде 😎</div>
-                                        <div class="filter__links-item d-flex justify-content-between">
-                                            <div class="filter__links-item-title"><a href="#"
-                                                                                     class="link link--color-black">Смартфон
-                                                Apple iPhone 8 Plus 64 ГБ</a></div>
-                                            <div class="filter__links-item-amount">+11
-                                            </div>
-                                        </div>
-                                        <div class="filter__links-item d-flex justify-content-between">
-                                            <div class="filter__links-item-title"><a href="#"
-                                                                                     class="link link--color-black">Блок
-                                                питания
-                                                DEXP DTS-600EPS</a></div>
-                                            <div class="filter__links-item-amount">+8
-                                            </div>
-                                        </div>
-                                        <div class="filter__links-item d-flex justify-content-between">
-                                            <div class="filter__links-item-title"><a href="#"
-                                                                                     class="link link--color-black">Адаптер
-                                                питания сетевой 5bites PA90A-05</a></div>
-                                            <div class="filter__links-item-amount">+4
-                                            </div>
+                                        <div class="mr-3">
+                                            <a href="#" class="link link--doted link--color-grey">Бренд</a>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -119,23 +96,8 @@
                     <div class="card-block mb-4">
                         <div class="">
                             <div class="p-4 bb-1">
-                                <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Раздел</div>
-                                <div v-if="!isCategory" class="">
-                                    <ul class="list-unstyled mb-2">
-                                        <li class="py-1">Майнинг</li>
-                                        <li class="py-1">Сборки ПК</li>
-                                        <li class="py-1">Основные комплектующие</li>
-                                        <li class="py-1">Телевизоры</li>
-                                        <li class="py-1">Видекарты</li>
-                                    </ul>
-                                    <div @click="isCategory=true" class="link link--doted link--color-blue">Все
-                                        разделы
-                                    </div>
-                                </div>
-
-                                <div class="" v-if="isCategory">
-                                    <category></category>
-                                </div>
+                                <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
+                                <category></category>
                             </div>
                             <div class="p-4 bb-1">
                                 <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Поиск по
