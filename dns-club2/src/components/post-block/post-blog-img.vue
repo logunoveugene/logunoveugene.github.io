@@ -4,9 +4,10 @@
         <div class="post-blog-img"
              v-bind:style="{  backgroundColor: post.bgColor}">
             <div class="post-blog-img__img-wrap">
-                <img :src="post.img" class="post-blog-img__img" alt="">
                 <div v-bind:style="{ boxShadow: '0px -120px 120px -60px inset ' +  post.bgColor}"
                      class="post-blog-img__img-shadow"></div>
+                <img :src="post.img" class="post-blog-img__img" alt="">
+
 
             </div>
             <div class="post-blog-img__info-wrap">
@@ -118,6 +119,7 @@
         height: 100%;
         top: 0;
         left: 0;
+        z-index: 1000;
     }
 
     .post-blog-img__info-wrap {

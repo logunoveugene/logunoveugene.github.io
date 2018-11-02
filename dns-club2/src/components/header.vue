@@ -45,12 +45,15 @@
                 <div class="header__bottom-line">
                     <div class="header__container container">
                         <div class="header__bottom-grid t row">
-                            <div class="header__bottom-block col-2 d-lg-none">
-                                <div class="header__mobile-menu">
-                                    <img src="https://i.snag.gy/23I0JN.jpg" alt="">
+                            <div class="header__bottom-block col-3 d-lg-none">
+                                <div  class="header__mobile-menu">
+                                    <div class="header__mobile-menu-img">
+                                        <div class="icon-line-menu"></div>
+                                    </div>
+
                                 </div>
                             </div>
-                            <div class="header__bottom-block justify-content-lg-start col-8 col-lg-8">
+                            <div class="header__bottom-block justify-content-lg-start col-6 col-lg-8">
                                 <router-link to="/">
                                     <img class="heaader__logo" src="https://i.snag.gy/0aAx5r.jpg" alt="">
                                 </router-link>
@@ -71,7 +74,7 @@
                                 </div>
 
                             </div>
-                            <div class="header__bottom-block col-2 col-lg-4">
+                            <div class="header__bottom-block col-3 col-lg-4">
                                 <transition name="fademy">
                                     <div v-if="!isSearchExtend" class="header__create-controls d-none d-lg-flex">
                                         <div class="header__create-controls-item">
@@ -92,11 +95,21 @@
                                 </transition>
 
                                 <div class="header__search">
-                                    <img v-if="!isSearchExtend" @click="searchExtend" class="header__search-img"
-                                         src="https://i.snag.gy/7rBCoa.jpg" alt="">
-                                    <img v-if="isSearchExtend" @click="isSearchExtend = false"
-                                         class="header__search-img"
-                                         src="https://i.snag.gy/7rBCoa.jpg" alt="">
+
+                                    <div v-if="!isSearchExtend" @click="searchExtend"  class="header__search-img">
+                                        <div class="icon-search"></div>
+                                    </div>
+                                    <div v-if="isSearchExtend" @click="isSearchExtend = false"  class="header__search-img">
+                                        <div class="icon-close"></div>
+                                    </div>
+
+
+                                    <!---->
+                                    <!--<img v-if="!isSearchExtend" @click="searchExtend" class="header__search-img"-->
+                                    <!--src="https://i.snag.gy/7rBCoa.jpg" alt="">-->
+                                    <!--<img v-if="isSearchExtend" @click="isSearchExtend = false"-->
+                                    <!--class="header__search-img"-->
+                                    <!--src="https://i.snag.gy/7rBCoa.jpg" alt="">-->
                                 </div>
 
                             </div>
@@ -104,7 +117,7 @@
                                 <div v-if="isSearchExtend" class="header__search-extend">
                                     <input placeholder="Поиск"
                                            ref="headerSearchField"
-                                           type="text"
+                                           type="search"
                                            class="header__search-extend-field">
 
 
@@ -310,10 +323,17 @@
         text-align: right;
         width: 100%;
         cursor: pointer;
+        position: relative;
+        height: 26px;
     }
 
     .header__search-img {
-        padding: .25rem;
+        color: #222528;
+        font-size: 25px;
+        height: 30px;
+        position: absolute;
+        top: -1px;
+        right: 0;
     }
 
     .header__search-extend {
@@ -362,7 +382,7 @@
         border: 0;
         background: #fff;
         outline: none;
-        width: 150px;
+        width: 130px;
         line-height: 16px;
         padding: 12px 0 6px;
         cursor: pointer;
@@ -371,7 +391,7 @@
 
     .header__search-extend-btn-icon.icon-down {
         position: absolute;
-        right: 20px;
+        right: 5px;
         top: 15px;
         font-size: 12px;
         color: #999;
@@ -380,6 +400,15 @@
     .header__mobile-menu {
         justify-content: start;
         width: 100%;
+        position: relative;
+        height: 30px;
+    }
+    .header__mobile-menu-img {
+
+        position: absolute;
+        font-size: 18px;
+        color: #222528;
+        top: 5px;
     }
 </style>
 

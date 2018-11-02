@@ -200,7 +200,7 @@
                             <button class="layout__title-button"><span class="icon-arrow-right"></span></button>
                         </div>
                     </router-link>
-                    <div class="discussions">
+                    <div class="">
                         <disc-list-item :post="post" v-for="(post, index) in discussions" :key="index"></disc-list-item>
                     </div>
 

@@ -4,17 +4,25 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="small mb-2">
+                    <div class="small mb-2 d-flex">
                         <router-link class="link link--color-black" to="/">Клуб</router-link>
-                        /
+                        <div class="mx-2">/</div>
                         <snap class="text-muted">Обзоры</snap>
                     </div>
-                    <h1 v-if="initSelected.length==0 || initSelected.length>1 " class="page__title">Обзоры</h1>
-                    <h1 v-if="initSelected.length==1" class="page__title">{{initSelected[0].title}}</h1>
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h1 class="page__title mb-0">Обзоры</h1>
+                        <router-link to="/newpost" class=" link link--color-black new-post-btn d-lg-none d-block ">
+                            <div class="new-post-btn-icon">
+                                <div class=" text-success d-inline-block mr-2 icon-add"></div>
+                            </div>
+                            <div class="d-inline-block">Добавить обзор</div>
+
+                        </router-link>
+                    </div>
                 </div>
                 <div class="col-12 col-md-12 col-lg-8">
                     <div class="d-block d-lg-none">
-                        <div v-ripple class="collapse-block  mb-3 card-block card-block--full-mobile "
+                        <div v-ripple class="collapse-block card-block card-block--full-mobile "
                              @click="searchPlate=!searchPlate">
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="">Настройка показа</div>
@@ -25,7 +33,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mb-4" v-if="searchPlate">
+                    <div class="collapse-plate pt-4  " v-if="searchPlate">
                         <div class="">
                             <div class="pb-4 bb-1">
                                 <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
@@ -50,10 +58,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="d-none d-lg-flex justify-content-between mb-4 align-items-center small ">
+                    <div class=" d-none d-lg-flex  justify-content-between align-items-center small">
                         <nav class="nav nav-pills nav-justified">
-                            <a class="pill-item link pill-item--active " href="#">Свежее</a>
-                            <a class="pill-item link" href="#">Популярное</a>
+                            <a class="pill-item link pill-item--active" href="#">Свежее</a>
+                            <a class="pill-item link" href="#">Обсуждаемые</a>
                             <a class="pill-item link" href="#">Лучшее</a>
                         </nav>
                         <div class="d-none d-md-flex  ">за сегодня
@@ -64,7 +72,7 @@
                     </div>
 
 
-                    <div class="discussions">
+                    <div class="posts">
                         <div class="" v-for="(rev, index) in review" :key="index">
                             <postLarge :post="rev"></postLarge>
                         </div>
@@ -248,6 +256,9 @@
     }
 </script>
 <style>
+    .posts {
+        padding-top: 1.5rem;
+    }
 
     .discussions__source-icon-wrap {
         border: 1px solid #eee;
@@ -257,5 +268,18 @@
         margin-right: 9px;
         padding: 2px 0 0 3px;
         color: #999;
+    }
+
+    .new-post-btn {
+        border: 1px solid #eee;
+        padding: 7px 12px 6px 35px;
+        border-radius: 50px;
+        position: relative;
+    }
+
+    .new-post-btn-icon {
+        position: absolute;
+        left: 11px;
+        top: 9px;
     }
 </style>

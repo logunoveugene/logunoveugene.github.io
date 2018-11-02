@@ -3,18 +3,18 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="small mb-3">
+                    <div class="small mb-3 d-flex  flex-wrap">
                         <router-link class="link link--color-black" to="/">Клуб</router-link>
-                        /
+                        <div class="mx-2">/</div>
                         <router-link class="link link--color-black" to="/discussions">Обсуждения</router-link>
-
-                        <router-link v-if="post.source.parent" class="link link--color-black" to="/discussions"> /
+                        <div class="mx-2">/</div>
+                        <router-link v-if="post.source.parent" class="link link--color-black" to="/discussions">
                             {{post.source.parent.title}}
                         </router-link>
-                        <router-link v-if="post.source" class="link link--color-black" to="/discussions"> /
+                        <div class="mx-2">/</div>
+                        <router-link v-if="post.source" class="link link--color-black" to="/discussions">
                             {{post.source.title}}
                         </router-link>
-
                     </div>
                 </div>
                 <div class="col-12 col-lg-8 ">
@@ -56,12 +56,11 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="d-block d-lg-none" v-if="post.products">
                         <div v-ripple class="collapse-block card-block card-block--full-mobile "
                              @click="collapseProduct=!collapseProduct">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="">Упомянутые товары</div>
+                                <div class="">Упоминание товаров  <span class="text-muted small">{{post.products.length}}</span></div>
                                 <div class="collapse-block__icon ">
                                     <div v-if="!collapseProduct" class="icon-down"></div>
                                     <div v-if="collapseProduct" class="icon-up"></div>
@@ -69,9 +68,7 @@
                             </div>
                         </div>
                     </div>
-
-
-                    <div class="my-4" v-if="collapseProduct">
+                    <div class="collapse-plate  py-4" v-if="collapseProduct">
                         <product-list :products="post.products"></product-list>
                     </div>
 
@@ -112,16 +109,18 @@
                             </comment-item>
                         </paginate>
 
-                        <div class="btn paginate__button btn-block mb-4 ">Показать еще</div>
 
-                        <paginate-links :limit="3"
-                                        for="commentsP"
-                                        :show-step-links="true"
-                                        :step-links="{
+                        <div class="" v-if="comments && comments.length>17">
+                            <div class="btn paginate__button btn-block mb-4 ">Показать еще</div>
+                            <paginate-links :limit="3"
+                                            for="commentsP"
+                                            :show-step-links="true"
+                                            :step-links="{
                                             next: 'h',
                                             prev: 'g'
                                           }">
-                        </paginate-links>
+                            </paginate-links>
+                        </div>
                     </div>
                     <div class="d-none d-md-block">
                         <div class="h1">Ваш ответ</div>
@@ -276,6 +275,7 @@
     .fixed__plate-answer-desc {
         padding-left: 22px;
     }
+
     .fixed__plate-answer-icon {
         position: absolute;
         left: 1rem;

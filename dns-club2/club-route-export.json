@@ -219,7 +219,7 @@
       "date": "2018-06-16T21:17:43",
       "format": "Текст",
       "id": 5,
-      "img": "https://i.snag.gy/mOlj0i.jpg",
+      "img": "https://i.snag.gy/sIX0jE.jpg",
       "isLocked": false,
       "like": 1,
       "position": 6,
@@ -489,6 +489,395 @@
       "autor": "RabinoVich",
       "autorImg": "https://i.snag.gy/p8753Y.jpg",
       "id": 6,
+      "comment": 98,
+      "date": "2018-06-16T21:17:43",
+      "img": "https://c.dns-shop.ru/thumb/st4/fit/190/190/d54d32ab4e0e15d15a0fd20822b0e7ad/7dac3e1c35dc8e66cfdc37e6b80b2dbec59565f30ef57a562eeaa78a1f00aa0c.jpg",
+      "lastactivity": "2018-06-16T21:17:43",
+      "like": 1,
+      "source": {
+        "title": "Основыне комплектующие",
+        "parent": {
+          "title": "Компьютеры и комплектующие"
+        }
+      },
+      "teaser": "Я хочу купить процессор Intel Core i3-8100 BOX, и хочу поставить на материнскую плату MSI H310M PRO-VDH. И поставить 2 оперативы Ballistix SPORT LT Red Series [BLS4G4D26BFSE] 4 ГБ.",
+      "title": "Будет ли работать на материнской плате Asus P8H61-M Pro с i3 2100?",
+      "products": [
+        {
+          "comment": 44,
+          "href": "#",
+          "img": "https://c.dns-shop.ru/thumb/st4/fit/190/190/d54d32ab4e0e15d15a0fd20822b0e7ad/7dac3e1c35dc8e66cfdc37e6b80b2dbec59565f30ef57a562eeaa78a1f00aa0c.jpg",
+          "oldprice": "",
+          "price": 37999,
+          "rating": "4",
+          "reviewcount": 154,
+          "title": "Оперативная память Kingston HyperX Savage [HX318C9SRK2/8] 8 ГБ"
+        }
+      ],
+      "view": 3565
+    },
+    {
+      "autor": "Mefromvl",
+      "autorImg": "https://i.snag.gy/p8753Y.jpg",
+      "id": 7,
+      "comment": 46,
+      "date": "2018-10-30T18:33:43",
+      "img": "https://c.dns-shop.ru/thumb/st1/fit/300/200/328c161f204625e0c6666763403058e8/fd6a439d9aa8dc04406ed05c56eb2b876d89c7a684be9df74c18b97b854e6557.jpg",
+      "lastactivity": "2018-10-30T18:33:43",
+      "like": 45,
+      "source": {
+        "title": "Телевизоры",
+        "parent": {
+          "title": "Цифровая техника"
+        }
+      },
+      "teaser": "Совсем недавно проходила акция телефизор стоил 35 000р, но я был к командировке.. не смог купить",
+      "title": "Подскажите, в ближайшее время не предвидится акции на <span class='highlight'>телевизор LED Hisense H55A6100</span>, по которой он стоил 35000р ?",
+      "products": [
+        {
+          "comment": 44,
+          "href": "#",
+          "img": "https://c.dns-shop.ru/thumb/st1/fit/300/200/328c161f204625e0c6666763403058e8/fd6a439d9aa8dc04406ed05c56eb2b876d89c7a684be9df74c18b97b854e6557.jpg",
+          "oldprice": "",
+          "price": 37999,
+          "rating": "4",
+          "reviewcount": 154,
+          "title": "55\" (138 см) Телевизор LED Hisense H55A6100 черный"
+        }
+      ],
+      "view": 2048
+    },
+    {
+      "autor": "Random97",
+      "autorImg": "https://i.snag.gy/g0pxqj.jpg",
+      "id": 8,
+      "comment": 15,
+      "date": "2018-06-16T21:17:43",
+      "img": "https://c.dns-shop.ru/thumb/st4/fit/190/190/68458914cd25ecb85a50b9316c2b38a6/b3550e793b4270e17d0d961dd0a746659c6a154f2e1b66518faf10fa5c4931c0.jpg",
+      "lastactivity": "2018-06-16T21:17:43",
+      "like": 1,
+      "source": {
+        "title": "Ноутбуки",
+        "parent": {
+          "title": "Компьютеры и комплектующие"
+        }
+      },
+      "teaser": "Выбираю между бюджетными ноутбуками. Претеденты следующие <span class='highlight'> Dell Inspiron 3552-5010,</span> <span class='highlight'>Нетбук Irbis NB29</span> и <span class='highlight'>Prestigio Smartbook 133S.</span>  Помогите пожалуйста определить какой из них лучше в плане производительности?",
+      "title": "Выбор бюджетного ноутбука до 15 000р. 3 варианта",
+      "products": [
+        {
+          "comment": 44,
+          "href": "#",
+          "img": "https://c.dns-shop.ru/thumb/st1/fit/190/190/95e3b11fafcc3dd0010ec79d1ac239fb/9591403d7a349a276cf74eff87cd246b6a6dc7b40c045648f8969b15f4809cd5.jpg.webp",
+          "oldprice": "",
+          "price": 37999,
+          "rating": "5",
+          "reviewcount": 154,
+          "title": "Ноутбук DELL Inspiron 3552-5010 черный"
+        },
+        {
+          "comment": 44,
+          "href": "#",
+          "img": "https://c.dns-shop.ru/thumb/st1/fit/190/190/3b15aa727b2c7d789bef4b46c3c8530f/7fcb6d8b7c18fdff9d789d71024e192e64787ede000a2342126eb13e79cf0324.jpg",
+          "oldprice": "",
+          "price": 37999,
+          "rating": "4",
+          "reviewcount": 18,
+          "title": "Нетбук Irbis NB29 белый"
+        },
+        {
+          "comment": 44,
+          "href": "#",
+          "img": "https://c.dns-shop.ru/thumb/st4/fit/190/190/7ed0dc748e23bc09adb732bccd627c32/b17e34b84525ff41c2e1c9dfd270a7671ead1d08768f7dc43d60fa51a2aed51a.jpg",
+          "oldprice": "",
+          "price": 37999,
+          "rating": "5",
+          "reviewcount": 14,
+          "title": "Нетбук Prestigio Smartbook 133S коричневый"
+        }
+      ],
+      "view": 5640
+    },
+    {
+      "autor": "2poy",
+      "autorImg": "https://i.snag.gy/p8753Y.jpg",
+      "id": 9,
+      "comment": 10,
+      "date": "2018-06-16T21:17:43",
+      "img": "https://c.dns-shop.ru/thumb/st4/fit/300/200/bac2b8ecc8b7038a06f7fd0c8be987f5/97fd6eed64746765e41f6d039698a5ddd314e4f9909acd02ac7fad700f40ff57.jpg",
+      "lastactivity": "2018-06-16T21:17:43",
+      "like": 5,
+      "source": {
+        "title": "Экшен камеры",
+        "parent": {
+          "title": "Цифровая техника"
+        }
+      },
+      "teaser": "Подскажите, почему тут написанно что сокет 1151 v2 , а на коробке просто 1151? когда вводишь в гугле модель этой платы на амазоне выдает сокет 1151, почему так? Собираюсь брать ее для i5 8400",
+      "title": "Будет ли в продаже версия без аквабокса ? ",
+      "products": [
+        {
+          "comment": 44,
+          "href": "#",
+          "img": "https://c.dns-shop.ru/thumb/st4/fit/300/200/bac2b8ecc8b7038a06f7fd0c8be987f5/97fd6eed64746765e41f6d039698a5ddd314e4f9909acd02ac7fad700f40ff57.jpg",
+          "oldprice": "",
+          "price": 37999,
+          "rating": "4",
+          "reviewcount": 154,
+          "title": "Экшн видеокамера XiaoYi 4K+ черный +аквабокс"
+        }
+      ],
+      "view": 566
+    },
+    {
+      "autor": "RabinoVich",
+      "autorImg": "https://i.snag.gy/d7sDXn.jpg",
+      "id": 10,
+      "comment": 98,
+      "date": "2018-06-16T21:17:43",
+      "img": "https://i.snag.gy/3aIqpR.jpg",
+      "lastactivity": "2018-06-16T21:17:43",
+      "like": 1,
+      "source": {
+        "title": "Криптовалюты",
+        "parent": {
+          "title": "Майнинг"
+        }
+      },
+      "teaser": "Добрый день, уважаемые пользователи club.dns-shop! Вашему вниманию предлагается новая материнская плата MSI H310-F PRO для майнинга.",
+      "title": "Простой запуск 8 карт на майнинговой плате MSI H310-F PRO",
+      "products": [],
+      "view": 3565
+    },
+    {
+      "autor": "2poy",
+      "autorImg": "https://i.snag.gy/p8753Y.jpg",
+      "id": 11,
+      "comment": 10,
+      "date": "2018-06-16T21:17:43",
+      "img": "https://c.dns-shop.ru/thumb/st4/fit/190/190/aec677cb93ad7a52510946c350d6741d/95745ce6f17dd8274beee8f109d54da991eb4ab19600cc15db30d2e9626f7d3b.jpg",
+      "lastactivity": "2018-06-16T21:17:43",
+      "like": 5,
+      "source": {
+        "title": "Основные комплектующие",
+        "parent": {
+          "title": "Компьютеры и комплектующие"
+        }
+      },
+      "teaser": "Если нужно обновлять то бесплатно это будет при совместной покупке с процессором или придется платить за это ? Если все таки платить то сколько?",
+      "title": "Если я куплю эту мать то с Ryzen 3 2200G сразу стартонет или нужно будет обновлять биос?",
+      "products": [
+        {
+          "comment": 44,
+          "href": "#",
+          "img": "https://c.dns-shop.ru/thumb/st4/fit/190/190/aec677cb93ad7a52510946c350d6741d/95745ce6f17dd8274beee8f109d54da991eb4ab19600cc15db30d2e9626f7d3b.jpg",
+          "oldprice": "",
+          "price": 37999,
+          "rating": "4",
+          "reviewcount": 154,
+          "title": "Материнская плата ASUS PRIME B350M-K"
+        }
+      ],
+      "view": 566
+    },
+    {
+      "autor": "RabinoVich",
+      "autorImg": "https://i.snag.gy/p8753Y.jpg",
+      "id": 12,
+      "comment": 98,
+      "date": "2018-06-16T21:17:43",
+      "img": "https://c.dns-shop.ru/thumb/st4/fit/190/190/d54d32ab4e0e15d15a0fd20822b0e7ad/7dac3e1c35dc8e66cfdc37e6b80b2dbec59565f30ef57a562eeaa78a1f00aa0c.jpg",
+      "lastactivity": "2018-06-16T21:17:43",
+      "like": 1,
+      "source": {
+        "title": "Основыне комплектующие",
+        "parent": {
+          "title": "Компьютеры и комплектующие"
+        }
+      },
+      "teaser": "Я хочу купить процессор Intel Core i3-8100 BOX, и хочу поставить на материнскую плату MSI H310M PRO-VDH. И поставить 2 оперативы Ballistix SPORT LT Red Series [BLS4G4D26BFSE] 4 ГБ.",
+      "title": "Будет ли работать на материнской плате Asus P8H61-M Pro с i3 2100?",
+      "products": [
+        {
+          "comment": 44,
+          "href": "#",
+          "img": "https://c.dns-shop.ru/thumb/st4/fit/190/190/d54d32ab4e0e15d15a0fd20822b0e7ad/7dac3e1c35dc8e66cfdc37e6b80b2dbec59565f30ef57a562eeaa78a1f00aa0c.jpg",
+          "oldprice": "",
+          "price": 37999,
+          "rating": "4",
+          "reviewcount": 154,
+          "title": "Оперативная память Kingston HyperX Savage [HX318C9SRK2/8] 8 ГБ"
+        }
+      ],
+      "view": 3565
+    }, {
+      "autor": "Mefromvl",
+      "autorImg": "https://i.snag.gy/p8753Y.jpg",
+      "id": 13,
+      "comment": 46,
+      "date": "2018-10-30T18:33:43",
+      "img": "https://c.dns-shop.ru/thumb/st1/fit/300/200/328c161f204625e0c6666763403058e8/fd6a439d9aa8dc04406ed05c56eb2b876d89c7a684be9df74c18b97b854e6557.jpg",
+      "lastactivity": "2018-10-30T18:33:43",
+      "like": 45,
+      "source": {
+        "title": "Телевизоры",
+        "parent": {
+          "title": "Цифровая техника"
+        }
+      },
+      "teaser": "Совсем недавно проходила акция телефизор стоил 35 000р, но я был к командировке.. не смог купить",
+      "title": "Подскажите, в ближайшее время не предвидится акции на <span class='highlight'>телевизор LED Hisense H55A6100</span>, по которой он стоил 35000р ?",
+      "products": [
+        {
+          "comment": 44,
+          "href": "#",
+          "img": "https://c.dns-shop.ru/thumb/st1/fit/300/200/328c161f204625e0c6666763403058e8/fd6a439d9aa8dc04406ed05c56eb2b876d89c7a684be9df74c18b97b854e6557.jpg",
+          "oldprice": "",
+          "price": 37999,
+          "rating": "4",
+          "reviewcount": 154,
+          "title": "55\" (138 см) Телевизор LED Hisense H55A6100 черный"
+        }
+      ],
+      "view": 2048
+    },
+    {
+      "autor": "Random97",
+      "autorImg": "https://i.snag.gy/g0pxqj.jpg",
+      "id": 14,
+      "comment": 15,
+      "date": "2018-06-16T21:17:43",
+      "img": "https://c.dns-shop.ru/thumb/st4/fit/190/190/68458914cd25ecb85a50b9316c2b38a6/b3550e793b4270e17d0d961dd0a746659c6a154f2e1b66518faf10fa5c4931c0.jpg",
+      "lastactivity": "2018-06-16T21:17:43",
+      "like": 1,
+      "source": {
+        "title": "Ноутбуки",
+        "parent": {
+          "title": "Компьютеры и комплектующие"
+        }
+      },
+      "teaser": "Выбираю между бюджетными ноутбуками. Претеденты следующие <span class='highlight'> Dell Inspiron 3552-5010,</span> <span class='highlight'>Нетбук Irbis NB29</span> и <span class='highlight'>Prestigio Smartbook 133S.</span>  Помогите пожалуйста определить какой из них лучше в плане производительности?",
+      "title": "Выбор бюджетного ноутбука до 15 000р. 3 варианта",
+      "products": [
+        {
+          "comment": 44,
+          "href": "#",
+          "img": "https://c.dns-shop.ru/thumb/st1/fit/190/190/95e3b11fafcc3dd0010ec79d1ac239fb/9591403d7a349a276cf74eff87cd246b6a6dc7b40c045648f8969b15f4809cd5.jpg.webp",
+          "oldprice": "",
+          "price": 37999,
+          "rating": "5",
+          "reviewcount": 154,
+          "title": "Ноутбук DELL Inspiron 3552-5010 черный"
+        },
+        {
+          "comment": 44,
+          "href": "#",
+          "img": "https://c.dns-shop.ru/thumb/st1/fit/190/190/3b15aa727b2c7d789bef4b46c3c8530f/7fcb6d8b7c18fdff9d789d71024e192e64787ede000a2342126eb13e79cf0324.jpg",
+          "oldprice": "",
+          "price": 37999,
+          "rating": "4",
+          "reviewcount": 18,
+          "title": "Нетбук Irbis NB29 белый"
+        },
+        {
+          "comment": 44,
+          "href": "#",
+          "img": "https://c.dns-shop.ru/thumb/st4/fit/190/190/7ed0dc748e23bc09adb732bccd627c32/b17e34b84525ff41c2e1c9dfd270a7671ead1d08768f7dc43d60fa51a2aed51a.jpg",
+          "oldprice": "",
+          "price": 37999,
+          "rating": "5",
+          "reviewcount": 14,
+          "title": "Нетбук Prestigio Smartbook 133S коричневый"
+        }
+      ],
+      "view": 5640
+    },
+    {
+      "autor": "2poy",
+      "autorImg": "https://i.snag.gy/p8753Y.jpg",
+      "id": 15,
+      "comment": 10,
+      "date": "2018-06-16T21:17:43",
+      "img": "https://c.dns-shop.ru/thumb/st4/fit/300/200/bac2b8ecc8b7038a06f7fd0c8be987f5/97fd6eed64746765e41f6d039698a5ddd314e4f9909acd02ac7fad700f40ff57.jpg",
+      "lastactivity": "2018-06-16T21:17:43",
+      "like": 5,
+      "source": {
+        "title": "Экшен камеры",
+        "parent": {
+          "title": "Цифровая техника"
+        }
+      },
+      "teaser": "Подскажите, почему тут написанно что сокет 1151 v2 , а на коробке просто 1151? когда вводишь в гугле модель этой платы на амазоне выдает сокет 1151, почему так? Собираюсь брать ее для i5 8400",
+      "title": "Будет ли в продаже версия без аквабокса ? ",
+      "products": [
+        {
+          "comment": 44,
+          "href": "#",
+          "img": "https://c.dns-shop.ru/thumb/st4/fit/300/200/bac2b8ecc8b7038a06f7fd0c8be987f5/97fd6eed64746765e41f6d039698a5ddd314e4f9909acd02ac7fad700f40ff57.jpg",
+          "oldprice": "",
+          "price": 37999,
+          "rating": "4",
+          "reviewcount": 154,
+          "title": "Экшн видеокамера XiaoYi 4K+ черный +аквабокс"
+        }
+      ],
+      "view": 566
+    },
+    {
+      "autor": "RabinoVich",
+      "autorImg": "https://i.snag.gy/d7sDXn.jpg",
+      "id": 16,
+      "comment": 98,
+      "date": "2018-06-16T21:17:43",
+      "img": "https://i.snag.gy/3aIqpR.jpg",
+      "lastactivity": "2018-06-16T21:17:43",
+      "like": 1,
+      "source": {
+        "title": "Криптовалюты",
+        "parent": {
+          "title": "Майнинг"
+        }
+      },
+      "teaser": "Добрый день, уважаемые пользователи club.dns-shop! Вашему вниманию предлагается новая материнская плата MSI H310-F PRO для майнинга.",
+      "title": "Простой запуск 8 карт на майнинговой плате MSI H310-F PRO",
+      "products": [],
+      "view": 3565
+    },
+    {
+      "autor": "2poy",
+      "autorImg": "https://i.snag.gy/p8753Y.jpg",
+      "id": 17,
+      "comment": 10,
+      "date": "2018-06-16T21:17:43",
+      "img": "https://c.dns-shop.ru/thumb/st4/fit/190/190/aec677cb93ad7a52510946c350d6741d/95745ce6f17dd8274beee8f109d54da991eb4ab19600cc15db30d2e9626f7d3b.jpg",
+      "lastactivity": "2018-06-16T21:17:43",
+      "like": 5,
+      "source": {
+        "title": "Основные комплектующие",
+        "parent": {
+          "title": "Компьютеры и комплектующие"
+        }
+      },
+      "teaser": "Если нужно обновлять то бесплатно это будет при совместной покупке с процессором или придется платить за это ? Если все таки платить то сколько?",
+      "title": "Если я куплю эту мать то с Ryzen 3 2200G сразу стартонет или нужно будет обновлять биос?",
+      "products": [
+        {
+          "comment": 44,
+          "href": "#",
+          "img": "https://c.dns-shop.ru/thumb/st4/fit/190/190/aec677cb93ad7a52510946c350d6741d/95745ce6f17dd8274beee8f109d54da991eb4ab19600cc15db30d2e9626f7d3b.jpg",
+          "oldprice": "",
+          "price": 37999,
+          "rating": "4",
+          "reviewcount": 154,
+          "title": "Материнская плата ASUS PRIME B350M-K"
+        }
+      ],
+      "view": 566
+    },
+    {
+      "autor": "RabinoVich",
+      "autorImg": "https://i.snag.gy/p8753Y.jpg",
+      "id": 18,
       "comment": 98,
       "date": "2018-06-16T21:17:43",
       "img": "https://c.dns-shop.ru/thumb/st4/fit/190/190/d54d32ab4e0e15d15a0fd20822b0e7ad/7dac3e1c35dc8e66cfdc37e6b80b2dbec59565f30ef57a562eeaa78a1f00aa0c.jpg",

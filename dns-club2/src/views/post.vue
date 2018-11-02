@@ -3,11 +3,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="small mb-3">
+                    <div class="small mb-2 d-flex">
                         <router-link class="link link--color-black" to="/">Клуб</router-link>
-                        /
+                        <div class="mx-2">/</div>
                         <router-link class="link link--color-black" to="/review"> Обзоры</router-link>
-                        /
+                        <div class="mx-2">/</div>
                         <span class="text-muted">{{post.title}}</span>
                     </div>
                 </div>

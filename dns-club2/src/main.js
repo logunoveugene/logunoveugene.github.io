@@ -3,7 +3,11 @@ import App from './App.vue'
 import router from './router'
 import "./filters"
 
+
+
+import CripLoading from "crip-vue-loading"
 import axios from 'axios'
+
 import VueAxios from 'vue-axios'
 Vue.use(VueAxios, axios)
 
@@ -52,9 +56,35 @@ import VueFroala from 'vue-froala-wysiwyg'
 Vue.use(VueFroala)
 
 
-import CommentGrid from 'vue-comment-grid'
 
-Vue.use(CommentGrid)
+
+
+
+
+Vue.use(CripLoading,{
+    axios: axios,
+
+    // Show loader when vue-router detects route change
+    applyOnRouter: true,
+
+    // Default color of loader
+    color: "#e68102",
+
+    // Direction of progress: "right" | "left"
+    direction: "right",
+
+    // Loader color when request fails
+    failColor: "#ac2925",
+
+    // Height of loader
+    height: "2px",
+
+    // When set to true - loader will log details in to console
+    verbose: false,
+})
+
+
+
 
 Vue.config.productionTip = false
 

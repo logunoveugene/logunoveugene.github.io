@@ -14,5 +14,12 @@ Vue.filter("fdate", function (value) {
 })
 
 
+Vue.filter("fulldate", function (value) {
+     dayjs().to(dayjs(value));
+    return dayjs(value).format('H:mm, DD MMM YYYY');
+
+})
+
+
 
 

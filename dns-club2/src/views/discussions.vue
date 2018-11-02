@@ -3,19 +3,21 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="small mb-2 d-flex">
+                    <div class="d-md-flex small mb-2 d-flex">
                         <router-link class="link link--color-black" to="/">Клуб</router-link>
                         <div class="mx-2">/</div>
-                        <router-link class="link link--color-black" to="/discussions">Обсуждения</router-link>
+                        <div class="text-muted">Обсуждения</div>
                     </div>
-                    <div class="d-flex align-items-center justify-content-between">
-                        <h1 class="page__title ">Обсуждения</h1>
-                        <router-link to="/newdesc" class="link link--color-grey">
-                            <div class="d-lg-none d-block mb-3">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h1 class="page__title mb-0 ">Обсуждения</h1>
+                        <router-link to="/newdesc" class=" link link--color-black new-discuss-btn d-lg-none d-block ">
+                            <div class="new-discuss-btn-icon">
                                 <div class=" text-success d-inline-block mr-2 icon-add"></div>
-                                <div class="d-inline-block">Создать тему</div>
                             </div>
+                            <div class="d-inline-block">Создать тему</div>
+
                         </router-link>
+
                     </div>
                 </div>
                 <div class="col-12 col-md-12 col-lg-8">
@@ -39,7 +41,7 @@
 
                     <div class="">
                         <div class="d-block d-lg-none">
-                            <div v-ripple class="collapse-block mb-4 card-block card-block--full-mobile "
+                            <div v-ripple class="collapse-block card-block card-block--full-mobile "
                                  @click="searchPlate=!searchPlate">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="collapse-block__title">Поиск темы</div>
@@ -50,7 +52,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mb-4 d-block d-lg-none" v-if="searchPlate">
+                        <div class="collapse-plate pt-4  d-block d-lg-none" v-if="searchPlate">
                             <div class="">
                                 <div class="pb-3  bb-1">
                                     <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
@@ -76,11 +78,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class=" d-none d-lg-flex  justify-content-between mb-4 align-items-center small">
+                    <div class=" d-none d-lg-flex  justify-content-between align-items-center small">
                         <nav class="nav nav-pills nav-justified">
-                            <a class="pill-item link pill-item--active" href="#">Свежее</a>
-                            <a class="pill-item link" href="#">Обсуждаемые</a>
-                            <a class="pill-item link" href="#">Лучшее</a>
+                            <a class="pill-item link pill-item--active" href="#">Новые сообщения</a>
+                            <a class="pill-item link" href="#">Новые темы</a>
+
                         </nav>
                         <div class="d-none d-md-flex  ">за сегодня
                             <div class="small pt-1 ml-1 text-secondary">
@@ -89,7 +91,29 @@
                         </div>
                     </div>
                     <div class="discussions">
-                        <disc-list-item :post="post" v-for="(post, index) in discussions" :key="index"></disc-list-item>
+                        <paginate
+                                name="discuss"
+                                :list="discussions"
+                                :per="4"
+                        >
+
+                            <disc-list-item :post="post"
+                                            v-for="(post, index) in paginated('discuss')"
+                                            :key="index">
+                            </disc-list-item>
+                        </paginate>
+
+                        <div class="btn paginate__button btn-block mb-4 ">Показать еще</div>
+
+                        <paginate-links :limit="3"
+                                        for="discuss"
+                                        :show-step-links="true"
+                                        :step-links="{
+                                            next: 'h',
+                                            prev: 'g'
+                                          }">
+                        </paginate-links>
+
                     </div>
                 </div>
                 <div class="col-12 col-lg-4 d-none d-lg-block">
@@ -142,6 +166,7 @@
             return {
                 category: true,
                 searchPlate: false,
+                paginate: ['discuss'],
                 brand: false,
                 isCategory: false,
                 posttype: false,
@@ -151,7 +176,8 @@
                 surveys: [],
                 error: [],
                 searchword: '',
-                initSelected: []
+                initSelected: [],
+                stateLoad:false
 
 
             }
@@ -167,7 +193,13 @@
                 this.$refs.tree.searchNodes(this.searchword)
             }
         },
+
         created() {
+
+
+
+
+
             this.axios.get('https://club-route.firebaseio.com/discussions.json')
                 .then(response => {
                     this.discussions = response.data
@@ -200,8 +232,23 @@
 
     }
 </script>
-<style>
+<style lang="scss">
 
+.discussions{
+    padding-top: 1.5rem;
+}
+    .new-discuss-btn {
+        border: 1px solid #eee;
+        padding: 7px 12px 6px 35px;
+        border-radius: 50px;
+        position: relative;
+    }
+
+    .new-discuss-btn-icon {
+        position: absolute;
+        left: 11px;
+        top: 9px;
+    }
 
     .filter__search-input-wrap {
         position: relative;
@@ -246,4 +293,97 @@
         height: 23px;
         font-size: .875rem;
     }
+
+    .paginate__button {
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+        padding: 10px 17px 9px;
+        border-radius: 8px;
+        &:hover {
+            background: #fff6e5;
+        }
+    }
+
+    ul.paginate-links.discuss {
+        margin-left: 0;
+        padding-left: 0;
+        overflow: hidden;
+        border: 1px solid #ddd;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+        padding: 0;
+        border-radius: 8px;
+        display: inline-flex;
+        max-width: 100%;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+    }
+
+    li.number a, .right-arrow a, .left-arrow a {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        transition: .1s;
+        border-bottom: 3px solid #fff;
+        padding: 11px 13px 8px;
+
+        &:hover {
+            background: #fff6e5;
+            border-bottom: 3px solid #fff6e5;
+        }
+    }
+
+    li.number.active a {
+        border-bottom: 3px solid #e68c00;
+    }
+
+    li.number, .right-arrow, .left-arrow {
+
+        cursor: pointer;
+        display: flex;
+
+    }
+
+    .right-arrow {
+        position: absolute;
+        right: 0;
+        display: flex;
+        cursor: pointer;
+        font-family: "mydns" !important;
+    }
+
+    .left-arrow {
+        position: absolute;
+        left: 0;
+        display: flex;
+        cursor: pointer;
+        font-family: "mydns" !important;
+    }
+
+    .ellipses {
+        padding: 11px 5px 8px;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    li.right-arrow.disabled a {
+        opacity: .4;
+        cursor: not-allowed;
+        &:hover {
+            background: #fff;
+            border-bottom: 3px solid #fff;
+        }
+    }
+
+    li.left-arrow.disabled a {
+        opacity: .4;
+        cursor: not-allowed;
+        &:hover {
+            background: #fff;
+            border-bottom: 3px solid #fff;
+        }
+    }
+
 </style>

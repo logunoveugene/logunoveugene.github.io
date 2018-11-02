@@ -2,22 +2,18 @@
     <div class="">
         <div class="container">
             <div class="row">
-                <div class="col-12">
 
-
+                <div class="col-12 col-md-12 col-lg-8">
                     <div class="small mb-2 d-flex">
                         <router-link class="link link--color-black" to="/">Клуб</router-link>
                         <div class="mx-2">/</div>
                         <router-link class="link link--color-black" to="/discussions">Обсуждения</router-link>
                         <div class="mx-2">/</div>
-                        <div class=" ">Cоздание темы</div>
+                        <div class="text-muted ">Cоздание темы</div>
 
                     </div>
                     <input class="w-100 new-post__title" type="text" placeholder="Введите заголовок">
-                </div>
-                <div class="col-12 col-md-12 col-lg-8">
                     <froala :tag="'textarea'" :config="config" v-model="model"></froala>
-                    <div v-html="model"></div>
 
                 </div>
                 <div class="d-block d-lg-none">
@@ -89,7 +85,8 @@
                     </div>
                     <div class="small">
                         <ul class=" pl-4 list-unstyled">
-                            <li><a href="#" class="link link--color-blue">Рекомендации по написанию и оформлению статей</a>
+                            <li>
+                                <a href="#" class="link link--color-blue">Рекомендации по созданию тем</a>
                             </li>
                             <li><a href="#" class="link link--color-blue">Как пользоваться редактором</a></li>
                         </ul>
@@ -106,7 +103,7 @@
             </div>
             <div class="p-3 mb-5">
                 <div class="new-post__links mb-4">
-                    <div class="small text-muted mb-2">Упоминания в статье</div>
+                    <div class="small text-muted mb-2">Упоминания</div>
                     <div class="new-post__links-item d-flex justify-content-between">
                         <div class="new-post__links-item-title">Товары</div>
                         <div class="new-post__links-item-amount">2
@@ -347,7 +344,6 @@
 
     .new-post__title {
 
-
         font-size: 24px;
         font-weight: 700;
         margin-bottom: 1rem;
@@ -365,11 +361,9 @@
             outline: none;
             margin-bottom: 1rem;
 
-
         }
 
     }
-
 
     .multiselect__tags {
         min-height: 40px;

@@ -18,7 +18,8 @@
                         <img :src="post.autorImg" alt="" class="discussions__author-img  rounded-circle">
                         <a class="link link--color-grey mr-2"
                            href="#">{{post.autor}}</a>
-                        {{post.date | fdate}}
+                        <div class=""> {{post.date | fulldate}}</div>
+
                     </div>
                     <div class="mb-2 ">
                         <a href="#" class="link link--color-grey ">{{post.source.title}} </a>·
