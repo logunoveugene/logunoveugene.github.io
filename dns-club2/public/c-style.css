@@ -25,6 +25,10 @@ body {
 
 }
 
+.link--color-white{
+    color: #fff;
+}
+
 .link--color-black {
     color: #000;
 

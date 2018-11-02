@@ -7,8 +7,7 @@
                         <router-link class="link link--color-black" to="/">Клуб</router-link>
                         <div class="mx-2">/</div>
                         <router-link class="link link--color-black" to="/review"> Обзоры</router-link>
-                        <div class="mx-2">/</div>
-                        <span class="text-muted">{{post.title}}</span>
+
                     </div>
                 </div>
                 <div class="col-12 col-lg-8">

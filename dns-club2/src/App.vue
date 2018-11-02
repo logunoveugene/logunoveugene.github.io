@@ -2,21 +2,26 @@
     <div id="app">
         <mainheader :live="live" v-on:liveon="liveon"></mainheader>
         <efir-bar :live="live" v-on:liveoff="liveoff"></efir-bar>
-        <transition name="fade">
-            <div class="main-layout"  :class="live">
+        <div class="main-layout" :class="live">
+            <transition name="fade">
+
                 <router-view/>
-            </div>
-        </transition>
+
+            </transition>
+            <myfooter></myfooter>
+        </div>
     </div>
 </template>
 
 <script>
     import mainheader from "./components/header.vue"
+    import myfooter from "./components/footer.vue"
     import efir from "./components/efir.vue"
 
     export default {
         components: {
             mainheader,
+            myfooter,
             'efir-bar': efir
 
         },
@@ -75,6 +80,7 @@
     .fade-enter, .fade-leave-active {
         opacity: 0
     }
+
     .tooltip {
         display: block !important;
         z-index: 10000;

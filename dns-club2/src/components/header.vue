@@ -46,7 +46,7 @@
                     <div class="header__container container">
                         <div class="header__bottom-grid t row">
                             <div class="header__bottom-block col-3 d-lg-none">
-                                <div  class="header__mobile-menu">
+                                <div class="header__mobile-menu">
                                     <div class="header__mobile-menu-img">
                                         <div class="icon-line-menu"></div>
                                     </div>
@@ -96,10 +96,11 @@
 
                                 <div class="header__search">
 
-                                    <div v-if="!isSearchExtend" @click="searchExtend"  class="header__search-img">
+                                    <div v-if="!isSearchExtend" @click="searchExtend" class="header__search-img">
                                         <div class="icon-search"></div>
                                     </div>
-                                    <div v-if="isSearchExtend" @click="isSearchExtend = false"  class="header__search-img">
+                                    <div v-if="isSearchExtend" @click="isSearchExtend = false"
+                                         class="header__search-img">
                                         <div class="icon-close"></div>
                                     </div>
 
@@ -119,8 +120,6 @@
                                            ref="headerSearchField"
                                            type="search"
                                            class="header__search-extend-field">
-
-
                                     <v-popover offset="5">
                                         <div class="header__search-extend-btn">по всему сайту
                                             <div class="header__search-extend-btn-icon icon-down"></div>
@@ -203,15 +202,15 @@
 
     }
 
-    .fixed-plate.is-fixed {
-        position: fixed;
-        top: 0;
-        z-index: 1000;
-        width: 100%;
-        background-color: #fff;
-        display: block;
-        opacity: 1;
-    }
+    /*.fixed-plate.is-fixed {*/
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*z-index: 1000;*/
+    /*width: 100%;*/
+    /*background-color: #fff;*/
+    /*display: block;*/
+    /*opacity: 1;*/
+    /*}*/
 
     .is-fixed .header__bottom-line {
         padding: 1rem 0;
@@ -403,6 +402,7 @@
         position: relative;
         height: 30px;
     }
+
     .header__mobile-menu-img {
 
         position: absolute;
