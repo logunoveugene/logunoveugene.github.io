@@ -40,14 +40,15 @@
                 </div>
             </div>
         </div>
-        <fixed-header class="main-layout" :class="live" :threshold="65" :fixed.sync="isFixed">
+        <headroom v-bind:offset="665" :class="live"  class="main-layout">
+        <!--<fixed-header  :class="live" :threshold="65" :fixed.sync="isFixed">-->
             <div class="fixed-plate" :class="{ 'is-fixed': isFixed }">
                 <div class="header__bottom-line">
                     <div class="header__container container">
                         <div class="header__bottom-grid t row">
                             <div class="header__bottom-block col-3 d-lg-none">
                                 <div class="header__mobile-menu">
-                                    <div class="header__mobile-menu-img">
+                                    <div @click="isMenu=true" class="header__mobile-menu-img">
                                         <div class="icon-line-menu"></div>
                                     </div>
 
@@ -140,18 +141,69 @@
                     </div>
                 </div>
             </div>
-        </fixed-header>
+            </headroom>
+        <div v-if="isMenu" class="menu">
+            <div class="p-3 bb-1 d-flex justify-content-between ">
+                <div class="h1 mb-0">Меню</div>
+                <div @click="isMenu = false" class="h1 mb-0 px-2">×</div>
+            </div>
+            <div class="menu__scroll ">
+                <router-link to="/review" class="link link--color-grey">
+                    <div v-ripple class="p-3 bb-1" @click="isMenu = false">
+                        <div class="h4 mb-0">Дайджест</div>
+                    </div>
+                </router-link>
+                <router-link to="/review" @click="isMenu = false" class="link link--color-grey">
+                    <div v-ripple class="p-3 bb-1" @click="isMenu = false">
+                        <div class="h4 mb-0">Обзоры</div>
+                    </div>
+                </router-link>
+                <router-link to="/review" @click="isMenu = false" class="link link--color-grey">
+                    <div v-ripple class="p-3 bb-1" @click="isMenu = false">
+                        <div class="h4 mb-0">Лайфхаки</div>
+                    </div>
+                </router-link>
+                <router-link to="/discussions" @click="isMenu = false" class="link link--color-grey">
+                    <div v-ripple class="p-3 bb-1" @click="isMenu = false">
+                        <div class="h4 mb-0">Обсуждения</div>
+                    </div>
+                </router-link>
+                <router-link to="/newpost" @click="isMenu = false" class="link link--color-grey">
+                    <div v-ripple class="p-3 bb-1" @click="isMenu = false">
+                        <div class="d-flex">
+                            <div class="header__create-controls-icon">
+                                <div class="icon-pen"></div>
+                            </div>
+                            <div class="h4 mb-0">Написать </div>
+                        </div>
+                    </div>
+                </router-link>
+                <router-link to="/newdesc" @click="isMenu = false" class="link link--color-grey">
+                    <div v-ripple class="p-3 bb-1" @click="isMenu = false">
+                        <div class="d-flex">
+                            <div class="header__create-controls-icon">
+                                <div class="icon-speech-bubble-outline"></div>
+                            </div>
+                            <div class="h4 mb-0">Создать тему </div>
+                        </div>
+                    </div>
+                </router-link>
+
+
+
+            </div>
+        </div>
     </div>
 
 </template>
 
 <script>
 
-    import FixedHeader from 'vue-fixed-header'
+    import { headroom } from 'vue-headroom'
 
     export default {
         components: {
-            FixedHeader
+            headroom
         },
         props: {
             live: {
@@ -174,7 +226,8 @@
         data: function () {
             return {
                 isFixed: false,
-                isSearchExtend: false
+                isSearchExtend: false,
+                isMenu: false
             }
         }
     }
@@ -202,15 +255,15 @@
 
     }
 
-    /*.fixed-plate.is-fixed {*/
-    /*position: fixed;*/
-    /*top: 0;*/
-    /*z-index: 1000;*/
-    /*width: 100%;*/
-    /*background-color: #fff;*/
-    /*display: block;*/
-    /*opacity: 1;*/
-    /*}*/
+    .fixed-plate.is-fixed {
+    position: fixed;
+    top: 0;
+    z-index: 91000;
+    width: 100%;
+    background-color: #fff;
+    display: block;
+    opacity: 1;
+    }
 
     .is-fixed .header__bottom-line {
         padding: 1rem 0;
@@ -410,5 +463,21 @@
         color: #222528;
         top: 5px;
     }
+
+    .menu {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        background: #fff;
+        z-index: 999999;
+    }
+
+    .menu__scroll {
+        width: 100%;
+        height: calc(100vh - 72px);
+        overflow: scroll;
+    }
+
 </style>
 

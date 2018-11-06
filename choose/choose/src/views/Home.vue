@@ -7,7 +7,7 @@
                         <div class="table">
                             <div class="table__info pt-3 d-flex flex-nowrap">
                                 <div class="table__info-main  mr-4">
-                                    <div    class="d-flex flex-column">
+                                    <div class="d-flex flex-column">
                                         <div class="small">Обработано 578 688 бюл.</div>
                                     </div>
                                 </div>
@@ -15,7 +15,6 @@
                                      class="table__info-candidate d-flex flex-column">
                                     <div v-if="candidate.name!='Недейств. бюллетени'" class="small font-weight-bold"> {{candidate.name | name}}</div>
                                     <div v-if="candidate.name=='Недейств. бюллетени'" class="small font-weight-bold"> {{candidate.name}}</div>
-
                                 </div>
                             </div>
                             <div class="table__row-head mt-2 d-flex flex-nowrap">

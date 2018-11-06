@@ -3,14 +3,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                     <router-link to="/review" class="layout__title-link">
+                    <router-link to="/review" class="layout__title-link">
                         <div class="layout__title layout__title--orange">
                             <div class="layout__title-text">Дайджест</div>
                             <button class="layout__title-button">
                                 <span class="icon-arrow-right"></span>
                             </button>
                         </div>
-                     </router-link>
+                    </router-link>
                 </div>
             </div>
             <div class="row">
@@ -29,7 +29,7 @@
 
 
         </div>
-        <div class="layout--bg-grey mb-5">
+        <div v-if="promoreg" class="layout--bg-grey mb-5">
             <div class="container py-4">
                 <div class="py-3">
                     <div class="d-flex mb-3 ">
@@ -109,12 +109,12 @@
             </div>
         </div>
 
-        <div id="review" class="layout--bg-blue  section">
+        <div id="review" class="layout--bg-grey section">
             <div class="container">
                 <div class="row pt-5">
                     <div class="col-12">
                         <router-link to="/review" class="layout__title-link">
-                            <div class="layout__title layout__title--blue">
+                            <div class="layout__title layout__title--grey">
                                 <div class="layout__title-text">Обзоры</div>
                                 <button class="layout__title-button">
                                     <span class="icon-arrow-right"></span>
@@ -131,7 +131,7 @@
                         <div class="row">
                             <div class="col-12 col-md-6 col-lg-6">
                                 <div class="blog__item">
-                                    <post-blog-img :post="digest[2]"></post-blog-img>
+                                    <post-blog-img :post="digest[4]"></post-blog-img>
 
                                 </div>
                                 <div class="blog__item">
@@ -143,7 +143,7 @@
                                     <post-blog-text :post="digest[3]"></post-blog-text>
                                 </div>
                                 <div class="blog__item">
-                                    <post-blog-img :post="digest[1]"></post-blog-img>
+                                    <post-blog-img :post="digest[0]"></post-blog-img>
 
                                 </div>
                             </div>
@@ -201,9 +201,9 @@
                         </div>
                     </router-link>
                     <div class="">
-                        <disc-list-item :post="post" v-for="(post, index) in discussions" :key="index"></disc-list-item>
+                        <disc-list-item :post="post" v-for="(post, index) in discussions" :key="index"
+                                        v-if="index < 10"></disc-list-item>
                     </div>
-
                 </div>
                 <div class="col-12 col-lg-4">
                     <div class="row">
@@ -223,7 +223,6 @@
                                             </div>
                                         </li>
                                     </ul>
-
                                     <button type="button" class="btn btn--color-white btn-block">Все награды</button>
                                 </div>
                             </div>
@@ -238,7 +237,6 @@
                                         <!-- <a class="pill-item link" href="#">Все время</a> -->
                                     </nav>
                                     <ul class="list-unstyled">
-
                                         <li class="media mb-3" v-for="(user, index) in topusers" :key="index">
                                             <img class="mr-3 img-60 rounded-circle " :src="user.img">
                                             <div class="media-body align-self-center">
@@ -277,14 +275,112 @@
                 </div>
 
             </div>
+
+
         </div>
-      </div>
+        <div class=" d-block d-md-none">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <router-link to="/review" class="layout__title-link">
+                            <div class="layout__title layout__title--orange">
+                                <div class="layout__title-text">Дайджест</div>
+                                <button class="layout__title-button">
+                                    <span class="icon-arrow-right"></span>
+                                </button>
+                            </div>
+                        </router-link>
+                    </div>
+                    <div class="col-12 col-sm-6  col-lg-4">
+                        <post-half-img :post="digest[0]"></post-half-img>
+                    </div>
+                    <div class="col-12 col-sm-6  col-lg-4">
+                        <post-half-img-mob :post="digest[1]"></post-half-img-mob>
+                    </div>
+                    <div class="col-12 col-sm-6  col-lg-4">
+                        <post-half-img-mob :post="digest[2]"></post-half-img-mob>
+                    </div>
+                    <div class="col-12 col-sm-6  col-lg-4">
+                        <post-half-img-mob :post="digest[3]"></post-half-img-mob>
+                    </div>
+                    <div class="col-12 col-sm-6  col-lg-4">
+                        <post-half-img-mob :post="digest[4]"></post-half-img-mob>
+                    </div>
+                    <div class="col-12 col-sm-6  col-lg-4">
+                        <post-half-img-mob :post="digest[5]"></post-half-img-mob>
+                    </div>
+                    <div class="col-12 col-sm-6  col-lg-4">
+                        <post-half-img-mob :post="digest[6]"></post-half-img-mob>
+                    </div>
+                </div>
+            </div>
+            <div class="layout--bg-grey">
+                <div class="col-12 pt-4">
+                    <router-link to="/review" class="layout__title-link">
+                        <div class="layout__title layout__title--grey">
+                            <div class="layout__title-text">Обзоры</div>
+                            <button class="layout__title-button">
+                                <span class="icon-arrow-right"></span>
+                            </button>
+                        </div>
+                    </router-link>
+                </div>
+                <div class="col-12 col-sm-6  col-lg-4">
+                    <post-half-img :post="digest[4]"></post-half-img>
+                </div>
+                <div class="col-12 col-sm-6  col-lg-4">
+                    <post-half-img-mob :post="digest[1]"></post-half-img-mob>
+                </div>
+                <div class="col-12 col-sm-6  col-lg-4">
+                    <post-half-img-mob :post="digest[2]"></post-half-img-mob>
+                </div>
+                <div class="col-12 col-sm-6  col-lg-4">
+                    <post-half-img-mob :post="digest[3]"></post-half-img-mob>
+                </div>
+                <div class="col-12 col-sm-6  col-lg-4">
+                    <post-half-img-mob :post="digest[4]"></post-half-img-mob>
+                </div>
+            </div>
+            <div class="layout--hidden-content section">
+                <div class="container pt-4">
+                    <div class="row">
+                        <div class="col-12">
+                            <router-link to="/review" class="layout__title-link">
+                                <div class="layout__title layout__title--orange">
+                                    <div class="layout__title-text">Лайфхаки</div>
+                                    <button class="layout__title-button">
+                                        <span class="icon-arrow-right"></span>
+                                    </button>
+                                </div>
+                            </router-link>
+                        </div>
+                        <div class="col-12">
+                            <swiper class="livehack-slider" :options="lifehackOption">
+                                <swiper-slide v-for="(post, index) in lifehacks" :key="index">
+                                    <post-img :post="post"></post-img>
+                                </swiper-slide>
+                                <div class="swiper-pagination" slot="pagination"></div>
+                                <div class="sw-button-prev" slot="button-prev">
+                                    <div class="icon-arrow-left "></div>
+                                </div>
+                                <div class="sw-button-next" slot="button-next">
+                                    <div class="icon-arrow-right"></div>
+                                </div>
+
+                            </swiper>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
 
     // @ is an alias to /src
     import postHalfImg from '@/components/post-block/post-half-img.vue'
+    import postHalfImgMob from '@/components/post-block/post-half-img-mob.vue'
     import postImg from '@/components/post-block/post-img.vue'
     import postText from '@/components/post-block/post-text.vue'
     import postWide from '@/components/post-block/post-wide.vue'
@@ -305,12 +401,14 @@
             postBlogImg,
             swiper,
             swiperSlide,
+            postHalfImgMob,
             postBlogText
         },
         data: function () {
             return {
                 digest: [],
                 review: [],
+                promoreg: true,
                 discussions: [],
                 lifehacks: [],
                 topusers: [],
@@ -400,11 +498,6 @@
     }
 </script>
 <style>
-
-
-
-
-
 
 
     .layout__title-link-test {

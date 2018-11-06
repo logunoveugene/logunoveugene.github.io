@@ -1,8 +1,17 @@
 <template>
     <div class="post">
         <div class="post-half">
-            <div class="post-half__image-wrap"
-                 v-bind:style="{ backgroundColor: post.bgColor,  backgroundImage: 'url(' +  post.img + ')'}">
+            <div @mouseover="isHovered = true" @mouseleave="isHovered = false" class="post-half__image-wrap"
+
+                 :style="[isHovered ? { backgroundColor: post.bgColor,
+
+                  boxShadow: '0 12px 40px -10px'+ post.bgColor +'80, 0 12px 30px -10px rgba(0,0,0,0.1)',
+                    backgroundImage: 'url(' +  post.img + ')'} :
+                     { backgroundColor: post.bgColor,  backgroundImage: 'url(' +  post.img + ')'}]"
+
+
+            >
+
                 <div class="post-half__fotmat-icon-wrap" v-bind:style="{ color: post.textColor}">
 
                     <div class="post-half__fotmat-icon" v-if="post.format=='Видео'">
@@ -15,13 +24,14 @@
 
             </div>
             <post-tag
+
                     :source="post.source"
                     :format="post.format"
                     :tags="post.tags"
 
             ></post-tag>
 
-            <div class="post-half__title  mb-3 h2">
+            <div class="post-half__title  mb-2 h2">
                 <router-link class="link link--color-black" :to="{ name: 'post', params: { id: post.id }}">
                     {{post.title}}
                 </router-link>
@@ -75,7 +85,9 @@
         },
 
         data: function () {
-            return {}
+            return {
+                isHovered: false
+            }
         }
 
 
@@ -83,6 +95,13 @@
 </script>
 
 <style>
+
+
+    .post-half__image-wrap.post-half__image-wrap--hovered {
+        box-shadow: 0 12px 40px -10px rgba(0, 0, 0, .4);
+        /*background-size: 105%;*/
+    }
+
     .post-half__image-wrap {
         overflow: hidden;
         border-radius: .5rem;
@@ -93,7 +112,10 @@
         min-height: 170px;
         background-position: center center;
         background-repeat: no-repeat;
-        background-size: cover;
+        background-size: 100%;
+        transition: transform .15s ease-in, box-shadow .2s ease-in;
+        cursor: pointer;
+
     }
 
     /*@media (max-width: 768px){

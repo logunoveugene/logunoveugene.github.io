@@ -127,7 +127,7 @@
                                 <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Поиск по
                                     упоминаниям
                                 </div>
-                                <div class="small d-flex">
+                                <div class="small d-flex mb-3">
                                     <div class="mr-3">
                                         <a href="#" class="link link--doted link--color-grey">Товар</a>
                                     </div>
@@ -138,6 +138,7 @@
                                         <a href="#" class="link link--doted link--color-grey">Бренд</a>
                                     </div>
                                 </div>
+                                <input type="text" class="field field--normal" placeholder="Укажите название или артикул">
 
                             </div>
                         </div>

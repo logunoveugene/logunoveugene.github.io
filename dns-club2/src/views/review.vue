@@ -7,7 +7,7 @@
                     <div class="small mb-2 d-flex">
                         <router-link class="link link--color-black" to="/">Клуб</router-link>
                         <div class="mx-2">/</div>
-                        <snap class="text-muted">Обзоры</snap>
+                        <span class="text-muted">Обзоры</span>
                     </div>
                     <div class="d-flex align-items-center justify-content-between mb-3">
                         <h1 class="page__title mb-0">Обзоры</h1>
@@ -16,7 +16,6 @@
                                 <div class=" text-success d-inline-block mr-2 icon-add"></div>
                             </div>
                             <div class="d-inline-block">Добавить обзор</div>
-
                         </router-link>
                     </div>
                 </div>
@@ -54,7 +53,22 @@
                                         <a href="#" class="link link--doted link--color-grey">Фото</a>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="py-4 bb-1">
+                                <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Рубрика
+                                </div>
+                                <div class="small d-flex flex-column">
 
+                                    <div class="mr-3">
+                                        <a href="#" class="link link--color-grey">Любительские обзоры</a>
+                                    </div>
+                                    <div class="mr-3">
+                                        <a href="#" class="link link--color-grey">Профессиональные обзоры</a>
+                                    </div>
+                                    <div class="mr-3">
+                                        <a href="#" class="link link--color-grey">От производителей</a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -104,6 +118,22 @@
                                             </div>
                                         </div>
 
+                                    </div>
+                                    <div class="p-4 bb-1">
+                                        <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Рубрика
+                                        </div>
+                                        <div class="small d-flex flex-column">
+
+                                            <div class="my-1">
+                                                <a href="#" class="link link--color-grey">Любительские обзоры</a>
+                                            </div>
+                                            <div class="my-1">
+                                                <a href="#" class="link link--color-grey">Профессиональные обзоры</a>
+                                            </div>
+                                            <div class="my-1">
+                                                <a href="#" class="link link--color-grey">От производителей</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

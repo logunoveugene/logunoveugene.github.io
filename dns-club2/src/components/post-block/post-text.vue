@@ -7,7 +7,7 @@
                     :tags="post.tags"
             ></post-tag>
 
-            <div class="post-text__title mb-3 h2">
+            <div class="post-text__title mb-2 h2">
                 <router-link class="link link--color-black" :to="{ name: 'post', params: { id: post.id }}">
                     {{post.title}}
                 </router-link>

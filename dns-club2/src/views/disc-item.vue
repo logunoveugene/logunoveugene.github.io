@@ -8,7 +8,7 @@
                         <div class="mx-2">/</div>
                         <router-link class="link link--color-black" to="/discussions">Обсуждения</router-link>
                         <div class="mx-2">/</div>
-                        <router-link v-if="post.source.parent" class="link link--color-black" to="/discussions">
+                        <router-link v-if="post.source" class="link link--color-black" to="/discussions">
                             {{post.source.parent.title}}
                         </router-link>
                         <div class="mx-2">/</div>
@@ -570,11 +570,11 @@
 
     }
 
-    .post-page .highlight {
-        background: #f8ffdd;
+    /*.post-page .highlight {*/
+        /*background: #f8ffdd;*/
 
-        border-radius: 8px;
-    }
+        /*border-radius: 8px;*/
+    /*}*/
 
     .post-item__author-img {
         width: 40px;

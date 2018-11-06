@@ -13,8 +13,9 @@
 
                     </div>
                     <input class="w-100 new-post__title" type="text" placeholder="Введите заголовок">
-                    <froala :tag="'textarea'" :config="config" v-model="model"></froala>
-
+                    <div class="new-content-box">
+                        <froala :tag="'textarea'" :config="config" v-model="model"></froala>
+                    </div>
                 </div>
                 <div class="d-block d-lg-none">
                     <div class="fixed-bottom">
@@ -54,10 +55,10 @@
 
                             </div>
                             <div class="new-post__tags mb-4">
-                                <div class="small text-muted mb-1">Рубрика</div>
+                                <div class="small text-muted mb-1">Раздел</div>
                                 <multiselect v-model="selectedRub"
                                              tag-placeholder="Добавить новый тег"
-                                             placeholder="Выберите рубрику"
+                                             placeholder="Выберите раздел"
                                              selectLabel="Выбрать"
                                              selectedLabel="Выбран"
                                              deselectLabel="Отменить выбор"
@@ -94,7 +95,7 @@
                 </div>
             </div>
         </div>
-        <modal name="publish" :adaptive="true" width="100%" height="100%" scrollable="true">
+        <modal name="publish" :adaptive=true width="100%" height="100%" v-bind:scrollable="true">
             <div class="layout--bg-grey p-3 d-flex align-items-center justify-content-between ">
                 <div class="h2 mb-0">Публикация статьи</div>
                 <div class="" @click="hidePublishModal">
@@ -177,22 +178,25 @@
                 <div class="" @click="hideAddProoduct">
                     <div class="h1 mb-0 icon-close"></div>
                 </div>
-
             </div>
-            <div class="d-flex p-4">
-                <div class="modal_list">
-                    <div class="modal_list-item">Выделите название товара в тексте.</div>
-                    <div class="modal_list-item">Во всплывающим меню выберите инструмент «добавления ссылки».</div>
-                    <div class="modal_list-item">Добавьте ссылку на товара из каталога DNS, либо укажите артикул этого
-                        товара.
-                    </div>
-                </div>
-                <div class="ml-3">
-                    <img src="https://i.snag.gy/DSBE9Q.jpg" alt="">
-                </div>
+            <div class="p-4 d-flex">
+                <input type="text" class="field" placeholder="Укажите название или артикул">
+                <div class="btn btn--color-white ml-3">Добавить</div>
             </div>
+            <!--<div class="d-flex p-4">-->
+            <!--<div class="modal_list">-->
+            <!--<div class="modal_list-item">Выделите название товара в тексте.</div>-->
+            <!--<div class="modal_list-item">Во всплывающим меню выберите инструмент «добавления ссылки».</div>-->
+            <!--<div class="modal_list-item">Добавьте ссылку на товара из каталога DNS, либо укажите артикул этого-->
+            <!--товара.-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="ml-3">-->
+            <!--<img src="https://i.snag.gy/DSBE9Q.jpg" alt="">-->
+            <!--</div>-->
+            <!--</div>-->
             <div class="pb-4 px-4">
-                <div class="h4 mb-4">Добавленные товары</div>
+                <div class="h4 mb-3">Добавленные товары</div>
                 <div class="modal_list">
                     <div class="d-flex mb-4 align-items-center">
                         <div class="mr-3">
@@ -340,6 +344,7 @@
         top: -6px;
         right: 0;
         color: #6ba833;
+        cursor: pointer;
     }
 
     .new-post__title {
@@ -444,6 +449,10 @@
         content: attr(data-select);
         background: #ffeec4;
         color: #040404;
+    }
+
+    .new-content-box {
+        min-height: 400px;
     }
 </style>
 

@@ -2,7 +2,7 @@
     <treeselect v-model="value"
                 :alwaysOpen="true"
                 :clear-on-select="true"
-                :multiple="false"
+                :multiple="true"
                 :options="options"
                 noResultsText="Ничего не найдено"
                 placeholder="Найти раздел"
@@ -10,7 +10,7 @@
     >
         <label slot="option-label" slot-scope="{ node, shouldShowCount,  labelClassName, countClassName }"
                :class="labelClassName">
-            {{ node.label }} <span class="text-muted">{{ node.raw.mcount }}</span>
+            {{ node.label }} <span class="category-list__amount text-muted small"> × {{ node.raw.mcount }}</span>
 
         </label>
     </treeselect>
@@ -33,7 +33,7 @@
                 options: [{
                     id: '1',
                     label: 'Компьютеры и комплектующие',
-                    mcount: '234',
+                    mcount: "34",
                     children: [{
                         id: '11',
                         mcount: 48,
@@ -42,11 +42,11 @@
                     }, {
                         id: '12',
                         mcount: 41,
-                        label: 'Планшеты, электронные книги и аксессуары',
+                        label: 'Планшеты, электронные книги ',
                     }, {
                         id: '13',
-                        mcount: 34,
-                        label: 'Запчасти и ПО для ноутбуков и планшетов',
+                        mcount: "34К",
+                        label: 'Запчасти и ПО для ноутбуков',
                     }, {
                         id: '14',
                         mcount: 21,
@@ -58,7 +58,7 @@
                     }, {
                         id: '16',
                         mcount: 10,
-                        label: 'Программное обеспечение и аксессуары',
+                        label: 'ПО и аксессуары',
                     }, {
                         id: '17',
                         mcount: 58,
@@ -313,7 +313,9 @@
         border-color: #e68c00;
         background: #e68c00;
     }
-
+    .vue-treeselect__label-container{
+        margin-left: 8px;
+    }
     .vue-treeselect__label-container:hover .vue-treeselect__checkbox--indeterminate {
         border-color: #e67503;
         background: #e67503;
@@ -348,6 +350,7 @@
     .vue-treeselect__indent-level-0 .vue-treeselect__option {
         padding-left: 5px;
         padding: 5px 0;
+        font-size: 14px;
     }
 
     .vue-treeselect__list-item.vue-treeselect__indent-level-1 {
@@ -364,5 +367,17 @@
         font-weight: 600;
         border-radius: 4px;
     }
+    .category-list__amount{
 
+        border-radius: 50px;
+        padding: 2px 8px 1px 5px;
+        box-shadow: 0 1px 4px rgba(0,0,0,.15);
+        margin-left: 5px;
+        background: #ffffff;
+
+    }
+
+    .vue-treeselect__option-arrow-container{
+        width: 8px;
+    }
 </style>

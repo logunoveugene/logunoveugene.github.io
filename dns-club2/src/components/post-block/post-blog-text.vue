@@ -70,7 +70,9 @@
             }
         },
         data: function () {
-            return {}
+            return {
+                isHovered: false
+            }
         }
 
 

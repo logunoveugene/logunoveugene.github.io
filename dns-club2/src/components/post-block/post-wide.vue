@@ -1,7 +1,15 @@
 <template>
     <div class="post">
         <div class="post-lock"
-             v-bind:style="{  backgroundImage: 'url(' +  post.img + ')', backgroundColor: post.bgColor,  boxShadow: 'inset 360px 0px 100px -60px ' +  post.bgColor}">
+             @mouseover="isHovered = true" @mouseleave="isHovered = false"
+
+             :style="[isHovered ?   {   backgroundImage: 'url(' +  post.img + ')',
+                        backgroundColor: post.bgColor,
+                                        boxShadow: 'inset 360px 0px 100px -60px ' +  post.bgColor + ', 0 12px 40px -10px'+ post.bgColor +'80, 0 12px 30px -10px rgba(0,0,0,0.2)'}:
+                      { backgroundImage: 'url(' +  post.img + ')',
+                        backgroundColor: post.bgColor,
+                        boxShadow: 'inset 360px 0px 100px -60px ' +  post.bgColor}
+                     ]" >
 
             <div class="post-lock__info align-self-stretch">
                 <post-tag
@@ -73,7 +81,9 @@
         },
 
         data: function () {
-            return {}
+            return {
+                isHovered: false
+            }
         }
 
 
@@ -93,6 +103,7 @@
         background-position: right;
         background-repeat: no-repeat;
         min-height: 300px;
+        transition: transform .15s ease-in, box-shadow .2s ease-in;
 
     }
 
@@ -118,12 +129,14 @@
             font-size: 28px;
             line-height: 34px;
         }
+
         .post-lock__title {
             width: 100%;
 
         }
-        .post-lock{
-            background-image:none!important;
+
+        .post-lock {
+            background-image: none !important;
         }
     }
 

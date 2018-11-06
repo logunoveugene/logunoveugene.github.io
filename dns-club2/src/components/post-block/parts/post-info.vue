@@ -86,6 +86,7 @@
 .post-info--no-border{
   border: none;
   padding: 0;
+  background: none;
 
 }
 .post-info__rating{

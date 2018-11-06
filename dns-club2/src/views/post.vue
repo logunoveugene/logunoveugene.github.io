@@ -284,7 +284,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-4 d-none d-lg-block">
-                    <div class=" sticky-sidebar">
+                    <div class=" ">
                         <div class="mb-3">Упомянутые товары</div>
                         <product-list :products="post.products"></product-list>
                     </div>
@@ -334,7 +334,19 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <div class="h1 mb-4">Самое популярное</div>
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="d-flex mb-4 justify-content-between">
+                                    <div class="h1 mb-0">Самое популярное</div>
+                                    <div class="d-none d-md-flex  ">за сегодня
+                                        <div class="small pt-1 ml-1 text-secondary">
+                                            <div class="icon-down"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <swiper class="livehack-slider" :options="lifehackOption">
 
                             <swiper-slide v-for="(post, index) in posts" :key="index">

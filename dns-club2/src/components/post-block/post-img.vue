@@ -2,9 +2,17 @@
     <div class="post">
         <div class="post-image">
             <div class="post-image__image-wrap"
-                 v-bind:style="{  backgroundColor: post.bgColor, backgroundImage: 'url(' +  post.img + ')'}">
-                <div class="post-image__gradient-wrap"
-                     v-bind:style="{ boxShadow: 'inset 0px 250px 100px -60px ' +  post.bgColor}">
+
+                 :style="[isHovered ? {  backgroundColor: post.bgColor,
+
+                 boxShadow: '0 12px 40px -10px'+ post.bgColor +'80, 0 12px 30px -10px rgba(0,0,0,0.1)',
+                 backgroundImage: 'url(' +  post.img + ')'} :
+                 {  backgroundColor: post.bgColor, backgroundImage: 'url(' +  post.img + ')'}]"
+
+                 @mouseover="isHovered = true" @mouseleave="isHovered = false"
+            >
+                <div class=" post-image__gradient-wrap"
+                     v-bind:style="{ boxShadow: '0px 250px 100px -60px inset ' + post.bgColor+'CC, 0px 170px 40px -60px inset' + post.bgColor}">
                     <div class="post-image__info">
                         <div class="post__tags-wrap ">
                             <div class="post__fotmat-icon" v-bind:style="{ color: post.textColor }"
@@ -22,9 +30,7 @@
                                     :color="post.textColor"
                             ></post-tag>
                         </div>
-
-
-                        <div class="post__title  mb-3 h2" v-bind:style="{ color: post.textColor }">
+                        <div class="post__title  mb-2 h2" v-bind:style="{ color: post.textColor }">
                             <router-link class="link link--color-black"
                                          v-bind:style="{ color: post.textColor }"
                                          :to="{ name: 'post', params: { id: post.id }}">
@@ -32,7 +38,9 @@
                             </router-link>
                         </div>
                         <div class="small mb-3" v-bind:style="{ color: post.textColor }">
-                            Автор: <a v-bind:style="{ color: post.textColor }" class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date |
+                            Автор: <a v-bind:style="{ color: post.textColor }" class="link link--color-blue mr-2"
+                                      href="#">{{post.autor}}</a>
+                            {{post.date |
                             fdate}}
                         </div>
                         <div class="mt-auto">
@@ -91,7 +99,8 @@
 
         data: function () {
             return {
-                pallete: ''
+                pallete: '',
+                isHovered: false
             }
         }
     }
@@ -113,6 +122,11 @@
         background-position: center bottom;
         background-repeat: no-repeat;
         background-size: contain;
+        transition: all .15s ease-in;
+    }
+
+    .post-image__image-wrap.post-image__image-wrap--hovered {
+        box-shadow: 0 12px 40px -10px rgba(0, 0, 0, .4);
 
     }
 

@@ -4,11 +4,9 @@
         <div class="post-blog-img"
              v-bind:style="{  backgroundColor: post.bgColor}">
             <div class="post-blog-img__img-wrap">
-                <div v-bind:style="{ boxShadow: '0px -120px 120px -60px inset ' +  post.bgColor}"
+                <div v-bind:style="{ boxShadow: '0px -100px 60px -50px inset ' +  post.bgColor}"
                      class="post-blog-img__img-shadow"></div>
                 <img :src="post.img" class="post-blog-img__img" alt="">
-
-
             </div>
             <div class="post-blog-img__info-wrap">
                 <post-tag class="justify-content-center mt-auto post-blog-img__tag" :source="post.source"
@@ -35,8 +33,6 @@
                         :color="post.textColor"
                 >
                 </post-teaser>
-
-
                 <post-info
                         :like="post.like"
                         :comment="post.comment"
@@ -45,9 +41,7 @@
             </div>
         </div>
     </div>
-
 </template>
-
 <script>
     import postInfo from './parts/post-info.vue'
     import postTag from './parts/post-tag.vue'
