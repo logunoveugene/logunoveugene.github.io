@@ -18,7 +18,7 @@
                                 </div>
                             </div>
                             <div class="table__row-head mt-2 d-flex flex-nowrap">
-                                <div class="table__region  mr-4">Избирательные участки</div>
+                                <div class="table__region  mr-4">Избирательные комиссии</div>
                                 <div v-for="candidate in candidates" :key="candidate.id"
                                      class="table__candidate-col d-flex flex-nowrap">
                                     <div class="table__candidate-sub  d-inline-block ">Наблюдатели</div>
@@ -190,9 +190,10 @@
 
         &__region-desc {
             margin-left: 40px;
-            max-width: 85%;
+            max-width: 92%;
             text-overflow: ellipsis;
             overflow: hidden;
+            white-space: nowrap;
         }
 
         &__region-button {
