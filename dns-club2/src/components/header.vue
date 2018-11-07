@@ -19,29 +19,46 @@
                         </div>
                     </div>
                     <div class="header__top-block col-2 col-lg-4">
-                        <div class="small" v-on:click="$emit('liveon')" v-if="live == ''">
-                            <a href="#"
-                               class="link link--color-grey">Эфир</a>
-                        </div>
+
                         <div class="small">
                             <a href="#" class="link link--color-grey">Тур по сайту</a>
                         </div>
-                        <div class="header__user-nav">
+                        <div v-if="!isAuth" class="header__user-nav">
                             <ul class="nav small">
                                 <li class="nav__link">
-                                    <a class="link link--color-grey" href="#">Вход</a>
+                                    <a class="link link--color-grey"  v-on:click="$emit('auth')" href="#">Вход</a>
                                 </li>
                                 <li class="nav__link">
                                     <a class="link link--color-grey" href="#">Регистрация</a>
                                 </li>
                             </ul>
                         </div>
+                        <div v-if="isAuth" class="header__user-nav">
+                            <ul class="nav small">
+                                <li class="nav__link">
+                                    <a class="link link--color-grey link--dropdown" v-on:click="$emit('logout')" href="#">Александр</a>
+                                </li>
+                                <!--<li class="nav__link">-->
+                                    <!--<a class="link link&#45;&#45;color-grey" v-on:click="$emit('logout')"  href="#">-->
+                                      <!--Выйти-->
+                                    <!--</a>-->
+                                <!--</li>-->
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="efir__button"  v-on:click="$emit('liveon')" v-if="live == ''">
+                <div class="small">
+                    <a href="#"
+                       class=" pt-1 link link--color-grey">Эфир
+                        <span class="badge badge-danger ml-1">+1</span></a>
+                </div>
+            </div>
         </div>
-        <headroom v-bind:offset="665" :class="live"  class="main-layout">
-        <!--<fixed-header  :class="live" :threshold="65" :fixed.sync="isFixed">-->
+        <headroom v-bind:offset="143" :class="live" class="main-layout"  >
+
+            <!--<fixed-header  :class="live" :threshold="65" :fixed.sync="isFixed">-->
             <div class="fixed-plate" :class="{ 'is-fixed': isFixed }">
                 <div class="header__bottom-line">
                     <div class="header__container container">
@@ -51,7 +68,6 @@
                                     <div @click="isMenu=true" class="header__mobile-menu-img">
                                         <div class="icon-line-menu"></div>
                                     </div>
-
                                 </div>
                             </div>
                             <div class="header__bottom-block justify-content-lg-start col-6 col-lg-8">
@@ -141,7 +157,7 @@
                     </div>
                 </div>
             </div>
-            </headroom>
+        </headroom>
         <div v-if="isMenu" class="menu">
             <div class="p-3 bb-1 d-flex justify-content-between ">
                 <div class="h1 mb-0">Меню</div>
@@ -174,7 +190,7 @@
                             <div class="header__create-controls-icon">
                                 <div class="icon-pen"></div>
                             </div>
-                            <div class="h4 mb-0">Написать </div>
+                            <div class="h4 mb-0">Написать</div>
                         </div>
                     </div>
                 </router-link>
@@ -184,11 +200,10 @@
                             <div class="header__create-controls-icon">
                                 <div class="icon-speech-bubble-outline"></div>
                             </div>
-                            <div class="h4 mb-0">Создать тему </div>
+                            <div class="h4 mb-0">Создать тему</div>
                         </div>
                     </div>
                 </router-link>
-
 
 
             </div>
@@ -199,7 +214,7 @@
 
 <script>
 
-    import { headroom } from 'vue-headroom'
+    import {headroom} from 'vue-headroom'
 
     export default {
         components: {
@@ -209,6 +224,10 @@
             live: {
                 type: null,
                 default: "showlive"
+            },
+            isAuth:{
+                type: null,
+                default: false
             }
         },
         methods: {
@@ -234,6 +253,20 @@
 </script>
 
 <style>
+
+    .efir__button{
+        position: fixed;
+        z-index: 999999;
+        right: 0;
+        top: 80px;
+        background: #f6f6f6;
+        height: 37px;
+        padding: .5rem .75rem;
+        border-radius: 8px 0 0 8px;
+        /*box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 3px 10px rgba(0,0,0,.1)  ;*/
+
+
+    }
     .fademy-enter-active, .fademy-leave-active {
         transition: opacity .2s;
     }
@@ -256,16 +289,16 @@
     }
 
     .fixed-plate.is-fixed {
-    position: fixed;
-    top: 0;
-    z-index: 91000;
-    width: 100%;
-    background-color: #fff;
-    display: block;
-    opacity: 1;
+        position: fixed;
+        top: 0;
+        z-index: 91000;
+        width: 100%;
+        background-color: #fff;
+        display: block;
+        opacity: 1;
     }
 
-    .is-fixed .header__bottom-line {
+    .headroom--not-top .header__bottom-line {
         padding: 1rem 0;
         box-shadow: 0 0 15px rgba(0, 0, 0, .1);
     }
@@ -478,6 +511,41 @@
         height: calc(100vh - 72px);
         overflow: scroll;
     }
+
+    .headroom {
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        z-index: 9999;
+        transform: translate3d(0px, 0px, 0px);
+        transition-delay: 0s;
+    }
+
+    .headroom--top {
+        position: relative;
+        transform: translate3d(0px, 0px, 0px)!important;
+        transition: translate3d 0ms ease-in-out 0s!important;
+    }
+
+    .headroom--not-top {
+        position: fixed;
+        transform: translate3d(0px, -100%, 0px);
+        transition-delay: -0.25s;
+    }
+
+    .headroom--pinned{
+        transition: all 250ms ease-in-out 0s;
+        transform: translate3d(0px, 0px, 0px);
+    }
+
+
+    .headroom--unpinned{
+          transform: translate3d(0px, -100%, 0px);
+
+
+    }
+    /*.headroom--not-bottom*/
+
 
 </style>
 

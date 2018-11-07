@@ -78,10 +78,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class=" d-none d-lg-flex  justify-content-between align-items-center small">
+                    <div class=" d-none d-lg-flex  justify-content-between align-items-center ">
                         <nav class="nav nav-pills nav-justified">
-                            <a class="pill-item link pill-item--active" href="#">Новые сообщения</a>
-                            <a class="pill-item link" href="#">Новые темы</a>
+                            <a class="link link--pill link--color-black link--pill-active  " href="#">Новые сообщения</a>
+                            <a class="link link--pill link--color-black" href="#">Новые темы</a>
 
                         </nav>
                         <div class="d-none d-md-flex  ">за сегодня
@@ -124,20 +124,15 @@
                                 <category></category>
                             </div>
                             <div class="p-4 bb-1">
-                                <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Поиск по
+                                <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Поиск по
                                     упоминаниям
                                 </div>
-                                <div class="small d-flex mb-3">
-                                    <div class="mr-3">
-                                        <a href="#" class="link link--doted link--color-grey">Товар</a>
-                                    </div>
-                                    <div class="mr-3">
-                                        <a href="#" class="link link--doted link--color-grey">Категория</a>
-                                    </div>
-                                    <div class="mr-3">
-                                        <a href="#" class="link link--doted link--color-grey">Бренд</a>
-                                    </div>
-                                </div>
+                                <nav class="nav nav-pills nav-justified small mb-3">
+                                    <a class="link link--pill link--color-black link--pill-active  " href="#">Товар</a>
+                                    <a class="link link--pill link--color-black" href="#">Категория</a>
+                                    <a class="link link--pill link--color-black" href="#">Бренд</a>
+                                </nav>
+
                                 <input type="text" class="field field--normal" placeholder="Укажите название или артикул">
 
                             </div>

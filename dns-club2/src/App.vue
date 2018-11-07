@@ -1,11 +1,11 @@
 <template>
     <div id="app">
-        <mainheader :live="live" v-on:liveon="liveon"></mainheader>
+        <mainheader :live="live" :isAuth="isAuth" v-on:liveon="liveon" v-on:auth="auth" v-on:logout="logout"></mainheader>
         <efir-bar :live="live" v-on:liveoff="liveoff"></efir-bar>
         <div class="main-layout" :class="live">
             <transition name="fade">
 
-                <router-view/>
+                <router-view :isAuth="isAuth" />
 
             </transition>
             <myfooter></myfooter>
@@ -29,6 +29,7 @@
             return {
 
                 live: "showlive",
+                isAuth: true,
                 window: {
                     width: 0,
                     height: 0
@@ -43,6 +44,12 @@
             },
             liveon: function () {
                 this.live = "showlive";
+            },
+            auth: function () {
+                this.isAuth = true;
+            },
+            logout: function () {
+                this.isAuth = false;
             },
             handleResize() {
                 this.window.width = window.innerWidth;

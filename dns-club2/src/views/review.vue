@@ -72,20 +72,19 @@
                             </div>
                         </div>
                     </div>
-                    <div class=" d-none d-lg-flex  justify-content-between align-items-center small">
-                        <nav class="nav nav-pills nav-justified">
-                            <a class="pill-item link pill-item--active" href="#">Свежее</a>
-                            <a class="pill-item link" href="#">Обсуждаемые</a>
-                            <a class="pill-item link" href="#">Лучшее</a>
+                    <div class=" d-none d-lg-flex  justify-content-between align-items-center ">
+                        <nav class="nav nav-pills nav-justified ">
+                            <a class="link link--pill link--color-black link--pill-active  " href="#">Свежее</a>
+                            <a class="link link--pill link--color-black" href="#">Обсуждаемые</a>
+                            <a class="link link--pill link--color-black" href="#">Лучшее</a>
                         </nav>
+
                         <div class="d-none d-md-flex  ">за сегодня
                             <div class="small pt-1 ml-1 text-secondary">
                                 <div class="icon-down"></div>
                             </div>
                         </div>
                     </div>
-
-
                     <div class="posts">
                         <div class="" v-for="(rev, index) in review" :key="index">
                             <postLarge :post="rev"></postLarge>

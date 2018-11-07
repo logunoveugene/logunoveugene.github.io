@@ -80,7 +80,35 @@
                                 <div class="mb-3 mb-md-0">Знаете кого-то кто сможет ответить на вопрос? Поделитесь с ним
                                     ссылкой
                                 </div>
-                                <img src="https://i.snag.gy/vqCKB1.jpg" alt="">
+                                <social-sharing class="h2 mb-0" url="https://club.dns-shop.ru/"
+                                                title="ДНС Клуб"
+                                                description="Клуб DNS – центр онлайн компетенции."
+
+                                                inline-template>
+                                    <div>
+                                        <network class="share__icon " network="vk">
+                                        <i class="fa fa-vk"></i>
+                                    </network>
+
+                                        <network class="share__icon share__icon--facebook" network="facebook">
+                                            <i class="fa fa-facebook"></i>
+                                        </network>
+
+
+                                        <network  class="share__icon share__icon--ok" network="odnoklassniki">
+                                            <i class="fa fa-odnoklassniki"></i>
+                                        </network>
+
+
+                                        <!--<network class="srare__icon " network="telegram">-->
+                                            <!--<i class="fa fa-telegram"></i>-->
+                                        <!--</network>-->
+
+                                        <!--<network class="srare__icon d-inline-block d-md-none" network="whatsapp">-->
+                                            <!--<i class="fa fa-whatsapp"></i>-->
+                                        <!--</network>-->
+                                    </div>
+                                </social-sharing>
 
                             </div>
                         </div>
@@ -502,8 +530,28 @@
 </script>
 
 <style lang="scss">
+.share__icon{
+    border-radius: 4px;
+    height: 23px;
+    width: 30px;
+    background: #4a76a8;
+    display: inline-block;
+    color: white;
+    font-size: 14px;
+    padding: 2px 7px;
+    text-align: center;
+    margin-right: 8px;
+}
+.share__icon--facebook{
+    background: #4267b2;
+}
+.share__icon--ok{
+    background: #e68102;
+}
 
-    .answer-plate {
+
+
+.answer-plate {
         box-shadow: 0 0 30px rgba(0, 0, 0, .2);
         background: white;
         height: auto;
@@ -571,9 +619,9 @@
     }
 
     /*.post-page .highlight {*/
-        /*background: #f8ffdd;*/
+    /*background: #f8ffdd;*/
 
-        /*border-radius: 8px;*/
+    /*border-radius: 8px;*/
     /*}*/
 
     .post-item__author-img {

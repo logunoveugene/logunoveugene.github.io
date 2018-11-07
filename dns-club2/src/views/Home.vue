@@ -29,7 +29,7 @@
 
 
         </div>
-        <div v-if="promoreg" class="layout--bg-grey mb-5">
+        <div v-if="!isAuth && promoreg" class="layout--bg-grey mb-5">
             <div class="container py-4">
                 <div class="py-3">
                     <div class="d-flex mb-3 ">
@@ -403,6 +403,13 @@
             swiperSlide,
             postHalfImgMob,
             postBlogText
+        },
+        props: {
+
+            isAuth:{
+                type: null,
+                default: false
+            }
         },
         data: function () {
             return {

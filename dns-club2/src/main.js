@@ -55,7 +55,9 @@ import VueFroala from 'vue-froala-wysiwyg'
 
 Vue.use(VueFroala)
 
+import SocialSharing from 'vue-social-sharing';
 
+Vue.use(SocialSharing);
 
 
 
