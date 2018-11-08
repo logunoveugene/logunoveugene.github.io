@@ -16,6 +16,13 @@
     "id" : 4,
     "name" : "Недейств. бюллетени"
   } ],
+
+  "updateInfo" : {
+    "lastUpdate" : "2018-11-16T21:17:43",
+    "processedGAS" : "489848",
+    "processedWatcher" : "44848"
+  },
+
   "districts" : [ {
     "id" : "05403",
     "lastUpdate" : "2018-06-16T21:17:43",
