@@ -8,7 +8,7 @@
                             <div class="table__info pt-3 d-flex flex-nowrap">
                                 <div class="table__info-main  mr-4">
                                     <div    class="d-flex flex-column">
-                                        <div class="small">Обработано {{uikDetals.processed | number}} бюл.</div>
+                                        <div class="small">Обработано 578 688 бюл.</div>
                                     </div>
                                 </div>
                                 <div v-for="candidate in candidates" :key="candidate.id"
@@ -97,18 +97,6 @@
                 personNames.controller.control = tableData;
                 tableData.controller.control = personNames
             })
-        },
-        watch: {
-            uikDetals: function(){
-                this.transferData()
-                console.log("1")
-            }
-        },
-        methods:{
-            transferData(){
-                this.$emit('transferData', this.uikDetals);
-                console.log("2")
-            }
         },
         created() {
             this.axios.get('https://right-to-choose.firebaseio.com/uikDetals.json?orderBy="id"&equalTo="' + this.$route.params.id + '"')

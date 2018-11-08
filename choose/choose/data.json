@@ -1,1319 +1,1586 @@
 {
-  "candidate" : [ {
-    "consignment" : "Единая Россия",
-    "id" : 1,
-    "name" : "Кожемяко Олег Николаевич"
-  }, {
-    "consignment" : "КПРФ",
-    "id" : 2,
-    "name" : "Ищенко Андрей Сергеевич"
-  }, {
-    "consignment" : "ЛДПР",
-    "id" : 3,
-    "name" : "Андрейченко Андрей Валерьевич"
-  }, {
-    "consignment" : "",
-    "id" : 4,
-    "name" : "Недейств. бюллетени"
-  } ],
-  "districts" : [ {
-    "id" : "05403",
-    "lastUpdate" : "2018-06-16T21:17:43",
-    "result" : [ {
-      "GASResult" : "40.48194512",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.72164701",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.48194512",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.72164701",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.481945115",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.721647011",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.4819451155",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.7216470105",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Арсеньев",
-    "type" : "city"
-  }, {
-    "id" : "05405",
-    "lastUpdate" : "2018-06-16T21:17:44",
-    "result" : [ {
-      "GASResult" : "40.20908819",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.49287759",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.20908819",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.49287759",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.209088195",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.492877587",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.2090881947",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.4928775872",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Артём",
-    "type" : "city"
-  }, {
-    "id" : "05401",
-    "lastUpdate" : "2018-06-16T21:17:45",
-    "result" : [ {
-      "GASResult" : "40.69132567",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.81278835",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.69132567",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.81278835",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.691325671",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.81278835",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.6913256714",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.8127883496",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Владивосток",
-    "type" : "city"
-  }, {
-    "id" : "05407",
-    "lastUpdate" : "2018-06-16T21:17:46",
-    "result" : [ {
-      "GASResult" : "40.93521859",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.37418313",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.93521859",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.37418313",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.935218591",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.374183133",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.9352185909",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.3741831334",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Дальнегорск",
-    "type" : "city"
-  }, {
-    "id" : "05408",
-    "lastUpdate" : "2018-06-16T21:17:47",
-    "result" : [ {
-      "GASResult" : "40.85626742",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.7777905",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.85626742",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.7777905",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.856267423",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.7777905",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.8562674235",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.7777904995",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Дальнереченск",
-    "type" : "city"
-  }, {
-    "id" : "05411",
-    "lastUpdate" : "2018-06-16T21:17:48",
-    "result" : [ {
-      "GASResult" : "40.4396269",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.2754621",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.4396269",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.2754621",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.439626897",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.275462097",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.4396268972",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.2754620967",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Лесозаводск",
-    "type" : "city"
-  }, {
-    "id" : "05414",
-    "lastUpdate" : "2018-06-16T21:17:49",
-    "result" : [ {
-      "GASResult" : "40.66236083",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.4715954",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.66236083",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.4715954",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.662360834",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.471595405",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.6623608343",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.4715954046",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Находка",
-    "type" : "city"
-  }, {
-    "id" : "05417",
-    "lastUpdate" : "2018-06-16T21:17:50",
-    "result" : [ {
-      "GASResult" : "40.52810366",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.37259332",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.52810366",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.37259332",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.528103656",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.372593319",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.5281036562",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.3725933186",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 3,
-    "title" : "Партизанск",
-    "type" : "city"
-  }, {
-    "id" : "05420",
-    "lastUpdate" : "2018-06-16T21:17:51",
-    "result" : [ {
-      "GASResult" : "40.44100597",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.34373316",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.44100597",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.34373316",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.441005971",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.343733156",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.4410059712",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.3437331559",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 2,
-    "title" : "Спасск-Дальний",
-    "type" : "city"
-  }, {
-    "id" : "05423",
-    "lastUpdate" : "2018-06-16T21:17:52",
-    "result" : [ {
-      "GASResult" : "40.62298781",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.10185136",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.62298781",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.10185136",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.622987812",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.10185136",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.6229878122",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.1018513602",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 3,
-    "stateHistory" : 1,
-    "title" : "Уссурийск",
-    "type" : "city"
-  }, {
-    "id" : "05406",
-    "lastUpdate" : "2018-06-16T21:17:53",
-    "result" : [ {
-      "GASResult" : "40.5841436",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.46673751",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.5841436",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.46673751",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.584143603",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.466737506",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.5841436026",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.4667375061",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "БольшойКамень",
-    "type" : "city"
-  }, {
-    "id" : "05547",
-    "lastUpdate" : "2018-06-16T21:17:54",
-    "result" : [ {
-      "GASResult" : "40.40880187",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.60566936",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.40880187",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.60566936",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.408801869",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.605669363",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.4088018688",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.6056693632",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Фокино",
-    "type" : "city"
-  }, {
-    "id" : "05202",
-    "lastUpdate" : "2018-06-16T21:17:55",
-    "result" : [ {
-      "GASResult" : "40.07802865",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.3413414",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.07802865",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.3413414",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.078028647",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.341341399",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.078028647",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.3413413986",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 2,
-    "title" : "Анучинский",
-    "type" : "district"
-  }, {
-    "id" : "05207",
-    "lastUpdate" : "2018-06-16T21:17:56",
-    "result" : [ {
-      "GASResult" : "40.36269181",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.42638863",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.36269181",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.42638863",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.362691808",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.426388635",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.3626918083",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.4263886347",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Дальнереченский",
-    "type" : "district"
-  }, {
-    "id" : "05210",
-    "lastUpdate" : "2018-06-16T21:17:57",
-    "result" : [ {
-      "GASResult" : "40.27961163",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.70626652",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.27961163",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.70626652",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.27961163",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.706266519",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.27961163",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.7062665192",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Кавалеровский",
-    "type" : "district"
-  }, {
-    "id" : "05212",
-    "lastUpdate" : "2018-06-16T21:17:58",
-    "result" : [ {
-      "GASResult" : "40.38747561",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.7505161",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.38747561",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.7505161",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.387475612",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.750516099",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.3874756118",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.7505160989",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 2,
-    "stateHistory" : 1,
-    "title" : "Кировский",
-    "type" : "district"
-  }, {
-    "id" : "05214",
-    "lastUpdate" : "2018-06-16T21:17:59",
-    "result" : [ {
-      "GASResult" : "40.63038309",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.80014674",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.63038309",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.80014674",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.630383095",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.800146739",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.6303830949",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.8001467387",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Красноармейский",
-    "type" : "district"
-  }, {
-    "id" : "05217",
-    "lastUpdate" : "2018-06-16T21:17:60",
-    "result" : [ {
-      "GASResult" : "40.22701854",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.9913612",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.22701854",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.9913612",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.227018542",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.991361199",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.2270185419",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.9913611988",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Лазовский",
-    "type" : "district"
-  }, {
-    "id" : "05220",
-    "lastUpdate" : "2018-06-16T21:17:61",
-    "result" : [ {
-      "GASResult" : "40.60507455",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.52410282",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.60507455",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.52410282",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.605074554",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.524102819",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.6050745538",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.524102819",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Михайловский",
-    "type" : "district"
-  }, {
-    "id" : "05223",
-    "lastUpdate" : "2018-06-16T21:17:62",
-    "result" : [ {
-      "GASResult" : "40.33681721",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.26452688",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.33681721",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.26452688",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.336817206",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.264526882",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.3368172061",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.2645268818",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 2,
-    "stateHistory" : 1,
-    "title" : "Надеждинский",
-    "type" : "district"
-  }, {
-    "id" : "05226",
-    "lastUpdate" : "2018-06-16T21:17:63",
-    "result" : [ {
-      "GASResult" : "40.82639876",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.73571126",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.82639876",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.73571126",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.826398761",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.735711262",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.8263987611",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.7357112616",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Октябрьский",
-    "type" : "district"
-  }, {
-    "id" : "05228",
-    "lastUpdate" : "2018-06-16T21:17:64",
-    "result" : [ {
-      "GASResult" : "40.40708847",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.35857951",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.40708847",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.35857951",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.407088471",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.358579506",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.407088471",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.3585795058",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Ольгинский",
-    "type" : "district"
-  }, {
-    "id" : "05230",
-    "lastUpdate" : "2018-06-16T21:17:65",
-    "result" : [ {
-      "GASResult" : "40.94205164",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.4685876",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.94205164",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.4685876",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.942051642",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.468587599",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.9420516419",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.4685875994",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 2,
-    "title" : "Партизанский",
-    "type" : "district"
-  }, {
-    "id" : "05232",
-    "lastUpdate" : "2018-06-16T21:17:66",
-    "result" : [ {
-      "GASResult" : "40.79132355",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.1323251",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.79132355",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.1323251",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.791323551",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.132325101",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.7913235512",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.132325101",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Пограничный",
-    "type" : "district"
-  }, {
-    "id" : "05234",
-    "lastUpdate" : "2018-06-16T21:17:67",
-    "result" : [ {
-      "GASResult" : "40.5564864",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.21653072",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.5564864",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.21653072",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.5564864",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.216530715",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.5564864002",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.2165307152",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Пожарский",
-    "type" : "district"
-  }, {
-    "id" : "05237",
-    "lastUpdate" : "2018-06-16T21:17:68",
-    "result" : [ {
-      "GASResult" : "40.68018157",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.8804703",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.68018157",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.8804703",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.680181575",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.880470295",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.6801815749",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.8804702953",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Спасский",
-    "type" : "district"
-  }, {
-    "id" : "05240",
-    "lastUpdate" : "2018-06-16T21:17:69",
-    "result" : [ {
-      "GASResult" : "40.23751009",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.54715089",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.23751009",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.54715089",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.237510089",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.547150887",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.2375100891",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.5471508872",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Тернейский",
-    "type" : "district"
-  }, {
-    "id" : "05246",
-    "lastUpdate" : "2018-06-16T21:17:70",
-    "result" : [ {
-      "GASResult" : "40.97876067",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.10104804",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.97876067",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.10104804",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.978760669",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.101048043",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.9787606689",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.1010480434",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 2,
-    "stateHistory" : 1,
-    "title" : "Ханкайский",
-    "type" : "district"
-  }, {
-    "id" : "05248",
-    "lastUpdate" : "2018-06-16T21:17:71",
-    "result" : [ {
-      "GASResult" : "40.37654181",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.21713162",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.37654181",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.21713162",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.376541813",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.217131623",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.3765418134",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.2171316229",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Хасанский",
-    "type" : "district"
-  }, {
-    "id" : "05250",
-    "lastUpdate" : "2018-06-16T21:17:72",
-    "result" : [ {
-      "GASResult" : "40.4946994",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.27084014",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.4946994",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.27084014",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.494699403",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.270840144",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.494699403",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.270840144",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 2,
-    "title" : "Хорольский",
-    "type" : "district"
-  }, {
-    "id" : "05253",
-    "lastUpdate" : "2018-06-16T21:17:73",
-    "result" : [ {
-      "GASResult" : "40.47141052",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.64975146",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.47141052",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.64975146",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.471410523",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.649751463",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.4714105234",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.6497514627",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Черниговский",
-    "type" : "district"
-  }, {
-    "id" : "05255",
-    "lastUpdate" : "2018-06-16T21:17:74",
-    "result" : [ {
-      "GASResult" : "40.22522453",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.68912926",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.22522453",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.68912926",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.22522453",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.689129263",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.22522453",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.689129263",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Чугуевский",
-    "type" : "district"
-  }, {
-    "id" : "05257",
-    "lastUpdate" : "2018-06-16T21:17:75",
-    "result" : [ {
-      "GASResult" : "40.22185979",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.10501817",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.22185979",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.10501817",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.221859793",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.105018168",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.2218597934",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.1050181681",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Шкотовский",
-    "type" : "district"
-  }, {
-    "id" : "05259",
-    "lastUpdate" : "2018-06-16T21:17:76",
-    "result" : [ {
-      "GASResult" : "40.24317617",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.18546579",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.24317617",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.18546579",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.243176169",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.185465792",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.2431761694",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.1854657916",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "Яковлевский",
-    "type" : "district"
-  } ],
-  "uik" : [ {
-    "districtId" : "05403",
-    "id" : "403",
-    "lastUpdate" : "2018-06-16T21:17:43",
-    "result" : [ {
-      "GASResult" : "40.48194512",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.72164701",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.48194512",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.72164701",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.481945115",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.721647011",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.4819451155",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.7216470105",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "УИК №403",
-    "type" : "uik"
-  }, {
-    "districtId" : "05403",
-    "id" : "405",
-    "lastUpdate" : "2018-06-16T21:17:43",
-    "result" : [ {
-      "GASResult" : "40.48194512",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 1,
-      "watcherResult" : "40.72164701",
-      "watcherResultAbs" : "105421"
-    }, {
-      "GASResult" : "28.48194512",
-      "GASResultAbs" : "549",
-      "candidateId" : 2,
-      "watcherResult" : "28.72164701",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "2.481945115",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 3,
-      "watcherResult" : "2.721647011",
-      "watcherResultAbs" : "15421"
-    }, {
-      "GASResult" : "0.4819451155",
-      "GASResultAbs" : "4511549",
-      "candidateId" : 4,
-      "watcherResult" : "0.7216470105",
-      "watcherResultAbs" : "15421"
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "УИК №405",
-    "type" : "uik"
-  } ],
-  "uikDetals" : [ {
-    "districtId" : "05403",
-    "id" : "403",
-    "lastUpdate" : "2018-06-16T21:17:43",
-    "processed" : "4848",
-    "result" : [ {
-      "title" : "Наблюдатель КПРФ Александр Викторович Глебов – предварительно",
-      "value" : [ {
-        "candidateId" : 1,
-        "watcherResult" : "40.72164701",
-        "watcherResultAbs" : "105421"
-      }, {
-        "candidateId" : 2,
-        "watcherResult" : "28.72164701",
-        "watcherResultAbs" : "15421"
-      }, {
-        "candidateId" : 3,
-        "watcherResult" : "2.721647011",
-        "watcherResultAbs" : "15421"
-      }, {
-        "candidateId" : 4,
-        "watcherResult" : "0.7216470105",
-        "watcherResultAbs" : "15421"
-      } ]
-    }, {
-      "title" : "Наблюдатель КПРФ Иван Михайлович Голубка – предварительно",
-      "value" : [ {
-        "candidateId" : 1,
-        "watcherResult" : "40.72164701",
-        "watcherResultAbs" : "105421"
-      }, {
-        "candidateId" : 2,
-        "watcherResult" : "28.72164701",
-        "watcherResultAbs" : "15421"
-      }, {
-        "candidateId" : 3,
-        "watcherResult" : "2.721647011",
-        "watcherResultAbs" : "15421"
-      }, {
-        "candidateId" : 4,
-        "watcherResult" : "0.7216470105",
-        "watcherResultAbs" : "15421"
-      } ]
-    }, {
-      "title" : "Наблюдатель ЕР Виктор Анатольевич Аблапов – предварительно",
-      "value" : [ {
-        "candidateId" : 1,
-        "watcherResult" : "40.72164701",
-        "watcherResultAbs" : "105421"
-      }, {
-        "candidateId" : 2,
-        "watcherResult" : "28.72164701",
-        "watcherResultAbs" : "15421"
-      }, {
-        "candidateId" : 3,
-        "watcherResult" : "2.721647011",
-        "watcherResultAbs" : "15421"
-      }, {
-        "candidateId" : 4,
-        "watcherResult" : "0.7216470105",
-        "watcherResultAbs" : "15421"
-      } ]
-    }, {
-      "title" : "Наблюдатель ЕР Андрей Петрович Брик – предварительно",
-      "value" : [ {
-        "candidateId" : 1,
-        "watcherResult" : "40.72164701",
-        "watcherResultAbs" : "105421"
-      }, {
-        "candidateId" : 2,
-        "watcherResult" : "28.72164701",
-        "watcherResultAbs" : "15421"
-      }, {
-        "candidateId" : 3,
-        "watcherResult" : "2.721647011",
-        "watcherResultAbs" : "15421"
-      }, {
-        "candidateId" : 4,
-        "watcherResult" : "0.7216470105",
-        "watcherResultAbs" : "15421"
-      } ]
-    }, {
-      "title" : "Наблюдатель ЕР Андрей Петрович Брик – протокол",
-      "value" : [ {
-        "candidateId" : 1,
-        "watcherResult" : "40.72164701",
-        "watcherResultAbs" : "105421"
-      }, {
-        "candidateId" : 2,
-        "watcherResult" : "28.72164701",
-        "watcherResultAbs" : "15421"
-      }, {
-        "candidateId" : 3,
-        "watcherResult" : "2.721647011",
-        "watcherResultAbs" : "15421"
-      }, {
-        "candidateId" : 4,
-        "watcherResult" : "0.7216470105",
-        "watcherResultAbs" : "15421"
-      } ]
-    }, {
-      "title" : "Данные ГАС Выборы",
-      "value" : [ {
-        "candidateId" : 1,
-        "watcherResult" : "40.72164701",
-        "watcherResultAbs" : "105421"
-      }, {
-        "candidateId" : 2,
-        "watcherResult" : "28.72164701",
-        "watcherResultAbs" : "15421"
-      }, {
-        "candidateId" : 3,
-        "watcherResult" : "2.721647011",
-        "watcherResultAbs" : "15421"
-      }, {
-        "candidateId" : 4,
-        "watcherResult" : "0.7216470105",
-        "watcherResultAbs" : "15421"
-      } ]
-    }, {
-      "title" : "Данные ГАС Выборы от 18:28 16.12.18",
-      "value" : [ {
-        "candidateId" : 1,
-        "watcherResult" : "40.72164701",
-        "watcherResultAbs" : "105421"
-      }, {
-        "candidateId" : 2,
-        "watcherResult" : "28.72164701",
-        "watcherResultAbs" : "15421"
-      }, {
-        "candidateId" : 3,
-        "watcherResult" : "2.721647011",
-        "watcherResultAbs" : "15421"
-      }, {
-        "candidateId" : 4,
-        "watcherResult" : "0.7216470105",
-        "watcherResultAbs" : "15421"
-      } ]
-    } ],
-    "stateChange" : 1,
-    "stateHistory" : 1,
-    "title" : "УИК №403",
-    "type" : "uik"
-  } ]
+  "districts": [
+    {
+      "id": "05403",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Арсеньев",
+      "lastUpdate": "2018-06-16T21:17:43",
+      "type": "city",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.72164701",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.48194512",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.72164701",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.48194512",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.721647011",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.481945115",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.7216470105",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.4819451155",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05405",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Артём",
+      "lastUpdate": "2018-06-16T21:17:44",
+      "type": "city",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.49287759",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.20908819",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.49287759",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.20908819",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.492877587",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.209088195",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.4928775872",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.2090881947",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05401",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Владивосток",
+      "lastUpdate": "2018-06-16T21:17:45",
+      "type": "city",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.81278835",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.69132567",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.81278835",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.69132567",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.81278835",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.691325671",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.8127883496",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.6913256714",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05407",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Дальнегорск",
+      "lastUpdate": "2018-06-16T21:17:46",
+      "type": "city",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.37418313",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.93521859",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.37418313",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.93521859",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.374183133",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.935218591",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.3741831334",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.9352185909",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05408",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Дальнереченск",
+      "lastUpdate": "2018-06-16T21:17:47",
+      "type": "city",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.7777905",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.85626742",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.7777905",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.85626742",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.7777905",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.856267423",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.7777904995",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.8562674235",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05411",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Лесозаводск",
+      "lastUpdate": "2018-06-16T21:17:48",
+      "type": "city",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.2754621",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.4396269",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.2754621",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.4396269",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.275462097",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.439626897",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.2754620967",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.4396268972",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05414",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Находка",
+      "lastUpdate": "2018-06-16T21:17:49",
+      "type": "city",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.4715954",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.66236083",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.4715954",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.66236083",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.471595405",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.662360834",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.4715954046",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.6623608343",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05417",
+      "stateHistory": 3,
+      "stateChange": 1,
+      "title": "Партизанск",
+      "lastUpdate": "2018-06-16T21:17:50",
+      "type": "city",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.37259332",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.52810366",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.37259332",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.52810366",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.372593319",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.528103656",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.3725933186",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.5281036562",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05420",
+      "stateHistory": 2,
+      "stateChange": 1,
+      "title": "Спасск-Дальний",
+      "lastUpdate": "2018-06-16T21:17:51",
+      "type": "city",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.34373316",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.44100597",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.34373316",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.44100597",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.343733156",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.441005971",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.3437331559",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.4410059712",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05423",
+      "stateHistory": 1,
+      "stateChange": 3,
+      "title": "Уссурийск",
+      "lastUpdate": "2018-06-16T21:17:52",
+      "type": "city",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.10185136",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.62298781",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.10185136",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.62298781",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.10185136",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.622987812",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.1018513602",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.6229878122",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05406",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "БольшойКамень",
+      "lastUpdate": "2018-06-16T21:17:53",
+      "type": "city",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.46673751",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.5841436",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.46673751",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.5841436",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.466737506",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.584143603",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.4667375061",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.5841436026",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05547",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Фокино",
+      "lastUpdate": "2018-06-16T21:17:54",
+      "type": "city",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.60566936",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.40880187",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.60566936",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.40880187",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.605669363",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.408801869",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.6056693632",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.4088018688",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05202",
+      "stateHistory": 2,
+      "stateChange": 1,
+      "title": "Анучинский",
+      "lastUpdate": "2018-06-16T21:17:55",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.3413414",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.07802865",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.3413414",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.07802865",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.341341399",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.078028647",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.3413413986",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.078028647",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05207",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Дальнереченский",
+      "lastUpdate": "2018-06-16T21:17:56",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.42638863",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.36269181",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.42638863",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.36269181",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.426388635",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.362691808",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.4263886347",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.3626918083",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05210",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Кавалеровский",
+      "lastUpdate": "2018-06-16T21:17:57",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.70626652",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.27961163",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.70626652",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.27961163",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.706266519",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.27961163",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.7062665192",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.27961163",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05212",
+      "stateHistory": 1,
+      "stateChange": 2,
+      "title": "Кировский",
+      "lastUpdate": "2018-06-16T21:17:58",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.7505161",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.38747561",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.7505161",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.38747561",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.750516099",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.387475612",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.7505160989",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.3874756118",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05214",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Красноармейский",
+      "lastUpdate": "2018-06-16T21:17:59",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.80014674",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.63038309",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.80014674",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.63038309",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.800146739",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.630383095",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.8001467387",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.6303830949",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05217",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Лазовский",
+      "lastUpdate": "2018-06-16T21:17:60",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.9913612",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.22701854",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.9913612",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.22701854",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.991361199",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.227018542",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.9913611988",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.2270185419",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05220",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Михайловский",
+      "lastUpdate": "2018-06-16T21:17:61",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.52410282",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.60507455",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.52410282",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.60507455",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.524102819",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.605074554",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.524102819",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.6050745538",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05223",
+      "stateHistory": 1,
+      "stateChange": 2,
+      "title": "Надеждинский",
+      "lastUpdate": "2018-06-16T21:17:62",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.26452688",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.33681721",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.26452688",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.33681721",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.264526882",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.336817206",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.2645268818",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.3368172061",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05226",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Октябрьский",
+      "lastUpdate": "2018-06-16T21:17:63",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.73571126",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.82639876",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.73571126",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.82639876",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.735711262",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.826398761",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.7357112616",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.8263987611",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05228",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Ольгинский",
+      "lastUpdate": "2018-06-16T21:17:64",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.35857951",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.40708847",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.35857951",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.40708847",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.358579506",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.407088471",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.3585795058",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.407088471",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05230",
+      "stateHistory": 2,
+      "stateChange": 1,
+      "title": "Партизанский",
+      "lastUpdate": "2018-06-16T21:17:65",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.4685876",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.94205164",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.4685876",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.94205164",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.468587599",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.942051642",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.4685875994",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.9420516419",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05232",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Пограничный",
+      "lastUpdate": "2018-06-16T21:17:66",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.1323251",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.79132355",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.1323251",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.79132355",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.132325101",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.791323551",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.132325101",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.7913235512",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05234",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Пожарский",
+      "lastUpdate": "2018-06-16T21:17:67",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.21653072",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.5564864",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.21653072",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.5564864",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.216530715",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.5564864",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.2165307152",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.5564864002",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05237",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Спасский",
+      "lastUpdate": "2018-06-16T21:17:68",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.8804703",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.68018157",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.8804703",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.68018157",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.880470295",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.680181575",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.8804702953",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.6801815749",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05240",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Тернейский",
+      "lastUpdate": "2018-06-16T21:17:69",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.54715089",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.23751009",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.54715089",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.23751009",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.547150887",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.237510089",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.5471508872",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.2375100891",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05246",
+      "stateHistory": 1,
+      "stateChange": 2,
+      "title": "Ханкайский",
+      "lastUpdate": "2018-06-16T21:17:70",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.10104804",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.97876067",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.10104804",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.97876067",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.101048043",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.978760669",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.1010480434",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.9787606689",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05248",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Хасанский",
+      "lastUpdate": "2018-06-16T21:17:71",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.21713162",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.37654181",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.21713162",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.37654181",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.217131623",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.376541813",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.2171316229",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.3765418134",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05250",
+      "stateHistory": 2,
+      "stateChange": 1,
+      "title": "Хорольский",
+      "lastUpdate": "2018-06-16T21:17:72",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.27084014",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.4946994",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.27084014",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.4946994",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.270840144",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.494699403",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.270840144",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.494699403",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05253",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Черниговский",
+      "lastUpdate": "2018-06-16T21:17:73",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.64975146",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.47141052",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.64975146",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.47141052",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.649751463",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.471410523",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.6497514627",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.4714105234",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05255",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Чугуевский",
+      "lastUpdate": "2018-06-16T21:17:74",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.68912926",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.22522453",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.68912926",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.22522453",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.689129263",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.22522453",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.689129263",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.22522453",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05257",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Шкотовский",
+      "lastUpdate": "2018-06-16T21:17:75",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.10501817",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.22185979",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.10501817",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.22185979",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.105018168",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.221859793",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.1050181681",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.2218597934",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "05259",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "Яковлевский",
+      "lastUpdate": "2018-06-16T21:17:76",
+      "type": "district",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.18546579",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.24317617",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.18546579",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.24317617",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.185465792",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.243176169",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.1854657916",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.2431761694",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    }
+  ],
+  "candidate": [
+    {
+      "id": 1,
+      "name": "Кожемяко Олег Николаевич",
+      "consignment": "Единая Россия"
+    },
+    {
+      "id": 2,
+      "name": "Ищенко Андрей Сергеевич",
+      "consignment": "КПРФ"
+    },
+    {
+      "id": 3,
+      "name": "Андрейченко Андрей Валерьевич",
+      "consignment": "ЛДПР"
+    },
+    {
+      "id": 4,
+      "name": "Недейств. бюллетени",
+      "consignment": ""
+    }
+  ],
+  "uik": [
+    {
+      "id": "403",
+      "districtId": "05403",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "УИК №403",
+      "lastUpdate": "2018-06-16T21:17:43",
+      "type": "uik",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.72164701",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.48194512",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.72164701",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.48194512",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.721647011",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.481945115",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.7216470105",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.4819451155",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    },
+    {
+      "id": "405",
+      "districtId": "05403",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "УИК №405",
+      "lastUpdate": "2018-06-16T21:17:43",
+      "type": "uik",
+      "result": [
+        {
+          "candidateId": 1,
+          "watcherResult": "40.72164701",
+          "watcherResultAbs": "105421",
+          "GASResult": "40.48194512",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 2,
+          "watcherResult": "28.72164701",
+          "watcherResultAbs": "15421",
+          "GASResult": "28.48194512",
+          "GASResultAbs": "549"
+        },
+        {
+          "candidateId": 3,
+          "watcherResult": "2.721647011",
+          "watcherResultAbs": "15421",
+          "GASResult": "2.481945115",
+          "GASResultAbs": "4511549"
+        },
+        {
+          "candidateId": 4,
+          "watcherResult": "0.7216470105",
+          "watcherResultAbs": "15421",
+          "GASResult": "0.4819451155",
+          "GASResultAbs": "4511549"
+        }
+      ]
+    }
+  ],
+  "uikDetals": [
+    {
+      "id": "403",
+      "districtId": "05403",
+      "stateHistory": 1,
+      "stateChange": 1,
+      "title": "УИК №403",
+      "lastUpdate": "2018-06-16T21:17:43",
+      "type": "uik",
+      "result": [
+        {
+          "title": "Наблюдатель КПРФ Александр Викторович Глебов – предварительно",
+          "value": [
+            {
+              "candidateId": 1,
+              "watcherResult": "40.72164701",
+              "watcherResultAbs": "105421"
+            },
+            {
+              "candidateId": 2,
+              "watcherResult": "28.72164701",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 3,
+              "watcherResult": "2.721647011",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 4,
+              "watcherResult": "0.7216470105",
+              "watcherResultAbs": "15421"
+            }
+          ]
+        },
+        {
+          "title": "Наблюдатель КПРФ Иван Михайлович Голубка – предварительно",
+          "value": [
+            {
+              "candidateId": 1,
+              "watcherResult": "40.72164701",
+              "watcherResultAbs": "105421"
+            },
+            {
+              "candidateId": 2,
+              "watcherResult": "28.72164701",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 3,
+              "watcherResult": "2.721647011",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 4,
+              "watcherResult": "0.7216470105",
+              "watcherResultAbs": "15421"
+            }
+          ]
+        },
+        {
+          "title": "Наблюдатель ЕР Виктор Анатольевич Аблапов – предварительно",
+          "value": [
+            {
+              "candidateId": 1,
+              "watcherResult": "40.72164701",
+              "watcherResultAbs": "105421"
+            },
+            {
+              "candidateId": 2,
+              "watcherResult": "28.72164701",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 3,
+              "watcherResult": "2.721647011",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 4,
+              "watcherResult": "0.7216470105",
+              "watcherResultAbs": "15421"
+            }
+          ]
+        },
+        {
+          "title": "Наблюдатель ЕР Андрей Петрович Брик – предварительно",
+          "value": [
+            {
+              "candidateId": 1,
+              "watcherResult": "40.72164701",
+              "watcherResultAbs": "105421"
+            },
+            {
+              "candidateId": 2,
+              "watcherResult": "28.72164701",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 3,
+              "watcherResult": "2.721647011",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 4,
+              "watcherResult": "0.7216470105",
+              "watcherResultAbs": "15421"
+            }
+          ]
+        },
+        {
+          "title": "Наблюдатель ЕР Андрей Петрович Брик – протокол",
+          "value": [
+            {
+              "candidateId": 1,
+              "watcherResult": "40.72164701",
+              "watcherResultAbs": "105421"
+            },
+            {
+              "candidateId": 2,
+              "watcherResult": "28.72164701",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 3,
+              "watcherResult": "2.721647011",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 4,
+              "watcherResult": "0.7216470105",
+              "watcherResultAbs": "15421"
+            }
+          ]
+        },
+        {
+          "title": "Данные ГАС Выборы",
+          "value": [
+            {
+              "candidateId": 1,
+              "watcherResult": "40.72164701",
+              "watcherResultAbs": "105421"
+            },
+            {
+              "candidateId": 2,
+              "watcherResult": "28.72164701",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 3,
+              "watcherResult": "2.721647011",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 4,
+              "watcherResult": "0.7216470105",
+              "watcherResultAbs": "15421"
+            }
+          ]
+        },
+        {
+          "title": "Данные ГАС Выборы от 18:28 16.12.18",
+          "value": [
+            {
+              "candidateId": 1,
+              "watcherResult": "40.72164701",
+              "watcherResultAbs": "105421"
+            },
+            {
+              "candidateId": 2,
+              "watcherResult": "28.72164701",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 3,
+              "watcherResult": "2.721647011",
+              "watcherResultAbs": "15421"
+            },
+            {
+              "candidateId": 4,
+              "watcherResult": "0.7216470105",
+              "watcherResultAbs": "15421"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
