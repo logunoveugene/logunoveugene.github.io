@@ -9,8 +9,6 @@
                     </router-link>
                     <div v-if="$route.name=='uik'" class="text-white navbar-brand mb-0">{{uikDetals.title}}</div>
                     <div v-if="$route.name=='uik'"  class="navbar__update-time d-none d-md-block small pt-1 text-white ml-4">Обновлено <br>{{uikDetals.lastUpdate | fulldate}}</div>
-                    <div v-if="$route.name=='home'"  class="navbar__update-time d-none d-md-block small pt-1 text-white ml-4">Обновлено <br>{{districtUpdate.lastUpdate | fulldate}}</div>
-
                 </div>
 
                 <div @click="modal=true" class="d-block d-md-none">
@@ -71,7 +69,7 @@
                 </div>
             </div>
         </nav>
-        <router-view :isPercent="isPercent" :scrolled="scrolled" @transferData="getData"  @transferDistrictUpdate="getDistrictUpdate" ></router-view>
+        <router-view :isPercent="isPercent" :scrolled="scrolled" @transferData="getData"></router-view>
         <div v-if="modal" class="menu">
             <div class="p-4 bg-light d-flex justify-content-between">
                 <div class="h5 mb-0">Право на выбор</div>
@@ -143,7 +141,6 @@
                 isPercent: true,
                 scrolled: false,
                 uikDetals: {},
-                districtUpdate:{},
                 modal: false
             }
         },
@@ -153,9 +150,6 @@
             },
             getData (data) {
                 this.uikDetals = data
-            },
-            getDistrictUpdate(data){
-                this.districtUpdate = data;
             }
         },
         created() {

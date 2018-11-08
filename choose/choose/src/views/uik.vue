@@ -98,17 +98,22 @@
                 tableData.controller.control = personNames
             })
         },
-
+        watch: {
+            uikDetals: function(){
+                this.transferData()
+                console.log("1")
+            }
+        },
         methods:{
             transferData(){
                 this.$emit('transferData', this.uikDetals);
+                console.log("2")
             }
         },
         created() {
             this.axios.get('https://right-to-choose.firebaseio.com/uikDetals.json?orderBy="id"&equalTo="' + this.$route.params.id + '"')
                 .then(response => {
-                    this.uikDetals = Object.values(response.data)[0];
-                    this.transferData()
+                    this.uikDetals = Object.values(response.data)[0]
                 })
                 .catch(e => {
                     this.error.push(e)
