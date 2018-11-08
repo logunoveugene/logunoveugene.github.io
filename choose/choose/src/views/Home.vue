@@ -8,7 +8,7 @@
                             <div class="table__info pt-3 d-flex flex-nowrap">
                                 <div class="table__info-main  mr-4">
                                     <div class="d-flex flex-column">
-                                        <div class="small">Обработано 578 688 бюл.</div>
+                                        <div class="small">Обработано {{districtUpdate.processedGAS | number }} бюл.</div>
                                     </div>
                                 </div>
                                 <div v-for="candidate in candidates" :key="candidate.id"
@@ -18,7 +18,7 @@
                                 </div>
                             </div>
                             <div class="table__row-head mt-2 d-flex flex-nowrap">
-                                <div class="table__region  mr-4">Избирательные участки</div>
+                                <div class="table__region  mr-4">Избирательные комиссии</div>
                                 <div v-for="candidate in candidates" :key="candidate.id"
                                      class="table__candidate-col d-flex flex-nowrap">
                                     <div class="table__candidate-sub  d-inline-block ">Наблюдатели</div>
@@ -90,6 +90,7 @@
             return {
                 districts: [],
                 candidates: [],
+                districtUpdate:'',
                 swiperOption: {
                     slidesPerView: 'auto',
                     freeMode: true,
@@ -119,10 +120,21 @@
                 tableData.controller.control = personNames
             })
         },
+
         created() {
+            this.axios.get('https://right-to-choose.firebaseio.com/updateInfo.json')
+                .then(response => {
+                    this.districtUpdate = response.data;
+                    this.transferDistrictUpdate();
+                })
+                .catch(e => {
+                    this.error.push(e)
+                });
+
+
             this.axios.get('https://right-to-choose.firebaseio.com/districts.json')
                 .then(response => {
-                    this.districts = response.data
+                    this.districts = response.data;
                 })
                 .catch(e => {
                     this.error.push(e)
@@ -135,6 +147,12 @@
                 .catch(e => {
                     this.error.push(e)
                 })
+
+        },
+        methods:{
+            transferDistrictUpdate(){
+                this.$emit('transferDistrictUpdate', this.districtUpdate);
+            }
         }
 
     }
@@ -190,9 +208,10 @@
 
         &__region-desc {
             margin-left: 40px;
-            max-width: 85%;
+            max-width: 92%;
             text-overflow: ellipsis;
             overflow: hidden;
+            white-space: nowrap;
         }
 
         &__region-button {
