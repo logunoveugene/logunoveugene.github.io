@@ -139,6 +139,12 @@
             background-image: none !important;
         }
     }
+    @media (max-width: 1200px) {
+        .post-lock {
+
+            background-size: cover ;
+        }
+    }
 
 
 </style>

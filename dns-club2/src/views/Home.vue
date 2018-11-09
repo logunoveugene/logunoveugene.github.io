@@ -180,10 +180,10 @@
                             </swiper-slide>
                             <div class="swiper-pagination" slot="pagination"></div>
                             <div class="sw-button-prev" slot="button-prev">
-                                <div class="icon-arrow-left "></div>
+
                             </div>
                             <div class="sw-button-next" slot="button-next">
-                                <div class="icon-arrow-right"></div>
+
                             </div>
 
                         </swiper>
@@ -196,7 +196,7 @@
                 <div class="col-12 col-md-12 col-lg-8">
                     <router-link to="/discussions" class="layout__title-link">
                         <div class="layout__title layout__title--orange">
-                            <div class="layout__title-text">Обсуждения</div>
+                            <div class="layout__title-text">Коммуникатор</div>
                             <button class="layout__title-button"><span class="icon-arrow-right"></span></button>
                         </div>
                     </router-link>
@@ -209,8 +209,8 @@
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-12 order-2 order-lg-1">
                             <div class="card-block mb-4">
-                                <div class="card-block__body">
-                                    <div class="h3 mb-3">Последние награды</div>
+                                <div class="p-4">
+                                    <div class="h1 mb-3">Последние награды</div>
                                     <ul class="list-unstyled">
                                         <li class="media mb-3" v-for="(user, index) in userslevel" :key="index">
                                             <img class="mr-3 img-60 rounded-circle " :src="user.img">
@@ -229,11 +229,11 @@
                         </div>
                         <div class="col-12 col-md-6 col-lg-12 order-3 order-lg-2">
                             <div class="card-block mb-4">
-                                <div class="card-block__body">
+                                <div class="p-4">
                                     <div class="h1 mb-3">Лидеры</div>
                                     <nav class="nav nav-pills nav-justified mb-4 small">
-                                        <a class="pill-item link pill-item--active " href="#">Неделя</a>
-                                        <a class="pill-item link" href="#">Месяц</a>
+                                        <a class="link link--pill link--color-grey link--pill-active " href="#">Неделя</a>
+                                        <a class="link link--pill link--color-grey" href="#">Месяц</a>
                                         <!-- <a class="pill-item link" href="#">Все время</a> -->
                                     </nav>
                                     <ul class="list-unstyled">
@@ -254,7 +254,7 @@
                         </div>
                         <div class="col-12 col-md-12 col-lg-12 order-1 order-lg-2">
                             <div class="card-block mb-3">
-                                <div class="card-block__body">
+                                <div class="p-4">
                                     <div class="h1 mb-2">Результаты опроса</div>
                                     <div class="small mb-1">от 12 июня 2018г.</div>
                                     <div class="small mb-3">Какой гаджет вы считаете лучшим новогодним подарком?</div>
@@ -361,10 +361,10 @@
                                 </swiper-slide>
                                 <div class="swiper-pagination" slot="pagination"></div>
                                 <div class="sw-button-prev" slot="button-prev">
-                                    <div class="icon-arrow-left "></div>
+
                                 </div>
                                 <div class="sw-button-next" slot="button-next">
-                                    <div class="icon-arrow-right"></div>
+
                                 </div>
 
                             </swiper>

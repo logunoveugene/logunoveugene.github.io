@@ -6,7 +6,7 @@
                     <div class="small mb-3 d-flex  flex-wrap">
                         <router-link class="link link--color-black" to="/">Клуб</router-link>
                         <div class="mx-2">/</div>
-                        <router-link class="link link--color-black" to="/discussions">Обсуждения</router-link>
+                        <router-link class="link link--color-black" to="/discussions">Коммуникатор</router-link>
                         <div class="mx-2">/</div>
                         <router-link v-if="post.source" class="link link--color-black" to="/discussions">
                             {{post.source.parent.title}}

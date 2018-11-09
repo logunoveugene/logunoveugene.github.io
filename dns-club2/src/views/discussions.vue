@@ -6,10 +6,10 @@
                     <div class="d-md-flex small mb-2 d-flex">
                         <router-link class="link link--color-black" to="/">Клуб</router-link>
                         <div class="mx-2">/</div>
-                        <div class="text-muted">Обсуждения</div>
+                        <div class="text-muted">Коммуникатор</div>
                     </div>
                     <div class="d-flex align-items-center justify-content-between mb-3">
-                        <h1 class="page__title mb-0 ">Обсуждения</h1>
+                        <h1 class="page__title mb-0 ">Коммуникатор</h1>
                         <router-link to="/newdesc" class=" link link--color-black new-discuss-btn d-lg-none d-block ">
                             <div class="new-discuss-btn-icon">
                                 <div class=" text-success d-inline-block mr-2 icon-add"></div>

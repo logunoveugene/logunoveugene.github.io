@@ -1,28 +1,31 @@
 <template>
     <div class="post">
         <div class="post-half">
-            <div @mouseover="isHovered = true" @mouseleave="isHovered = false" class="post-half__image-wrap"
+            <router-link  :to="{ name: 'post', params: { id: post.id }}">
+                <div @mouseover="isHovered = true" @mouseleave="isHovered = false" class="post-half__image-wrap"
 
-                 :style="[isHovered ? { backgroundColor: post.bgColor,
+                     :style="[isHovered ? { backgroundColor: post.bgColor,
 
                   boxShadow: '0 12px 40px -10px'+ post.bgColor +'80, 0 12px 30px -10px rgba(0,0,0,0.1)',
                     backgroundImage: 'url(' +  post.img + ')'} :
                      { backgroundColor: post.bgColor,  backgroundImage: 'url(' +  post.img + ')'}]"
 
 
-            >
+                >
 
-                <div class="post-half__fotmat-icon-wrap" v-bind:style="{ color: post.textColor}">
 
-                    <div class="post-half__fotmat-icon" v-if="post.format=='Видео'">
-                        <div class="icon-video"></div>
+                    <div class="post-half__fotmat-icon-wrap" v-bind:style="{ color: post.textColor}">
+
+                        <div class="post-half__fotmat-icon" v-if="post.format=='Видео'">
+                            <div class="icon-video"></div>
+                        </div>
+                        <div class="post-half__fotmat-icon" v-if="post.format=='Фото'">
+                            <div class="icon-photo"></div>
+                        </div>
                     </div>
-                    <div class="post-half__fotmat-icon" v-if="post.format=='Фото'">
-                        <div class="icon-photo"></div>
-                    </div>
+
                 </div>
-
-            </div>
+            </router-link>
             <post-tag
 
                     :source="post.source"

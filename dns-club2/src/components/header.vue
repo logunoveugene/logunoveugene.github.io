@@ -21,12 +21,17 @@
                     <div class="header__top-block col-2 col-lg-4">
 
                         <div class="small">
-                            <a href="#" class="link link--color-grey">Тур по сайту</a>
+                            <a href="#" class="link link--color-grey">
+                                <span class="tour">
+                                    <span class="tour__icon icon-info"></span>
+                                    <span class="tour__desc">Тур по сайту</span>
+                                </span>
+                            </a>
                         </div>
                         <div v-if="!isAuth" class="header__user-nav">
                             <ul class="nav small">
                                 <li class="nav__link">
-                                    <a class="link link--color-grey"  v-on:click="$emit('auth')" href="#">Вход</a>
+                                    <a class="link link--color-grey" v-on:click="$emit('auth')" href="#">Вход</a>
                                 </li>
                                 <li class="nav__link">
                                     <a class="link link--color-grey" href="#">Регистрация</a>
@@ -36,19 +41,20 @@
                         <div v-if="isAuth" class="header__user-nav">
                             <ul class="nav small">
                                 <li class="nav__link">
-                                    <a class="link link--color-grey link--dropdown" v-on:click="$emit('logout')" href="#">Александр</a>
+                                    <a class="link link--color-grey link--dropdown" v-on:click="$emit('logout')"
+                                       href="#">Александр</a>
                                 </li>
                                 <!--<li class="nav__link">-->
-                                    <!--<a class="link link&#45;&#45;color-grey" v-on:click="$emit('logout')"  href="#">-->
-                                      <!--Выйти-->
-                                    <!--</a>-->
+                                <!--<a class="link link&#45;&#45;color-grey" v-on:click="$emit('logout')"  href="#">-->
+                                <!--Выйти-->
+                                <!--</a>-->
                                 <!--</li>-->
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="efir__button"  v-on:click="$emit('liveon')" v-if="live == ''">
+            <div class="efir__button" v-on:click="$emit('liveon')" v-if="live == ''">
                 <div class="small">
                     <a href="#"
                        class=" pt-1 link link--color-grey">Эфир
@@ -56,7 +62,7 @@
                 </div>
             </div>
         </div>
-        <headroom v-bind:offset="143" :class="live" class="main-layout"  >
+        <headroom v-bind:offset="143" :class="live" class="main-layout">
 
             <!--<fixed-header  :class="live" :threshold="65" :fixed.sync="isFixed">-->
             <div class="fixed-plate" :class="{ 'is-fixed': isFixed }">
@@ -86,7 +92,7 @@
                                         Лайфхаки
                                     </router-link>
                                     <router-link to="/discussions" class="link link--color-grey">
-                                        Обсуждения
+                                        Коммуникатор
                                     </router-link>
                                 </div>
 
@@ -105,7 +111,7 @@
                                             <div class="header__create-controls-icon">
                                                 <div class="icon-speech-bubble-outline"></div>
                                             </div>
-                                            <router-link class="link link--color-grey" to="/newdesc">Обсудить
+                                            <router-link class="link link--color-grey" to="/newdesc">Создать тему
                                             </router-link>
                                         </div>
                                     </div>
@@ -225,7 +231,7 @@
                 type: null,
                 default: "showlive"
             },
-            isAuth:{
+            isAuth: {
                 type: null,
                 default: false
             }
@@ -254,7 +260,22 @@
 
 <style>
 
-    .efir__button{
+    .tour {
+        display: flex;
+        align-items: center;
+    }
+
+    .tour__icon {
+        display: inline-block;
+        height: 19px;
+        font-size: 18px;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        margin-right: 3px;
+    }
+
+    .efir__button {
         position: fixed;
         z-index: 999999;
         right: 0;
@@ -265,8 +286,8 @@
         border-radius: 8px 0 0 8px;
         /*box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 3px 10px rgba(0,0,0,.1)  ;*/
 
-
     }
+
     .fademy-enter-active, .fademy-leave-active {
         transition: opacity .2s;
     }
@@ -397,6 +418,7 @@
         font-size: .875rem;
         font-weight: 700;
         margin-right: 3rem;
+        white-space: nowrap;
 
     }
 
@@ -523,8 +545,8 @@
 
     .headroom--top {
         position: relative;
-        transform: translate3d(0px, 0px, 0px)!important;
-        transition: translate3d 0ms ease-in-out 0s!important;
+        transform: translate3d(0px, 0px, 0px) !important;
+        transition: translate3d 0ms ease-in-out 0s !important;
     }
 
     .headroom--not-top {
@@ -533,17 +555,16 @@
         transition-delay: -0.25s;
     }
 
-    .headroom--pinned{
+    .headroom--pinned {
         transition: all 250ms ease-in-out 0s;
         transform: translate3d(0px, 0px, 0px);
     }
 
-
-    .headroom--unpinned{
-          transform: translate3d(0px, -100%, 0px);
-
+    .headroom--unpinned {
+        transform: translate3d(0px, -100%, 0px);
 
     }
+
     /*.headroom--not-bottom*/
 
 

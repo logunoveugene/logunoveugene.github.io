@@ -1,24 +1,24 @@
 <template>
     <div class="footer">
-        <div class="footer__container container">
-            <div class="footer__project d-flex  flex-wrap justify-content-around justify-content-lg-between">
-                <div class="footer__project-img-wrap">
-                    <img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/dns.png" alt=""
-                         class="footer__project-img">
-                </div>
-                <div class="footer__project-img-wrap">
-                    <img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/tp.png" alt=""
-                         class="footer__project-img">
-                </div>
-                <div class="footer__project-img-wrap">
-                    <img src="https://i.snag.gy/PvDfIj.jpg" alt="" class="footer__project-img">
-                </div>
-                <div class="footer__project-img-wrap">
-                    <img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/clubexp.png" alt=""
-                         class="footer__project-img">
-                </div>
-            </div>
-            <div class="footer__row row">
+        <div class="footer__container container ">
+            <!--<div class="footer__project d-flex  flex-wrap justify-content-around justify-content-lg-between">-->
+                <!--<div class="footer__project-img-wrap">-->
+                    <!--<img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/dns.png" alt=""-->
+                         <!--class="footer__project-img">-->
+                <!--</div>-->
+                <!--<div class="footer__project-img-wrap">-->
+                    <!--<img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/tp.png" alt=""-->
+                         <!--class="footer__project-img">-->
+                <!--</div>-->
+                <!--<div class="footer__project-img-wrap">-->
+                    <!--<img src="https://i.snag.gy/PvDfIj.jpg" alt="" class="footer__project-img">-->
+                <!--</div>-->
+                <!--<div class="footer__project-img-wrap">-->
+                    <!--<img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/clubexp.png" alt=""-->
+                         <!--class="footer__project-img">-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="footer__row row pt-3">
                 <div class="footer__col col-12 col-lg">
                     <div class="footer__col-head  ">Наше всё</div>
                     <ul class="footer__menu-list list-unstyled small d-none d-lg-block">
@@ -73,8 +73,6 @@
                         <li class="footer__menu-item">
                             <a href="#" class="link link--color-white">Написать обзор</a>
                         </li>
-
-
                     </ul>
 
                 </div>

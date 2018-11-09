@@ -81,7 +81,7 @@
                         <div v-ripple class="card-block card-block--full-mobile p-3 "
                              @click="collapseProduct=!collapseProduct">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="">Упомянутые товары
+                                <div class="">Упоминание товаров
                                     <span v-if="post.products" class="text-muted ml-2">{{post.products.length}}</span>
                                 </div>
                                 <div v-if="!collapseProduct" class="icon-down"></div>
@@ -302,10 +302,10 @@
                             </swiper-slide>
                             <div class="swiper-pagination" slot="pagination"></div>
                             <div class="sw-button-prev" slot="button-prev">
-                                <div class="icon-arrow-left "></div>
+
                             </div>
                             <div class="sw-button-next" slot="button-next">
-                                <div class="icon-arrow-right"></div>
+
                             </div>
                         </swiper>
                     </div>
@@ -354,10 +354,10 @@
                             </swiper-slide>
                             <div class="swiper-pagination" slot="pagination"></div>
                             <div class="sw-button-prev" slot="button-prev">
-                                <div class="icon-arrow-left "></div>
+
                             </div>
                             <div class="sw-button-next" slot="button-next">
-                                <div class="icon-arrow-right"></div>
+
                             </div>
 
                         </swiper>
