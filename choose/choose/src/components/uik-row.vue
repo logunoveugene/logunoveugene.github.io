@@ -72,6 +72,7 @@
 <style>
     .detal-info-wrap {
         position: absolute;
+        margin-left: 35px;
     }
 
     .detal-info {
@@ -80,7 +81,6 @@
 
     .table__sub-row:hover .detal-info {
         display: inline-block;
-        margin-left: 20px;
         cursor: pointer;
         border-bottom: 1px dotted #999;
         color: #666;
