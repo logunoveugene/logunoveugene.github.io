@@ -39,12 +39,10 @@
                                     <div class="uik__info-col d-flex flex-nowrap"
                                          v-for="(value, index) in result.value"
                                          :key="index">
-                                        <a class="uik__info-link" :href="value.link" target="_blank">
-                                            <span class="table__candidate-sub  d-inline-block ">
-                                                <span v-if="isPercent">{{value.watcherResult | percent }}%</span>
-                                                <span v-if="!isPercent">{{value.watcherResultAbs | number }}</span>
-                                            </span>
-                                        </a>
+                                        <div class="table__candidate-sub  d-inline-block ">
+                                            <span v-if="isPercent">{{value.watcherResult | percent }}%</span>
+                                            <span v-if="!isPercent">{{value.watcherResultAbs | number }}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -156,8 +154,5 @@
     .uik__info-candidate{
         width: 150px;
         margin-right: 15px;
-    }
-    .uik__info-link{
-        color: #156ebf;
     }
 </style>
