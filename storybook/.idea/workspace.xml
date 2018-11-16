@@ -2,21 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92ef5139-5f77-437f-ab3b-3c29de85ccaa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/buttons.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/forms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/links.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/variables.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stories/Типографика.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/style/variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.storybook/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/.storybook/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.storybook/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/.storybook/webpack.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stories/index.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/style/button.scss" beforeDir="false" afterPath="$PROJECT_DIR$/style/button.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -75,7 +60,7 @@
         <counts>
           <entry key="css" value="31" />
           <entry key="js" value="758" />
-          <entry key="scss" value="1595" />
+          <entry key="scss" value="1600" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -83,7 +68,7 @@
           <entry key="CSS" value="31" />
           <entry key="HTML" value="12" />
           <entry key="JavaScript" value="746" />
-          <entry key="SCSS" value="1595" />
+          <entry key="SCSS" value="1600" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -181,8 +166,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/style/button.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="144" column="5" lean-forward="true" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
+            <state relative-caret-position="231">
+              <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -342,12 +327,12 @@
       <option name="presentableId" value="Default" />
       <updated>1542279041202</updated>
       <workItem from="1542279044112" duration="5567000" />
-      <workItem from="1542325818726" duration="22059000" />
+      <workItem from="1542325818726" duration="22229000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27626000" />
+    <option name="totallyTimeSpent" value="27796000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -529,8 +514,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style/button.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="144" column="5" lean-forward="true" selection-start-line="144" selection-start-column="5" selection-end-line="144" selection-end-column="5" />
+        <state relative-caret-position="231">
+          <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
         </state>
       </provider>
     </entry>
