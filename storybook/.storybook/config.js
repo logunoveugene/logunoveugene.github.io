@@ -1,6 +1,9 @@
 import { configure } from '@storybook/html';
 import { configureViewport } from '@storybook/addon-viewport';
 
+import '../style/index.scss'
+import '../fonts/style.css'
+
 
 const newViewports = {
     responsive:{
@@ -39,8 +42,11 @@ configureViewport({
 });
 
 function loadStories() {
-    require('../stories/index.js');
-    // You can require as many stories as you need.
+    require('../stories/variables');
+    require('../stories/buttons.js');
+    require('../stories/links.js');
+    require('../stories/forms.js');
+
 }
 
 configure(loadStories, module);
