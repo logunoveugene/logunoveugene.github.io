@@ -11,9 +11,10 @@ module.exports = {
             {
                 test: /\.js?$/,
                 loaders: [require.resolve('@storybook/addon-storysource/loader')],
-                include: path.resolve(__dirname, '../src'),
+                include: path.resolve(__dirname, '../stories'),
                 enforce: 'pre',
             },
         ]
     }
 };
+
