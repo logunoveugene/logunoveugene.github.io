@@ -10,7 +10,7 @@
     >
         <label slot="option-label" slot-scope="{ node, shouldShowCount,  labelClassName, countClassName }"
                :class="labelClassName">
-            {{ node.label }} <span class="category-list__amount text-muted small"> × {{ node.raw.mcount }}</span>
+            {{ node.label }} <span class="category-list__amount text-muted small"> {{ node.raw.mcount }}</span>
 
         </label>
     </treeselect>
@@ -225,7 +225,7 @@
     }
 </script>
 
-<style>
+<style >
     .vue-treeselect__control {
         border-radius: 8px;
     }
@@ -370,7 +370,7 @@
     .category-list__amount{
 
         border-radius: 50px;
-        padding: 2px 8px 1px 5px;
+        padding: 2px 6px 1px 6px;
         box-shadow: 0 1px 4px rgba(0,0,0,.15);
         margin-left: 5px;
         background: #ffffff;

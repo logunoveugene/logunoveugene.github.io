@@ -50,7 +50,7 @@
                             </div>
 
                             <div class="small mr-3">
-                                <div class="link link--color-blue">
+                                <div class="link link--color-blue"  @click="focusqanswer" >
                                     Ответить
                                 </div>
                             </div>
@@ -173,20 +173,21 @@
                 </div>
             </div>
         </div>
-        <div v-if="!answerPlate" class="fixed-bottom d-block d-md-none w-100">
-            <div class="d-flex fixed__plate">
-                <div v-ripple class="fixed__plate-answer d-flex align-items-cente  text-center p-3 ">
-                    <div class="fixed__plate-answer-icon">
-                        <div class="mr-2 icon-speech-bubble-outline"></div>
-                    </div>
-                    <div @click="focusqanswer" class="fixed__plate-answer-desc ">Ответить</div>
 
-                </div>
-                <div v-ripple class="fixed__plate-end p-3">К последнему сообщению</div>
-            </div>
-        </div>
+        <!--<div v-if="!answerPlate" class="fixed-bottom d-block d-md-none w-100">-->
+            <!--<div class="d-flex fixed__plate">-->
+                <!--<div v-ripple class="fixed__plate-answer d-flex align-items-cente  text-center p-3 ">-->
+                    <!--<div class="fixed__plate-answer-icon">-->
+                        <!--<div class="mr-2 icon-speech-bubble-outline"></div>-->
+                    <!--</div>-->
+                    <!--<div @click="focusqanswer" class="fixed__plate-answer-desc ">Ответить</div>-->
 
-        <div v-if="answerPlate" class="fixed-bottom">
+                <!--</div>-->
+                <!--<div v-ripple class="fixed__plate-end p-3">К последнему сообщению</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <div v-if="answerPlate" class="fixed-bottom d-block d-md-none">
             <div class="answer-plate p-3">
                 <div class="answer-plate-send">
                     <div class="answer-plate-send-img">
@@ -705,7 +706,7 @@
         cursor: pointer;
         transition: .1s;
         border-bottom: 3px solid #fff;
-        padding: 11px 13px 8px;
+        padding: 11px 16px 8px;
 
         &:hover {
             background: #fff6e5;

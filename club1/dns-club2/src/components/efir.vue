@@ -48,7 +48,7 @@
             }
         },
         created(){
-            this.axios.get('https://club-paper.firebaseio.com/live.json')
+            this.axios.get('https://club-route.firebaseio.com/live.json')
                 .then(response =>{
                     this.lives = response.data
                 })

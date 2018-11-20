@@ -9,6 +9,7 @@
                     <div class="d-flex">
                         <img :src="comment.autorImg" alt="" class="comment__comment-author-img-mob rounded-circle">
                         <div class="">{{comment.autor}}</div>
+                        <div class="ml-1 d-flex" v-if="comment.parentId"><div class="icon-right pt-1 small"></div> <a href="" class="link link--color-grey">Василий</a></div>
                     </div>
                     <div class="small mb-2 text-muted">{{comment.date | fdate}}</div>
                 </div>

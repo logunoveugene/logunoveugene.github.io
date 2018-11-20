@@ -1,0 +1,66 @@
+@import "variables";
+
+/*ссылки*/
+.link {
+    cursor: pointer;
+    text-decoration: none;
+    transition: .2s;
+    user-select: none;
+
+    &:hover {
+        color: #FC5808 !important;
+        text-decoration: none;
+    }
+
+    &--color-grey {
+        color: $secondary-text;
+    }
+
+    &--color-blue {
+        color: #0D61AF;
+    }
+
+    &--color-white {
+        color: #fff;
+    }
+
+    &--color-black {
+        color: #333;
+    }
+
+    &--doted {
+
+        .link__text {
+            background-image: linear-gradient(
+                            to right,
+                            #444 40%,
+                            rgba(255, 255, 255, 0) 20%
+            );
+            background-position: bottom;
+            background-size: 3px 1px;
+            background-repeat: repeat-x;
+            display: inline;
+            padding-bottom: 2px;
+
+        }
+
+    }
+    &--dropdown {
+        position: relative;
+        padding-right: 16px;
+
+        &:after {
+            content: "\e259";
+            font-family: 'icon-ui' !important;
+            position: absolute;
+            right: 0;
+            top: 2px;
+        }
+    }
+
+    &__icon {
+        margin-right: $spacers-1;
+    }
+
+}
+

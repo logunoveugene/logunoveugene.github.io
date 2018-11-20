@@ -54,24 +54,36 @@
                         </div>
                         <div class="collapse-plate pt-4  d-block d-lg-none" v-if="searchPlate">
                             <div class="">
-                                <div class="pb-3  bb-1">
+                                <div class="pb-4 bb-1">
                                     <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
                                     <category></category>
                                 </div>
-                                <div class=" py-3 bb-1">
-                                    <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Поиск по
+                                <div class="py-4 bb-1">
+                                    <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Поиск по
                                         упоминаниям
                                     </div>
-                                    <div class="small d-flex">
-                                        <div class="mr-3">
-                                            <a href="#" class="link link--doted link--color-grey">Товар</a>
-                                        </div>
-                                        <div class="mr-3">
-                                            <a href="#" class="link link--doted link--color-grey">Категория</a>
-                                        </div>
-                                        <div class="mr-3">
-                                            <a href="#" class="link link--doted link--color-grey">Бренд</a>
-                                        </div>
+
+                                    <product-category-brand-search></product-category-brand-search>
+                                </div>
+                                <div class="py-4 bb-1">
+                                    <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Настройки
+                                        показа
+                                    </div>
+
+
+                                    <div class="custom-control custom-checkbox mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Вопросы без ответов</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                        <label class="custom-control-label" for="customCheck2">Вопросы без моих
+                                            ответов</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                        <label class="custom-control-label" for="customCheck3">Вопросы с моими ответами
+                                        </label>
                                     </div>
 
                                 </div>
@@ -80,21 +92,36 @@
                     </div>
                     <div class=" d-none d-lg-flex  justify-content-between align-items-center ">
                         <nav class="nav nav-pills nav-justified">
-                            <a class="link link--pill link--color-black link--pill-active  " href="#">Новые сообщения</a>
-                            <a class="link link--pill link--color-black" href="#">Новые темы</a>
+                            <a class="link link--pill link--color-black link--pill-active  " href="#">Новые темы</a>
+                            <a class="link link--pill link--color-black" href="#">Лучшие</a>
+                            <a class="link link--pill link--color-black" href="#">Популярные</a>
+
 
                         </nav>
-                        <div class="d-none d-md-flex  ">за сегодня
-                            <div class="small pt-1 ml-1 text-secondary">
-                                <div class="icon-down"></div>
+                        <v-popover offset="0">
+                            <div class="d-none d-md-flex">за сегодня
+                                <div class="small pt-1 ml-1 text-secondary">
+                                    <div class="icon-down"></div>
+                                </div>
                             </div>
-                        </div>
+                            <template slot="popover">
+                                <div class="py-3 px-3 bb-1">За сегодня</div>
+                                <div class="py-3 px-3 bb-1">За неделю</div>
+                                <div class="py-3 px-3 bb-1">За месяц</div>
+                                <div class="py-3 px-3  bb-1 ">За все время</div>
+                                <div class="py-3 px-3">Выбрать период</div>
+
+                            </template>
+                        </v-popover>
+
+
+
                     </div>
                     <div class="discussions">
                         <paginate
                                 name="discuss"
                                 :list="discussions"
-                                :per="4"
+                                :per="3"
                         >
 
                             <disc-list-item :post="post"
@@ -127,13 +154,29 @@
                                 <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Поиск по
                                     упоминаниям
                                 </div>
-                                <nav class="nav nav-pills nav-justified small mb-3">
-                                    <a class="link link--pill link--color-black link--pill-active  " href="#">Товар</a>
-                                    <a class="link link--pill link--color-black" href="#">Категория</a>
-                                    <a class="link link--pill link--color-black" href="#">Бренд</a>
-                                </nav>
 
-                                <input type="text" class="field field--normal" placeholder="Укажите название или артикул">
+                                <product-category-brand-search></product-category-brand-search>
+                            </div>
+                            <div class="p-4 bb-1">
+                                <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Настройки
+                                    показа
+                                </div>
+
+
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label" for="customCheck1">Вопросы без ответов</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                    <label class="custom-control-label" for="customCheck2">Вопросы без моих
+                                        ответов</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                    <label class="custom-control-label" for="customCheck3">Вопросы с моими ответами
+                                        </label>
+                                </div>
 
                             </div>
                         </div>
@@ -148,6 +191,7 @@
     import postInfo from '@/components/post-block/parts/post-info.vue'
     import DiscListItem from "@//components/post-block/disc-list-item";
     import category from "@//components/category.vue";
+    import productCategoryBrandSearch from "@//components/product-category-brand-search.vue"
 
 
     export default {
@@ -155,7 +199,7 @@
         components: {
             DiscListItem,
             postInfo,
-
+            productCategoryBrandSearch,
             category
         },
         data: function () {
@@ -173,7 +217,7 @@
                 error: [],
                 searchword: '',
                 initSelected: [],
-                stateLoad:false
+                stateLoad: false
 
 
             }
@@ -191,9 +235,6 @@
         },
 
         created() {
-
-
-
 
 
             this.axios.get('https://club-route.firebaseio.com/discussions.json')
@@ -230,14 +271,16 @@
 </script>
 <style lang="scss">
 
-.discussions{
-    padding-top: 1.5rem;
-}
+    .discussions {
+        padding-top: 1.5rem;
+    }
+
     .new-discuss-btn {
         border: 1px solid #eee;
         padding: 7px 12px 6px 35px;
         border-radius: 50px;
         position: relative;
+        white-space: nowrap;
     }
 
     .new-discuss-btn-icon {
@@ -323,7 +366,7 @@
         cursor: pointer;
         transition: .1s;
         border-bottom: 3px solid #fff;
-        padding: 11px 13px 8px;
+        padding: 11px 16px 8px;
 
         &:hover {
             background: #fff6e5;

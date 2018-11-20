@@ -104,7 +104,7 @@
                                             <div class="header__create-controls-icon">
                                                 <div class="icon-pen"></div>
                                             </div>
-                                            <router-link class="link link--color-grey" to="/newpost">Написать
+                                            <router-link class="link link--color-grey" to="/newpost">Написать статью
                                             </router-link>
                                         </div>
                                         <div class="header__create-controls-item">

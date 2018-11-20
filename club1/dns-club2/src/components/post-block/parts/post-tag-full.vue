@@ -1,6 +1,6 @@
 <template>
 	<div class="post__tags">
-		<div  class="post__tag-item" v-if="format != 'Текст'">
+		<div  class="post__tag-item">
 			<a href="#" class="link link--color-grey" v-bind:style="{ color: color }">{{format}}</a>
 		</div>
 		<div class="post__tag-item">

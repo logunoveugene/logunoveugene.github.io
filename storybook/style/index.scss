@@ -2,6 +2,7 @@
 
 body{
     font-family: $font-family;
+    color: $regular-text;
 }
 
 .s-i{
@@ -9,10 +10,13 @@ body{
     border-bottom: 1px solid #eeeeee;
 }
 
+.bg-black{
+    background: #000000;
+}
+
 
 input, textarea, select, button {
     text-rendering: auto;
-    color: initial;
     letter-spacing: normal;
     word-spacing: normal;
     text-transform: none;
