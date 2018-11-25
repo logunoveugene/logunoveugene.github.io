@@ -1,77 +1,86 @@
 import React from 'react'
-import {StyleSheet, View, TextInput, Button} from 'react-native'
+import {StyleSheet, View, Picker, TextInput, Button} from 'react-native'
 import firebase from 'react-native-firebase'
 import _ from "lodash";
 
 
 export default class Main extends React.Component {
-  state = {currentUser: null, message: '', list: 'ff'}
+    state = {currentUser: null, language: '', message: '', list: 'ff'}
 
-  componentDidMount() {
-    const {currentUser} = firebase.auth();
-    this.setState({currentUser});
-  };
-
-
-  handlePostData = () => {
-    let {currentUser, message, list} = this.state;
-    let date = new Date();
-    let myDate = {
-      day: date.getDate(),
-      month: date.getMonth(),
-      year: date.getFullYear()
+    componentDidMount() {
+        const {currentUser} = firebase.auth();
+        this.setState({currentUser});
     };
-    firebase
-      .database().ref(currentUser.uid + '/node').push(
-      {
-        userId: currentUser.uid,
-        sum: message,
-        date: myDate,
-      }
-    ).then(() => {
-      console.log("данные ушли");
-    }).catch((error) => {
-      console.log(error);
-    });
-    this.setState({message: ''});
-  };
 
 
-  render() {
-    const {currentUser, list} = this.state
-    return (
-      <View style={styles.container}>
+    handlePostData = () => {
+        let {currentUser, message, list} = this.state;
+        let date = new Date();
+        let myDate = {
+            day: date.getDate(),
+            month: date.getMonth(),
+            year: date.getFullYear()
+        };
+        firebase
+            .database().ref(currentUser.uid + '/node').push(
+            {
+                userId: currentUser.uid,
+                sum: message,
+                date: myDate,
+                account:
 
-        <TextInput
-          style={styles.textInput}
-          autoCapitalize="none"
-          keyboardType='number-pad'
-          placeholder="Сообщение"
-          onChangeText={message => this.setState({message})}
-          value={this.state.message}
-        />
-        <Button title="Опубликовать" onPress={this.handlePostData}/>
-        <Button
-          title="Отмена"
-          onPress={() => this.props.navigation.navigate('Main')}
-        />
-      </View>
-    )
-  }
+            }
+        ).then(() => {
+            console.log("данные ушли");
+        }).catch((error) => {
+            console.log(error);
+        });
+        this.setState({message: ''});
+    };
+
+
+    render() {
+        const {currentUser, list, language} = this.state
+        return (
+            <View style={styles.container}>
+
+                <TextInput
+                    style={styles.textInput}
+                    autoCapitalize="none"
+                    keyboardType='number-pad'
+                    placeholder="Сообщение"
+                    onChangeText={message => this.setState({message})}
+                    value={this.state.message}
+                />
+                <Picker
+                    selectedValue={this.state.language}
+                    style={{height: 50, width: 100}}
+                    onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
+                    <Picker.Item label="Счет 1" value="java"/>
+                    <Picker.Item label="Счет 2" value="js"/>
+                </Picker>
+                <Button title="Опубликовать" onPress={this.handlePostData}/>
+                <Button
+                    title="Отмена"
+                    onPress={() => this.props.navigation.navigate('Main')}
+                />
+            </View>
+        )
+    }
 }
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
 
-  },
-  textInput: {
-    height: 40,
-    width: '90%',
-    borderColor: 'gray',
-    borderWidth: 1,
-    marginTop: 8,
-    marginBottom: 8
-  }
+    },
+    textInput: {
+        height: 40,
+        width: '90%',
+        borderColor: 'gray',
+        borderWidth: 1,
+        marginTop: 8,
+        marginBottom: 8
+    }
 });
