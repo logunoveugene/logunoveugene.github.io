@@ -26,4 +26,8 @@ target 'money' do
   pod 'Fabric', '~> 1.7.13'
   pod 'Crashlytics', '~> 3.10.9'
 
+ # Add new pods below this line
+ pod 'RNSVG', :path => '../node_modules/react-native-svg'
+
+
 end

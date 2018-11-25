@@ -1,0 +1,31 @@
+{
+  "name": "money",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "android-linux": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android",
+    "test": "jest"
+  },
+  "dependencies": {
+    "fs-extra": "^7.0.1",
+    "lodash": "^4.17.11",
+    "react": "16.6.1",
+    "react-native": "0.57.5",
+    "react-native-firebase": "^5.1.0",
+    "react-native-gesture-handler": "^1.0.9",
+    "react-native-svg": "^8.0.8",
+    "react-navigation": "^3.0.0",
+    "replace-in-file": "^3.4.2",
+    "victory-native": "^31.0.0"
+  },
+  "devDependencies": {
+    "babel-jest": "23.6.0",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "^0.49.2",
+    "react-test-renderer": "16.6.1"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

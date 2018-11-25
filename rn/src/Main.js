@@ -70,7 +70,7 @@ export default class Main extends React.Component {
           renderItem={({item, index}) => {
             return (
 
-              <Text>{item.message}</Text>
+              <Text>{item.sum}</Text>
             )
           }}
         ></FlatList>
