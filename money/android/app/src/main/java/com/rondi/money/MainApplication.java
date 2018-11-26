@@ -8,6 +8,7 @@ import io.invertase.firebase.RNFirebasePackage;
 import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 import io.invertase.firebase.links.RNFirebaseLinksPackage;
 import io.invertase.firebase.database.RNFirebaseDatabasePackage;
+import io.invertase.firebase.functions.RNFirebaseFunctionsPackage;
 
 import com.horcrux.svg.SvgPackage;
 import com.facebook.react.ReactNativeHost;
@@ -35,7 +36,8 @@ public class MainApplication extends Application implements ReactApplication {
             new SvgPackage(),
             new RNFirebaseAuthPackage(),
             new RNFirebaseLinksPackage(),
-            new RNFirebaseDatabasePackage()
+            new RNFirebaseDatabasePackage(),
+            new RNFirebaseFunctionsPackage()
       );
     }
 

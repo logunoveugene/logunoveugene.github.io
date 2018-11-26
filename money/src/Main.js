@@ -60,8 +60,6 @@ export default class Main extends React.Component {
                 <Text>
                     Hi {currentUser && currentUser.email}!
                 </Text>
-
-
                 <Button title="Выйти" onPress={this.handleSignOut}/>
 
                 <VictoryGroup
@@ -84,18 +82,15 @@ export default class Main extends React.Component {
                     />
 
                 </VictoryGroup>
-
-
                 <FlatList
                     data={list}
                     renderItem={({item, index}) => {
                         return (
-                            <Text>{item.sum}</Text>
+                            <Text>{item.sum} / {item.account}    </Text>
+
                         )
                     }}
                 ></FlatList>
-
-
                 <Button
                     title="Добавить запись"
                     onPress={() => this.props.navigation.navigate('AddNote')}
