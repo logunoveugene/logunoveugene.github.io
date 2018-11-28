@@ -1,11 +1,11 @@
 import React from 'react'
-import {StyleSheet, View, Picker, TextInput, Button} from 'react-native'
+import {StyleSheet, View, Picker, TextInput, Button, Text, TouchableHighlight} from 'react-native'
 import firebase from 'react-native-firebase'
 import _ from "lodash";
 
 
 export default class Main extends React.Component {
-    state = {currentUser: null, account: 'Счет 1', message: '', accountList: ''}
+    state = {currentUser: null, account: 'Счет 1', message: '', accountList: '', inputNumber: ''}
 
     componentDidMount() {
         const {currentUser} = firebase.auth();
@@ -47,22 +47,31 @@ export default class Main extends React.Component {
     };
 
 
+    // numberUpdate = (num) => {
+    //     this.setState({
+    //         inputNumber: this.state.inputNumber + num
+    //     })
+    // }
+
     render() {
-        const {currentUser, list, account, accountList} = this.state
+        const {currentUser, list, account, accountList, inputNumber} = this.state
 
         let accountItem = Array.from(this.state.accountList);
 
+
         return (
             <View style={styles.container}>
+                <View style={styles.inputWrap}>
+                    <TextInput
+                        style={styles.textInput}
+                        autoCapitalize="none"
 
-                <TextInput
-                    style={styles.textInput}
-                    autoCapitalize="none"
-                    keyboardType='number-pad'
-                    placeholder="Сообщение"
-                    onChangeText={message => this.setState({message})}
-                    value={this.state.message}
-                />
+                        placeholder="Примечание"
+                        onChangeText={message => this.setState({message})}
+                        value={this.state.message}
+                    />
+                    <Text>{inputNumber}</Text>
+                </View>
                 <Picker
                     selectedValue={this.state.account}
                     style={{height: 50, width: 200}}
@@ -73,6 +82,111 @@ export default class Main extends React.Component {
                     })}
 
                 </Picker>
+
+
+                <View style={styles.keyboard}>
+                    <TouchableHighlight
+                        style={styles.button}
+
+
+                    >
+                        <Text> 7 </Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        style={styles.button}
+
+                    >
+                        <Text> 8 </Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        style={styles.button}
+
+                    >
+                        <Text>9 </Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        style={styles.button}
+
+                    >
+                        <Text> дата </Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        style={styles.button}
+
+                    >
+                        <Text> 4 </Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        style={styles.button}
+
+                    >
+                        <Text> 5 </Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        style={styles.button}
+
+                    >
+                        <Text>6 </Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        style={styles.button}
+
+                    >
+                        <Text> + </Text>
+                    </TouchableHighlight>
+
+
+                    <TouchableHighlight
+                        style={styles.button}
+
+                    >
+                        <Text> 1 </Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        style={styles.button}
+
+                    >
+                        <Text> 2</Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        style={styles.button}
+
+                    >
+                        <Text>3 </Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        style={styles.button}
+
+                    >
+                        <Text> - </Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        style={styles.button}
+
+                    >
+                        <Text> . </Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        style={styles.button}
+
+                    >
+                        <Text> 0</Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        style={styles.button}
+
+                    >
+                        <Text>стереть </Text>
+                    </TouchableHighlight>
+                    <TouchableHighlight
+                        style={styles.button}
+
+                    >
+                        <Text> отпр </Text>
+                    </TouchableHighlight>
+
+
+                </View>
                 <Button title="Опубликовать" onPress={this.handlePostData}/>
                 <Button
                     title="Отмена"
@@ -89,12 +203,27 @@ const styles = StyleSheet.create({
         alignItems: 'center',
 
     },
+    button: {
+        alignItems: 'center',
+        backgroundColor: '#DDDDDD',
+        width: '25%',
+        padding: 10
+    },
     textInput: {
         height: 40,
-        width: '90%',
-        borderColor: 'gray',
-        borderWidth: 1,
+        width: '50%',
+
         marginTop: 8,
         marginBottom: 8
+    },
+    keyboard: {
+        flex: 1,
+        flexDirection: 'row',
+        flexWrap: 'wrap'
+    },
+    inputWrap: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center'
     }
 });
