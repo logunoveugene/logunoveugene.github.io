@@ -13,7 +13,6 @@ export default class SignUp extends React.Component {
         ),
     };
 
-
     state = {email: '', password: '', errorMessage: null}
 
     handleSignUp = () => {

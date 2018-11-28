@@ -1,20 +1,22 @@
 import React from 'react'
 import {StyleSheet, Platform, FlatList, Text, View, TextInput, Button} from 'react-native'
 import firebase from 'react-native-firebase'
+import ActionButton from 'react-native-action-button';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 import {VictoryPie, VictoryChart, VictoryGroup, VictoryPolarAxis, VictoryTheme} from "victory-native";
 import _ from 'lodash';
 
 
 export default class Main extends React.Component {
-    state = {currentUser: null, message: '', list: 'ff'}
-
+    state = {currentUser: null, message: '', list: ''};
     handleSignOut = () => {
         firebase
             .auth()
             .signOut()
 
     };
+
     handlePostData = () => {
         let {currentUser, message, list} = this.state;
         let myDate = new Date();
@@ -55,6 +57,11 @@ export default class Main extends React.Component {
 
     render() {
         const {currentUser, list} = this.state
+
+
+
+
+
         return (
             <View style={styles.container}>
                 <Text>
@@ -95,6 +102,18 @@ export default class Main extends React.Component {
                     title="Добавить запись"
                     onPress={() => this.props.navigation.navigate('AddNote')}
                 />
+                <ActionButton buttonColor="rgba(231,76,60,1)">
+                    <ActionButton.Item buttonColor='#9b59b6' title="New Task" onPress={() => console.log("notes tapped!")}>
+                        <Icon name="md-create" style={styles.actionButtonIcon} />
+                    </ActionButton.Item>
+                    <ActionButton.Item buttonColor='#3498db' title="Notifications" onPress={() => {}}>
+                        <Icon name="md-notifications-off" style={styles.actionButtonIcon} />
+                    </ActionButton.Item>
+                    <ActionButton.Item buttonColor='#1abc9c' title="All Tasks" onPress={() => {}}>
+                        <Icon name="md-done-all" style={styles.actionButtonIcon} />
+                    </ActionButton.Item>
+                </ActionButton>
+
             </View>
         )
     }
@@ -113,5 +132,10 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         marginTop: 8,
         marginBottom: 8
-    }
+    },
+    actionButtonIcon: {
+        fontSize: 20,
+        height: 22,
+        color: 'white',
+    },
 });

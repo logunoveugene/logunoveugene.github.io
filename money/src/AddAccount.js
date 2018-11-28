@@ -1,41 +1,39 @@
 import React from 'react'
-import {StyleSheet, View, Picker, TextInput, Button} from 'react-native'
+import {StyleSheet, View, TextInput, Button} from 'react-native'
 import firebase from 'react-native-firebase'
 import _ from "lodash";
 
 
 export default class Main extends React.Component {
-    state = {currentUser: null, account: 'Счет 1', message: '', accountList: ''}
+    state = {currentUser: null, accountName: '', amount: ''}
 
     componentDidMount() {
         const {currentUser} = firebase.auth();
         this.setState({currentUser});
 
 
-        let starCountRef = firebase.database().ref(currentUser.uid + '/accounts');
-        starCountRef.once('value', function (snapshot) {
-        }).then((val) => {
-            this.setState({accountList: _.values(val.toJSON())})
-            console.log(_.values(val.toJSON()))
-        })
+
     };
 
 
     handlePostData = () => {
-        let {currentUser, message, list, account} = this.state;
+        let {currentUser, accountName, amount} = this.state;
         let date = new Date();
         let myDate = {
             day: date.getDate(),
             month: date.getMonth(),
             year: date.getFullYear()
         };
+
+
+
         firebase
-            .database().ref(currentUser.uid + '/node').push(
+            .database().ref(currentUser.uid + '/accounts').push(
             {
                 userId: currentUser.uid,
-                sum: message,
+                accountName: accountName,
                 date: myDate,
-                account: account
+                amount: amount
 
             }
         ).then(() => {
@@ -43,36 +41,33 @@ export default class Main extends React.Component {
         }).catch((error) => {
             console.log(error);
         });
-        this.setState({message: ''});
+        this.setState({accountName: ''});
+        this.setState({amount: ''});
     };
 
 
     render() {
-        const {currentUser, list, account, accountList} = this.state
-
-        let accountItem = Array.from(this.state.accountList);
-
+        const {accountName, amount} = this.state
         return (
             <View style={styles.container}>
 
                 <TextInput
                     style={styles.textInput}
                     autoCapitalize="none"
-                    keyboardType='number-pad'
-                    placeholder="Сообщение"
-                    onChangeText={message => this.setState({message})}
-                    value={this.state.message}
+                    keyboardType='default'
+                    placeholder="Название счета"
+                    onChangeText={accountName => this.setState({accountName})}
+                    value={this.state.accountName}
                 />
-                <Picker
-                    selectedValue={this.state.account}
-                    style={{height: 50, width: 200}}
-                    onValueChange={(itemValue, itemIndex) => this.setState({account: itemValue})}>
+                <TextInput
+                    style={styles.textInput}
+                    autoCapitalize="none"
+                    keyboardType='number-pad'
+                    placeholder="Баланс"
+                    onChangeText={amount => this.setState({amount})}
+                    value={this.state.amount}
+                />
 
-                    {accountItem.map((facility, i) => {
-                        return <Picker.Item key={i} value={facility.accountName} label={facility.accountName}/>
-                    })}
-
-                </Picker>
                 <Button title="Опубликовать" onPress={this.handlePostData}/>
                 <Button
                     title="Отмена"
