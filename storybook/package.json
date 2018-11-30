@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "file-loader": "^2.0.0",
+    "float-labels.js": "^3.3.6",
     "node-sass": "^4.10.0"
   }
 }

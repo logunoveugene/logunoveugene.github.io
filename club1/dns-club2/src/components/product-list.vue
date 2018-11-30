@@ -1,7 +1,5 @@
 <template>
     <div class="product-list">
-
-
         <div class="product-list__item " v-for="(product, index)  in products"
              :key="index"
              v-if="index<3">
@@ -10,18 +8,10 @@
                     <div class="h4 mb-3">
                         {{product.title}}
                     </div>
-                    <div class="mb-3 small d-flex">
-                        <div class="mr-3">
-                            <a href="" class="link link--color-blue">Еще 12 тем</a>
-                        </div>
-                        <a href="" class="link link--color-blue">2 обзора</a>
-                    </div>
                     <div class="">
-                        <button type="button" class="btn btn--color-white ">Купить</button>
+                        <button type="button" class="btn btn--color-white ">Перейти в магазин</button>
                     </div>
                 </div>
-
-
                 <div class="ml-3 product-list__item-img-wrap">
                     <img class="product-list__item-img" :src="product.img" alt="">
                 </div>

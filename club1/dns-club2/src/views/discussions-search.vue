@@ -29,10 +29,7 @@
                                         телевизор LED Hisense H55A6100, по которой он стоил 35000р?
                                     </div>
                                     <div class="suggestion__item">Выбор бюджетного ноутбука до 15 000р. 3 варианта</div>
-                                    <div class="suggestion__item">Будет ли работать на материнской плате Asus P8H61-M
-                                        Pro с
-                                        i3 2100?
-                                    </div>
+                                    <div class="suggestion__item">Будет ли работать на материнской плате Asus P8H61-M pro с3 2100? </div>
                                     <div class="suggestion__item">Выбор бюджетного ноутбука до 15 000р. 3 варианта</div>
                                     <div class="suggestion__item">Выбор бюджетного ноутбука до 15 000р. 3 варианта</div>
                                 </div>
@@ -40,39 +37,103 @@
                             <div class="suggestion__group">
                                 <div class="suggestion__group-title">
                                     <div class="d-flex   align-items-center">
-                                        <div class="h6 font-weight-bold mb-0 mr-3">Найденные фильтры:</div>
-                                        <nav class="nav nav-pills nav-justified">
-                                            <a class="link link--pill link--color-black link--pill-active  " href="#">Товары</a>
-                                            <a class="link link--pill link--color-black" href="#">Категории товаров</a>
-                                            <a class="link link--pill link--color-black" href="#">Бренды</a>
-                                            <a class="link link--pill link--color-black" href="#">Разделы</a>
-                                        </nav>
+                                        <div class="h6 font-weight-bold mb-0 mr-3">Товары</div>
+
                                     </div>
                                 </div>
                                 <div class="suggestion__list" @click="themeFilter()">
                                     <div class="suggestion__item">
                                         <div class="d-flex align-items-center ">
-                                            <div class="icon-add pt-1 mr-2"></div>
-                                            <div class="">Ноутбук DELL Inspiron 3552-5010 черный</div>
+                                            <div data-v-00eef1f8="" class="custom-control custom-checkbox">
+                                                <input data-v-00eef1f8="" type="checkbox" id="product1" class="custom-control-input">
+                                                <label data-v-00eef1f8="" for="product1" class="custom-control-label">Ноутбук DELL Inspiron 3552-5010 черный</label>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="suggestion__item">
                                         <div class="d-flex align-items-center ">
-                                            <div class="icon-add pt-1 mr-2"></div>
-                                            <div class="">Нетбук Irbis NB29 белый</div>
+                                            <div data-v-00eef1f8="" class="custom-control custom-checkbox">
+                                                <input data-v-00eef1f8="" type="checkbox" id="product2" class="custom-control-input">
+                                                <label data-v-00eef1f8="" for="product2" class="custom-control-label">Нетбук Irbis NB29 белый</label>
+                                            </div>
+
                                         </div>
                                     </div>
                                     <div class="suggestion__item">
                                         <div class="d-flex align-items-center ">
-                                            <div class="icon-add pt-1 mr-2"></div>
-                                            <div class="">Нетбук Prestigio Smartbook 133S коричневый</div>
+                                            <div data-v-00eef1f8="" class="custom-control custom-checkbox">
+                                                <input data-v-00eef1f8="" type="checkbox" id="product3" class="custom-control-input">
+                                                <label data-v-00eef1f8="" for="product3" class="custom-control-label">Нетбук Irbis NB29 белый</label>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div class="suggestion__group">
+                                <div class="suggestion__group-title">
+                                    <div class="d-flex   align-items-center">
+                                        <div class="h6 font-weight-bold mb-0 mr-3">Категории товаров</div>
+
+                                    </div>
+                                </div>
+                                <div class="suggestion__list" @click="themeFilter()">
+                                    <div class="suggestion__item">
+                                        <div class="d-flex align-items-center ">
+                                            <div data-v-00eef1f8="" class="custom-control custom-checkbox">
+                                                <input data-v-00eef1f8="" type="checkbox" id="category1" class="custom-control-input">
+                                                <label data-v-00eef1f8="" for="category1" class="custom-control-label">Ноутбуки</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="suggestion__item">
+                                        <div class="d-flex align-items-center ">
+                                            <div data-v-00eef1f8="" class="custom-control custom-checkbox">
+                                                <input data-v-00eef1f8="" type="checkbox" id="category2" class="custom-control-input">
+                                                <label data-v-00eef1f8="" for="category2" class="custom-control-label">Нетбуки</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="suggestion__item">
+                                        <div class="d-flex align-items-center ">
+                                            <div data-v-00eef1f8="" class="custom-control custom-checkbox">
+                                                <input data-v-00eef1f8="" type="checkbox" id="category3" class="custom-control-input">
+                                                <label data-v-00eef1f8="" for="category3" class="custom-control-label">Ультрабуки</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="suggestion__group">
+                                <div class="suggestion__group-title">
+                                    <div class="d-flex   align-items-center">
+                                        <div class="h6 font-weight-bold mb-0 mr-3">Бренды</div>
+
+                                    </div>
+                                </div>
+                                <div class="suggestion__list" @click="themeFilter()">
+                                    <div class="suggestion__item">
+                                        <div class="d-flex align-items-center ">
+                                            <div data-v-00eef1f8="" class="custom-control custom-checkbox">
+                                                <input data-v-00eef1f8="" type="checkbox" id="product14" class="custom-control-input">
+                                                <label data-v-00eef1f8="" for="product14" class="custom-control-label">DELL</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="suggestion__item">
+                                        <div class="d-flex align-items-center ">
+                                            <div data-v-00eef1f8="" class="custom-control custom-checkbox">
+                                                <input data-v-00eef1f8="" type="checkbox" id="product21" class="custom-control-input">
+                                                <label data-v-00eef1f8="" for="product21" class="custom-control-label">Asus</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                         <div class="mb-4" v-if="discussionsSearchResalt">
-
                             <div class="filter__item">Товар: Нетбук Irbis NB29 белый
                                 <div class="filter__item-icon icon-close"
                                      @click="discussionsSearchResalt=!discussionsSearchResalt"></div>
@@ -117,7 +178,6 @@
                                 <!--<div class="h2 mb-3 d-flex align-items-center justify-content-between ">Поиск по-->
                                 <!--упоминаниям-->
                                 <!--</div>-->
-
                                 <!--<product-category-brand-search></product-category-brand-search>-->
                                 <!--</div>-->
                                 <div class="py-4 bb-1">
@@ -126,20 +186,22 @@
                                     </div>
 
 
-                                    <div class="custom-control custom-checkbox mb-2">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck11">
-                                        <label class="custom-control-label" for="customCheck11">Вопросы без
-                                            ответов</label>
+                                    <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
+                                        <input type="radio" id="customRadioInline00" name="customRadioInline1" class="custom-control-input" checked>
+                                        <label class="custom-control-label" for="customRadioInline00">Все темы</label>
                                     </div>
-                                    <div class="custom-control custom-checkbox mb-2">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck12">
-                                        <label class="custom-control-label" for="customCheck12">Вопросы без моих
-                                            ответов</label>
+
+                                    <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
+                                        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadioInline1">Без ответов</label>
                                     </div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck13">
-                                        <label class="custom-control-label" for="customCheck13">Вопросы с моими ответами
-                                        </label>
+                                    <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
+                                        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadioInline2">Без моих ответов</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline d-block">
+                                        <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadioInline3">С моими ответами</label>
                                     </div>
 
                                 </div>
@@ -214,22 +276,22 @@
                                     показа
                                 </div>
 
-
-                                <div class="custom-control custom-checkbox mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                    <label class="custom-control-label" for="customCheck1">Вопросы без ответов</label>
+                                <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
+                                    <input type="radio" id="customRadioInline0" name="customRadioInline1" class="custom-control-input" checked>
+                                    <label class="custom-control-label" for="customRadioInline0">Все темы</label>
                                 </div>
-                                <div class="custom-control custom-checkbox mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                    <label class="custom-control-label" for="customCheck2">Вопросы без моих
-                                        ответов</label>
+                                <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
+                                    <input type="radio" id="customRadioInline4" name="customRadioInline1" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadioInline4">Без ответов</label>
                                 </div>
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                    <label class="custom-control-label" for="customCheck3">Вопросы с моими ответами
-                                    </label>
+                                <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
+                                    <input type="radio" id="customRadioInline5" name="customRadioInline1" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadioInline5">Без моих ответов</label>
                                 </div>
-
+                                <div class="custom-control custom-radio custom-control-inline d-block">
+                                    <input type="radio" id="customRadioInline6" name="customRadioInline1" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadioInline6">С моими ответами</label>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -288,7 +350,7 @@
                 this.$refs.tree.searchNodes(this.searchword)
             },
             themeFilter() {
-                this.discussionsSearch = "";
+
                 this.discussionsSearchResalt = true
 
             }
@@ -329,7 +391,7 @@
 
     }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 
     .discussions {
         padding-top: 1.5rem;
@@ -505,7 +567,8 @@
         text-overflow: ellipsis;
         max-width: 100%;
         border-bottom: 1px solid #eee;
-        padding:10px 15px;
+        padding:6px 15px;
+        font-size: 14px;
         cursor: pointer;
         &:hover {
             background: #ffeec3;
@@ -515,7 +578,7 @@
     .suggestion__group-title {
         font-size: 14px;
         border-bottom: 1px solid #eee;
-        padding: 16px 15px;
+        padding: 15px 15px 6px;
         box-shadow: inset 0 13px 10px -10px rgba(0, 0, 0, 0.1);
 
     }
@@ -531,6 +594,7 @@
         color: #fff;
         cursor: pointer;
         transition: all .2s;
+
         &:hover {
             background: #FFA218;
             text-decoration: line-through;
@@ -545,5 +609,9 @@
         color: #fff;
     }
 
+
+    .custom-control-label{
+        padding-top: 1px ;
+    }
 
 </style>

@@ -113,7 +113,7 @@
         height: 100%;
         top: 0;
         left: 0;
-        z-index: 1000;
+        z-index: 997;
     }
 
     .post-blog-img__info-wrap {

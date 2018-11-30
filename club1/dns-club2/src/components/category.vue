@@ -7,6 +7,7 @@
                 noResultsText="Ничего не найдено"
                 placeholder="Найти раздел"
                 :max-height="400"
+                zIndex="996"
     >
         <label slot="option-label" slot-scope="{ node, shouldShowCount,  labelClassName, countClassName }"
                :class="labelClassName">
@@ -227,8 +228,10 @@
 
 <style >
     .vue-treeselect__control {
+        display: none;
         border-radius: 8px;
     }
+
 
     .vue-treeselect--open.vue-treeselect--open-below .vue-treeselect__control {
         border-bottom-left-radius: 8px;
@@ -243,7 +246,7 @@
     .vue-treeselect__menu {
         position: relative;
         border: 0;
-        padding-top: 10px;
+        padding-top: 0px;
         padding-bottom: 0px;
     }
 

@@ -42,18 +42,49 @@
                         <div class="mb-4">
                             <div v-html="post.teaser"></div>
                         </div>
-                        <div class="d-flex">
-                            <div class="comment__rate d-flex mr-4">
-                                <div class="comment__rate-up icon-thumb-up"></div>
-                                <div class="comment__rate-count small">{{post.like}}</div>
-                                <div class="comment__rate-down icon-thumb-down"></div>
-                            </div>
+                        <div class="d-flex justify-content-between">
+                            <div class="d-flex">
+                                <div class="comment__rate d-flex mr-4">
+                                    <div class="comment__rate-up icon-thumb-up"></div>
+                                    <div class="comment__rate-count small">{{post.like}}</div>
+                                    <div class="comment__rate-down icon-thumb-down"></div>
+                                </div>
 
-                            <div class="small mr-3">
-                                <div class="link link--color-blue"  @click="focusqanswer" >
-                                    Ответить
+                                <div class="small mr-3">
+                                    <div class="link link--color-blue" @click="focusqanswer">
+                                        Ответить
+                                    </div>
                                 </div>
                             </div>
+                            <social-sharing class="h2 mb-0" url="https://club.dns-shop.ru/"
+                                            title="ДНС Клуб"
+                                            description="Клуб DNS – центр онлайн компетенции."
+
+                                            inline-template>
+                                <div>
+                                    <network class="share__icon " network="vk">
+                                        <i class="fa fa-vk"></i>
+                                    </network>
+
+                                    <network class="share__icon share__icon--facebook" network="facebook">
+                                        <i class="fa fa-facebook"></i>
+                                    </network>
+
+
+                                    <network class="share__icon share__icon--ok" network="odnoklassniki">
+                                        <i class="fa fa-odnoklassniki"></i>
+                                    </network>
+
+
+                                    <!--<network class="srare__icon " network="telegram">-->
+                                    <!--<i class="fa fa-telegram"></i>-->
+                                    <!--</network>-->
+
+                                    <!--<network class="srare__icon d-inline-block d-md-none" network="whatsapp">-->
+                                    <!--<i class="fa fa-whatsapp"></i>-->
+                                    <!--</network>-->
+                                </div>
+                            </social-sharing>
                         </div>
                     </div>
                     <div class="d-block d-lg-none" v-if="post.products">
@@ -74,46 +105,7 @@
                     </div>
 
 
-                    <div class="card-block card-block--full-mobile layout--bg-grey mb-5">
-                        <div class=" p-3">
-                            <div class="d-flex flex-column flex-md-row justify-content-between align-items-start  align-items-md-center">
-                                <div class="mb-3 mb-md-0">Знаете кого-то кто сможет ответить на вопрос? Поделитесь с ним
-                                    ссылкой
-                                </div>
-                                <social-sharing class="h2 mb-0" url="https://club.dns-shop.ru/"
-                                                title="ДНС Клуб"
-                                                description="Клуб DNS – центр онлайн компетенции."
 
-                                                inline-template>
-                                    <div>
-                                        <network class="share__icon " network="vk">
-                                        <i class="fa fa-vk"></i>
-                                    </network>
-
-                                        <network class="share__icon share__icon--facebook" network="facebook">
-                                            <i class="fa fa-facebook"></i>
-                                        </network>
-
-
-                                        <network  class="share__icon share__icon--ok" network="odnoklassniki">
-                                            <i class="fa fa-odnoklassniki"></i>
-                                        </network>
-
-
-                                        <!--<network class="srare__icon " network="telegram">-->
-                                            <!--<i class="fa fa-telegram"></i>-->
-                                        <!--</network>-->
-
-                                        <!--<network class="srare__icon d-inline-block d-md-none" network="whatsapp">-->
-                                            <!--<i class="fa fa-whatsapp"></i>-->
-                                        <!--</network>-->
-                                    </div>
-                                </social-sharing>
-
-                            </div>
-                        </div>
-
-                    </div>
                     <div class="mb-4" v-if="comments && comments.length>1">
 
                         <div class="d-flex justify-content-between align-items-center">
@@ -175,16 +167,16 @@
         </div>
 
         <!--<div v-if="!answerPlate" class="fixed-bottom d-block d-md-none w-100">-->
-            <!--<div class="d-flex fixed__plate">-->
-                <!--<div v-ripple class="fixed__plate-answer d-flex align-items-cente  text-center p-3 ">-->
-                    <!--<div class="fixed__plate-answer-icon">-->
-                        <!--<div class="mr-2 icon-speech-bubble-outline"></div>-->
-                    <!--</div>-->
-                    <!--<div @click="focusqanswer" class="fixed__plate-answer-desc ">Ответить</div>-->
+        <!--<div class="d-flex fixed__plate">-->
+        <!--<div v-ripple class="fixed__plate-answer d-flex align-items-cente  text-center p-3 ">-->
+        <!--<div class="fixed__plate-answer-icon">-->
+        <!--<div class="mr-2 icon-speech-bubble-outline"></div>-->
+        <!--</div>-->
+        <!--<div @click="focusqanswer" class="fixed__plate-answer-desc ">Ответить</div>-->
 
-                <!--</div>-->
-                <!--<div v-ripple class="fixed__plate-end p-3">К последнему сообщению</div>-->
-            <!--</div>-->
+        <!--</div>-->
+        <!--<div v-ripple class="fixed__plate-end p-3">К последнему сообщению</div>-->
+        <!--</div>-->
         <!--</div>-->
 
         <div v-if="answerPlate" class="fixed-bottom d-block d-md-none">
@@ -531,28 +523,28 @@
 </script>
 
 <style lang="scss">
-.share__icon{
-    border-radius: 4px;
-    height: 23px;
-    width: 30px;
-    background: #4a76a8;
-    display: inline-block;
-    color: white;
-    font-size: 14px;
-    padding: 2px 7px;
-    text-align: center;
-    margin-right: 8px;
-}
-.share__icon--facebook{
-    background: #4267b2;
-}
-.share__icon--ok{
-    background: #e68102;
-}
+    .share__icon {
+        border-radius: 4px;
+        height: 23px;
+        width: 30px;
+        background: #4a76a8;
+        display: inline-block;
+        color: white;
+        font-size: 14px;
+        padding: 2px 7px;
+        text-align: center;
+        margin-right: 8px;
+    }
 
+    .share__icon--facebook {
+        background: #4267b2;
+    }
 
+    .share__icon--ok {
+        background: #e68102;
+    }
 
-.answer-plate {
+    .answer-plate {
         box-shadow: 0 0 30px rgba(0, 0, 0, .2);
         background: white;
         height: auto;

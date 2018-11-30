@@ -78,7 +78,7 @@
                             </div>
                             <div class="header__bottom-block justify-content-lg-start col-6 col-lg-8">
                                 <router-link to="/">
-                                    <img class="heaader__logo" src="https://i.snag.gy/0aAx5r.jpg" alt="">
+                                    <img class="heaader__logo" src="https://i.snag.gy/SWcknL.jpg" alt="">
                                 </router-link>
 
                                 <div class="header__main-nav d-none d-lg-flex">
@@ -366,9 +366,9 @@
     }
 
     .heaader__logo {
-        height: 26px;
+        height: 22px;
         width: auto;
-        margin-top: -5px;
+        margin-top: -1px;
 
     }
 
@@ -538,7 +538,7 @@
         top: 0px;
         left: 0px;
         right: 0px;
-        z-index: 9999;
+        z-index: 999;
         transform: translate3d(0px, 0px, 0px);
         transition-delay: 0s;
     }

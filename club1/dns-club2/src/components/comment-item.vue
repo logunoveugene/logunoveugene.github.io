@@ -8,10 +8,32 @@
                 <div class="d-flex flex-column">
                     <div class="d-flex">
                         <img :src="comment.autorImg" alt="" class="comment__comment-author-img-mob rounded-circle">
-                        <div class="">{{comment.autor}}</div>
-                        <div class="ml-1 d-flex" v-if="comment.parentId"><div class="icon-right pt-1 small"></div> <a href="" class="link link--color-grey">Василий</a></div>
+
+
+
+                        <v-popover offset="0">
+                            <div class="link link--dropdown">{{comment.autor}}</div>
+                            <template slot="popover">
+                                <div class="p-3 text-left">
+                                    <div class="h4">{{comment.autor}}</div>
+                                    <div class="small mb-2">Был на сайте 12 ноя 2018г.</div>
+                                    <img src="https://i.snag.gy/wdxaL8.jpg" alt="">
+                                </div>
+
+                            </template>
+                        </v-popover>
+
+
                     </div>
-                    <div class="small mb-2 text-muted">{{comment.date | fdate}}</div>
+                    <div class="small mb-2 text-muted">
+                        <div class="d-inline-block" v-if="comment.parentId">
+                            <div class=" d-inline-block mr-2 icon-reply"></div>
+                            <div class="mr-1 d-inline-block">
+                                <a href="" class="link link--color-grey">Василий</a>
+                            </div>
+                        </div>
+                        <div class="d-inline-block ">{{comment.date | fdate}}</div>
+                    </div>
                 </div>
                 <div class="d-flex">
 
@@ -30,12 +52,12 @@
 
             </div>
             <div class="mb-3" v-html="comment.comment"></div>
-            <div class="d-flex">
-                <div class="comment__rate d-flex mr-4">
+            <div class="d-flex align-items-center">
+                <div class="comment__rate d-flex mr-4 align-items-center">
 
-                    <div class="comment__rate-up icon-thumb-up"></div>
-                    <div class="comment__rate-count small">{{comment.rate}}</div>
-                    <div class="comment__rate-down icon-thumb-down"></div>
+                    <div class="comment__rate-up icon-thumb-up pt-1"></div>
+                    <div class="comment__rate-count small">+{{comment.rate}}</div>
+                    <div class="comment__rate-down icon-thumb-down "></div>
                 </div>
 
                 <div class="small mr-3">
@@ -120,6 +142,9 @@
 </script>
 
 <style lang="scss">
+    .tooltip-inner {
+         max-width: 400px;
+    }
     .fr-box {
         position: relative;
         max-width: 100%;
@@ -169,7 +194,8 @@
         &__rate-up {
             font-size: 18px;
             cursor: pointer;
-            color: #6BA833;
+            padding-top: 6px;
+            color: #999;
             opacity: .7;
             &:hover {
                 opacity: 1;
@@ -177,20 +203,25 @@
 
         }
         &__rate-count {
-            margin: 0 14px
+            padding: 6px 10px;
+            margin: 0 10px;
+            background: #f0f8e1;
+            border-radius: 8px;
+            color: #6BA833;
+            font-weight: 700;
         }
 
         &__rate-down {
             font-size: 18px;
-            padding-top: 2px;
+            padding-top: 8px;
             cursor: pointer;
-            color: #CC2E12;
+            color: #999;
             opacity: .7;
             &:hover {
                 opacity: 1;
             }
         }
-        &__menu-share{
+        &__menu-share {
             font-size: 18px;
             color: #ccc;
             cursor: pointer;
@@ -199,7 +230,6 @@
                 color: #999;
             }
         }
-
 
         &__menu {
             font-size: 22px;
@@ -235,10 +265,6 @@
         }
     }
 
-
-
-
-
     .comment blockquote {
         padding-left: 15px;
         border-left: 3px solid #ff8700;
@@ -248,11 +274,9 @@
 
     }
 
-    .comment p:last-child{
+    .comment p:last-child {
         margin-bottom: 0;
     }
-
-
 
 
 </style>

@@ -7,7 +7,7 @@
                     <div class="small mb-2 d-flex">
                         <router-link class="link link--color-black" to="/">Клуб</router-link>
                         <div class="mx-2">/</div>
-                        <router-link class="link link--color-black" to="/discussions">Обсуждения</router-link>
+                        <router-link class="link link--color-black" to="/discussions">Коммуникатор</router-link>
                         <div class="mx-2">/</div>
                         <div class="text-muted ">Cоздание темы</div>
 
@@ -27,7 +27,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="col-12 col-lg-4 d-none d-lg-block">
                     <div class="card-block p-4 mb-4">
                         <div class="">
