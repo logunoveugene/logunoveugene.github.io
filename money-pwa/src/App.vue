@@ -16,6 +16,12 @@
   text-align: center;
   color: #2c3e50;
 }
+body{
+  margin: 0;
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
 #nav {
   padding: 30px;
   a {
