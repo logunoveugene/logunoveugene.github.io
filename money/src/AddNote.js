@@ -1,5 +1,5 @@
 import React from 'react'
-import {StyleSheet, View, Picker, TextInput, Button, Text, TouchableHighlight} from 'react-native'
+import {AsyncStorage ,StyleSheet, View, Picker, TextInput, Button, Text, TouchableHighlight} from 'react-native'
 import firebase from 'react-native-firebase'
 import _ from "lodash";
 
@@ -10,8 +10,6 @@ export default class Main extends React.Component {
     componentDidMount() {
         const {currentUser} = firebase.auth();
         this.setState({currentUser});
-
-
         let starCountRef = firebase.database().ref(currentUser.uid + '/accounts');
         starCountRef.once('value', function (snapshot) {
         }).then((val) => {
@@ -23,6 +21,9 @@ export default class Main extends React.Component {
 
     handlePostData = () => {
         let {currentUser, message, list, account} = this.state;
+
+
+
         let date = new Date();
         let myDate = {
             day: date.getDate(),
@@ -43,6 +44,14 @@ export default class Main extends React.Component {
         }).catch((error) => {
             console.log(error);
         });
+
+        AsyncStorage.setItem('5595', {
+            userId: currentUser.uid,
+            sum: message,
+            date: myDate,
+            account: account
+        });
+
         this.setState({message: ''});
     };
 
