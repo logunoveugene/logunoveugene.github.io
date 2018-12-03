@@ -530,12 +530,12 @@ new Vue({
 						slidesPerView: 3,
 						spaceBetween: 20
 					}
-				},  	
+				},
 
-				navigation: {
-					nextEl: '.sw-button-next',
-					prevEl: '.sw-button-prev'
-				}
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                    hide: false
+                }
 
 
 			},
