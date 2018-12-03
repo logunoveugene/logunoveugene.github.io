@@ -9,10 +9,10 @@
 					<img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/tp.png" alt="" class="footer__project-img">
 				</div>
 				<div class="footer__project-img-wrap">
-					<img src="https://i.snag.gy/PvDfIj.jpg" alt="" class="footer__project-img">
+					<img src="https://i.snag.gy/TIHkXz.jpg" alt="" class="footer__project-img">
 				</div>
 				<div class="footer__project-img-wrap">
-					<img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/clubexp.png" alt="" class="footer__project-img">
+					<img src="https://i.snag.gy/SWcknL.jpg" alt="" class="footer__project-img">
 				</div>
 			</div>
 			<div class="footer__row row">

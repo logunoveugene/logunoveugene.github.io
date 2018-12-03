@@ -35,12 +35,12 @@
 	</script>
 	<noscript><div><img src="https://mc.yandex.ru/watch/49959223" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 	<!-- /Yandex.Metrika counter -->
-	
+
 	<link rel="stylesheet prefetch" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="c-style.css">
 	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
 	<link href="https://file.myfontastic.com/7eFj9SBnsDF42ofvovPX5X/icons.css" rel="stylesheet">
-	
+
 </head>
 <body>
 	<div id="app">
@@ -52,8 +52,8 @@
 				<div class=" h2 mb-0 pt-2 icon-close" v-on:click="hide"></div>
 			</div>
 			<div class="p-4 ">
-				
-				<div class="mb-4">1. Заберите документ из принтера №4, <br> 
+
+				<div class="mb-4">1. Заберите документ из принтера №4, <br>
 					2. Дождитесь очереди (на информационном дисплее высветится номер вашего заказа) <br>
 				3. Заберите свой заказ, отдав распечатанный документ специалисту выдачи</div>
 				<button class="btn btn-outl-orange" v-on:click="hide">Закрыть</button>
@@ -63,23 +63,39 @@
 		<mainheader :catalogitem="mainNavs" :is-tp="isTp" :showcatalog="showCatalog" v-on:tptodns="isTp =! isTp"></mainheader>
 
 		<div class="main-layout" v-scroll="handleScroll">
-					<div  class=" card--no-round">
-						<div class="servise-mobile-promo d-flex justify-content-between px-2">
-							<div class="h2">Акции</div>
-							<div class="d-flex"><div class="">Все</div> <div class="h5 mb-0 icon-arrow-right pt-1"></div></div>
+			<div class="overflow-layout d-lg-none">
+                <div class=" card--no-round">
+                    <div class="servise-mobile-promo d-flex justify-content-between px-2">
+                        <div class="h2">Акции</div>
+                        <div class="d-flex">
+                            <div class="">Все</div>
+                            <div class="h5 mb-0 icon-arrow-right pt-1"></div>
+                        </div>
 
-						</div>
-					</div>
+                    </div>
+                </div>
 				<local-swiper class="main-banner-mob mb-3" :options="mainBannerMobOption">
 					<local-slide  v-for="(mainbanner, index) in mainbanners" :key="index">
 						<img :src="mainbanner.img" alt="">
 					</local-slide>
 				</local-swiper>
+				<!--<div class=" mb-3">-->
+					<!--<div  class="card card&#45;&#45;no-round">-->
+						<!--<div class="servise-mobile-promo d-flex">-->
+							<!--<div v-ripple class="servise-mobile-promo__cabinet text-center flex-fill py-2 px-3">-->
+								<!--<div class="py-1">Акции</div>-->
+							<!--</div>-->
+							<!--<div v-ripple class="servise-mobile-promo__configurator text-center flex-fill py-2 px-3">-->
+								<!--<div class="py-1">Cкидки</div>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
 				<div v-ripple class="card card--no-round mb-3">
 					<div class="shop-promo p-3 d-flex align-items-center justify-content-between">
 						<div class="d-flex flex-column">
-							<div class="shop-promo__title py-1 d-flex align-items-center">68 магазинов в г. Москва 
-								
+							<div class="shop-promo__title py-1 d-flex align-items-center">68 магазинов в г. Москва
+
 							</div>
 							<div class="shop-promo__desc small">большинство работает с 9:00 до 21:00</div>
 						</div>
@@ -89,6 +105,7 @@
 						</div>
 					</div>
 				</div>
+
 			</div>
 			<div class="card rounded-0 d-none d-lg-block" v-if="isTp" >
 				<div class="card-body">
@@ -262,7 +279,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 							</div>
 							<div class="col-6 mt-4 d-none d-lg-block">
 								<div class="card h-100 promo-block__alien">
@@ -325,11 +342,11 @@
 							<div class="col-12 col-lg-3 d-none d-lg-block ">
 								<div class="d-flex h-100 flex-column">
 									<div class="news-block__title-link	 h2 mb-3 flex align-items-center">
-										<a href="" class="link link--color-grey">Новости 
+										<a href="" class="link link--color-grey">Новости
 											<span class="news-block__title-button">
 												<span class="icon-arrow-right"></span>
 											</span>
-										</a> 
+										</a>
 									</div>
 									<div class="card flex-grow-1">
 										<div class="card-body">
@@ -357,7 +374,7 @@
 									<logo-slide    v-for="(logo, index) in logos" :key="index">
 										<div v-ripple class="shop-logo d-flex align-items-center">
 											<div class="shop-logo__image-wrap d-flex align-items-center">
-												
+
 												<img  :src="logo.img" alt="" class="shop-logo__image">
 											</div>
 
@@ -371,7 +388,7 @@
 
 									<div class="sw-button-prev" slot="button-prev"><div class="icon-arrow-left "></div></div>
 									<div class="sw-button-next" slot="button-next"><div class="icon-arrow-right "></div></div>
-								
+
 								</logo-swiper>
 
 							</div>
@@ -501,7 +518,7 @@
 
 
 				<lazy-component>
-					<div class="d-none d-lg-block">	
+					<div class="d-none d-lg-block">
 						<div class="h2 mb-3 mt-5">ДНС клуб</div>
 						<blog-list :review="review"></blog-list>
 					</div>
