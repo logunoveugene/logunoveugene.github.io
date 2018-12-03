@@ -192,6 +192,7 @@
             position: relative;
             width: 200px;
             padding-left: 1rem;
+            white-space: nowrap;
         }
         &__info {
             border-bottom: 1px solid #dff0f5;
@@ -208,7 +209,7 @@
 
         &__region-desc {
             margin-left: 40px;
-            max-width: 92%;
+            max-width: 90%;
             text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap;

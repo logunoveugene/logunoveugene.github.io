@@ -129,7 +129,7 @@
             opacity: .3;
             margin-bottom: 2px;
             display: inline-block;
-            margin-left: 10px;
+            margin-left: 5px;
             position: absolute;
             top: 4px;
 
