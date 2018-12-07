@@ -6,7 +6,8 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "android-linux": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android",
     "test": "jest",
-    "android": "react-native run-android"
+    "android": "C:\\Users\\logunov\\AppData\\Local\\Android\\Sdk\\tools\\emulator.exe -netdelay none -netspeed full -avd Galaxy_Nexus_API_22",
+    "run": "react-native run-android"
   },
   "dependencies": {
     "fs-extra": "^7.0.1",
