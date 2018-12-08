@@ -1,12 +1,45 @@
 import React from 'react'
-import {StyleSheet, Platform, FlatList, Text, View, TextInput, Button} from 'react-native'
+import {StyleSheet, Platform, FlatList, Text, View, TouchableHighlight, Button} from 'react-native'
 import firebase from 'react-native-firebase'
 import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/Ionicons';
 
+
+import HeaderButtons, { HeaderButton, Item } from 'react-navigation-header-buttons'
+
+
+
 import {VictoryPie, VictoryChart, VictoryGroup, VictoryPolarAxis, VictoryTheme} from "victory-native";
 import _ from 'lodash';
 
+class RightHeaderButtons extends React.Component {
+    render() {
+        return (
+            <HeaderButtons
+
+            >
+                <Item title="person" iconName="person" onPress={() => alert('person')} />
+                <Item title="edit" show="never" onPress={() => alert('edit')} />
+                <Item title="delete" show="never" onPress={() => alert('delete')} />
+            </HeaderButtons>
+        );
+    }
+    _onOpenActionSheet = ({ hiddenButtons }) => {
+        // Same interface as https://facebook.github.io/react-native/docs/actionsheetios.html
+        let options = hiddenButtons.map(it => it.props.title);
+        let destructiveButtonIndex = 1;
+
+        this.props.showActionSheetWithOptions(
+            {
+                options,
+                destructiveButtonIndex,
+            },
+            buttonIndex => {
+                hiddenButtons[buttonIndex].props.onPress();
+            }
+        );
+    };
+}
 
 export default class Main extends React.Component {
     state = {currentUser: null, message: '', list: ''};
@@ -16,6 +49,14 @@ export default class Main extends React.Component {
             .signOut()
 
     };
+
+    static navigationOptions = {
+        headerTitle: 'Ваши финансы',
+        headerRight: (
+            <RightHeaderButtons />
+        ),
+    };
+
 
     handlePostData = () => {
         let {currentUser, message, list} = this.state;
@@ -37,7 +78,6 @@ export default class Main extends React.Component {
 
     };
 
-
     componentDidMount() {
         const {currentUser} = firebase.auth();
         this.setState({currentUser});
@@ -50,17 +90,8 @@ export default class Main extends React.Component {
 
     }
 
-    handleGetData = () => {
-
-
-    };
-
     render() {
         const {currentUser, list} = this.state
-
-
-
-
 
         return (
             <View style={styles.container}>
@@ -98,20 +129,11 @@ export default class Main extends React.Component {
                         )
                     }}
                 ></FlatList>
-                <Button
-                    title="Добавить запись"
+
+                <ActionButton
                     onPress={() => this.props.navigation.navigate('AddNote')}
-                />
-                <ActionButton buttonColor="rgba(231,76,60,1)">
-                    <ActionButton.Item buttonColor='#9b59b6' title="New Task" onPress={() => console.log("notes tapped!")}>
-                        <Icon name="md-create" style={styles.actionButtonIcon} />
-                    </ActionButton.Item>
-                    <ActionButton.Item buttonColor='#3498db' title="Notifications" onPress={() => {}}>
-                        <Icon name="md-notifications-off" style={styles.actionButtonIcon} />
-                    </ActionButton.Item>
-                    <ActionButton.Item buttonColor='#1abc9c' title="All Tasks" onPress={() => {}}>
-                        <Icon name="md-done-all" style={styles.actionButtonIcon} />
-                    </ActionButton.Item>
+                    buttonColor="rgba(231,76,60,1)">
+
                 </ActionButton>
 
             </View>

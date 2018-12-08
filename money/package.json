@@ -6,7 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "android-linux": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android",
     "test": "jest",
-    "android": "C:\\Users\\logunov\\AppData\\Local\\Android\\Sdk\\tools\\emulator.exe -netdelay none -netspeed full -avd Galaxy_Nexus_API_22",
+    "android": "C:\\Users\\User\\AppData\\Local\\Android\\Sdk\\tools\\emulator.exe -netdelay none -netspeed full -avd Galaxy_Nexus_API_22",
     "run": "react-native run-android"
   },
   "dependencies": {
@@ -18,9 +18,11 @@
     "react-native-firebase": "^5.1.0",
     "react-native-gesture-handler": "^1.0.9",
     "react-native-google-signin": "^1.0.1",
+    "react-native-keyboard": "^2.0.1",
     "react-native-svg": "^8.0.8",
     "react-native-vector-icons": "^6.1.0",
     "react-navigation": "^3.0.0",
+    "react-navigation-header-buttons": "^2.1.1",
     "replace-in-file": "^3.4.2",
     "victory-native": "^31.0.0"
   },

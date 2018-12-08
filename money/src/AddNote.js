@@ -1,29 +1,68 @@
 import React from 'react'
-import {AsyncStorage ,StyleSheet, View, Picker, TextInput, Button, Text, TouchableHighlight} from 'react-native'
+import {AsyncStorage, StyleSheet, View, Picker, TextInput, Button, TouchableOpacity, Text} from 'react-native'
 import firebase from 'react-native-firebase'
 import _ from "lodash";
+import Keyboard from 'react-native-keyboard';
 
+let model = {
+
+    _keys: [],
+
+    _listeners: [],
+
+    addKey(key) {
+        this._keys.push(key);
+        this._notify();
+    },
+
+    delKey() {
+        this._keys.pop();
+        this._notify();
+    },
+
+    clearAll() {
+        this._keys = [];
+        this._notify();
+    },
+
+    getKeys() {
+        return this._keys;
+    },
+
+    onChange(listener) {
+        if (typeof listener === 'function') {
+            this._listeners.push(listener);
+        }
+    },
+
+    _notify() {
+        this._listeners.forEach((listner) => {
+            listner(this);
+        });
+    }
+};
 
 export default class Main extends React.Component {
-    state = {currentUser: null, account: 'Счет 1', message: '', accountList: '', inputNumber: ''}
+    state = {currentUser: null, account: 'Счет 1', message: '', accountList: '', inputNumber: '', text: '0'}
+
+    static navigationOptions = {
+        headerTitle: 'Добавить запись',
+
+    };
 
     componentDidMount() {
         const {currentUser} = firebase.auth();
+        model.onChange((model) => {
+            this.setState({text: model.getKeys().join('')});
+        });
         this.setState({currentUser});
-        let starCountRef = firebase.database().ref(currentUser.uid + '/accounts');
-        starCountRef.once('value', function (snapshot) {
-        }).then((val) => {
-            this.setState({accountList: _.values(val.toJSON())})
-            console.log(_.values(val.toJSON()))
-        })
+
+
     };
 
 
     handlePostData = () => {
-        let {currentUser, message, list, account} = this.state;
-
-
-
+        let {currentUser, message,  account} = this.state;
         let date = new Date();
         let myDate = {
             day: date.getDate(),
@@ -56,11 +95,19 @@ export default class Main extends React.Component {
     };
 
 
-    // numberUpdate = (num) => {
-    //     this.setState({
-    //         inputNumber: this.state.inputNumber + num
-    //     })
-    // }
+
+
+    _handleClear() {
+        model.clearAll();
+    }
+
+    _handleDelete() {
+        model.delKey();
+    }
+
+    _handleKeyPress(key) {
+        model.addKey(key);
+    }
 
     render() {
         const {currentUser, list, account, accountList, inputNumber} = this.state
@@ -70,137 +117,46 @@ export default class Main extends React.Component {
 
         return (
             <View style={styles.container}>
-                <View style={styles.inputWrap}>
-                    <TextInput
-                        style={styles.textInput}
-                        autoCapitalize="none"
 
-                        placeholder="Примечание"
-                        onChangeText={message => this.setState({message})}
-                        value={this.state.message}
-                    />
-                    <Text>{inputNumber}</Text>
-                </View>
-                <Picker
-                    selectedValue={this.state.account}
-                    style={{height: 50, width: 200}}
-                    onValueChange={(itemValue, itemIndex) => this.setState({account: itemValue})}>
+                    <View style={styles.inputWrap}>
+                        <TextInput
+                            style={styles.textInput}
+                            autoCapitalize="none"
+                            placeholder="Примечание"
+                            onChangeText={message => this.setState({message})}
+                            value={this.state.message}
+                        />
+                        <Text>{inputNumber}</Text>
+                    </View>
+                    <Picker
+                        selectedValue={this.state.account}
+                        style={{height: 50, width: 200}}
+                        onValueChange={(itemValue, itemIndex) => this.setState({account: itemValue})}>
 
-                    {accountItem.map((facility, i) => {
-                        return <Picker.Item key={i} value={facility.accountName} label={facility.accountName}/>
-                    })}
+                        {accountItem.map((facility, i) => {
+                            return <Picker.Item key={i} value={facility.accountName} label={facility.accountName}/>
+                        })}
 
-                </Picker>
-
-
-                <View style={styles.keyboard}>
-                    <TouchableHighlight
-                        style={styles.button}
+                    </Picker>
 
 
-                    >
-                        <Text> 7 </Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        style={styles.button}
-
-                    >
-                        <Text> 8 </Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        style={styles.button}
-
-                    >
-                        <Text>9 </Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        style={styles.button}
-
-                    >
-                        <Text> дата </Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        style={styles.button}
-
-                    >
-                        <Text> 4 </Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        style={styles.button}
-
-                    >
-                        <Text> 5 </Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        style={styles.button}
-
-                    >
-                        <Text>6 </Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        style={styles.button}
-
-                    >
-                        <Text> + </Text>
-                    </TouchableHighlight>
+                    <Text>{this.state.text}</Text>
 
 
-                    <TouchableHighlight
-                        style={styles.button}
 
-                    >
-                        <Text> 1 </Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        style={styles.button}
-
-                    >
-                        <Text> 2</Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        style={styles.button}
-
-                    >
-                        <Text>3 </Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        style={styles.button}
-
-                    >
-                        <Text> - </Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        style={styles.button}
-
-                    >
-                        <Text> . </Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        style={styles.button}
-
-                    >
-                        <Text> 0</Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        style={styles.button}
-
-                    >
-                        <Text>стереть </Text>
-                    </TouchableHighlight>
-                    <TouchableHighlight
-                        style={styles.button}
-
-                    >
-                        <Text> отпр </Text>
-                    </TouchableHighlight>
-
-
-                </View>
-                <Button title="Опубликовать" onPress={this.handlePostData}/>
-                <Button
-                    title="Отмена"
-                    onPress={() => this.props.navigation.navigate('Main')}
+                <Keyboard
+                    keyboardType="decimal-pad"
+                    onClear={this._handleClear.bind(this)}
+                    onDelete={this._handleDelete.bind(this)}
+                    onKeyPress={this._handleKeyPress.bind(this)}
                 />
+                <TouchableOpacity
+                    style={styles.fullButton}
+                    onPress={this.handlePostData}
+                >
+                    <Text> Записать </Text>
+                </TouchableOpacity>
+
             </View>
         )
     }
@@ -208,7 +164,7 @@ export default class Main extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+
         alignItems: 'center',
 
     },
@@ -218,6 +174,13 @@ const styles = StyleSheet.create({
         width: '25%',
         padding: 10
     },
+    fullButton:{
+        width: '100%',
+        alignItems: 'center',
+        backgroundColor: '#ffda3a',
+        padding: 20
+    },
+
     textInput: {
         height: 40,
         width: '50%',

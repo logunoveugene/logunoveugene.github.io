@@ -10,48 +10,23 @@ import Main from './Main'
 import AddNote from './AddNote'
 import AddAccount from './AddAccount'
 
-// const AppNavigator = createStackNavigator({
-//         Loading: {screen: Loading},
-//         SignUp: {screen: SignUp},
-//         Login: {screen: Login},
-//         Main: {screen: Main},
-//         AddNote: {screen: AddNote},
-//     },
-//     {
-//         initialRouteName: 'Loading'
-//     });
-//
-// export default createAppContainer(AppNavigator);
-
-//
-// const MyDrawerNavigator = createDrawerNavigator({
-//         Loading: {screen: Loading},
-//         SignUp: {screen: SignUp},
-//         Login: {screen: Login},
-//         Main: {screen: Main},
-//         AddNote: {screen: AddNote},
-//     },
-//     {
-//         initialRouteName: 'Loading'
-//     });
-//
-// export default createAppContainer(MyDrawerNavigator);
 
 
-
-// Implementation of HomeScreen, OtherScreen, SignInScreen, AuthLoadingScreen
-// goes here.
-
-const AppStack = createDrawerNavigator({
-    Main: {screen: Main},
-    AddNote: {screen: AddNote},
-    AddAccount: {screen: AddAccount},
-});
+const AppStack = createStackNavigator({
+        Main: {screen: Main},
+        AddNote: {screen: AddNote},
+        AddAccount: {screen: AddAccount},
+    },
+    {
+        initialRouteName: 'Main',
+    });
 const AuthStack = createStackNavigator({
-    SignUp: {screen: SignUp},
-    Login: {screen: Login},
-});
-
+        SignUp: {screen: SignUp},
+        Login: {screen: Login},
+    },
+    {
+        initialRouteName: 'SignUp',
+    });
 
 
 export default createAppContainer(createSwitchNavigator(
