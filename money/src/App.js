@@ -1,6 +1,5 @@
 import React from 'react'
-// import {createStackNavigator, createDrawerNavigator, createAppContainer} from 'react-navigation'
-import {createSwitchNavigator, createStackNavigator, createDrawerNavigator, createAppContainer} from 'react-navigation';
+import {createSwitchNavigator, createStackNavigator, createAppContainer} from 'react-navigation';
 
 // import the different screens
 import Loading from './Loading'
@@ -9,7 +8,6 @@ import Login from './Login'
 import Main from './Main'
 import AddNote from './AddNote'
 import AddAccount from './AddAccount'
-
 
 
 const AppStack = createStackNavigator({
