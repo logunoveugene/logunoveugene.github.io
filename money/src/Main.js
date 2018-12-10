@@ -2,8 +2,7 @@ import React from 'react'
 import {StyleSheet, FlatList, Text, View, AsyncStorage, ActivityIndicator} from 'react-native'
 import firebase from 'react-native-firebase'
 import ActionButton from 'react-native-action-button';
-// import {List, ListItem, Icon} from 'react-native-elements'
-
+import {List, ListItem, Icon} from 'react-native-elements'
 
 import {VictoryPie, VictoryChart, VictoryGroup, VictoryPolarAxis, VictoryTheme} from "victory-native";
 import _ from 'lodash';
@@ -37,7 +36,6 @@ export default class Main extends React.Component {
         }).catch((error) => {
             console.log(error);
         });
-
         this.setState({message: ''});
 
     };
@@ -49,13 +47,12 @@ export default class Main extends React.Component {
                 storedNote = []
             } else {
                 storedNote = JSON.parse(storedNote);
-                console.log(storedNote)
             }
             this.setState({listls: storedNote})
+
         } catch (error) {
             alert("Что-то пошло не так...")
         }
-
 
         const {currentUser} = firebase.auth();
         this.setState({currentUser});
@@ -70,28 +67,24 @@ export default class Main extends React.Component {
 
     render() {
         const {listls} = this.state
-
         return (
             <View style={styles.container}>
-
-                {/*<ActivityIndicator size="large"/>*/}
-
-                {/*<List>*/}
-                    {/*{*/}
-                        {/*listls.map((l) => (*/}
-                            {/*<ListItem*/}
-
-                                {/*key={l.date}*/}
-                                {/*title={l.sum}*/}
-                                {/*rightIcon={<Text></Text>}*/}
-                                {/*leftIcon={*/}
-                                    {/*<Text>0</Text>*/}
-                                {/*}*/}
-                                {/*subtitle={l.description}*/}
-                            {/*/>*/}
-                        {/*))*/}
-                    {/*}*/}
-                {/*</List>*/}
+                <ActivityIndicator size="large"/>
+                <List>
+                    {
+                        listls.map((l) => (
+                            <ListItem
+                                key={l.date}
+                                title={l.sum}
+                                rightIcon={<Text></Text>}
+                                leftIcon={
+                                    <Text>0</Text>
+                                }
+                                subtitle={l.description}
+                            />
+                        ))
+                    }
+                </List>
                 <ActionButton
                     onPress={() => this.props.navigation.navigate('AddNote')}
                     buttonColor="rgba(231,76,60,1)">

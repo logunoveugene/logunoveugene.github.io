@@ -1,5 +1,15 @@
 import React from 'react'
-import {AsyncStorage, StyleSheet, View, Picker, Keyboard, TextInput, ScrollView, TouchableOpacity, Text} from 'react-native'
+import {
+    AsyncStorage,
+    StyleSheet,
+    View,
+    Picker,
+    Keyboard,
+    TextInput,
+    ScrollView,
+    TouchableOpacity,
+    Text
+} from 'react-native'
 import firebase from 'react-native-firebase'
 
 
@@ -10,7 +20,12 @@ const IconM = createIconSetFromIcoMoon(icoMoonConfig);
 
 
 import _ from "lodash";
-import Keyboard from 'react-native-keyboard';
+import CustomKeyboard from 'react-native-keyboard';
+
+
+
+
+
 
 let model = {
     _keys: [],
@@ -46,8 +61,18 @@ let model = {
 };
 
 
+
+
 export default class Main extends React.Component {
-    state = {currentUser: null, account: 'Счет 1', message: '', accountList: '', inputNumber: '', money: '0'}
+    state = {
+        currentUser: null,
+        account: 'Счет 1',
+        message: '',
+        accountList: '',
+        inputNumber: '',
+        keyboardIsShown: false,
+        money: '0'
+    }
     static navigationOptions = {
         headerTitle: 'Добавить списание',
     };
@@ -64,20 +89,26 @@ export default class Main extends React.Component {
         this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
 
     };
-    componentWillUnmount () {
+
+    componentWillUnmount() {
         this.keyboardDidShowListener.remove();
         this.keyboardDidHideListener.remove();
     }
 
 
-    _keyboardDidShow () {
-        alert('Keyboard Shown');
-        console.log(true)
+    _keyboardDidShow = () => {
+
+        this.setState({keyboardIsShown: true});
+        console.log('клава тру')
+
+
     }
 
-    _keyboardDidHide () {
-        alert('Keyboard Hidden'); console.log(true)
+    _keyboardDidHide = () => {
+        this.setState({keyboardIsShown: false});
+        console.log('клава фолс')
     }
+
     handlePostData = async () => {
         let {currentUser, message, account, money} = this.state;
         let currentDate = new Date();
@@ -99,7 +130,6 @@ export default class Main extends React.Component {
         });
 
         try {
-
             var storedNote = await AsyncStorage.getItem('notes');
             if (storedNote == null) {
                 storedNote = []
@@ -118,6 +148,7 @@ export default class Main extends React.Component {
             alert("Что-то пошло не так...")
         }
         this.setState({message: ''});
+        this.props.navigation.navigate('Main')
     };
 
     _handleClear() {
@@ -133,11 +164,8 @@ export default class Main extends React.Component {
     }
 
 
-
-
-
     render() {
-        const {currentUser, list, account, accountList, inputNumber} = this.state
+        const {currentUser, list, account, accountList, inputNumber, keyboardIsShown} = this.state
         let accountItem = Array.from(this.state.accountList);
         let nodeType = [
             {
@@ -255,43 +283,28 @@ export default class Main extends React.Component {
 
                 </ScrollView>
 
-                {/*<View style={styles.inputWrap}>*/}
-                {/*<TextInput*/}
-                {/*style={styles.textInput}*/}
-                {/*autoCapitalize="none"*/}
-                {/*placeholder="Примечание"*/}
-                {/*onChangeText={message => this.setState({message})}*/}
-                {/*value={this.state.message}*/}
-                {/*/>*/}
-                {/*<Text>{inputNumber}</Text>*/}
-                {/*</View>*/}
-                {/*<Picker*/}
-                {/*selectedValue={this.state.account}*/}
-                {/*style={{height: 50, width: 200}}*/}
-                {/*onValueChange={(itemValue, itemIndex) => this.setState({account: itemValue})}>*/}
-                {/*{accountItem.map((facility, i) => {*/}
-                {/*return <Picker.Item key={i} value={facility.accountName} label={facility.accountName}/>*/}
-                {/*})}*/}
-                {/*</Picker>*/}
                 <View style={styles.inputWrap}>
 
                     <TextInput
-                    style={styles.textInput}
-                    autoCapitalize="none"
-                    onSubmitEditing={Keyboard.dismiss}
-                    placeholder="Примечание"
-                    onChangeText={message => this.setState({message})}
-                    value={this.state.message}
+                        style={styles.textInput}
+                        autoCapitalize="none"
+                        onSubmitEditing={Keyboard.dismiss}
+                        placeholder="Примечание"
+                        onChangeText={message => this.setState({message})}
+                        value={this.state.message}
                     />
-
                     <Text style={styles.moneyCount}>{this.state.money}</Text>
                 </View>
-                <Keyboard
-                    keyboardType="decimal-pad"
-                    onClear={this._handleClear.bind(this)}
-                    onDelete={this._handleDelete.bind(this)}
-                    onKeyPress={this._handleKeyPress.bind(this)}
-                />
+                {
+                    !keyboardIsShown &&
+                    <CustomKeyboard
+                        keyboardType="decimal-pad"
+                        onClear={this._handleClear.bind(this)}
+                        onDelete={this._handleDelete.bind(this)}
+                        onKeyPress={this._handleKeyPress.bind(this)}
+                    />
+                }
+
                 <TouchableOpacity
                     style={styles.fullButton}
                     onPress={this.handlePostData}
@@ -311,7 +324,7 @@ const styles = StyleSheet.create({
 
     },
     inputWrap: {
-      alignItems:'center',
+        alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'space-between',
 
@@ -323,14 +336,14 @@ const styles = StyleSheet.create({
         width: "50%",
         textAlign: 'right',
         height: 50,
-        alignItems:'center',
+        alignItems: 'center',
         padding: 8,
     },
 
     textInput: {
-        width:  "50%",
+        width: "50%",
         padding: 8,
-       },
+    },
 
     fullButton: {
         width: '100%',
