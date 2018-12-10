@@ -1,5 +1,5 @@
 import React from 'react'
-import {AsyncStorage, StyleSheet, View, Picker, TextInput, ScrollView, TouchableOpacity, Text} from 'react-native'
+import {AsyncStorage, StyleSheet, View, Picker, Keyboard, TextInput, ScrollView, TouchableOpacity, Text} from 'react-native'
 import firebase from 'react-native-firebase'
 
 
@@ -58,9 +58,26 @@ export default class Main extends React.Component {
             this.setState({money: model.getKeys().join('')});
         });
         this.setState({currentUser});
+
+
+        this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
+        this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
+
     };
+    componentWillUnmount () {
+        this.keyboardDidShowListener.remove();
+        this.keyboardDidHideListener.remove();
+    }
 
 
+    _keyboardDidShow () {
+        alert('Keyboard Shown');
+        console.log(true)
+    }
+
+    _keyboardDidHide () {
+        alert('Keyboard Hidden'); console.log(true)
+    }
     handlePostData = async () => {
         let {currentUser, message, account, money} = this.state;
         let currentDate = new Date();
@@ -115,6 +132,10 @@ export default class Main extends React.Component {
         model.addKey(key);
     }
 
+
+
+
+
     render() {
         const {currentUser, list, account, accountList, inputNumber} = this.state
         let accountItem = Array.from(this.state.accountList);
@@ -157,7 +178,7 @@ export default class Main extends React.Component {
             },
             {
                 img: "idea",
-                title: "Электричество"
+                title: "Свет"
             },
             {
                 img: "polo-shirt",
@@ -217,7 +238,7 @@ export default class Main extends React.Component {
             },
             {
                 img: "television",
-                title: "Тв"
+                title: "ТВ"
             }
         ];
         return (
@@ -226,7 +247,7 @@ export default class Main extends React.Component {
                     <View style={styles.nodeTypeWrap}>
                         {nodeType.map((i) => (
                             <TouchableOpacity key={i.title} style={styles.mynode}>
-                                <IconM name={i.img} type="simple-line-icons" size={30}/>
+                                <IconM name={i.img} type="simple-line-icons" size={25}/>
                                 <Text style={styles.mynodeText}>{i.title}</Text>
                             </TouchableOpacity>
                         ))}
@@ -234,25 +255,37 @@ export default class Main extends React.Component {
 
                 </ScrollView>
 
+                {/*<View style={styles.inputWrap}>*/}
+                {/*<TextInput*/}
+                {/*style={styles.textInput}*/}
+                {/*autoCapitalize="none"*/}
+                {/*placeholder="Примечание"*/}
+                {/*onChangeText={message => this.setState({message})}*/}
+                {/*value={this.state.message}*/}
+                {/*/>*/}
+                {/*<Text>{inputNumber}</Text>*/}
+                {/*</View>*/}
+                {/*<Picker*/}
+                {/*selectedValue={this.state.account}*/}
+                {/*style={{height: 50, width: 200}}*/}
+                {/*onValueChange={(itemValue, itemIndex) => this.setState({account: itemValue})}>*/}
+                {/*{accountItem.map((facility, i) => {*/}
+                {/*return <Picker.Item key={i} value={facility.accountName} label={facility.accountName}/>*/}
+                {/*})}*/}
+                {/*</Picker>*/}
                 <View style={styles.inputWrap}>
+
                     <TextInput
-                        style={styles.textInput}
-                        autoCapitalize="none"
-                        placeholder="Примечание"
-                        onChangeText={message => this.setState({message})}
-                        value={this.state.message}
+                    style={styles.textInput}
+                    autoCapitalize="none"
+                    onSubmitEditing={Keyboard.dismiss}
+                    placeholder="Примечание"
+                    onChangeText={message => this.setState({message})}
+                    value={this.state.message}
                     />
-                    <Text>{inputNumber}</Text>
+
+                    <Text style={styles.moneyCount}>{this.state.money}</Text>
                 </View>
-                <Picker
-                    selectedValue={this.state.account}
-                    style={{height: 50, width: 200}}
-                    onValueChange={(itemValue, itemIndex) => this.setState({account: itemValue})}>
-                    {accountItem.map((facility, i) => {
-                        return <Picker.Item key={i} value={facility.accountName} label={facility.accountName}/>
-                    })}
-                </Picker>
-                <Text>{this.state.money}</Text>
                 <Keyboard
                     keyboardType="decimal-pad"
                     onClear={this._handleClear.bind(this)}
@@ -273,16 +306,32 @@ export default class Main extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
         alignItems: 'center',
+        height: 50,
 
     },
-    button: {
-        alignItems: 'center',
-        backgroundColor: '#DDDDDD',
-        width: '25%',
-        padding: 10
+    inputWrap: {
+      alignItems:'center',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+
+        height: 50,
+
     },
+    moneyCount: {
+        fontSize: 22,
+        width: "50%",
+        textAlign: 'right',
+        height: 50,
+        alignItems:'center',
+        padding: 8,
+    },
+
+    textInput: {
+        width:  "50%",
+        padding: 8,
+       },
+
     fullButton: {
         width: '100%',
         alignItems: 'center',
@@ -290,23 +339,13 @@ const styles = StyleSheet.create({
         padding: 20
     },
 
-    textInput: {
-        height: 40,
-        width: '50%',
 
-        marginTop: 8,
-        marginBottom: 8
-    },
     keyboard: {
         flex: 1,
         flexDirection: 'row',
         flexWrap: 'wrap'
     },
-    inputWrap: {
-        flex: 1,
-        flexDirection: 'row',
-        alignItems: 'center'
-    },
+
     nodeTypeWrap: {
         flex: 1,
         justifyContent: 'space-between',
@@ -315,21 +354,20 @@ const styles = StyleSheet.create({
 
     },
     mynode: {
-
         width: "20%",
-        height: 80,
+        height: 70,
         alignItems: 'center',
-
+        paddingTop: 15,
     },
 
-    mynodeText:{
+    mynodeText: {
         fontSize: 10,
         textAlign: 'center',
-        marginTop:10
+        paddingTop: 5,
     },
     nodeTypeWrapScroll: {
 
-        flex: 1,
-        width:'100%',
+        width: '100%',
+        height: 500,
     }
 });

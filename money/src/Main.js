@@ -2,7 +2,7 @@ import React from 'react'
 import {StyleSheet, FlatList, Text, View, AsyncStorage, ActivityIndicator} from 'react-native'
 import firebase from 'react-native-firebase'
 import ActionButton from 'react-native-action-button';
-import {List, ListItem, Icon} from 'react-native-elements'
+// import {List, ListItem, Icon} from 'react-native-elements'
 
 
 import {VictoryPie, VictoryChart, VictoryGroup, VictoryPolarAxis, VictoryTheme} from "victory-native";
@@ -76,22 +76,22 @@ export default class Main extends React.Component {
 
                 {/*<ActivityIndicator size="large"/>*/}
 
-                <List>
-                    {
-                        listls.map((l) => (
-                            <ListItem
+                {/*<List>*/}
+                    {/*{*/}
+                        {/*listls.map((l) => (*/}
+                            {/*<ListItem*/}
 
-                                key={l.date}
-                                title={l.sum}
-                                rightIcon={<Text></Text>}
-                                leftIcon={
-                                    <Text>0</Text>
-                                }
-                                subtitle={l.description}
-                            />
-                        ))
-                    }
-                </List>
+                                {/*key={l.date}*/}
+                                {/*title={l.sum}*/}
+                                {/*rightIcon={<Text></Text>}*/}
+                                {/*leftIcon={*/}
+                                    {/*<Text>0</Text>*/}
+                                {/*}*/}
+                                {/*subtitle={l.description}*/}
+                            {/*/>*/}
+                        {/*))*/}
+                    {/*}*/}
+                {/*</List>*/}
                 <ActionButton
                     onPress={() => this.props.navigation.navigate('AddNote')}
                     buttonColor="rgba(231,76,60,1)">
