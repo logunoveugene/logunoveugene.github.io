@@ -347,7 +347,7 @@ const styles = StyleSheet.create({
     },
     vKeyboardKey: {
         width: "33%",
-        height: 70,
+        height: 50,
         alignItems: 'center'
     },
     vKeyboardKeyText:{
