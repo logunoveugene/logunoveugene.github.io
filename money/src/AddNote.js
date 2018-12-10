@@ -12,55 +12,12 @@ import {
 } from 'react-native'
 import firebase from 'react-native-firebase'
 
-
 import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
 import icoMoonConfig from './font/selection';
 
 const IconM = createIconSetFromIcoMoon(icoMoonConfig);
 
-
 import _ from "lodash";
-import CustomKeyboard from 'react-native-keyboard';
-
-
-
-
-
-
-let model = {
-    _keys: [],
-    _listeners: [],
-    addKey(key) {
-        this._keys.push(key);
-        this._notify();
-    },
-    delKey() {
-        this._keys.pop();
-        this._notify();
-    },
-    clearAll() {
-        this._keys = [];
-        this._notify();
-    },
-
-    getKeys() {
-        return this._keys;
-    },
-
-    onChange(listener) {
-        if (typeof listener === 'function') {
-            this._listeners.push(listener);
-        }
-    },
-
-    _notify() {
-        this._listeners.forEach((listner) => {
-            listner(this);
-        });
-    }
-};
-
-
 
 
 export default class Main extends React.Component {
@@ -72,18 +29,14 @@ export default class Main extends React.Component {
         inputNumber: '',
         keyboardIsShown: false,
         money: '0'
-    }
+    };
     static navigationOptions = {
         headerTitle: 'Добавить списание',
     };
 
     componentDidMount() {
-        const {currentUser} = firebase.auth();
-        model.onChange((model) => {
-            this.setState({money: model.getKeys().join('')});
-        });
-        this.setState({currentUser});
-
+        // const {currentUser} = firebase.auth();
+        // this.setState({currentUser});
 
         this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
         this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
@@ -97,17 +50,12 @@ export default class Main extends React.Component {
 
 
     _keyboardDidShow = () => {
-
         this.setState({keyboardIsShown: true});
-        console.log('клава тру')
-
-
-    }
+    };
 
     _keyboardDidHide = () => {
         this.setState({keyboardIsShown: false});
-        console.log('клава фолс')
-    }
+    };
 
     handlePostData = async () => {
         let {currentUser, message, account, money} = this.state;
@@ -121,13 +69,13 @@ export default class Main extends React.Component {
             account: account
         };
 
-        firebase
-            .database().ref(currentUser.uid + '/node').push(addedNote
-        ).then(() => {
-            console.log("данные ушли");
-        }).catch((error) => {
-            console.log(error);
-        });
+        // firebase
+        //     .database().ref(currentUser.uid + '/node').push(addedNote
+        // ).then(() => {
+        //     console.log("данные ушли");
+        // }).catch((error) => {
+        //     console.log(error);
+        // });
 
         try {
             var storedNote = await AsyncStorage.getItem('notes');
@@ -141,27 +89,27 @@ export default class Main extends React.Component {
             alert("Что-то пошло не так...")
         }
         storedNote.push(addedNote);
-
         try {
             await AsyncStorage.setItem('notes', JSON.stringify(storedNote));
         } catch (error) {
             alert("Что-то пошло не так...")
         }
         this.setState({message: ''});
+
         this.props.navigation.navigate('Main')
     };
 
-    _handleClear() {
-        model.clearAll();
-    }
-
-    _handleDelete() {
-        model.delKey();
-    }
-
-    _handleKeyPress(key) {
-        model.addKey(key);
-    }
+    // _handleClear() {
+    //     model.clearAll();
+    // }
+    //
+    // _handleDelete() {
+    //     model.delKey();
+    // }
+    //
+    // _handleKeyPress(key) {
+    //     model.addKey(key);
+    // }
 
 
     render() {
@@ -269,6 +217,7 @@ export default class Main extends React.Component {
                 title: "ТВ"
             }
         ];
+        let keys = [1, 2, 3, 4, 5, 6, 7,8, 9, '.', 0, 'x'];
         return (
             <View style={styles.container}>
                 <ScrollView style={styles.nodeTypeWrapScroll}>
@@ -280,11 +229,9 @@ export default class Main extends React.Component {
                             </TouchableOpacity>
                         ))}
                     </View>
-
                 </ScrollView>
 
                 <View style={styles.inputWrap}>
-
                     <TextInput
                         style={styles.textInput}
                         autoCapitalize="none"
@@ -295,15 +242,24 @@ export default class Main extends React.Component {
                     />
                     <Text style={styles.moneyCount}>{this.state.money}</Text>
                 </View>
-                {
-                    !keyboardIsShown &&
-                    <CustomKeyboard
-                        keyboardType="decimal-pad"
-                        onClear={this._handleClear.bind(this)}
-                        onDelete={this._handleDelete.bind(this)}
-                        onKeyPress={this._handleKeyPress.bind(this)}
-                    />
-                }
+
+                <View style={styles.vKeyboard}>
+                    {keys.map((i) => (
+                        <TouchableOpacity key={i} style={styles.vKeyboardKey}>
+                            <Text style={styles.vKeyboardKeyText}>{i}</Text>
+                        </TouchableOpacity>
+                    ))}
+                </View>
+
+                {/*{*/}
+                {/*!keyboardIsShown &&*/}
+                {/*<CustomKeyboard*/}
+                {/*keyboardType="decimal-pad"*/}
+                {/*onClear={this._handleClear.bind(this)}*/}
+                {/*onDelete={this._handleDelete.bind(this)}*/}
+                {/*onKeyPress={this._handleKeyPress.bind(this)}*/}
+                {/*/>*/}
+                {/*}*/}
 
                 <TouchableOpacity
                     style={styles.fullButton}
@@ -364,7 +320,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         flexDirection: 'row',
         flexWrap: 'wrap'
-
     },
     mynode: {
         width: "20%",
@@ -379,8 +334,26 @@ const styles = StyleSheet.create({
         paddingTop: 5,
     },
     nodeTypeWrapScroll: {
-
         width: '100%',
         height: 500,
+    },
+
+    vKeyboard: {
+        width: '100%',
+
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        flexWrap: 'wrap'
+    },
+    vKeyboardKey: {
+        width: "33%",
+        height: 70,
+        alignItems: 'center'
+    },
+    vKeyboardKeyText:{
+        fontSize: 20,
     }
+
+
 });
+
