@@ -20,63 +20,65 @@
                 </div>
                 <div class="col-12 col-md-12 col-lg-8">
                     <div class="discussions__search">
-                        <input type="text" v-model="discussionsSearch" placeholder="Поиск по темам"
-                               class="field w-100 mb-4 ">
-                        <div class="suggestion" v-if="discussionsSearch!=false">
-                            <div class="suggestion__group">
-                                <div class="suggestion__list">
-                                    <div class="suggestion__item">Подскажите, в ближайшее время не предвидится акции на
-                                        телевизор LED Hisense H55A6100, по которой он стоил 35000р?
-                                    </div>
-                                    <div class="suggestion__item">Выбор бюджетного ноутбука до 15 000р. 3 варианта</div>
-                                    <div class="suggestion__item">Будет ли работать на материнской плате Asus P8H61-M
-                                        Pro с
-                                        i3 2100?
-                                    </div>
-                                    <div class="suggestion__item">Выбор бюджетного ноутбука до 15 000р. 3 варианта</div>
-                                    <div class="suggestion__item">Выбор бюджетного ноутбука до 15 000р. 3 варианта</div>
-                                </div>
-                            </div>
-                            <div class="suggestion__group">
-                                <div class="suggestion__group-title">
-                                    <div class="d-flex   align-items-center">
-                                        <div class="h6 font-weight-bold mb-0 mr-3">Найденные фильтры:</div>
-                                        <nav class="nav nav-pills nav-justified">
-                                            <a class="link link--pill link--color-black link--pill-active  " href="#">Товары</a>
-                                            <a class="link link--pill link--color-black" href="#">Категории товаров</a>
-                                            <a class="link link--pill link--color-black" href="#">Бренды</a>
-                                            <a class="link link--pill link--color-black" href="#">Разделы</a>
-                                        </nav>
-                                    </div>
-                                </div>
-                                <div class="suggestion__list" @click="themeFilter()">
-                                    <div class="suggestion__item">
-                                        <div class="d-flex align-items-center ">
-                                            <div class="icon-add pt-1 mr-2"></div>
-                                            <div class="">Ноутбук DELL Inspiron 3552-5010 черный</div>
-                                        </div>
-                                    </div>
-                                    <div class="suggestion__item">
-                                        <div class="d-flex align-items-center ">
-                                            <div class="icon-add pt-1 mr-2"></div>
-                                            <div class="">Нетбук Irbis NB29 белый</div>
-                                        </div>
-                                    </div>
-                                    <div class="suggestion__item">
-                                        <div class="d-flex align-items-center ">
-                                            <div class="icon-add pt-1 mr-2"></div>
-                                            <div class="">Нетбук Prestigio Smartbook 133S коричневый</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="search-ext  mb-4 ">
+                            <input type="text" v-model="discussionsSearch" placeholder="Поиск по темам"
+                                   v-on:keyup.enter="submitSearch()"
+                                   class="field w-100 ">
+                            <div class="search-ext__btn-search icon-search"></div>
                         </div>
+                        <transition name="slide-fade">
+                            <div class="suggestion-wrap" v-if="discussionsSearch!=false">
+                                <div class="suggestion">
+                                    <div class="suggestion__group">
+                                        <div class="suggestion__list">
+                                            <div class="suggestion__item">Подскажите, в ближайшее время не предвидится
+                                                акции
+                                                на телевизор LED Hisense H55A6100, по которой он стоил 35000р?
+                                            </div>
+                                            <div class="suggestion__item">Выбор бюджетного ноутбука до 15 000р. 3
+                                                варианта
+                                            </div>
+                                            <div class="suggestion__item">Будет ли работать на материнской плате Asus
+                                                P8H61-M Pro с i3 2100?
+                                            </div>
+                                            <div class="suggestion__item">Выбор бюджетного ноутбука до 15 000р. 3
+                                                варианта
+                                            </div>
+                                            <div class="suggestion__item">Можно ли при покупке увеличить ОЗУ?</div>
+                                            <div class="suggestion__item">Интересует возможность установки SSD в ноутбук
+                                                ASUS N56JN
+                                            </div>
+                                            <div class="suggestion__item">Подскажите, пожалуйста, подойдет ли данный
+                                                вентилятор к процессорному куллеру Zalman CNPS10X Performa?
+                                            </div>
+                                            <div class="suggestion__item">Выбор бюджетного ноутбука до 15 000р. 3
+                                                варианта
+                                            </div>
+                                            <div class="suggestion__item">Будет ли работать на материнской плате Asus
+                                                P8H61-M Pro с i3 2100?
+                                            </div>
+                                            <div class="suggestion__item">Выбор бюджетного ноутбука до 15 000р. 3
+                                                варианта
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </transition>
                         <div class="mb-4" v-if="discussionsSearchResalt">
+                            <div class="filter__item mr-3 mb-2">Товар: Телевизор LED Telefunken TF-LED19S62T2 черный
 
-                            <div class="filter__item">Товар: Нетбук Irbis NB29 белый
                                 <div class="filter__item-icon icon-close"
                                      @click="discussionsSearchResalt=!discussionsSearchResalt"></div>
                             </div>
+                            <!--<div class="filter__item mr-3 mb-2">Бренд: Xiaomi-->
+                                <!--<div class="filter__item-icon icon-close"-->
+                                     <!--@click="discussionsSearchResalt=!discussionsSearchResalt"></div>-->
+                            <!--</div>-->
+                            <!--<div class="filter__item mr-3 mb-2">Категория товара: Пылесосы-->
+                                <!--<div class="filter__item-icon icon-close"-->
+                                     <!--@click="discussionsSearchResalt=!discussionsSearchResalt"></div>-->
+                            <!--</div>-->
                         </div>
                     </div>
                     <div class=" d-none d-lg-block mb-4">
@@ -99,7 +101,7 @@
                             <div v-ripple class="collapse-block card-block card-block--full-mobile "
                                  @click="searchPlate=!searchPlate">
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <div class="collapse-block__title">Поиск темы</div>
+                                    <div class="collapse-block__title">Фильтры</div>
                                     <div class="collapse-block__icon">
                                         <div v-if="!searchPlate" class="icon-down"></div>
                                         <div v-if="searchPlate" class="icon-up"></div>
@@ -125,29 +127,37 @@
                                         показа
                                     </div>
 
-
                                     <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                        <input type="radio" id="customRadioInline00" name="customRadioInline1" class="custom-control-input" checked>
+                                        <input type="radio" id="customRadioInline00" name="customRadioInline1"
+                                               class="custom-control-input" checked>
                                         <label class="custom-control-label" for="customRadioInline00">Все темы</label>
                                     </div>
 
                                     <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                                        <input type="radio" id="customRadioInline1" name="customRadioInline1"
+                                               class="custom-control-input">
                                         <label class="custom-control-label" for="customRadioInline1">Без ответов</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioInline2">Без моих ответов</label>
+                                        <input type="radio" id="customRadioInline2" name="customRadioInline1"
+                                               class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadioInline2">Без моих
+                                            ответов</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline d-block">
-                                        <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioInline3">С моими ответами</label>
+                                        <input type="radio" id="customRadioInline3" name="customRadioInline1"
+                                               class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadioInline3">С моими
+                                            ответами</label>
                                     </div>
 
                                 </div>
+
                             </div>
                         </div>
                     </div>
+
+
                     <div class=" d-none d-lg-flex  justify-content-between align-items-center ">
                         <nav class="nav nav-pills nav-justified">
                             <a class="link link--pill link--color-black link--pill-active  " href="#">Новые темы</a>
@@ -155,7 +165,6 @@
                             <a class="link link--pill link--color-black" href="#">Популярные</a>
                         </nav>
                         <v-popover offset="0">
-
                             <div class="d-none  d-md-flex">
                                 <div class="link link--dropdown">За сегодня</div>
                             </div>
@@ -168,16 +177,13 @@
 
                             </template>
                         </v-popover>
-
-
                     </div>
                     <div class="discussions">
                         <paginate
                                 name="discuss"
                                 :list="discussions"
-                                :per="3"
+                                :per="4"
                         >
-
                             <disc-list-item :post="post"
                                             v-for="(post, index) in paginated('discuss')"
                                             :key="index">
@@ -208,36 +214,91 @@
                             <!--<div class="h2 mb-3 d-flex align-items-center justify-content-between ">Поиск по-->
                             <!--упоминаниям-->
                             <!--</div>-->
-
                             <!--<product-category-brand-search></product-category-brand-search>-->
                             <!--</div>-->
                             <div class="p-4 bb-1">
                                 <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Настройки
                                     показа
                                 </div>
-
-
                                 <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                    <input type="radio" id="customRadioInline00" name="customRadioInline1" class="custom-control-input" checked>
+                                    <input type="radio" id="customRadioInline00" name="customRadioInline1"
+                                           class="custom-control-input" checked>
                                     <label class="custom-control-label" for="customRadioInline00">Все темы</label>
                                 </div>
 
                                 <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                    <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                                    <input type="radio" id="customRadioInline1" name="customRadioInline1"
+                                           class="custom-control-input">
                                     <label class="custom-control-label" for="customRadioInline1">Без ответов</label>
                                 </div>
                                 <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                    <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadioInline2">Без моих ответов</label>
+                                    <input type="radio" id="customRadioInline2" name="customRadioInline1"
+                                           class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadioInline2">Без моих
+                                        ответов</label>
                                 </div>
                                 <div class="custom-control custom-radio custom-control-inline d-block">
-                                    <input type="radio" id="customRadioInline3" name="customRadioInline1" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadioInline3">С моими ответами</label>
+                                    <input type="radio" id="customRadioInline3" name="customRadioInline1"
+                                           class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadioInline3">С моими
+                                        ответами</label>
+                                </div>
+                            </div>
+                            <div v-if="allFilter" class="p-4 bb-1">
+                                <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Привязаны к
+                                    теме
                                 </div>
 
+                                <div class="discussions__search">
+                                    <div class="search-ext  mb-4 ">
+                                        <input type="text" v-model="discussionsSearchExt" placeholder="Товары"
+
+                                               class="field w-100 ">
+                                        <div class="search-ext__btn-search icon-search"></div>
+                                    </div>
+                                    <transition name="slide-fade">
+                                        <div class="suggestion-wrap" v-if="discussionsSearchExt!=false">
+                                            <div class="suggestion">
+                                                <div class="suggestion__group">
+                                                    <div class="suggestion__list">
+                                                        <div @click="discussionsSearchResalt=true"
+                                                             class="suggestion__item">Телевизор LED Telefunken
+                                                            TF-LED19S62T2 черный
+                                                        </div>
+                                                        <div @click="discussionsSearchResalt=true"
+                                                             class="suggestion__item">Телевизор LED Harper 20R470 черный
+                                                        </div>
+                                                        <div @click="discussionsSearchResalt=true"
+                                                             class="suggestion__item">Телевизор LED DEXP H20D7100E/W
+                                                            белый
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </transition>
+                                </div>
+                                <div class="search-ext  mb-4 ">
+                                    <input type="text" placeholder="Бренды"
+                                           class="field w-100 ">
+                                    <div class="search-ext__btn-search icon-search"></div>
+                                </div>
+                                <div class="search-ext mb-1">
+                                    <input type="text" placeholder="Категории товаров"
+
+                                           class="field w-100 ">
+                                    <div class="search-ext__btn-search icon-search"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="px-4">
+                        <div v-if="!allFilter" @click="allFilter=true" class="link link--doted  link--color-grey">Все
+                            фильтры
+                        </div>
+
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -264,6 +325,8 @@
 
                 discussionsSearch: "",
                 discussionsSearchResalt: "",
+                discussionsSearchExt: "",
+                allFilter: false,
                 category: true,
                 searchPlate: false,
                 paginate: ['discuss'],
@@ -291,6 +354,9 @@
             },
             search() {
                 this.$refs.tree.searchNodes(this.searchword)
+            },
+            submitSearch() {
+                this.$router.push({path: '/discussions-search-r'})
             },
             themeFilter() {
                 this.discussionsSearch = "";
@@ -335,6 +401,35 @@
     }
 </script>
 <style lang="scss">
+
+
+    /*!*-----------анимация *!*/
+    /*.slide-fade-enter-active {*/
+    /*transition: all .1s ease;*/
+    /*z-index: 10000000!important;;*/
+    /*}*/
+    /*.slide-fade-leave-active {*/
+    /*transition: all .1s ease;*/
+    /*z-index: 10000000!important;;*/
+    /*}*/
+    /*.slide-fade-enter, .slide-fade-leave-to*/
+    /*!* .slide-fade-leave-active до версии 2.1.8 *! {*/
+
+    /*opacity: 0;*/
+    /*z-index: 1000000 !important;;*/
+    /*}*/
+
+    .search-ext__btn-search {
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        font-size: 22px;
+        color: #dddddd;
+
+    }
+    .search-ext{
+        position: relative;
+    }
 
     .discussions {
         padding-top: 1.5rem;
@@ -421,6 +516,7 @@
         justify-content: center;
         width: 100%;
         position: relative;
+        font-size: 14px;
     }
 
     li.number a, .right-arrow a, .left-arrow a {
@@ -431,7 +527,7 @@
         cursor: pointer;
         transition: .1s;
         border-bottom: 3px solid #fff;
-        padding: 11px 16px 8px;
+        padding: 11px 13px 8px;
 
         &:hover {
             background: #fff6e5;
@@ -467,7 +563,7 @@
     }
 
     .ellipses {
-        padding: 11px 5px 8px;
+        padding: 11px 4px 8px;
         display: inline-block;
         cursor: pointer;
     }
@@ -498,10 +594,13 @@
         position: absolute;
         z-index: 997;
         background: white;
-        box-shadow: 0 9px 30px rgba(0, 0, 0, 0.02), 0 3px 6px rgba(0, 0, 0, 0.05), 0 9px 50px rgba(0, 0, 0, 0.03);
+        border: 1px solid #ddd;
+        border-top: 0;
+        box-shadow: 20px 29px 40px -20px rgba(0, 0, 0, 0.08), -20px 29px 40px -20px rgba(0, 0, 0, 0.08), 0 25px 30px -20px rgba(0, 0, 0, 0.04);
         border-radius: 0 0 8px 8px;
         max-width: 100%;
-        top: 40px;
+        top: 35px;
+        padding: 8px 0;
     }
 
     .suggestion__item {
@@ -509,8 +608,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         max-width: 100%;
-        border-bottom: 1px solid #eee;
-        padding:10px 15px;
+        padding: 8px 10px;
         cursor: pointer;
         &:hover {
             background: #ffeec3;

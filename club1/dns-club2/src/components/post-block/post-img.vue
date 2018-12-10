@@ -31,7 +31,7 @@
                             ></post-tag>
                         </div>
                         <div class="post__title  mb-2 h2" v-bind:style="{ color: post.textColor }">
-                            <router-link class="link link--color-black"
+                            <router-link class="link link--color-black link--opacity-hover"
                                          v-bind:style="{ color: post.textColor }"
                                          :to="{ name: 'post', params: { id: post.id }}">
                                 {{post.title}}

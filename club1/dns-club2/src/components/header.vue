@@ -148,10 +148,8 @@
                                             <div class="header__search-extend-btn-icon icon-down"></div>
                                         </div>
                                         <template slot="popover">
-                                            <div class="py-3 px-3 bb-1">В дайджесте</div>
-                                            <div class="py-3 px-3 bb-1">В обзорах</div>
-                                            <div class="py-3 px-3 bb-1">В лайфхаках</div>
-                                            <div class="py-3 px-3 bb-1">В обсуждениях</div>
+                                            <div class="py-3 px-3 bb-1">в статьях</div>
+                                            <div class="py-3 px-3 bb-1">в обсуждениях</div>
                                         </template>
                                     </v-popover>
 

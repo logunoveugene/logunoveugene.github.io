@@ -91,7 +91,7 @@
                         <div v-ripple class="collapse-block card-block card-block--full-mobile "
                              @click="collapseProduct=!collapseProduct">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="">Упоминание товаров <span
+                                <div class="">Товары в теме<span
                                         class="text-muted small">{{post.products.length}}</span></div>
                                 <div class="collapse-block__icon ">
                                     <div v-if="!collapseProduct" class="icon-down"></div>
@@ -155,9 +155,7 @@
                 <div v-if="post.products" class="col-12 col-lg-4 d-none d-lg-block">
                     <div class="">
                         <div class="">
-                            <div class="mb-3">
-                                Упоминания товаров
-                            </div>
+                            <div class="mb-3">Товары в теме</div>
                             <product-list :products="post.products"></product-list>
                         </div>
 

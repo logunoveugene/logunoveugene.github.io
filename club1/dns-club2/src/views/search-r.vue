@@ -5,13 +5,12 @@
                 <div class="col-12">
                     <div class="d-md-flex small mb-2 d-flex flex-wrap">
                         <router-link class="link link--color-black" to="/">Клуб</router-link>
+
                         <div class="mx-2">/</div>
-                        <router-link class="link link--color-black" to="/discussions">Коммуникатор</router-link>
-                        <div class="mx-2">/</div>
-                        <div class="text-muted">Результаты поиска по запросу "Intel Core i3-8100"</div>
+                        <div class="text-muted">Результаты поиска по запросу "Xiaomi"</div>
                     </div>
                     <div class="d-flex align-items-center justify-content-between mb-3">
-                        <h1 class="page__title mb-0 ">Результаты поиска по запросу "Intel Core i3-8100"</h1>
+                        <h1 class="page__title mb-0 ">Результаты поиска по запросу "Xiaomi"</h1>
                         <router-link to="/newdesc" class=" link link--color-black new-discuss-btn d-lg-none d-block ">
                             <div class="new-discuss-btn-icon">
                                 <div class=" text-success d-inline-block mr-2 icon-add"></div>
@@ -23,12 +22,25 @@
                 <div class="col-12 col-md-12 col-lg-8">
                     <div class="discussions__search">
                         <div class="search-ext  mb-4 ">
-                            <input type="text" v-model="discussionsSearch" placeholder="Поиск по темам"
+                            <input type="text" v-model="discussionsSearch" placeholder="Поиск по сайту"
                                    class="field field--search w-100">
                             <div class="search-ext__btn-search icon-search"></div>
                             <div class="search-ext__detals">
                                 <div class="d-flex justify-content-between ">
-                                    <div class="mb-0">Найдено 3 темы</div>
+                                    <div class="d-flex">
+                                        <div class="custom-control custom-radio custom-control-inline d-block">
+                                            <input type="radio" id="customRadioInline00" name="customRadioInline1"
+                                                   checked="checked" class="custom-control-input">
+                                            <label for="customRadioInline00" class="custom-control-label">Найденные
+                                                статьи – 45</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline d-block">
+                                            <input type="radio" id="customRadioInline0044" name="customRadioInline1"
+                                                     class="custom-control-input">
+                                            <label for="customRadioInline0044" class="custom-control-label">Найденные темы
+                                                – 489</label>
+                                        </div>
+                                    </div>
                                     <div class="d-flex">
 
                                         <div class="search-ext__icon">
@@ -44,14 +56,12 @@
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="customCheck1"
                                                    checked>
-                                            <label class="custom-control-label" for="customCheck1">Искать в названиях
-                                                тем</label>
+                                            <label class="custom-control-label" for="customCheck1">Искать в названиях статей</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="customCheck151"
                                                    checked>
-                                            <label class="custom-control-label" for="customCheck151">Искать в
-                                                ответах</label>
+                                            <label class="custom-control-label" for="customCheck151">Искать в содердимом статьи</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="customChe6565655"
@@ -75,7 +85,6 @@
                                     </div>
                                     <div class="btn btn--color-white">Применить</div>
                                 </div>
-
 
 
                             </div>
@@ -144,36 +153,7 @@
                                     <category-cut></category-cut>
                                 </div>
 
-                                <div class="py-4 bb-1">
-                                    <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Настройки
-                                        показа
-                                    </div>
 
-                                    <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                        <input type="radio" id="customRadioInline00" name="customRadioInline1"
-                                               class="custom-control-input" checked>
-                                        <label class="custom-control-label" for="customRadioInline00">Все темы</label>
-                                    </div>
-
-                                    <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                        <input type="radio" id="customRadioInline1" name="customRadioInline1"
-                                               class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioInline1">Без ответов</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                        <input type="radio" id="customRadioInline2" name="customRadioInline1"
-                                               class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioInline2">Без моих
-                                            ответов</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline d-block">
-                                        <input type="radio" id="customRadioInline3" name="customRadioInline1"
-                                               class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioInline3">С моими
-                                            ответами</label>
-                                    </div>
-
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -183,6 +163,8 @@
                             <a class="link link--pill link--color-black link--pill-active  " href="#">Наиболее
                                 релевантные</a>
                             <a class="link link--pill link--color-black" href="#">Сначала свежие</a>
+                            <a class="link link--pill link--color-black" href="#">Обсуждаемые</a>
+                            <a class="link link--pill link--color-black" href="#">Лучшие</a>
 
                         </nav>
                         <v-popover offset="0">
@@ -204,14 +186,14 @@
                     <div class="discussions">
                         <paginate
                                 name="discuss"
-                                :list="discussions"
+                                :list="searchArticle"
                                 :per="7"
                         >
 
-                            <disc-list-item-search :post="post"
+                            <post-search-r :post="post"
                                                    v-for="(post, index) in paginated('discuss')"
                                                    :key="index">
-                            </disc-list-item-search>
+                            </post-search-r>
                         </paginate>
 
                         <!--<div class="btn paginate__button btn-block mb-4 ">Показать еще</div>-->
@@ -231,6 +213,24 @@
                     <div class="card-block card-block--shadow mb-4 ">
                         <div class="">
                             <div class="p-4 bb-1">
+
+                                <div class=" ">
+                                    <div class="custom-control custom-checkbox mb-2">
+                                        <input type="checkbox" id="customCheck1"   class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">Дайджест</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                        <input type="checkbox" id="customCheck1"  class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">Обзоры</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox  ">
+                                        <input type="checkbox" id="customCheck1"   class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">Лайфхаки</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-4 bb-1">
                                 <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
                                 <category-cut></category-cut>
                             </div>
@@ -242,36 +242,31 @@
                             <!--<product-category-brand-search></product-category-brand-search>-->
                             <!--</div>-->
                             <div class="p-4 bb-1">
-                                <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Настройки
-                                    показа
+                                <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Формат
+                                </div>
+                                <div class=" d-flex">
+
+                                    <div class=" ">
+                                        <div class="custom-control custom-checkbox mb-2">
+                                            <input type="checkbox" id="customCheck1asdas"   class="custom-control-input">
+                                            <label for="customCheck1asdas" class="custom-control-label">Текст</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox mb-2">
+                                            <input type="checkbox" id="customCheck1dsfsd"   class="custom-control-input">
+                                            <label for="customCheck1dsfsd" class="custom-control-label">Видео</label>
+                                        </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" id="custosadasd"   class="custom-control-input">
+                                            <label for="custosadasd" class="custom-control-label">Фото</label>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                    <input type="radio" id="customRadioInline0" name="customRadioInline1"
-                                           class="custom-control-input" checked>
-                                    <label class="custom-control-label" for="customRadioInline0">Все темы</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                    <input type="radio" id="customRadioInline4" name="customRadioInline1"
-                                           class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadioInline4">Без ответов</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                    <input type="radio" id="customRadioInline5" name="customRadioInline1"
-                                           class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadioInline5">Без моих
-                                        ответов</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline d-block">
-                                    <input type="radio" id="customRadioInline6" name="customRadioInline1"
-                                           class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadioInline6">С моими
-                                        ответами</label>
-                                </div>
                             </div>
+
                             <div v-if="allFilter" class="p-4 bb-1">
                                 <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Привязаны к
-                                    теме
+                                    статье
                                 </div>
 
                                 <div class="discussions__search">
@@ -319,11 +314,14 @@
     import DiscListItemSearch from "@//components/post-block/disc-list-item-search";
     import categoryCut from "@//components/category-cut.vue";
     import productCategoryBrandSearch from "@//components/product-category-brand-search.vue"
+    import PostSearchR from "../components/post-block/post-search-r";
+
 
 
     export default {
         name: 'discussions',
         components: {
+            PostSearchR,
             DiscListItemSearch,
             postInfo,
             productCategoryBrandSearch,
@@ -333,7 +331,7 @@
             return {
                 searchExtPlate: false,
                 searchExtPlateFilter: false,
-                discussionsSearch: "Intel Core i3-8100",
+                discussionsSearch: "Xiaomi",
                 discussionsSearchResalt: "",
                 category: true,
                 allFilter: false,
@@ -342,7 +340,7 @@
                 brand: false,
                 isCategory: false,
                 posttype: false,
-                discussions: [],
+                searchArticle: [],
                 topusers: [],
                 userslevel: [],
                 surveys: [],
@@ -374,9 +372,9 @@
         created() {
 
 
-            this.axios.get('https://club-route.firebaseio.com/searchDisc.json')
+            this.axios.get('https://club-route.firebaseio.com/searchArticle.json')
                 .then(response => {
-                    this.discussions = response.data
+                    this.searchArticle = response.data
                 })
                 .catch(e => {
                     this.error.push(e)

@@ -18,14 +18,14 @@
 
                 <div class="post-blog-img__title mb-3 h2">
                     <router-link v-bind:style="{ color: post.textColor }"
-                                 class="link link--color-black"
+                                 class="link link--color-black link--opacity-hover"
                                  :to="{ name: 'post', params: { id: post.id }}">
                         {{post.title}}
                     </router-link>
                 </div>
 
                 <div class="small mb-3" v-bind:style="{ color: post.textColor }">
-                    Автор: <a v-bind:style="{ color: post.textColor }" class="link link--color-blue mr-2" href="#">{{post.autor}}</a>
+                    Автор: <a v-bind:style="{ color: post.textColor }" class="link link--color-blue link--opacity-hover mr-2" href="#">{{post.autor}}</a>
                     {{post.date | fdate}}
                 </div>
                 <post-teaser

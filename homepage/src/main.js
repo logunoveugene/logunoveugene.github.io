@@ -475,6 +475,7 @@ new Vue({
 
             dropSubMenu: dropSubMenu,
 			isTp: false,
+            isAuth: false,
 			isAlert:true,
 			showCatalog: false,
 			mainBannerOption: {

@@ -41,32 +41,49 @@
                             <div class="py-4 bb-1">
                                 <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Формат
                                 </div>
-                                <div class="small d-flex">
-
-                                    <div class="mr-3">
-                                        <a href="#" class="link link--doted link--color-grey">Текст</a>
+                                <div class=" d-flex">
+                                    <div class="custom-control custom-checkbox mr-4">
+                                        <input type="checkbox" id="customCheck1" checked="checked" class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">Текст</label>
                                     </div>
-                                    <div class="mr-3">
-                                        <a href="#" class="link link--doted link--color-grey">Видео</a>
+                                    <div class="custom-control custom-checkbox mr-4">
+                                        <input type="checkbox" id="customCheck1" checked="checked" class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">Видео</label>
                                     </div>
-                                    <div class="mr-3">
-                                        <a href="#" class="link link--doted link--color-grey">Фото</a>
+                                    <div class="custom-control custom-checkbox mr-4">
+                                        <input type="checkbox" id="customCheck1" checked="checked" class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">Фото</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="py-4 bb-1">
                                 <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Рубрика
                                 </div>
-                                <div class="small d-flex flex-column">
+                                <!--<div class="small d-flex flex-column">-->
 
-                                    <div class="mr-3">
-                                        <a href="#" class="link link--color-grey">Любительские обзоры</a>
+                                    <!--<div class="mr-3">-->
+                                        <!--<a href="#" class="link link&#45;&#45;color-grey">Любительские обзоры</a>-->
+                                    <!--</div>-->
+                                    <!--<div class="mr-3">-->
+                                        <!--<a href="#" class="link link&#45;&#45;color-grey">Профессиональные обзоры</a>-->
+                                    <!--</div>-->
+                                    <!--<div class="mr-3">-->
+                                        <!--<a href="#" class="link link&#45;&#45;color-grey">От производителей</a>-->
+                                    <!--</div>-->
+
+                                <!--</div>-->
+                                <div class=" ">
+                                    <div class="custom-control custom-checkbox mr-4">
+                                        <input type="checkbox" id="customCheck1" checked="checked" class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">Любительские обзоры</label>
                                     </div>
-                                    <div class="mr-3">
-                                        <a href="#" class="link link--color-grey">Профессиональные обзоры</a>
+                                    <div class="custom-control custom-checkbox mr-4">
+                                        <input type="checkbox" id="customCheck1" checked="checked" class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">Профессиональные обзоры</label>
                                     </div>
-                                    <div class="mr-3">
-                                        <a href="#" class="link link--color-grey">От производителей</a>
+                                    <div class="custom-control custom-checkbox mr-4">
+                                        <input type="checkbox" id="customCheck1" checked="checked" class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">От производителей</label>
                                     </div>
                                 </div>
                             </div>
@@ -95,7 +112,7 @@
                 <div class="col-12 col-lg-4 ">
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-12 mb-4 d-none d-lg-block ">
-                            <div class="card-block mb-4">
+                            <div class="card-block card-block--shadow  mb-4">
                                 <div class="">
                                     <div class="p-4 bb-1">
                                         <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
@@ -104,16 +121,21 @@
                                     <div class="p-4 bb-1">
                                         <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Формат
                                         </div>
-                                        <div class="small d-flex">
+                                        <div class=" d-flex">
 
-                                            <div class="mr-3">
-                                                <a href="#" class="link link--doted link--color-grey">Текст</a>
-                                            </div>
-                                            <div class="mr-3">
-                                                <a href="#" class="link link--doted link--color-grey">Видео</a>
-                                            </div>
-                                            <div class="mr-3">
-                                                <a href="#" class="link link--doted link--color-grey">Фото</a>
+                                            <div class=" ">
+                                                <div class="custom-control custom-checkbox mb-2">
+                                                    <input type="checkbox" id="customCheck1asdas"   class="custom-control-input">
+                                                    <label for="customCheck1asdas" class="custom-control-label">Текст</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox mb-2">
+                                                    <input type="checkbox" id="customCheck1dsfsd"   class="custom-control-input">
+                                                    <label for="customCheck1dsfsd" class="custom-control-label">Видео</label>
+                                                </div>
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" id="custosadasd"   class="custom-control-input">
+                                                    <label for="custosadasd" class="custom-control-label">Фото</label>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -121,16 +143,18 @@
                                     <div class="p-4 bb-1">
                                         <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Рубрика
                                         </div>
-                                        <div class="small d-flex flex-column">
-
-                                            <div class="my-1">
-                                                <a href="#" class="link link--color-grey">Любительские обзоры</a>
+                                        <div class=" ">
+                                            <div class="custom-control custom-checkbox mb-2">
+                                                <input type="checkbox" id="customCheck1"   class="custom-control-input">
+                                                <label for="customCheck1" class="custom-control-label">Любительские обзоры</label>
                                             </div>
-                                            <div class="my-1">
-                                                <a href="#" class="link link--color-grey">Профессиональные обзоры</a>
+                                            <div class="custom-control custom-checkbox mb-2">
+                                                <input type="checkbox" id="customCheck1"  class="custom-control-input">
+                                                <label for="customCheck1" class="custom-control-label">Профессиональные обзоры</label>
                                             </div>
-                                            <div class="my-1">
-                                                <a href="#" class="link link--color-grey">От производителей</a>
+                                            <div class="custom-control custom-checkbox mb-2">
+                                                <input type="checkbox" id="customCheck1"   class="custom-control-input">
+                                                <label for="customCheck1" class="custom-control-label">От производителей</label>
                                             </div>
                                         </div>
                                     </div>

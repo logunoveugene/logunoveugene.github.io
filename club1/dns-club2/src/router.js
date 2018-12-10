@@ -19,14 +19,7 @@ export default new Router({
             // which is lazy-loaded when the route is visited.
             component: () => import(/* webpackChunkName: "about" */ './views/discussions.vue')
         },
-        {
-            path: '/discussions-search',
-            name: 'discussionsSearch',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/discussions-search.vue')
-        },
+
         {
             path: '/discussions-search-r',
             name: 'discussionsSearchR',
@@ -34,6 +27,14 @@ export default new Router({
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
             component: () => import(/* webpackChunkName: "about" */ './views/discussions-search-r.vue')
+        },
+        {
+            path: '/search-r',
+            name: 'SearchR',
+            // route level code-splitting
+            // this generates a separate chunk (about.[hash].js) for this route
+            // which is lazy-loaded when the route is visited.
+            component: () => import(/* webpackChunkName: "about" */ './views/search-r.vue')
         },
         {
             path: '/review',

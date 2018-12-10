@@ -3,6 +3,10 @@
 		<div  class="post__tag-item">
 			<a href="#" class="link link--color-grey" v-bind:style="{ color: color }">{{format}}</a>
 		</div>
+		<div v-if="fullSource" class="post__tag-item">
+			<a href="#" class="link link--color-grey" v-bind:style="{ color: color }">{{fullSource}}</a>
+		</div>
+
 		<div class="post__tag-item">
 			<a href="#" class="link link--color-grey" v-bind:style="{ color: color }">{{source}}</a>
 		</div>
@@ -24,10 +28,14 @@
 				type: null,
 				default: ""
 			},
-			tags: {
+            fullSource: {
 				type: null,
 				default: ""
 			},
+            tags: {
+                type: null,
+                default: ""
+            },
 			color: {
 				type: null,
 				default: ""

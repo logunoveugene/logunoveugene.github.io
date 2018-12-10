@@ -3,11 +3,7 @@
         <div class="catalog-menu d-flex flex-column  justify-content-between h-100 m-0 p-0">
             <catalogmenuimem :mainNavItem="mainNavItem" v-for="(mainNavItem, index) in catalog" :key="index">
             </catalogmenuimem>
-
         </div>
-
-
-
 </template>
 
 <script>

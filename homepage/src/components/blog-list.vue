@@ -14,13 +14,13 @@
 		</div>
 
 		<div class="blog__item  col-12 col-md-3">
-			<post-blog-text :post="review[3]"></post-blog-text>
+			<post-blog-img :post="review[3]"></post-blog-img>
 			<post-blog-img :post="review[4]"></post-blog-img>
 		</div>
 
 		<div class="blog__item col-12 col-md-3">
 			<post-blog-img :post="review[3]"></post-blog-img>
-			<post-blog-text :post="review[4]"></post-blog-text>
+			<post-blog-img :post="review[4]"></post-blog-img>
 		</div>
 
 	</div>

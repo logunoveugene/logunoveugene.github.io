@@ -1,374 +1,395 @@
 <template>
-	<div class="footer">
-		<div class="footer__container container">
-			<div class="footer__project d-flex  flex-wrap justify-content-around justify-content-lg-between">
-				<div class="footer__project-img-wrap">
-					<img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/dns.png" alt="" class="footer__project-img">
-				</div>
-				<div class="footer__project-img-wrap">
-					<img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/tp.png" alt="" class="footer__project-img">
-				</div>
-				<div class="footer__project-img-wrap">
-					<img src="https://i.snag.gy/TIHkXz.jpg" alt="" class="footer__project-img">
-				</div>
-				<div class="footer__project-img-wrap">
-					<img src="https://i.snag.gy/SWcknL.jpg" alt="" class="footer__project-img">
-				</div>
-			</div>
-			<div class="footer__row row">
-				<div class="footer__col col-12 col-lg">
-					<div class="footer__col-head  ">Компания DNS</div>
-					<ul class="footer__menu-list list-unstyled small d-none d-lg-block">
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Корпоративные продажи</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Обратная связь</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Вакансии</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Новости</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Контакты для СМИ</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Персональные данные</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Партнерам</a>
-						</li>
-					</ul>
-				</div>
-				<div class="footer__col col-12 col-lg">
-					<div class="footer__col-head  ">Покупателям</div>
-					<ul class="footer__menu-list list-unstyled small d-none d-lg-block">
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Бонусная программа</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Подарочные карты</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Проверка оплаты счёта</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Кредиты</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Услуги</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Доставка</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Сервисные центры</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Статус оборудования СЦ</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Клуб экспертов DNS</a>
-						</li>
-					</ul>
-				</div>
-				<div class="footer__col col-12 col-lg">
-					<div class="footer__col-head  ">Помощь</div>
-					<ul class="footer__menu-list list-unstyled small d-none d-lg-block">
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Как оформить заказ</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Обмен и возврат товара</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Гарантийное обслуживание</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Информация для юр. лиц</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Статусы заказов</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">База знаний</a>
-						</li>
-					</ul>
-				</div>
-				<div class="footer__col col-12 col-lg" >
-					<div class="footer__col-head ">Способы оплаты</div>
-					<ul class="footer__menu-list list-unstyled small d-none d-lg-block">
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">При получении</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">По счету для юрлиц</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Онлайн картой</a>
-						</li>
-						<li class="footer__menu-item">
-							<a href="#" class="link link--color-white">Электронным кошельком</a>
-						</li>
+    <div class="footer">
+        <div class="footer__container container">
+            <div class="footer__project d-flex  flex-wrap justify-content-around justify-content-lg-between">
+                <div class="footer__project-img-wrap">
+                    <img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/dns.png" alt=""
+                         class="footer__project-img">
+                </div>
+                <div class="footer__project-img-wrap">
+                    <img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/tp.png" alt=""
+                         class="footer__project-img">
+                </div>
+                <div class="footer__project-img-wrap">
+                    <img src="https://i.snag.gy/TIHkXz.jpg" alt="" class="footer__project-img">
+                </div>
+                <div class="footer__project-img-wrap">
+                    <img src="https://i.snag.gy/SWcknL.jpg" alt="" class="footer__project-img">
+                </div>
+            </div>
+            <div class="footer__row row">
+                <div class="footer__col col-12 col-lg">
+                    <div class="footer__col-head  ">Компания DNS</div>
+                    <ul class="footer__menu-list list-unstyled small d-none d-lg-block">
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Корпоративные продажи</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Обратная связь</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Вакансии</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Новости</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Контакты для СМИ</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Персональные данные</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Партнерам</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__col col-12 col-lg">
+                    <div class="footer__col-head  ">Покупателям</div>
+                    <ul class="footer__menu-list list-unstyled small d-none d-lg-block">
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Бонусная программа</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Подарочные карты</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Проверка оплаты счёта</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Кредиты</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Услуги</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Доставка</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Сервисные центры</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Статус оборудования СЦ</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Клуб экспертов DNS</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__col col-12 col-lg">
+                    <div class="footer__col-head  ">Помощь</div>
+                    <ul class="footer__menu-list list-unstyled small d-none d-lg-block">
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Как оформить заказ</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Обмен и возврат товара</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Гарантийное обслуживание</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Способы оплаты</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Информация для юр. лиц</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Статусы заказов</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">База знаний</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__col col-12 col-lg">
+                    <div class="footer__col-head ">Прайс листы</div>
+                    <ul class="footer__menu-list list-unstyled small d-none d-lg-block mb-4">
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Microsoft Excel (9.55 Мб) <br>Обновлен 07.12.2018
+                                04:15</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Zip-архив (2.15 Мб)<br> Обновлен 07.12.2018 04:15</a>
+                        </li>
+                    </ul>
 
-					</ul>
+                    <img class="mt-4" src="https://i.snag.gy/RsbxZ2.jpg" alt="">
+                </div>
 
-				</div>
-
-				<div class="footer__col col-lg-3 col-12">
-					<div class="footer__col-head  d-none d-lg-block">Оставайтесь на связи</div>
-					<div class="d-block d-lg-none">
-						<div class="h5 mt-4">Оставайтесь на связи</div>
-					</div>
-					<div class="footer__phone d-flex align-items-center flex-wrap">
-						<div class="footer__phone-num">8-800-77-07-999</div>
-						<div class="footer__phone-desc">(c 03:00 до 22:00)</div>
-					</div>
-
-
-
-					<div class="footer__adress-link small">
-						<a href="#" class="link link--color-white">Адреса магазинов в г. Владивосток</a>
-					</div>
-					<div class="footer__social d-flex">
-						<div class="footer__social-item-link">
-							<a href="" class="link link--color-white">
-								<span class="icon-vk"></span>
-							</a>
-						</div>
-						<div class="footer__social-item-link">
-							<a href="" class="link link--color-white">
-								<span class="icon-facebook"></span>
-							</a>
-						</div>
-						<div class="footer__social-item-link">
-							<a href="" class="link link--color-white">
-								<span class="icon-twitter"></span>
-							</a>
-						</div>
-						<div class="footer__social-item-link">
-							<a href="" class="link link--color-white">
-								<span class="icon-youtube-play"></span>
-							</a>
-						</div>
-					</div>
-					<div class="footer__subscribe-title flex-column">
-
-						<div class="mb-1">Будь в курсе важных событий</div>
-						<div class="small">Узнавайте о новинках и акциях первыми</div>
-					</div>
-					<div class="footer__subscribe-form  d-flex align-items-center  ">
-						<input type="email" class="footer__form-field mr-3" placeholder="Введите e-mail">
-						<button type="submit" class="btn btn-outl-grey"><i class="footer__icon-level-down icon-level-down"></i></button>
-					</div>
+                <div class="footer__col col-lg-3 col-12">
+                    <div class="footer__col-head  d-none d-lg-block">Оставайтесь на связи</div>
+                    <div class="d-block d-lg-none">
+                        <div class="h5 mt-4">Оставайтесь на связи</div>
+                    </div>
+                    <div class="footer__phone d-flex align-items-center flex-wrap">
+                        <div class="footer__phone-num">8-800-77-07-999</div>
+                        <div class="footer__phone-desc">(c 03:00 до 22:00)</div>
+                    </div>
 
 
+                    <div class="footer__adress-link small">
+                        <a href="#" class="link link--color-white">Адреса магазинов в г. Владивосток</a>
+                    </div>
+                    <div class="footer__social d-flex">
+                        <div class="footer__social-item-link">
+                            <a href="" class="link link--color-white">
+                                <span class="icon-vk"></span>
+                            </a>
+                        </div>
+                        <div class="footer__social-item-link">
+                            <a href="" class="link link--color-white">
+                                <span class="icon-facebook"></span>
+                            </a>
+                        </div>
+                        <div class="footer__social-item-link">
+                            <a href="" class="link link--color-white">
+                                <span class="icon-twitter"></span>
+                            </a>
+                        </div>
+                        <div class="footer__social-item-link">
+                            <a href="" class="link link--color-white">
+                                <span class="icon-youtube-play"></span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer__subscribe-title flex-column">
 
-				</div>
-				<div class="col-12 mt-4">
-					<div class="footer__copyright  small">
-						Администрация Сайта не несет ответственности за размещаемые Пользователями материалы (в т.ч. информации и изображений), их содержание, качество.
-					</div>
-					<div class="footer__copyright  small">© 2002—2018 Компания DNS</div>
-				</div>
-			</div>
-			
-			
-			
-		</div>
-	</div>
+                        <div class="mb-1">Будь в курсе важных событий</div>
+                        <div class="small">Узнавайте о новинках и акциях первыми</div>
+                    </div>
+                    <div class="footer__subscribe-form  d-flex align-items-center  ">
+                        <div class="footer__form-field-wrap w-100">
+                            <input type="email" class="footer__form-field mr-3" placeholder="Введите e-mail">
+                            <div class="footer__form-field-icon icon-level-down"></div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <div class="col-12 mt-4">
+                    <div class="footer__copyright  small">
+                        Администрация Сайта не несет ответственности за размещаемые Пользователями материалы (в т.ч.
+                        информации и изображений), их содержание, качество.
+                    </div>
+                    <div class="footer__copyright  small">© 2002—2018 Компания DNS</div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
 </template>
 
 
 <style>
 
 
-.footer__subscribe{
-	border-bottom: 1px solid #444;
-	padding-bottom: 1.5rem;
-	margin-bottom: .25rem;
+    .footer__subscribe {
+        border-bottom: 1px solid #444;
+        padding-bottom: 1.5rem;
+        margin-bottom: .25rem;
 
-}
-.footer__subscribe-icon{
-	font-size: 43px;
-	line-height: 30px;
-	margin-right: 1rem;
-}
-.footer{
-	background: #333;
-	padding-top: 0;
-	margin-top: 1rem;
-	color:#fff;
+    }
 
-}
+    .footer__subscribe-icon {
+        font-size: 43px;
+        line-height: 30px;
+        margin-right: 1rem;
+    }
 
-.footer__col-head {
-	margin-bottom: 0;
-	font-size: 14px;
-	width: 100%;
-	padding: .75rem 0;
-	border-top:  1px solid #444;
-	font-weight: 500;
-	position: relative;
-}
+    .footer {
+        background: #333;
+        padding-top: 0;
+        margin-top: 1rem;
+        color: #fff;
 
-.footer__col-head:after{
-	content: "\73";
-	font-family: "homepage-dns" !important;
-	position: absolute;
-	right: 0;
-}
+    }
 
+    .footer__col-head {
+        margin-bottom: 0;
+        font-size: 14px;
+        width: 100%;
+        padding: .75rem 0;
+        border-top: 1px solid #444;
+        font-weight: 500;
+        position: relative;
+    }
 
-.footer__menu-item{
-	margin-bottom: .5rem;
-	font-size: 14px;
-}
-.footer__phone{
-	margin-bottom: .5rem;
-}
-.footer__phone-num{
-	font-size: 18px;
-	margin-right: .5rem;
-}
-.footer__phone-desc{
-	font-size: 14px;
+    .footer__col-head:after {
+        content: "\73";
+        font-family: "homepage-dns" !important;
+        position: absolute;
+        right: 0;
+    }
 
-}
+    .footer__menu-item {
+        margin-bottom: .5rem;
+        font-size: 14px;
+    }
 
-.footer__adress-link{
-	margin-bottom: 1rem;
-}
+    .footer__phone {
+        margin-bottom: .5rem;
+    }
 
-.footer__social{
-	margin-bottom: 2rem;
-}
-.footer__social-item-link {
-	font-size: 18px;
-	padding: 8px 9px 0 9px;
-	border: 1px solid #717171;
-	margin-right: .5rem;
+    .footer__phone-num {
+        font-size: 18px;
+        margin-right: .5rem;
+    }
 
-	border-radius: 4px;
-}
+    .footer__phone-desc {
+        font-size: 14px;
 
-.footer__copyright{
-	padding: 1rem 0;
-	border-top: 1px solid #444;
-}
+    }
 
-.footer__form-field {
-	border-radius: 8px;
-	border: 1px solid #999;
-	background-color: #444;
-	height: 40px;
-	padding: 8px 0 8px 15px;
-	color: #fff;
-	width: inherit;
-}
-.footer__subscribe-form{
-	width: 100%;
-}
-.footer__subscribe-title{
-	width: 100%;
-	margin-bottom: 1rem;
-	line-height: 1.3;
+    .footer__adress-link {
+        margin-bottom: 1rem;
+    }
 
-}
+    .footer__social {
+        margin-bottom: 2rem;
+    }
 
-.footer__project{
-	padding: 1rem 0 0 0;
-	border-bottom: none;
-	margin-bottom: 0;
-}
+    .footer__social-item-link {
+        font-size: 18px;
+        padding: 8px 9px 0 9px;
+        border: 1px solid #717171;
+        margin-right: .5rem;
 
-.footer__project-img {
-	opacity: .7;
-	height: 14px;
-	width: auto;
-	margin-bottom: 1.5rem;
+        border-radius: 4px;
+    }
 
-}
-.footer__project-img:hover{
-	opacity: 1;
-}
+    .footer__copyright {
+        padding: 1rem 0;
+        border-top: 1px solid #444;
+    }
 
-.footer__project-img-wrap{
-	width: 50%;
-}
-
-@media (min-width: 768px){
-	.footer__project-img-wrap{
-		width: auto;
-	}
+    .footer__form-field {
+        border-radius: 8px;
+        border: 1px solid #999;
+        background-color: #fff;
+        height: 40px;
+        padding: 8px 0 8px 15px;
+        color: #fff;
+        width: inherit;
+    }
 
 
+    .footer__form-field-wrap{
+        position: relative;
+    }
 
-}
-@media (min-width: 992px){
-	.footer__project{
-		/*	padding-bottom: 2rem;*/
-		border-bottom:  1px solid #444;
-		margin-bottom: 2rem;
-	}
-	.footer__project-img {
-		height: 17px;
-	}
+    .footer__form-field-icon{
+        top: 12px;
+        right: 12px;
+        position: absolute;
+         color: #bbbbbb;
+        font-size: 18px;
 
-	.footer__project-img {
-
-		margin-bottom: 2rem;
-
-	}
-	.footer{
-
-		padding-top: 1.5rem;
-	}
+    }
 
 
-	.footer__subscribe-title {
+    .footer__subscribe-form {
+        width: 100%;
+    }
 
-		padding: .25rem 0 0 0;
+    .footer__subscribe-title {
+        width: 100%;
+        margin-bottom: 1rem;
+        line-height: 1.3;
 
-	}
-	.footer__col-head:after{
-		content: "";
-	}
-	.footer__col-head {
-		margin-bottom: 1rem;
-		font-size: 18px;
-		font-weight: 500;
-		padding: 0;
-		border-top: none;
-		color: #fff;
+    }
 
-	}
-	.footer__subscribe{
-		border-bottom: 1px solid #444;
-		padding-bottom: 1.5rem;
-		margin-bottom: 1rem;
+    .footer__project {
+        padding: 1rem 0 0 0;
+        border-bottom: none;
+        margin-bottom: 0;
+    }
 
-	}
+    .footer__project-img {
+        opacity: 1;
+        height: 14px;
+        width: auto;
+        margin-bottom: 1.5rem;
+        cursor: pointer;
 
+    }
 
+    .footer__project-img:hover {
+        opacity: .7;
+    }
 
+    .footer__project-img-wrap {
+        width: 50%;
+    }
 
+    @media (min-width: 768px) {
+        .footer__project-img-wrap {
+            width: auto;
+        }
 
-}
+    }
 
+    @media (min-width: 992px) {
+        .footer__project {
+            /*	padding-bottom: 2rem;*/
+            border-bottom: 1px solid #444;
+            margin-bottom: 2rem;
+        }
 
+        .footer__project-img {
+            height: 17px;
+        }
 
-.footer__icon-level-down{
-	font-size: 17px;
-	line-height: 19px;
-	height: 24px;
-	color: #999;
-	display: block;
-	padding-top: 4px;
-}
+        .footer__project-img {
 
+            margin-bottom: 2rem;
+
+        }
+
+        .footer {
+
+            padding-top: 1.5rem;
+        }
+
+        .footer__subscribe-title {
+
+            padding: .25rem 0 0 0;
+
+        }
+
+        .footer__col-head:after {
+            content: "";
+        }
+
+        .footer__col-head {
+            margin-bottom: 1rem;
+            font-size: 18px;
+            font-weight: 500;
+            padding: 0;
+            border-top: none;
+            color: #fff;
+
+        }
+
+        .footer__subscribe {
+            border-bottom: 1px solid #444;
+            padding-bottom: 1.5rem;
+            margin-bottom: 1rem;
+
+        }
+
+    }
+
+    .footer__icon-level-down {
+        font-size: 17px;
+        line-height: 19px;
+        height: 24px;
+        color: #999;
+        display: block;
+        padding-top: 4px;
+    }
 
 
 </style>
