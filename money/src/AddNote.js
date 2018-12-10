@@ -28,7 +28,7 @@ export default class Main extends React.Component {
         accountList: '',
         inputNumber: '',
         keyboardIsShown: false,
-        money: '0'
+        money: 0
     };
     static navigationOptions = {
         headerTitle: 'Добавить списание',
@@ -110,6 +110,18 @@ export default class Main extends React.Component {
     // _handleKeyPress(key) {
     //     model.addKey(key);
     // }
+
+    _keyPress = (i) => {
+        let {money} = this.state;
+        if (money === 0) {
+            this.setState({money: i.toString()});
+        }
+        else {
+            this.setState({money: money + i.toString()});
+        }
+
+
+    };
 
 
     render() {
@@ -217,7 +229,7 @@ export default class Main extends React.Component {
                 title: "ТВ"
             }
         ];
-        let keys = [1, 2, 3, 4, 5, 6, 7,8, 9, '.', 0, 'x'];
+        let keys = [1, 2, 3, 4, 5, 6, 7, 8, 9, '.', 0, 'x'];
         return (
             <View style={styles.container}>
                 <ScrollView style={styles.nodeTypeWrapScroll}>
@@ -242,14 +254,18 @@ export default class Main extends React.Component {
                     />
                     <Text style={styles.moneyCount}>{this.state.money}</Text>
                 </View>
-
-                <View style={styles.vKeyboard}>
-                    {keys.map((i) => (
-                        <TouchableOpacity key={i} style={styles.vKeyboardKey}>
-                            <Text style={styles.vKeyboardKeyText}>{i}</Text>
-                        </TouchableOpacity>
-                    ))}
-                </View>
+                {
+                    !keyboardIsShown &&
+                    <View style={styles.vKeyboard}>
+                        {keys.map((i) => (
+                            <TouchableOpacity key={i}
+                                              onPress={() => this._keyPress(i)}
+                                              style={styles.vKeyboardKey}>
+                                <Text style={styles.vKeyboardKeyText}>{i}</Text>
+                            </TouchableOpacity>
+                        ))}
+                    </View>
+                }
 
                 {/*{*/}
                 {/*!keyboardIsShown &&*/}
@@ -343,14 +359,19 @@ const styles = StyleSheet.create({
 
         justifyContent: 'space-between',
         flexDirection: 'row',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+
+
     },
     vKeyboardKey: {
-        width: "33%",
+        width: "33.3%",
         height: 50,
-        alignItems: 'center'
+        alignItems: 'center',
+        borderStyle: 'solid',
+        borderColor: '#eee',
+        borderWidth: 1
     },
-    vKeyboardKeyText:{
+    vKeyboardKeyText: {
         fontSize: 20,
     }
 
