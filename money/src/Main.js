@@ -88,8 +88,8 @@ export default class Main extends React.Component {
                                 ) : null}
 
                                 <Text>{l.sum}</Text>
-                                {/*<Text>{l.description.title}</Text>*/}
-                                {/*<IconM name={l.description.img} type="simple-line-icons" size={25}/>*/}
+                                <Text>{l.typeDescription}</Text>
+                                <IconM name={l.typeDescriptionImg} type="simple-line-icons" size={25}/>
                             </View>
                         ])
                     }

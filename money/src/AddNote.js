@@ -72,6 +72,8 @@ export default class Main extends React.Component {
         InteractionManager.runAfterInteractions(() => {
             this.props.navigation.setParams({nodeType: 'Списание'})
         });
+
+
     };
 
     componentWillUnmount() {
@@ -94,7 +96,7 @@ export default class Main extends React.Component {
 
         let addedNote = {
             id:'',
-            type: "списание",
+            type: this.props.navigation.state.params.nodeType,
             sum: money,
             typeDescription: message,
             typeDescriptionImg: typeDescriptionImg,
