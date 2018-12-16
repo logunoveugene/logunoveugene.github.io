@@ -8,9 +8,10 @@ import {
     TextInput,
     ScrollView,
     TouchableOpacity,
+    InteractionManager,
     Text
 } from 'react-native'
-import firebase from 'react-native-firebase'
+
 
 import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
 import icoMoonConfig from './font/selection';
@@ -24,23 +25,53 @@ export default class Main extends React.Component {
     state = {
         currentUser: null,
         account: 'Счет 1',
-        message: '',
+        message: 'Не определено',
         accountList: '',
         inputNumber: '',
+        nodeDescription: '',
         keyboardIsShown: false,
-        money: 0
-    };
-    static navigationOptions = {
-        headerTitle: 'Добавить списание',
+        money: 0,
+        count: 0,
+        typeDescriptionImg:''
     };
 
-    componentDidMount() {
-        // const {currentUser} = firebase.auth();
-        // this.setState({currentUser});
+    static navigationOptions = ({navigation}) => {
+        let addTypeList = ["Расход", "Пополнение"]
+        return {
+            headerTitle: (
+                <Picker
+                    selectedValue={navigation.getParam('nodeType', 'Списание')}
+                    style={{height: 50, width: 130}}
+                    onValueChange={((itemValue) => navigation.setParams({nodeType: itemValue}))}>
+                    {addTypeList.map((i) => (
+                        <Picker.Item key={i} label={i} value={i}/>
+                    ))}
+                </Picker>
+            ),
+        }
+    };
 
+
+    async componentDidMount() {
         this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
         this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
 
+        try {
+            var accountList = await AsyncStorage.getItem('accountList');
+            if (accountList == null) {
+                accountList = []
+            } else {
+                accountList = JSON.parse(accountList);
+            }
+            this.setState({accountList: accountList})
+        } catch (error) {
+            alert("Что-то пошло не так...")
+        }
+
+
+        InteractionManager.runAfterInteractions(() => {
+            this.props.navigation.setParams({nodeType: 'Списание'})
+        });
     };
 
     componentWillUnmount() {
@@ -58,26 +89,21 @@ export default class Main extends React.Component {
     };
 
     handlePostData = async () => {
-        let {currentUser, message, account, money} = this.state;
-        let currentDate = new Date();
+        let {message, account, money, typeDescriptionImg} = this.state;
+        let currentDate = new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDate();
 
         let addedNote = {
+            id:'',
             type: "списание",
             sum: money,
-            description: message,
+            typeDescription: message,
+            typeDescriptionImg: typeDescriptionImg,
             date: currentDate,
+            color: '#eeeee',
             account: account
         };
-
-        // firebase
-        //     .database().ref(currentUser.uid + '/node').push(addedNote
-        // ).then(() => {
-        //     console.log("данные ушли");
-        // }).catch((error) => {
-        //     console.log(error);
-        // });
-
         try {
+            await AsyncStorage.removeItem('notes');
             var storedNote = await AsyncStorage.getItem('notes');
             if (storedNote == null) {
                 storedNote = []
@@ -88,6 +114,7 @@ export default class Main extends React.Component {
         } catch (error) {
             alert("Что-то пошло не так...")
         }
+        addedNote.id = storedNote.length +1
         storedNote.push(addedNote);
         try {
             await AsyncStorage.setItem('notes', JSON.stringify(storedNote));
@@ -99,35 +126,43 @@ export default class Main extends React.Component {
         this.props.navigation.navigate('Main')
     };
 
-    // _handleClear() {
-    //     model.clearAll();
-    // }
-    //
-    // _handleDelete() {
-    //     model.delKey();
-    // }
-    //
-    // _handleKeyPress(key) {
-    //     model.addKey(key);
-    // }
 
     _keyPress = (i) => {
         let {money} = this.state;
         if (money === 0) {
             this.setState({money: i.toString()});
+
         }
-        else {
+        else if (money.toString().slice(-2, -1) !== '.') {
             this.setState({money: money + i.toString()});
+        }
+    };
+
+    _keyDel = () => {
+        let {money} = this.state;
+        if (money !== 0) {
+            this.setState({money: money.substring(0, money.length - 1)});
+        }
+    };
+    _keyDot = () => {
+        let {money} = this.state;
+        if (money.toString().indexOf(".") === -1) {
+            this.setState({money: money + "."});
         }
 
 
     };
 
+    _chooseType = (type) => {
+        this.setState({message: type.title});
+        this.setState({typeDescriptionImg: type.img});
+
+    };
 
     render() {
         const {currentUser, list, account, accountList, inputNumber, keyboardIsShown} = this.state
         let accountItem = Array.from(this.state.accountList);
-        let nodeType = [
+        let nodeDescription = [
             {
                 img: "pizza",
                 title: "Фастфуд"
@@ -229,13 +264,18 @@ export default class Main extends React.Component {
                 title: "ТВ"
             }
         ];
-        let keys = [1, 2, 3, 4, 5, 6, 7, 8, 9, '.', 0, 'x'];
+        let keys = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         return (
+
             <View style={styles.container}>
-                <ScrollView style={styles.nodeTypeWrapScroll}>
-                    <View style={styles.nodeTypeWrap}>
-                        {nodeType.map((i) => (
-                            <TouchableOpacity key={i.title} style={styles.mynode}>
+
+                <ScrollView style={styles.nodeDescriptionWrapScroll}>
+                    <View style={styles.nodeDescriptionWrap}>
+                        {nodeDescription.map((i) => (
+                            <TouchableOpacity key={i.title}
+                                              style={styles.mynode}
+                                              onPress={() => this._chooseType(i)}
+                            >
                                 <IconM name={i.img} type="simple-line-icons" size={25}/>
                                 <Text style={styles.mynodeText}>{i.title}</Text>
                             </TouchableOpacity>
@@ -264,18 +304,25 @@ export default class Main extends React.Component {
                                 <Text style={styles.vKeyboardKeyText}>{i}</Text>
                             </TouchableOpacity>
                         ))}
+                        <TouchableOpacity
+                            onPress={() => this._keyDot()}
+                            style={styles.vKeyboardKey}>
+                            <Text style={styles.vKeyboardKeyText}>.</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => this._keyPress(0)}
+                            style={styles.vKeyboardKey}>
+                            <Text style={styles.vKeyboardKeyText}>0</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => this._keyDel()}
+                            style={styles.vKeyboardKey}>
+                            <Text style={styles.vKeyboardKeyText}>x</Text>
+                        </TouchableOpacity>
+
                     </View>
                 }
 
-                {/*{*/}
-                {/*!keyboardIsShown &&*/}
-                {/*<CustomKeyboard*/}
-                {/*keyboardType="decimal-pad"*/}
-                {/*onClear={this._handleClear.bind(this)}*/}
-                {/*onDelete={this._handleDelete.bind(this)}*/}
-                {/*onKeyPress={this._handleKeyPress.bind(this)}*/}
-                {/*/>*/}
-                {/*}*/}
 
                 <TouchableOpacity
                     style={styles.fullButton}
@@ -331,7 +378,7 @@ const styles = StyleSheet.create({
         flexWrap: 'wrap'
     },
 
-    nodeTypeWrap: {
+    nodeDescriptionWrap: {
         flex: 1,
         justifyContent: 'space-between',
         flexDirection: 'row',
@@ -349,7 +396,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         paddingTop: 5,
     },
-    nodeTypeWrapScroll: {
+    nodeDescriptionWrapScroll: {
         width: '100%',
         height: 500,
     },

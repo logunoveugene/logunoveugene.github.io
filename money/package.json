@@ -7,15 +7,21 @@
     "android-linux": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android",
     "test": "jest",
     "android": "C:\\Users\\User\\AppData\\Local\\Android\\Sdk\\tools\\emulator.exe -netdelay none -netspeed full -avd Galaxy_Nexus_API_22",
-    "run-app": "react-native run-android"
+    "app": "react-native run-android"
   },
-  "rnpm": { "assets": [ "resources/fonts" ] },
+  "rnpm": {
+    "assets": [
+      "resources/fonts"
+    ]
+  },
   "dependencies": {
+    "dayjs": "^1.7.8",
     "fs-extra": "^7.0.1",
     "lodash": "^4.17.11",
     "react": "16.6.1",
     "react-native": "0.57.5",
     "react-native-action-button": "^2.8.5",
+    "react-native-elements": "^0.19.1",
     "react-native-firebase": "^5.1.0",
     "react-native-gesture-handler": "^1.0.9",
     "react-native-google-signin": "^1.0.1",
@@ -23,10 +29,8 @@
     "react-native-svg": "^8.0.8",
     "react-native-vector-icons": "^6.1.0",
     "react-navigation": "^3.0.0",
-    "react-navigation-header-buttons": "^2.1.1",
     "replace-in-file": "^3.4.2",
-    "victory-native": "^31.0.0",
-    "react-native-elements":"^1.0.0-beta7"
+    "victory-native": "^31.0.0"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",

@@ -1,11 +1,19 @@
 import React from 'react'
-import {StyleSheet, FlatList, Text, View, AsyncStorage, ActivityIndicator} from 'react-native'
+import {StyleSheet, ScrollView, TouchableOpacity, Text, View, AsyncStorage, ActivityIndicator} from 'react-native'
 import firebase from 'react-native-firebase'
 import ActionButton from 'react-native-action-button';
-// import {List, ListItem, Icon} from 'react-native-elements'
 
+import {NavigationEvents} from 'react-navigation';
 import {VictoryPie, VictoryChart, VictoryGroup, VictoryPolarAxis, VictoryTheme} from "victory-native";
 import _ from 'lodash';
+
+
+
+
+import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
+import icoMoonConfig from './font/selection';
+
+const IconM = createIconSetFromIcoMoon(icoMoonConfig);
 
 
 export default class Main extends React.Component {
@@ -16,29 +24,24 @@ export default class Main extends React.Component {
             .signOut()
     };
 
-    static navigationOptions = {
-        headerTitle: 'Ваши финансы'
+    static navigationOptions = ({navigation}) => {
+
+        return {
+            headerTitle: 'Ваш баланс',
+            headerRight: (
+                <View>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('AddAccount')}
+                    >
+                        <Text>Счета</Text>
+                    </TouchableOpacity>
+
+                </View>
+            )
+
+        }
     };
 
-
-    handlePostData = () => {
-        let {currentUser, message, list} = this.state;
-        let myDate = new Date();
-        firebase
-            .database().ref(currentUser.uid).push(
-            {
-                userId: currentUser.uid,
-                message: message,
-                date: myDate,
-            }
-        ).then(() => {
-            console.log("данные ушли");
-        }).catch((error) => {
-            console.log(error);
-        });
-        this.setState({message: ''});
-
-    };
 
     async componentDidMount() {
         try {
@@ -49,42 +52,49 @@ export default class Main extends React.Component {
                 storedNote = JSON.parse(storedNote);
             }
             this.setState({listls: storedNote})
-
         } catch (error) {
             alert("Что-то пошло не так...")
         }
 
-        const {currentUser} = firebase.auth();
-        this.setState({currentUser});
-        let starCountRef = firebase.database().ref(currentUser.uid + '/node');
-        starCountRef.once('value', function (snapshot) {
-        }).then((val) => {
-            this.setState({list: _.values(val.toJSON())})
-            console.log(_.values(val.toJSON()))
-        })
+        // const {currentUser} = firebase.auth();
+        // this.setState({currentUser});
+        // let starCountRef = firebase.database().ref(currentUser.uid + '/node');
+        // starCountRef.once('value', function (snapshot) {
+        // }).then((val) => {
+        //     this.setState({list: _.values(val.toJSON())})
+        //     console.log(_.values(val.toJSON()))
+        // })
+
     }
 
 
     render() {
         const {listls} = this.state
         return (
+
             <View style={styles.container}>
-                <ActivityIndicator size="large"/>
-                {/*<List>*/}
-                    {/*{*/}
-                        {/*listls.map((l) => (*/}
-                            {/*<ListItem*/}
-                                {/*key={l.date}*/}
-                                {/*title={l.sum}*/}
-                                {/*rightIcon={<Text></Text>}*/}
-                                {/*leftIcon={*/}
-                                    {/*<Text>0</Text>*/}
-                                {/*}*/}
-                                {/*subtitle={l.description}*/}
-                            {/*/>*/}
-                        {/*))*/}
-                    {/*}*/}
-                {/*</List>*/}
+                <NavigationEvents
+                    onDidFocus={() => this.componentDidMount()}
+
+                />
+                {(listls === []) && <ActivityIndicator size="large"/>}
+                <ScrollView>
+
+                    {
+                        listls.map((l, idx) => [
+                            <View key={l.date}>
+                                {(idx > 1 && l [idx - 1].date !== l.date) || idx === 0 ? (
+                                <Text>{l.date}</Text>
+                                ) : null}
+
+                                <Text>{l.sum}</Text>
+                                {/*<Text>{l.description.title}</Text>*/}
+                                {/*<IconM name={l.description.img} type="simple-line-icons" size={25}/>*/}
+                            </View>
+                        ])
+                    }
+
+                </ScrollView>
                 <ActionButton
                     onPress={() => this.props.navigation.navigate('AddNote')}
                     buttonColor="rgba(231,76,60,1)">
