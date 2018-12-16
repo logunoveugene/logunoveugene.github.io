@@ -9,6 +9,7 @@ import {
     ScrollView,
     TouchableOpacity,
     InteractionManager,
+    DatePickerAndroid,
     Text
 } from 'react-native'
 
@@ -18,6 +19,8 @@ import icoMoonConfig from './font/selection';
 
 const IconM = createIconSetFromIcoMoon(icoMoonConfig);
 
+import dayjs from 'dayjs'
+import 'dayjs/locale/ru'
 import _ from "lodash";
 
 
@@ -32,7 +35,8 @@ export default class Main extends React.Component {
         keyboardIsShown: false,
         money: 0,
         count: 0,
-        typeDescriptionImg:''
+        typeDescriptionImg: 'pizza',
+        usersDate: ''
     };
 
     static navigationOptions = ({navigation}) => {
@@ -68,6 +72,8 @@ export default class Main extends React.Component {
             alert("Что-то пошло не так...")
         }
 
+        this.setState({usersDate: new Date().getFullYear() + '-' + ('0' + (new Date().getMonth() + 1)).slice(-2) + '-' + ('0' + new Date().getDate()).slice(-2)})
+
 
         InteractionManager.runAfterInteractions(() => {
             this.props.navigation.setParams({nodeType: 'Списание'})
@@ -91,11 +97,11 @@ export default class Main extends React.Component {
     };
 
     handlePostData = async () => {
-        let {message, account, money, typeDescriptionImg} = this.state;
-        let currentDate = new Date().getFullYear() + '-' + new Date().getMonth() + '-' + new Date().getDate();
+        let {message, account, money, usersDate, typeDescriptionImg} = this.state;
+        let currentDate = usersDate;
 
         let addedNote = {
-            id:'',
+            id: '',
             type: this.props.navigation.state.params.nodeType,
             sum: money,
             typeDescription: message,
@@ -104,8 +110,9 @@ export default class Main extends React.Component {
             color: '#eeeee',
             account: account
         };
+        console.log(addedNote);
         try {
-            await AsyncStorage.removeItem('notes');
+            // await AsyncStorage.removeItem('notes');
             var storedNote = await AsyncStorage.getItem('notes');
             if (storedNote == null) {
                 storedNote = []
@@ -116,7 +123,7 @@ export default class Main extends React.Component {
         } catch (error) {
             alert("Что-то пошло не так...")
         }
-        addedNote.id = storedNote.length +1
+        addedNote.id = storedNote.length + 1
         storedNote.push(addedNote);
         try {
             await AsyncStorage.setItem('notes', JSON.stringify(storedNote));
@@ -134,8 +141,7 @@ export default class Main extends React.Component {
         if (money === 0) {
             this.setState({money: i.toString()});
 
-        }
-        else if (money.toString().slice(-2, -1) !== '.') {
+        } else if (money.toString().slice(-2, -1) !== '.') {
             this.setState({money: money + i.toString()});
         }
     };
@@ -158,6 +164,24 @@ export default class Main extends React.Component {
     _chooseType = (type) => {
         this.setState({message: type.title});
         this.setState({typeDescriptionImg: type.img});
+
+    };
+
+    _selectDate = async () => {
+        try {
+            const {action, year, month, day} = await DatePickerAndroid.open({
+                date: this.selectedDate
+            });
+            if (action !== DatePickerAndroid.dismissedAction) {
+                // Selected year, month (0-11), day
+                let selectedDate = year + '-' + ('0' + (month + 1)).slice(-2) + '-' + ('0' + day).slice(-2)
+                this.setState({usersDate: selectedDate})
+                console.log(selectedDate)
+            }
+
+        } catch ({code, message}) {
+            console.warn('Cannot open date picker', message);
+        }
 
     };
 
@@ -286,6 +310,16 @@ export default class Main extends React.Component {
                 </ScrollView>
 
                 <View style={styles.inputWrap}>
+
+                    <TouchableOpacity
+                        style={styles.datePickerButton}
+                        onPress={() => this._selectDate()}
+                    >
+                        <IconM style={styles.datePickerButtonIcon} name="small-calendar" type="simple-line-icons"
+                               size={18}/>
+                        <Text
+                            style={styles.datePickerButtonText}>{this.state.usersDate && dayjs(this.state.usersDate).locale('ru').format('D MMM')}</Text>
+                    </TouchableOpacity>
                     <TextInput
                         style={styles.textInput}
                         autoCapitalize="none"
@@ -319,7 +353,8 @@ export default class Main extends React.Component {
                         <TouchableOpacity
                             onPress={() => this._keyDel()}
                             style={styles.vKeyboardKey}>
-                            <Text style={styles.vKeyboardKeyText}>x</Text>
+                            <IconM style={styles.vKeyboardKeyIcon} name="backspace" type="simple-line-icons" size={18}/>
+
                         </TouchableOpacity>
 
                     </View>
@@ -348,13 +383,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         flexDirection: 'row',
         justifyContent: 'space-between',
-
         height: 50,
 
     },
     moneyCount: {
         fontSize: 22,
-        width: "50%",
+        width: "30%",
         textAlign: 'right',
         height: 50,
         alignItems: 'center',
@@ -362,10 +396,24 @@ const styles = StyleSheet.create({
     },
 
     textInput: {
-        width: "50%",
+        width: "45%",
         padding: 8,
     },
 
+    datePickerButton: {
+        width: "25%",
+        padding: 10,
+        height: 50,
+        paddingTop: 15,
+        flexDirection: 'row'
+    },
+    datePickerButtonText: {
+        fontSize: 14
+    },
+    datePickerButtonIcon: {
+        color: "#999",
+        paddingRight: 5
+    },
     fullButton: {
         width: '100%',
         alignItems: 'center',
@@ -418,10 +466,14 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderStyle: 'solid',
         borderColor: '#eee',
+        paddingTop: 8,
         borderWidth: 1
     },
     vKeyboardKeyText: {
         fontSize: 20,
+    },
+    vKeyboardKeyIcon: {
+        paddingTop: 5
     }
 
 

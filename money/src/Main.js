@@ -8,8 +8,6 @@ import {VictoryPie, VictoryChart, VictoryGroup, VictoryPolarAxis, VictoryTheme} 
 import _ from 'lodash';
 
 
-
-
 import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
 import icoMoonConfig from './font/selection';
 
@@ -51,10 +49,12 @@ export default class Main extends React.Component {
             } else {
                 storedNote = JSON.parse(storedNote);
             }
-            this.setState({listls: storedNote})
+            this.setState({listls: _.orderBy(storedNote, ['date','id'], ['desc', 'desc'])})
+
         } catch (error) {
             alert("Что-то пошло не так...")
         }
+        console.log(this.state.listls)
 
         // const {currentUser} = firebase.auth();
         // this.setState({currentUser});
@@ -82,14 +82,18 @@ export default class Main extends React.Component {
 
                     {
                         listls.map((l, idx) => [
-                            <View key={l.date}>
-                                {(idx > 1 && l [idx - 1].date !== l.date) || idx === 0 ? (
-                                <Text>{l.date}</Text>
+                            <View key={l.id}>
+                                {(idx >= 1 && listls[idx - 1].date !== l.date) || idx === 0 ? (
+                                    <Text>{l.date}</Text>
                                 ) : null}
+                                <View style={styles.nodeItem}>
+                                    <IconM name={l.typeDescriptionImg} type="simple-line-icons" size={25}/>
+                                    <Text>{l.type}</Text>
+                                    <Text>{l.id}</Text>
+                                    <Text>{l.typeDescription}</Text>
+                                    <Text>{l.sum}</Text>
+                                </View>
 
-                                <Text>{l.sum}</Text>
-                                <Text>{l.typeDescription}</Text>
-                                <IconM name={l.typeDescriptionImg} type="simple-line-icons" size={25}/>
                             </View>
                         ])
                     }
@@ -106,8 +110,6 @@ export default class Main extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
-
     },
     textInput: {
         height: 40,
@@ -122,4 +124,11 @@ const styles = StyleSheet.create({
         height: 22,
         color: 'white',
     },
+    nodeItem:{
+        flex: 1,
+        flexDirection: 'row',
+        borderBottomColor: '#eee',
+        borderBottomWidth: 1,
+        padding: 10
+    }
 });
