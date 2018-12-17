@@ -24,7 +24,10 @@
                     box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1),0 5px 10px -5px rgba(0, 0, 0, 0.05);
 
                 }
-
+                &--error{
+                    border: 1px solid $danger-color;
+                    box-shadow: 0 10px 20px -10px rgba(202, 49, 14, 0.12), 0 5px 10px -5px rgba(255, 47, 0, 0.05);
+                }
             }
 
             &__label{

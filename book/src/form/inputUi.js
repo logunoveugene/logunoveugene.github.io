@@ -2,7 +2,6 @@ import React from 'react'
 import './forms.scss'
 
 
-
 export default class Input extends React.Component {
     constructor(props) {
         super(props);
@@ -25,18 +24,33 @@ export default class Input extends React.Component {
 
     render() {
         return (
-            <div
-                className={((this.state.value.length > 0) || this.state.focused ? "input--label-up " : "") + "input input--floating "}>
-                <label className="input__label">{this.props.label}</label>
-                <input
-                    value={this.state.value}
-                    onChange={this.handleChange}
-                    onFocus={this.onFocus}
-                    onBlur={this.onBlur}
-                    className="input__field "
-                    placeholder={this.props.placeholder}
+            <div>
+                <div
+                    className={((this.state.value.length > 0) || this.state.focused ? "input--label-up " : "") + "input input--floating "}>
+                    <label className="input__label">{this.props.label}</label>
+                    <input
+                        value={this.state.value}
+                        onChange={this.handleChange}
+                        onFocus={this.onFocus}
+                        onBlur={this.onBlur}
+                        className="input__field "
+                        placeholder={this.props.placeholder}
 
-                />
+                    />
+                </div>
+                {/*<div*/}
+                    {/*className={((this.state.value.length > 0) || this.state.focused ? "input--label-up " : "") + "input input--floating "}>*/}
+                    {/*<label className="input__label">{this.props.label}</label>*/}
+                    {/*<input*/}
+                        {/*value={this.state.value}*/}
+                        {/*onChange={this.handleChange}*/}
+                        {/*onFocus={this.onFocus}*/}
+                        {/*onBlur={this.onBlur}*/}
+                        {/*className="input__field input__field--error"*/}
+                        {/*placeholder={this.props.placeholder}*/}
+
+                    {/*/>*/}
+                {/*</div>*/}
             </div>
 
 

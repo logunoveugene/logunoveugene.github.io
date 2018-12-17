@@ -2,37 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92ef5139-5f77-437f-ab3b-3c29de85ccaa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../book/.storybook/addons.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/.storybook/webpack.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/icon-ui.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/icon-ui.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/icon-ui.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/icon-ui.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/ptsans/jizaRExUiTo99u79D0-ExcOPIDUg-g.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/ptsans/jizaRExUiTo99u79D0KExcOPIDU.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/ptsans/jizaRExUiTo99u79D0aExcOPIDUg-g.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/ptsans/jizaRExUiTo99u79D0yExcOPIDUg-g.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/ptsans/jizfRExUiTo99u79B_mh0O6tLR8a8zI.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/ptsans/jizfRExUiTo99u79B_mh0OCtLR8a8zILig.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/ptsans/jizfRExUiTo99u79B_mh0OOtLR8a8zILig.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/ptsans/jizfRExUiTo99u79B_mh0OqtLR8a8zILig.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/fonts/selection.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/fonts/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/src/form/forms.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/src/form/inputUi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/src/variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/style/button.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/style/forms.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/style/index.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/style/links.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../book/style/variables.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../book/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../book/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../book/.storybook/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../book/.storybook/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../book/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../book/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../book/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../book/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../book/stories/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../book/stories/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../book/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../book/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../book/src/form/forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../book/src/form/forms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../book/src/form/inputUi.js" beforeDir="false" afterPath="$PROJECT_DIR$/../book/src/form/inputUi.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
