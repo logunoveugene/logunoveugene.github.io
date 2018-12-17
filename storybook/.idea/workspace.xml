@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="92ef5139-5f77-437f-ab3b-3c29de85ccaa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../book/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../book/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../book/src/form/forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../book/src/form/forms.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../book/src/form/inputUi.js" beforeDir="false" afterPath="$PROJECT_DIR$/../book/src/form/inputUi.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,7 +52,7 @@
     <session id="-1065296820">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="7" />
           <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.4" value="2" />
@@ -270,7 +268,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="1920" />
     <option name="y" value="-3" />
     <option name="width" value="1920" />
@@ -381,8 +379,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="-3" width="1920" height="1001" extended-state="1" />
-    <editor active="true" />
+    <frame x="1920" y="-3" width="1920" height="1001" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11395101" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
