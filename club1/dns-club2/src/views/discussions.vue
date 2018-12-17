@@ -182,7 +182,7 @@
                         <paginate
                                 name="discuss"
                                 :list="discussions"
-                                :per="4"
+                                :per="1"
                         >
                             <disc-list-item :post="post"
                                             v-for="(post, index) in paginated('discuss')"
@@ -192,7 +192,7 @@
 
                         <div class="btn paginate__button btn-block mb-4 ">Показать еще</div>
 
-                        <paginate-links :limit="3"
+                        <paginate-links :limit="2"
                                         for="discuss"
                                         :show-step-links="true"
                                         :step-links="{
