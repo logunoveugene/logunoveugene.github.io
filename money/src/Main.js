@@ -1,12 +1,17 @@
 import React from 'react'
-import {StyleSheet, FlatList, Text, View, AsyncStorage, ActivityIndicator} from 'react-native'
+import {StyleSheet, ScrollView, TouchableOpacity, Text, View, AsyncStorage, ActivityIndicator} from 'react-native'
 import firebase from 'react-native-firebase'
 import ActionButton from 'react-native-action-button';
-import {List, ListItem, Icon} from 'react-native-elements'
 
-
+import {NavigationEvents} from 'react-navigation';
 import {VictoryPie, VictoryChart, VictoryGroup, VictoryPolarAxis, VictoryTheme} from "victory-native";
 import _ from 'lodash';
+
+
+import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
+import icoMoonConfig from './font/selection';
+
+const IconM = createIconSetFromIcoMoon(icoMoonConfig);
 
 
 export default class Main extends React.Component {
@@ -17,30 +22,24 @@ export default class Main extends React.Component {
             .signOut()
     };
 
-    static navigationOptions = {
-        headerTitle: 'Ваши финансы'
+    static navigationOptions = ({navigation}) => {
+
+        return {
+            headerTitle: 'Ваш баланс',
+            headerRight: (
+                <View>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('AddAccount')}
+                    >
+                        <Text>Счета</Text>
+                    </TouchableOpacity>
+
+                </View>
+            )
+
+        }
     };
 
-
-    handlePostData = () => {
-        let {currentUser, message, list} = this.state;
-        let myDate = new Date();
-        firebase
-            .database().ref(currentUser.uid).push(
-            {
-                userId: currentUser.uid,
-                message: message,
-                date: myDate,
-            }
-        ).then(() => {
-            console.log("данные ушли");
-        }).catch((error) => {
-            console.log(error);
-        });
-
-        this.setState({message: ''});
-
-    };
 
     async componentDidMount() {
         try {
@@ -49,49 +48,57 @@ export default class Main extends React.Component {
                 storedNote = []
             } else {
                 storedNote = JSON.parse(storedNote);
-                console.log(storedNote)
             }
-            this.setState({listls: storedNote})
+            this.setState({listls: _.orderBy(storedNote, ['date','id'], ['desc', 'desc'])})
+
         } catch (error) {
             alert("Что-то пошло не так...")
         }
+        console.log(this.state.listls)
 
+        // const {currentUser} = firebase.auth();
+        // this.setState({currentUser});
+        // let starCountRef = firebase.database().ref(currentUser.uid + '/node');
+        // starCountRef.once('value', function (snapshot) {
+        // }).then((val) => {
+        //     this.setState({list: _.values(val.toJSON())})
+        //     console.log(_.values(val.toJSON()))
+        // })
 
-        const {currentUser} = firebase.auth();
-        this.setState({currentUser});
-        let starCountRef = firebase.database().ref(currentUser.uid + '/node');
-        starCountRef.once('value', function (snapshot) {
-        }).then((val) => {
-            this.setState({list: _.values(val.toJSON())})
-            console.log(_.values(val.toJSON()))
-        })
     }
 
 
     render() {
         const {listls} = this.state
-
         return (
+
             <View style={styles.container}>
+                <NavigationEvents
+                    onDidFocus={() => this.componentDidMount()}
 
-                {/*<ActivityIndicator size="large"/>*/}
+                />
+                {(listls === []) && <ActivityIndicator size="large"/>}
+                <ScrollView>
 
-                <List>
                     {
-                        listls.map((l) => (
-                            <ListItem
+                        listls.map((l, idx) => [
+                            <View key={l.id}>
+                                {(idx >= 1 && listls[idx - 1].date !== l.date) || idx === 0 ? (
+                                    <Text>{l.date}</Text>
+                                ) : null}
+                                <View style={styles.nodeItem}>
+                                    <IconM name={l.typeDescriptionImg} type="simple-line-icons" size={25}/>
+                                    <Text>{l.type}</Text>
+                                    <Text>{l.id}</Text>
+                                    <Text>{l.typeDescription}</Text>
+                                    <Text>{l.sum}</Text>
+                                </View>
 
-                                key={l.date}
-                                title={l.sum}
-                                rightIcon={<Text></Text>}
-                                leftIcon={
-                                    <Text>0</Text>
-                                }
-                                subtitle={l.description}
-                            />
-                        ))
+                            </View>
+                        ])
                     }
-                </List>
+
+                </ScrollView>
                 <ActionButton
                     onPress={() => this.props.navigation.navigate('AddNote')}
                     buttonColor="rgba(231,76,60,1)">
@@ -103,8 +110,6 @@ export default class Main extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
-
     },
     textInput: {
         height: 40,
@@ -119,4 +124,11 @@ const styles = StyleSheet.create({
         height: 22,
         color: 'white',
     },
+    nodeItem:{
+        flex: 1,
+        flexDirection: 'row',
+        borderBottomColor: '#eee',
+        borderBottomWidth: 1,
+        padding: 10
+    }
 });

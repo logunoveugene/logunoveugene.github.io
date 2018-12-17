@@ -1,56 +1,92 @@
 import React from 'react'
-import {StyleSheet, View, TextInput, Button} from 'react-native'
+import {StyleSheet, View, AsyncStorage, TextInput, Text, Button} from 'react-native'
 import firebase from 'react-native-firebase'
 import _ from "lodash";
 
 
 export default class Main extends React.Component {
-    state = {currentUser: null, accountName: '', amount: ''}
+    state = {currentUser: null, accountName: '', amount: '', accountList:[]}
 
-    componentDidMount() {
+
+    static navigationOptions = ({navigation}) => {
+
+        return {
+            headerTitle: 'Мои счета'
+
+
+        }
+    };
+
+
+
+
+    async componentDidMount() {
         const {currentUser} = firebase.auth();
         this.setState({currentUser});
 
 
 
-    };
+        try {
+            var storeddAccounts = await AsyncStorage.getItem('accountsList');
+            if (storeddAccounts == null) {
+                storeddAccounts = []
+            } else {
+                storeddAccounts = JSON.parse(storeddAccounts);
+            }
+            this.setState({accountList: storeddAccounts})
+            console.log(storeddAccounts)
+        } catch (error) {
+            alert("Что-то пошло не так...")
+        }
+
+    }
 
 
-    handlePostData = () => {
-        let {currentUser, accountName, amount} = this.state;
-        let date = new Date();
-        let myDate = {
-            day: date.getDate(),
-            month: date.getMonth(),
-            year: date.getFullYear()
+
+
+    handlePostData = async () => {
+        const {accountName, amount} = this.state;
+        let addedAccount = {
+            title: accountName,
+            amount: amount
         };
 
-
-
-        firebase
-            .database().ref(currentUser.uid + '/accounts').push(
-            {
-                userId: currentUser.uid,
-                accountName: accountName,
-                date: myDate,
-                amount: amount
-
+        console.log(addedAccount)
+        try {
+            await AsyncStorage.removeItem('accountsList');
+            var accountsList = await AsyncStorage.getItem('accountsList');
+            if (accountsList == null) {
+                accountsList = []
+                console.log(accountsList)
+            } else {
+                accountsList = JSON.parse(accountsList);
+                console.log(accountsList)
             }
-        ).then(() => {
-            console.log("данные ушли");
-        }).catch((error) => {
-            console.log(error);
-        });
+
+        } catch (error) {
+            alert("Что-то пошло не так1...")
+        }
+        accountsList.push(addedAccount);
+        try {
+            await AsyncStorage.setItem('accountsList', JSON.stringify(accountsList));
+        } catch (error) {
+            alert("Что-то пошло не так.2..")
+        }
         this.setState({accountName: ''});
-        this.setState({amount: ''});
+
+        // this.props.navigation.navigate('Main')
     };
 
 
     render() {
-        const {accountName, amount} = this.state
+        const {accountName, amount, accountList} = this.state
+        console.log(accountList)
         return (
             <View style={styles.container}>
+                {accountList.map((i)=>(
+                    <Text key={i.title}>{i.title} / {i.amount}</Text>
 
+                ))}
                 <TextInput
                     style={styles.textInput}
                     autoCapitalize="none"
