@@ -1,0 +1,88 @@
+@import "../variables.scss";
+
+.input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    &--floating {
+
+        .input {
+
+            &__field {
+                line-height: 40px;
+                padding: 20px 13px 2px;
+                font-weight: 700;
+                transition: box-shadow .2s ease-in-out;
+
+                &::placeholder {
+                    opacity: 0;
+                    color: $placeholder-text;
+                }
+
+                &:focus{
+                    box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.1),0 5px 10px -5px rgba(0, 0, 0, 0.05);
+
+                }
+
+            }
+
+            &__label{
+                font-size: 16px;
+                user-select: none;
+                font-weight: normal;
+                position: absolute;
+                left: 13px;
+                top: 25px;
+                pointer-events: none;
+                transition: 0.2s ease all;
+
+            }
+        }
+
+
+
+    }
+
+    &--label-up{
+
+        .input {
+
+            &__field {
+
+
+                &::placeholder {
+                    opacity: 1;
+                }
+            }
+            &__label{
+                font-size: 14px;
+                transform: translateY(-12px);
+
+            }
+        }
+
+    }
+
+    &__field {
+        background-color: $white;
+        border: 1px solid $base-border;
+        padding: 9px $spacers-2;
+        font-size: 1rem;
+        line-height: 24px;
+        border-radius: $border-radius;
+        outline: none;
+    }
+
+    &__label{
+
+    }
+
+}
+
+@media (min-width: 992px) {
+
+}
+
+
+

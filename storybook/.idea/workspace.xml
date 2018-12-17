@@ -2,19 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92ef5139-5f77-437f-ab3b-3c29de85ccaa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../book-react/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../club1/dns-club2/src/views/discussions.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../club1/dns-club2/src/views/discussions.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homepage/dist/c-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../homepage/dist/c-style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homepage/dist/css/app.0e11aed1.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homepage/dist/css/chunk-vendors.8002754a.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homepage/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../homepage/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homepage/dist/js/app.702dbcee.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homepage/dist/js/app.702dbcee.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homepage/dist/js/chunk-vendors.c72c4c9c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../homepage/dist/js/chunk-vendors.c72c4c9c.js.map" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/.storybook/addons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/.storybook/webpack.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/icon-ui.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/icon-ui.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/icon-ui.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/icon-ui.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/ptsans/jizaRExUiTo99u79D0-ExcOPIDUg-g.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/ptsans/jizaRExUiTo99u79D0KExcOPIDU.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/ptsans/jizaRExUiTo99u79D0aExcOPIDUg-g.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/ptsans/jizaRExUiTo99u79D0yExcOPIDUg-g.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/ptsans/jizfRExUiTo99u79B_mh0O6tLR8a8zI.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/ptsans/jizfRExUiTo99u79B_mh0OCtLR8a8zILig.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/ptsans/jizfRExUiTo99u79B_mh0OOtLR8a8zILig.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/fonts/fonts/ptsans/jizfRExUiTo99u79B_mh0OqtLR8a8zILig.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/fonts/selection.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/fonts/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/src/form/forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/src/form/inputUi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/src/variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/style/button.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/style/forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/style/index.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/style/links.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../book/style/variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../book/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../book/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../book/.storybook/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../book/.storybook/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../book/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../book/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../book/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../book/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../book/stories/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../book/stories/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../book/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../book/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stories/forms.js" beforeDir="false" afterPath="$PROJECT_DIR$/stories/forms.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style/forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/style/forms.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,12 +82,12 @@
     <session id="-1065296820">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
-          <entry key="project.open.time.2" value="2" />
+          <entry key="project.closed" value="6" />
+          <entry key="project.open.time.2" value="3" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -90,7 +108,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="3" />
-          <entry key="js" value="11" />
+          <entry key="js" value="14" />
           <entry key="json" value="4" />
           <entry key="scss" value="12" />
         </counts>
@@ -99,7 +117,7 @@
         <counts>
           <entry key="CSS" value="3" />
           <entry key="JSON" value="4" />
-          <entry key="JavaScript" value="11" />
+          <entry key="JavaScript" value="14" />
           <entry key="SCSS" value="12" />
         </counts>
       </usages-collector>
@@ -120,7 +138,7 @@
         <entry file="file://$PROJECT_DIR$/style/forms.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -128,17 +146,53 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+            <state relative-caret-position="420">
+              <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.storybook/addons.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="7" selection-start-column="7" selection-end-column="7" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.storybook/webpack.config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+              <folding>
+                <marker date="1542351251076" expanded="true" signature="285:514" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.storybook/config.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stories/forms.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="e#22#64#0" expanded="true" />
               </folding>
@@ -244,8 +298,9 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="1920" />
+    <option name="y" value="-3" />
     <option name="width" value="1920" />
     <option name="height" value="1001" />
   </component>
@@ -267,16 +322,6 @@
               <item name="storybook" type="b2602c69:ProjectViewProjectNode" />
               <item name="storybook" type="462c0819:PsiDirectoryNode" />
               <item name=".storybook" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="storybook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="storybook" type="462c0819:PsiDirectoryNode" />
-              <item name="fonts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="storybook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="storybook" type="462c0819:PsiDirectoryNode" />
-              <item name="stories" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="storybook" type="b2602c69:ProjectViewProjectNode" />
@@ -346,11 +391,13 @@
       <workItem from="1542774349045" duration="384000" />
       <workItem from="1543291693373" duration="4521000" />
       <workItem from="1544772166302" duration="1728000" />
+      <workItem from="1545023947777" duration="2234000" />
+      <workItem from="1545029861463" duration="695000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44969000" />
+    <option name="totallyTimeSpent" value="47898000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -362,10 +409,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1001" extended-state="0" />
+    <frame x="1920" y="-3" width="1920" height="1001" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.111821085" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11395101" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -412,13 +459,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.storybook/addons.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="47" selection-start-line="1" selection-start-column="47" selection-end-line="1" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/stories/Типографика.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -433,23 +473,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.storybook/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <marker date="1542351251076" expanded="true" signature="285:514" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.storybook/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -481,6 +504,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/style/forms.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="4" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.storybook/addons.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stories/forms.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#22#64#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/fonts/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1215">
@@ -507,26 +564,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="4" lean-forward="true" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/style/forms.scss">
+    <entry file="file://$PROJECT_DIR$/.storybook/webpack.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+          <folding>
+            <marker date="1542351251076" expanded="true" signature="285:514" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stories/forms.js">
+    <entry file="file://$PROJECT_DIR$/.storybook/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="390">
+          <caret line="26" column="27" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
           <folding>
-            <element signature="e#22#64#0" expanded="true" />
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>

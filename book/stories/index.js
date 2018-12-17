@@ -1,8 +1,8 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import {App} from '../src/App';
+import InputUi from '../src/form/inputUi';
 
 storiesOf('Button', module)
     .add('with text', () => (
-        <App></App>
-    ))
+        <InputUi placeholder="iva@mail.com" label="Электронная почта"/>
+    ));
