@@ -294,7 +294,12 @@ export default class Main extends React.Component {
         return (
 
             <View style={styles.container}>
-
+                <View style={styles.fixedHeader}>
+                    <TouchableOpacity
+                        onPress={() => this.props.navigation.goBack()}>
+                        <Text>Назад</Text>
+                    </TouchableOpacity>
+                </View>
                 <ScrollView style={styles.nodeDescriptionWrapScroll}>
                     <View style={styles.nodeDescriptionWrap}>
                         {nodeDescription.map((i) => (
@@ -373,6 +378,16 @@ export default class Main extends React.Component {
     }
 }
 const styles = StyleSheet.create({
+
+    fixedHeader: {
+        backgroundColor: 'rgba(255,255,255,1)',
+        elevation: 1,
+    
+        width:'100%',
+        height: 50,
+
+        position: 'relative',
+    },
     container: {
         flex: 1,
         alignItems: 'center',

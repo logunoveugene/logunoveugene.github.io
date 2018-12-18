@@ -1,5 +1,5 @@
 import React from 'react'
-import {createSwitchNavigator, createStackNavigator, createAppContainer} from 'react-navigation';
+import {createSwitchNavigator, createStackNavigator, createDrawerNavigator, createAppContainer} from 'react-navigation';
 
 // import the different screens
 import Loading from './Loading'
@@ -10,7 +10,7 @@ import AddNote from './AddNote'
 import AddAccount from './AddAccount'
 
 
-const AppStack = createStackNavigator({
+const AppStack = createDrawerNavigator({
         Main: {screen: Main},
         AddNote: {screen: AddNote},
         AddAccount: {screen: AddAccount},
@@ -18,6 +18,8 @@ const AppStack = createStackNavigator({
     {
         initialRouteName: 'Main',
     });
+
+
 const AuthStack = createStackNavigator({
         SignUp: {screen: SignUp},
         Login: {screen: Login},
@@ -27,11 +29,12 @@ const AuthStack = createStackNavigator({
     });
 
 
-export default createAppContainer(createSwitchNavigator(
+export default createAppContainer(createDrawerNavigator(
     {
         Loading: {screen: Loading},
         App: AppStack,
         Auth: AuthStack,
+
     },
     {
         initialRouteName: 'Loading',

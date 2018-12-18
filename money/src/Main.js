@@ -1,5 +1,15 @@
 import React from 'react'
-import {StyleSheet, ScrollView, TouchableOpacity, Text, View, AsyncStorage, ActivityIndicator} from 'react-native'
+import {
+    StyleSheet,
+    ScrollView,
+    TouchableOpacity,
+    Text,
+    View,
+    AsyncStorage,
+    Modal,
+    Button,
+    ActivityIndicator
+} from 'react-native'
 import firebase from 'react-native-firebase'
 import ActionButton from 'react-native-action-button';
 
@@ -15,30 +25,48 @@ const IconM = createIconSetFromIcoMoon(icoMoonConfig);
 
 
 export default class Main extends React.Component {
-    state = {currentUser: null, message: '', list: '', listls: []};
+    state = {
+        currentUser: null,
+        message: '',
+        list: '',
+        listls: [],
+        modalVisible: false
+    };
     handleSignOut = () => {
         firebase
             .auth()
             .signOut()
     };
 
+    setModalVisible() {
+        this.setState({modalVisible: true});
+    }
+    hideModal() {
+        this.setState({modalVisible: false});
+    }
+
     static navigationOptions = ({navigation}) => {
 
+        const params = navigation.state.params || {};
+
         return {
-            headerTitle: 'Ваш баланс',
-            headerRight: (
-                <View>
-                    <TouchableOpacity
-                        onPress={() => navigation.navigate('AddAccount')}
-                    >
-                        <Text>Счета</Text>
-                    </TouchableOpacity>
-
-                </View>
-            )
-
+            title:       params.title,
+            headerLeft:  params.headerLeft,
+            headerRight: params.headerRight,
         }
     };
+
+    _setNavigationParams() {
+        let title = 'Form';
+        let headerLeft = <Button title="burger" onPress={this.setModalVisible.bind(this)}/>;
+        let headerRight = <Button title="bilter" onPress={this.setModalVisible.bind(this)}/>;
+
+        this.props.navigation.setParams({
+            title,
+            headerLeft,
+            headerRight,
+        });
+    }
 
 
     async componentDidMount() {
@@ -49,11 +77,12 @@ export default class Main extends React.Component {
             } else {
                 storedNote = JSON.parse(storedNote);
             }
-            this.setState({listls: _.orderBy(storedNote, ['date','id'], ['desc', 'desc'])})
+            this.setState({listls: _.orderBy(storedNote, ['date', 'id'], ['desc', 'desc'])})
 
         } catch (error) {
             alert("Что-то пошло не так...")
         }
+        this._setNavigationParams();
         console.log(this.state.listls)
 
         // const {currentUser} = firebase.auth();
@@ -78,6 +107,39 @@ export default class Main extends React.Component {
 
                 />
                 {(listls === []) && <ActivityIndicator size="large"/>}
+
+
+                <Modal
+                    animationType="slide"
+                    transparent={false}
+                    visible={this.state.modalVisible}
+                    onRequestClose={() => {
+                        Alert.alert('Modal has been closed.');
+                    }}>
+                    <View style={{marginTop: 22}}>
+                        <View>
+                            <Text>Hello World!</Text>
+
+                            <TouchableOpacity
+                                onPress={() => {
+                                    this.hideModal();
+                                }}>
+                                <Text>Hide Modal</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </Modal>
+
+
+                <TouchableOpacity
+                    onPress={() => {
+                        this.props.navigation.openDrawer();
+                    }}>
+                    <Text>Бургер</Text>
+
+                </TouchableOpacity>
+
+
                 <ScrollView>
 
                     {
@@ -124,7 +186,7 @@ const styles = StyleSheet.create({
         height: 22,
         color: 'white',
     },
-    nodeItem:{
+    nodeItem: {
         flex: 1,
         flexDirection: 'row',
         borderBottomColor: '#eee',
