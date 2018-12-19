@@ -104,7 +104,6 @@ export default class Main extends React.Component {
             <View style={styles.container}>
                 <NavigationEvents
                     onDidFocus={() => this.componentDidMount()}
-
                 />
                 {(listls === []) && <ActivityIndicator size="large"/>}
 

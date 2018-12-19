@@ -12,8 +12,8 @@ import {
     DatePickerAndroid,
     Text
 } from 'react-native'
-
-
+import NumKeyboard from './addNote/numKeyboard'
+import {NavigationEvents} from 'react-navigation';
 import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
 import icoMoonConfig from './font/selection';
 
@@ -28,7 +28,7 @@ export default class Main extends React.Component {
     state = {
         currentUser: null,
         account: 'Счет 1',
-        message: 'Не определено',
+        message: '',
         accountList: '',
         inputNumber: '',
         nodeDescription: '',
@@ -36,159 +36,9 @@ export default class Main extends React.Component {
         money: 0,
         count: 0,
         typeDescriptionImg: 'pizza',
-        usersDate: ''
-    };
-
-    static navigationOptions = ({navigation}) => {
-        let addTypeList = ["Расход", "Пополнение"]
-        return {
-            headerTitle: (
-                <Picker
-                    selectedValue={navigation.getParam('nodeType', 'Списание')}
-                    style={{height: 50, width: 130}}
-                    onValueChange={((itemValue) => navigation.setParams({nodeType: itemValue}))}>
-                    {addTypeList.map((i) => (
-                        <Picker.Item key={i} label={i} value={i}/>
-                    ))}
-                </Picker>
-            ),
-        }
-    };
-
-
-    async componentDidMount() {
-        this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
-        this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
-
-        try {
-            var accountList = await AsyncStorage.getItem('accountList');
-            if (accountList == null) {
-                accountList = []
-            } else {
-                accountList = JSON.parse(accountList);
-            }
-            this.setState({accountList: accountList})
-        } catch (error) {
-            alert("Что-то пошло не так...")
-        }
-
-        this.setState({usersDate: new Date().getFullYear() + '-' + ('0' + (new Date().getMonth() + 1)).slice(-2) + '-' + ('0' + new Date().getDate()).slice(-2)})
-
-
-        InteractionManager.runAfterInteractions(() => {
-            this.props.navigation.setParams({nodeType: 'Списание'})
-        });
-
-
-    };
-
-    componentWillUnmount() {
-        this.keyboardDidShowListener.remove();
-        this.keyboardDidHideListener.remove();
-    }
-
-
-    _keyboardDidShow = () => {
-        this.setState({keyboardIsShown: true});
-    };
-
-    _keyboardDidHide = () => {
-        this.setState({keyboardIsShown: false});
-    };
-
-    handlePostData = async () => {
-        let {message, account, money, usersDate, typeDescriptionImg} = this.state;
-        let currentDate = usersDate;
-
-        let addedNote = {
-            id: '',
-            type: this.props.navigation.state.params.nodeType,
-            sum: money,
-            typeDescription: message,
-            typeDescriptionImg: typeDescriptionImg,
-            date: currentDate,
-            color: '#eeeee',
-            account: account
-        };
-        console.log(addedNote);
-        try {
-            // await AsyncStorage.removeItem('notes');
-            var storedNote = await AsyncStorage.getItem('notes');
-            if (storedNote == null) {
-                storedNote = []
-            } else {
-                storedNote = JSON.parse(storedNote);
-                console.log(storedNote)
-            }
-        } catch (error) {
-            alert("Что-то пошло не так...")
-        }
-        addedNote.id = storedNote.length + 1
-        storedNote.push(addedNote);
-        try {
-            await AsyncStorage.setItem('notes', JSON.stringify(storedNote));
-        } catch (error) {
-            alert("Что-то пошло не так...")
-        }
-        this.setState({message: ''});
-
-        this.props.navigation.navigate('Main')
-    };
-
-
-    _keyPress = (i) => {
-        let {money} = this.state;
-        if (money === 0) {
-            this.setState({money: i.toString()});
-
-        } else if (money.toString().slice(-2, -1) !== '.') {
-            this.setState({money: money + i.toString()});
-        }
-    };
-
-    _keyDel = () => {
-        let {money} = this.state;
-        if (money !== 0) {
-            this.setState({money: money.substring(0, money.length - 1)});
-        }
-    };
-    _keyDot = () => {
-        let {money} = this.state;
-        if (money.toString().indexOf(".") === -1) {
-            this.setState({money: money + "."});
-        }
-
-
-    };
-
-    _chooseType = (type) => {
-        this.setState({message: type.title});
-        this.setState({typeDescriptionImg: type.img});
-
-    };
-
-    _selectDate = async () => {
-        try {
-            const {action, year, month, day} = await DatePickerAndroid.open({
-                date: this.selectedDate
-            });
-            if (action !== DatePickerAndroid.dismissedAction) {
-                // Selected year, month (0-11), day
-                let selectedDate = year + '-' + ('0' + (month + 1)).slice(-2) + '-' + ('0' + day).slice(-2)
-                this.setState({usersDate: selectedDate})
-                console.log(selectedDate)
-            }
-
-        } catch ({code, message}) {
-            console.warn('Cannot open date picker', message);
-        }
-
-    };
-
-    render() {
-        const {currentUser, list, account, accountList, inputNumber, keyboardIsShown} = this.state
-        let accountItem = Array.from(this.state.accountList);
-        let nodeDescription = [
+        usersDate: '',
+        type: 'Списание',
+        expense: [
             {
                 img: "pizza",
                 title: "Фастфуд"
@@ -289,23 +139,194 @@ export default class Main extends React.Component {
                 img: "television",
                 title: "ТВ"
             }
+        ],
+        income: [
+            {
+                img: "pizza",
+                title: "Зарплата"
+            },
+            {
+                img: "beer",
+                title: "Премия"
+            }
+        ],
+        currentTypeDescList: []
+    };
+
+    static navigationOptions = ({navigation}) => {
+
+        return {}
+    };
+
+
+    async componentDidMount() {
+        this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
+        this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
+
+        try {
+            var storeddAccounts = await AsyncStorage.getItem('accountsList');
+            if (storeddAccounts == null) {
+                storeddAccounts = []
+            } else {
+                storeddAccounts = JSON.parse(storeddAccounts);
+            }
+            this.setState({accountList: storeddAccounts});
+        } catch (error) {
+            alert("Что-то пошло не так...")
+        }
+
+
+        this.setState({usersDate: new Date().getFullYear() + '-' + ('0' + (new Date().getMonth() + 1)).slice(-2) + '-' + ('0' + new Date().getDate()).slice(-2)})
+        this.setState({currentTypeDescList: this.state.expense})
+
+    };
+
+    componentWillUnmount() {
+        this.keyboardDidShowListener.remove();
+        this.keyboardDidHideListener.remove();
+    }
+
+
+    _keyboardDidShow = () => {
+        this.setState({keyboardIsShown: true});
+    };
+
+    _keyboardDidHide = () => {
+        this.setState({keyboardIsShown: false});
+    };
+
+    handlePostData = async () => {
+        let {message, account, money, usersDate, typeDescriptionImg, type} = this.state;
+        let currentDate = usersDate;
+
+        let addedNote = {
+            id: '',
+            type: type,
+            sum: money,
+            typeDescription: message,
+            typeDescriptionImg: typeDescriptionImg,
+            date: currentDate,
+            color: '#eeeee',
+            account: account,
+            accountAmount: '',
+            accountCurrentAmount: '',
+
+        };
+        console.log(addedNote);
+        try {
+            // await AsyncStorage.removeItem('notes');
+            var storedNote = await AsyncStorage.getItem('notes');
+            if (storedNote == null) {
+                storedNote = []
+            } else {
+                storedNote = JSON.parse(storedNote);
+                console.log(storedNote)
+            }
+        } catch (error) {
+            alert("Что-то пошло не так...")
+        }
+        addedNote.id = storedNote.length + 1
+        storedNote.push(addedNote);
+        try {
+            await AsyncStorage.setItem('notes', JSON.stringify(storedNote));
+        } catch (error) {
+            alert("Что-то пошло не так...")
+        }
+        this.setState({message: ''});
+
+        this.props.navigation.navigate('Main')
+    };
+
+    _chooseType = (type) => {
+        this.setState({
+            type: type,
+            message: ''
+        }, () => {
+            type === 'Списание' ? this.setState({currentTypeDescList: this.state.expense}) : this.setState({currentTypeDescList: this.state.income})
+        });
+    };
+
+    _chooseAccount = (account) => {
+        this.setState({
+            account: account,
+        });
+    };
+
+
+    _chooseTypeDesc = (type) => {
+        this.setState({message: type.title});
+        this.setState({typeDescriptionImg: type.img});
+    };
+
+    _selectDate = async () => {
+        try {
+            const {action, year, month, day} = await DatePickerAndroid.open({
+                date: this.selectedDate
+            });
+            if (action !== DatePickerAndroid.dismissedAction) {
+                // Selected year, month (0-11), day
+                let selectedDate = year + '-' + ('0' + (month + 1)).slice(-2) + '-' + ('0' + day).slice(-2)
+                this.setState({usersDate: selectedDate})
+                console.log(selectedDate)
+            }
+
+        } catch ({code, message}) {
+            console.warn('Cannot open date picker', message);
+        }
+
+    };
+
+    updateMoney = (value) => {
+        this.setState({money: value})
+    };
+
+
+    render() {
+        const {currentUser, list, account, accountList, inputNumber, currentTypeDescList, type, keyboardIsShown} = this.state
+        let accountItem = Array.from(this.state.accountList);
+
+
+        let addTypeList = [
+            {name: 'Списание', type: 'expense'},
+            {name: 'Пополнение', type: 'income'}
         ];
-        let keys = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         return (
 
             <View style={styles.container}>
+                <NavigationEvents
+                    onDidFocus={() => this.componentDidMount()}
+                />
                 <View style={styles.fixedHeader}>
                     <TouchableOpacity
                         onPress={() => this.props.navigation.goBack()}>
                         <Text>Назад</Text>
                     </TouchableOpacity>
+                    <Picker
+                        mode="dropdown"
+                        selectedValue={type}
+                        style={{height: 50, width: 130}}
+                        onValueChange={((itemValue) => this._chooseType(itemValue))}>
+                        {addTypeList.map((i) => (
+                            <Picker.Item key={i.type} label={i.name} value={i.name}/>
+                        ))}
+                    </Picker>
+                    <Picker
+                        mode="dropdown"
+                        selectedValue={type}
+                        style={{height: 50, width: 130}}
+                        onValueChange={((itemValue) => this._chooseAccount(itemValue))}>
+                        {accountItem.map((i) => (
+                            <Picker.Item key={i.id} label={i.title} value={i.title}/>
+                        ))}
+                    </Picker>
                 </View>
+
                 <ScrollView style={styles.nodeDescriptionWrapScroll}>
                     <View style={styles.nodeDescriptionWrap}>
-                        {nodeDescription.map((i) => (
+                        {currentTypeDescList.map((i) => (
                             <TouchableOpacity key={i.title}
                                               style={styles.mynode}
-                                              onPress={() => this._chooseType(i)}
+                                              onPress={() => this._chooseTypeDesc(i)}
                             >
                                 <IconM name={i.img} type="simple-line-icons" size={25}/>
                                 <Text style={styles.mynodeText}>{i.title}</Text>
@@ -315,7 +336,6 @@ export default class Main extends React.Component {
                 </ScrollView>
 
                 <View style={styles.inputWrap}>
-
                     <TouchableOpacity
                         style={styles.datePickerButton}
                         onPress={() => this._selectDate()}
@@ -329,48 +349,21 @@ export default class Main extends React.Component {
                         style={styles.textInput}
                         autoCapitalize="none"
                         onSubmitEditing={Keyboard.dismiss}
-                        placeholder="Примечание"
+                        placeholder="Добавить примечание"
                         onChangeText={message => this.setState({message})}
                         value={this.state.message}
                     />
                     <Text style={styles.moneyCount}>{this.state.money}</Text>
                 </View>
-                {
-                    !keyboardIsShown &&
-                    <View style={styles.vKeyboard}>
-                        {keys.map((i) => (
-                            <TouchableOpacity key={i}
-                                              onPress={() => this._keyPress(i)}
-                                              style={styles.vKeyboardKey}>
-                                <Text style={styles.vKeyboardKeyText}>{i}</Text>
-                            </TouchableOpacity>
-                        ))}
-                        <TouchableOpacity
-                            onPress={() => this._keyDot()}
-                            style={styles.vKeyboardKey}>
-                            <Text style={styles.vKeyboardKeyText}>.</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            onPress={() => this._keyPress(0)}
-                            style={styles.vKeyboardKey}>
-                            <Text style={styles.vKeyboardKeyText}>0</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            onPress={() => this._keyDel()}
-                            style={styles.vKeyboardKey}>
-                            <IconM style={styles.vKeyboardKeyIcon} name="backspace" type="simple-line-icons" size={18}/>
 
-                        </TouchableOpacity>
 
-                    </View>
-                }
+                {!keyboardIsShown && <NumKeyboard updateData={this.updateMoney}/>}
 
 
                 <TouchableOpacity
                     style={styles.fullButton}
-                    onPress={this.handlePostData}
-                >
-                    <Text> Записать </Text>
+                    onPress={this.handlePostData}>
+                    <Text> Записать</Text>
                 </TouchableOpacity>
 
             </View>
@@ -382,8 +375,8 @@ const styles = StyleSheet.create({
     fixedHeader: {
         backgroundColor: 'rgba(255,255,255,1)',
         elevation: 1,
-    
-        width:'100%',
+        flexDirection: 'row',
+        width: '100%',
         height: 50,
 
         position: 'relative',
@@ -397,6 +390,8 @@ const styles = StyleSheet.create({
     inputWrap: {
         alignItems: 'center',
         flexDirection: 'row',
+
+        backgroundColor: 'rgba(255,255,255,1)',
         justifyContent: 'space-between',
         height: 50,
 
@@ -480,6 +475,7 @@ const styles = StyleSheet.create({
         height: 50,
         alignItems: 'center',
         borderStyle: 'solid',
+        backgroundColor: 'rgba(255,255,255,1)',
         borderColor: '#eee',
         paddingTop: 8,
         borderWidth: 1

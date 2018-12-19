@@ -48,12 +48,13 @@ export default class Main extends React.Component {
         const {accountName, amount} = this.state;
         let addedAccount = {
             title: accountName,
-            amount: amount
+            amount: amount,
+            id:''
         };
 
         console.log(addedAccount)
         try {
-            await AsyncStorage.removeItem('accountsList');
+            // await AsyncStorage.removeItem('accountsList');
             var accountsList = await AsyncStorage.getItem('accountsList');
             if (accountsList == null) {
                 accountsList = []
@@ -66,6 +67,8 @@ export default class Main extends React.Component {
         } catch (error) {
             alert("Что-то пошло не так1...")
         }
+
+        addedAccount.id = accountsList.length + 1
         accountsList.push(addedAccount);
         try {
             await AsyncStorage.setItem('accountsList', JSON.stringify(accountsList));
@@ -74,6 +77,8 @@ export default class Main extends React.Component {
         }
         this.setState({accountName: ''});
 
+
+        this.componentDidMount()
         // this.props.navigation.navigate('Main')
     };
 
