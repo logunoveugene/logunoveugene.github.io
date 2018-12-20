@@ -63,7 +63,6 @@ export default class Main extends React.Component {
                 accountsList = JSON.parse(accountsList);
                 console.log(accountsList)
             }
-
         } catch (error) {
             alert("Что-то пошло не так1...")
         }

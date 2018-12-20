@@ -22,6 +22,7 @@ const IconM = createIconSetFromIcoMoon(icoMoonConfig);
 import dayjs from 'dayjs'
 import 'dayjs/locale/ru'
 import _ from "lodash";
+import {typeCategoryListDefault} from "./data/base/BaseConstant";
 
 
 export default class Main extends React.Component {
@@ -150,13 +151,15 @@ export default class Main extends React.Component {
                 title: "Премия"
             }
         ],
-        currentTypeDescList: []
+        currentTypeDescList: [],
+
+
+
+
+        typeCategoryList: '',
+        typeCategoryTitleSelected: 'Списание',
     };
 
-    static navigationOptions = ({navigation}) => {
-
-        return {}
-    };
 
 
     async componentDidMount() {
@@ -174,6 +177,23 @@ export default class Main extends React.Component {
         } catch (error) {
             alert("Что-то пошло не так...")
         }
+
+
+
+        try {
+            // await AsyncStorage.removeItem('typeCategoryList')
+            var storedTypeCategoryList = await AsyncStorage.getItem('typeCategoryList');
+            if (storedTypeCategoryList == null) {
+                storedTypeCategoryList = typeCategoryListDefault
+            } else {
+                storedTypeCategoryList = JSON.parse(storedTypeCategoryList);
+            }
+            this.setState({typeCategoryList: storedTypeCategoryList})
+            console.log(this.state.typeCategoryList)
+        } catch (error) {
+            alert("Что-то пошло не так...")
+        }
+
 
 
         this.setState({usersDate: new Date().getFullYear() + '-' + ('0' + (new Date().getMonth() + 1)).slice(-2) + '-' + ('0' + new Date().getDate()).slice(-2)})
@@ -237,14 +257,12 @@ export default class Main extends React.Component {
         this.props.navigation.navigate('Main')
     };
 
-    _chooseType = (type) => {
+    _chooseType = (typeCategoryTitle) => {
         this.setState({
-            type: type,
-            message: ''
-        }, () => {
-            type === 'Списание' ? this.setState({currentTypeDescList: this.state.expense}) : this.setState({currentTypeDescList: this.state.income})
+            typeCategoryTitleSelected: typeCategoryTitle,
         });
     };
+
 
     _chooseAccount = (account) => {
         this.setState({
@@ -282,7 +300,7 @@ export default class Main extends React.Component {
 
 
     render() {
-        const {currentUser, list, account, accountList, inputNumber, currentTypeDescList, type, keyboardIsShown} = this.state
+        const {currentUser, list, account, accountList, inputNumber, typeCategoryList,typeCategoryTitleSelected, currentTypeDescList, type, keyboardIsShown} = this.state
         let accountItem = Array.from(this.state.accountList);
 
 
@@ -301,37 +319,44 @@ export default class Main extends React.Component {
                         onPress={() => this.props.navigation.goBack()}>
                         <Text>Назад</Text>
                     </TouchableOpacity>
+
+
+                    {(typeCategoryList !== '') &&
                     <Picker
                         mode="dropdown"
-                        selectedValue={type}
+                        selectedValue={typeCategoryTitleSelected}
                         style={{height: 50, width: 130}}
                         onValueChange={((itemValue) => this._chooseType(itemValue))}>
-                        {addTypeList.map((i) => (
-                            <Picker.Item key={i.type} label={i.name} value={i.name}/>
+                        {typeCategoryList.map((i) => (
+                            <Picker.Item key={i.title} label={i.title} value={i.title}/>
                         ))}
-                    </Picker>
-                    <Picker
-                        mode="dropdown"
-                        selectedValue={type}
-                        style={{height: 50, width: 130}}
-                        onValueChange={((itemValue) => this._chooseAccount(itemValue))}>
-                        {accountItem.map((i) => (
-                            <Picker.Item key={i.id} label={i.title} value={i.title}/>
-                        ))}
-                    </Picker>
+                    </Picker>}
+
+                    {/*<Picker*/}
+                        {/*mode="dropdown"*/}
+                        {/*selectedValue={type}*/}
+                        {/*style={{height: 50, width: 130}}*/}
+                        {/*onValueChange={((itemValue) => this._chooseAccount(itemValue))}>*/}
+                        {/*{accountItem.map((i) => (*/}
+                            {/*<Picker.Item key={i.id} label={i.title} value={i.title}/>*/}
+                        {/*))}*/}
+                    {/*</Picker>*/}
                 </View>
 
                 <ScrollView style={styles.nodeDescriptionWrapScroll}>
                     <View style={styles.nodeDescriptionWrap}>
-                        {currentTypeDescList.map((i) => (
-                            <TouchableOpacity key={i.title}
-                                              style={styles.mynode}
-                                              onPress={() => this._chooseTypeDesc(i)}
-                            >
-                                <IconM name={i.img} type="simple-line-icons" size={25}/>
-                                <Text style={styles.mynodeText}>{i.title}</Text>
-                            </TouchableOpacity>
-                        ))}
+                        {(typeCategoryList !== '') &&
+                            (_.filter(typeCategoryList, {'title': this.state.typeCategoryTitleSelected}))[0].child.map((nodeType, index) =>
+                                <View
+                                    style={styles.mynode}
+                                    key={nodeType.id}>
+                                    <IconM name={nodeType.img} type="simple-line-icons" size={25}/>
+                                    <Text
+                                        style={styles.mynodeText}>{nodeType.title}</Text>
+
+                                </View>
+                            )
+                        }
                     </View>
                 </ScrollView>
 
