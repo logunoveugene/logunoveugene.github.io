@@ -38,120 +38,9 @@ export default class Main extends React.Component {
         count: 0,
         typeDescriptionImg: 'pizza',
         usersDate: '',
-        type: 'Списание',
-        expense: [
-            {
-                img: "pizza",
-                title: "Фастфуд"
-            },
-            {
-                img: "beer",
-                title: "Пивчик"
-            },
-            {
-                img: "cutlery",
-                title: "Обед"
-            },
-            {
-                img: "shopping",
-                title: "Магазин"
-            },
-            {
-                img: "school-bus",
-                title: "Автобус"
-            },
-            {
-                img: "car-oil",
-                title: "Бензин"
-            },
-            {
-                img: "buildings",
-                title: "Квартплата"
-            },
-            {
-                img: "faucet",
-                title: "Вода"
-            },
-            {
-                img: "heat",
-                title: "Отопление"
-            },
-            {
-                img: "idea",
-                title: "Свет"
-            },
-            {
-                img: "polo-shirt",
-                title: "Одежда"
-            },
-            {
-                img: "high-heels",
-                title: "Обувь"
-            },
-            {
-                img: "air-freight",
-                title: "Путешествия"
-            },
-            {
-                img: "stationary-bike",
-                title: "Спорт"
-            },
-            {
-                img: "gamepad",
-                title: "Развлечение"
-            },
-            {
-                img: "medicine",
-                title: "Лекарства"
-            },
-            {
-                img: "first-aid-kit",
-                title: "Медицина"
-            },
-            {
-                img: "book",
-                title: "Образование"
-            },
-            {
-                img: "pacifier",
-                title: "Дети"
-            },
-            {
-                img: "black-cat",
-                title: "Животные"
-            },
-            {
-                img: "washing-machine",
-                title: "Техника"
-            },
-            {
-                img: "smartphone",
-                title: "Связь"
-            },
-            {
-                img: "parking",
-                title: "Парковка"
-            },
-            {
-                img: "wifi",
-                title: "Интернет"
-            },
-            {
-                img: "television",
-                title: "ТВ"
-            }
-        ],
-        income: [
-            {
-                img: "pizza",
-                title: "Зарплата"
-            },
-            {
-                img: "beer",
-                title: "Премия"
-            }
-        ],
-        currentTypeDescList: [],
+
+
+
 
 
 
@@ -465,7 +354,7 @@ const styles = StyleSheet.create({
 
     nodeDescriptionWrap: {
         flex: 1,
-        justifyContent: 'space-between',
+        justifyContent: 'flex-start',
         flexDirection: 'row',
         flexWrap: 'wrap'
     },
@@ -488,7 +377,6 @@ const styles = StyleSheet.create({
 
     vKeyboard: {
         width: '100%',
-
         justifyContent: 'space-between',
         flexDirection: 'row',
         flexWrap: 'wrap',

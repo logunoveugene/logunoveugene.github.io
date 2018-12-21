@@ -1,0 +1,57 @@
+{
+	"typeCategoryList":[
+		{
+			"title":"Списание",
+			"child":[
+				{	
+					"id":"1",
+					"title":"Продукты",
+					"img":"food",
+					"color":"#eeeeee"
+				}
+			]
+		},
+		{
+			"title":"Пополнение",
+			"child":[
+				{	"id":"3",
+					"title":"Зарплата",
+					"img":"food",
+					"color":"#eee"
+				}
+			]
+		},
+
+	],
+
+
+	"bankAccountsList":[
+		{
+			"title":"Альфа банк",
+			"startBalance":10000,
+		}
+	],
+	"nodeList":[
+		{
+			"id":1,
+			"sum": 50,
+			"typeCategory": "Списание",
+			"typeSubCategoryTitle": "Продукты",
+			"typeSubCategoryImg": "food",
+			"typeSubCategoryColor": "#eeeeee",
+			"bankAccountTitle": "Альфа банк",
+			"bankAccountCurrentBalance": 9950,
+			"date": "2018-12-25",
+			
+			"currency": "rub",
+			"usersDescription": "Примечание пользоателя"
+		}
+	],
+
+
+}
+
+
+
+
+

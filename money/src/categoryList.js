@@ -3,30 +3,20 @@ import {
     StyleSheet,
     View,
     Text,
-
     TouchableOpacity,
     ScrollView,
-    Button,
     TextInput,
     Picker,
     Modal,
-    AsyncStorage, Keyboard
+    AsyncStorage,
 } from 'react-native'
-
-
 import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
 import icoMoonConfig from './font/selection';
 
 const IconM = createIconSetFromIcoMoon(icoMoonConfig);
 import _ from 'lodash';
-
-// import DragSortableView from 'react-native-drag-sort'
-
-// import { DraggableGrid } from 'react-native-draggable-grid';
 import SortableGrid from 'react-native-sortable-grid'
-
 import {typeCategoryListDefault, iconListDefault} from './data/base/BaseConstant'
-
 
 export default class NonScrollPage extends Component {
 
@@ -47,13 +37,13 @@ export default class NonScrollPage extends Component {
     async componentDidMount() {
         try {
             // await AsyncStorage.removeItem('typeCategoryList')
-            var storedTypeCategoryList = await AsyncStorage.getItem('typeCategoryList');
+            let storedTypeCategoryList = await AsyncStorage.getItem('typeCategoryList');
             if (storedTypeCategoryList == null) {
                 storedTypeCategoryList = typeCategoryListDefault
             } else {
                 storedTypeCategoryList = JSON.parse(storedTypeCategoryList);
             }
-            this.setState({typeCategoryList: storedTypeCategoryList})
+            this.setState({typeCategoryList: storedTypeCategoryList});
             console.log(this.state.typeCategoryList)
         } catch (error) {
             alert("Что-то пошло не так...")
@@ -74,11 +64,11 @@ export default class NonScrollPage extends Component {
         itemOrder.itemOrder.forEach((i) => {
             newDate.push((_.filter(changedData, {'id': i.key}))[0])
         });
-        console.log(newDate)
+        console.log(newDate);
         let replacedIndex = _.findIndex(this.state.typeCategoryList, {'title': this.state.typeCategoryTitleSelected});
-        let changedAllData = [...this.state.typeCategoryList]
-        changedAllData[replacedIndex].child = [...newDate]
-        console.log(changedAllData)
+        let changedAllData = [...this.state.typeCategoryList];
+        changedAllData[replacedIndex].child = [...newDate];
+        console.log(changedAllData);
         this.setState({typeCategoryList: changedAllData}, () => {
             this.pushToLs()
         })
@@ -86,34 +76,36 @@ export default class NonScrollPage extends Component {
     };
 
     _chooseImg = (img, index) => {
-        this.setState({selectedImg: img});
-        this.setState({selectedImgIndex: index}, () => {
+        this.setState({selectedImg: img.img,
+            selectedImgIndex: index,
+            selectedColor: img.color
+        }, () => {
             console.log(this.state.selectedImgIndex)
         });
-
     };
 
     addChildItem() {
         let changedData = [...(_.filter(this.state.typeCategoryList, {'title': this.state.typeCategoryTitleSelected}))[0].child];
         let postedData = {
             "img": this.state.selectedImg,
-            "color": "#eee",
+            "color": this.state.selectedColor,
             "title": this.state.selectedTitle,
             "id": (Math.random() * 1000).toString()
         };
         let newDate = changedData.concat(postedData);
         let replacedIndex = _.findIndex(this.state.typeCategoryList, {'title': this.state.typeCategoryTitleSelected});
-        let changedAllData = [...this.state.typeCategoryList]
-        changedAllData[replacedIndex].child = [...newDate]
-        console.log(changedAllData)
+        let changedAllData = [...this.state.typeCategoryList];
+        changedAllData[replacedIndex].child = [...newDate];
+        console.log(changedAllData);
         this.setState({
             typeCategoryList: changedAllData,
             selectedImg: '',
             selectedImgIndex: '',
             selectedTitle: '',
+            selectedColor:''
         }, () => {
             this.pushToLs()
-        })
+        });
         this.setModalVisible(!this.state.modalVisible);
     }
 
@@ -123,14 +115,13 @@ export default class NonScrollPage extends Component {
         _.remove(tmpArray, obj => obj.id === key);
 
         let replacedIndex = _.findIndex(this.state.typeCategoryList, {'title': this.state.typeCategoryTitleSelected});
-        let changedAllData = [...this.state.typeCategoryList]
-        changedAllData[replacedIndex].child = [...tmpArray]
-        console.log(changedAllData)
+        let changedAllData = [...this.state.typeCategoryList];
+        changedAllData[replacedIndex].child = [...tmpArray];
+        console.log(changedAllData);
         this.setState({
             typeCategoryList: changedAllData,
-
         }, () => {
-            this.pushToLs()
+            this.pushToLs();
             this.render()
         })
 
@@ -214,17 +205,17 @@ export default class NonScrollPage extends Component {
                                                   style={styles.mynode}
                                                   onPress={() => this._chooseImg(img, index)}
                                 >
-                                    {(index === this.state.selectedImgIndex) && <Text>x</Text>}
-
-                                    <IconM name={img} type="simple-line-icons" size={25}/>
-
+                                    <View
+                                        style={[styles.mynodeSelected, (index === this.state.selectedImgIndex) ? {backgroundColor: `${img.color}`} : null]}
+                                    />
+                                    {/*{(index === this.state.selectedImgIndex) && <Text>x</Text>}*/}
+                                    <IconM name={img.img} type="simple-line-icons" size={25}/>
                                 </TouchableOpacity>
                             ))}
                         </View>
                     </ScrollView>
 
                     <TextInput
-
                         autoCapitalize="none"
                         placeholder="Заголовок"
                         onChangeText={message => this.setState({selectedTitle: message})}
@@ -299,7 +290,7 @@ const styles = StyleSheet.create({
     },
     nodeDescriptionWrap: {
         flex: 1,
-        justifyContent: 'space-between',
+        justifyContent: 'flex-start',
         flexDirection: 'row',
         flexWrap: 'wrap'
     },
@@ -307,6 +298,18 @@ const styles = StyleSheet.create({
         width: "20%",
         height: 50,
         alignItems: 'center',
+        position:'relative',
         paddingTop: 15,
     },
+    mynodeSelected: {
+        width: 50,
+        height: 50,
+        borderRadius: 25,
+        alignItems: 'center',
+        position:'absolute',
+        marginTop: 3,
+        opacity:.2
+
+    },
+
 })
