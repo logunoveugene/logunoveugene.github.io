@@ -26,7 +26,8 @@
 
 	"bankAccountsList":[
 		{
-			"title":"Альфа банк",
+			"title":"зарплатный",
+			"bankTitle":"Альфа банк",
 			"startBalance":10000,
             "currentBalance": 9950
 		}

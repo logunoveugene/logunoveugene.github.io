@@ -4,6 +4,7 @@ import {
     ScrollView,
     View,
     AsyncStorage,
+    TouchableOpacity,
     TextInput,
     Text,
     Button
@@ -20,6 +21,7 @@ export default class Main extends React.Component {
         currentUser: null,
 
         title: '',
+        bankTitle:'',
         startBalance: '',
         currentBalance: '',
 
@@ -94,25 +96,26 @@ export default class Main extends React.Component {
     // };
 
     filterData(value) {
-
-
         let options = {
             threshold: 0.3,
             keys: ['name', 'nameEn']
-
         }
         let fuse = new Fuse(banksAndPrefixes, options)
-
         let filteredBanks = fuse.search(value)
-
-        console.log(JSON.stringify(filteredBanks))
-
-        //
-        // let filteredBanks = _.filter(banksAndPrefixes, {'name': value});
         this.setState({
             filterValue: value,
             filteredBanks: filteredBanks
         })
+    }
+
+    _chooseBank(i){
+        this.setState({
+            filterValue:i.name,
+            bankTitle:i.name
+        });
+
+
+        this.filterData(i.name)
     }
 
     render() {
@@ -125,17 +128,36 @@ export default class Main extends React.Component {
                     style={styles.textInput}
                     autoCapitalize="none"
                     keyboardType='default'
-                    placeholder="Название счета"
+                    placeholder="Название"
+                    onChangeText={value => this.setState({title:value})}
+                    value={this.state.title}
+                />
+                <TextInput
+                    style={styles.textInput}
+                    autoCapitalize="none"
+                    keyboardType='default'
+                    placeholder="Баланс"
+                    onChangeText={value => this.setState({startBalance:value})}
+                    value={this.state.startBalance}
+                />
+                <TextInput
+                    style={styles.textInput}
+                    autoCapitalize="none"
+                    keyboardType='default'
+                    placeholder="Банк"
                     onChangeText={value => this.filterData(value)}
                     value={this.state.filterValue}
                 />
 
                 <ScrollView>
                     {this.state.filteredBanks.map((i) => (
-                        <View  key={i.name} style={{backgroundColor: `${i.backgroundColor}`}}>
+                        <TouchableOpacity
+                            key={i.name}
+                            style={{backgroundColor: `${i.backgroundColor}`}}
+                            onPress={() => this._chooseBank(i)}
+                        >
                             <Text style={{color: `${i.text}`}} >{i.name}</Text>
-                        </View>
-
+                        </TouchableOpacity>
                     ))}
                 </ScrollView>
 
