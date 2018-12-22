@@ -5,152 +5,152 @@ export const typeCategoryListDefault = [
             {
                 "id": "1",
                 "img": "pizza",
-                "color": "#eeeeee",
+                "color": "#eeaa13",
                 "title": "Фастфуд"
             },
             {
                 "id": "2",
                 "img": "beer",
-                "color": "#eeeeee",
+                "color": "#a2ee30",
                 "title": "Пивчик"
             },
             {
                 "id": "3",
                 "img": "cutlery",
-                "color": "#eeeeee",
+                "color": "#288aee",
                 "title": "Обед"
             },
             {
                 "id": "4",
                 "img": "shopping",
-                "color": "#eeeeee",
+                "color": "#ee2234",
                 "title": "Магазин"
             },
             {
                 "id": "5",
                 "img": "school-bus",
-                "color": "#eeeeee",
+                "color": "#9b00ee",
                 "title": "Автобус"
             },
             {
                 "id": "6",
                 "img": "car-oil",
-                "color": "#eeeeee",
+                "color": "#05ee79",
                 "title": "Бензин"
             },
             {
                 "id": "7",
                 "img": "buildings",
-                "color": "#eeeeee",
+                "color": "#0093ee",
                 "title": "Квартплата"
             },
             {
                 "id": "8",
                 "img": "faucet",
-                "color": "#eeeeee",
+                "color": "#00c3ee",
                 "title": "Вода"
             },
             {
                 "id": "9",
                 "img": "heat",
-                "color": "#eeeeee",
+                "color": "#ee8706",
                 "title": "Отопление"
             },
 
             {
                 "id": "10",
                 "img": "polo-shirt",
-                "color": "#eeeeee",
+                "color": "#ee11c6",
                 "title": "Одежда"
             },
             {
                 "id": "11",
                 "img": "high-heels",
-                "color": "#eeeeee",
+                "color": "#ee7c00",
                 "title": "Обувь"
             },
             {
                 "id": "12",
                 "img": "air-freight",
-                "color": "#eeeeee",
+                "color": "#7fee00",
                 "title": "Путешествия"
             },
             {
                 "id": "13",
                 "img": "stationary-bike",
-                "color": "#eeeeee",
+                "color": "#7900ee",
                 "title": "Спорт"
             },
             {
                 "id": "14",
                 "img": "gamepad",
-                "color": "#eeeeee",
+                "color": "#ee1a00",
                 "title": "Развлечение"
             },
             {
                 "id": "15",
                 "img": "medicine",
-                "color": "#eeeeee",
+                "color": "#ee00ca",
                 "title": "Лекарства"
             },
             {
                 "id": "16",
                 "img": "first-aid-kit",
-                "color": "#eeeeee",
+                "color": "#00ee91",
                 "title": "Медицина"
             },
             {
                 "id": "17",
                 "img": "book",
-                "color": "#eeeeee",
+                "color": "#ee7500",
                 "title": "Образование"
             },
             {
                 "id": "18",
                 "img": "pacifier",
-                "color": "#eeeeee",
+                "color": "#00ee96",
                 "title": "Дети"
             },
             {
                 "id": "19",
                 "img": "black-cat",
-                "color": "#eeeeee",
+                "color": "#bbee00",
                 "title": "Животные"
             },
             {
                 "id": "20",
                 "img": "washing-machine",
-                "color": "#eeeeee",
+                "color": "#ee1a00",
                 "title": "Техника"
             },
             {
                 "id": "21",
                 "img": "smartphone",
-                "color": "#eeeeee",
+                "color": "#ee7807",
                 "title": "Связь"
             },
             {
                 "id": "22",
                 "img": "parking",
-                "color": "#eeeeee",
+                "color": "#7dee00",
                 "title": "Парковка"
             },
             {
                 "id": "23",
                 "img": "wifi",
-                "color": "#eeeeee",
+                "color": "#ee4b03",
                 "title": "Интернет"
             },
             {
                 "id": "24",
                 "img": "television",
-                "color": "#eeeeee",
+                "color": "#bf00ee",
                 "title": "ТВ"
             },
             {
                 "id": "25",
                 "img": "idea",
-                "color": "#eeeeee",
+                "color": "#94ee00",
                 "title": "Свет"
             },
         ]

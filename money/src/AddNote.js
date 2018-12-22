@@ -29,15 +29,28 @@ export default class Main extends React.Component {
     state = {
         currentUser: null,
         account: 'Счет 1',
-        message: '',
+
         accountList: '',
-        inputNumber: '',
-        nodeDescription: '',
+
         keyboardIsShown: false,
-        money: 0,
-        count: 0,
-        typeDescriptionImg: 'pizza',
-        usersDate: '',
+        typeSubCategoryIndex:'',
+
+
+
+
+
+       id:1,
+       sum: 0,
+       // typeCategory: "",
+       typeSubCategoryTitle: "",
+       typeSubCategoryImg: "",
+       typeSubCategoryColor: "",
+       bankAccountTitle: "Альфа банк",
+       bankAccountCurrentBalance: 9950,
+       date: "",
+       time: "21-02",
+       currency: "rub",
+       usersDescription: "",
 
 
 
@@ -84,9 +97,8 @@ export default class Main extends React.Component {
         }
 
 
+        this.setState({date: new Date().getFullYear() + '-' + ('0' + (new Date().getMonth() + 1)).slice(-2) + '-' + ('0' + new Date().getDate()).slice(-2)})
 
-        this.setState({usersDate: new Date().getFullYear() + '-' + ('0' + (new Date().getMonth() + 1)).slice(-2) + '-' + ('0' + new Date().getDate()).slice(-2)})
-        this.setState({currentTypeDescList: this.state.expense})
 
     };
 
@@ -105,25 +117,38 @@ export default class Main extends React.Component {
     };
 
     handlePostData = async () => {
-        let {message, account, money, usersDate, typeDescriptionImg, type} = this.state;
-        let currentDate = usersDate;
+        let {
+            sum,
+            typeCategoryTitleSelected,
+            typeSubCategoryTitle,
+            typeSubCategoryImg,
+            typeSubCategoryColor,
+            bankAccountTitle,
+            bankAccountCurrentBalance,
+            date,
+            // time,
+            currency,
+            usersDescription,
+
+            } = this.state;
 
         let addedNote = {
-            id: '',
-            type: type,
-            sum: money,
-            typeDescription: message,
-            typeDescriptionImg: typeDescriptionImg,
-            date: currentDate,
-            color: '#eeeee',
-            account: account,
-            accountAmount: '',
-            accountCurrentAmount: '',
-
+            id:'',
+            sum: sum,
+            typeCategory: typeCategoryTitleSelected,
+            typeSubCategoryTitle: typeSubCategoryTitle,
+            typeSubCategoryImg: typeSubCategoryImg,
+            typeSubCategoryColor: typeSubCategoryColor,
+            bankAccountTitle: "Альфа банк",
+            bankAccountCurrentBalance: 9950,
+            date: date,
+            time: "",
+            currency: "rub",
+            usersDescription: usersDescription,
         };
-        console.log(addedNote);
+
         try {
-            // await AsyncStorage.removeItem('notes');
+            await AsyncStorage.removeItem('notes');
             var storedNote = await AsyncStorage.getItem('notes');
             if (storedNote == null) {
                 storedNote = []
@@ -135,7 +160,9 @@ export default class Main extends React.Component {
             alert("Что-то пошло не так...")
         }
         addedNote.id = storedNote.length + 1
+        addedNote.time = `${new Date().getHours()}-${new Date().getMinutes()}-${new Date().getSeconds()}`
         storedNote.push(addedNote);
+
         try {
             await AsyncStorage.setItem('notes', JSON.stringify(storedNote));
         } catch (error) {
@@ -152,7 +179,6 @@ export default class Main extends React.Component {
         });
     };
 
-
     _chooseAccount = (account) => {
         this.setState({
             account: account,
@@ -160,9 +186,13 @@ export default class Main extends React.Component {
     };
 
 
-    _chooseTypeDesc = (type) => {
-        this.setState({message: type.title});
-        this.setState({typeDescriptionImg: type.img});
+    _chooseTypeDesc = (nodeType, index) => {
+        this.setState({
+            typeSubCategoryTitle: nodeType.title,
+            typeSubCategoryImg: nodeType.img,
+            typeSubCategoryColor: nodeType.color,
+            typeSubCategoryIndex: index,
+        });
     };
 
     _selectDate = async () => {
@@ -171,12 +201,11 @@ export default class Main extends React.Component {
                 date: this.selectedDate
             });
             if (action !== DatePickerAndroid.dismissedAction) {
-                // Selected year, month (0-11), day
+
                 let selectedDate = year + '-' + ('0' + (month + 1)).slice(-2) + '-' + ('0' + day).slice(-2)
-                this.setState({usersDate: selectedDate})
+                this.setState({date: selectedDate})
                 console.log(selectedDate)
             }
-
         } catch ({code, message}) {
             console.warn('Cannot open date picker', message);
         }
@@ -184,7 +213,7 @@ export default class Main extends React.Component {
     };
 
     updateMoney = (value) => {
-        this.setState({money: value})
+        this.setState({sum: value})
     };
 
 
@@ -236,14 +265,24 @@ export default class Main extends React.Component {
                     <View style={styles.nodeDescriptionWrap}>
                         {(typeCategoryList !== '') &&
                             (_.filter(typeCategoryList, {'title': this.state.typeCategoryTitleSelected}))[0].child.map((nodeType, index) =>
-                                <View
+                                <TouchableOpacity
                                     style={styles.mynode}
+                                    onPress={() => this._chooseTypeDesc(nodeType, index)}
                                     key={nodeType.id}>
+                                    {index === this.state.typeSubCategoryIndex &&
+
+                                        <View
+                                            style={[styles.mynodeSelected, (index === this.state.typeSubCategoryIndex) ? {borderColor: `${nodeType.color}`, borderWidth:1,  borderStyle: 'solid',
+                                            } : null]}
+                                        />
+                                    }
+
+
                                     <IconM name={nodeType.img} type="simple-line-icons" size={25}/>
                                     <Text
                                         style={styles.mynodeText}>{nodeType.title}</Text>
 
-                                </View>
+                                </TouchableOpacity>
                             )
                         }
                     </View>
@@ -257,17 +296,17 @@ export default class Main extends React.Component {
                         <IconM style={styles.datePickerButtonIcon} name="small-calendar" type="simple-line-icons"
                                size={18}/>
                         <Text
-                            style={styles.datePickerButtonText}>{this.state.usersDate && dayjs(this.state.usersDate).locale('ru').format('D MMM')}</Text>
+                            style={styles.datePickerButtonText}>{this.state.date && dayjs(this.state.date).locale('ru').format('D MMM')}</Text>
                     </TouchableOpacity>
                     <TextInput
                         style={styles.textInput}
                         autoCapitalize="none"
                         onSubmitEditing={Keyboard.dismiss}
                         placeholder="Добавить примечание"
-                        onChangeText={message => this.setState({message})}
-                        value={this.state.message}
+                        onChangeText={message => this.setState({usersDescription:message})}
+                        value={this.state.usersDescription}
                     />
-                    <Text style={styles.moneyCount}>{this.state.money}</Text>
+                    <Text style={styles.moneyCount}>{this.state.sum}</Text>
                 </View>
 
 
@@ -362,7 +401,20 @@ const styles = StyleSheet.create({
         width: "20%",
         height: 70,
         alignItems: 'center',
-        paddingTop: 15,
+        paddingTop: 19,
+        position: 'relative'
+    },
+    mynodeSelected: {
+        width: 70,
+        height: 70,
+        borderRadius: 5,
+        backgroundColor: 'rgba(255,255,255,1)',
+
+        alignItems: 'center',
+        position:'absolute',
+        marginTop: 5,
+        // opacity:.3
+
     },
 
     mynodeText: {

@@ -36,7 +36,7 @@ export default class NonScrollPage extends Component {
 
     async componentDidMount() {
         try {
-            // await AsyncStorage.removeItem('typeCategoryList')
+            await AsyncStorage.removeItem('typeCategoryList')
             let storedTypeCategoryList = await AsyncStorage.getItem('typeCategoryList');
             if (storedTypeCategoryList == null) {
                 storedTypeCategoryList = typeCategoryListDefault
