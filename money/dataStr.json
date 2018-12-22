@@ -20,15 +20,15 @@
 					"color":"#eee"
 				}
 			]
-		},
+		}
 
 	],
-
 
 	"bankAccountsList":[
 		{
 			"title":"Альфа банк",
 			"startBalance":10000,
+            "currentBalance": 9950
 		}
 	],
 	"nodeList":[

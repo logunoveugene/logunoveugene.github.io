@@ -81,7 +81,6 @@ export default class Main extends React.Component {
         }
 
 
-
         try {
             // await AsyncStorage.removeItem('typeCategoryList')
             var storedTypeCategoryList = await AsyncStorage.getItem('typeCategoryList');
@@ -272,11 +271,9 @@ export default class Main extends React.Component {
                                     {index === this.state.typeSubCategoryIndex &&
 
                                         <View
-                                            style={[styles.mynodeSelected, (index === this.state.typeSubCategoryIndex) ? {borderColor: `${nodeType.color}`, borderWidth:1,  borderStyle: 'solid',
-                                            } : null]}
+                                            style={[styles.mynodeSelected, {backgroundColor: `${nodeType.color}`}]}
                                         />
                                     }
-
 
                                     <IconM name={nodeType.img} type="simple-line-icons" size={25}/>
                                     <Text
@@ -405,15 +402,14 @@ const styles = StyleSheet.create({
         position: 'relative'
     },
     mynodeSelected: {
-        width: 70,
-        height: 70,
-        borderRadius: 5,
-        backgroundColor: 'rgba(255,255,255,1)',
-
+        width: 38,
+        height: 38,
+        borderRadius: 19,
+        // backgroundColor: 'rgba(255,255,255,1)',
         alignItems: 'center',
         position:'absolute',
-        marginTop: 5,
-        // opacity:.3
+        marginTop: 12,
+        opacity:.2
 
     },
 

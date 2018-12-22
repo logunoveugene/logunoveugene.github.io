@@ -1,114 +1,163 @@
 import React from 'react'
-import {StyleSheet, View, AsyncStorage, TextInput, Text, Button} from 'react-native'
+import {
+    StyleSheet,
+    ScrollView,
+    View,
+    AsyncStorage,
+    TextInput,
+    Text,
+    Button
+} from 'react-native'
 import firebase from 'react-native-firebase'
-import _ from "lodash";
 
+import Fuse from 'fuse.js'
+
+import _ from "lodash";
+import {banksAndPrefixes} from './data/base/BaseConstant'
 
 export default class Main extends React.Component {
-    state = {currentUser: null, accountName: '', amount: '', accountList:[]}
+    state = {
+        currentUser: null,
 
+        title: '',
+        startBalance: '',
+        currentBalance: '',
 
-    static navigationOptions = ({navigation}) => {
-
-        return {
-            headerTitle: 'Мои счета'
-
-
-        }
+        filterValue: '',
+        filteredBanks: [],
+        bankAccountsList: []
     };
 
-
-
-
     async componentDidMount() {
-        const {currentUser} = firebase.auth();
-        this.setState({currentUser});
-
-
-
         try {
-            var storeddAccounts = await AsyncStorage.getItem('accountsList');
-            if (storeddAccounts == null) {
-                storeddAccounts = []
+            // await AsyncStorage.removeItem('bankAccountsList')
+            let storedAccounts = await AsyncStorage.getItem('bankAccountsList');
+            if (storedAccounts == null) {
+                storedAccounts = [
+                    {
+                        "title": "Альфа банк",
+                        "startBalance": 10000,
+                        "currentBalance": 9950
+                    },
+                    {
+                        "title": "Восточный банк",
+                        "startBalance": 10000,
+                        "currentBalance": 9950
+                    }
+                ]
             } else {
-                storeddAccounts = JSON.parse(storeddAccounts);
+                storedAccounts = JSON.parse(storedAccounts);
             }
-            this.setState({accountList: storeddAccounts})
-            console.log(storeddAccounts)
+            this.setState({bankAccountsList: storedAccounts});
         } catch (error) {
             alert("Что-то пошло не так...")
         }
-
     }
 
 
+    // handlePostData = async () => {
+    //     const {accountName, amount} = this.state;
+    //     let addedAccount = {
+    //         title: accountName,
+    //         amount: amount,
+    //         id:''
+    //     };
+    //
+    //     console.log(addedAccount)
+    //     try {
+    //         // await AsyncStorage.removeItem('accountsList');
+    //         var accountsList = await AsyncStorage.getItem('accountsList');
+    //         if (accountsList == null) {
+    //             accountsList = []
+    //             console.log(accountsList)
+    //         } else {
+    //             accountsList = JSON.parse(accountsList);
+    //             console.log(accountsList)
+    //         }
+    //     } catch (error) {
+    //         alert("Что-то пошло не так1...")
+    //     }
+    //
+    //     addedAccount.id = accountsList.length + 1
+    //     accountsList.push(addedAccount);
+    //     try {
+    //         await AsyncStorage.setItem('accountsList', JSON.stringify(accountsList));
+    //     } catch (error) {
+    //         alert("Что-то пошло не так.2..")
+    //     }
+    //     this.setState({accountName: ''});
+    //
+    //
+    //     // this.componentDidMount()
+    //     // this.props.navigation.navigate('Main')
+    //
+    // };
+
+    filterData(value) {
 
 
-    handlePostData = async () => {
-        const {accountName, amount} = this.state;
-        let addedAccount = {
-            title: accountName,
-            amount: amount,
-            id:''
-        };
+        let options = {
+            threshold: 0.3,
+            keys: ['name', 'nameEn']
 
-        console.log(addedAccount)
-        try {
-            // await AsyncStorage.removeItem('accountsList');
-            var accountsList = await AsyncStorage.getItem('accountsList');
-            if (accountsList == null) {
-                accountsList = []
-                console.log(accountsList)
-            } else {
-                accountsList = JSON.parse(accountsList);
-                console.log(accountsList)
-            }
-        } catch (error) {
-            alert("Что-то пошло не так1...")
         }
+        let fuse = new Fuse(banksAndPrefixes, options)
 
-        addedAccount.id = accountsList.length + 1
-        accountsList.push(addedAccount);
-        try {
-            await AsyncStorage.setItem('accountsList', JSON.stringify(accountsList));
-        } catch (error) {
-            alert("Что-то пошло не так.2..")
-        }
-        this.setState({accountName: ''});
+        let filteredBanks = fuse.search(value)
 
+        console.log(JSON.stringify(filteredBanks))
 
-        this.componentDidMount()
-        // this.props.navigation.navigate('Main')
-    };
-
+        //
+        // let filteredBanks = _.filter(banksAndPrefixes, {'name': value});
+        this.setState({
+            filterValue: value,
+            filteredBanks: filteredBanks
+        })
+    }
 
     render() {
         const {accountName, amount, accountList} = this.state
-        console.log(accountList)
+
         return (
             <View style={styles.container}>
-                {accountList.map((i)=>(
-                    <Text key={i.title}>{i.title} / {i.amount}</Text>
 
-                ))}
                 <TextInput
                     style={styles.textInput}
                     autoCapitalize="none"
                     keyboardType='default'
                     placeholder="Название счета"
-                    onChangeText={accountName => this.setState({accountName})}
-                    value={this.state.accountName}
-                />
-                <TextInput
-                    style={styles.textInput}
-                    autoCapitalize="none"
-                    keyboardType='number-pad'
-                    placeholder="Баланс"
-                    onChangeText={amount => this.setState({amount})}
-                    value={this.state.amount}
+                    onChangeText={value => this.filterData(value)}
+                    value={this.state.filterValue}
                 />
 
-                <Button title="Опубликовать" onPress={this.handlePostData}/>
+                <ScrollView>
+                    {this.state.filteredBanks.map((i) => (
+                        <View  key={i.name} style={{backgroundColor: `${i.backgroundColor}`}}>
+                            <Text style={{color: `${i.text}`}} >{i.name}</Text>
+                        </View>
+
+                    ))}
+                </ScrollView>
+
+
+                {/*<TextInput*/}
+                {/*style={styles.textInput}*/}
+                {/*autoCapitalize="none"*/}
+                {/*keyboardType='default'*/}
+                {/*placeholder="Название счета"*/}
+                {/*onChangeText={accountName => this.setState({title:accountName})}*/}
+                {/*value={this.state.accountName}*/}
+                {/*/>*/}
+                {/*<TextInput*/}
+                {/*style={styles.textInput}*/}
+                {/*autoCapitalize="none"*/}
+                {/*keyboardType='number-pad'*/}
+                {/*placeholder="Баланс"*/}
+                {/*onChangeText={amount => this.setState({startBalance:amount})}*/}
+                {/*value={this.state.amount}*/}
+                {/*/>*/}
+
+                {/*<Button title="Опубликовать" onPress={this.handlePostData}/>*/}
                 <Button
                     title="Отмена"
                     onPress={() => this.props.navigation.navigate('Main')}
