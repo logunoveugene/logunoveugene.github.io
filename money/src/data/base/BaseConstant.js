@@ -1091,3 +1091,26 @@ export const banksAndPrefixes = [
         "logoSvg": "ru-zenit.svg"
     }
 ];
+
+export const currencyList = [
+    {
+        "title": "Рубли",
+        "symbol": "₽",
+        "code": "rub"
+
+    },
+    {
+        "title": "Доллары",
+        "symbol": "$",
+        "code": "usd"
+
+    },
+    {
+        "title": "Евро",
+        "symbol": "€",
+        "code": "eur"
+
+    },
+
+
+]

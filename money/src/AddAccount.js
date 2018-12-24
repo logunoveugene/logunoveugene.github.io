@@ -7,15 +7,23 @@ import {
     TouchableOpacity,
     TextInput,
     Text,
-    Button, Picker, Keyboard
+    Button,
+    Dimensions,
+    Picker,
+    Modal,
+    Keyboard
 } from 'react-native'
 import firebase from 'react-native-firebase'
 
 import Fuse from 'fuse.js'
 
 import _ from "lodash";
-import {banksAndPrefixes} from './data/base/BaseConstant'
+import {banksAndPrefixes, currencyList} from './data/base/BaseConstant'
 import dayjs from "dayjs";
+
+
+var width = Dimensions.get('window').width;
+
 
 export default class Main extends React.Component {
     state = {
@@ -27,12 +35,15 @@ export default class Main extends React.Component {
         currentBalance: '',
         bankBgColor: '',
         bankTextColor: '',
-        currency: '',
+
+
+        modalVisible: false,
 
         filterValue: '',
         filteredBanks: [],
         bankAccountsList: []
     };
+
 
     async componentDidMount() {
         try {
@@ -57,6 +68,9 @@ export default class Main extends React.Component {
         } catch (error) {
             alert("Что-то пошло не так...")
         }
+        this.setState({
+            currency: currencyList[0]
+        })
     }
 
 
@@ -67,7 +81,9 @@ export default class Main extends React.Component {
             startBalance,
             bankBgColor,
             bankTextColor,
-            currency
+            currency,
+
+
         } = this.state;
 
 
@@ -78,11 +94,14 @@ export default class Main extends React.Component {
             currentBalance: startBalance,
             bankBgColor: bankBgColor,
             bankTextColor: bankTextColor,
-            currency: currency,
+            currencyTitle: currency.title,
+            currencySymbol: currency.symbol,
+            currencyCode: currency.code,
+
         };
 
         try {
-            await AsyncStorage.removeItem('accountsList');
+            await AsyncStorage.removeItem('bankAccountsList');
             var accountsList = await AsyncStorage.getItem('bankAccountsList');
             if (accountsList == null) {
                 accountsList = []
@@ -100,6 +119,22 @@ export default class Main extends React.Component {
         } catch (error) {
             alert("Что-то пошло не так.2..")
         }
+
+        this.setState({
+            title: '',
+            bankTitle: '',
+            startBalance: '',
+            currentBalance: '',
+            bankBgColor: '',
+            bankTextColor: '',
+            currency: '',
+            filterValue:'',
+            filteredBanks: [],
+
+        });
+        this.componentDidMount()
+        this.setModalVisible(!this.state.modalVisible);
+
     };
 
     filterData(value) {
@@ -124,95 +159,173 @@ export default class Main extends React.Component {
             bankBgColor: i.backgroundColor,
             bankTextColor: i.text,
         });
+        Keyboard.dismiss()
     }
 
+    setModalVisible(visible) {
+        this.setState({modalVisible: visible});
+    }
+
+
     render() {
-        let currencyList = ["Рубли (₽)", "Доллары ($)", "Евро (€)"]
+
         return (
             <View style={styles.container}>
+                <View style={styles.fixedHeader}>
+                    <TouchableOpacity
+                        onPress={() => this.props.navigation.goBack()}>
+                        <Text>Назад</Text>
+                    </TouchableOpacity>
 
-
-                <View style={styles.inputWrap}>
-                    <TextInput
-                        style={styles.textInputFull}
-                        autoCapitalize="none"
-                        keyboardType='default'
-                        placeholder="Название счета"
-                        onChangeText={value => this.setState({title: value})}
-                        value={this.state.title}
-                    />
+                    <TouchableOpacity
+                        onPress={() => {
+                            this.setModalVisible(true);
+                        }}>
+                        <Text>добавить</Text>
+                    </TouchableOpacity>
                 </View>
-                <View style={styles.inputWrap}>
-                    <TextInput
-                        style={styles.textInput}
-                        autoCapitalize="none"
-                        keyboardType='numeric'
-                        placeholder="Баланс"
-                        onChangeText={value => this.setState({startBalance: value})}
-                        value={this.state.startBalance}
-                    />
-                    <Picker
-                        mode="dropdown"
-                        selectedValue={this.state.currency}
-                        style={{height: 50, width: 130, marginRight: 12}}
-                        onValueChange={((itemValue) => this.setState({currency: itemValue}))}>
-                        {currencyList.map((i) => (
-                            <Picker.Item
-                                key={i}
-                                label={i}
-                                value={i}
-                            />
-                        ))}
-                    </Picker>
-                </View>
-
-                <View style={styles.inputWrap}>
-                    <TextInput
-                        style={styles.textInputFull}
-                        autoCapitalize="none"
-                        keyboardType='default'
-                        placeholder="Банк"
-                        onChangeText={value => this.filterData(value)}
-                        value={this.state.filterValue}
-                    />
-                    {this.state.bankTitle !== "" && <View style={{
-                        position: 'absolute',
-                        width: 14,
-                        height: 14,
-                        borderRadius: 10,
-                        top: 16,
-                        right: 16,
-                        backgroundColor: `${this.state.bankBgColor}`
-                    }}/>
-                    }
-
-                </View>
-                {(this.state.bankTitle === "") &&
-                <ScrollView
-                    horizontal="true"
-                    style={{width: "100%", padding: 10,}}>
-                    {this.state.filteredBanks.map((i) => (
-                        <TouchableOpacity
-                            key={i.name}
+                <ScrollView>
+                    {this.state.bankAccountsList.map((i, index) => (
+                        <View
+                            key={index}
                             style={{
-                                backgroundColor: `${i.backgroundColor}`,
-                                height: 32,
-                                paddingVertical: 8,
-                                paddingHorizontal: 15,
-                                marginRight: 10,
-                                borderRadius: 25
-                            }}
-                            onPress={() => this._chooseBank(i)}
-                        >
-                            <Text style={{color: `${i.text}`, fontSize: 12}}>{i.name}</Text>
-                        </TouchableOpacity>
-                    ))}
-                </ScrollView>
-                }
+                                width: width - 20,
+                                backgroundColor: "#ffffff",
+                                height: 90,
+                                borderRadius: 10,
+                                marginHorizontal: 10,
+                                padding: 20,
+                                position: "relative",
+                                marginTop: 10
 
-                <TouchableOpacity style={styles.button} onPress={this.handlePostData}>
-                    <Text>Опубликовать</Text>
-                </TouchableOpacity>
+                            }}>
+                            <Text
+                                style={{
+                                    fontSize: 22
+                                }}>{i.title}</Text>
+                            <Text
+                                style={{
+                                    fontSize: 14
+                                }}>{i.currentBalance}{i.currencySymbol}</Text>
+
+
+                        </View>
+                    ))
+                    }
+                </ScrollView>
+
+
+                <Modal
+                    animationType="fade"
+                    transparent={true}
+                    visible={this.state.modalVisible}
+                    onRequestClose={() => {
+                        this.setModalVisible(!this.state.modalVisible);
+                    }}>
+                    <View
+                        style={{
+                            flex: 1,
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            position: "relative",
+                            backgroundColor: 'rgba(0,0,0,0.4)'
+                        }}>
+                        <View style={{
+                            width: "100%",
+                            position: "absolute",
+                            bottom: 0,
+                            backgroundColor: "#ffffff",
+                            height: 260
+                        }}>
+                            <View style={styles.inputWrap}>
+                                <TextInput
+                                    style={styles.textInputFull}
+                                    autoCapitalize="none"
+                                    keyboardType='default'
+                                    placeholder="Название счета"
+                                    onChangeText={value => this.setState({title: value})}
+                                    value={this.state.title}
+                                />
+                            </View>
+                            <View style={styles.inputWrap}>
+                                <TextInput
+                                    style={styles.textInput}
+                                    autoCapitalize="none"
+                                    keyboardType='numeric'
+                                    placeholder="Баланс"
+                                    onChangeText={value => this.setState({startBalance: value})}
+                                    value={this.state.startBalance}
+                                />
+                                <Picker
+                                    mode="dropdown"
+                                    selectedValue={this.state.currency}
+                                    style={{height: 50, width: 130, marginRight: 12}}
+                                    onValueChange={((itemValue) => this.setState({currency: itemValue}))}>
+                                    {currencyList.map((i) => (
+                                        <Picker.Item
+                                            key={i.title}
+                                            label={i.title}
+                                            value={i}
+                                        />
+                                    ))}
+                                </Picker>
+                            </View>
+
+                            <View style={styles.inputWrap}>
+                                <TextInput
+                                    style={styles.textInputFull}
+                                    autoCapitalize="none"
+                                    keyboardType='default'
+                                    placeholder="Банк"
+                                    onChangeText={value => this.filterData(value)}
+                                    value={this.state.filterValue}
+                                />
+                                {this.state.bankTitle !== "" && <View style={{
+                                    position: 'absolute',
+                                    width: 14,
+                                    height: 14,
+                                    borderRadius: 10,
+                                    top: 16,
+                                    right: 16,
+                                    backgroundColor: `${this.state.bankBgColor}`
+                                }}/>
+                                }
+
+                            </View>
+                            {(this.state.bankTitle === "") &&
+                            <ScrollView
+                                keyboardShouldPersistTaps="handled"
+                                horizontal="true"
+
+                                style={{width: "100%", padding: 10,}}>
+                                {this.state.filteredBanks.map((i) => (
+                                    <TouchableOpacity
+                                        key={i.name}
+                                        style={{
+                                            backgroundColor: `${i.backgroundColor}`,
+                                            height: 32,
+                                            paddingVertical: 8,
+                                            paddingHorizontal: 15,
+                                            marginRight: 10,
+                                            borderRadius: 25
+                                        }}
+                                        onPress={() => this._chooseBank(i)}
+                                    >
+                                        <Text style={{color: `${i.text}`, fontSize: 12}}>{i.name}</Text>
+                                    </TouchableOpacity>
+                                ))}
+                            </ScrollView>
+                            }
+
+
+                            <TouchableOpacity style={styles.button} onPress={this.handlePostData}>
+                                <Text>Опубликовать</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </Modal>
+
 
             </View>
         )
@@ -228,7 +341,10 @@ const styles = StyleSheet.create({
         width: '100%',
         alignItems: 'center',
         backgroundColor: '#ffda3a',
-        padding: 20
+        padding: 20,
+
+        bottom: 0,
+        left: 0
     },
     inputWrap: {
         alignItems: 'center',
@@ -248,6 +364,17 @@ const styles = StyleSheet.create({
         fontSize: 16,
         paddingLeft: 12
 
+    },
+
+
+    fixedHeader: {
+        backgroundColor: 'rgba(255,255,255,1)',
+        elevation: 1,
+        flexDirection: 'row',
+        width: '100%',
+        height: 50,
+
+        position: 'relative',
     },
     textInputFull: {
         width: '100%',

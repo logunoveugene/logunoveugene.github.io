@@ -6,7 +6,7 @@ import {
     Text,
     View,
     AsyncStorage,
-    Modal,
+    Dimensions,
     Button,
     ActivityIndicator
 } from 'react-native'
@@ -18,11 +18,14 @@ import {VictoryPie, VictoryChart, VictoryGroup, VictoryPolarAxis, VictoryTheme} 
 import _ from 'lodash';
 
 
+import {BoxShadow} from 'react-native-shadow'
+
 import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
 import icoMoonConfig from './font/selection';
 
 const IconM = createIconSetFromIcoMoon(icoMoonConfig);
 
+var width = Dimensions.get('window').width;
 
 export default class Main extends React.Component {
     state = {
@@ -41,6 +44,7 @@ export default class Main extends React.Component {
     setModalVisible() {
         this.setState({modalVisible: true});
     }
+
     hideModal() {
         this.setState({modalVisible: false});
     }
@@ -50,40 +54,37 @@ export default class Main extends React.Component {
         const params = navigation.state.params || {};
 
         return {
-            title:       params.title,
-            headerLeft:  params.headerLeft,
+            title: params.title,
+            headerLeft: params.headerLeft,
             headerRight: params.headerRight,
         }
     };
 
     _setNavigationParams() {
-        let title = 'Form';
-        let headerLeft = <Button title="burger" onPress={this.setModalVisible.bind(this)}/>;
-        let headerRight = <Button title="bilter" onPress={this.setModalVisible.bind(this)}/>;
+        let title = 'История';
+
 
         this.props.navigation.setParams({
-            title,
-            headerLeft,
-            headerRight,
+            title
         });
     }
 
 
     async componentDidMount() {
         try {
-            var storedNote = await AsyncStorage.getItem('notes');
+            var storedNote = await AsyncStorage.getItem('nodeList');
             if (storedNote == null) {
                 storedNote = []
             } else {
                 storedNote = JSON.parse(storedNote);
             }
-            this.setState({listls: _.orderBy(storedNote, ['date', 'id'], ['desc', 'desc'])})
+            this.setState({listls: _.orderBy(storedNote, ['date', 'time'], ['desc', 'desc'])})
 
         } catch (error) {
             alert("Что-то пошло не так...")
         }
         this._setNavigationParams();
-        console.log(this.state.listls)
+
 
         // const {currentUser} = firebase.auth();
         // this.setState({currentUser});
@@ -107,56 +108,138 @@ export default class Main extends React.Component {
                 />
                 {(listls === []) && <ActivityIndicator size="large"/>}
 
+                <View style={{
+                 width:"100%",
+                    height: 180,
+                    flexDirection: 'row',
+                    alignItems: "center",
 
-                <Modal
-                    animationType="slide"
-                    transparent={false}
-                    visible={this.state.modalVisible}
-                    onRequestClose={() => {
-                        Alert.alert('Modal has been closed.');
-                    }}>
-                    <View style={{marginTop: 22}}>
-                        <View>
-                            <Text>Hello World!</Text>
-
-                            <TouchableOpacity
-                                onPress={() => {
-                                    this.hideModal();
-                                }}>
-                                <Text>Hide Modal</Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                </Modal>
+                    backgroundColor: '#5503ff',
+                    borderBottomWidth: 1,
+                    padding: 10,
+                    // borderRadius: 10,
+                    // borderLeftColor: `${l.typeSubCategoryColor}`,
+                    // borderLeftWidth: 1,
+                    // // marginHorizontal: 10,
+                    // marginBottom: 7,
+                    position: "relative",
+                    // elevation: 1
 
 
-                <TouchableOpacity
-                    onPress={() => {
-                        this.props.navigation.openDrawer();
-                    }}>
-                    <Text>Бургер</Text>
+                }}>
+                    <TouchableOpacity
+                        onPress={() => {
+                            this.props.navigation.openDrawer();
+                        }}>
+                        <Text>Бургер</Text>
 
-                </TouchableOpacity>
+                    </TouchableOpacity>
+
+                </View>
 
 
                 <ScrollView>
-
                     {
                         listls.map((l, idx) => [
-                            <View key={l.id}>
+
+                            <View key={l.time}>
                                 {(idx >= 1 && listls[idx - 1].date !== l.date) || idx === 0 ? (
-                                    <Text>{l.date}</Text>
+                                    <Text style={{
+                                        padding: 12
+
+
+                                    }}>
+                                        {l.date}</Text>
                                 ) : null}
-                                <View style={styles.nodeItem}>
-                                    <IconM name={l.typeDescriptionImg} type="simple-line-icons" size={25}/>
-                                    <Text>{l.type}</Text>
-                                    <Text>{l.id}</Text>
-                                    <Text>{l.typeDescription}</Text>
-                                    <Text>{l.sum}</Text>
+
+
+                                <View style={{
+                                    flex: 1,
+                                    height: 58,
+                                    flexDirection: 'row',
+                                    alignItems: "center",
+                                    borderBottomColor: '#eee',
+                                    backgroundColor: '#fff',
+                                    borderBottomWidth: 1,
+                                    padding: 10,
+                                    borderRadius: 10,
+                                    // borderLeftColor: `${l.typeSubCategoryColor}`,
+                                    // borderLeftWidth: 1,
+                                    marginHorizontal: 10,
+                                    marginBottom: 7,
+                                    position: "relative",
+                                    // elevation: 1
+
+
+                                }}>
+
+                                    <View style={{
+                                        backgroundColor: `${l.typeSubCategoryColor}` + 20,
+                                        width: 38,
+                                        height: 38,
+                                        borderRadius: 19,
+                                        marginRight: 15,
+                                        position: "absolute",
+                                        top: 10,
+                                        left: 10,
+
+
+                                    }}>
+                                    </View>
+                                    <IconM name={l.typeSubCategoryImg} type="simple-line-icons" size={20}
+                                           style={{
+                                               color: "#333",
+
+                                               paddingLeft: 8
+
+                                           }}
+                                    />
+
+                                    <View
+                                        style={{
+                                            flexDirection: "column",
+                                            marginVertical: 10,
+                                            marginLeft: 22
+                                        }}>
+
+                                        <Text style={{}}>
+                                            {l.typeSubCategoryTitle}</Text>
+
+                                        {l.usersDescription !== '' && <Text
+                                            style={{
+                                                backgroundColor: '#eeeeee',
+                                                paddingHorizontal: 6,
+                                                paddingVertical: 3,
+                                                borderRadius: 6,
+                                                borderTopLeftRadius: 0,
+                                                fontSize: 12,
+                                                marginBottom:4
+
+
+                                            }}
+                                        >{l.usersDescription}</Text>}
+
+                                    </View>
+
+                                    <Text style={{
+                                        // backgroundColor: `${l.typeSubCategoryColor}`,
+                                        position: "absolute",
+                                        right: 14,
+                                        top: 16,
+                                        color: l.typeCategory === "Списание" ? "#333333" : "#78ab1e",
+                                        fontSize: 18
+
+
+                                    }}>
+                                        {l.typeCategory === "Списание" ? <Text>-</Text> : <Text>+</Text>}
+
+                                        {l.sum}</Text>
                                 </View>
 
                             </View>
+
                         ])
+
                     }
 
                 </ScrollView>
@@ -171,6 +254,7 @@ export default class Main extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        backgroundColor: '#f1f5fc',
     },
     textInput: {
         height: 40,
@@ -185,11 +269,14 @@ const styles = StyleSheet.create({
         height: 22,
         color: 'white',
     },
-    nodeItem: {
-        flex: 1,
+
+    fixedHeader: {
+        backgroundColor: 'rgba(255,255,255,1)',
+        elevation: 1,
         flexDirection: 'row',
-        borderBottomColor: '#eee',
-        borderBottomWidth: 1,
-        padding: 10
-    }
+        width: '100%',
+        height: 50,
+
+        position: 'relative',
+    },
 });

@@ -30,38 +30,36 @@ export default class Main extends React.Component {
         currentUser: null,
         account: 'Счет 1',
 
-        accountList: '',
+        bankAccountsList: [],
+
+        bankAccountTitle: '',
+        bankAccountCurrentBalance: '',
+        bankAccountBgColor: '',
+        bankAccountTextColor: '',
+
 
         keyboardIsShown: false,
-        typeSubCategoryIndex:'',
+        typeSubCategoryIndex: '',
 
 
+        id: 1,
+        sum: 0,
+        // typeCategory: "",
+        typeSubCategoryTitle: "",
+        typeSubCategoryImg: "",
+        typeSubCategoryColor: "",
 
-
-
-       id:1,
-       sum: 0,
-       // typeCategory: "",
-       typeSubCategoryTitle: "",
-       typeSubCategoryImg: "",
-       typeSubCategoryColor: "",
-       bankAccountTitle: "Альфа банк",
-       bankAccountCurrentBalance: 9950,
-       date: "",
-       time: "21-02",
-       currency: "rub",
-       usersDescription: "",
-
-
-
-
-
+        date: "",
+        time: "21-02",
+        currency: "rub",
+        usersDescription: "",
 
 
         typeCategoryList: '',
         typeCategoryTitleSelected: 'Списание',
-    };
 
+
+    };
 
 
     async componentDidMount() {
@@ -69,13 +67,15 @@ export default class Main extends React.Component {
         this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
 
         try {
-            var storeddAccounts = await AsyncStorage.getItem('accountsList');
+            var storeddAccounts = await AsyncStorage.getItem('bankAccountsList');
             if (storeddAccounts == null) {
                 storeddAccounts = []
             } else {
                 storeddAccounts = JSON.parse(storeddAccounts);
             }
-            this.setState({accountList: storeddAccounts});
+            this.setState({bankAccountsList: storeddAccounts}, () => {
+                this._chooseAccount(this.state.bankAccountsList[0])
+            });
         } catch (error) {
             alert("Что-то пошло не так...")
         }
@@ -90,7 +90,7 @@ export default class Main extends React.Component {
                 storedTypeCategoryList = JSON.parse(storedTypeCategoryList);
             }
             this.setState({typeCategoryList: storedTypeCategoryList})
-            console.log(this.state.typeCategoryList)
+
         } catch (error) {
             alert("Что-то пошло не так...")
         }
@@ -124,50 +124,68 @@ export default class Main extends React.Component {
             typeSubCategoryColor,
             bankAccountTitle,
             bankAccountCurrentBalance,
+
+
             date,
-            // time,
+
             currency,
             usersDescription,
 
-            } = this.state;
+        } = this.state;
 
         let addedNote = {
-            id:'',
+            id: '',
             sum: sum,
             typeCategory: typeCategoryTitleSelected,
             typeSubCategoryTitle: typeSubCategoryTitle,
             typeSubCategoryImg: typeSubCategoryImg,
             typeSubCategoryColor: typeSubCategoryColor,
-            bankAccountTitle: "Альфа банк",
-            bankAccountCurrentBalance: 9950,
+            bankAccountTitle: bankAccountTitle,
+            bankAccountCurrentBalance: null,
+
             date: date,
             time: "",
-            currency: "rub",
+            currency: currency,
             usersDescription: usersDescription,
         };
 
         try {
-            await AsyncStorage.removeItem('notes');
-            var storedNote = await AsyncStorage.getItem('notes');
+            // await AsyncStorage.removeItem('nodeList');
+            var storedNote = await AsyncStorage.getItem('nodeList');
             if (storedNote == null) {
                 storedNote = []
             } else {
                 storedNote = JSON.parse(storedNote);
-                console.log(storedNote)
+
             }
         } catch (error) {
             alert("Что-то пошло не так...")
         }
-        addedNote.id = storedNote.length + 1
-        addedNote.time = `${new Date().getHours()}-${new Date().getMinutes()}-${new Date().getSeconds()}`
+        // addedNote.id = storedNote.length + 1
+
+
+        addedNote.bankAccountCurrentBalance = typeCategoryTitleSelected === 'Списание' ? +bankAccountCurrentBalance - sum : +sum + +bankAccountCurrentBalance  ,
+            addedNote.time = `${new Date().getHours()}-${new Date().getMinutes()}-${new Date().getSeconds()}`
         storedNote.push(addedNote);
 
+
         try {
-            await AsyncStorage.setItem('notes', JSON.stringify(storedNote));
+            await AsyncStorage.setItem('nodeList', JSON.stringify(storedNote));
         } catch (error) {
             alert("Что-то пошло не так...")
         }
-        this.setState({message: ''});
+        this.setState({
+            sum: 0,
+            typeCategoryTitleSelected: 'Списание',
+            typeSubCategoryTitle: '',
+            typeSubCategoryImg: '',
+            typeSubCategoryColor: '',
+            bankAccountTitle: '',
+            bankAccountCurrentBalance: '',
+            typeSubCategoryIndex:'',
+            usersDescription: '',
+
+        });
 
         this.props.navigation.navigate('Main')
     };
@@ -180,8 +198,13 @@ export default class Main extends React.Component {
 
     _chooseAccount = (account) => {
         this.setState({
-            account: account,
+            bankAccountTitle: account.title,
+            bankAccountCurrentBalance: account.currentBalance,
+            bankAccountBgColor: account.bankBgColor,
+            bankAccountTextColor: account.bankTextColor,
+            currency: account.currencyCode
         });
+
     };
 
 
@@ -203,7 +226,7 @@ export default class Main extends React.Component {
 
                 let selectedDate = year + '-' + ('0' + (month + 1)).slice(-2) + '-' + ('0' + day).slice(-2)
                 this.setState({date: selectedDate})
-                console.log(selectedDate)
+
             }
         } catch ({code, message}) {
             console.warn('Cannot open date picker', message);
@@ -217,14 +240,8 @@ export default class Main extends React.Component {
 
 
     render() {
-        const {currentUser, list, account, accountList, inputNumber, typeCategoryList,typeCategoryTitleSelected, currentTypeDescList, type, keyboardIsShown} = this.state
-        let accountItem = Array.from(this.state.accountList);
+        const {bankAccountsList, typeCategoryList, typeCategoryTitleSelected, keyboardIsShown, type} = this.state
 
-
-        let addTypeList = [
-            {name: 'Списание', type: 'expense'},
-            {name: 'Пополнение', type: 'income'}
-        ];
         return (
 
             <View style={styles.container}>
@@ -249,38 +266,39 @@ export default class Main extends React.Component {
                         ))}
                     </Picker>}
 
-                    {/*<Picker*/}
-                        {/*mode="dropdown"*/}
-                        {/*selectedValue={type}*/}
-                        {/*style={{height: 50, width: 130}}*/}
-                        {/*onValueChange={((itemValue) => this._chooseAccount(itemValue))}>*/}
-                        {/*{accountItem.map((i) => (*/}
-                            {/*<Picker.Item key={i.id} label={i.title} value={i.title}/>*/}
-                        {/*))}*/}
-                    {/*</Picker>*/}
+                    {(bankAccountsList !== []) && <Picker
+                        mode="dropdown"
+                        selectedValue={type}
+                        style={{height: 50, width: 130}}
+                        onValueChange={((itemValue) => this._chooseAccount(itemValue))}>
+                        {bankAccountsList.map((a, index) => (
+                            <Picker.Item key={index} label={a.title} value={a}/>
+                        ))}
+                    </Picker>
+                    }
                 </View>
 
                 <ScrollView style={styles.nodeDescriptionWrapScroll}>
                     <View style={styles.nodeDescriptionWrap}>
                         {(typeCategoryList !== '') &&
-                            (_.filter(typeCategoryList, {'title': this.state.typeCategoryTitleSelected}))[0].child.map((nodeType, index) =>
-                                <TouchableOpacity
-                                    style={styles.mynode}
-                                    onPress={() => this._chooseTypeDesc(nodeType, index)}
-                                    key={nodeType.id}>
-                                    {index === this.state.typeSubCategoryIndex &&
+                        (_.filter(typeCategoryList, {'title': this.state.typeCategoryTitleSelected}))[0].child.map((nodeType, index) =>
+                            <TouchableOpacity
+                                style={styles.mynode}
+                                onPress={() => this._chooseTypeDesc(nodeType, index)}
+                                key={nodeType.id}>
+                                {index === this.state.typeSubCategoryIndex &&
 
-                                        <View
-                                            style={[styles.mynodeSelected, {backgroundColor: `${nodeType.color}`}]}
-                                        />
-                                    }
+                                <View
+                                    style={[styles.mynodeSelected, {backgroundColor: `${nodeType.color}`}]}
+                                />
+                                }
 
-                                    <IconM name={nodeType.img} type="simple-line-icons" size={25}/>
-                                    <Text
-                                        style={styles.mynodeText}>{nodeType.title}</Text>
+                                <IconM name={nodeType.img} type="simple-line-icons" size={25}/>
+                                <Text
+                                    style={styles.mynodeText}>{nodeType.title}</Text>
 
-                                </TouchableOpacity>
-                            )
+                            </TouchableOpacity>
+                        )
                         }
                     </View>
                 </ScrollView>
@@ -299,8 +317,10 @@ export default class Main extends React.Component {
                         style={styles.textInput}
                         autoCapitalize="none"
                         onSubmitEditing={Keyboard.dismiss}
-                        placeholder="Добавить примечание"
-                        onChangeText={message => this.setState({usersDescription:message})}
+                        placeholder="Примечание"
+                        onFocus={() =>this.state.keyboardIsShown = true}
+                        onBlur={() =>this.state.keyboardIsShown = false}
+                        onChangeText={message => this.setState({usersDescription: message})}
                         value={this.state.usersDescription}
                     />
                     <Text style={styles.moneyCount}>{this.state.sum}</Text>
@@ -407,9 +427,9 @@ const styles = StyleSheet.create({
         borderRadius: 19,
         // backgroundColor: 'rgba(255,255,255,1)',
         alignItems: 'center',
-        position:'absolute',
+        position: 'absolute',
         marginTop: 12,
-        opacity:.2
+        opacity: .2
 
     },
 

@@ -12,6 +12,7 @@ import categoryList from "./categoryList";
 
 
 
+
 const AppStack = createDrawerNavigator({
         Main: {screen: Main},
         AddNote: {screen: AddNote},
@@ -31,6 +32,14 @@ const AuthStack = createStackNavigator({
     {
         initialRouteName: 'SignUp',
     });
+
+
+
+
+
+
+
+
 
 
 export default createAppContainer(createDrawerNavigator(
