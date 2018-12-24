@@ -14,7 +14,8 @@ import firebase from 'react-native-firebase'
 import ActionButton from 'react-native-action-button';
 
 import {NavigationEvents} from 'react-navigation';
-import {VictoryPie, VictoryChart, VictoryGroup, VictoryPolarAxis, VictoryTheme} from "victory-native";
+
+
 import _ from 'lodash';
 
 
@@ -25,16 +26,46 @@ import icoMoonConfig from './font/selection';
 
 const IconM = createIconSetFromIcoMoon(icoMoonConfig);
 
-var width = Dimensions.get('window').width;
+
+
+
+
+
 
 export default class Main extends React.Component {
-    state = {
-        currentUser: null,
-        message: '',
-        list: '',
-        listls: [],
-        modalVisible: false
-    };
+
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            currentUser: null,
+            message: '',
+            list: '',
+            listls: [],
+            modalVisible: false,
+            selectedSlice: {
+                label: '',
+                value: 0
+            },
+            labelWidth: 0
+        }
+    }
+
+
+
+    // state = {
+    //     currentUser: null,
+    //     message: '',
+    //     list: '',
+    //     listls: [],
+    //     modalVisible: false,
+    //
+    //     selectedSlice: {
+    //         label: '',
+    //         value: 0
+    //     },
+    //     labelWidth: 0
+    // };
     handleSignOut = () => {
         firebase
             .auth()
@@ -99,7 +130,14 @@ export default class Main extends React.Component {
 
 
     render() {
-        const {listls} = this.state
+
+
+
+        const { listls } = this.state;
+
+
+
+
         return (
 
             <View style={styles.container}>
@@ -110,8 +148,8 @@ export default class Main extends React.Component {
 
                 <View style={{
                  width:"100%",
-                    height: 180,
-                    flexDirection: 'row',
+                    height: 220,
+                    flexDirection: 'column',
                     alignItems: "center",
 
                     backgroundColor: '#5503ff',
@@ -122,11 +160,27 @@ export default class Main extends React.Component {
                     // borderLeftWidth: 1,
                     // // marginHorizontal: 10,
                     // marginBottom: 7,
-                    position: "relative",
+
                     // elevation: 1
 
 
                 }}>
+                    <View style={{ justifyContent: 'center', flex: 1 }}>
+
+
+
+                        <Text
+                            onLayout={({ nativeEvent: { layout: { width } } }) => {
+                                this.setState({ labelWidth: width });
+                            }}
+                            style={{
+                                position: 'absolute',
+                                left: deviceWidth / 2 - labelWidth / 2,
+                                textAlign: 'center'
+                            }}>
+                            {`${label} \n ${value}`}
+                        </Text>
+                    </View>
                     <TouchableOpacity
                         onPress={() => {
                             this.props.navigation.openDrawer();
@@ -135,8 +189,9 @@ export default class Main extends React.Component {
 
                     </TouchableOpacity>
 
-                </View>
 
+
+                </View>
 
                 <ScrollView>
                     {
