@@ -17,19 +17,17 @@ import {NavigationEvents} from 'react-navigation';
 
 
 import _ from 'lodash';
+import {sampleNodes} from "../sampleNodes";
 
+import {Defs, LinearGradient, Stop} from 'react-native-svg'
+import {LineChart, Grid} from 'react-native-svg-charts'
+import PieChart from './pie-chart'
 
-import {BoxShadow} from 'react-native-shadow'
 
 import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
 import icoMoonConfig from './font/selection';
 
 const IconM = createIconSetFromIcoMoon(icoMoonConfig);
-
-
-
-
-
 
 
 export default class Main extends React.Component {
@@ -43,29 +41,16 @@ export default class Main extends React.Component {
             list: '',
             listls: [],
             modalVisible: false,
-            selectedSlice: {
-                label: '',
-                value: 0
-            },
-            labelWidth: 0
+            selectedMonth: '',
+            selectedYear: '',
+            selectedType: 'Списание',
+            chartData: [],
+
+
         }
     }
 
 
-
-    // state = {
-    //     currentUser: null,
-    //     message: '',
-    //     list: '',
-    //     listls: [],
-    //     modalVisible: false,
-    //
-    //     selectedSlice: {
-    //         label: '',
-    //         value: 0
-    //     },
-    //     labelWidth: 0
-    // };
     handleSignOut = () => {
         firebase
             .auth()
@@ -94,7 +79,6 @@ export default class Main extends React.Component {
     _setNavigationParams() {
         let title = 'История';
 
-
         this.props.navigation.setParams({
             title
         });
@@ -102,29 +86,45 @@ export default class Main extends React.Component {
 
 
     async componentDidMount() {
+
+        this.setState({
+            selectedMonth: ('0' + (new Date().getMonth() + 1)).slice(-2),
+            selectedYear: `${new Date().getFullYear()}`
+        }, () => {
+            // console.log(this.state.selectedYear)
+        })
+
+
         try {
             var storedNote = await AsyncStorage.getItem('nodeList');
             if (storedNote == null) {
-                storedNote = []
+                storedNote = sampleNodes
             } else {
                 storedNote = JSON.parse(storedNote);
             }
-            this.setState({listls: _.orderBy(storedNote, ['date', 'time'], ['desc', 'desc'])})
 
+            this.setState({
+                listls: _(storedNote).filter({
+                    'month': this.state.selectedMonth,
+                    'year': this.state.selectedYear
+                }).orderBy(['date', 'time'], ['desc', 'desc']).value()
+            });
+
+            // console.log(this.state.listls)
         } catch (error) {
             alert("Что-то пошло не так...")
         }
+
+
+        this.setState({
+            chartData: _(storedNote).filter({
+                'typeCategory': this.state.selectedType
+            }).value()
+        });
+
+
         this._setNavigationParams();
 
-
-        // const {currentUser} = firebase.auth();
-        // this.setState({currentUser});
-        // let starCountRef = firebase.database().ref(currentUser.uid + '/node');
-        // starCountRef.once('value', function (snapshot) {
-        // }).then((val) => {
-        //     this.setState({list: _.values(val.toJSON())})
-        //     console.log(_.values(val.toJSON()))
-        // })
 
     }
 
@@ -133,10 +133,45 @@ export default class Main extends React.Component {
 
 
 
-        const { listls } = this.state;
+
+        //
+        const {listls, chartData, selectedSlice} = this.state;
 
 
+        var group = _.groupBy(this.state.chartData, 'typeSubCategoryTitle');
+        var group3 = []
+        var percent = _.sumBy(this.state.chartData, function (o) {
+            return +o.sum
+        });
+        console.log(percent)
+        _.map(group, ((i) => {
+            group3.push(
+                _.reduce(i, function (p, t) {
+                    return {
+                        sum: (p.sum) += +t.sum,
+                        color: p.color = t.typeSubCategoryColor,
+                        name: p.name = t.typeSubCategoryTitle,
 
+                    };
+                }, {sum: 0, color: '', name: ''}))
+        }));
+        _.map(group3, ((i) => {
+            i.percent = (i.sum / percent) * 100
+        }));
+
+        let result = _.orderBy(group3, ['percent'], ['asc']);
+
+
+        const data = result.map((key, index) => {
+            return {
+                key: index,
+                value: key.percent,
+                svg: {fill: key.color,},
+                arc: {padAngle: 0},
+                onPress: () => this.setState({selectedSlice: {label: key, value: values[index]}})
+            }
+        })
+        const deviceWidth = Dimensions.get('window').width
 
         return (
 
@@ -147,67 +182,74 @@ export default class Main extends React.Component {
                 {(listls === []) && <ActivityIndicator size="large"/>}
 
                 <View style={{
-                 width:"100%",
+                    // width: "100%",
                     height: 220,
-                    flexDirection: 'column',
-                    alignItems: "center",
-
-                    backgroundColor: '#5503ff',
-                    borderBottomWidth: 1,
-                    padding: 10,
+                    // flexDirection: 'column',
+                    // alignItems: "center",
+                    // backgroundColor: '#583598',
+                    // borderBottomWidth: 1,
+                    // padding: 10,
                     // borderRadius: 10,
                     // borderLeftColor: `${l.typeSubCategoryColor}`,
                     // borderLeftWidth: 1,
                     // // marginHorizontal: 10,
                     // marginBottom: 7,
-
                     // elevation: 1
-
-
                 }}>
-                    <View style={{ justifyContent: 'center', flex: 1 }}>
 
+                    <View style={{justifyContent: 'center', flex: 1,}}>
+                        {chartData.map((i, index) => {
 
+                        })}
 
-                        <Text
-                            onLayout={({ nativeEvent: { layout: { width } } }) => {
-                                this.setState({ labelWidth: width });
-                            }}
-                            style={{
-                                position: 'absolute',
-                                left: deviceWidth / 2 - labelWidth / 2,
-                                textAlign: 'center'
-                            }}>
-                            {`${label} \n ${value}`}
-                        </Text>
+                        <View style={{justifyContent: 'center', flex: 1, position: 'relative'}}>
+                            <View
+
+                                style={{
+                                    position: 'absolute',
+                                    left: 10
+                                }}>
+                                {result.map((i, index) => (
+                                    <Text
+                                        key={index}
+                                        style={{
+                                            width: '100%',
+                                            textAlign: 'left',
+                                            fontSize: 11,
+                                        }}>{i.name}: {i.sum} </Text>
+                                ))
+                                }
+                            </View>
+                            <PieChart
+                                style={{height: 180,}}
+                                outerRadius={'80%'}
+                                innerRadius={'65%'}
+                                data={data}
+                            />
+
+                            <Text
+
+                                style={{
+                                    position: 'absolute',
+                                    width: '100%',
+                                    textAlign: 'center', fontSize: 22,
+                                    fontWeight: 'bold'
+                                }}>{percent}</Text>
+                        </View>
+
                     </View>
-                    <TouchableOpacity
-                        onPress={() => {
-                            this.props.navigation.openDrawer();
-                        }}>
-                        <Text>Бургер</Text>
-
-                    </TouchableOpacity>
-
-
 
                 </View>
-
                 <ScrollView>
                     {
                         listls.map((l, idx) => [
-
-                            <View key={l.time}>
+                            <View key={l.id}>
                                 {(idx >= 1 && listls[idx - 1].date !== l.date) || idx === 0 ? (
                                     <Text style={{
                                         padding: 12
-
-
                                     }}>
                                         {l.date}</Text>
                                 ) : null}
-
-
                                 <View style={{
                                     flex: 1,
                                     height: 58,
@@ -224,10 +266,7 @@ export default class Main extends React.Component {
                                     marginBottom: 7,
                                     position: "relative",
                                     // elevation: 1
-
-
                                 }}>
-
                                     <View style={{
                                         backgroundColor: `${l.typeSubCategoryColor}` + 20,
                                         width: 38,
@@ -237,29 +276,22 @@ export default class Main extends React.Component {
                                         position: "absolute",
                                         top: 10,
                                         left: 10,
-
-
                                     }}>
                                     </View>
                                     <IconM name={l.typeSubCategoryImg} type="simple-line-icons" size={20}
                                            style={{
                                                color: "#333",
-
                                                paddingLeft: 8
-
                                            }}
                                     />
-
                                     <View
                                         style={{
                                             flexDirection: "column",
                                             marginVertical: 10,
                                             marginLeft: 22
                                         }}>
-
                                         <Text style={{}}>
                                             {l.typeSubCategoryTitle}</Text>
-
                                         {l.usersDescription !== '' && <Text
                                             style={{
                                                 backgroundColor: '#eeeeee',
@@ -268,14 +300,10 @@ export default class Main extends React.Component {
                                                 borderRadius: 6,
                                                 borderTopLeftRadius: 0,
                                                 fontSize: 12,
-                                                marginBottom:4
-
-
+                                                marginBottom: 4
                                             }}
                                         >{l.usersDescription}</Text>}
-
                                     </View>
-
                                     <Text style={{
                                         // backgroundColor: `${l.typeSubCategoryColor}`,
                                         position: "absolute",
@@ -283,8 +311,6 @@ export default class Main extends React.Component {
                                         top: 16,
                                         color: l.typeCategory === "Списание" ? "#333333" : "#78ab1e",
                                         fontSize: 18
-
-
                                     }}>
                                         {l.typeCategory === "Списание" ? <Text>-</Text> : <Text>+</Text>}
 

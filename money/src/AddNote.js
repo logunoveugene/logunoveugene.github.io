@@ -50,6 +50,12 @@ export default class Main extends React.Component {
         typeSubCategoryColor: "",
 
         date: "",
+
+
+        day: "",
+        month: "",
+        year: "",
+
         time: "21-02",
         currency: "rub",
         usersDescription: "",
@@ -96,7 +102,13 @@ export default class Main extends React.Component {
         }
 
 
-        this.setState({date: new Date().getFullYear() + '-' + ('0' + (new Date().getMonth() + 1)).slice(-2) + '-' + ('0' + new Date().getDate()).slice(-2)})
+        this.setState({
+            date: new Date().getFullYear() + '-' + ('0' + (new Date().getMonth() + 1)).slice(-2) + '-' + ('0' + new Date().getDate()).slice(-2),
+            day: ('0' + new Date().getDate()).slice(-2),
+            month: ('0' + (new Date().getMonth() + 1)).slice(-2),
+            year: new Date().getFullYear().toString(),
+
+        })
 
 
     };
@@ -128,6 +140,11 @@ export default class Main extends React.Component {
 
             date,
 
+            day,
+            month,
+            year,
+
+
             currency,
             usersDescription,
 
@@ -144,6 +161,11 @@ export default class Main extends React.Component {
             bankAccountCurrentBalance: null,
 
             date: date,
+            day: day,
+            month: month,
+            year: year,
+
+
             time: "",
             currency: currency,
             usersDescription: usersDescription,
@@ -156,24 +178,27 @@ export default class Main extends React.Component {
                 storedNote = []
             } else {
                 storedNote = JSON.parse(storedNote);
-
+                console.log(storedNote)
             }
         } catch (error) {
             alert("Что-то пошло не так...")
         }
-        // addedNote.id = storedNote.length + 1
 
 
-        addedNote.bankAccountCurrentBalance = typeCategoryTitleSelected === 'Списание' ? +bankAccountCurrentBalance - sum : +sum + +bankAccountCurrentBalance  ,
-            addedNote.time = `${new Date().getHours()}-${new Date().getMinutes()}-${new Date().getSeconds()}`
+
+        addedNote.bankAccountCurrentBalance = typeCategoryTitleSelected === 'Списание' ? +bankAccountCurrentBalance - sum : +sum + +bankAccountCurrentBalance;
+        addedNote.time = `${new Date().getHours()}-${new Date().getMinutes()}-${new Date().getSeconds()}`;
+        addedNote.id = (Math.random() * 1000).toString();
         storedNote.push(addedNote);
-
+console.log(addedNote)
 
         try {
             await AsyncStorage.setItem('nodeList', JSON.stringify(storedNote));
         } catch (error) {
             alert("Что-то пошло не так...")
         }
+
+
         this.setState({
             sum: 0,
             typeCategoryTitleSelected: 'Списание',
@@ -182,11 +207,11 @@ export default class Main extends React.Component {
             typeSubCategoryColor: '',
             bankAccountTitle: '',
             bankAccountCurrentBalance: '',
-            typeSubCategoryIndex:'',
+            typeSubCategoryIndex: '',
             usersDescription: '',
 
         });
-
+        this.updateMoney(0)
         this.props.navigation.navigate('Main')
     };
 
@@ -318,8 +343,8 @@ export default class Main extends React.Component {
                         autoCapitalize="none"
                         onSubmitEditing={Keyboard.dismiss}
                         placeholder="Примечание"
-                        onFocus={() =>this.state.keyboardIsShown = true}
-                        onBlur={() =>this.state.keyboardIsShown = false}
+                        onFocus={() => this.state.keyboardIsShown = true}
+                        onBlur={() => this.state.keyboardIsShown = false}
                         onChangeText={message => this.setState({usersDescription: message})}
                         value={this.state.usersDescription}
                     />
@@ -327,7 +352,7 @@ export default class Main extends React.Component {
                 </View>
 
 
-                {!keyboardIsShown && <NumKeyboard updateData={this.updateMoney}/>}
+                {!keyboardIsShown && <NumKeyboard money={this.state.sum} updateData={this.updateMoney}/>}
 
 
                 <TouchableOpacity

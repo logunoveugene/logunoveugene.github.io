@@ -34,14 +34,6 @@ const AuthStack = createStackNavigator({
     });
 
 
-
-
-
-
-
-
-
-
 export default createAppContainer(createDrawerNavigator(
     {
         Loading: {screen: Loading},

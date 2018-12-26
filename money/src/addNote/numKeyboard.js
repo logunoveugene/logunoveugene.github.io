@@ -12,12 +12,9 @@ const IconM = createIconSetFromIcoMoon(icoMoonConfig);
 
 export default class NumKeyboard extends React.Component {
 
-    state = {
-        money: 0
-    };
 
     _keyPress = (i) => {
-        let {money} = this.state;
+        let {money} = this.props;
 
         let setFirstNum = (i) => {
             this.setState({money: i}, () => {this.transfer()});

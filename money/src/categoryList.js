@@ -113,7 +113,6 @@ export default class NonScrollPage extends Component {
         let tmpArray = [...(_.filter(this.state.typeCategoryList, {'title': this.state.typeCategoryTitleSelected}))[0].child];
         // tmpArray.splice(index, 1);
         _.remove(tmpArray, obj => obj.id === key);
-
         let replacedIndex = _.findIndex(this.state.typeCategoryList, {'title': this.state.typeCategoryTitleSelected});
         let changedAllData = [...this.state.typeCategoryList];
         changedAllData[replacedIndex].child = [...tmpArray];
@@ -124,8 +123,6 @@ export default class NonScrollPage extends Component {
             this.pushToLs();
             this.render()
         })
-
-
     }
 
 
