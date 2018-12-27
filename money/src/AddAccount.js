@@ -238,6 +238,7 @@ export default class Main extends React.Component {
 
 
                 </View>
+
                 <ScrollView
                 >
                     {this.state.bankAccountsList.map((i, index) => (

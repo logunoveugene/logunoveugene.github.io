@@ -17,6 +17,9 @@ const IconM = createIconSetFromIcoMoon(icoMoonConfig);
 import _ from 'lodash';
 import SortableGrid from 'react-native-sortable-grid'
 import {typeCategoryListDefault, iconListDefault} from './data/base/BaseConstant'
+import ActionButton from 'react-native-action-button';
+
+
 
 export default class NonScrollPage extends Component {
 
@@ -154,12 +157,12 @@ export default class NonScrollPage extends Component {
                             <Picker.Item key={i.title} label={i.title} value={i.title}/>
                         ))}
                     </Picker>}
-                    <TouchableOpacity
-                        onPress={() => {
-                            this.setModalVisible(true);
-                        }}>
-                        <Text>добавить</Text>
-                    </TouchableOpacity>
+                    {/*<TouchableOpacity*/}
+                        {/*onPress={() => {*/}
+                            {/*this.setModalVisible(true);*/}
+                        {/*}}>*/}
+                        {/*<Text>добавить</Text>*/}
+                    {/*</TouchableOpacity>*/}
                 </View>
 
 
@@ -193,7 +196,7 @@ export default class NonScrollPage extends Component {
                     transparent={false}
                     visible={this.state.modalVisible}
                     onRequestClose={() => {
-                        Alert.alert('Modal has been closed.');
+                        this.setModalVisible(!this.state.modalVisible);
                     }}>
                     <ScrollView style={styles.nodeDescriptionWrapScroll}>
                         <View style={styles.nodeDescriptionWrap}>
@@ -235,6 +238,10 @@ export default class NonScrollPage extends Component {
                         </View>
                     </View>
                 </Modal>
+                <ActionButton
+                    onPress={() =>      this.setModalVisible(true)}
+                    buttonColor="rgba(231,76,60,1)">
+                </ActionButton>
             </View>
         )
     }

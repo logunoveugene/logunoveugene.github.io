@@ -20,7 +20,7 @@ import _ from 'lodash';
 import {sampleNodes} from "../sampleNodes";
 
 import {Defs, LinearGradient, Stop} from 'react-native-svg'
-import {LineChart, Grid} from 'react-native-svg-charts'
+import {LineChart, BarChart, Grid} from 'react-native-svg-charts'
 import PieChart from './pie-chart'
 
 
@@ -136,7 +136,7 @@ export default class Main extends React.Component {
 
         //
         const {listls, chartData, selectedSlice} = this.state;
-
+        var  colors=["#96cd5e","#ffda58","#ff5935","#74b5e9","#aa51ba","#eeeeee"]
 
         var group = _.groupBy(this.state.chartData, 'typeSubCategoryTitle');
         var group3 = []
@@ -159,18 +159,20 @@ export default class Main extends React.Component {
             i.percent = (i.sum / percent) * 100
         }));
 
-        let result = _.orderBy(group3, ['percent'], ['asc']);
+        let result = _.orderBy(group3, ['percent'], ['desc']);
 
 
         const data = result.map((key, index) => {
             return {
                 key: index,
-                value: key.percent,
-                svg: {fill: key.color,},
+                value: key.sum,
+                svg: {fill: colors[index]},
                 arc: {padAngle: 0},
-                onPress: () => this.setState({selectedSlice: {label: key, value: values[index]}})
+                // onPress: () => this.setState({selectedSlice: {label: key, value: values[index]}})
             }
         })
+
+
         const deviceWidth = Dimensions.get('window').width
 
         return (
@@ -221,11 +223,13 @@ export default class Main extends React.Component {
                                 }
                             </View>
                             <PieChart
-                                style={{height: 180,}}
-                                outerRadius={'80%'}
-                                innerRadius={'65%'}
-                                data={data}
+                            style={{height: 180,}}
+                            outerRadius={'80%'}
+                            innerRadius={'65%'}
+                            data={data}
                             />
+
+
 
                             <Text
 
@@ -267,18 +271,18 @@ export default class Main extends React.Component {
                                     position: "relative",
                                     // elevation: 1
                                 }}>
-                                    <View style={{
-                                        backgroundColor: `${l.typeSubCategoryColor}` + 20,
-                                        width: 38,
-                                        height: 38,
-                                        borderRadius: 19,
-                                        marginRight: 15,
-                                        position: "absolute",
-                                        top: 10,
-                                        left: 10,
-                                    }}>
-                                    </View>
-                                    <IconM name={l.typeSubCategoryImg} type="simple-line-icons" size={20}
+                                    {/*<View style={{*/}
+                                        {/*backgroundColor: `${l.typeSubCategoryColor}` + 20,*/}
+                                        {/*width: 38,*/}
+                                        {/*height: 38,*/}
+                                        {/*borderRadius: 19,*/}
+                                        {/*marginRight: 15,*/}
+                                        {/*position: "absolute",*/}
+                                        {/*top: 10,*/}
+                                        {/*left: 10,*/}
+                                    {/*}}>*/}
+                                    {/*</View>*/}
+                                    <IconM name={l.typeSubCategoryImg} type="simple-line-icons" size={26}
                                            style={{
                                                color: "#333",
                                                paddingLeft: 8
