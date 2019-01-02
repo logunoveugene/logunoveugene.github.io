@@ -18,10 +18,10 @@ import {NavigationEvents} from 'react-navigation';
 
 import _ from 'lodash';
 import {sampleNodes} from "../sampleNodes";
-
-import {Defs, LinearGradient, Stop} from 'react-native-svg'
-import {LineChart, BarChart, Grid} from 'react-native-svg-charts'
-import PieChart from './pie-chart'
+// import * as scale from 'd3-scale'
+// import {Defs, LinearGradient, Stop} from 'react-native-svg'
+// import {BarChart, YAxis, Grid} from 'react-native-svg-charts'
+import { PieChart }  from 'react-native-svg-charts'
 
 
 import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
@@ -45,6 +45,7 @@ export default class Main extends React.Component {
             selectedYear: '',
             selectedType: 'Списание',
             chartData: [],
+            barData: []
 
 
         }
@@ -116,64 +117,108 @@ export default class Main extends React.Component {
         }
 
 
+        this.cartsData()
+
+        this._setNavigationParams();
+
+        // console.log(this.state)
+    }
+
+
+    cartsData() {
+        const {listls, chartData, selectedSlice} = this.state;
+
+
         this.setState({
-            chartData: _(storedNote).filter({
+            chartData: _(this.state.listls).filter({
                 'typeCategory': this.state.selectedType
             }).value()
         });
 
 
-        this._setNavigationParams();
-
-
-    }
-
-
-    render() {
-
-
-
-
-        //
-        const {listls, chartData, selectedSlice} = this.state;
-        var  colors=["#96cd5e","#ffda58","#ff5935","#74b5e9","#aa51ba","#eeeeee"]
+        var colors = ["#96cd5e", "#ffda58", "#ff5935", "#74b5e9", "#aa51ba", "#eeeeee"]
+        var group3 = []
 
         var group = _.groupBy(this.state.chartData, 'typeSubCategoryTitle');
-        var group3 = []
         var percent = _.sumBy(this.state.chartData, function (o) {
             return +o.sum
         });
-        console.log(percent)
-        _.map(group, ((i) => {
+        group = _.values(group);
+
+        group = _.orderBy(group, ['sum'], ['desc']);
+
+
+        // console.log(group)
+        _.map(group, ((i, index) => {
+
+
             group3.push(
+
                 _.reduce(i, function (p, t) {
                     return {
+
                         sum: (p.sum) += +t.sum,
                         color: p.color = t.typeSubCategoryColor,
                         name: p.name = t.typeSubCategoryTitle,
 
                     };
                 }, {sum: 0, color: '', name: ''}))
+
+
         }));
-        _.map(group3, ((i) => {
+        group3 = _.orderBy(group3, ['sum'], ['abc']);
+
+        _.map(group3, ((i, index) => {
             i.percent = (i.sum / percent) * 100
+
         }));
 
-        let result = _.orderBy(group3, ['percent'], ['desc']);
+        _.map(group3, ((i, index, col) => {
 
-
-        const data = result.map((key, index) => {
-            return {
-                key: index,
-                value: key.sum,
-                svg: {fill: colors[index]},
-                arc: {padAngle: 0},
-                // onPress: () => this.setState({selectedSlice: {label: key, value: values[index]}})
+            if (index > 5) {
+                group3[5].sum += i.sum
+                group3[5].percent += i.percent
+                group3[5].name = 'Остальное'
             }
-        })
+        }));
+        group3 = group3.slice(0, 6);
+
+        console.log(group3)
+
+        // let result = _.orderBy(group3, ['percent'], ['desc']);
+        // let result = group3
+
+        this.setState({
+            barData: group3.map((key, index) => {
+                return {
+                    value: key.percent,
+                    svg: {fill: colors[index]},
+                    label: key.name,
+                    height: 10,
+                    width: 10,
+                    key: index,
+                    arc: {padAngle: 0.03},
+                    amount:  Math.abs(key.sum)
+                }
+
+                // value:
+
+                // svg: {fill: colors[index]},
+                // arc: {padAngle: 0},
+                // onPress: () => this.setState({selectedSlice: {label: key, value: values[index]}})
+
+            })
+        });
+
+        console.log(this.state.barData)
 
 
-        const deviceWidth = Dimensions.get('window').width
+    }
+
+    render() {
+        const {listls, chartData, selectedSlice} = this.state;
+        //
+
 
         return (
 
@@ -181,14 +226,14 @@ export default class Main extends React.Component {
                 <NavigationEvents
                     onDidFocus={() => this.componentDidMount()}
                 />
-                {(listls === []) && <ActivityIndicator size="large"/>}
+
 
                 <View style={{
                     // width: "100%",
                     height: 220,
                     // flexDirection: 'column',
                     // alignItems: "center",
-                    // backgroundColor: '#583598',
+                    backgroundColor: '#ffffff',
                     // borderBottomWidth: 1,
                     // padding: 10,
                     // borderRadius: 10,
@@ -199,46 +244,89 @@ export default class Main extends React.Component {
                     // elevation: 1
                 }}>
 
-                    <View style={{justifyContent: 'center', flex: 1,}}>
-                        {chartData.map((i, index) => {
+                    <View style={{flex: 1,}}>
 
-                        })}
-
-                        <View style={{justifyContent: 'center', flex: 1, position: 'relative'}}>
+                        <View style={{flex: 1, position: 'relative'}}>
                             <View
 
                                 style={{
                                     position: 'absolute',
                                     left: 10
                                 }}>
-                                {result.map((i, index) => (
+                                <PieChart
+                                    style={{height: 110,}}
+                                    outerRadius={'100%'}
+                                    innerRadius={'50%'}
+                                    data={this.state.barData}
+                                    valueAccessor={({ item }) => item.amount}
+
+                                />
+                                <Text
+                                    style={{
+
+                                        width: '100%',
+                                        textAlign: 'left',
+                                        fontSize: 16,
+                                        fontWeight: 'bold'
+                                    }}>Расходы за месяц
+                                </Text>
+
+
+                                {this.state.barData.map((i, index) => (
                                     <Text
                                         key={index}
                                         style={{
                                             width: '100%',
                                             textAlign: 'left',
                                             fontSize: 11,
-                                        }}>{i.name}: {i.sum} </Text>
+                                        }}>{i.label}: {i.value} </Text>
                                 ))
                                 }
+
+
+                                {/*{this.state.barData.length > 0 &&*/}
+                                {/*<View style={{flexDirection: 'row', height: 200, paddingVertical: 16}}>*/}
+                                {/*<YAxis*/}
+                                {/*data={this.state.barData}*/}
+                                {/*yAccessor={({ index }) => index}*/}
+                                {/*scale={scale.scaleBand}*/}
+                                {/*contentInset={{ top: 10, bottom: 10 }}*/}
+                                {/*spacing={0.2}*/}
+                                {/*formatLabel={(_, index) => this.state.barData[ index ].label}*/}
+                                {/*/>*/}
+                                {/*<BarChart*/}
+                                {/*style={{flex: 1, marginLeft: 8}}*/}
+                                {/*data={this.state.barData}*/}
+                                {/*horizontal={true}*/}
+                                {/*svg={{fill: 'rgba(134, 65, 244, 0.8)',}}*/}
+                                {/*contentInset={{top: 10, bottom: 10}}*/}
+                                {/*yAccessor={({ item }) => item.value}*/}
+
+                                {/*spacing={0.2}*/}
+                                {/*gridMin={0}*/}
+                                {/*>*/}
+                                {/*<Grid direction={Grid.Direction.VERTICAL}/>*/}
+                                {/*</BarChart>*/}
+
+
+                                {/*</View>*/}
+                                {/*}*/}
+
+
+                                {/*{result.map((i, index) => (*/}
+                                {/*<Text*/}
+                                {/*key={index}*/}
+                                {/*style={{*/}
+                                {/*width: '100%',*/}
+                                {/*textAlign: 'left',*/}
+                                {/*fontSize: 11,*/}
+                                {/*}}>{i.name}: {i.sum} </Text>*/}
+                                {/*))*/}
+                                {/*}*/}
+
                             </View>
-                            <PieChart
-                            style={{height: 180,}}
-                            outerRadius={'80%'}
-                            innerRadius={'65%'}
-                            data={data}
-                            />
 
 
-
-                            <Text
-
-                                style={{
-                                    position: 'absolute',
-                                    width: '100%',
-                                    textAlign: 'center', fontSize: 22,
-                                    fontWeight: 'bold'
-                                }}>{percent}</Text>
                         </View>
 
                     </View>
@@ -272,14 +360,14 @@ export default class Main extends React.Component {
                                     // elevation: 1
                                 }}>
                                     {/*<View style={{*/}
-                                        {/*backgroundColor: `${l.typeSubCategoryColor}` + 20,*/}
-                                        {/*width: 38,*/}
-                                        {/*height: 38,*/}
-                                        {/*borderRadius: 19,*/}
-                                        {/*marginRight: 15,*/}
-                                        {/*position: "absolute",*/}
-                                        {/*top: 10,*/}
-                                        {/*left: 10,*/}
+                                    {/*backgroundColor: `${l.typeSubCategoryColor}` + 20,*/}
+                                    {/*width: 38,*/}
+                                    {/*height: 38,*/}
+                                    {/*borderRadius: 19,*/}
+                                    {/*marginRight: 15,*/}
+                                    {/*position: "absolute",*/}
+                                    {/*top: 10,*/}
+                                    {/*left: 10,*/}
                                     {/*}}>*/}
                                     {/*</View>*/}
                                     <IconM name={l.typeSubCategoryImg} type="simple-line-icons" size={26}
@@ -316,7 +404,7 @@ export default class Main extends React.Component {
                                         color: l.typeCategory === "Списание" ? "#333333" : "#78ab1e",
                                         fontSize: 18
                                     }}>
-                                        {l.typeCategory === "Списание" ? <Text>-</Text> : <Text>+</Text>}
+                                        {l.typeCategory === "Списание" ? '' : <Text>+</Text>}
 
                                         {l.sum}</Text>
                                 </View>

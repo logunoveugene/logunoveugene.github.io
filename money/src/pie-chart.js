@@ -38,7 +38,7 @@ class PieChart extends PureComponent {
             animate,
             animationDuration,
             style,
-            sort,
+            // sort,
             valueAccessor,
             children,
             startAngle,
@@ -102,7 +102,7 @@ class PieChart extends PureComponent {
 
         const pieSlices = shape.pie()
             .value(d => valueAccessor({ item: d }))
-            .sort(sort)
+            // .sort(sort)
             .startAngle(startAngle)
             .endAngle(endAngle)
             (data)
@@ -186,7 +186,7 @@ PieChart.propTypes = {
     animate: PropTypes.bool,
     animationDuration: PropTypes.number,
     style: PropTypes.any,
-    sort: PropTypes.func,
+    // sort: PropTypes.func,
     valueAccessor: PropTypes.func,
 }
 
@@ -198,7 +198,7 @@ PieChart.defaultProps = {
     endAngle: Math.PI * 2,
     valueAccessor: ({ item }) => item.value,
     innerRadius: '50%',
-    sort: (a, b) => b.value - a.value,
+    // sort: (a, b) => b.value - a.value,
 }
 
 export default PieChart

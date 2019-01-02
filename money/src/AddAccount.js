@@ -5,7 +5,7 @@ import {
     View,
     AsyncStorage,
     TouchableHighlight,
-    TouchableOpacity,
+    Alert,
     TextInput,
     Text,
     Modal,
@@ -19,7 +19,7 @@ import ActionButton from 'react-native-action-button';
 import Fuse from 'fuse.js'
 
 import _ from "lodash";
-import {banksAndPrefixes, currencyList} from './data/base/BaseConstant'
+import {banksAndPrefixes, currencyList, bankAccountsListDefault} from './data/base/BaseConstant'
 import dayjs from "dayjs";
 import BoxShadow from './shadow'
 
@@ -56,24 +56,18 @@ export default class Main extends React.Component {
 
     async componentDidMount() {
         try {
-            // await AsyncStorage.removeItem('bankAccountsList')
+
             let storedAccounts = await AsyncStorage.getItem('bankAccountsList');
+            console.log(storedAccounts)
+            console.log(bankAccountsListDefault)
             if (storedAccounts == null) {
-                storedAccounts = [
-                    {
-                        "title": "",
-                        "bankTitle": "Альфа банк",
-                        "bankBgColor": "#ef3124",
-                        "bankTextColor": "#ffffff",
-                        "startBalance": 10000,
-                        "currentBalance": 9950,
-                        "currency": "Рубли"
-                    }
-                ]
+                storedAccounts = bankAccountsListDefault
             } else {
                 storedAccounts = JSON.parse(storedAccounts);
             }
-            this.setState({bankAccountsList: storedAccounts});
+            this.setState({bankAccountsList: storedAccounts}, ()=>{
+                this.pushToLS()
+            });
         } catch (error) {
             alert("Что-то пошло не так...")
         }
@@ -134,6 +128,7 @@ export default class Main extends React.Component {
             accountsList.push(addedAccount);
             try {
                 await AsyncStorage.setItem('bankAccountsList', JSON.stringify(accountsList));
+
             } catch (error) {
                 alert("Что-то пошло не так.2..")
             }
@@ -201,19 +196,41 @@ export default class Main extends React.Component {
 
 
     removeChildItemAt() {
-        let tmpArray = [...this.state.bankAccountsList];
+        if (this.state.bankAccountsList.length > 1) {
+            let tmpArray = [...this.state.bankAccountsList];
 
-        _.remove(tmpArray, obj => obj.id === this.state.accountReadyForDel.id);
+            _.remove(tmpArray, obj => obj.id === this.state.accountReadyForDel.id);
 
-        console.log(tmpArray);
-        this.setState({
-            bankAccountsList: tmpArray,
-            modalActionVisible: false,
-            accountReadyForDel: ''
-        }, () => {
-            this.render()
-            this.pushToLS()
-        })
+
+            this.setState({
+                bankAccountsList: tmpArray,
+                modalActionVisible: false,
+                accountReadyForDel: ''
+            }, () => {
+                this.render()
+                this.pushToLS()
+            })
+        } else{
+            Alert.alert(
+                'Увы..',
+                'В списке счетов должена остаться хотя бы одна запись',
+                [
+
+                    {text: 'Закрыть', onPress: () =>{
+                            this.setState({
+                                modalActionVisible: false,
+
+
+                            })}
+
+
+
+
+        },
+                ],
+                { cancelable: true }
+            )
+        }
     }
 
     pushToLS = async () => {
@@ -265,7 +282,7 @@ export default class Main extends React.Component {
                                 <Text
                                     style={{
                                         fontSize: 14
-                                    }}>{i.currentBalance}{i.currencySymbol}</Text>
+                                    }}>{i.currentBalance} {i.currencySymbol}</Text>
                             </View>
 
 
@@ -307,7 +324,7 @@ export default class Main extends React.Component {
                                 // position: "absolute",
                                 // bottom: 0,
                                 backgroundColor: "#ffffff",
-                                height:150,
+                                height: 150,
                                 borderRadius: 10,
                                 // borderTopRightRadius: 20,
                                 padding: 20,

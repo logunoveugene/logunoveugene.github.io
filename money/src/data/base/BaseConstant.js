@@ -66,7 +66,24 @@ export const iconListDefault = [
         "color": "#ee2234"
     },
 
-]
+];
+
+
+export const bankAccountsListDefault = [
+    {
+        id: "00001",
+        title:  "Основной",
+        bankTitle: "",
+        startBalance: 0,
+        currentBalance:  0,
+        bankBgColor: "",
+        bankTextColor: "",
+        currencyTitle: "Рубли",
+        currencySymbol: "₽",
+        currencyCode: "rub"
+    }
+];
+
 
 export const banksAndPrefixes = [
 

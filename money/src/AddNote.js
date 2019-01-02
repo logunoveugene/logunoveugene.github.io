@@ -22,13 +22,13 @@ const IconM = createIconSetFromIcoMoon(icoMoonConfig);
 import dayjs from 'dayjs'
 import 'dayjs/locale/ru'
 import _ from "lodash";
-import {typeCategoryListDefault} from "./data/base/BaseConstant";
+import {typeCategoryListDefault, bankAccountsListDefault} from "./data/base/BaseConstant";
 
 
 export default class Main extends React.Component {
     state = {
         currentUser: null,
-        account: 'Счет 1',
+
 
         bankAccountsList: [],
 
@@ -75,7 +75,7 @@ export default class Main extends React.Component {
         try {
             var storeddAccounts = await AsyncStorage.getItem('bankAccountsList');
             if (storeddAccounts == null) {
-                storeddAccounts = []
+                storeddAccounts = bankAccountsListDefault
             } else {
                 storeddAccounts = JSON.parse(storeddAccounts);
             }
@@ -109,6 +109,8 @@ export default class Main extends React.Component {
             year: new Date().getFullYear().toString(),
 
         })
+
+        console.log(this.state)
 
 
     };
@@ -152,7 +154,7 @@ export default class Main extends React.Component {
 
         let addedNote = {
             id: '',
-            sum: sum,
+            sum: typeCategoryTitleSelected === 'Списание' ? -sum : sum,
             typeCategory: typeCategoryTitleSelected,
             typeSubCategoryTitle: typeSubCategoryTitle,
             typeSubCategoryImg: typeSubCategoryImg,
@@ -164,7 +166,6 @@ export default class Main extends React.Component {
             day: day,
             month: month,
             year: year,
-
 
             time: "",
             currency: currency,
@@ -184,16 +185,24 @@ export default class Main extends React.Component {
             alert("Что-то пошло не так...")
         }
 
-
-
-        addedNote.bankAccountCurrentBalance = typeCategoryTitleSelected === 'Списание' ? +bankAccountCurrentBalance - sum : +sum + +bankAccountCurrentBalance;
         addedNote.time = `${new Date().getHours()}-${new Date().getMinutes()}-${new Date().getSeconds()}`;
         addedNote.id = (Math.random() * 1000).toString();
         storedNote.push(addedNote);
-console.log(addedNote)
+        console.log(addedNote)
+        // addedNote.bankAccountCurrentBalance = typeCategoryTitleSelected === 'Списание' ? +bankAccountCurrentBalance - sum : +sum + +bankAccountCurrentBalance;
+
+
+        // let currentBankIndex = _.findIndex(this.state.bankAccountsList, {'title': this.state.bankAccountTitle})
+        // let currentBankList = [...this.state.bankAccountsList];
+        // // console.log(currentBankList)
+        //
+        // // console.log(currentBankList[currentBankIndex].currentBalance)
+        // currentBankList[currentBankIndex].currentBalance = addedNote.bankAccountCurrentBalance;
+        // await AsyncStorage.setItem('bankAccountsList', JSON.stringify(currentBankList));
 
         try {
             await AsyncStorage.setItem('nodeList', JSON.stringify(storedNote));
+
         } catch (error) {
             alert("Что-то пошло не так...")
         }
@@ -218,7 +227,9 @@ console.log(addedNote)
     _chooseType = (typeCategoryTitle) => {
         this.setState({
             typeCategoryTitleSelected: typeCategoryTitle,
+            typeSubCategoryIndex: '',
         });
+
     };
 
     _chooseAccount = (account) => {
@@ -250,7 +261,13 @@ console.log(addedNote)
             if (action !== DatePickerAndroid.dismissedAction) {
 
                 let selectedDate = year + '-' + ('0' + (month + 1)).slice(-2) + '-' + ('0' + day).slice(-2)
-                this.setState({date: selectedDate})
+                this.setState({
+                    date: selectedDate,
+                    day: ('0' + day).slice(-2),
+                    month: ('0' + (month + 1)).slice(-2),
+                    year: year,
+
+                })
 
             }
         } catch ({code, message}) {
@@ -314,7 +331,7 @@ console.log(addedNote)
                                 {index === this.state.typeSubCategoryIndex &&
 
                                 <View
-                                    style={[styles.mynodeSelected, {backgroundColor: `${nodeType.color}`}]}
+                                    style={[styles.mynodeSelected, {backgroundColor: '#ffda3a'}]}
                                 />
                                 }
 
@@ -454,7 +471,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         position: 'absolute',
         marginTop: 12,
-        opacity: .2
+        opacity: .5
 
     },
 
