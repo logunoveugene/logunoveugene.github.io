@@ -30,38 +30,38 @@ export default class Main extends React.Component {
         currentUser: null,
 
 
-        bankAccountsList: [],
+        bankAccountsList: null,
 
-        bankAccountTitle: '',
-        bankAccountCurrentBalance: '',
-        bankAccountBgColor: '',
-        bankAccountTextColor: '',
+        bankAccountTitle: null,
+        bankAccountCurrentBalance: null,
+        bankAccountBgColor: null,
+        bankAccountTextColor: null,
 
 
         keyboardIsShown: false,
-        typeSubCategoryIndex: '',
+        typeSubCategoryIndex: null,
 
 
         id: 1,
         sum: 0,
         // typeCategory: "",
-        typeSubCategoryTitle: "",
-        typeSubCategoryImg: "",
-        typeSubCategoryColor: "",
+        typeSubCategoryTitle: null,
+        typeSubCategoryImg: null,
+        typeSubCategoryColor: null,
 
-        date: "",
+        date: null,
 
 
-        day: "",
-        month: "",
-        year: "",
+        day: null,
+        month: null,
+        year: null,
 
-        time: "21-02",
+        time: null,
         currency: "rub",
-        usersDescription: "",
+        usersDescription: null,
 
 
-        typeCategoryList: '',
+        typeCategoryList: null,
         typeCategoryTitleSelected: 'Списание',
 
 
@@ -211,13 +211,13 @@ export default class Main extends React.Component {
         this.setState({
             sum: 0,
             typeCategoryTitleSelected: 'Списание',
-            typeSubCategoryTitle: '',
-            typeSubCategoryImg: '',
-            typeSubCategoryColor: '',
-            bankAccountTitle: '',
-            bankAccountCurrentBalance: '',
-            typeSubCategoryIndex: '',
-            usersDescription: '',
+            typeSubCategoryTitle: null,
+            typeSubCategoryImg: null,
+            typeSubCategoryColor: null,
+            bankAccountTitle: null,
+            bankAccountCurrentBalance: null,
+            typeSubCategoryIndex: null,
+            usersDescription: null,
 
         });
         this.updateMoney(0)
@@ -227,7 +227,7 @@ export default class Main extends React.Component {
     _chooseType = (typeCategoryTitle) => {
         this.setState({
             typeCategoryTitleSelected: typeCategoryTitle,
-            typeSubCategoryIndex: '',
+            typeSubCategoryIndex: null,
         });
 
     };
@@ -297,7 +297,7 @@ export default class Main extends React.Component {
                     </TouchableOpacity>
 
 
-                    {(typeCategoryList !== '') &&
+                    {(typeCategoryList !== null) &&
                     <Picker
                         mode="dropdown"
                         selectedValue={typeCategoryTitleSelected}
@@ -308,7 +308,7 @@ export default class Main extends React.Component {
                         ))}
                     </Picker>}
 
-                    {(bankAccountsList !== []) && <Picker
+                    {(bankAccountsList !== null) && <Picker
                         mode="dropdown"
                         selectedValue={type}
                         style={{height: 50, width: 130}}
@@ -322,19 +322,17 @@ export default class Main extends React.Component {
 
                 <ScrollView style={styles.nodeDescriptionWrapScroll}>
                     <View style={styles.nodeDescriptionWrap}>
-                        {(typeCategoryList !== '') &&
+                        {(typeCategoryList !== null) &&
                         (_.filter(typeCategoryList, {'title': this.state.typeCategoryTitleSelected}))[0].child.map((nodeType, index) =>
                             <TouchableOpacity
                                 style={styles.mynode}
                                 onPress={() => this._chooseTypeDesc(nodeType, index)}
                                 key={nodeType.id}>
                                 {index === this.state.typeSubCategoryIndex &&
-
                                 <View
                                     style={[styles.mynodeSelected, {backgroundColor: '#ffda3a'}]}
                                 />
                                 }
-
                                 <IconM name={nodeType.img} type="simple-line-icons" size={25}/>
                                 <Text
                                     style={styles.mynodeText}>{nodeType.title}</Text>
@@ -345,38 +343,45 @@ export default class Main extends React.Component {
                     </View>
                 </ScrollView>
 
-                <View style={styles.inputWrap}>
+
+                {this.state.typeSubCategoryIndex !== null &&
+                <View>
+                    <View style={styles.inputWrap}>
+                        <TouchableOpacity
+                            style={styles.datePickerButton}
+                            onPress={() => this._selectDate()}
+                        >
+                            <IconM style={styles.datePickerButtonIcon} name="small-calendar" type="simple-line-icons"
+                                   size={18}/>
+                            <Text
+                                style={styles.datePickerButtonText}>{this.state.date && dayjs(this.state.date).locale('ru').format('D MMM')}</Text>
+                        </TouchableOpacity>
+                        <TextInput
+                            style={styles.textInput}
+                            autoCapitalize="none"
+                            onSubmitEditing={Keyboard.dismiss}
+                            placeholder="Примечание"
+                            onFocus={() => this.state.keyboardIsShown = true}
+                            onBlur={() => this.state.keyboardIsShown = false}
+                            onChangeText={message => this.setState({usersDescription: message})}
+                            value={this.state.usersDescription}
+                        />
+                        <Text style={styles.moneyCount}>{this.state.sum}</Text>
+                    </View>
+
+
+                    {!keyboardIsShown && <NumKeyboard money={this.state.sum} updateData={this.updateMoney}/>}
+
+
                     <TouchableOpacity
-                        style={styles.datePickerButton}
-                        onPress={() => this._selectDate()}
-                    >
-                        <IconM style={styles.datePickerButtonIcon} name="small-calendar" type="simple-line-icons"
-                               size={18}/>
-                        <Text
-                            style={styles.datePickerButtonText}>{this.state.date && dayjs(this.state.date).locale('ru').format('D MMM')}</Text>
+                        style={styles.fullButton}
+                        onPress={this.handlePostData}>
+                        <Text> Записать</Text>
                     </TouchableOpacity>
-                    <TextInput
-                        style={styles.textInput}
-                        autoCapitalize="none"
-                        onSubmitEditing={Keyboard.dismiss}
-                        placeholder="Примечание"
-                        onFocus={() => this.state.keyboardIsShown = true}
-                        onBlur={() => this.state.keyboardIsShown = false}
-                        onChangeText={message => this.setState({usersDescription: message})}
-                        value={this.state.usersDescription}
-                    />
-                    <Text style={styles.moneyCount}>{this.state.sum}</Text>
+
                 </View>
+                }
 
-
-                {!keyboardIsShown && <NumKeyboard money={this.state.sum} updateData={this.updateMoney}/>}
-
-
-                <TouchableOpacity
-                    style={styles.fullButton}
-                    onPress={this.handlePostData}>
-                    <Text> Записать</Text>
-                </TouchableOpacity>
 
             </View>
         )
