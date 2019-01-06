@@ -21,7 +21,7 @@ import {sampleNodes} from "../sampleNodes";
 // import * as scale from 'd3-scale'
 // import {Defs, LinearGradient, Stop} from 'react-native-svg'
 // import {BarChart, YAxis, Grid} from 'react-native-svg-charts'
-import { PieChart }  from 'react-native-svg-charts'
+import {PieChart} from 'react-native-svg-charts'
 
 
 import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
@@ -125,6 +125,29 @@ export default class Main extends React.Component {
     }
 
 
+    removeChildItemAt(id) {
+        let tmpArray = [...this.state.listls];
+
+        _.remove(tmpArray, obj => obj.id === id);
+
+        console.log(tmpArray);
+        this.setState({
+            listls: tmpArray,
+        }, () => {
+            this.pushToLs();
+            this.componentDidMount()
+        })
+    }
+
+    pushToLs = async () => {
+        try {
+            await AsyncStorage.setItem('nodeList', JSON.stringify(this.state.listls));
+        } catch (error) {
+            alert("Что-то пошло не так.2..")
+        }
+    }
+
+
     cartsData() {
         const {listls, chartData, selectedSlice} = this.state;
 
@@ -153,7 +176,6 @@ export default class Main extends React.Component {
 
 
             group3.push(
-
                 _.reduce(i, function (p, t) {
                     return {
 
@@ -183,7 +205,7 @@ export default class Main extends React.Component {
         }));
         group3 = group3.slice(0, 6);
 
-        console.log(group3)
+        console.log(this.state.listls)
 
         // let result = _.orderBy(group3, ['percent'], ['desc']);
         // let result = group3
@@ -198,7 +220,7 @@ export default class Main extends React.Component {
                     width: 10,
                     key: index,
                     arc: {padAngle: 0.03},
-                    amount:  Math.abs(key.sum)
+                    amount: Math.abs(key.sum)
                 }
 
                 // value:
@@ -258,7 +280,7 @@ export default class Main extends React.Component {
                                     outerRadius={'100%'}
                                     innerRadius={'50%'}
                                     data={this.state.barData}
-                                    valueAccessor={({ item }) => item.amount}
+                                    valueAccessor={({item}) => item.amount}
 
                                 />
                                 <Text
@@ -342,72 +364,68 @@ export default class Main extends React.Component {
                                     }}>
                                         {l.date}</Text>
                                 ) : null}
-                                <View style={{
-                                    flex: 1,
-                                    height: 58,
-                                    flexDirection: 'row',
-                                    alignItems: "center",
-                                    borderBottomColor: '#eee',
-                                    backgroundColor: '#fff',
-                                    borderBottomWidth: 1,
-                                    padding: 10,
-                                    borderRadius: 10,
-                                    // borderLeftColor: `${l.typeSubCategoryColor}`,
-                                    // borderLeftWidth: 1,
-                                    marginHorizontal: 10,
-                                    marginBottom: 7,
-                                    position: "relative",
-                                    // elevation: 1
-                                }}>
-                                    {/*<View style={{*/}
-                                    {/*backgroundColor: `${l.typeSubCategoryColor}` + 20,*/}
-                                    {/*width: 38,*/}
-                                    {/*height: 38,*/}
-                                    {/*borderRadius: 19,*/}
-                                    {/*marginRight: 15,*/}
-                                    {/*position: "absolute",*/}
-                                    {/*top: 10,*/}
-                                    {/*left: 10,*/}
-                                    {/*}}>*/}
-                                    {/*</View>*/}
-                                    <IconM name={l.typeSubCategoryImg} type="simple-line-icons" size={26}
-                                           style={{
-                                               color: "#333",
-                                               paddingLeft: 8
-                                           }}
-                                    />
-                                    <View
-                                        style={{
-                                            flexDirection: "column",
-                                            marginVertical: 10,
-                                            marginLeft: 22
-                                        }}>
-                                        <Text style={{}}>
-                                            {l.typeSubCategoryTitle}</Text>
-                                        {l.usersDescription !== '' && <Text
-                                            style={{
-                                                backgroundColor: '#eeeeee',
-                                                paddingHorizontal: 6,
-                                                paddingVertical: 3,
-                                                borderRadius: 6,
-                                                borderTopLeftRadius: 0,
-                                                fontSize: 12,
-                                                marginBottom: 4
-                                            }}
-                                        >{l.usersDescription}</Text>}
-                                    </View>
-                                    <Text style={{
-                                        // backgroundColor: `${l.typeSubCategoryColor}`,
-                                        position: "absolute",
-                                        right: 14,
-                                        top: 16,
-                                        color: l.typeCategory === "Списание" ? "#333333" : "#78ab1e",
-                                        fontSize: 18
-                                    }}>
-                                        {l.typeCategory === "Списание" ? '' : <Text>+</Text>}
+                                <TouchableOpacity
 
-                                        {l.sum}</Text>
-                                </View>
+                                    onLongPress={() => {
+                                        this.removeChildItemAt(l.id)
+                                    }}
+                                >
+
+                                    <View style={{
+                                        flex: 1,
+                                        height: 58,
+                                        flexDirection: 'row',
+                                        alignItems: "center",
+                                        borderBottomColor: '#eee',
+                                        backgroundColor: '#fff',
+                                        borderBottomWidth: 1,
+                                        padding: 10,
+                                        borderRadius: 10,
+                                        marginHorizontal: 10,
+                                        marginBottom: 7,
+                                        position: "relative",
+
+                                    }}>
+
+                                        <IconM name={l.typeSubCategoryImg} type="simple-line-icons" size={26}
+                                               style={{
+                                                   color: "#333",
+                                                   paddingLeft: 8
+                                               }}
+                                        />
+                                        <View
+                                            style={{
+                                                flexDirection: "column",
+                                                marginVertical: 10,
+                                                marginLeft: 22
+                                            }}>
+                                            <Text style={{}}>
+                                                {l.typeSubCategoryTitle}</Text>
+                                            {l.usersDescription !== null && <Text
+                                                style={{
+                                                    // backgroundColor: '#eeeeee',
+                                                    // paddingHorizontal: 6,
+                                                    // paddingVertical: 3,
+                                                    borderRadius: 6,
+                                                    borderTopLeftRadius: 0,
+                                                    fontSize: 12,
+                                                    marginBottom: 4
+                                                }}
+                                            >{l.usersDescription}</Text>}
+                                        </View>
+                                        <Text style={{
+                                            // backgroundColor: `${l.typeSubCategoryColor}`,
+                                            position: "absolute",
+                                            right: 14,
+                                            top: 16,
+                                            color: l.typeCategory === "Списание" ? "#333333" : "#78ab1e",
+                                            fontSize: 18
+                                        }}>
+                                            {l.typeCategory === "Списание" ? '' : <Text>+</Text>}
+
+                                            {l.sum}</Text>
+                                    </View>
+                                </TouchableOpacity>
 
                             </View>
 

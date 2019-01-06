@@ -128,7 +128,6 @@ export default class NonScrollPage extends Component {
         })
     }
 
-
     pushToLs = async () => {
         try {
             await AsyncStorage.setItem('typeCategoryList', JSON.stringify(this.state.typeCategoryList));
@@ -145,7 +144,8 @@ export default class NonScrollPage extends Component {
                 <View style={styles.fixedHeader}>
                     <TouchableOpacity
                         onPress={() => this.props.navigation.goBack()}>
-                        <Text>Назад</Text>
+
+                        <IconM name="arrow-left" type="simple-line-icons" size={25}/>
                     </TouchableOpacity>
                     {(typeCategoryList !== '') &&
                     <Picker

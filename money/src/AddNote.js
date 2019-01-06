@@ -293,7 +293,7 @@ export default class Main extends React.Component {
                 <View style={styles.fixedHeader}>
                     <TouchableOpacity
                         onPress={() => this.props.navigation.goBack()}>
-                        <Text>Назад</Text>
+                        <IconM name="arrow-left" type="simple-line-icons" size={25}/>
                     </TouchableOpacity>
 
 
@@ -340,6 +340,13 @@ export default class Main extends React.Component {
                             </TouchableOpacity>
                         )
                         }
+                        <TouchableOpacity
+                            style={styles.mynode}
+                            onPress={() =>  this.props.navigation.navigate('categoryList')}
+                           >
+                            <Text
+                                style={styles.mynodeText}>Изменить категории</Text>
+                        </TouchableOpacity>
                     </View>
                 </ScrollView>
 
