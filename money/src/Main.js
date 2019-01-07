@@ -17,16 +17,9 @@ import {NavigationEvents} from 'react-navigation';
 
 import ActionModal from './ActionModal'
 
-
 import _ from 'lodash';
 import {sampleNodes} from "../sampleNodes";
-
-
 import {PieChart} from 'react-native-svg-charts'
-
-
-
-
 
 import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
 import icoMoonConfig from './font/selection';
@@ -40,7 +33,6 @@ import 'dayjs/locale/ru'
 var width = Dimensions.get('window').width;
 export default class Main extends React.Component {
 
-
     constructor(props) {
         super(props);
         this.state = {
@@ -48,6 +40,10 @@ export default class Main extends React.Component {
             message: '',
             list: '',
             listls: [],
+            fullNodeList: [],
+
+            yearsList: [],
+
             modalActionVisible: false,
             selectedMonth: null,
             selectedYear: '',
@@ -96,6 +92,8 @@ export default class Main extends React.Component {
             // console.log(this.state.selectedYear)
         })
 
+        var group = _.groupBy(this.state.chartData, 'typeSubCategoryTitle');
+
 
         try {
             var storedNote = await AsyncStorage.getItem('nodeList');
@@ -104,12 +102,20 @@ export default class Main extends React.Component {
             } else {
                 storedNote = JSON.parse(storedNote);
             }
-            console.log(storedNote)
+            console.log(storedNote);
+
+
+            var years = _.keys(_.groupBy(storedNote, 'year'));
+
+
             this.setState({
                 listls: _(storedNote).filter({
                     'month': this.state.selectedMonth,
                     'year': this.state.selectedYear
-                }).orderBy(['date', 'time'], ['desc', 'desc']).value()
+                }).orderBy(['date', 'time'], ['desc', 'desc']).value(),
+                fullNodeList: storedNote,
+                yearsList: years
+
             });
 
             console.log(this.state.listls)
@@ -122,7 +128,6 @@ export default class Main extends React.Component {
 
         this._setNavigationParams();
 
-        // console.log(this.state)
     }
 
     setModalActionVisible = (visible) => {
@@ -245,6 +250,11 @@ export default class Main extends React.Component {
 
     render() {
         const {listls, chartData, selectedSlice} = this.state;
+
+        function capitalizeFirstLetter(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
+
         return (
 
             <View style={styles.container}>
@@ -254,9 +264,9 @@ export default class Main extends React.Component {
 
                 <View
                     style={{
-                        justifyContent:'space-between',
-                        flexDirection:'row',
-                        alignItems:'center'
+                        justifyContent: 'space-between',
+                        flexDirection: 'row',
+                        alignItems: 'center'
 
                     }}
                 >
@@ -268,15 +278,50 @@ export default class Main extends React.Component {
                         onPress={() => this.props.navigation.openDrawer()}>
                         <IconM name="menu" type="simple-line-icons" size={25}/>
                     </TouchableOpacity>
-                    <Text
+                    <TouchableOpacity
                         style={{
-                            padding: 10,
-                            marginTop: 8,
-                            fontSize:20
-                        }}
-                    >
-                        {this.state.selectedMonth && dayjs(this.state.selectedMonth).locale('ru').format('MMMM')}
-                    </Text>
+                            flexDirection: 'row',
+                            alignItems: 'center'
+                        }}>
+                        <Text
+                            style={{
+                                paddingVertical: 10,
+                                marginTop: 8,
+                                fontSize: 20
+                            }}
+                        >
+                            {this.state.selectedMonth && capitalizeFirstLetter(dayjs(this.state.selectedMonth).locale('ru').format('MMMM'))}
+                        </Text>
+                        <Text
+                            style={{
+                                paddingVertical: 10,
+                                marginTop: 8,
+                                marginHorizontal: 6,
+                                fontSize: 20
+                            }}
+                        >
+                            {this.state.selectedYear && capitalizeFirstLetter(dayjs(this.state.selectedYear).locale('ru').format('YY'))}
+                        </Text>
+                        <IconM name="chevron-down"
+                               type="simple-line-icons"
+                               size={14}
+                               color="#999"
+                               style={{
+                                   marginTop: 12,
+                               }}
+                        />
+                    </TouchableOpacity>
+
+                    {/*{this.state.yearsList.map((i) => [*/}
+                        {/*<Text*/}
+                            {/*style={{*/}
+                                {/*padding: 10,*/}
+                                {/*marginTop: 8,*/}
+                                {/*fontSize: 20*/}
+                            {/*}}*/}
+                        {/*>*/}
+                            {/*{i} </Text>*/}
+                    {/*])}*/}
 
                     <TouchableOpacity
                         style={{
@@ -284,7 +329,14 @@ export default class Main extends React.Component {
                             marginTop: 8
                         }}
                         onPress={() => this.props.navigation.openDrawer()}>
-                        <IconM name="menu" type="simple-line-icons" size={25}/>
+                        <IconM name="filter"
+                               type="simple-line-icons"
+                               size={20}
+                               color="#666"
+                               style={{
+                                   marginRight: 5,
+                               }}
+                        />
                     </TouchableOpacity>
 
 
@@ -301,7 +353,7 @@ export default class Main extends React.Component {
                         opacity: 0.05,
                         x: 20,
                         y: 20,
-                        style: { zIndex: 19,}
+                        style: {zIndex: 19,}
                     }}>
                     <View style={{
                         width: +`${width}` - 20,
@@ -492,11 +544,11 @@ export default class Main extends React.Component {
                                 {(idx >= 1 && listls[idx - 1].date !== l.date) || idx === 0 ? (
                                     <Text style={{
                                         padding: 12,
-                                        marginTop:15
+                                        marginTop: 15
                                     }}>
 
                                         {dayjs(l.date).locale('ru').format('D MMM')}
-                                       </Text>
+                                    </Text>
                                 ) : null}
                                 <TouchableOpacity
 
