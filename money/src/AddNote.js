@@ -110,7 +110,7 @@ export default class Main extends React.Component {
 
         })
 
-        console.log(this.state)
+        // console.log(this.state)
 
 
     };
@@ -179,7 +179,7 @@ export default class Main extends React.Component {
                 storedNote = []
             } else {
                 storedNote = JSON.parse(storedNote);
-                console.log(storedNote)
+                // console.log(storedNote)
             }
         } catch (error) {
             alert("Что-то пошло не так...")
@@ -188,7 +188,7 @@ export default class Main extends React.Component {
         addedNote.time = `${new Date().getHours()}-${new Date().getMinutes()}-${new Date().getSeconds()}`;
         addedNote.id = (Math.random() * 1000).toString();
         storedNote.push(addedNote);
-        console.log(addedNote)
+        // console.log(addedNote)
         // addedNote.bankAccountCurrentBalance = typeCategoryTitleSelected === 'Списание' ? +bankAccountCurrentBalance - sum : +sum + +bankAccountCurrentBalance;
 
 
@@ -206,8 +206,6 @@ export default class Main extends React.Component {
         } catch (error) {
             alert("Что-то пошло не так...")
         }
-
-
         this.setState({
             sum: 0,
             typeCategoryTitleSelected: 'Списание',
@@ -265,7 +263,7 @@ export default class Main extends React.Component {
                     date: selectedDate,
                     day: ('0' + day).slice(-2),
                     month: ('0' + (month + 1)).slice(-2),
-                    year: year,
+                    year: year.toString()
 
                 })
 

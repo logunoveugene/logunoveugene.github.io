@@ -49,7 +49,7 @@ export default class Main extends React.Component {
             list: '',
             listls: [],
             modalActionVisible: false,
-            selectedMonth: '',
+            selectedMonth: null,
             selectedYear: '',
             selectedType: 'Списание',
             chartData: [],
@@ -91,7 +91,7 @@ export default class Main extends React.Component {
 
         this.setState({
             selectedMonth: ('0' + (new Date().getMonth() + 1)).slice(-2),
-            selectedYear: `${new Date().getFullYear()}`
+            selectedYear: `${new Date().getFullYear()}`.toString()
         }, () => {
             // console.log(this.state.selectedYear)
         })
@@ -104,7 +104,7 @@ export default class Main extends React.Component {
             } else {
                 storedNote = JSON.parse(storedNote);
             }
-
+            console.log(storedNote)
             this.setState({
                 listls: _(storedNote).filter({
                     'month': this.state.selectedMonth,
@@ -112,7 +112,7 @@ export default class Main extends React.Component {
                 }).orderBy(['date', 'time'], ['desc', 'desc']).value()
             });
 
-            // console.log(this.state.listls)
+            console.log(this.state.listls)
         } catch (error) {
             alert("Что-то пошло не так...")
         }
@@ -136,7 +136,7 @@ export default class Main extends React.Component {
 
         _.remove(tmpArray, obj => obj.id === this.state.nodeIdReadyForAction);
 
-        console.log(tmpArray);
+        // console.log(tmpArray);
         this.setState({
             listls: tmpArray,
         }, () => {
@@ -211,7 +211,7 @@ export default class Main extends React.Component {
         }));
         group3 = group3.slice(0, 5);
 
-        console.log(this.state.listls)
+        // console.log(this.state.listls)
 
         // let result = _.orderBy(group3, ['percent'], ['desc']);
         // let result = group3
@@ -238,7 +238,7 @@ export default class Main extends React.Component {
             })
         });
 
-        console.log(this.state.barData)
+        // console.log(this.state.barData)
 
 
     }
@@ -252,7 +252,32 @@ export default class Main extends React.Component {
                     onDidFocus={() => this.componentDidMount()}
                 />
 
-                <View>
+                <View
+                    style={{
+                        justifyContent:'space-between',
+                        flexDirection:'row',
+                        alignItems:'center'
+
+                    }}
+                >
+                    <TouchableOpacity
+                        style={{
+                            padding: 10,
+                            marginTop: 8
+                        }}
+                        onPress={() => this.props.navigation.openDrawer()}>
+                        <IconM name="menu" type="simple-line-icons" size={25}/>
+                    </TouchableOpacity>
+                    <Text
+                        style={{
+                            padding: 10,
+                            marginTop: 8,
+                            fontSize:20
+                        }}
+                    >
+                        {this.state.selectedMonth && dayjs(this.state.selectedMonth).locale('ru').format('MMMM')}
+                    </Text>
+
                     <TouchableOpacity
                         style={{
                             padding: 10,
