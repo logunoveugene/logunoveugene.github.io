@@ -15,21 +15,29 @@ import ActionButton from 'react-native-action-button';
 
 import {NavigationEvents} from 'react-navigation';
 
+import ActionModal from './ActionModal'
+
 
 import _ from 'lodash';
 import {sampleNodes} from "../sampleNodes";
-// import * as scale from 'd3-scale'
-// import {Defs, LinearGradient, Stop} from 'react-native-svg'
-// import {BarChart, YAxis, Grid} from 'react-native-svg-charts'
+
+
 import {PieChart} from 'react-native-svg-charts'
+
+
+
 
 
 import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
 import icoMoonConfig from './font/selection';
 
 const IconM = createIconSetFromIcoMoon(icoMoonConfig);
+import BoxShadow from './shadow'
+import dayjs from 'dayjs'
+import 'dayjs/locale/ru'
 
 
+var width = Dimensions.get('window').width;
 export default class Main extends React.Component {
 
 
@@ -40,13 +48,13 @@ export default class Main extends React.Component {
             message: '',
             list: '',
             listls: [],
-            modalVisible: false,
+            modalActionVisible: false,
             selectedMonth: '',
             selectedYear: '',
             selectedType: 'Списание',
             chartData: [],
-            barData: []
-
+            barData: [],
+            nodeIdReadyForAction: null,
 
         }
     }
@@ -58,13 +66,6 @@ export default class Main extends React.Component {
             .signOut()
     };
 
-    setModalVisible() {
-        this.setState({modalVisible: true});
-    }
-
-    hideModal() {
-        this.setState({modalVisible: false});
-    }
 
     static navigationOptions = ({navigation}) => {
 
@@ -124,18 +125,24 @@ export default class Main extends React.Component {
         // console.log(this.state)
     }
 
+    setModalActionVisible = (visible) => {
+        this.setState({
+            modalActionVisible: visible,
+        });
+    }
 
-    removeChildItemAt(id) {
+    removeItem = () => {
         let tmpArray = [...this.state.listls];
 
-        _.remove(tmpArray, obj => obj.id === id);
+        _.remove(tmpArray, obj => obj.id === this.state.nodeIdReadyForAction);
 
         console.log(tmpArray);
         this.setState({
             listls: tmpArray,
         }, () => {
             this.pushToLs();
-            this.componentDidMount()
+            this.componentDidMount();
+            this.setModalActionVisible(false)
         })
     }
 
@@ -146,7 +153,6 @@ export default class Main extends React.Component {
             alert("Что-то пошло не так.2..")
         }
     }
-
 
     cartsData() {
         const {listls, chartData, selectedSlice} = this.state;
@@ -159,7 +165,7 @@ export default class Main extends React.Component {
         });
 
 
-        var colors = ["#96cd5e", "#ffda58", "#ff5935", "#74b5e9", "#aa51ba", "#eeeeee"]
+        var colors = ["#96cd5e", "#ffda58", "#ff5935", "#74b5e9", "#eeeeee"]
         var group3 = []
 
         var group = _.groupBy(this.state.chartData, 'typeSubCategoryTitle');
@@ -197,13 +203,13 @@ export default class Main extends React.Component {
 
         _.map(group3, ((i, index, col) => {
 
-            if (index > 5) {
-                group3[5].sum += i.sum
-                group3[5].percent += i.percent
-                group3[5].name = 'Остальное'
+            if (index > 4) {
+                group3[4].sum += i.sum
+                group3[4].percent += i.percent
+                group3[4].name = 'Остальное'
             }
         }));
-        group3 = group3.slice(0, 6);
+        group3 = group3.slice(0, 5);
 
         console.log(this.state.listls)
 
@@ -239,9 +245,6 @@ export default class Main extends React.Component {
 
     render() {
         const {listls, chartData, selectedSlice} = this.state;
-        //
-
-
         return (
 
             <View style={styles.container}>
@@ -249,125 +252,235 @@ export default class Main extends React.Component {
                     onDidFocus={() => this.componentDidMount()}
                 />
 
+                <View>
+                    <TouchableOpacity
+                        style={{
+                            padding: 10,
+                            marginTop: 8
+                        }}
+                        onPress={() => this.props.navigation.openDrawer()}>
+                        <IconM name="menu" type="simple-line-icons" size={25}/>
+                    </TouchableOpacity>
 
-                <View style={{
-                    // width: "100%",
-                    height: 220,
-                    // flexDirection: 'column',
-                    // alignItems: "center",
-                    backgroundColor: '#ffffff',
-                    // borderBottomWidth: 1,
-                    // padding: 10,
-                    // borderRadius: 10,
-                    // borderLeftColor: `${l.typeSubCategoryColor}`,
-                    // borderLeftWidth: 1,
-                    // // marginHorizontal: 10,
-                    // marginBottom: 7,
-                    // elevation: 1
-                }}>
 
-                    <View style={{flex: 1,}}>
+                </View>
 
-                        <View style={{flex: 1, position: 'relative'}}>
-                            <View
 
-                                style={{
-                                    position: 'absolute',
-                                    left: 10
-                                }}>
-                                <PieChart
-                                    style={{height: 110,}}
-                                    outerRadius={'100%'}
-                                    innerRadius={'50%'}
-                                    data={this.state.barData}
-                                    valueAccessor={({item}) => item.amount}
+                <BoxShadow
+                    setting={{
+                        width: +`${width}` - 40,
+                        height: 220,
+                        color: "#0c034c",
+                        border: 30,
+                        radius: 10,
+                        opacity: 0.05,
+                        x: 20,
+                        y: 20,
+                        style: { zIndex: 19,}
+                    }}>
+                    <View style={{
+                        width: +`${width}` - 20,
+                        height: 220,
+                        // flexDirection: 'column',
+                        // alignItems: "center",
+                        zIndex: 20,
+                        backgroundColor: '#ffffff',
+                        // borderBottomWidth: 1,
+                        marginHorizontal: 10,
+                        marginTop: 10,
+                        borderRadius: 10,
+                        // borderLeftColor: `${l.typeSubCategoryColor}`,
+                        // borderLeftWidth: 1,
+                        // // marginHorizontal: 10,
+                        // marginBottom: 7,
+                        // elevation: 1
+                    }}>
 
-                                />
-                                <Text
+                        <View style={{flex: 1,}}>
+
+                            <View style={{flex: 1, position: 'relative'}}>
+                                <View
                                     style={{
 
-                                        width: '100%',
-                                        textAlign: 'left',
-                                        fontSize: 16,
-                                        fontWeight: 'bold'
-                                    }}>Расходы за месяц
-                                </Text>
-
-
-                                {this.state.barData.map((i, index) => (
-                                    <Text
-                                        key={index}
+                                        flex: 1,
+                                        // left: 10
+                                    }}>
+                                    <PieChart
                                         style={{
+                                            height: 150,
+
+                                            paddingVertical: 20
+                                        }}
+                                        outerRadius={'100%'}
+                                        innerRadius={'75%'}
+                                        data={this.state.barData}
+                                        valueAccessor={({item}) => item.amount}
+
+                                    />
+                                    <View
+                                        style={{
+
                                             width: '100%',
-                                            textAlign: 'left',
-                                            fontSize: 11,
-                                        }}>{i.label}: {i.value} </Text>
-                                ))
-                                }
+                                            textAlign: 'center',
+                                            position: 'absolute',
+                                            top: 63,
+
+                                            // fontWeight: 'bold'
+                                        }}
+                                    >
+
+                                        <Text
+                                            style={{
+                                                textAlign: 'center',
+                                                lineHeight: 20,
+
+                                                fontSize: 20,
+                                                // fontWeight: 'bold'
+                                            }}>2 500
+                                        </Text>
+                                        <Text
+                                            style={{
+
+                                                textAlign: 'center',
+                                                lineHeight: 11,
+                                                fontSize: 11,
+                                                color: "#999"
+                                                // fontWeight: 'bold'
+                                            }}>расходы
+                                        </Text>
 
 
-                                {/*{this.state.barData.length > 0 &&*/}
-                                {/*<View style={{flexDirection: 'row', height: 200, paddingVertical: 16}}>*/}
-                                {/*<YAxis*/}
-                                {/*data={this.state.barData}*/}
-                                {/*yAccessor={({ index }) => index}*/}
-                                {/*scale={scale.scaleBand}*/}
-                                {/*contentInset={{ top: 10, bottom: 10 }}*/}
-                                {/*spacing={0.2}*/}
-                                {/*formatLabel={(_, index) => this.state.barData[ index ].label}*/}
-                                {/*/>*/}
-                                {/*<BarChart*/}
-                                {/*style={{flex: 1, marginLeft: 8}}*/}
-                                {/*data={this.state.barData}*/}
-                                {/*horizontal={true}*/}
-                                {/*svg={{fill: 'rgba(134, 65, 244, 0.8)',}}*/}
-                                {/*contentInset={{top: 10, bottom: 10}}*/}
-                                {/*yAccessor={({ item }) => item.value}*/}
-
-                                {/*spacing={0.2}*/}
-                                {/*gridMin={0}*/}
-                                {/*>*/}
-                                {/*<Grid direction={Grid.Direction.VERTICAL}/>*/}
-                                {/*</BarChart>*/}
+                                    </View>
 
 
-                                {/*</View>*/}
-                                {/*}*/}
+                                    <View
+                                        style={{
+                                            flex: 1,
+                                            justifyContent: 'center',
+                                            flexDirection: 'row',
+                                            // flexWrap: 'wrap',
+                                            // alignItems: 'center',
+                                            width: "100%"
+                                        }}
+                                    >
+
+                                        {this.state.barData.map((i, index) => (
+                                            <View
+                                                key={index}
+                                                style={{
+                                                    width: '18%',
+                                                    textAlign: 'center',
+                                                    alignItems: 'center',
+                                                }}
+                                            >
 
 
-                                {/*{result.map((i, index) => (*/}
-                                {/*<Text*/}
-                                {/*key={index}*/}
-                                {/*style={{*/}
-                                {/*width: '100%',*/}
-                                {/*textAlign: 'left',*/}
-                                {/*fontSize: 11,*/}
-                                {/*}}>{i.name}: {i.sum} </Text>*/}
-                                {/*))*/}
-                                {/*}*/}
+                                                <View
+                                                    style={{
+                                                        // position: 'absolute',
+                                                        width: 10,
+                                                        height: 10,
+                                                        borderRadius: 10,
+                                                        // top: 3,
+                                                        // left: 0,
+                                                        marginBottom: 5,
+                                                        borderWidth: 3,
+                                                        borderColor: `${i.svg.fill}`
+
+                                                    }}
+                                                />
+                                                <Text
+                                                    style={{
+
+                                                        textAlign: 'center',
+                                                        fontSize: 15,
+                                                        //
+                                                        // fontWeight:'bold'
+                                                    }}>{i.amount}</Text>
+                                                <Text
+                                                    style={{
+
+                                                        textAlign: 'center',
+                                                        fontSize: 11,
+                                                        color: '#999999'
+
+                                                    }}>{i.label}</Text>
+
+                                            </View>
+
+                                        ))
+                                        }</View>
+
+
+                                    {/*{this.state.barData.length > 0 &&*/}
+                                    {/*<View style={{flexDirection: 'row', height: 200, paddingVertical: 16}}>*/}
+                                    {/*<YAxis*/}
+                                    {/*data={this.state.barData}*/}
+                                    {/*yAccessor={({ index }) => index}*/}
+                                    {/*scale={scale.scaleBand}*/}
+                                    {/*contentInset={{ top: 10, bottom: 10 }}*/}
+                                    {/*spacing={0.2}*/}
+                                    {/*formatLabel={(_, index) => this.state.barData[ index ].label}*/}
+                                    {/*/>*/}
+                                    {/*<BarChart*/}
+                                    {/*style={{flex: 1, marginLeft: 8}}*/}
+                                    {/*data={this.state.barData}*/}
+                                    {/*horizontal={true}*/}
+                                    {/*svg={{fill: 'rgba(134, 65, 244, 0.8)',}}*/}
+                                    {/*contentInset={{top: 10, bottom: 10}}*/}
+                                    {/*yAccessor={({ item }) => item.value}*/}
+
+                                    {/*spacing={0.2}*/}
+                                    {/*gridMin={0}*/}
+                                    {/*>*/}
+                                    {/*<Grid direction={Grid.Direction.VERTICAL}/>*/}
+                                    {/*</BarChart>*/}
+
+
+                                    {/*</View>*/}
+                                    {/*}*/}
+
+
+                                    {/*{result.map((i, index) => (*/}
+                                    {/*<Text*/}
+                                    {/*key={index}*/}
+                                    {/*style={{*/}
+                                    {/*width: '100%',*/}
+                                    {/*textAlign: 'left',*/}
+                                    {/*fontSize: 11,*/}
+                                    {/*}}>{i.name}: {i.sum} </Text>*/}
+                                    {/*))*/}
+                                    {/*}*/}
+
+                                </View>
+
 
                             </View>
 
-
                         </View>
-
                     </View>
-
-                </View>
+                </BoxShadow>
                 <ScrollView>
                     {
                         listls.map((l, idx) => [
                             <View key={l.id}>
                                 {(idx >= 1 && listls[idx - 1].date !== l.date) || idx === 0 ? (
                                     <Text style={{
-                                        padding: 12
+                                        padding: 12,
+                                        marginTop:15
                                     }}>
-                                        {l.date}</Text>
+
+                                        {dayjs(l.date).locale('ru').format('D MMM')}
+                                       </Text>
                                 ) : null}
                                 <TouchableOpacity
 
                                     onLongPress={() => {
-                                        this.removeChildItemAt(l.id)
+                                        this.setModalActionVisible(!this.props.modalActionVisible);
+                                        this.setState({
+                                            nodeIdReadyForAction: l.id
+                                        })
+                                        // this.removeItem(l.id)
                                     }}
                                 >
 
@@ -419,7 +532,7 @@ export default class Main extends React.Component {
                                             right: 14,
                                             top: 16,
                                             color: l.typeCategory === "Списание" ? "#333333" : "#78ab1e",
-                                            fontSize: 18
+                                            fontSize: 16
                                         }}>
                                             {l.typeCategory === "Списание" ? '' : <Text>+</Text>}
 
@@ -438,6 +551,11 @@ export default class Main extends React.Component {
                     onPress={() => this.props.navigation.navigate('AddNote')}
                     buttonColor="rgba(231,76,60,1)">
                 </ActionButton>
+                <ActionModal
+                    setModalActionVisible={this.setModalActionVisible}
+                    modalActionVisible={this.state.modalActionVisible}
+                    removeItem={this.removeItem}
+                />
             </View>
         )
     }

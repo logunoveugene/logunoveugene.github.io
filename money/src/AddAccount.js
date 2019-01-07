@@ -21,6 +21,9 @@ import Fuse from 'fuse.js'
 import _ from "lodash";
 import {banksAndPrefixes, currencyList, bankAccountsListDefault} from './data/base/BaseConstant'
 import dayjs from "dayjs";
+
+import ActionModal from './ActionModal'
+
 import BoxShadow from './shadow'
 
 
@@ -31,13 +34,13 @@ export default class Main extends React.Component {
     state = {
         currentUser: null,
 
-        id: '',
-        title: '',
-        bankTitle: '',
-        startBalance: '',
-        currentBalance: '',
-        bankBgColor: '',
-        bankTextColor: '',
+        id: null,
+        title: null,
+        bankTitle: null,
+        startBalance: null,
+        currentBalance: null,
+        bankBgColor: null,
+        bankTextColor: null,
 
 
         titleIsValid: false,
@@ -46,9 +49,9 @@ export default class Main extends React.Component {
 
         modalVisible: false,
         modalActionVisible: false,
-        accountReadyForDel: '',
+        accountReadyForDel: null,
 
-        filterValue: '',
+        filterValue: null,
         filteredBanks: [],
         bankAccountsList: []
     };
@@ -65,7 +68,7 @@ export default class Main extends React.Component {
             } else {
                 storedAccounts = JSON.parse(storedAccounts);
             }
-            this.setState({bankAccountsList: storedAccounts}, ()=>{
+            this.setState({bankAccountsList: storedAccounts}, () => {
                 this.pushToLS()
             });
         } catch (error) {
@@ -184,18 +187,17 @@ export default class Main extends React.Component {
         this.setState({modalVisible: visible});
     }
 
-    setModalActionVisible(visible, data) {
+    setModalActionVisible = (visible, data) => {
         this.setState({
             modalActionVisible: visible,
             accountReadyForDel: data,
-
         });
 
 
     }
 
 
-    removeChildItemAt() {
+    removeItem = () => {
         if (this.state.bankAccountsList.length > 1) {
             let tmpArray = [...this.state.bankAccountsList];
 
@@ -210,25 +212,23 @@ export default class Main extends React.Component {
                 this.render()
                 this.pushToLS()
             })
-        } else{
+        } else {
             Alert.alert(
                 'Увы..',
                 'В списке счетов должена остаться хотя бы одна запись',
                 [
 
-                    {text: 'Закрыть', onPress: () =>{
+                    {
+                        text: 'Закрыть', onPress: () => {
                             this.setState({
                                 modalActionVisible: false,
 
 
-                            })}
-
-
-
-
-        },
+                            })
+                        }
+                    },
                 ],
-                { cancelable: true }
+                {cancelable: true}
             )
         }
     }
@@ -244,7 +244,6 @@ export default class Main extends React.Component {
 
 
     render() {
-
         return (
             <View style={styles.container}>
                 <View style={styles.fixedHeader}>
@@ -252,7 +251,6 @@ export default class Main extends React.Component {
                         onPress={() => this.props.navigation.goBack()}>
                         <Text>Назад</Text>
                     </TouchableHighlight>
-
 
                 </View>
 
@@ -290,109 +288,14 @@ export default class Main extends React.Component {
                     ))
                     }
                 </ScrollView>
-                <Modal
-                    animationType="slide"
-                    transparent={true}
-                    visible={this.state.modalActionVisible}
-                    onRequestClose={() => {
-                        this.setModalVisible(!this.state.modalVisible);
-                    }}
-                >
-                    <View
-                        style={{
-                            flex: 1,
-                            flexDirection: 'column',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            position: "relative",
-                            backgroundColor: 'rgba(0,0,0,0)'
-                        }}>
-                        <BoxShadow
-                            setting={{
-                                width: +`${width}` - 20,
-                                height: 150,
-                                color: "#0c034c",
-                                border: 50,
-                                radius: 20,
-                                opacity: 0.1,
-                                x: 0,
-                                y: -10,
-                                style: {position: 'absolute', bottom: 10}
-                            }}>
-                            <View style={{
-                                width: {width} - 20,
-                                // position: "absolute",
-                                // bottom: 0,
-                                backgroundColor: "#ffffff",
-                                height: 150,
-                                borderRadius: 10,
-                                // borderTopRightRadius: 20,
-                                padding: 20,
-                                // margin: 10
-                            }}>
-                                <View style={{
-                                    flexDirection: "row",
-                                    position: 'relative',
-                                    paddingVertical: 5,
-                                    justifyContent: "space-between"
-                                }}>
-                                    <Text style={{
-                                        fontSize: 20,
-                                        fontWeight: 'bold'
-
-                                    }}>Что будем делать?</Text>
-                                    <TouchableHighlight
-                                        style={{
-                                            height: 30,
-                                            width: 30,
-                                            top: -2,
-                                            right: -5,
-                                            position: "absolute"
-                                        }}
-                                        onPress={() => {
-                                            this.setState({modalActionVisible: false})
-                                        }}
-                                    >
-                                        <Text style={{
-                                            fontSize: 30,
-                                            color: '#999999',
-                                            top: -1,
-
-                                        }}>×</Text>
-                                    </TouchableHighlight>
-                                </View>
-                                <TouchableHighlight
-                                    underlayColor="#bababa"
-                                    style={{
-
-                                        marginTop: 20,
-                                        padding: 15,
-                                        width: "100%",
-                                        backgroundColor: "#eee",
-                                        justifyContent: 'center',
-                                        alignItems: 'center',
-                                        borderRadius: 30
-
-                                    }}
-
-                                    onPress={() => {
-                                        this.removeChildItemAt()
-                                    }}>
-                                    <Text
-                                        style={{
-                                            fontSize: 16,
 
 
-                                        }}
+                <ActionModal
+                    setModalActionVisible={this.setModalActionVisible}
+                    modalActionVisible={this.state.modalActionVisible}
+                    removeItem={this.removeItem}
+                />
 
-                                    >Удалить</Text>
-                                </TouchableHighlight>
-
-
-                            </View>
-                        </BoxShadow>
-                    </View>
-                </Modal>
                 <Modal
                     animationType="slide"
                     transparent={true}
