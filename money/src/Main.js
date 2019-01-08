@@ -10,6 +10,7 @@ import {
     Button,
     ActivityIndicator
 } from 'react-native'
+
 import firebase from 'react-native-firebase'
 import ActionButton from 'react-native-action-button';
 
@@ -28,7 +29,6 @@ const IconM = createIconSetFromIcoMoon(icoMoonConfig);
 import BoxShadow from './shadow'
 import dayjs from 'dayjs'
 import 'dayjs/locale/ru'
-
 
 var width = Dimensions.get('window').width;
 export default class Main extends React.Component {
@@ -58,13 +58,11 @@ export default class Main extends React.Component {
         }
     }
 
-
     handleSignOut = () => {
         firebase
             .auth()
             .signOut()
     };
-
 
     static navigationOptions = ({navigation}) => {
 
@@ -85,18 +83,14 @@ export default class Main extends React.Component {
         });
     }
 
-
     async componentDidMount() {
 
         this.setState({
-            selectedMonth: ('0' + (new Date().getMonth() + 1)).slice(-2),
+            // selectedMonth: ('0' + (new Date().getMonth() + 1)).slice(-2),
             selectedYear: `${new Date().getFullYear()}`.toString()
-        }, () => {
-            // console.log(this.state.selectedYear)
         })
 
         var group = _.groupBy(this.state.chartData, 'typeSubCategoryTitle');
-
 
         try {
             var storedNote = await AsyncStorage.getItem('nodeList');
@@ -106,45 +100,35 @@ export default class Main extends React.Component {
                 storedNote = JSON.parse(storedNote);
             }
             console.log(storedNote);
-
-
             var years = _.keys(_.groupBy(storedNote, 'year'));
-
-
             this.setState({
                 fullNodeList: storedNote,
                 yearsList: years
-
             });
-
         } catch (error) {
             alert("Что-то пошло не так...")
         }
 
-
-        this.cartsData()
+        this.setMonthList()
         this.filterData()
+        this.cartsData();
         this._setNavigationParams();
-
     }
-
 
     filterData() {
         this.setState({
                 listls: _(this.state.fullNodeList).filter({
-                    'month': this.state.selectedMonth,
+                    'month': this.state.selectedMonth.id,
                     'year': this.state.selectedYear
                 }).orderBy(['date', 'time'], ['desc', 'desc']).value(),
             },
             () => {
                 this.cartsData()
-                this.setMonthLit()
+
             }
         );
-
         console.log(this.state)
     }
-
 
     setModalActionVisible = (visible) => {
         this.setState({
@@ -152,19 +136,15 @@ export default class Main extends React.Component {
         });
     }
 
-
     setDateFilterVisible = (visible) => {
         this.setState({
             dateFilterVisible: visible,
         });
     }
 
-
     removeItem = () => {
         let tmpArray = [...this.state.listls];
-
         _.remove(tmpArray, obj => obj.id === this.state.nodeIdReadyForAction);
-
         // console.log(tmpArray);
         this.setState({
             listls: tmpArray,
@@ -185,51 +165,35 @@ export default class Main extends React.Component {
 
     cartsData() {
         const {listls, chartData, selectedSlice} = this.state;
-
-
         this.setState({
                 chartData: _(this.state.listls).filter({
                     'typeCategory': this.state.selectedType
                 }).value()
             }, () => {
-
-
                 var colors = ["#96cd5e", "#ffda58", "#ff5935", "#74b5e9", "#eeeeee"]
                 var group3 = []
-
                 var group = _.groupBy(this.state.chartData, 'typeSubCategoryTitle');
                 var percent = _.sumBy(this.state.chartData, function (o) {
                     return +o.sum
                 });
                 group = _.values(group);
                 group = _.orderBy(group, ['sum'], ['desc']);
-
                 // console.log(group)
                 _.map(group, ((i, index) => {
-
-
                     group3.push(
                         _.reduce(i, function (p, t) {
                             return {
-
                                 sum: (p.sum) += +t.sum,
                                 color: p.color = t.typeSubCategoryColor,
                                 name: p.name = t.typeSubCategoryTitle,
-
                             };
                         }, {sum: 0, color: '', name: ''}))
-
-
                 }));
                 group3 = _.orderBy(group3, ['sum'], ['abc']);
-
                 _.map(group3, ((i, index) => {
                     i.percent = (i.sum / percent) * 100
-
                 }));
-
                 _.map(group3, ((i, index, col) => {
-
                     if (index > 4) {
                         group3[4].sum += i.sum
                         group3[4].percent += i.percent
@@ -237,12 +201,6 @@ export default class Main extends React.Component {
                     }
                 }));
                 group3 = group3.slice(0, 5);
-
-                // console.log(this.state.listls)
-
-                // let result = _.orderBy(group3, ['percent'], ['desc']);
-                // let result = group3
-
 
                 this.setState({
                     barData: group3.map((key, index) => {
@@ -256,29 +214,15 @@ export default class Main extends React.Component {
                             arc: {padAngle: 0.03},
                             amount: Math.abs(key.sum)
                         }
-
-                        // value:
-
-                        // svg: {fill: colors[index]},
-                        // arc: {padAngle: 0},
-                        // onPress: () => this.setState({selectedSlice: {label: key, value: values[index]}})
-
                     })
                 });
-
-
             }
         );
-
-
-        // this.render()
-
         console.log(this.state.barData)
-
-
     }
 
     selectMonth(i) {
+
         this.setState({
                 selectedMonth: i
             }, () => {
@@ -286,7 +230,6 @@ export default class Main extends React.Component {
             }
         );
     }
-
 
     selectYear(i) {
         this.setState({
@@ -297,9 +240,7 @@ export default class Main extends React.Component {
         );
     }
 
-
-    setMonthLit() {
-
+    setMonthList() {
         const monthDataList = [
             {id: '01', name: 'Янв', fullName: 'Январь', hasData: false},
             {id: '02', name: 'Фев', fullName: 'Февраль', hasData: false},
@@ -315,33 +256,37 @@ export default class Main extends React.Component {
             {id: '12', name: 'Дек', fullName: 'Декабрь', hasData: false}
         ];
 
-        var ssss = _(this.state.fullNodeList).filter({
-            'year': this.state.selectedYear
-        }).groupBy('month').keys().value();
-
-        var ffff = _.differenceWith(monthDataList, ssss, _.isEqual);
-
-        function tirpitir(n) {
-            return {
-                id: n.id,
-                name: n.name,
-                hasData: ((_.indexOf(ssss, n.id)) !== -1)
-            };
-        }
-
-        var dddd = _.map(monthDataList, tirpitir);
-
         this.setState({
-            monthList: dddd
-        });
+                selectedYear: `${new Date().getFullYear()}`.toString()
+            }, () => {
 
+                let yearList = _(this.state.fullNodeList).filter({
+                    'year': this.state.selectedYear
+                }).groupBy('month').keys().value();
 
+                function monthListUpdate(n) {
+                    return {
+                        id: n.id,
+                        name: n.name,
+                        fullName: n.fullName,
+                        hasData: ((_.indexOf(yearList, n.id)) !== -1)
+                    };
+                }
+
+                let monthList = _.map(monthDataList, monthListUpdate);
+
+                this.setState({
+                    monthList: monthList,
+                    selectedMonth: _.filter(monthList, {id: ('0' + (new Date().getMonth() + 1)).slice(-2)})[0]
+                });
+
+                console.log(_.filter(monthList, {id: ('0' + (new Date().getMonth() + 1)).slice(-2)})[0])
+            }
+        );
     }
-
 
     render() {
         const {listls, chartData, selectedSlice} = this.state;
-
         const monthFormat = (i) => dayjs(i).locale('ru').format('MMM')
 
         function capitalizeFirstLetter(string) {
@@ -349,7 +294,6 @@ export default class Main extends React.Component {
         }
 
         return (
-
             <View style={styles.container}>
                 <NavigationEvents
                     onDidFocus={() => this.componentDidMount()}
@@ -386,7 +330,7 @@ export default class Main extends React.Component {
                                 fontSize: 20
                             }}
                         >
-                            {this.state.selectedMonth && capitalizeFirstLetter(dayjs(this.state.selectedMonth).locale('ru').format('MMMM'))}
+                            {this.state.selectedMonth && this.state.selectedMonth.fullName}
                         </Text>
                         <Text
                             style={{
@@ -522,12 +466,12 @@ export default class Main extends React.Component {
                                         position: "relative"
                                     }}
                                     onPress={() => {
-                                        this.selectMonth(i.id)
+                                        this.selectMonth(i)
                                     }}
                                 >
                                     <View>
 
-                                        {i.id === this.state.selectedMonth &&
+                                        {i.id === this.state.selectedMonth.id &&
                                         <View
                                             style={{
                                                 backgroundColor: '#ffda3a',
@@ -628,7 +572,7 @@ export default class Main extends React.Component {
 
                                                 fontSize: 20,
                                                 // fontWeight: 'bold'
-                                            }}>2 500
+                                            }}>{_.sumBy(this.state.barData, 'amount')}
                                         </Text>
                                         <Text
                                             style={{
@@ -808,6 +752,7 @@ export default class Main extends React.Component {
                     removeItem={this.removeItem}
                 />
             </View>
+
         )
     }
 }
