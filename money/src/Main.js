@@ -43,6 +43,7 @@ export default class Main extends React.Component {
             fullNodeList: [],
 
             yearsList: [],
+            monthList: [],
 
             modalActionVisible: false,
             selectedMonth: null,
@@ -51,6 +52,8 @@ export default class Main extends React.Component {
             chartData: [],
             barData: [],
             nodeIdReadyForAction: null,
+
+            dateFilterVisible: false
 
         }
     }
@@ -109,32 +112,53 @@ export default class Main extends React.Component {
 
 
             this.setState({
-                listls: _(storedNote).filter({
-                    'month': this.state.selectedMonth,
-                    'year': this.state.selectedYear
-                }).orderBy(['date', 'time'], ['desc', 'desc']).value(),
                 fullNodeList: storedNote,
                 yearsList: years
 
             });
 
-            console.log(this.state.listls)
         } catch (error) {
             alert("Что-то пошло не так...")
         }
 
 
         this.cartsData()
-
+        this.filterData()
         this._setNavigationParams();
 
     }
+
+
+    filterData() {
+        this.setState({
+                listls: _(this.state.fullNodeList).filter({
+                    'month': this.state.selectedMonth,
+                    'year': this.state.selectedYear
+                }).orderBy(['date', 'time'], ['desc', 'desc']).value(),
+            },
+            () => {
+                this.cartsData()
+                this.setMonthLit()
+            }
+        );
+
+        console.log(this.state)
+    }
+
 
     setModalActionVisible = (visible) => {
         this.setState({
             modalActionVisible: visible,
         });
     }
+
+
+    setDateFilterVisible = (visible) => {
+        this.setState({
+            dateFilterVisible: visible,
+        });
+    }
+
 
     removeItem = () => {
         let tmpArray = [...this.state.listls];
@@ -164,92 +188,161 @@ export default class Main extends React.Component {
 
 
         this.setState({
-            chartData: _(this.state.listls).filter({
-                'typeCategory': this.state.selectedType
-            }).value()
-        });
+                chartData: _(this.state.listls).filter({
+                    'typeCategory': this.state.selectedType
+                }).value()
+            }, () => {
 
 
-        var colors = ["#96cd5e", "#ffda58", "#ff5935", "#74b5e9", "#eeeeee"]
-        var group3 = []
+                var colors = ["#96cd5e", "#ffda58", "#ff5935", "#74b5e9", "#eeeeee"]
+                var group3 = []
 
-        var group = _.groupBy(this.state.chartData, 'typeSubCategoryTitle');
-        var percent = _.sumBy(this.state.chartData, function (o) {
-            return +o.sum
-        });
-        group = _.values(group);
+                var group = _.groupBy(this.state.chartData, 'typeSubCategoryTitle');
+                var percent = _.sumBy(this.state.chartData, function (o) {
+                    return +o.sum
+                });
+                group = _.values(group);
+                group = _.orderBy(group, ['sum'], ['desc']);
 
-        group = _.orderBy(group, ['sum'], ['desc']);
-
-
-        // console.log(group)
-        _.map(group, ((i, index) => {
+                // console.log(group)
+                _.map(group, ((i, index) => {
 
 
-            group3.push(
-                _.reduce(i, function (p, t) {
-                    return {
+                    group3.push(
+                        _.reduce(i, function (p, t) {
+                            return {
 
-                        sum: (p.sum) += +t.sum,
-                        color: p.color = t.typeSubCategoryColor,
-                        name: p.name = t.typeSubCategoryTitle,
+                                sum: (p.sum) += +t.sum,
+                                color: p.color = t.typeSubCategoryColor,
+                                name: p.name = t.typeSubCategoryTitle,
 
-                    };
-                }, {sum: 0, color: '', name: ''}))
+                            };
+                        }, {sum: 0, color: '', name: ''}))
 
 
-        }));
-        group3 = _.orderBy(group3, ['sum'], ['abc']);
+                }));
+                group3 = _.orderBy(group3, ['sum'], ['abc']);
 
-        _.map(group3, ((i, index) => {
-            i.percent = (i.sum / percent) * 100
+                _.map(group3, ((i, index) => {
+                    i.percent = (i.sum / percent) * 100
 
-        }));
+                }));
 
-        _.map(group3, ((i, index, col) => {
+                _.map(group3, ((i, index, col) => {
 
-            if (index > 4) {
-                group3[4].sum += i.sum
-                group3[4].percent += i.percent
-                group3[4].name = 'Остальное'
+                    if (index > 4) {
+                        group3[4].sum += i.sum
+                        group3[4].percent += i.percent
+                        group3[4].name = 'Остальное'
+                    }
+                }));
+                group3 = group3.slice(0, 5);
+
+                // console.log(this.state.listls)
+
+                // let result = _.orderBy(group3, ['percent'], ['desc']);
+                // let result = group3
+
+
+                this.setState({
+                    barData: group3.map((key, index) => {
+                        return {
+                            value: key.percent,
+                            svg: {fill: colors[index]},
+                            label: key.name,
+                            height: 10,
+                            width: 10,
+                            key: index,
+                            arc: {padAngle: 0.03},
+                            amount: Math.abs(key.sum)
+                        }
+
+                        // value:
+
+                        // svg: {fill: colors[index]},
+                        // arc: {padAngle: 0},
+                        // onPress: () => this.setState({selectedSlice: {label: key, value: values[index]}})
+
+                    })
+                });
+
+
             }
-        }));
-        group3 = group3.slice(0, 5);
+        );
 
-        // console.log(this.state.listls)
 
-        // let result = _.orderBy(group3, ['percent'], ['desc']);
-        // let result = group3
+        // this.render()
 
-        this.setState({
-            barData: group3.map((key, index) => {
-                return {
-                    value: key.percent,
-                    svg: {fill: colors[index]},
-                    label: key.name,
-                    height: 10,
-                    width: 10,
-                    key: index,
-                    arc: {padAngle: 0.03},
-                    amount: Math.abs(key.sum)
-                }
-
-                // value:
-
-                // svg: {fill: colors[index]},
-                // arc: {padAngle: 0},
-                // onPress: () => this.setState({selectedSlice: {label: key, value: values[index]}})
-
-            })
-        });
-
-        // console.log(this.state.barData)
+        console.log(this.state.barData)
 
 
     }
 
+    selectMonth(i) {
+        this.setState({
+                selectedMonth: i
+            }, () => {
+                this.filterData()
+            }
+        );
+    }
+
+
+    selectYear(i) {
+        this.setState({
+                selectedYear: i
+            }, () => {
+                this.filterData();
+            }
+        );
+    }
+
+
+    setMonthLit() {
+
+        const monthDataList = [
+            {id: '01', name: 'Янв', fullName: 'Январь', hasData: false},
+            {id: '02', name: 'Фев', fullName: 'Февраль', hasData: false},
+            {id: '03', name: 'Мар', fullName: 'Март', hasData: false},
+            {id: '04', name: 'Апр', fullName: 'Апррель', hasData: false},
+            {id: '05', name: 'Май', fullName: 'Май', hasData: false},
+            {id: '06', name: 'Июн', fullName: 'Июнь', hasData: false},
+            {id: '07', name: 'Июл', fullName: 'Июль', hasData: false},
+            {id: '08', name: 'Авг', fullName: 'Август', hasData: false},
+            {id: '09', name: 'Сен', fullName: 'Сентябрь', hasData: false},
+            {id: '10', name: 'Окт', fullName: 'Октябрь', hasData: false},
+            {id: '11', name: 'Ноя', fullName: 'Ноябрь', hasData: false},
+            {id: '12', name: 'Дек', fullName: 'Декабрь', hasData: false}
+        ];
+
+        var ssss = _(this.state.fullNodeList).filter({
+            'year': this.state.selectedYear
+        }).groupBy('month').keys().value();
+
+        var ffff = _.differenceWith(monthDataList, ssss, _.isEqual);
+
+        function tirpitir(n) {
+            return {
+                id: n.id,
+                name: n.name,
+                hasData: ((_.indexOf(ssss, n.id)) !== -1)
+            };
+        }
+
+        var dddd = _.map(monthDataList, tirpitir);
+
+        this.setState({
+            monthList: dddd
+        });
+
+
+    }
+
+
     render() {
         const {listls, chartData, selectedSlice} = this.state;
+
+        const monthFormat = (i) => dayjs(i).locale('ru').format('MMM')
 
         function capitalizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
@@ -279,6 +372,9 @@ export default class Main extends React.Component {
                         <IconM name="menu" type="simple-line-icons" size={25}/>
                     </TouchableOpacity>
                     <TouchableOpacity
+                        onPress={() => {
+                            this.setDateFilterVisible(!this.state.dateFilterVisible)
+                        }}
                         style={{
                             flexDirection: 'row',
                             alignItems: 'center'
@@ -312,16 +408,6 @@ export default class Main extends React.Component {
                         />
                     </TouchableOpacity>
 
-                    {/*{this.state.yearsList.map((i) => [*/}
-                        {/*<Text*/}
-                            {/*style={{*/}
-                                {/*padding: 10,*/}
-                                {/*marginTop: 8,*/}
-                                {/*fontSize: 20*/}
-                            {/*}}*/}
-                        {/*>*/}
-                            {/*{i} </Text>*/}
-                    {/*])}*/}
 
                     <TouchableOpacity
                         style={{
@@ -342,6 +428,135 @@ export default class Main extends React.Component {
 
                 </View>
 
+                {this.state.dateFilterVisible &&
+                <BoxShadow
+                    setting={{
+                        width: +`${width}` - 40,
+                        height: 120,
+                        color: "#0c034c",
+                        border: 30,
+                        radius: 10,
+                        opacity: 0.05,
+                        x: 20,
+                        y: 20,
+                        style: {zIndex: 19, marginBottom: 15}
+                    }}>
+                    <View style={{
+                        width: +`${width}` - 20,
+                        height: 120,
+                        // flexDirection: 'column',
+                        // alignItems: "center",
+                        zIndex: 20,
+                        backgroundColor: '#ffffff',
+                        // borderBottomWidth: 1,
+                        marginHorizontal: 10,
+                        marginTop: 10,
+                        borderRadius: 10,
+                        padding: 15,
+                        // borderLeftColor: `${l.typeSubCategoryColor}`,
+                        // borderLeftWidth: 1,
+                        // // marginHorizontal: 10,
+                        // marginBottom: 7,
+                        // elevation: 1
+                    }}>
+                        <ScrollView
+                            horizontal={true}
+                            style={{
+                                marginLeft: -4
+                            }}
+                        >
+
+                            {this.state.yearsList.map((i, index) =>
+                                <TouchableOpacity
+                                    key={index}
+                                    onPress={() => {
+                                        this.selectYear(i)
+                                    }}
+                                    style={{
+                                        textAlign: 'left',
+                                        padding: 3,
+                                        // width: "20%",
+                                        position: "relative"
+                                    }}
+                                >
+
+
+                                    {i === this.state.selectedYear &&
+                                    <View
+                                        style={{
+                                            backgroundColor: '#ffda3a',
+                                            position: 'absolute',
+                                            top: 4,
+                                            left: 0,
+                                            width: 50,
+                                            height: 25,
+                                            borderRadius: 12,
+                                            opacity: .5
+                                        }}
+                                    />
+                                    }
+                                    <Text
+                                        style={{
+                                            fontSize: 16,
+                                            padding: 3,
+                                        }}
+                                    >
+                                        {i} </Text>
+                                </TouchableOpacity>
+                            )}
+                        </ScrollView>
+                        <View
+                            style={{
+                                flexDirection: "row",
+                                flexWrap: 'wrap',
+                                justifyContent: 'space-between'
+                            }}
+                        >
+                            {this.state.monthList.map((i, index) =>
+                                <TouchableOpacity
+                                    key={index}
+                                    style={{
+                                        textAlign: 'left',
+                                        padding: 3,
+                                        width: "16%",
+                                        position: "relative"
+                                    }}
+                                    onPress={() => {
+                                        this.selectMonth(i.id)
+                                    }}
+                                >
+                                    <View>
+
+                                        {i.id === this.state.selectedMonth &&
+                                        <View
+                                            style={{
+                                                backgroundColor: '#ffda3a',
+                                                position: 'absolute',
+                                                top: -3,
+                                                left: -8,
+                                                width: '100%',
+                                                height: 24,
+                                                borderRadius: 12,
+                                                opacity: .5
+                                            }}
+                                        />
+                                        }
+                                        {this.state.selectedMonth &&
+                                        <Text
+                                            style={{
+                                                textAlign: 'left',
+                                                fontSize: 14,
+                                                color: (i.hasData) ? "#333" : "#999"
+                                            }}
+                                        >
+                                            {i.name} </Text>}
+                                    </View>
+                                </TouchableOpacity>
+                            )}
+                        </View>
+                    </View>
+                </BoxShadow>
+                }
 
                 <BoxShadow
                     setting={{
@@ -487,47 +702,6 @@ export default class Main extends React.Component {
 
                                         ))
                                         }</View>
-
-
-                                    {/*{this.state.barData.length > 0 &&*/}
-                                    {/*<View style={{flexDirection: 'row', height: 200, paddingVertical: 16}}>*/}
-                                    {/*<YAxis*/}
-                                    {/*data={this.state.barData}*/}
-                                    {/*yAccessor={({ index }) => index}*/}
-                                    {/*scale={scale.scaleBand}*/}
-                                    {/*contentInset={{ top: 10, bottom: 10 }}*/}
-                                    {/*spacing={0.2}*/}
-                                    {/*formatLabel={(_, index) => this.state.barData[ index ].label}*/}
-                                    {/*/>*/}
-                                    {/*<BarChart*/}
-                                    {/*style={{flex: 1, marginLeft: 8}}*/}
-                                    {/*data={this.state.barData}*/}
-                                    {/*horizontal={true}*/}
-                                    {/*svg={{fill: 'rgba(134, 65, 244, 0.8)',}}*/}
-                                    {/*contentInset={{top: 10, bottom: 10}}*/}
-                                    {/*yAccessor={({ item }) => item.value}*/}
-
-                                    {/*spacing={0.2}*/}
-                                    {/*gridMin={0}*/}
-                                    {/*>*/}
-                                    {/*<Grid direction={Grid.Direction.VERTICAL}/>*/}
-                                    {/*</BarChart>*/}
-
-
-                                    {/*</View>*/}
-                                    {/*}*/}
-
-
-                                    {/*{result.map((i, index) => (*/}
-                                    {/*<Text*/}
-                                    {/*key={index}*/}
-                                    {/*style={{*/}
-                                    {/*width: '100%',*/}
-                                    {/*textAlign: 'left',*/}
-                                    {/*fontSize: 11,*/}
-                                    {/*}}>{i.name}: {i.sum} </Text>*/}
-                                    {/*))*/}
-                                    {/*}*/}
 
                                 </View>
 
