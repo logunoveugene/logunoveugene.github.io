@@ -8,6 +8,7 @@ import {
     AsyncStorage,
     Dimensions,
     Button,
+    Animated,
     ActivityIndicator
 } from 'react-native'
 
@@ -53,7 +54,8 @@ export default class Main extends React.Component {
             barData: [],
             nodeIdReadyForAction: null,
 
-            dateFilterVisible: false
+            dateFilterVisible: false,
+            scrollY: new Animated.Value(0)
 
         }
     }
@@ -285,6 +287,7 @@ export default class Main extends React.Component {
         );
     }
 
+
     render() {
         const {listls, chartData, selectedSlice} = this.state;
         const monthFormat = (i) => dayjs(i).locale('ru').format('MMM')
@@ -293,11 +296,17 @@ export default class Main extends React.Component {
             return string.charAt(0).toUpperCase() + string.slice(1);
         }
 
+        const mainChart = this.state.scrollY.interpolate({
+            inputRange: [0, 100],
+            outputRange: [150, 50]
+        })
+
         return (
             <View style={styles.container}>
                 <NavigationEvents
                     onDidFocus={() => this.componentDidMount()}
                 />
+
 
                 <View
                     style={{
@@ -655,7 +664,12 @@ export default class Main extends React.Component {
                         </View>
                     </View>
                 </BoxShadow>
-                <ScrollView>
+                <ScrollView
+                    scrollEventThrottle={16}
+                    onScroll={Animated.event(
+                        [{nativeEvent: {contentOffset: {y: this.state.scrollY}}}]
+                    )}
+                >
                     {
                         listls.map((l, idx) => [
                             <View key={l.id}>
@@ -746,6 +760,17 @@ export default class Main extends React.Component {
                     onPress={() => this.props.navigation.navigate('AddNote')}
                     buttonColor="rgba(231,76,60,1)">
                 </ActionButton>
+                <Animated.View
+                    style= {{
+                        backgroundColor: 'red',
+                        // position:"absolute",
+                        top:0,
+                        zIndex:40,
+                        height: mainChart
+                    }}
+                >
+
+                </Animated.View>
                 <ActionModal
                     setModalActionVisible={this.setModalActionVisible}
                     modalActionVisible={this.state.modalActionVisible}
