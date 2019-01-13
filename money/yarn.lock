@@ -1474,7 +1474,7 @@ d3-scale@^1.0.0, d3-scale@^1.0.6:
     d3-time "1"
     d3-time-format "2"
 
-d3-shape@^1.0.0, d3-shape@^1.0.6, d3-shape@^1.2.0, d3-shape@^1.2.2:
+d3-shape@1.2.2, d3-shape@^1.0.0, d3-shape@^1.0.6, d3-shape@^1.2.0, d3-shape@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/d3-shape/-/d3-shape-1.2.2.tgz#f9dba3777a5825f9a8ce8bc928da08c17679e9a7"
   dependencies:
@@ -4289,6 +4289,12 @@ react-native-animatable@^1.2.4:
   resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.3.0.tgz#b5c3940fc758cfd9b2fe54613a457c4b6962b46e"
   dependencies:
     prop-types "^15.5.10"
+
+react-native-fab-pie@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-fab-pie/-/react-native-fab-pie-1.0.0.tgz#46e6e6cfc8b8275e5fa685021c96adae3fdfd92f"
+  dependencies:
+    d3-shape "1.2.2"
 
 react-native-firebase@^5.1.0:
   version "5.1.0"

@@ -15,6 +15,10 @@ import {
 import firebase from 'react-native-firebase'
 import ActionButton from 'react-native-action-button';
 
+import MyLabels from './MyLabels';
+import Pie from 'react-native-fab-pie';
+
+
 import {NavigationEvents} from 'react-navigation';
 
 import ActionModal from './ActionModal'
@@ -36,7 +40,27 @@ export default class Main extends React.Component {
 
     constructor(props) {
         super(props);
+        const data = [50, 20, 4, 10];
+        const colors = ['A40E4C', '2C2C54', 'ACC3A6', 'F5D6BA'];
+
+        const pieData = data
+            .filter(value => value > 0)
+            .map((value, index) => {
+                const toRet = {
+                    value,
+                    title: `title-${index}`,
+                    color: `#${colors[index]}`,
+                    key: `pie-${index}`,
+                };
+                return toRet;
+            });
+        console.log(pieData)
+
+
         this.state = {
+            pieData,
+
+
             currentUser: null,
             message: '',
             list: '',
@@ -51,6 +75,11 @@ export default class Main extends React.Component {
             selectedYear: '',
             selectedType: 'Списание',
             chartData: [],
+
+
+            isChartLoaded: false,
+
+
             barData: [],
             nodeIdReadyForAction: null,
 
@@ -112,9 +141,9 @@ export default class Main extends React.Component {
         }
 
         this.setMonthList()
-        this.filterData()
-        this.cartsData();
+        this.filterData();
         this._setNavigationParams();
+        this.pie.current.animate();
     }
 
     filterData() {
@@ -130,6 +159,7 @@ export default class Main extends React.Component {
             }
         );
         console.log(this.state)
+        console.log()
     }
 
     setModalActionVisible = (visible) => {
@@ -205,19 +235,26 @@ export default class Main extends React.Component {
                 group3 = group3.slice(0, 5);
 
                 this.setState({
-                    barData: group3.map((key, index) => {
-                        return {
-                            value: key.percent,
-                            svg: {fill: colors[index]},
-                            label: key.name,
-                            height: 10,
-                            width: 10,
-                            key: index,
-                            arc: {padAngle: 0.03},
-                            amount: Math.abs(key.sum)
-                        }
-                    })
-                });
+                        barData: group3.map((key, index) => {
+                            return {
+                                value: key.percent,
+                                color: colors[index],
+                                title: key.name,
+                                // height: 10,
+                                // width: 10,
+                                key: index,
+                                // arc: {padAngle: 0.03},
+                                amount: Math.abs(key.sum)
+                            }
+                        })
+                    },
+                    () => {
+
+                        this.setState({
+                            isChartLoaded: true
+                        })
+
+                    });
             }
         );
         console.log(this.state.barData)
@@ -288,6 +325,12 @@ export default class Main extends React.Component {
     }
 
 
+    animate = () => {
+        this.pie.current.reset().then(this.pie.current.animate);
+    };
+
+    pie = React.createRef();
+
     render() {
         const {listls, chartData, selectedSlice} = this.state;
         const monthFormat = (i) => dayjs(i).locale('ru').format('MMM')
@@ -296,272 +339,387 @@ export default class Main extends React.Component {
             return string.charAt(0).toUpperCase() + string.slice(1);
         }
 
-        const mainChart = this.state.scrollY.interpolate({
-            inputRange: [0, 100],
-            outputRange: [150, 50]
-        })
 
         return (
+
+
             <View style={styles.container}>
-                <NavigationEvents
-                    onDidFocus={() => this.componentDidMount()}
-                />
+
+                {!this.state.isChartLoaded && <View
+                    style={{
+                        position: "absolute",
+                        top: 90,
+                        width: "100%",
+                        textAlign: "center"
+                        //
+                        // fontWeight:'bold'
+                    }}>
+                    <ActivityIndicator
+
+                        size="large"/>
+                </View>}
+
+
+                {this.state.isChartLoaded &&
 
 
                 <View
-                    style={{
-                        justifyContent: 'space-between',
-                        flexDirection: 'row',
-                        alignItems: 'center'
-
-                    }}
-                >
-                    <TouchableOpacity
+                    style={styles.container}>
+                    <NavigationEvents
+                        onDidFocus={() => this.componentDidMount()}
+                    />
+                    <View
                         style={{
-                            padding: 10,
-                            marginTop: 8
-                        }}
-                        onPress={() => this.props.navigation.openDrawer()}>
-                        <IconM name="menu" type="simple-line-icons" size={25}/>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        onPress={() => {
-                            this.setDateFilterVisible(!this.state.dateFilterVisible)
-                        }}
-                        style={{
+                            justifyContent: 'space-between',
                             flexDirection: 'row',
                             alignItems: 'center'
-                        }}>
-                        <Text
-                            style={{
-                                paddingVertical: 10,
-                                marginTop: 8,
-                                fontSize: 20
-                            }}
-                        >
-                            {this.state.selectedMonth && this.state.selectedMonth.fullName}
-                        </Text>
-                        <Text
-                            style={{
-                                paddingVertical: 10,
-                                marginTop: 8,
-                                marginHorizontal: 6,
-                                fontSize: 20
-                            }}
-                        >
-                            {this.state.selectedYear && capitalizeFirstLetter(dayjs(this.state.selectedYear).locale('ru').format('YY'))}
-                        </Text>
-                        <IconM name="chevron-down"
-                               type="simple-line-icons"
-                               size={14}
-                               color="#999"
-                               style={{
-                                   marginTop: 12,
-                               }}
-                        />
-                    </TouchableOpacity>
 
-
-                    <TouchableOpacity
-                        style={{
-                            padding: 10,
-                            marginTop: 8
                         }}
-                        onPress={() => this.props.navigation.openDrawer()}>
-                        <IconM name="filter"
-                               type="simple-line-icons"
-                               size={20}
-                               color="#666"
-                               style={{
-                                   marginRight: 5,
-                               }}
-                        />
-                    </TouchableOpacity>
-
-
-                </View>
-
-                {this.state.dateFilterVisible &&
-                <BoxShadow
-                    setting={{
-                        width: +`${width}` - 40,
-                        height: 120,
-                        color: "#0c034c",
-                        border: 30,
-                        radius: 10,
-                        opacity: 0.05,
-                        x: 20,
-                        y: 20,
-                        style: {zIndex: 19, marginBottom: 15}
-                    }}>
-                    <View style={{
-                        width: +`${width}` - 20,
-                        height: 120,
-                        // flexDirection: 'column',
-                        // alignItems: "center",
-                        zIndex: 20,
-                        backgroundColor: '#ffffff',
-                        // borderBottomWidth: 1,
-                        marginHorizontal: 10,
-                        marginTop: 10,
-                        borderRadius: 10,
-                        padding: 15,
-                        // borderLeftColor: `${l.typeSubCategoryColor}`,
-                        // borderLeftWidth: 1,
-                        // // marginHorizontal: 10,
-                        // marginBottom: 7,
-                        // elevation: 1
-                    }}>
-                        <ScrollView
-                            horizontal={true}
+                    >
+                        <TouchableOpacity
                             style={{
-                                marginLeft: -4
+                                padding: 10,
+                                marginTop: 8
                             }}
-                        >
+                            onPress={() => this.props.navigation.openDrawer()}>
+                            <IconM name="menu" type="simple-line-icons" size={25}/>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => {
+                                this.setDateFilterVisible(!this.state.dateFilterVisible)
+                            }}
+                            style={{
+                                flexDirection: 'row',
+                                alignItems: 'center'
+                            }}>
+                            <Text
+                                style={{
+                                    paddingVertical: 10,
+                                    marginTop: 8,
+                                    fontSize: 20
+                                }}
+                            >
+                                {this.state.selectedMonth && this.state.selectedMonth.fullName}
+                            </Text>
+                            <Text
+                                style={{
+                                    paddingVertical: 10,
+                                    marginTop: 8,
+                                    marginHorizontal: 6,
+                                    fontSize: 20
+                                }}
+                            >
+                                {this.state.selectedYear && capitalizeFirstLetter(dayjs(this.state.selectedYear).locale('ru').format('YY'))}
+                            </Text>
+                            <IconM name="chevron-down"
+                                   type="simple-line-icons"
+                                   size={14}
+                                   color="#999"
+                                   style={{
+                                       marginTop: 12,
+                                   }}
+                            />
+                        </TouchableOpacity>
 
-                            {this.state.yearsList.map((i, index) =>
-                                <TouchableOpacity
-                                    key={index}
-                                    onPress={() => {
-                                        this.selectYear(i)
-                                    }}
-                                    style={{
-                                        textAlign: 'left',
-                                        padding: 3,
-                                        // width: "20%",
-                                        position: "relative"
-                                    }}
-                                >
+
+                        <TouchableOpacity
+                            style={{
+                                padding: 10,
+                                marginTop: 8
+                            }}
+                            onPress={() => this.props.navigation.openDrawer()}>
+                            <IconM name="filter"
+                                   type="simple-line-icons"
+                                   size={20}
+                                   color="#666"
+                                   style={{
+                                       marginRight: 5,
+                                   }}
+                            />
+                        </TouchableOpacity>
 
 
-                                    {i === this.state.selectedYear &&
-                                    <View
-                                        style={{
-                                            backgroundColor: '#ffda3a',
-                                            position: 'absolute',
-                                            top: 4,
-                                            left: 0,
-                                            width: 50,
-                                            height: 25,
-                                            borderRadius: 12,
-                                            opacity: .5
+                    </View>
+                    {this.state.dateFilterVisible &&
+                    <BoxShadow
+                        setting={{
+                            width: +`${width}` - 40,
+                            height: 120,
+                            color: "#0c034c",
+                            border: 30,
+                            radius: 10,
+                            opacity: 0.05,
+                            x: 20,
+                            y: 20,
+                            style: {zIndex: 19, marginBottom: 15}
+                        }}>
+                        <View style={{
+                            width: +`${width}` - 20,
+                            height: 120,
+                            // flexDirection: 'column',
+                            // alignItems: "center",
+                            zIndex: 20,
+                            backgroundColor: '#ffffff',
+                            // borderBottomWidth: 1,
+                            marginHorizontal: 10,
+                            marginTop: 10,
+                            borderRadius: 10,
+                            padding: 15,
+                            // borderLeftColor: `${l.typeSubCategoryColor}`,
+                            // borderLeftWidth: 1,
+                            // // marginHorizontal: 10,
+                            // marginBottom: 7,
+                            // elevation: 1
+                        }}>
+                            <ScrollView
+                                horizontal={true}
+                                style={{
+                                    marginLeft: -4
+                                }}
+                            >
+
+                                {this.state.yearsList.map((i, index) =>
+                                    <TouchableOpacity
+                                        key={index}
+                                        onPress={() => {
+                                            this.selectYear(i)
                                         }}
-                                    />
-                                    }
-                                    <Text
                                         style={{
-                                            fontSize: 16,
+                                            textAlign: 'left',
                                             padding: 3,
+                                            // width: "20%",
+                                            position: "relative"
                                         }}
                                     >
-                                        {i} </Text>
-                                </TouchableOpacity>
-                            )}
-                        </ScrollView>
-                        <View
-                            style={{
-                                flexDirection: "row",
-                                flexWrap: 'wrap',
-                                justifyContent: 'space-between'
-                            }}
-                        >
-                            {this.state.monthList.map((i, index) =>
-                                <TouchableOpacity
-                                    key={index}
-                                    style={{
-                                        textAlign: 'left',
-                                        padding: 3,
-                                        width: "16%",
-                                        position: "relative"
-                                    }}
-                                    onPress={() => {
-                                        this.selectMonth(i)
-                                    }}
-                                >
-                                    <View>
 
-                                        {i.id === this.state.selectedMonth.id &&
+
+                                        {i === this.state.selectedYear &&
                                         <View
                                             style={{
                                                 backgroundColor: '#ffda3a',
                                                 position: 'absolute',
-                                                top: -3,
-                                                left: -8,
-                                                width: '100%',
-                                                height: 24,
+                                                top: 4,
+                                                left: 0,
+                                                width: 50,
+                                                height: 25,
                                                 borderRadius: 12,
                                                 opacity: .5
                                             }}
                                         />
                                         }
-                                        {this.state.selectedMonth &&
                                         <Text
                                             style={{
-                                                textAlign: 'left',
-                                                fontSize: 14,
-                                                color: (i.hasData) ? "#333" : "#999"
+                                                fontSize: 16,
+                                                padding: 3,
                                             }}
                                         >
-                                            {i.name} </Text>}
-                                    </View>
-                                </TouchableOpacity>
-                            )}
+                                            {i} </Text>
+                                    </TouchableOpacity>
+                                )}
+                            </ScrollView>
+                            <View
+                                style={{
+                                    flexDirection: "row",
+                                    flexWrap: 'wrap',
+                                    justifyContent: 'space-between'
+                                }}
+                            >
+                                {this.state.monthList.map((i, index) =>
+                                    <TouchableOpacity
+                                        key={index}
+                                        style={{
+                                            textAlign: 'left',
+                                            padding: 3,
+                                            width: "16%",
+                                            position: "relative"
+                                        }}
+                                        onPress={() => {
+                                            this.selectMonth(i)
+                                        }}
+                                    >
+                                        <View>
+
+                                            {i.id === this.state.selectedMonth.id &&
+                                            <View
+                                                style={{
+                                                    backgroundColor: '#ffda3a',
+                                                    position: 'absolute',
+                                                    top: -3,
+                                                    left: -8,
+                                                    width: '100%',
+                                                    height: 24,
+                                                    borderRadius: 12,
+                                                    opacity: .5
+                                                }}
+                                            />
+                                            }
+                                            {this.state.selectedMonth &&
+                                            <Text
+                                                style={{
+                                                    textAlign: 'left',
+                                                    fontSize: 14,
+                                                    color: (i.hasData) ? "#333" : "#999"
+                                                }}
+                                            >
+                                                {i.name} </Text>}
+                                        </View>
+                                    </TouchableOpacity>
+                                )}
+                            </View>
                         </View>
-                    </View>
-                </BoxShadow>
-                }
+                    </BoxShadow>
+                    }
+                    <Animated.View
+                        style={{
+                            position: "absolute",
+                            top: 40,
+                            width: '100%',
+                            zIndex: 19,
+                            transform: [
+                                {
+                                    scaleY: this.state.scrollY.interpolate({
+                                        inputRange: [0, 130],
+                                        outputRange: [1, .5],
+                                        extrapolate: 'clamp'
+                                    })
+                                }
+                            ]
+                        }}
+                    >
+                        <BoxShadow
+                            setting={{
+                                width: +`${width}` - 40,
+                                height: 220,
+                                color: "#0c034c",
+                                border: 30,
+                                radius: 10,
+                                opacity: 0.05,
+                                x: 20,
+                                y: 20,
+                                style: {
+                                    zIndex: 19,
+                                    position: "absolute"
+                                }
+                            }}/>
+                    </Animated.View>
 
-                <BoxShadow
-                    setting={{
-                        width: +`${width}` - 40,
-                        height: 220,
-                        color: "#0c034c",
-                        border: 30,
-                        radius: 10,
-                        opacity: 0.05,
-                        x: 20,
-                        y: 20,
-                        style: {zIndex: 19,}
-                    }}>
-                    <View style={{
-                        width: +`${width}` - 20,
-                        height: 220,
-                        // flexDirection: 'column',
-                        // alignItems: "center",
-                        zIndex: 20,
-                        backgroundColor: '#ffffff',
-                        // borderBottomWidth: 1,
-                        marginHorizontal: 10,
-                        marginTop: 10,
-                        borderRadius: 10,
-                        // borderLeftColor: `${l.typeSubCategoryColor}`,
-                        // borderLeftWidth: 1,
-                        // // marginHorizontal: 10,
-                        // marginBottom: 7,
-                        // elevation: 1
-                    }}>
+                    <Animated.View
+                        style={{
+                            width: +`${width}` - 20,
+                            height: this.state.scrollY.interpolate({
+                                inputRange: [0, 130],
+                                outputRange: [220, 90],
+                                extrapolate: 'clamp'
+                            }),
+                            position: "absolute",
+                            top: 50,
 
+                            // flexDirection: 'column',
+                            // alignItems: "center",
+                            zIndex: 20,
+                            backgroundColor: '#ffffff',
+                            // borderBottomWidth: 1,
+                            marginHorizontal: 10,
+                            marginTop: 10,
+                            borderRadius: 10,
+                            // borderLeftColor: `${l.typeSubCategoryColor}`,
+                            // borderLeftWidth: 1,
+                            // // marginHorizontal: 10,
+                            // marginBottom: 7,
+
+                        }}>
+
+
+                        {this.state.isChartLoaded &&
                         <View style={{flex: 1,}}>
+                            <Animated.View
+                                style={{
 
-                            <View style={{flex: 1, position: 'relative'}}>
-                                <View
+                                    height: this.state.scrollY.interpolate({
+                                        inputRange: [0, 130],
+                                        outputRange: [130, 0],
+                                        extrapolate: 'clamp'
+                                    }),
+
+                                    width: '100%',
+                                    zIndex: 19,
+                                    // transform: [
+                                    //     {
+                                    //         scale: this.state.scrollY.interpolate({
+                                    //             inputRange: [0, 220],
+                                    //             outputRange: [1, .1]
+                                    //         })
+                                    //     }
+                                    // ]
+                                }}
+                            >
+                                <Animated.View
                                     style={{
 
-                                        flex: 1,
-                                        // left: 10
-                                    }}>
-                                    <PieChart
-                                        style={{
-                                            height: 150,
+                                        opacity: this.state.scrollY.interpolate({
+                                            inputRange: [0, 50, 85],
+                                            outputRange: [1, 1, 0],
+                                            extrapolate: 'clamp'
+                                        }),
 
-                                            paddingVertical: 20
+                                        width: '100%',
+                                        zIndex: 19,
+                                        transform: [
+                                            // {
+                                            //     translateY: this.state.scrollY.interpolate({
+                                            //         inputRange: [0, 75],
+                                            //         outputRange: [0, -5],
+                                            //         extrapolate: 'clamp'
+                                            //     })
+                                            // },
+                                            {
+                                                scale: this.state.scrollY.interpolate({
+                                                    inputRange: [0, 110],
+                                                    outputRange: [1, 0],
+                                                    extrapolate: 'clamp'
+                                                })
+                                            }
+                                        ]
+                                    }}
+                                >
+                                    {/*<PieChart*/}
+                                    {/*style={{*/}
+                                    {/*height: 130,*/}
+                                    {/*paddingTop: 20*/}
+                                    {/*}}*/}
+                                    {/*outerRadius={'100%'}*/}
+                                    {/*innerRadius={'75%'}*/}
+                                    {/*data={this.state.barData}*/}
+
+
+                                    {/*/>*/}
+                                    <Pie
+                                        ref={this.pie}
+                                        containerStyle={{
+                                            // flexDirection: 'row',
+                                            // justifyContent: 'space-between',
+                                            paddingTop: 17,
+                                            flex: 1,
+                                            height: 130,
+
+
                                         }}
-                                        outerRadius={'100%'}
-                                        innerRadius={'75%'}
-                                        data={this.state.barData}
-                                        valueAccessor={({item}) => item.amount}
+                                        pieStyle={{
+                                            width: "100%",
+                                            height: 120,
 
-                                    />
+                                        }}
+                                        outerRadius={42}
+                                        innerRadius={55}
+                                        data={this.state.barData}
+                                        animate
+                                    >
+
+
+                                        {/*<MyLabels/>*/}
+                                    </Pie>
+
+
                                     <View
                                         style={{
 
@@ -596,186 +754,203 @@ export default class Main extends React.Component {
 
 
                                     </View>
+                                </Animated.View>
+                            </Animated.View>
 
 
+                            <View
+                                style={{
+                                    flex: 1,
+                                    justifyContent: 'center',
+                                    flexDirection: 'row',
+                                    // flexWrap: 'wrap',
+                                    // alignItems: 'center',
+                                    width: "100%",
+                                    paddingTop: 20
+                                }}
+                            >
+
+                                {this.state.barData.map((i, index) => (
                                     <View
+                                        key={index}
                                         style={{
-                                            flex: 1,
-                                            justifyContent: 'center',
-                                            flexDirection: 'row',
-                                            // flexWrap: 'wrap',
-                                            // alignItems: 'center',
-                                            width: "100%"
+                                            width: '18%',
+                                            textAlign: 'center',
+                                            alignItems: 'center',
                                         }}
                                     >
 
-                                        {this.state.barData.map((i, index) => (
+
+                                        <View
+                                            style={{
+                                                // position: 'absolute',
+                                                width: 10,
+                                                height: 10,
+                                                borderRadius: 10,
+                                                // top: 3,
+                                                // left: 0,
+                                                marginBottom: 5,
+                                                borderWidth: 3,
+                                                borderColor: `${i.color}`
+
+                                            }}
+                                        />
+                                        <Text
+                                            style={{
+
+                                                textAlign: 'center',
+                                                fontSize: 15,
+                                                //
+                                                // fontWeight:'bold'
+                                            }}>{i.amount}</Text>
+                                        <Text
+                                            style={{
+
+                                                textAlign: 'center',
+                                                fontSize: 11,
+                                                color: '#999999'
+
+                                            }}>{i.title}</Text>
+
+                                    </View>
+
+                                ))
+                                }</View>
+                        </View>
+                        }
+                    </Animated.View>
+                    {!this.state.isChartLoaded && <View
+                        style={{
+                            position: "absolute",
+                            top: 400,
+                            width: "100%",
+                            textAlign: "center"
+                            //
+                            // fontWeight:'bold'
+                        }}>
+                        <ActivityIndicator
+
+                            size="large"/>
+                    </View>
+
+
+                    }
+                    <ScrollView
+                        scrollEventThrottle={16}
+                        onScroll={Animated.event(
+                            [{nativeEvent: {contentOffset: {y: this.state.scrollY}}}]
+                        )}
+                        style={{
+                            position: 'absolute',
+                            top: 70,
+                            height: "100%",
+                            width: "100%"
+                        }}
+                    >
+                        <Animated.View
+                            style={{
+                                height: 220
+                            }}
+                        />
+
+                        {
+                            listls.map((l, idx) => [
+                                <View key={l.id}>
+                                    {(idx >= 1 && listls[idx - 1].date !== l.date) || idx === 0 ? (
+                                        <Text style={{
+                                            padding: 12,
+                                            marginTop: 15
+                                        }}>
+
+                                            {dayjs(l.date).locale('ru').format('D MMM')}
+                                        </Text>
+                                    ) : null}
+                                    <TouchableOpacity
+
+                                        onLongPress={() => {
+                                            this.setModalActionVisible(!this.props.modalActionVisible);
+                                            this.setState({
+                                                nodeIdReadyForAction: l.id
+                                            })
+                                            // this.removeItem(l.id)
+                                        }}
+                                    >
+
+                                        <View style={{
+                                            flex: 1,
+                                            height: 58,
+                                            flexDirection: 'row',
+                                            alignItems: "center",
+                                            borderBottomColor: '#eee',
+                                            backgroundColor: '#fff',
+                                            borderBottomWidth: 1,
+                                            padding: 10,
+                                            borderRadius: 10,
+                                            marginHorizontal: 10,
+                                            marginBottom: 7,
+                                            position: "relative",
+
+                                        }}>
+
+                                            <IconM name={l.typeSubCategoryImg} type="simple-line-icons" size={26}
+                                                   style={{
+                                                       color: "#333",
+                                                       paddingLeft: 8
+                                                   }}
+                                            />
                                             <View
-                                                key={index}
                                                 style={{
-                                                    width: '18%',
-                                                    textAlign: 'center',
-                                                    alignItems: 'center',
-                                                }}
-                                            >
-
-
-                                                <View
+                                                    flexDirection: "column",
+                                                    marginVertical: 10,
+                                                    marginLeft: 22
+                                                }}>
+                                                <Text style={{}}>
+                                                    {l.typeSubCategoryTitle}</Text>
+                                                {l.usersDescription !== null && <Text
                                                     style={{
-                                                        // position: 'absolute',
-                                                        width: 10,
-                                                        height: 10,
-                                                        borderRadius: 10,
-                                                        // top: 3,
-                                                        // left: 0,
-                                                        marginBottom: 5,
-                                                        borderWidth: 3,
-                                                        borderColor: `${i.svg.fill}`
-
+                                                        // backgroundColor: '#eeeeee',
+                                                        // paddingHorizontal: 6,
+                                                        // paddingVertical: 3,
+                                                        borderRadius: 6,
+                                                        borderTopLeftRadius: 0,
+                                                        fontSize: 12,
+                                                        marginBottom: 4
                                                     }}
-                                                />
-                                                <Text
-                                                    style={{
-
-                                                        textAlign: 'center',
-                                                        fontSize: 15,
-                                                        //
-                                                        // fontWeight:'bold'
-                                                    }}>{i.amount}</Text>
-                                                <Text
-                                                    style={{
-
-                                                        textAlign: 'center',
-                                                        fontSize: 11,
-                                                        color: '#999999'
-
-                                                    }}>{i.label}</Text>
-
+                                                >{l.usersDescription}</Text>}
                                             </View>
+                                            <Text style={{
+                                                // backgroundColor: `${l.typeSubCategoryColor}`,
+                                                position: "absolute",
+                                                right: 14,
+                                                top: 16,
+                                                color: l.typeCategory === "Списание" ? "#333333" : "#78ab1e",
+                                                fontSize: 16
+                                            }}>
+                                                {l.typeCategory === "Списание" ? '' : <Text>+</Text>}
 
-                                        ))
-                                        }</View>
+                                                {l.sum}</Text>
+                                        </View>
+                                    </TouchableOpacity>
 
                                 </View>
 
+                            ])
 
-                            </View>
+                        }
 
-                        </View>
-                    </View>
-                </BoxShadow>
-                <ScrollView
-                    scrollEventThrottle={16}
-                    onScroll={Animated.event(
-                        [{nativeEvent: {contentOffset: {y: this.state.scrollY}}}]
-                    )}
-                >
-                    {
-                        listls.map((l, idx) => [
-                            <View key={l.id}>
-                                {(idx >= 1 && listls[idx - 1].date !== l.date) || idx === 0 ? (
-                                    <Text style={{
-                                        padding: 12,
-                                        marginTop: 15
-                                    }}>
+                    </ScrollView>
+                    <ActionButton
+                        onPress={() => this.props.navigation.navigate('AddNote')}
+                        buttonColor="rgba(231,76,60,1)">
+                    </ActionButton>
 
-                                        {dayjs(l.date).locale('ru').format('D MMM')}
-                                    </Text>
-                                ) : null}
-                                <TouchableOpacity
 
-                                    onLongPress={() => {
-                                        this.setModalActionVisible(!this.props.modalActionVisible);
-                                        this.setState({
-                                            nodeIdReadyForAction: l.id
-                                        })
-                                        // this.removeItem(l.id)
-                                    }}
-                                >
-
-                                    <View style={{
-                                        flex: 1,
-                                        height: 58,
-                                        flexDirection: 'row',
-                                        alignItems: "center",
-                                        borderBottomColor: '#eee',
-                                        backgroundColor: '#fff',
-                                        borderBottomWidth: 1,
-                                        padding: 10,
-                                        borderRadius: 10,
-                                        marginHorizontal: 10,
-                                        marginBottom: 7,
-                                        position: "relative",
-
-                                    }}>
-
-                                        <IconM name={l.typeSubCategoryImg} type="simple-line-icons" size={26}
-                                               style={{
-                                                   color: "#333",
-                                                   paddingLeft: 8
-                                               }}
-                                        />
-                                        <View
-                                            style={{
-                                                flexDirection: "column",
-                                                marginVertical: 10,
-                                                marginLeft: 22
-                                            }}>
-                                            <Text style={{}}>
-                                                {l.typeSubCategoryTitle}</Text>
-                                            {l.usersDescription !== null && <Text
-                                                style={{
-                                                    // backgroundColor: '#eeeeee',
-                                                    // paddingHorizontal: 6,
-                                                    // paddingVertical: 3,
-                                                    borderRadius: 6,
-                                                    borderTopLeftRadius: 0,
-                                                    fontSize: 12,
-                                                    marginBottom: 4
-                                                }}
-                                            >{l.usersDescription}</Text>}
-                                        </View>
-                                        <Text style={{
-                                            // backgroundColor: `${l.typeSubCategoryColor}`,
-                                            position: "absolute",
-                                            right: 14,
-                                            top: 16,
-                                            color: l.typeCategory === "Списание" ? "#333333" : "#78ab1e",
-                                            fontSize: 16
-                                        }}>
-                                            {l.typeCategory === "Списание" ? '' : <Text>+</Text>}
-
-                                            {l.sum}</Text>
-                                    </View>
-                                </TouchableOpacity>
-
-                            </View>
-
-                        ])
-
-                    }
-
-                </ScrollView>
-                <ActionButton
-                    onPress={() => this.props.navigation.navigate('AddNote')}
-                    buttonColor="rgba(231,76,60,1)">
-                </ActionButton>
-                <Animated.View
-                    style= {{
-                        backgroundColor: 'red',
-                        // position:"absolute",
-                        top:0,
-                        zIndex:40,
-                        height: mainChart
-                    }}
-                >
-
-                </Animated.View>
-                <ActionModal
-                    setModalActionVisible={this.setModalActionVisible}
-                    modalActionVisible={this.state.modalActionVisible}
-                    removeItem={this.removeItem}
-                />
+                    <ActionModal
+                        setModalActionVisible={this.setModalActionVisible}
+                        modalActionVisible={this.state.modalActionVisible}
+                        removeItem={this.removeItem}
+                    />
+                </View>}
             </View>
 
         )
