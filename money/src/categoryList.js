@@ -20,7 +20,6 @@ import {typeCategoryListDefault, iconListDefault} from './data/base/BaseConstant
 import ActionButton from 'react-native-action-button';
 
 
-
 export default class NonScrollPage extends Component {
 
     state = {
@@ -79,7 +78,8 @@ export default class NonScrollPage extends Component {
     };
 
     _chooseImg = (img, index) => {
-        this.setState({selectedImg: img.img,
+        this.setState({
+            selectedImg: img.img,
             selectedImgIndex: index,
             selectedColor: img.color
         }, () => {
@@ -105,7 +105,7 @@ export default class NonScrollPage extends Component {
             selectedImg: '',
             selectedImgIndex: '',
             selectedTitle: '',
-            selectedColor:''
+            selectedColor: ''
         }, () => {
             this.pushToLs()
         });
@@ -157,39 +157,69 @@ export default class NonScrollPage extends Component {
                             <Picker.Item key={i.title} label={i.title} value={i.title}/>
                         ))}
                     </Picker>}
-                    {/*<TouchableOpacity*/}
-                        {/*onPress={() => {*/}
-                            {/*this.setModalVisible(true);*/}
-                        {/*}}>*/}
-                        {/*<Text>добавить</Text>*/}
-                    {/*</TouchableOpacity>*/}
+
                 </View>
 
 
-                <View style={styles.sort}>
-                    <ScrollView style={styles.nodeDescriptionWrapScroll}>
-                        {(this.state.typeCategoryList !== '') &&
-                        <SortableGrid
-                            itemsPerRow={5}
-                            onDragRelease={(itemOrder) => this._reorderList(itemOrder)}>
-                            {
-                                (_.filter(this.state.typeCategoryList, {'title': this.state.typeCategoryTitleSelected}))[0].child.map((nodeType, index) =>
-                                    <View
-                                        style={styles.item}
-                                        key={nodeType.id}>
-                                        <IconM name={nodeType.img} type="simple-line-icons" size={25}/>
-                                        <Text
-                                            style={styles.item_text}>{nodeType.title}</Text>
-                                        <TouchableOpacity
-                                            onPress={() => this.removeChildItemAt(nodeType.id)}
-                                        ><Text>X</Text></TouchableOpacity>
-                                    </View>
-                                )
-                            }
-                        </SortableGrid>
-                        }
-                    </ScrollView>
-                </View>
+                {(this.state.typeCategoryList !== '') &&
+                <SortableGrid
+                    itemsPerRow={5}
+                    style={{
+                        flex: 1,
+
+                    }}
+                    onDragRelease={(itemOrder) => this._reorderList(itemOrder)}>
+                    {
+                        (_.filter(this.state.typeCategoryList, {'title': this.state.typeCategoryTitleSelected}))[0].child.map((nodeType, index) =>
+                            <View
+                                style={{
+                                    height: 90,
+                                    borderRadius: 8,
+                                    margin: 5,
+                                    position: "relative"
+                                    // backgroundColor: 'white'
+                                }}
+                                key={nodeType.id}>
+                                <View
+                                    style={{
+                                        paddingVertical: 8,
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                    }}>
+                                    <IconM name={nodeType.img} type="simple-line-icons" size={25}/>
+                                    <Text
+                                        style={styles.item_text}>{nodeType.title}</Text>
+                                </View>
+
+                                <TouchableOpacity
+                                    style={{
+                                        position: "absolute",
+                                        top: -5,
+                                        right: -5,
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        width: 20,
+                                        height: 20,
+                                        borderRadius: 10,
+                                        backgroundColor: "#fff"
+
+
+                                    }}
+                                    onPress={() => this.removeChildItemAt(nodeType.id)}
+                                ><Text
+                                    style={{
+                                        paddingVertical: 8,
+                                        fontSize: 13,
+                                        color: "#999"
+                                    }}
+                                >x</Text>
+                                </TouchableOpacity>
+                            </View>
+                        )
+                    }
+                </SortableGrid>
+                }
+
 
                 <Modal
                     animationType="slide"
@@ -239,7 +269,7 @@ export default class NonScrollPage extends Component {
                     </View>
                 </Modal>
                 <ActionButton
-                    onPress={() =>      this.setModalVisible(true)}
+                    onPress={() => this.setModalVisible(true)}
                     buttonColor="rgba(231,76,60,1)">
                 </ActionButton>
             </View>
@@ -253,11 +283,13 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
+        padding: 5,
+        backgroundColor: '#f1f5fc',
 
     },
     fixedHeader: {
-        backgroundColor: 'rgba(255,255,255,1)',
-        elevation: 1,
+        // backgroundColor: 'rgba(255,255,255,1)',
+        // elevation: 1,
         flexDirection: 'row',
         width: '100%',
         height: 50,
@@ -275,22 +307,14 @@ const styles = StyleSheet.create({
         height: '100%',
         justifyContent: 'center',
     },
-    item: {
-        height: 70,
-        borderRadius: 8,
-
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 4
-    },
+    item: {},
     item_text: {
         fontSize: 10,
         textAlign: 'center',
 
     },
     nodeDescriptionWrapScroll: {
-        width: '100%',
-        height: 500,
+        flex: 1
     },
     nodeDescriptionWrap: {
         flex: 1,
@@ -302,7 +326,7 @@ const styles = StyleSheet.create({
         width: "20%",
         height: 50,
         alignItems: 'center',
-        position:'relative',
+        position: 'relative',
         paddingTop: 15,
     },
     mynodeSelected: {
@@ -310,9 +334,9 @@ const styles = StyleSheet.create({
         height: 50,
         borderRadius: 25,
         alignItems: 'center',
-        position:'absolute',
+        position: 'absolute',
         marginTop: 3,
-        opacity:.2
+        opacity: .2
 
     },
 

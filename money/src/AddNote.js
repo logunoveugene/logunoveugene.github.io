@@ -67,7 +67,6 @@ export default class Main extends React.Component {
 
     };
 
-
     async componentDidMount() {
         this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this._keyboardDidShow);
         this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this._keyboardDidHide);
@@ -119,7 +118,6 @@ export default class Main extends React.Component {
         this.keyboardDidShowListener.remove();
         this.keyboardDidHideListener.remove();
     }
-
 
     _keyboardDidShow = () => {
         this.setState({keyboardIsShown: true});
@@ -241,7 +239,6 @@ export default class Main extends React.Component {
 
     };
 
-
     _chooseTypeDesc = (nodeType, index) => {
         this.setState({
             typeSubCategoryTitle: nodeType.title,
@@ -277,7 +274,6 @@ export default class Main extends React.Component {
     updateMoney = (value) => {
         this.setState({sum: value})
     };
-
 
     render() {
         const {bankAccountsList, typeCategoryList, typeCategoryTitleSelected, keyboardIsShown, type} = this.state

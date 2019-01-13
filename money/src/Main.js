@@ -9,7 +9,8 @@ import {
     Dimensions,
     Button,
     Animated,
-    ActivityIndicator
+    ActivityIndicator,
+    StatusBar
 } from 'react-native'
 
 import firebase from 'react-native-firebase'
@@ -40,25 +41,9 @@ export default class Main extends React.Component {
 
     constructor(props) {
         super(props);
-        const data = [50, 20, 4, 10];
-        const colors = ['A40E4C', '2C2C54', 'ACC3A6', 'F5D6BA'];
-
-        const pieData = data
-            .filter(value => value > 0)
-            .map((value, index) => {
-                const toRet = {
-                    value,
-                    title: `title-${index}`,
-                    color: `#${colors[index]}`,
-                    key: `pie-${index}`,
-                };
-                return toRet;
-            });
-        console.log(pieData)
-
 
         this.state = {
-            pieData,
+
 
 
             currentUser: null,
@@ -324,7 +309,6 @@ export default class Main extends React.Component {
         );
     }
 
-
     animate = () => {
         this.pie.current.reset().then(this.pie.current.animate);
     };
@@ -338,31 +322,24 @@ export default class Main extends React.Component {
         function capitalizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
         }
-
-
         return (
-
-
             <View style={styles.container}>
-
+                <StatusBar
+                    backgroundColor='#f1f5fc'
+                    barStyle='default'
+                />
                 {!this.state.isChartLoaded && <View
                     style={{
                         position: "absolute",
                         top: 90,
                         width: "100%",
                         textAlign: "center"
-                        //
                         // fontWeight:'bold'
                     }}>
                     <ActivityIndicator
-
                         size="large"/>
                 </View>}
-
-
                 {this.state.isChartLoaded &&
-
-
                 <View
                     style={styles.container}>
                     <NavigationEvents
@@ -589,20 +566,19 @@ export default class Main extends React.Component {
                         <BoxShadow
                             setting={{
                                 width: +`${width}` - 40,
-                                height: 220,
+                                height: 170,
                                 color: "#0c034c",
                                 border: 30,
                                 radius: 10,
                                 opacity: 0.05,
                                 x: 20,
-                                y: 20,
+                                y: 70,
                                 style: {
                                     zIndex: 19,
                                     position: "absolute"
                                 }
                             }}/>
                     </Animated.View>
-
                     <Animated.View
                         style={{
                             width: +`${width}` - 20,
@@ -832,8 +808,6 @@ export default class Main extends React.Component {
 
                             size="large"/>
                     </View>
-
-
                     }
                     <ScrollView
                         scrollEventThrottle={16}
@@ -943,8 +917,6 @@ export default class Main extends React.Component {
                         onPress={() => this.props.navigation.navigate('AddNote')}
                         buttonColor="rgba(231,76,60,1)">
                     </ActionButton>
-
-
                     <ActionModal
                         setModalActionVisible={this.setModalActionVisible}
                         modalActionVisible={this.state.modalActionVisible}
@@ -952,7 +924,6 @@ export default class Main extends React.Component {
                     />
                 </View>}
             </View>
-
         )
     }
 }
