@@ -41,9 +41,8 @@ export default class Main extends React.Component {
 
     constructor(props) {
         super(props);
-
+        this.pie = React.createRef();
         this.state = {
-
 
 
             currentUser: null,
@@ -234,15 +233,18 @@ export default class Main extends React.Component {
                         })
                     },
                     () => {
-
+                        // this.animate();
                         this.setState({
                             isChartLoaded: true
-                        })
+                        });
+
+
 
                     });
             }
         );
         console.log(this.state.barData)
+
     }
 
     selectMonth(i) {
@@ -260,6 +262,7 @@ export default class Main extends React.Component {
                 selectedYear: i
             }, () => {
                 this.filterData();
+                this.setMonthList();
             }
         );
     }
@@ -280,40 +283,36 @@ export default class Main extends React.Component {
             {id: '12', name: 'Дек', fullName: 'Декабрь', hasData: false}
         ];
 
+        let yearList = _(this.state.fullNodeList).filter({
+            'year': this.state.selectedYear
+        }).groupBy('month').keys().value();
+
+        function monthListUpdate(n) {
+            return {
+                id: n.id,
+                name: n.name,
+                fullName: n.fullName,
+                hasData: ((_.indexOf(yearList, n.id)) !== -1)
+            };
+        }
+
+        let monthList = _.map(monthDataList, monthListUpdate);
+
         this.setState({
-                selectedYear: `${new Date().getFullYear()}`.toString()
-            }, () => {
+            monthList: monthList,
+            selectedMonth: _.filter(monthList, {id: ('0' + (new Date().getMonth() + 1)).slice(-2)})[0]
+        });
 
-                let yearList = _(this.state.fullNodeList).filter({
-                    'year': this.state.selectedYear
-                }).groupBy('month').keys().value();
-
-                function monthListUpdate(n) {
-                    return {
-                        id: n.id,
-                        name: n.name,
-                        fullName: n.fullName,
-                        hasData: ((_.indexOf(yearList, n.id)) !== -1)
-                    };
-                }
-
-                let monthList = _.map(monthDataList, monthListUpdate);
-
-                this.setState({
-                    monthList: monthList,
-                    selectedMonth: _.filter(monthList, {id: ('0' + (new Date().getMonth() + 1)).slice(-2)})[0]
-                });
-
-                console.log(_.filter(monthList, {id: ('0' + (new Date().getMonth() + 1)).slice(-2)})[0])
-            }
-        );
+        console.log(_.filter(monthList, {id: ('0' + (new Date().getMonth() + 1)).slice(-2)})[0])
     }
 
     animate = () => {
         this.pie.current.reset().then(this.pie.current.animate);
+        console.log(this.pie)
     };
 
-    pie = React.createRef();
+
+
 
     render() {
         const {listls, chartData, selectedSlice} = this.state;
@@ -322,6 +321,7 @@ export default class Main extends React.Component {
         function capitalizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
         }
+
         return (
             <View style={styles.container}>
                 <StatusBar
@@ -546,255 +546,262 @@ export default class Main extends React.Component {
                         </View>
                     </BoxShadow>
                     }
-                    <Animated.View
+                    <View
                         style={{
                             position: "absolute",
-                            top: 40,
-                            width: '100%',
-                            zIndex: 19,
-                            transform: [
-                                {
-                                    scaleY: this.state.scrollY.interpolate({
-                                        inputRange: [0, 130],
-                                        outputRange: [1, .5],
-                                        extrapolate: 'clamp'
-                                    })
-                                }
-                            ]
+                            top: this.state.dateFilterVisible ? 150 : 0
                         }}
                     >
-                        <BoxShadow
-                            setting={{
-                                width: +`${width}` - 40,
-                                height: 170,
-                                color: "#0c034c",
-                                border: 30,
-                                radius: 10,
-                                opacity: 0.05,
-                                x: 20,
-                                y: 70,
-                                style: {
-                                    zIndex: 19,
-                                    position: "absolute"
-                                }
-                            }}/>
-                    </Animated.View>
-                    <Animated.View
-                        style={{
-                            width: +`${width}` - 20,
-                            height: this.state.scrollY.interpolate({
-                                inputRange: [0, 130],
-                                outputRange: [220, 90],
-                                extrapolate: 'clamp'
-                            }),
-                            position: "absolute",
-                            top: 50,
+                        <Animated.View
+                            style={{
+                                position: "absolute",
+                                top: 40,
+                                width: '100%',
+                                zIndex: 19,
+                                transform: [
+                                    {
+                                        scaleY: this.state.scrollY.interpolate({
+                                            inputRange: [0, 130],
+                                            outputRange: [1, .5],
+                                            extrapolate: 'clamp'
+                                        })
+                                    }
+                                ]
+                            }}
+                        >
+                            <BoxShadow
+                                setting={{
+                                    width: +`${width}` - 40,
+                                    height: 170,
+                                    color: "#0c034c",
+                                    border: 30,
+                                    radius: 10,
+                                    opacity: 0.05,
+                                    x: 20,
+                                    y: 70,
+                                    style: {
+                                        zIndex: 19,
+                                        position: "absolute"
+                                    }
+                                }}/>
+                        </Animated.View>
+                        <Animated.View
+                            style={{
+                                width: +`${width}` - 20,
+                                height: this.state.scrollY.interpolate({
+                                    inputRange: [0, 130],
+                                    outputRange: [220, 90],
+                                    extrapolate: 'clamp'
+                                }),
+                                position: "absolute",
+                                top: 50,
 
-                            // flexDirection: 'column',
-                            // alignItems: "center",
-                            zIndex: 20,
-                            backgroundColor: '#ffffff',
-                            // borderBottomWidth: 1,
-                            marginHorizontal: 10,
-                            marginTop: 10,
-                            borderRadius: 10,
-                            // borderLeftColor: `${l.typeSubCategoryColor}`,
-                            // borderLeftWidth: 1,
-                            // // marginHorizontal: 10,
-                            // marginBottom: 7,
+                                // flexDirection: 'column',
+                                // alignItems: "center",
+                                zIndex: 20,
+                                backgroundColor: '#ffffff',
+                                // borderBottomWidth: 1,
+                                marginHorizontal: 10,
+                                marginTop: 10,
+                                borderRadius: 10,
+                                // borderLeftColor: `${l.typeSubCategoryColor}`,
+                                // borderLeftWidth: 1,
+                                // // marginHorizontal: 10,
+                                // marginBottom: 7,
 
-                        }}>
+                            }}>
 
 
-                        {this.state.isChartLoaded &&
-                        <View style={{flex: 1,}}>
-                            <Animated.View
-                                style={{
-
-                                    height: this.state.scrollY.interpolate({
-                                        inputRange: [0, 130],
-                                        outputRange: [130, 0],
-                                        extrapolate: 'clamp'
-                                    }),
-
-                                    width: '100%',
-                                    zIndex: 19,
-                                    // transform: [
-                                    //     {
-                                    //         scale: this.state.scrollY.interpolate({
-                                    //             inputRange: [0, 220],
-                                    //             outputRange: [1, .1]
-                                    //         })
-                                    //     }
-                                    // ]
-                                }}
-                            >
+                            {this.state.isChartLoaded &&
+                            <View style={{flex: 1,}}>
                                 <Animated.View
                                     style={{
 
-                                        opacity: this.state.scrollY.interpolate({
-                                            inputRange: [0, 50, 85],
-                                            outputRange: [1, 1, 0],
+                                        height: this.state.scrollY.interpolate({
+                                            inputRange: [0, 130],
+                                            outputRange: [130, 0],
                                             extrapolate: 'clamp'
                                         }),
 
                                         width: '100%',
                                         zIndex: 19,
-                                        transform: [
-                                            // {
-                                            //     translateY: this.state.scrollY.interpolate({
-                                            //         inputRange: [0, 75],
-                                            //         outputRange: [0, -5],
-                                            //         extrapolate: 'clamp'
-                                            //     })
-                                            // },
-                                            {
-                                                scale: this.state.scrollY.interpolate({
-                                                    inputRange: [0, 110],
-                                                    outputRange: [1, 0],
-                                                    extrapolate: 'clamp'
-                                                })
-                                            }
-                                        ]
+                                        // transform: [
+                                        //     {
+                                        //         scale: this.state.scrollY.interpolate({
+                                        //             inputRange: [0, 220],
+                                        //             outputRange: [1, .1]
+                                        //         })
+                                        //     }
+                                        // ]
                                     }}
                                 >
-                                    {/*<PieChart*/}
-                                    {/*style={{*/}
-                                    {/*height: 130,*/}
-                                    {/*paddingTop: 20*/}
-                                    {/*}}*/}
-                                    {/*outerRadius={'100%'}*/}
-                                    {/*innerRadius={'75%'}*/}
-                                    {/*data={this.state.barData}*/}
-
-
-                                    {/*/>*/}
-                                    <Pie
-                                        ref={this.pie}
-                                        containerStyle={{
-                                            // flexDirection: 'row',
-                                            // justifyContent: 'space-between',
-                                            paddingTop: 17,
-                                            flex: 1,
-                                            height: 130,
-
-
-                                        }}
-                                        pieStyle={{
-                                            width: "100%",
-                                            height: 120,
-
-                                        }}
-                                        outerRadius={42}
-                                        innerRadius={55}
-                                        data={this.state.barData}
-                                        animate
-                                    >
-
-
-                                        {/*<MyLabels/>*/}
-                                    </Pie>
-
-
-                                    <View
+                                    <Animated.View
                                         style={{
+
+                                            opacity: this.state.scrollY.interpolate({
+                                                inputRange: [0, 50, 85],
+                                                outputRange: [1, 1, 0],
+                                                extrapolate: 'clamp'
+                                            }),
 
                                             width: '100%',
-                                            textAlign: 'center',
-                                            position: 'absolute',
-                                            top: 63,
-
-                                            // fontWeight: 'bold'
+                                            zIndex: 19,
+                                            transform: [
+                                                // {
+                                                //     translateY: this.state.scrollY.interpolate({
+                                                //         inputRange: [0, 75],
+                                                //         outputRange: [0, -5],
+                                                //         extrapolate: 'clamp'
+                                                //     })
+                                                // },
+                                                {
+                                                    scale: this.state.scrollY.interpolate({
+                                                        inputRange: [0, 110],
+                                                        outputRange: [1, 0],
+                                                        extrapolate: 'clamp'
+                                                    })
+                                                }
+                                            ]
                                         }}
                                     >
-
-                                        <Text
-                                            style={{
-                                                textAlign: 'center',
-                                                lineHeight: 20,
-
-                                                fontSize: 20,
-                                                // fontWeight: 'bold'
-                                            }}>{_.sumBy(this.state.barData, 'amount')}
-                                        </Text>
-                                        <Text
-                                            style={{
-
-                                                textAlign: 'center',
-                                                lineHeight: 11,
-                                                fontSize: 11,
-                                                color: "#999"
-                                                // fontWeight: 'bold'
-                                            }}>расходы
-                                        </Text>
+                                        {/*<PieChart*/}
+                                        {/*style={{*/}
+                                        {/*height: 130,*/}
+                                        {/*paddingTop: 20*/}
+                                        {/*}}*/}
+                                        {/*outerRadius={'100%'}*/}
+                                        {/*innerRadius={'75%'}*/}
+                                        {/*data={this.state.barData}*/}
 
 
-                                    </View>
-                                </Animated.View>
-                            </Animated.View>
+                                        {/*/>*/}
+                                        <Pie
+                                            ref={this.pie}
+                                            containerStyle={{
+                                                // flexDirection: 'row',
+                                                // justifyContent: 'space-between',
+                                                paddingTop: 17,
+                                                flex: 1,
+                                                height: 130,
 
 
-                            <View
-                                style={{
-                                    flex: 1,
-                                    justifyContent: 'center',
-                                    flexDirection: 'row',
-                                    // flexWrap: 'wrap',
-                                    // alignItems: 'center',
-                                    width: "100%",
-                                    paddingTop: 20
-                                }}
-                            >
+                                            }}
+                                            pieStyle={{
+                                                width: "100%",
+                                                height: 120,
 
-                                {this.state.barData.map((i, index) => (
-                                    <View
-                                        key={index}
-                                        style={{
-                                            width: '18%',
-                                            textAlign: 'center',
-                                            alignItems: 'center',
-                                        }}
-                                    >
+                                            }}
+                                            outerRadius={42}
+                                            innerRadius={55}
+                                            data={this.state.barData}
+                                            animate
+                                        >
+
+
+                                            {/*<MyLabels/>*/}
+                                        </Pie>
 
 
                                         <View
                                             style={{
-                                                // position: 'absolute',
-                                                width: 10,
-                                                height: 10,
-                                                borderRadius: 10,
-                                                // top: 3,
-                                                // left: 0,
-                                                marginBottom: 5,
-                                                borderWidth: 3,
-                                                borderColor: `${i.color}`
 
+                                                width: '100%',
+                                                textAlign: 'center',
+                                                position: 'absolute',
+                                                top: 63,
+
+                                                // fontWeight: 'bold'
                                             }}
-                                        />
-                                        <Text
+                                        >
+
+                                            <Text
+                                                style={{
+                                                    textAlign: 'center',
+                                                    lineHeight: 20,
+
+                                                    fontSize: 20,
+                                                    // fontWeight: 'bold'
+                                                }}>{_.sumBy(this.state.barData, 'amount')}
+                                            </Text>
+                                            <Text
+                                                style={{
+
+                                                    textAlign: 'center',
+                                                    lineHeight: 11,
+                                                    fontSize: 11,
+                                                    color: "#999"
+                                                    // fontWeight: 'bold'
+                                                }}>расходы
+                                            </Text>
+
+
+                                        </View>
+                                    </Animated.View>
+                                </Animated.View>
+
+
+                                <View
+                                    style={{
+                                        flex: 1,
+                                        justifyContent: 'center',
+                                        flexDirection: 'row',
+                                        // flexWrap: 'wrap',
+                                        // alignItems: 'center',
+                                        width: "100%",
+                                        paddingTop: 20
+                                    }}
+                                >
+
+                                    {this.state.barData.map((i, index) => (
+                                        <View
+                                            key={index}
                                             style={{
-
+                                                width: '18%',
                                                 textAlign: 'center',
-                                                fontSize: 15,
-                                                //
-                                                // fontWeight:'bold'
-                                            }}>{i.amount}</Text>
-                                        <Text
-                                            style={{
+                                                alignItems: 'center',
+                                            }}
+                                        >
 
-                                                textAlign: 'center',
-                                                fontSize: 11,
-                                                color: '#999999'
 
-                                            }}>{i.title}</Text>
+                                            <View
+                                                style={{
+                                                    // position: 'absolute',
+                                                    width: 10,
+                                                    height: 10,
+                                                    borderRadius: 10,
+                                                    // top: 3,
+                                                    // left: 0,
+                                                    marginBottom: 5,
+                                                    borderWidth: 3,
+                                                    borderColor: `${i.color}`
 
-                                    </View>
+                                                }}
+                                            />
+                                            <Text
+                                                style={{
 
-                                ))
-                                }</View>
-                        </View>
-                        }
-                    </Animated.View>
+                                                    textAlign: 'center',
+                                                    fontSize: 15,
+                                                    //
+                                                    // fontWeight:'bold'
+                                                }}>{i.amount}</Text>
+                                            <Text
+                                                style={{
+
+                                                    textAlign: 'center',
+                                                    fontSize: 11,
+                                                    color: '#999999'
+
+                                                }}>{i.title}</Text>
+
+                                        </View>
+
+                                    ))
+                                    }</View>
+                            </View>
+                            }
+                        </Animated.View>
+                    </View>
                     {!this.state.isChartLoaded && <View
                         style={{
                             position: "absolute",
@@ -805,7 +812,6 @@ export default class Main extends React.Component {
                             // fontWeight:'bold'
                         }}>
                         <ActivityIndicator
-
                             size="large"/>
                     </View>
                     }
@@ -816,7 +822,7 @@ export default class Main extends React.Component {
                         )}
                         style={{
                             position: 'absolute',
-                            top: 70,
+                            top:  this.state.dateFilterVisible ? 220 : 70,
                             height: "100%",
                             width: "100%"
                         }}

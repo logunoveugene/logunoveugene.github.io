@@ -206,13 +206,8 @@ export default class NonScrollPage extends Component {
 
                                     }}
                                     onPress={() => this.removeChildItemAt(nodeType.id)}
-                                ><Text
-                                    style={{
-                                        paddingVertical: 8,
-                                        fontSize: 13,
-                                        color: "#999"
-                                    }}
-                                >x</Text>
+                                >
+                                    <IconM name='cross-close'   size={10}/>
                                 </TouchableOpacity>
                             </View>
                         )
