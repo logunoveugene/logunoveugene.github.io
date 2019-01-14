@@ -8,7 +8,7 @@ import {
     TextInput,
     Picker,
     Modal,
-    AsyncStorage,
+    AsyncStorage, Dimensions,
 } from 'react-native'
 import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
 import icoMoonConfig from './font/selection';
@@ -18,8 +18,10 @@ import _ from 'lodash';
 import SortableGrid from 'react-native-sortable-grid'
 import {typeCategoryListDefault, iconListDefault} from './data/base/BaseConstant'
 import ActionButton from 'react-native-action-button';
+import BoxShadow from './shadow'
 
 
+var width = Dimensions.get('window').width;
 export default class NonScrollPage extends Component {
 
     state = {
@@ -147,19 +149,108 @@ export default class NonScrollPage extends Component {
 
                         <IconM name="arrow-left" type="simple-line-icons" size={25}/>
                     </TouchableOpacity>
-                    {(typeCategoryList !== '') &&
-                    <Picker
-                        mode="dropdown"
-                        selectedValue={typeCategoryTitleSelected}
-                        style={{height: 50, width: 130}}
-                        onValueChange={((itemValue) => this._chooseType(itemValue))}>
-                        {typeCategoryList.map((i) => (
-                            <Picker.Item key={i.title} label={i.title} value={i.title}/>
-                        ))}
-                    </Picker>}
+
+                    <Text
+                        style={{
+                            fontSize:20,
+                        }}
+                    >Редактирование категорий</Text>
+
+
+                    {/*{(typeCategoryList !== '') &&*/}
+                    {/*<Picker*/}
+                        {/*mode="dropdown"*/}
+                        {/*selectedValue={typeCategoryTitleSelected}*/}
+                        {/*style={{height: 50, width: 130}}*/}
+                        {/*onValueChange={((itemValue) => this._chooseType(itemValue))}>*/}
+                        {/*{typeCategoryList.map((i) => (*/}
+                            {/*<Picker.Item key={i.title} label={i.title} value={i.title}/>*/}
+                        {/*))}*/}
+                    {/*</Picker>}*/}
 
                 </View>
 
+                {(typeCategoryList !== '') &&
+                <BoxShadow
+                    setting={{
+                        width: +`${width}` - 40,
+                        height: 63,
+                        color: "#0c034c",
+                        border: 30,
+                        radius: 10,
+                        opacity: 0.05,
+                        x: 20,
+                        y: 20,
+                        style: {zIndex: 19, marginBottom: 15}
+                    }}>
+                    <View style={{
+                        width: +`${width}` - 20,
+                        height: 63,
+                        // flexDirection: 'column',
+                        // alignItems: "center",
+                        zIndex: 20,
+                        backgroundColor: '#ffffff',
+                        // borderBottomWidth: 1,
+                        marginHorizontal: 10,
+                        marginTop: 10,
+                        borderRadius: 10,
+                        padding: 15,
+                        // borderLeftColor: `${l.typeSubCategoryColor}`,
+                        // borderLeftWidth: 1,
+                        // // marginHorizontal: 10,
+                        // marginBottom: 7,
+                        // elevation: 1
+                    }}>
+                        <View
+
+                            style={{
+                                marginLeft: -4,
+                                flexDirection:'row'
+                            }}
+                        >
+
+                            {this.state.typeCategoryList.map((i, index) =>
+                                <TouchableOpacity
+                                    key={index}
+                                    onPress={() => {
+
+                                        this._chooseType(i.title)
+                                    }}
+                                    style={{
+                                        textAlign: 'left',
+                                        padding: 3,
+                                        // width: "20%",
+                                        position: "relative"
+                                    }}
+                                >
+
+                                    {i.title === this.state.typeCategoryTitleSelected &&
+                                    <View
+                                        style={{
+                                            backgroundColor: '#ffda3a',
+                                            position: 'absolute',
+                                            top: 4,
+                                            left: 0,
+                                            width: '100%',
+                                            height: 25,
+                                            borderRadius: 12,
+                                            opacity: .5
+                                        }}
+                                    />
+                                    }
+                                    <Text
+                                        style={{
+                                            fontSize: 16,
+                                            padding: 3,
+                                        }}
+                                    >
+                                        {i.title} </Text>
+                                </TouchableOpacity>
+                            )}
+                        </View>
+
+                    </View>
+                </BoxShadow>}
 
                 {(this.state.typeCategoryList !== '') &&
                 <SortableGrid
