@@ -57,8 +57,6 @@ export default class NonScrollPage extends Component {
 
 
     _chooseType = (typeCategoryTitle) => {
-
-        console.log(typeCategoryTitle);
         this.setState({
             typeCategoryTitleSelected: typeCategoryTitle,
         });
@@ -147,194 +145,165 @@ export default class NonScrollPage extends Component {
             <View style={styles.container}>
                 <View style={styles.fixedHeader}>
                     <TouchableOpacity
-                        style={{
-                            padding: 10,
-                            marginTop: 8
-                        }}
-
                         onPress={() => this.props.navigation.goBack()}>
-
 
                         <IconM name="arrow-left" type="simple-line-icons" size={25}/>
                     </TouchableOpacity>
 
                     <Text
                         style={{
-                            paddingVertical: 10,
-                            marginTop: 8,
-
-                            fontSize: 20,
-                            height: 50
+                            fontSize:20,
                         }}
                     >Редактирование категорий</Text>
 
 
                     {/*{(typeCategoryList !== '') &&*/}
                     {/*<Picker*/}
-                    {/*mode="dropdown"*/}
-                    {/*selectedValue={typeCategoryTitleSelected}*/}
-                    {/*style={{height: 50, width: 130}}*/}
-                    {/*onValueChange={((itemValue) => this._chooseType(itemValue))}>*/}
-                    {/*{typeCategoryList.map((i) => (*/}
-                    {/*<Picker.Item key={i.title} label={i.title} value={i.title}/>*/}
-                    {/*))}*/}
+                        {/*mode="dropdown"*/}
+                        {/*selectedValue={typeCategoryTitleSelected}*/}
+                        {/*style={{height: 50, width: 130}}*/}
+                        {/*onValueChange={((itemValue) => this._chooseType(itemValue))}>*/}
+                        {/*{typeCategoryList.map((i) => (*/}
+                            {/*<Picker.Item key={i.title} label={i.title} value={i.title}/>*/}
+                        {/*))}*/}
                     {/*</Picker>}*/}
 
                 </View>
 
                 {(typeCategoryList !== '') &&
-                <View
-                    style={{
-                        width: "100%",
-                        position: "absolute",
-                        top: 60
-
-                    }}
-                >
-                    <BoxShadow
-                        setting={{
-                            width: +`${width}` - 40,
-                            height: 23,
-                            color: "#0c034c",
-                            border: 30,
-                            radius: 10,
-                            opacity: 0.05,
-                            x: 20,
-                            y: 50,
-                            style: {zIndex: 19, marginBottom: 15}
-                        }}>
-                        <View style={{
-                            width: +`${width}` - 20,
-                            height: 63,
-                            // flexDirection: 'column',
-                            // alignItems: "center",
-                            zIndex: 50,
-                            backgroundColor: '#ffffff',
-                            // borderBottomWidth: 1,
-                            marginHorizontal: 10,
-                            marginTop: 10,
-                            borderRadius: 10,
-                            padding: 15,
-                            // borderLeftColor: `${l.typeSubCategoryColor}`,
-                            // borderLeftWidth: 1,
-                            // // marginHorizontal: 10,
-                            // marginBottom: 7,
-                            // elevation: 1
-                        }}>
-                            <View
-
-                                style={{
-                                    marginLeft: -4,
-                                    flexDirection: 'row'
-                                }}
-                            >
-
-                                {this.state.typeCategoryList.map((i, index) =>
-                                    <TouchableOpacity
-                                        key={index}
-                                        onPress={() => {
-
-                                            this._chooseType(i.title)
-                                        }}
-                                        style={{
-                                            textAlign: 'left',
-                                            padding: 3,
-                                            // width: "20%",
-                                            position: "relative"
-                                        }}
-                                    >
-                                        {i.title === this.state.typeCategoryTitleSelected &&
-                                        <View
-                                            style={{
-                                                backgroundColor: '#ffda3a',
-                                                position: 'absolute',
-                                                top: 4,
-                                                left: 0,
-                                                width: '100%',
-                                                height: 25,
-                                                borderRadius: 12,
-                                                opacity: .5
-                                            }}
-                                        />
-                                        }
-                                        <Text
-                                            style={{
-                                                fontSize: 16,
-                                                padding: 3,
-                                            }}
-                                        >
-                                            {i.title} </Text>
-                                    </TouchableOpacity>
-                                )}
-                            </View>
-
-                        </View>
-                    </BoxShadow>
-                </View>}
-
-                {(this.state.typeCategoryList !== '') &&
-                <View
-                    style={{
-                        paddingVertical: 5,
-                        paddingLeft: 0,
-                        paddingRight: 5,
-                        width: "100%",
-                        position: "absolute",
-                        top: 140
-
+                <BoxShadow
+                    setting={{
+                        width: +`${width}` - 40,
+                        height: 63,
+                        color: "#0c034c",
+                        border: 30,
+                        radius: 10,
+                        opacity: 0.05,
+                        x: 20,
+                        y: 20,
+                        style: {zIndex: 19, marginBottom: 15}
                     }}>
-                    <SortableGrid
-                        itemsPerRow={5}
-                        style={{
-                            flex: 1,
+                    <View style={{
+                        width: +`${width}` - 20,
+                        height: 63,
+                        // flexDirection: 'column',
+                        // alignItems: "center",
+                        zIndex: 20,
+                        backgroundColor: '#ffffff',
+                        // borderBottomWidth: 1,
+                        marginHorizontal: 10,
+                        marginTop: 10,
+                        borderRadius: 10,
+                        padding: 15,
+                        // borderLeftColor: `${l.typeSubCategoryColor}`,
+                        // borderLeftWidth: 1,
+                        // // marginHorizontal: 10,
+                        // marginBottom: 7,
+                        // elevation: 1
+                    }}>
+                        <View
 
-                        }}
-                        onDragRelease={(itemOrder) => this._reorderList(itemOrder)}>
-                        {
-                            (_.filter(this.state.typeCategoryList, {'title': this.state.typeCategoryTitleSelected}))[0].child.map((nodeType, index) =>
-                                <View
-                                    style={{
-                                        height: 90,
-                                        borderRadius: 8,
-                                        margin: 5,
-                                        position: "relative"
-                                        // backgroundColor: 'white'
+                            style={{
+                                marginLeft: -4,
+                                flexDirection:'row'
+                            }}
+                        >
+
+                            {this.state.typeCategoryList.map((i, index) =>
+                                <TouchableOpacity
+                                    key={index}
+                                    onPress={() => {
+
+                                        this._chooseType(i.title)
                                     }}
-                                    key={nodeType.id}>
+                                    style={{
+                                        textAlign: 'left',
+                                        padding: 3,
+                                        // width: "20%",
+                                        position: "relative"
+                                    }}
+                                >
+
+                                    {i.title === this.state.typeCategoryTitleSelected &&
                                     <View
                                         style={{
-                                            paddingVertical: 8,
-                                            justifyContent: 'center',
-                                            alignItems: 'center',
-                                        }}>
-                                        <IconM name={nodeType.img} type="simple-line-icons" size={25}/>
-                                        <Text
-                                            style={styles.item_text}>{nodeType.title}</Text>
-                                    </View>
-
-                                    <TouchableOpacity
-                                        style={{
-                                            position: "absolute",
-                                            top: -5,
-                                            right: -2,
-                                            justifyContent: 'center',
-                                            alignItems: 'center',
-                                            width: 20,
-                                            height: 20,
-                                            borderRadius: 10,
-                                            backgroundColor: "#fff"
-
-
+                                            backgroundColor: '#ffda3a',
+                                            position: 'absolute',
+                                            top: 4,
+                                            left: 0,
+                                            width: '100%',
+                                            height: 25,
+                                            borderRadius: 12,
+                                            opacity: .5
                                         }}
-                                        onPress={() => this.removeChildItemAt(nodeType.id)}
+                                    />
+                                    }
+                                    <Text
+                                        style={{
+                                            fontSize: 16,
+                                            padding: 3,
+                                        }}
                                     >
-                                        <IconM name='cross-close' size={10}/>
-                                    </TouchableOpacity>
+                                        {i.title} </Text>
+                                </TouchableOpacity>
+                            )}
+                        </View>
+
+                    </View>
+                </BoxShadow>}
+
+                {(this.state.typeCategoryList !== '') &&
+                <SortableGrid
+                    itemsPerRow={5}
+                    style={{
+                        flex: 1,
+
+                    }}
+                    onDragRelease={(itemOrder) => this._reorderList(itemOrder)}>
+                    {
+                        (_.filter(this.state.typeCategoryList, {'title': this.state.typeCategoryTitleSelected}))[0].child.map((nodeType, index) =>
+                            <View
+                                style={{
+                                    height: 90,
+                                    borderRadius: 8,
+                                    margin: 5,
+                                    position: "relative"
+                                    // backgroundColor: 'white'
+                                }}
+                                key={nodeType.id}>
+                                <View
+                                    style={{
+                                        paddingVertical: 8,
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                    }}>
+                                    <IconM name={nodeType.img} type="simple-line-icons" size={25}/>
+                                    <Text
+                                        style={styles.item_text}>{nodeType.title}</Text>
                                 </View>
-                            )
-                        }
-                    </SortableGrid>
-                </View>
+
+                                <TouchableOpacity
+                                    style={{
+                                        position: "absolute",
+                                        top: -5,
+                                        right: -5,
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        width: 20,
+                                        height: 20,
+                                        borderRadius: 10,
+                                        backgroundColor: "#fff"
+
+
+                                    }}
+                                    onPress={() => this.removeChildItemAt(nodeType.id)}
+                                >
+                                    <IconM name='cross-close'   size={10}/>
+                                </TouchableOpacity>
+                            </View>
+                        )
+                    }
+                </SortableGrid>
                 }
 
 
@@ -400,7 +369,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        // padding: 5,
+        padding: 5,
         backgroundColor: '#f1f5fc',
 
     },
