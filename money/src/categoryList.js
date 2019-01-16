@@ -9,6 +9,7 @@ import {
     Picker,
     Modal,
     AsyncStorage, Dimensions,
+    TouchableNativeFeedback
 } from 'react-native'
 import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
 import icoMoonConfig from './font/selection';
@@ -146,17 +147,32 @@ export default class NonScrollPage extends Component {
         return (
             <View style={styles.container}>
                 <View style={styles.fixedHeader}>
-                    <TouchableOpacity
+
+                    <TouchableNativeFeedback
                         style={{
                             padding: 10,
-                            marginTop: 8
+                            marginTop: 8,
+                            borderRadius: 25,
+
                         }}
+                        background={TouchableNativeFeedback.Ripple('#c3c7ce', true)}
+                        onPress={() => this.props.navigation.goBack()}
+                    >
+                        <View style={{
+                            borderRadius: 25,
+                            width: 35,
+                            height: 35,
+                            backgroundColor: '#f1f5fc',
+                            paddingTop: 5,
+                            paddingLeft: 4,
+                            marginLeft: 6,
+                            marginTop: 15
+                        }}>
 
-                        onPress={() => this.props.navigation.goBack()}>
+                            <IconM name="arrow-left" type="simple-line-icons" size={25}/>
+                        </View>
+                    </TouchableNativeFeedback>
 
-
-                        <IconM name="arrow-left" type="simple-line-icons" size={25}/>
-                    </TouchableOpacity>
 
                     <Text
                         style={{
@@ -183,93 +199,97 @@ export default class NonScrollPage extends Component {
                 </View>
 
                 {(typeCategoryList !== '') &&
-                <View
-                    style={{
-                        width: "100%",
-                        position: "absolute",
-                        top: 60
+                <View>
+                    <View
+                        style={{
+                            width: "100%",
+                            position: "absolute",
+                            top: 50
 
-                    }}
-                >
-                    <BoxShadow
-                        setting={{
-                            width: +`${width}` - 40,
-                            height: 23,
-                            color: "#0c034c",
-                            border: 30,
-                            radius: 10,
-                            opacity: 0.05,
-                            x: 20,
-                            y: 50,
-                            style: {zIndex: 19, marginBottom: 15}
-                        }}>
-                        <View style={{
-                            width: +`${width}` - 20,
-                            height: 63,
-                            // flexDirection: 'column',
-                            // alignItems: "center",
-                            zIndex: 50,
-                            backgroundColor: '#ffffff',
-                            // borderBottomWidth: 1,
-                            marginHorizontal: 10,
-                            marginTop: 10,
-                            borderRadius: 10,
-                            padding: 15,
-                            // borderLeftColor: `${l.typeSubCategoryColor}`,
-                            // borderLeftWidth: 1,
-                            // // marginHorizontal: 10,
-                            // marginBottom: 7,
-                            // elevation: 1
-                        }}>
-                            <View
+                        }}
+                    >
+                        <BoxShadow
+                            setting={{
+                                width: +`${width}` - 40,
+                                height: 13,
+                                color: "#0c034c",
+                                border: 30,
+                                radius: 10,
+                                opacity: 0.05,
+                                x: 20,
+                                y: 5,
+                                style: {zIndex: 19, marginBottom: 15}
+                            }}/>
+                    </View>
+                    <View style={{
+                        width: +`${width}` - 20,
+                        height: 63,
+                        // flexDirection: 'column',
+                        // alignItems: "center",
+                        zIndex: 50,
+                        backgroundColor: '#ffffff',
+                        // borderBottomWidth: 1,
+                        marginHorizontal: 10,
+                        marginTop: 10,
+                        borderRadius: 10,
+                        padding: 15,
+                        // borderLeftColor: `${l.typeSubCategoryColor}`,
+                        // borderLeftWidth: 1,
+                        // // marginHorizontal: 10,
+                        // marginBottom: 7,
+                        // elevation: 1
+                    }}>
+                        <View
 
-                                style={{
-                                    marginLeft: -4,
-                                    flexDirection: 'row'
-                                }}
-                            >
+                            style={{
+                                marginLeft: -4,
+                                flexDirection: 'row'
+                            }}
+                        >
 
-                                {this.state.typeCategoryList.map((i, index) =>
-                                    <TouchableOpacity
-                                        key={index}
-                                        onPress={() => {
+                            {this.state.typeCategoryList.map((i, index) =>
+                                <TouchableOpacity
+                                    key={index}
+                                    onPress={() => {
 
-                                            this._chooseType(i.title)
-                                        }}
+                                        this._chooseType(i.title)
+                                    }}
+                                    style={{
+                                        textAlign: 'left',
+
+                                        paddingVertical: 3,
+                                        // width: "20%",
+                                        position: "relative"
+                                    }}
+                                >
+                                    {i.title === this.state.typeCategoryTitleSelected &&
+                                    <View
                                         style={{
-                                            textAlign: 'left',
-                                            padding: 3,
-                                            // width: "20%",
-                                            position: "relative"
+                                            backgroundColor: '#ffda3a',
+                                            position: 'absolute',
+                                            top: 1,
+                                            left: -1,
+                                            width: '100%',
+                                            height: 32,
+                                            borderRadius: 16,
+                                            opacity: .5
+                                        }}
+                                    />
+                                    }
+                                    <Text
+                                        style={{
+                                            fontSize: 16,
+                                            paddingHorizontal: 8,
+                                            paddingVertical: 3,
                                         }}
                                     >
-                                        {i.title === this.state.typeCategoryTitleSelected &&
-                                        <View
-                                            style={{
-                                                backgroundColor: '#ffda3a',
-                                                position: 'absolute',
-                                                top: 4,
-                                                left: 0,
-                                                width: '100%',
-                                                height: 25,
-                                                borderRadius: 12,
-                                                opacity: .5
-                                            }}
-                                        />
-                                        }
-                                        <Text
-                                            style={{
-                                                fontSize: 16,
-                                                padding: 3,
-                                            }}
-                                        >
-                                            {i.title} </Text>
-                                    </TouchableOpacity>
-                                )}
-                            </View>
-
+                                        {i.title} </Text>
+                                </TouchableOpacity>
+                            )}
                         </View>
-                    </BoxShadow>
+
+                    </View>
+
                 </View>}
 
                 {(this.state.typeCategoryList !== '') &&
