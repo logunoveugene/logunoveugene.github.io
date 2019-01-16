@@ -9,7 +9,8 @@ import {
     Picker,
     Modal,
     AsyncStorage, Dimensions,
-    TouchableNativeFeedback
+    TouchableNativeFeedback,
+    TouchableHighlight
 } from 'react-native'
 import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
 import icoMoonConfig from './font/selection';
@@ -17,7 +18,7 @@ import icoMoonConfig from './font/selection';
 const IconM = createIconSetFromIcoMoon(icoMoonConfig);
 import _ from 'lodash';
 import SortableGrid from 'react-native-sortable-grid'
-import {typeCategoryListDefault, iconListDefault} from './data/base/BaseConstant'
+import {typeCategoryListDefault, iconListDefault, currencyList} from './data/base/BaseConstant'
 import ActionButton from 'react-native-action-button';
 import BoxShadow from './shadow'
 
@@ -37,6 +38,7 @@ export default class NonScrollPage extends Component {
 
     setModalVisible(visible) {
         this.setState({modalVisible: visible});
+        console.log(this.state)
     }
 
     async componentDidMount() {
@@ -53,7 +55,8 @@ export default class NonScrollPage extends Component {
         } catch (error) {
             alert("Что-то пошло не так...")
         }
-        console.log((_.filter(this.state.typeCategoryList, {'title': this.state.typeCategoryTitleSelected}))[0].child)
+         console.log(this.state)
+
     }
 
 
@@ -358,53 +361,229 @@ export default class NonScrollPage extends Component {
                 }
 
 
+                {/*<Modal*/}
+                    {/*animationType="slide"*/}
+                    {/*transparent={false}*/}
+                    {/*visible={this.state.modalVisible}*/}
+                    {/*onRequestClose={() => {*/}
+                        {/*this.setModalVisible(!this.state.modalVisible);*/}
+                    {/*}}>*/}
+                    {/*<ScrollView style={styles.nodeDescriptionWrapScroll}>*/}
+                        {/*<View style={styles.nodeDescriptionWrap}>*/}
+                            {/*{iconListDefault.map((img, index) => (*/}
+                                {/*<TouchableOpacity key={index}*/}
+                                                  {/*style={styles.mynode}*/}
+                                                  {/*onPress={() => this._chooseImg(img, index)}*/}
+                                {/*>*/}
+                                    {/*<View*/}
+                                        {/*style={[styles.mynodeSelected, (index === this.state.selectedImgIndex) ? {backgroundColor: `${img.color}`} : null]}*/}
+                                    {/*/>*/}
+                                    {/*/!*{(index === this.state.selectedImgIndex) && <Text>x</Text>}*!/*/}
+                                    {/*<IconM name={img.img} type="simple-line-icons" size={25}/>*/}
+                                {/*</TouchableOpacity>*/}
+                            {/*))}*/}
+                        {/*</View>*/}
+                    {/*</ScrollView>*/}
+
+                    {/*<TextInput*/}
+                        {/*autoCapitalize="none"*/}
+                        {/*placeholder="Заголовок"*/}
+                        {/*onChangeText={message => this.setState({selectedTitle: message})}*/}
+                        {/*value={this.state.selectedTitle}*/}
+                    {/*/>*/}
+                    {/*<View style={{marginTop: 22}}>*/}
+                        {/*<View>*/}
+                            {/*<TouchableOpacity*/}
+                                {/*onPress={() => {*/}
+                                    {/*this.addChildItem();*/}
+                                {/*}}>*/}
+                                {/*<Text>Добавить </Text>*/}
+                            {/*</TouchableOpacity>*/}
+                            {/*<TouchableOpacity*/}
+                                {/*onPress={() => {*/}
+                                    {/*this.setModalVisible(!this.state.modalVisible);*/}
+                                {/*}}>*/}
+                                {/*<Text>Hide Modal</Text>*/}
+                            {/*</TouchableOpacity>*/}
+                        {/*</View>*/}
+                    {/*</View>*/}
+                {/*</Modal>*/}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <Modal
                     animationType="slide"
-                    transparent={false}
+                    transparent={true}
                     visible={this.state.modalVisible}
                     onRequestClose={() => {
                         this.setModalVisible(!this.state.modalVisible);
-                    }}>
-                    <ScrollView style={styles.nodeDescriptionWrapScroll}>
-                        <View style={styles.nodeDescriptionWrap}>
-                            {iconListDefault.map((img, index) => (
-                                <TouchableOpacity key={index}
-                                                  style={styles.mynode}
-                                                  onPress={() => this._chooseImg(img, index)}
-                                >
-                                    <View
-                                        style={[styles.mynodeSelected, (index === this.state.selectedImgIndex) ? {backgroundColor: `${img.color}`} : null]}
-                                    />
-                                    {/*{(index === this.state.selectedImgIndex) && <Text>x</Text>}*/}
-                                    <IconM name={img.img} type="simple-line-icons" size={25}/>
-                                </TouchableOpacity>
-                            ))}
-                        </View>
-                    </ScrollView>
+                    }}
+                >
+                    <View
+                        style={{
+                            flex: 1,
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            position: "relative",
+                            backgroundColor: 'rgba(0,0,0,0)'
+                        }}>
+                        <BoxShadow
+                            setting={{
+                                width: +`${width}` - 20,
+                                height: 300,
+                                color: "#0c034c",
+                                border: 50,
+                                radius: 20,
+                                opacity: 0.1,
+                                x: 0,
+                                y: -10,
+                                style: {position: 'absolute', bottom: 10}
+                            }}>
+                            <View style={{
+                                width: {width} - 20,
+                                // position: "absolute",
+                                // bottom: 0,
+                                backgroundColor: "#ffffff",
+                                height: 300,
+                                borderRadius: 10,
+                                // borderTopRightRadius: 20,
+                                padding: 20,
+                                // margin: 10
+                            }}>
+                                <View style={{
+                                    flexDirection: "row",
+                                    position: 'relative',
+                                    paddingVertical: 5,
+                                    justifyContent: "space-between"
+                                }}>
+                                    <Text style={{
+                                        fontSize: 20,
+                                        fontWeight: 'bold'
 
-                    <TextInput
-                        autoCapitalize="none"
-                        placeholder="Заголовок"
-                        onChangeText={message => this.setState({selectedTitle: message})}
-                        value={this.state.selectedTitle}
-                    />
-                    <View style={{marginTop: 22}}>
-                        <View>
-                            <TouchableOpacity
-                                onPress={() => {
-                                    this.addChildItem();
+                                    }}>Добавление категории</Text>
+                                    <TouchableHighlight
+
+                                        style={{
+                                            height: 30,
+                                            width: 30,
+                                            top: -2,
+                                            right: -5,
+                                            position: "absolute"
+                                        }}
+
+                                        onPress={() => {
+                                            this.setModalVisible(!this.state.modalVisible)
+                                        }}
+                                    >
+                                        <Text style={{
+                                            fontSize: 30,
+                                            color: '#999999',
+                                            top: -1,
+
+                                        }}>×</Text>
+                                    </TouchableHighlight>
+
+                                </View>
+                                <ScrollView style={styles.nodeDescriptionWrapScroll}>
+                                    <View style={styles.nodeDescriptionWrap}>
+                                        {iconListDefault.map((img, index) => (
+                                            <TouchableOpacity key={index}
+                                                              style={styles.mynode}
+                                                              onPress={() => this._chooseImg(img, index)}
+                                            >
+                                                <View
+                                                    style={[styles.mynodeSelected, (index === this.state.selectedImgIndex) ? {backgroundColor: `${img.color}`} : null]}
+                                                />
+                                                {/*{(index === this.state.selectedImgIndex) && <Text>x</Text>}*/}
+                                                <IconM name={img.img} type="simple-line-icons" size={25}/>
+                                            </TouchableOpacity>
+                                        ))}
+                                    </View>
+                                </ScrollView>
+                                <TextInput
+                                    autoCapitalize="none"
+                                    placeholder="Заголовок"
+                                    onChangeText={message => this.setState({selectedTitle: message})}
+                                    value={this.state.selectedTitle}
+                                />
+
+
+                                <View style={{
+                                    width: '100%',
+                                    height: 100,
+                                    position: "relative"
+
                                 }}>
-                                <Text>Добавить </Text>
-                            </TouchableOpacity>
-                            <TouchableOpacity
-                                onPress={() => {
-                                    this.setModalVisible(!this.state.modalVisible);
-                                }}>
-                                <Text>Hide Modal</Text>
-                            </TouchableOpacity>
-                        </View>
+
+                                    <BoxShadow
+                                        setting={{
+                                            width: +`${width}` - 80,
+                                            height: 40,
+                                            color: "#b07919",
+                                            border: 10,
+                                            radius: 20,
+                                            opacity: 0.2,
+                                            x: 10,
+                                            y: 10,
+                                            style: {position: 'absolute', bottom: 40}
+
+                                        }}>
+                                        <View style={{
+                                            width: '100%',
+                                            height: 20
+                                        }}>
+                                        </View>
+
+                                    </BoxShadow>
+                                    <TouchableHighlight
+                                        underlayColor={"#ffb316"}
+
+
+                                        style={{
+                                            width: '100%',
+                                            alignItems: 'center',
+
+                                            backgroundColor: "#ffda3a",
+                                            marginTop: 20,
+                                            padding: 15,
+                                            borderRadius: 30,
+                                            bottom: 30,
+                                            left: 0,
+                                            position: "absolute"
+
+                                        }} onPress={() => {this.addChildItem();}}>
+                                        <Text
+                                            style={{
+                                                fontSize: 18
+                                            }}
+                                        >Добавить</Text>
+                                    </TouchableHighlight>
+
+
+                                </View>
+
+
+                            </View>
+                        </BoxShadow>
                     </View>
                 </Modal>
+
+
                 <ActionButton
                     onPress={() => this.setModalVisible(true)}
                     buttonColor="rgba(231,76,60,1)">
