@@ -25,6 +25,7 @@ import dayjs from "dayjs";
 import ActionModal from './ActionModal'
 
 import BoxShadow from './shadow'
+import {sampleNodes} from "../sampleNodes";
 
 
 var width = Dimensions.get('window').width;
@@ -53,7 +54,10 @@ export default class Main extends React.Component {
 
         filterValue: null,
         filteredBanks: [],
-        bankAccountsList: []
+        bankAccountsList: [],
+
+
+        fullNodeList: [],
     };
 
 
@@ -61,6 +65,13 @@ export default class Main extends React.Component {
         try {
 
             let storedAccounts = await AsyncStorage.getItem('bankAccountsList');
+
+
+            let storedNote = await AsyncStorage.getItem('nodeList');
+
+            console.log(storedNote);
+
+
             console.log(storedAccounts)
             console.log(bankAccountsListDefault)
             if (storedAccounts == null) {
@@ -68,8 +79,12 @@ export default class Main extends React.Component {
             } else {
                 storedAccounts = JSON.parse(storedAccounts);
             }
-            this.setState({bankAccountsList: storedAccounts}, () => {
-                this.pushToLS()
+            this.setState({
+                bankAccountsList: storedAccounts,
+                fullNodeList: storedNote
+            }, () => {
+                this.pushToLS();
+                this.sum()
             });
         } catch (error) {
             alert("Что-то пошло не так...")
@@ -77,8 +92,22 @@ export default class Main extends React.Component {
         this.setState({
             currency: currencyList[0]
         })
+
+
     }
 
+
+
+    sum=()=>{
+       console.log(this.state.fullNodeList)
+
+        var percent = _.sumBy(this.state.fullNodeList, function (o) {
+            return +o.sum
+        });
+
+        console.log(percent)
+
+    }
 
     handlePostData = async () => {
         const {
