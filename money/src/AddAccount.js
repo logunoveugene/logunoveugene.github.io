@@ -65,15 +65,11 @@ export default class Main extends React.Component {
         try {
 
             let storedAccounts = await AsyncStorage.getItem('bankAccountsList');
-
-
             let storedNote = await AsyncStorage.getItem('nodeList');
-
+            storedNote = JSON.parse(storedNote)
             console.log(storedNote);
 
 
-            console.log(storedAccounts)
-            console.log(bankAccountsListDefault)
             if (storedAccounts == null) {
                 storedAccounts = bankAccountsListDefault
             } else {
@@ -97,15 +93,34 @@ export default class Main extends React.Component {
     }
 
 
+    sum = () => {
 
-    sum=()=>{
-       console.log(this.state.fullNodeList)
+        var group = _.groupBy(this.state.fullNodeList, 'bankAccountTitle');
 
-        var percent = _.sumBy(this.state.fullNodeList, function (o) {
-            return +o.sum
-        });
+        group = _.values(group);
+        var group3 = [];
 
-        console.log(percent)
+        _.map(group, ((i, index) => {
+            group3.push(
+                _.reduce(i, function (p, t) {
+                    return {
+                        sum: (p.sum) += +t.sum,
+                        plus: (p.plus) += (+t.sum > 0) ? +t.sum : +0,
+                        minus: (p.minus) += (+t.sum < 0) ? +t.sum : +0,
+                        currency: p.currency = t.currency,
+                        title: p.title = t.bankAccountTitle,
+                    };
+                }, {sum: 0, currency: '', title: '', plus: 0, minus: 0}))
+        }));
+
+
+        this.state.bankAccountsList.map((i) => {
+            let account = _.filter(group3, {'title': i.title})[0]
+            let finalsum = account.sum + +i.startBalance;
+            console.log(account)
+            console.log(finalsum)
+        })
+
 
     }
 
@@ -141,8 +156,7 @@ export default class Main extends React.Component {
             this.setState({
                 validErrorIsShown: true,
             });
-        }
-        else {
+        } else {
 
             try {
                 // await AsyncStorage.removeItem('bankAccountsList');
