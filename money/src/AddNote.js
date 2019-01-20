@@ -64,6 +64,8 @@ export default class Main extends React.Component {
         typeCategoryList: null,
         typeCategoryTitleSelected: 'Списание',
 
+        selectedAccount:null,
+
 
     };
 
@@ -78,7 +80,8 @@ export default class Main extends React.Component {
             } else {
                 storeddAccounts = JSON.parse(storeddAccounts);
             }
-            this.setState({bankAccountsList: storeddAccounts}, () => {
+            this.setState({bankAccountsList: storeddAccounts,
+                selectedAccount:storeddAccounts[0]}, () => {
                 this._chooseAccount(this.state.bankAccountsList[0])
             });
         } catch (error) {
@@ -234,8 +237,13 @@ export default class Main extends React.Component {
             bankAccountCurrentBalance: account.currentBalance,
             bankAccountBgColor: account.bankBgColor,
             bankAccountTextColor: account.bankTextColor,
-            currency: account.currencyCode
+            currency: account.currencyCode,
+            selectedAccount:account
         });
+
+
+        console.log(account)
+        console.log(this.state)
 
     };
 
@@ -276,7 +284,7 @@ export default class Main extends React.Component {
     };
 
     render() {
-        const {bankAccountsList, typeCategoryList, typeCategoryTitleSelected, keyboardIsShown, type} = this.state
+        const {bankAccountsList, typeCategoryList, typeCategoryTitleSelected, keyboardIsShown, type,bankAccountTitle} = this.state
 
         return (
 
@@ -304,9 +312,9 @@ export default class Main extends React.Component {
 
                     {(bankAccountsList !== null) && <Picker
                         mode="dropdown"
-                        selectedValue={type}
+                        selectedValue={this.state.selectedAccount}
                         style={{height: 50, width: 130}}
-                        onValueChange={((itemValue) => this._chooseAccount(itemValue))}>
+                        onValueChange={((a) => this._chooseAccount(a))}>
                         {bankAccountsList.map((a, index) => (
                             <Picker.Item key={index} label={a.title} value={a}/>
                         ))}

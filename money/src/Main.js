@@ -10,7 +10,9 @@ import {
     Button,
     Animated,
     ActivityIndicator,
-    StatusBar
+    StatusBar,
+    TouchableNativeFeedback,
+    DatePickerAndroid,
 } from 'react-native'
 
 import firebase from 'react-native-firebase'
@@ -68,7 +70,9 @@ export default class Main extends React.Component {
             nodeIdReadyForAction: null,
 
             dateFilterVisible: false,
-            scrollY: new Animated.Value(0)
+            scrollY: new Animated.Value(0),
+            filterVisible: false,
+            date: null,
 
         }
     }
@@ -98,12 +102,21 @@ export default class Main extends React.Component {
         });
     }
 
+
+
+
+
     async componentDidMount() {
 
         this.setState({
             // selectedMonth: ('0' + (new Date().getMonth() + 1)).slice(-2),
-            selectedYear: `${new Date().getFullYear()}`.toString()
+            selectedYear: `${new Date().getFullYear()}`.toString(),
+            date: new Date().getFullYear() + '-' + ('0' + (new Date().getMonth() + 1)).slice(-2) + '-' + ('0' + new Date().getDate()).slice(-2),
+
         })
+
+
+
 
         var group = _.groupBy(this.state.chartData, 'typeSubCategoryTitle');
 
@@ -239,7 +252,6 @@ export default class Main extends React.Component {
                         });
 
 
-
                     });
             }
         );
@@ -311,7 +323,26 @@ export default class Main extends React.Component {
         console.log(this.pie)
     };
 
+    _selectDate = async () => {
+        try {
+            const {action, year, month, day} = await DatePickerAndroid.open({
+                date: this.selectedDate
+            });
+            if (action !== DatePickerAndroid.dismissedAction) {
 
+                let selectedDate = year + '-' + ('0' + (month + 1)).slice(-2) + '-' + ('0' + day).slice(-2)
+                this.setState({
+                    date: selectedDate,
+
+
+                })
+
+            }
+        } catch ({code, message}) {
+            console.warn('Cannot open date picker', message);
+        }
+
+    }
 
 
     render() {
@@ -325,7 +356,7 @@ export default class Main extends React.Component {
         return (
             <View style={styles.container}>
                 <StatusBar
-                    backgroundColor='#f1f5fc'
+                    backgroundColor='#d0d4dc'
                     barStyle='default'
                 />
                 {!this.state.isChartLoaded && <View
@@ -417,6 +448,135 @@ export default class Main extends React.Component {
 
 
                     </View>
+                    {/*{this.state.dateFilterVisible &&*/}
+                    {/*<BoxShadow*/}
+                        {/*setting={{*/}
+                            {/*width: +`${width}` - 40,*/}
+                            {/*height: 120,*/}
+                            {/*color: "#0c034c",*/}
+                            {/*border: 30,*/}
+                            {/*radius: 10,*/}
+                            {/*opacity: 0.05,*/}
+                            {/*x: 20,*/}
+                            {/*y: 20,*/}
+                            {/*style: {zIndex: 19, marginBottom: 15}*/}
+                        {/*}}>*/}
+                        {/*<View style={{*/}
+                            {/*width: +`${width}` - 20,*/}
+                            {/*height: 120,*/}
+                            {/*// flexDirection: 'column',*/}
+                            {/*// alignItems: "center",*/}
+                            {/*zIndex: 20,*/}
+                            {/*backgroundColor: '#ffffff',*/}
+                            {/*// borderBottomWidth: 1,*/}
+                            {/*marginHorizontal: 10,*/}
+                            {/*marginTop: 10,*/}
+                            {/*borderRadius: 10,*/}
+                            {/*padding: 15,*/}
+                            {/*// borderLeftColor: `${l.typeSubCategoryColor}`,*/}
+                            {/*// borderLeftWidth: 1,*/}
+                            {/*// // marginHorizontal: 10,*/}
+                            {/*// marginBottom: 7,*/}
+                            {/*// elevation: 1*/}
+                        {/*}}>*/}
+                            {/*<ScrollView*/}
+                                {/*horizontal={true}*/}
+                                {/*style={{*/}
+                                    {/*marginLeft: -4*/}
+                                {/*}}*/}
+                            {/*>*/}
+
+                                {/*{this.state.yearsList.map((i, index) =>*/}
+                                    {/*<TouchableOpacity*/}
+                                        {/*key={index}*/}
+                                        {/*onPress={() => {*/}
+                                            {/*this.selectYear(i)*/}
+                                        {/*}}*/}
+                                        {/*style={{*/}
+                                            {/*textAlign: 'left',*/}
+                                            {/*padding: 3,*/}
+                                            {/*// width: "20%",*/}
+                                            {/*position: "relative"*/}
+                                        {/*}}*/}
+                                    {/*>*/}
+
+
+                                        {/*{i === this.state.selectedYear &&*/}
+                                        {/*<View*/}
+                                            {/*style={{*/}
+                                                {/*backgroundColor: '#ffda3a',*/}
+                                                {/*position: 'absolute',*/}
+                                                {/*top: 4,*/}
+                                                {/*left: 0,*/}
+                                                {/*width: 50,*/}
+                                                {/*height: 25,*/}
+                                                {/*borderRadius: 12,*/}
+                                                {/*opacity: .5*/}
+                                            {/*}}*/}
+                                        {/*/>*/}
+                                        {/*}*/}
+                                        {/*<Text*/}
+                                            {/*style={{*/}
+                                                {/*fontSize: 16,*/}
+                                                {/*padding: 3,*/}
+                                            {/*}}*/}
+                                        {/*>*/}
+                                            {/*{i} </Text>*/}
+                                    {/*</TouchableOpacity>*/}
+                                {/*)}*/}
+                            {/*</ScrollView>*/}
+                            {/*<View*/}
+                                {/*style={{*/}
+                                    {/*flexDirection: "row",*/}
+                                    {/*flexWrap: 'wrap',*/}
+                                    {/*justifyContent: 'space-between'*/}
+                                {/*}}*/}
+                            {/*>*/}
+                                {/*{this.state.monthList.map((i, index) =>*/}
+                                    {/*<TouchableOpacity*/}
+                                        {/*key={index}*/}
+                                        {/*style={{*/}
+                                            {/*textAlign: 'left',*/}
+                                            {/*padding: 3,*/}
+                                            {/*width: "16%",*/}
+                                            {/*position: "relative"*/}
+                                        {/*}}*/}
+                                        {/*onPress={() => {*/}
+                                            {/*this.selectMonth(i)*/}
+                                        {/*}}*/}
+                                    {/*>*/}
+                                        {/*<View>*/}
+
+                                            {/*{i.id === this.state.selectedMonth.id &&*/}
+                                            {/*<View*/}
+                                                {/*style={{*/}
+                                                    {/*backgroundColor: '#ffda3a',*/}
+                                                    {/*position: 'absolute',*/}
+                                                    {/*top: -3,*/}
+                                                    {/*left: -8,*/}
+                                                    {/*width: '100%',*/}
+                                                    {/*height: 24,*/}
+                                                    {/*borderRadius: 12,*/}
+                                                    {/*opacity: .5*/}
+                                                {/*}}*/}
+                                            {/*/>*/}
+                                            {/*}*/}
+                                            {/*{this.state.selectedMonth &&*/}
+                                            {/*<Text*/}
+                                                {/*style={{*/}
+                                                    {/*textAlign: 'left',*/}
+                                                    {/*fontSize: 14,*/}
+                                                    {/*color: (i.hasData) ? "#333" : "#999"*/}
+                                                {/*}}*/}
+                                            {/*>*/}
+                                                {/*{i.name} </Text>}*/}
+                                        {/*</View>*/}
+                                    {/*</TouchableOpacity>*/}
+                                {/*)}*/}
+                            {/*</View>*/}
+                        {/*</View>*/}
+                    {/*</BoxShadow>*/}
+                    {/*}*/}
                     {this.state.dateFilterVisible &&
                     <BoxShadow
                         setting={{
@@ -433,115 +593,39 @@ export default class Main extends React.Component {
                         <View style={{
                             width: +`${width}` - 20,
                             height: 120,
-                            // flexDirection: 'column',
-                            // alignItems: "center",
                             zIndex: 20,
                             backgroundColor: '#ffffff',
-                            // borderBottomWidth: 1,
                             marginHorizontal: 10,
                             marginTop: 10,
                             borderRadius: 10,
                             padding: 15,
-                            // borderLeftColor: `${l.typeSubCategoryColor}`,
-                            // borderLeftWidth: 1,
-                            // // marginHorizontal: 10,
-                            // marginBottom: 7,
-                            // elevation: 1
                         }}>
-                            <ScrollView
-                                horizontal={true}
-                                style={{
-                                    marginLeft: -4
-                                }}
-                            >
-
-                                {this.state.yearsList.map((i, index) =>
-                                    <TouchableOpacity
-                                        key={index}
-                                        onPress={() => {
-                                            this.selectYear(i)
-                                        }}
-                                        style={{
-                                            textAlign: 'left',
-                                            padding: 3,
-                                            // width: "20%",
-                                            position: "relative"
-                                        }}
-                                    >
-
-
-                                        {i === this.state.selectedYear &&
-                                        <View
-                                            style={{
-                                                backgroundColor: '#ffda3a',
-                                                position: 'absolute',
-                                                top: 4,
-                                                left: 0,
-                                                width: 50,
-                                                height: 25,
-                                                borderRadius: 12,
-                                                opacity: .5
-                                            }}
-                                        />
-                                        }
-                                        <Text
-                                            style={{
-                                                fontSize: 16,
-                                                padding: 3,
-                                            }}
-                                        >
-                                            {i} </Text>
-                                    </TouchableOpacity>
-                                )}
-                            </ScrollView>
                             <View
                                 style={{
-                                    flexDirection: "row",
-                                    flexWrap: 'wrap',
-                                    justifyContent: 'space-between'
+                                    flexDirection: "row"
                                 }}
                             >
-                                {this.state.monthList.map((i, index) =>
-                                    <TouchableOpacity
-                                        key={index}
-                                        style={{
-                                            textAlign: 'left',
-                                            padding: 3,
-                                            width: "16%",
-                                            position: "relative"
-                                        }}
-                                        onPress={() => {
-                                            this.selectMonth(i)
-                                        }}
-                                    >
-                                        <View>
-
-                                            {i.id === this.state.selectedMonth.id &&
-                                            <View
-                                                style={{
-                                                    backgroundColor: '#ffda3a',
-                                                    position: 'absolute',
-                                                    top: -3,
-                                                    left: -8,
-                                                    width: '100%',
-                                                    height: 24,
-                                                    borderRadius: 12,
-                                                    opacity: .5
-                                                }}
-                                            />
-                                            }
-                                            {this.state.selectedMonth &&
-                                            <Text
-                                                style={{
-                                                    textAlign: 'left',
-                                                    fontSize: 14,
-                                                    color: (i.hasData) ? "#333" : "#999"
-                                                }}
-                                            >
-                                                {i.name} </Text>}
-                                        </View>
-                                    </TouchableOpacity>
-                                )}
+                                <TouchableOpacity
+                                    style={styles.datePickerButton}
+                                    onPress={() => this._selectDate()}
+                                >
+                                    <IconM style={styles.datePickerButtonIcon} name="small-calendar"
+                                           type="simple-line-icons"
+                                           size={18}/>
+                                    <Text
+                                        style={styles.datePickerButtonText}>{this.state.date && dayjs(this.state.date).locale('ru').format('D MMM')}</Text>
+                                </TouchableOpacity>
+                                <Text>—</Text>
+                                <TouchableOpacity
+                                    style={styles.datePickerButton}
+                                    onPress={() => this._selectDate()}
+                                >
+                                    <IconM style={styles.datePickerButtonIcon} name="small-calendar"
+                                           type="simple-line-icons"
+                                           size={18}/>
+                                    <Text
+                                        style={styles.datePickerButtonText}>{this.state.date && dayjs(this.state.date).locale('ru').format('D MMM')}</Text>
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </BoxShadow>
@@ -822,7 +906,7 @@ export default class Main extends React.Component {
                         )}
                         style={{
                             position: 'absolute',
-                            top:  this.state.dateFilterVisible ? 220 : 70,
+                            top: this.state.dateFilterVisible ? 220 : 70,
                             height: "100%",
                             width: "100%"
                         }}
@@ -845,72 +929,80 @@ export default class Main extends React.Component {
                                             {dayjs(l.date).locale('ru').format('D MMM')}
                                         </Text>
                                     ) : null}
-                                    <TouchableOpacity
-
-                                        onLongPress={() => {
-                                            this.setModalActionVisible(!this.props.modalActionVisible);
-                                            this.setState({
-                                                nodeIdReadyForAction: l.id
-                                            })
-                                            // this.removeItem(l.id)
-                                        }}
-                                    >
-
-                                        <View style={{
+                                    <View
+                                        style={{
                                             flex: 1,
-                                            height: 58,
-                                            flexDirection: 'row',
-                                            alignItems: "center",
-                                            borderBottomColor: '#eee',
-                                            backgroundColor: '#fff',
-                                            borderBottomWidth: 1,
-                                            padding: 10,
+                                            height: 60,
                                             borderRadius: 10,
+                                            overflow: "hidden",
                                             marginHorizontal: 10,
-                                            marginBottom: 7,
-                                            position: "relative",
-
+                                            marginBottom: 7
                                         }}>
+                                        <TouchableNativeFeedback
+                                            background={TouchableNativeFeedback.Ripple('#d3d7de', true)}
 
-                                            <IconM name={l.typeSubCategoryImg} type="simple-line-icons" size={26}
-                                                   style={{
-                                                       color: "#333",
-                                                       paddingLeft: 8
-                                                   }}
-                                            />
-                                            <View
-                                                style={{
-                                                    flexDirection: "column",
-                                                    marginVertical: 10,
-                                                    marginLeft: 22
-                                                }}>
-                                                <Text style={{}}>
-                                                    {l.typeSubCategoryTitle}</Text>
-                                                {l.usersDescription !== null && <Text
-                                                    style={{
-                                                        // backgroundColor: '#eeeeee',
-                                                        // paddingHorizontal: 6,
-                                                        // paddingVertical: 3,
-                                                        borderRadius: 6,
-                                                        borderTopLeftRadius: 0,
-                                                        fontSize: 12,
-                                                        marginBottom: 4
-                                                    }}
-                                                >{l.usersDescription}</Text>}
-                                            </View>
-                                            <Text style={{
-                                                // backgroundColor: `${l.typeSubCategoryColor}`,
-                                                position: "absolute",
-                                                right: 14,
-                                                top: 16,
-                                                color: l.typeCategory === "Списание" ? "#333333" : "#78ab1e",
-                                                fontSize: 16
+                                            onLongPress={() => {
+                                                this.setModalActionVisible(!this.props.modalActionVisible);
+                                                this.setState({
+                                                    nodeIdReadyForAction: l.id
+                                                })
+                                                // this.removeItem(l.id)
+                                            }}
+                                        >
+
+                                            <View style={{
+                                                flex: 1,
+                                                height: 58,
+                                                flexDirection: 'row',
+                                                alignItems: "center",
+                                                borderBottomColor: '#eee',
+                                                backgroundColor: '#fff',
+                                                borderBottomWidth: 1,
+                                                padding: 10,
+                                                position: "relative",
+
                                             }}>
-                                                {l.typeCategory === "Списание" ? '' : <Text>+</Text>}
 
-                                                {l.sum}</Text>
-                                        </View>
-                                    </TouchableOpacity>
+                                                <IconM name={l.typeSubCategoryImg} type="simple-line-icons" size={26}
+                                                       style={{
+                                                           color: "#333",
+                                                           paddingLeft: 8
+                                                       }}
+                                                />
+                                                <View
+                                                    style={{
+                                                        flexDirection: "column",
+                                                        marginVertical: 10,
+                                                        marginLeft: 22
+                                                    }}>
+                                                    <Text style={{}}>
+                                                        {l.typeSubCategoryTitle}</Text>
+                                                    {l.usersDescription !== null && <Text
+                                                        style={{
+                                                            // backgroundColor: '#eeeeee',
+                                                            // paddingHorizontal: 6,
+                                                            // paddingVertical: 3,
+                                                            borderRadius: 6,
+                                                            borderTopLeftRadius: 0,
+                                                            fontSize: 12,
+
+                                                        }}
+                                                    >{l.usersDescription}</Text>}
+                                                </View>
+                                                <Text style={{
+                                                    // backgroundColor: `${l.typeSubCategoryColor}`,
+                                                    position: "absolute",
+                                                    right: 14,
+                                                    // top: 16,
+                                                    color: l.typeCategory === "Списание" ? "#333333" : "#78ab1e",
+                                                    fontSize: 16
+                                                }}>
+                                                    {l.typeCategory === "Списание" ? '' : <Text>+</Text>}
+
+                                                    {l.sum}</Text>
+                                            </View>
+                                        </TouchableNativeFeedback>
+                                    </View>
 
                                 </View>
 

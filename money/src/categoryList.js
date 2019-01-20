@@ -59,7 +59,6 @@ export default class NonScrollPage extends Component {
 
     }
 
-
     _chooseType = (typeCategoryTitle) => {
 
         console.log(typeCategoryTitle);
@@ -144,19 +143,16 @@ export default class NonScrollPage extends Component {
         }
     }
 
-
     render() {
         const {typeCategoryList, typeCategoryTitleSelected} = this.state
         return (
             <View style={styles.container}>
                 <View style={styles.fixedHeader}>
-
                     <TouchableNativeFeedback
                         style={{
                             padding: 10,
                             marginTop: 8,
                             borderRadius: 25,
-
                         }}
                         background={TouchableNativeFeedback.Ripple('#c3c7ce', true)}
                         onPress={() => this.props.navigation.goBack()}
@@ -175,8 +171,6 @@ export default class NonScrollPage extends Component {
                             <IconM name="arrow-left" type="simple-line-icons" size={25}/>
                         </View>
                     </TouchableNativeFeedback>
-
-
                     <Text
                         style={{
                             paddingVertical: 10,
@@ -187,17 +181,6 @@ export default class NonScrollPage extends Component {
                         }}
                     >Редактирование категорий</Text>
 
-
-                    {/*{(typeCategoryList !== '') &&*/}
-                    {/*<Picker*/}
-                    {/*mode="dropdown"*/}
-                    {/*selectedValue={typeCategoryTitleSelected}*/}
-                    {/*style={{height: 50, width: 130}}*/}
-                    {/*onValueChange={((itemValue) => this._chooseType(itemValue))}>*/}
-                    {/*{typeCategoryList.map((i) => (*/}
-                    {/*<Picker.Item key={i.title} label={i.title} value={i.title}/>*/}
-                    {/*))}*/}
-                    {/*</Picker>}*/}
 
                 </View>
 

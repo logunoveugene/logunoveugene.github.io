@@ -12,8 +12,15 @@ import {
     Dimensions,
     Picker,
 
-    Keyboard
+    Keyboard, TouchableNativeFeedback
 } from 'react-native'
+
+
+import {createIconSetFromIcoMoon} from 'react-native-vector-icons';
+import icoMoonConfig from './font/selection';
+
+const IconM = createIconSetFromIcoMoon(icoMoonConfig);
+
 import firebase from 'react-native-firebase'
 import ActionButton from 'react-native-action-button';
 import Fuse from 'fuse.js'
@@ -26,6 +33,7 @@ import ActionModal from './ActionModal'
 
 import BoxShadow from './shadow'
 import {sampleNodes} from "../sampleNodes";
+import {NavigationEvents} from "react-navigation";
 
 
 var width = Dimensions.get('window').width;
@@ -55,11 +63,10 @@ export default class Main extends React.Component {
         filterValue: null,
         filteredBanks: [],
         bankAccountsList: [],
-
+        fullBankAccountsList: [],
 
         fullNodeList: [],
     };
-
 
     async componentDidMount() {
         try {
@@ -67,7 +74,7 @@ export default class Main extends React.Component {
             let storedAccounts = await AsyncStorage.getItem('bankAccountsList');
             let storedNote = await AsyncStorage.getItem('nodeList');
             storedNote = JSON.parse(storedNote)
-            console.log(storedNote);
+            // console.log(storedNote);
 
 
             if (storedAccounts == null) {
@@ -92,13 +99,13 @@ export default class Main extends React.Component {
 
     }
 
-
     sum = () => {
-
+        var group3 = [];
+        let finalAccountList = []
         var group = _.groupBy(this.state.fullNodeList, 'bankAccountTitle');
 
         group = _.values(group);
-        var group3 = [];
+
 
         _.map(group, ((i, index) => {
             group3.push(
@@ -113,12 +120,37 @@ export default class Main extends React.Component {
                 }, {sum: 0, currency: '', title: '', plus: 0, minus: 0}))
         }));
 
+        let data = [...this.state.bankAccountsList];
 
-        this.state.bankAccountsList.map((i) => {
-            let account = _.filter(group3, {'title': i.title})[0]
-            let finalsum = account.sum + +i.startBalance;
-            console.log(account)
-            console.log(finalsum)
+        data.map((i) => {
+            let account = _.filter(group3, {'title': i.title})[0];
+            let hasNode = true;
+            if (!!account) {
+                var finalsum = account.sum + +i.startBalance;
+
+            } else {
+                hasNode = false
+            }
+
+            finalAccountList.push({
+                    id: i.id,
+                    title: i.title,
+                    bankBgColor: i.bankBgColor,
+                    bankTextColor: i.bankTextColor,
+                    bankTitle: i.bankTitle,
+                    currencyCode: i.currencyCode,
+                    currencySymbol: i.currencySymbol,
+                    currencyTitle: i.currencyTitle,
+                    currentBalance: hasNode ? finalsum : i.startBalance,
+                    startBalance: +i.startBalance,
+                    income: hasNode ? account.plus : 0,
+                    costs: hasNode ? account.minus : 0,
+                }
+            )
+
+        })
+        this.setState({
+            fullBankAccountsList: finalAccountList
         })
 
 
@@ -239,7 +271,6 @@ export default class Main extends React.Component {
 
     }
 
-
     removeItem = () => {
         if (this.state.bankAccountsList.length > 1) {
             let tmpArray = [...this.state.bankAccountsList];
@@ -252,8 +283,13 @@ export default class Main extends React.Component {
                 modalActionVisible: false,
                 accountReadyForDel: ''
             }, () => {
-                this.render()
-                this.pushToLS()
+
+                this.pushToLS();
+                console.log(this.state)
+
+
+                this.componentDidMount()
+                console.log(this.state)
             })
         } else {
             Alert.alert(
@@ -285,21 +321,52 @@ export default class Main extends React.Component {
 
     };
 
-
     render() {
         return (
             <View style={styles.container}>
+                <NavigationEvents
+                    onDidFocus={() => this.componentDidMount()}
+                />
+
                 <View style={styles.fixedHeader}>
-                    <TouchableHighlight
-                        onPress={() => this.props.navigation.goBack()}>
-                        <Text>Назад</Text>
-                    </TouchableHighlight>
+                    <TouchableNativeFeedback
+                        style={{
+                            padding: 10,
+                            marginTop: 8,
+                            borderRadius: 25,
+                        }}
+                        background={TouchableNativeFeedback.Ripple('#c3c7ce', true)}
+                        onPress={() => this.props.navigation.goBack()}
+                    >
+                        <View style={{
+                            borderRadius: 25,
+                            width: 35,
+                            height: 35,
+                            backgroundColor: '#f1f5fc',
+                            paddingTop: 5,
+                            paddingLeft: 4,
+                            marginLeft: 6,
+                            marginTop: 15
+                        }}>
+                            <IconM name="arrow-left" type="simple-line-icons" size={25}/>
+                        </View>
+                    </TouchableNativeFeedback>
+                    <Text
+                        style={{
+                            paddingVertical: 10,
+                            marginTop: 8,
+
+                            fontSize: 20,
+                            height: 50
+                        }}
+                    >Мои счета</Text>
+
 
                 </View>
 
                 <ScrollView
                 >
-                    {this.state.bankAccountsList.map((i, index) => (
+                    {this.state.fullBankAccountsList.map((i, index) => (
                         <TouchableHighlight
                             key={index}
                             underlayColor="#eeeeee"
@@ -307,7 +374,7 @@ export default class Main extends React.Component {
                             style={{
                                 width: width - 20,
                                 backgroundColor: "#ffffff",
-                                height: 90,
+                                height: 130,
                                 borderRadius: 10,
                                 marginHorizontal: 10,
                                 padding: 20,
@@ -323,7 +390,15 @@ export default class Main extends React.Component {
                                 <Text
                                     style={{
                                         fontSize: 14
-                                    }}>{i.currentBalance} {i.currencySymbol}</Text>
+                                    }}>Текущий баланс: {i.currentBalance} {i.currencySymbol}</Text>
+                                <Text
+                                    style={{
+                                        fontSize: 14
+                                    }}>Всего потречено: {i.costs} {i.currencySymbol}</Text>
+                                <Text
+                                    style={{
+                                        fontSize: 14
+                                    }}>Всего заработано: {i.income} {i.currencySymbol}</Text>
                             </View>
 
 
@@ -616,12 +691,10 @@ const styles = StyleSheet.create({
 
 
     fixedHeader: {
-        backgroundColor: 'rgba(255,255,255,1)',
-        elevation: 1,
+
         flexDirection: 'row',
         width: '100%',
         height: 50,
-
         position: 'relative',
     },
     textInputFull: {
