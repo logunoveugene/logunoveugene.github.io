@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="theme-color" content="#F5891E">
+    <title>Главная</title>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (d, w, c) {
+            (w[c] = w[c] || []).push(function () {
+                try {
+                    w.yaCounter49959223 = new Ya.Metrika2({
+                        id: 49959223,
+                        clickmap: true,
+                        trackLinks: true,
+                        accurateTrackBounce: true,
+                        webvisor: true
+                    });
+                } catch (e) {
+                }
+            });
+
+            var n = d.getElementsByTagName("script")[0],
+                s = d.createElement("script"),
+                f = function () {
+                    n.parentNode.insertBefore(s, n);
+                };
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = "https://mc.yandex.ru/metrika/tag.js";
+
+            if (w.opera == "[object Opera]") {
+                d.addEventListener("DOMContentLoaded", f, false);
+            } else {
+                f();
+            }
+        })(document, window, "yandex_metrika_callbacks2");
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/49959223" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <link rel="stylesheet prefetch" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="c-style.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://file.myfontastic.com/7eFj9SBnsDF42ofvovPX5X/icons.css" rel="stylesheet">
+
+</head>
+<body>
+<div id="app">
+
+
+    <modal height="auto" name="hello-world" width="800">
+        <div class="bg-light p-4 d-flex align-items-center justify-content-between">
+            <div class="h3 mb-0">Ваш заказ распечатан и добавлен в электронную очередь</div>
+            <div class=" h2 mb-0 pt-2 icon-close" v-on:click="hide"></div>
+        </div>
+        <div class="p-4 ">
+
+            <div class="mb-4">1. Заберите документ из принтера №4, <br>
+                2. Дождитесь очереди (на информационном дисплее высветится номер вашего заказа) <br>
+                3. Заберите свой заказ, отдав распечатанный документ специалисту выдачи
+            </div>
+            <button class="btn btn-outl-orange" v-on:click="hide">Закрыть</button>
+
+        </div>
+    </modal>
+    <mainheader :catalogitem="mainNavs" :is-tp="isTp" :showcatalog="showCatalog"
+                v-on:tptodns="isTp =! isTp"></mainheader>
+
+    <div class="main-layout" v-scroll="handleScroll">
+        <div class="overflow-layout d-lg-none">
+            <div class=" card--no-round">
+                <div class="servise-mobile-promo d-flex justify-content-between px-2">
+                    <div class="h2">Акции</div>
+                    <div class="d-flex">
+                        <div class="">Все</div>
+                        <div class="h5 mb-0 icon-arrow-right pt-1"></div>
+                    </div>
+
+                </div>
+            </div>
+            <local-swiper class="main-banner-mob mb-3" :options="mainBannerMobOption">
+                <local-slide v-for="(mainbanner, index) in mainbanners" :key="index">
+                    <img :src="mainbanner.img" alt="">
+                </local-slide>
+            </local-swiper>
+            <!--<div class=" mb-3">-->
+            <!--<div  class="card card&#45;&#45;no-round">-->
+            <!--<div class="servise-mobile-promo d-flex">-->
+            <!--<div v-ripple class="servise-mobile-promo__cabinet text-center flex-fill py-2 px-3">-->
+            <!--<div class="py-1">Акции</div>-->
+            <!--</div>-->
+            <!--<div v-ripple class="servise-mobile-promo__configurator text-center flex-fill py-2 px-3">-->
+            <!--<div class="py-1">Cкидки</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <div v-ripple class="card card--no-round mb-3">
+                <div class="shop-promo p-3 d-flex align-items-center justify-content-between">
+                    <div class="d-flex flex-column">
+                        <div class="shop-promo__title py-1 d-flex align-items-center">68 магазинов в г. Москва
+
+                        </div>
+                        <div class="shop-promo__desc small">большинство работает с 9:00 до 21:00</div>
+                    </div>
+                    <div class="shop-promo__icon ">
+                        <div class="icon-map63"></div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="card rounded-0 d-none d-lg-block" v-if="isTp">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="container">
+                        <div class="d-flex flex-column">
+                            <div class="h2 mb-4 pt-1">Оформили заказ дома?</div>
+                            <div class="row mb-4">
+                                <div class="col-4 small d-flex align-items-center">
+                                    <img class="pickup__img" src="https://i.snag.gy/1MuoUv.jpg" alt="">
+                                    Чтобы получить заказ, введите его номер в форму
+                                </div>
+                                <div class="col-4 small d-flex align-items-center">
+                                    <img class="pickup__img " src="https://i.snag.gy/jawlA6.jpg" alt="">
+                                    Если заказ не оплачен, пройдите на кассу и оплатите его
+                                </div>
+                                <div class="col-4 small d-flex align-items-center">
+                                    <img class="pickup__img " src="https://i.snag.gy/7dyf0S.jpg" alt="">
+                                    Дождитесь очереди и получите заказ
+                                </div>
+                            </div>
+                            <div class="p-2">
+                                <div class="col-5 d-flex p-0">
+                                    <div class=" header__search-form m-0 h-100  mr-3">
+                                        <input type="text" placeholder="Введите номер заказа" class="form__basic-field">
+
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-outl-orange h-100" v-on:click="show">Получить заказ
+                                        </button>
+                                        <div class="extrasmall"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row mt-0 mt-lg-4">
+                <div class="col-12 mt-0" v-if="isAlert">
+                    <div class="card alert alert-warning alert-dismissible fade show mb-4">
+                        Магазин в ТРК Родео Драйв закрыт по техническим причинам.
+                        <button type="button" class="close" @click="isAlert=!isAlert">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-lg-3 mb-lg-0 d-flex">
+                    <div class="card card-mobile align-self-stretch flex-fill ">
+                        <catalogmenu :catalog="mainNavs"></catalogmenu>
+
+                    </div>
+
+                    <!--<submenu :mysubmenu="dropSubMenu"></submenu>-->
+
+                </div>
+                <div class="col-12 col-lg-9">
+                    <div class="row">
+                        <div class="col-12 col-lg-8 d-none d-lg-block">
+                            <div class="card ">
+                                <local-swiper class="mainbanner" :options="mainBannerOption">
+                                    <local-slide v-for="(mainbanner, index) in mainbanners" :key="index">
+                                        <img :src="mainbanner.img" alt="">
+                                    </local-slide>
+                                    <div class="swiper-pagination" slot="pagination"></div>
+                                    <div class="ml-4 sw-button-prev" slot="button-prev">
+                                        <div class="icon-arrow-left"></div>
+                                    </div>
+                                    <div class="mr-4 sw-button-next" slot="button-next">
+                                        <div class="icon-arrow-right"></div>
+                                    </div>
+                                </local-swiper>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4 d-none d-lg-flex">
+                            <div class="card align-self-stretch flex-fill">
+                                <div class="card-body h-100">
+                                    <div class="d-flex flex-column h-100">
+
+                                        <div class="h3 pt-2 mb-2">
+                                            <div class="flex align-items-center">
+                                                <a href="#" class="link link--color-grey"> Акции
+                                                    <span class="news-block__title-button d-xl-none">
+															<span class="icon-arrow-right"></span>
+														</span>
+                                                </a>
+                                            </div>
+                                        </div>
+
+                                        <div class="action__icon-wrap d-none d-xl-block">
+                                            <div class="icon-action"></div>
+                                        </div>
+                                        <ul class="nav nav--vertical small">
+                                            <li class="nav__link nav__link--vertical">
+                                                <a href="#" class="link link--color-grey"><span
+                                                        class="action__link-sale">Акции</span><span
+                                                        class="text-black-50 ml-1">15</span> </a>
+                                            </li>
+                                            <li class="nav__link nav__link--vertical">
+                                                <a href="#" class="link link--color-grey"><span
+                                                        class="action__link-gift">Рассрочка или бонусы</span> <span
+                                                        class="text-black-50 ml-1">48</span> </a>
+                                            </li>
+                                            <li class="nav__link nav__link--vertical">
+                                                <a href="#" class="link link--color-grey"><span
+                                                        class="action__link-bonus">Бонусы</span> <span
+                                                        class="text-black-50 ml-1">36</span> </a>
+                                            </li>
+                                            <!-- <li class="nav__link nav__link--vertical">
+                                                <a href="#" class="link link--color-grey">Рассрочка без переплат <span class="text-black-50 ml-1">56</span> </a>
+                                            </li> -->
+                                        </ul>
+                                        <div class=" mt-auto d-none d-xl-block">
+                                            <button class="btn btn-outl-orange">Все акции</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mt-4 d-lg-none">
+
+                            <div class="card card-mobile h-100" v-if="isAuth==false">
+                                <div class="card-body ">
+                                    <div class="d-flex align-items-center justify-content-between">
+
+                                        <div class="d-flex flex-column">
+                                            <div class="mb-1 pt-1 shop-promo__title">Регистрируйся на сайте</div>
+                                            <div class="small mt-auto">
+                                                <ul class="nav">
+                                                    <li class="nav__link nav__link--horizontal">
+                                                        <a href="#" @click="isAuth=true" class="link link--color-blue">Войти</a>
+                                                    </li>
+                                                    <li class="nav__link nav__link--horizontal">
+                                                        <a href="#" class="link link--color-blue">Зарегистрироваться</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="shop-promo__icon">
+                                            <div class="icon-user"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card card-mobile h-100" v-if="isAuth==true">
+                                <div class="card-body ">
+                                    <div class="d-flex align-items-center justify-content-between">
+
+                                        <div class="d-flex flex-column">
+                                            <div class="mb-1 pt-1 shop-promo__title">Привет, Василий!</div>
+                                            <div class="small mt-auto">
+                                                <ul class="nav">
+                                                    <li class="nav__link nav__link--horizontal">
+                                                        <a href="#" class="link link--color-blue">Личный кабинет</a>
+                                                    </li>
+                                                    <li class="nav__link nav__link--horizontal">
+                                                        <a href="#" class="link link--color-blue">Заказы</a>
+                                                    </li>
+                                                    <li class="nav__link nav__link--horizontal">
+                                                        <a href="#" class="link link--color-blue">Сообщения</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="shop-promo__icon">
+                                            <div class="icon-user"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-12">
+                            <div class="h2 pt-4 mb-3">Актуальные предложения</div>
+                            <sets-block :slide="sets"></sets-block>
+                        </div>
+
+                        <div class="col-12 mt-4 d-lg-none">
+                            <div class="card card-mobile h-100">
+                                <div class="card-body ">
+                                    <div class="d-flex align-items-center justify-content-between">
+
+                                        <div class="d-flex flex-column">
+                                            <div class="mb-1 pt-1 shop-promo__title ">Собери свой компьютер</div>
+
+                                            <div class="small mt-auto">
+                                                <ul class="nav">
+                                                    <li class="nav__link nav__link--horizontal">
+                                                        <a href="#" class="link link--color-blue">Собрать</a>
+                                                    </li>
+                                                    <li class="nav__link nav__link--horizontal">
+                                                        <a href="#" class="link link--color-blue">Пользовательские
+                                                            сборки</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="shop-promo__icon ">
+                                            <div class="icon-cpu-4"></div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-6 mt-4 d-none d-lg-block">
+                            <div v-if="isAuth==false" class="card h-100 promo-block__alien">
+                                <div class="card-body d-flex flex-column ">
+                                    <div class="action__icon-wrap">
+                                        <!-- <img class="promo__service-img " src="https://rondi.ru/homepage/img/cabinet.png" alt=""> -->
+                                    </div>
+                                    <div class="h4 mb-2 pt-1">Регистрируйся на сайте</div>
+                                    <div class="small mb-3">Получай бонусы и спецпредложения,<br> сохраняй и отслеживай
+                                        заказы
+                                    </div>
+                                    <div class="small mt-auto">
+                                        <ul class="nav nav--horizontal">
+                                            <li class="nav__link nav__link--horizontal">
+                                                <a href="#" @click="isAuth=true" class="link link--color-blue">Войти</a>
+                                            </li>
+                                            <li class="nav__link nav__link--horizontal">
+                                                <a href="#" class="link link--color-blue">Зарегистрироваться</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div v-if="isAuth==true" class="card h-100 promo-block__alien">
+                                <div class="card-body d-flex flex-column ">
+                                    <div class="action__icon-wrap">
+                                        <!-- <img class="promo__service-img " src="https://rondi.ru/homepage/img/cabinet.png" alt=""> -->
+
+                                    </div>
+                                    <div class="h4 mb-2 pt-1">Привет, Василий</div>
+                                    <div class="small mb-3">Получай бонусы и спецпредложения,<br> сохраняй и отслеживай
+                                        заказы
+                                    </div>
+
+                                    <div class="small mt-auto">
+                                        <ul class="nav nav--horizontal">
+                                            <li class="nav__link nav__link--horizontal">
+                                                <a href="#" class="link link--color-blue">Личный кабинет</a>
+                                            </li>
+                                            <li class="nav__link nav__link--horizontal">
+                                                <a href="#" class="link link--color-blue">Заказы</a>
+                                            </li>
+                                            <li class="nav__link nav__link--horizontal">
+                                                <a href="#" class="link link--color-blue">Мои сообщения</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mt-4 d-none d-lg-block">
+                            <div class="card h-100 promo-block__ufo">
+                                <div class="card-body d-flex flex-column ">
+                                    <!-- <div class="action__icon-wrap">
+                                        <img class="promo__service-img " src="https://i.snag.gy/xafw3W.jpg" alt="">
+
+                                    </div> -->
+                                    <div class="h4 mb-2 pt-1">Собери свой компьютер</div>
+                                    <div class="small mb-3">Простой инструмент без проблем <br>с совместимостью</div>
+
+                                    <div class="small mt-auto">
+                                        <ul class="nav nav--horizontal">
+                                            <li class="nav__link nav__link--horizontal">
+                                                <a href="#" class="link link--color-blue">Собрать</a>
+                                            </li>
+                                            <li class="nav__link nav__link--horizontal">
+                                                <a href="#" class="link link--color-blue">Пользовательские сборки</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 ">
+                    <div class="row mt-4 mt-lg-5">
+                        <div class=" col-12 col-lg-9  ">
+                            <div class="d-flex h-100 flex-column">
+                                <div class="h2 mb-3">Лучшие предложения</div>
+                                <best-product :slide="products"></best-product>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-3 d-none d-lg-block ">
+                            <div class="d-flex h-100 flex-column">
+                                <div class="news-block__title-link	 h2 mb-3 flex align-items-center">
+                                    <a href="" class="link link--color-grey">Новости
+                                        <span class="news-block__title-button">
+												<span class="icon-arrow-right"></span>
+											</span>
+                                    </a>
+                                </div>
+                                <div class="card flex-grow-1">
+                                    <div class="card-body">
+                                        <div class="d-flex mb-3" v-for="newsitem in newslist">
+                                            <div class="mr-3 d-xl-block d-none">
+                                                <img class="" :src="newsitem.img" alt="">
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <div class="small mb-1"><a href="#" class="link link--color-grey">{{newsitem.title}}</a>
+                                                </div>
+                                                <div class="small text-secondary mb-2">{{newsitem.date}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="benefit-list card-mobile mb-3 d-flex justify-content-between ">
+                <div class="col-4">
+                    <div class="d-flex flex-column flex-md-row  align-items-center">
+                        <div class="benefit-list__icon  ">
+                            <div class="icon-startup-1"></div>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="benefit-list__item-title h3 mb-0">Широкая сеть</div>
+                            <div class="small d-none d-md-block">более 1400 магазинов по всей России</div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="d-flex flex-column flex-md-row  align-items-center ">
+                        <div class="benefit-list__icon  ">
+                            <div class="icon-planets"></div>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="benefit-list__item-title  h3 mb-0">Огромный ассортимент</div>
+                            <div class="small d-none d-md-block">более 100 000 наименований товаров</div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="d-flex flex-column flex-md-row align-items-center  ">
+                        <div class="benefit-list__icon ">
+                            <div class="icon-astronaut"></div>
+                        </div>
+                        <div class="d-flex flex-column">
+                            <div class="benefit-list__item-title  h3 mb-0">Гарантия от производителя</div>
+                            <div class="small d-none d-md-block">только официальные поставки</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <lazy-component>
+                <div class="d-lg-none">
+                    <div class="h2 d-lg-none mt-4 mb-0">Будь в курсе</div>
+                    <news-block :rewiewslist="review" :mynewslist="newslist"></news-block>
+                </div>
+            </lazy-component>
+
+
+            <lazy-component>
+                <div class="row">
+                    <div class="col-12 mt-4">
+                        <div class="h2 mb-3">Вы недавно смотрели</div>
+
+                        <div class="slider-block overflow-layout">
+                            <div class="product-swiper__wrap">
+                                <local-swiper class="product-swiper " :options="productviewOption">
+                                    <local-slide v-for="(product, index) in productsview" :key="index">
+                                        <div class="product-plate d-flex flex-column">
+                                            <div class="product-plate__image-wrap">
+                                                <div v-if="index==1" class="product__vobler-item">Лучшая цена</div>
+
+                                                <img v-if="index==1" class="product__vobler-rounded"
+                                                     src="https://i.snag.gy/QG4KOn.jpg" alt="">
+                                                <img :src="product.img" alt="" class="product-plate__image">
+                                            </div>
+
+                                            <div class="product-plate__link  mb-2">
+                                                <a href="" class="link link--color-grey">{{product.title}}</a>
+                                            </div>
+                                            <div class="product-plate__social d-flex align-items-center mb-2">
+                                                <div class="product-plate__rating-wrap">
+                                                    <!-- <Rate :value="product.rating"  size='14px' readonly="true" theme="#f48615"></Rate>  -->
+                                                    <rate :length="5" :value="product.rating" :readonly="true"/>
+
+                                                </div>
+                                                <div class="extrasmall ml-2">
+                                                    <a href="" class="link link--color-blue">{{product.reviewcount}}</a>
+                                                </div>
+                                                <div class="ml-3 d-flex align-items-center extrasmall ml-1">
+                                                    <a href="" class="link link--color-blue">
+															<span class="icon__wrap">
+																<span class="icon__img small mr-1 icon-chat-bubble"></span>
+															</span>
+
+                                                        {{product.comment}}</a>
+                                                </div>
+                                            </div>
+                                            <div class="product-plate__price d-flex flex-column">
+                                                <div class="d-flex">
+                                                    <div v-if="product.oldprice"
+                                                         class="product__old-price extrasmall mb-0 mr-2">
+                                                        {{product.oldprice | formatedNumber }} ₽
+                                                    </div>
+                                                    <div v-if="product.oldprice" class="extrasmall mb-0 text-danger">
+                                                        выгода {{product.oldprice-product.price | formatedNumber }} ₽
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex mt-auto">
+                                                    <div class="h3 mb-0  ">{{product.price | formatedNumber}} ₽</div>
+                                                    <div v-if="index==2" class="ml-2 badge-info__wrap">
+                                                        <div class="badge badge-info">бонус 1 500</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </local-slide>
+                                    <div class="sw-button-prev" slot="button-prev">
+                                        <div class="icon-arrow-left "></div>
+                                    </div>
+                                    <div class="sw-button-next" slot="button-next">
+                                        <div class="icon-arrow-right "></div>
+                                    </div>
+                                    <div class="swiper-scrollbar" slot="scrollbar"></div>
+                                </local-swiper>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </lazy-component>
+            <div class="row">
+                <div class="col-12 mt-4 mt-lg-5">
+                    <div class="card card-mobile overflow-layout">
+                        <div class="shop-logo-swiper__wrap">
+                            <logo-swiper class="shop-logo-swiper" :options="shopLogoOption">
+                                <logo-slide v-for="(logo, index) in logos" :key="index">
+                                    <div v-ripple class="shop-logo d-flex align-items-center">
+                                        <div class="shop-logo__image-wrap d-flex align-items-center">
+                                            <img :src="logo.img" alt="" class="shop-logo__image">
+                                        </div>
+                                        <!-- 		<div class="product-plate__link  mb-2">
+                                                    <a href="" class="link link--color-grey">{{logo.name}}</a>						</div>
+                                                -->
+                                    </div>
+                                </logo-slide>
+                                <!--<div class="sw-button-prev" slot="button-prev">-->
+                                    <!--<div class="icon-arrow-left "></div>-->
+                                <!--</div>-->
+                                <!--<div class="sw-button-next" slot="button-next">-->
+                                    <!--<div class="icon-arrow-right "></div>-->
+                                <!--</div>-->
+
+                                <div class="swiper-scrollbar" slot="scrollbar"></div>
+                            </logo-swiper>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <lazy-component>
+                <div class="d-none d-lg-block">
+                    <div class="h2 mb-3 mt-5">ДНС клуб</div>
+                    <blog-list :review="review"></blog-list>
+                </div>
+            </lazy-component>
+
+
+        </div>
+    </div>
+
+    <myfooter></myfooter>
+</div>
+</div>
+</div>
+
+
+</div>
+<!-- built files will be auto injected -->
+</body>
+</html>

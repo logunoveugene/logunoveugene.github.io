@@ -22,7 +22,7 @@
 	<keep-alive>
 		<product-slider
 		:slideinfo="slide[curentIndex] "
-		:activetab ="currentTab"
+		:activetab ="currentTab   "
 		></product-slider>
 	</keep-alive>
 </div>
@@ -56,9 +56,9 @@
 
 		data: function() {
 			return {
-				currentTab: 'Популярные',
+				currentTab: 'Категория 1',
 				curentIndex: 0,
-				tabs: ['Популярные','Новинки','Обсуждаемые','Хиты продаж'],
+				tabs: ['Категория 1','Категория 2','Категория 3','Категория 4'],
 				tabswipe: {
 
 					preventClicks :true,
