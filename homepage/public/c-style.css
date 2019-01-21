@@ -1029,3 +1029,40 @@ h5, .h5 {
     }
 }
 
+
+.new-product__image{
+    max-height: 110px;
+}
+.new-product__small-block{
+    height: calc(50% - 10px);
+    margin-bottom: 20px;
+}
+.new-product__title {
+    max-height: 45px;
+    overflow: hidden;
+}
+
+.card {
+
+    box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.03), 0 1px 3px 0 rgba(0, 0, 0, 0.03);
+}
+
+.w-20{
+    width: 20%;
+    padding-right: 10px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.news-shadow{
+    width: calc(100% - 20px);
+    position: absolute;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.news-desc{
+    z-index: 20;
+padding: 10px;
+    margin-top: -20px;
+}

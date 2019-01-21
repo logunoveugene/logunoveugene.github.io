@@ -155,8 +155,8 @@
 .catalog-menu__item-img {
 	font-size: 32px;
 	color: #FC7B08;
-	height: 32px;
-	width: 32px;
+	height: 25px;
+	width: 25px;
 	margin-right: 1.5rem;
 }
 
@@ -182,7 +182,7 @@
 	.catalog-menu__item-img {
 		font-size: 26px;
 		color: #FF860F;
-		height: auto;
+		/*height: 25;*/
 		margin-right: 1rem;
 	}
 	.catalog-menu__item {
