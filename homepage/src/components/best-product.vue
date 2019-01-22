@@ -56,9 +56,9 @@
 
 		data: function() {
 			return {
-				currentTab: 'Категория 1',
+				currentTab: 'Популярные',
 				curentIndex: 0,
-				tabs: ['Категория 1','Категория 2','Категория 3','Категория 4'],
+				tabs: ['Популярные','Обсуждения','Хиты продаж'],
 				tabswipe: {
 
 					preventClicks :true,

@@ -1,6 +1,6 @@
 <template>
-	<div class="post-blog">
-		<div class="post-blog-lock" >
+	<div class="post-blog h-100">
+		<div class="post-blog-lock h-100" >
 			<div class="post-blog-lock__image-wrap" v-bind:style="{  backgroundImage: 'url(' +  post.imgFull + ')'}" >
 				<div class="post-blog-lock__gradient-wrap" v-bind:style="{ boxShadow: 'inset 0px 170px 100px -60px ' +  post.bgColor}" >
 					<div class="post-blog-lock__info">

@@ -221,8 +221,8 @@
 	.catalog-menu__item-img {
 		font-size: 24px;
 		color: #FF860F;
-		height: 24px;
-		width: 24px;
+		height: 22px;
+		width: 22px;
 		margin-right: .75rem;
 	}
 

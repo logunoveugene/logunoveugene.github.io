@@ -1,15 +1,18 @@
 <template>
 	<div class="post-blog">
 		<div class="post-blog-img" >
-			<div class="post-blog-img__image-wrap">
-				<img class="post-blog-img__image" :src="post.img" alt="">
+			<div class="post-blog-img__image-wrap d-flex flex-column align-items-center">
+
+					<img class="post-blog-img__image" :src="post.img" alt="">
+
+
 			</div>
 			<post-tag  class="justify-content-center" :source="post.source"
 			:format="post.format"
 			:tags="post.tags" 
 			></post-tag>
 
-			<div class="post-blog-img__title mb-2 h5 "><a href="#" class="link link--color-black">{{post.title}}</a></div>
+			<div class="post-blog-img__title mb-auto h5 "><a href="#" class="link link--color-black">{{post.title}}</a></div>
 			<div class="small mb-3">
 				Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
 			</div>
@@ -91,9 +94,10 @@ margin-bottom: 1.5rem;
 .post-blog-img{
 	background: #fff;
 	padding: 1.5rem 1.5rem 2rem 1.5rem;
-
+height: 100%;
 	text-align: center;
-
+display: flex;
+	flex-direction: column;
 
 
 }
@@ -105,12 +109,16 @@ margin-bottom: 1.5rem;
 	max-width: 50%;
 	margin-right: auto;
 	margin-left: auto;
+	height: 90px;
+	position: relative;
 	
 }
 .post-blog-img__image{
 	width: auto;
 	max-width: 100%;
 	height: auto;
+	max-height: 100%;
+
 
 }
 

@@ -1,6 +1,6 @@
 <template>
 	<div class="slider-block overflow-layout ">
-		<div class="tab-swiper__slide mb-3 mt-2">
+		<div class="tab-swiper__slide mb-3 ">
 			<ul class="nav nav--horizontal " >
 				<li class="nav__link nav__link--horizontal"
 				v-for="(tab, index) in tabs"
@@ -22,6 +22,7 @@
 			<div class="icon-arrow-right pt-1 pr-2"></div>
 		</div>
 	</div>
+		<div class=""></div>
 
 
 
@@ -40,7 +41,7 @@
 			return {
 				currentTab: 'Новости',
 				curentIndex: 0,
-				tabs: ['Новости', 'Обзоры'],
+				tabs: ['Новости', 'DNS клуб', 'DNS блог'],
 			}
 		},
 

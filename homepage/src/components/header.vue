@@ -2,7 +2,7 @@
     <fixed-header :threshold="35" :fixed.sync="isFixed">
 
         <div class="header">
-            <div class="header__top-line d-none d-lg-flex">
+            <div class="header__top-line d-none d-lg-flex" v-bind:class="{ technopoint: isTp }">
                 <div class="header__container container">
                     <div class="header__row row">
                         <div class="header__block col-3">
@@ -11,7 +11,7 @@
                                     <div class="header__city-link-icon">
                                         <div class="icon-placeholder-1"></div>
                                     </div>
-                                    <a class="link link--color-white" href="#">Владивосток</a>
+                                    <a class="link link--color-white link--hover-opacity" href="#">Владивосток</a>
                                 </div>
                             </div>
                         </div>
@@ -19,14 +19,12 @@
                             <div class="header__nav ">
                                 <ul class="nav nav--horizontal">
                                     <li class="nav__link nav__link--horizontal">
-                                        <a class="link link--color-white link--dropdown" href="#">Магазины</a>
+                                        <a class="link link--color-white link--dropdown link--hover-opacity" href="#">Магазины</a>
                                     </li>
                                     <li class="nav__link nav__link--horizontal">
-                                        <a class="link link--color-white link--dropdown" href="#">Покупателям</a>
+                                        <a class="link link--color-white link--dropdown link--hover-opacity" href="#">Покупателям</a>
                                     </li>
-                                    <li class="nav__link nav__link--horizontal">
-                                        <a class="link link--color-white link--dropdown" href="#">Наши проекты</a>
-                                    </li>
+
                                 </ul>
                             </div>
                             <div class="header__phone">
@@ -35,10 +33,10 @@
                             </div>
                             <div class="header__user-auth">
                                 <div class="header__sign-in-link">
-                                    <a class="link link--color-white" href="#">Вход</a>
+                                    <a class="link link--color-white link--hover-opacity" href="#">Вход</a>
                                 </div>
                                 <div class="header__sign-up-link">
-                                    <a class="link link--color-white" href="#">Регистрация</a>
+                                    <a class="link link--color-white link--hover-opacity" href="#">Регистрация</a>
                                 </div>
                             </div>
                         </div>
@@ -47,31 +45,53 @@
             </div>
 
             <div class="fixed-plate" :class="{ 'is-fixed': isFixed }">
-                <div class="header__bottom-line" v-bind:class="{ technopoint: isTp }">
+                <div class="header__bottom-line">
                     <div class="header__container container">
                         <div class="header__row row   header__row--bg-fill">
 
                             <div class="header__block col-auto col-lg-3 flex-shrink-1">
                                 <div class="header__logo w-100">
-                                    <img v-if="isTp" @click="$emit('tptodns')"
-                                         src="https://as.technopoint.ru/assets/549eb8cf/images/theme/logo.png"
-                                         class="header__logo-tp" alt="">
+                                    <img v-if="isTp  && !showcatalog " @click="$emit('tptodns')"
+                                         src="https://i.snag.gy/iSpaHI.jpg"
+                                         class="header__logo-main d-none d-lg-block" alt="">
+                                    <img v-if="isTp  && showcatalog " @click="$emit('tptodns')"
+                                         src="https://i.snag.gy/PCR2W5.jpg"
+                                         class="header__logo-main  " alt="">
+
+                                    <img v-if="isTp  && !showcatalog " @click="$emit('tptodns')"
+                                         src="https://i.snag.gy/PCR2W5.jpg"
+                                         class="header__logo-main-tp d-block d-lg-none" alt="">
+
+
                                     <img @click="$emit('tptodns')" src="https://i.snag.gy/iSpaHI.jpg"
-                                         class="header__logo-main" alt="" v-if="!isTp">
+                                         class="d-none d-lg-block header__logo-main" alt="" v-if="!isTp">
+                                    <img @click="$emit('tptodns')" src="https://i.snag.gy/LA8iFq.jpg"
+                                          class="d-block d-lg-none header__logo-main" alt="" v-if="!isTp">
+
+
+
+
                                     <div class="p-relative w-100">
                                         <transition name="fade">
                                             <img v-if="!showcatalog && !isTp" src="https://i.snag.gy/ktOpuU.jpg"
                                                  class="header__logo-desc ml-2 d-none d-lg-block" alt="">
-
-
                                         </transition>
+
+                                        <transition name="fade">
+                                            <img v-if="!showcatalog && isTp" src="https://i.snag.gy/mSgAZF.jpg"
+                                                 class="header__logo-desc ml-2 d-none d-lg-block" alt="">
+                                        </transition>
+
+
+
                                         <transition name="fadebutton">
                                             <div v-if="showcatalog"
                                                  class="btn btn-orange d-none d-lg-inline-block ml-auto"
                                                  v-on:click="showcatalogList = !showcatalogList">
-                                                <div class="d-flex align-items-center">
-                                                    <div class="header__catalog-button-icon icon-menu"></div>
+                                                <div class="d-flex align-items-center font-weight-bold">
+
                                                     Каталог <span class="d-none d-xl-block ml-1"> товаров</span>
+                                                    <div class="header__catalog-button-icon icon-arrow-down"></div>
                                                 </div>
                                             </div>
                                         </transition>
@@ -82,7 +102,7 @@
 
 
                             </div>
-                            <div class="header__block  flex-grow-1 d-none d-md-flex">
+                            <div class="header__block  flex-grow-1 d-flex">
                                 <div class="header__search-form ">
                                     <input type="search" class="header__search-form-field"
                                            placeholder="Поиск по каталогу">
@@ -108,21 +128,21 @@
                                 </div>
                                 <div class="header__store-control ">
                                     <div class="header__store-control__icon">
-                                        <div class="icon-cart"></div>
+                                        <div class="icon-cart-1"></div>
                                     </div>
                                     <div class="header__store-control__desc">Корзина</div>
                                 </div>
                             </div>
 
 
-                            <div class="flex-shrink-1 ml-auto d-md-none">
-                                <div v-ripple class="header__mobile-icon">
-                                    <div class="icon-search"></div>
-                                </div>
-                            </div>
+                            <!--<div class="flex-shrink-1 ml-auto d-md-none">-->
+                                <!--<div v-ripple class="header__mobile-icon">-->
+                                    <!--<div class="icon-search"></div>-->
+                                <!--</div>-->
+                            <!--</div>-->
                             <div class="flex-shrink-1 d-lg-none">
                                 <div v-ripple class="header__mobile-icon">
-                                    <div class="icon-cart"></div>
+                                    <div class="icon-cart-1"></div>
 
                                 </div>
                             </div>
@@ -207,8 +227,7 @@
 
     .header__city-link-icon {
 
-        color: #777;
-
+        color: rgba(255, 255, 255, 0.4);
         height: 15px;
         margin-right: .5rem;
         font-size: 12px;
@@ -312,7 +331,7 @@
 
     .header__top-line {
         height: 35px;
-        background-color: #333;
+        background-color: #fc7b08;
         font-size: 0.875rem;
         display: flex;
         align-items: center;
@@ -326,14 +345,14 @@
         align-items: center;
     }
 
-    .header__bottom-line.technopoint {
-        background: rgba(76, 47, 117, 1);
+    .header__top-line.technopoint {
+        background: #5c2d91;
         color: #fff;
     }
 
-    .technopoint .header__row {
-        background: rgba(76, 47, 117, 1);
-    }
+    /*.technopoint .header__row {*/
+        /*background: rgba(76, 47, 117, 1);*/
+    /*}*/
 
     .technopoint .header__store-control__icon {
         color: #fff;
@@ -356,7 +375,7 @@
         }
 
         .header__logo {
-            margin: 0 10px 0 0;
+            margin: 0 5px 0 0;
 
         }
     }
@@ -381,7 +400,7 @@
     .header__sign-in-link {
         margin-right: .5rem;
         padding-right: .5rem;
-        border-right: 1px solid #666;
+        border-right: 1px solid rgba(255, 255, 255, 0.4)
 
     }
 
@@ -471,6 +490,10 @@
             width: 60px;
             padding-top: 2px;
         }
+        .header__logo-main-tp {
+            width: 70px;
+            padding-top: 2px;
+        }
 
         .header__logo-desc {
             width: 80px;
@@ -484,7 +507,7 @@
 
         .header__search-form-field {
             background: rgba(0, 0, 0, .05);
-            height: 36px;
+            height: 40px;
             padding: 7px 0 6px 10px;
             font-size: 14px;
             border: none;
@@ -493,7 +516,7 @@
 
         .header__search-form-submit {
             width: 40px;
-            height: 36px;
+            height: 40px;
             background: rgba(0, 0, 0, .05);
             padding-top: 8px;
             border: none;
@@ -514,7 +537,7 @@
             display: flex;
             align-items: center;
             height: 100%;
-            padding: 12px 16px 8px;
+            padding: 16px 16px 8px;
             color: #999;
         }
 
@@ -522,6 +545,11 @@
 
             color: #fff;
         }
+
+        .icon-cart-1{
+            font-size: 19px;
+        }
+
 
     }
 
@@ -540,7 +568,8 @@
 
     .header__catalog-button-icon {
         line-height: 12px;
-        margin-right: 14px;
+        margin-left: 9px;
+        font-size: 22px;
 
     }
 
@@ -560,6 +589,9 @@
         left: 0;
         z-index: -500;
     }*/
+
+
+
 
 
 </style>
