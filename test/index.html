@@ -7,8 +7,14 @@
 		var random = Math.random();
 if (random >= '0.5') {
     var rand = 1;
+    window.yaParams = {ab_test: "красная кнопка"};
+ ym(52045218, 'params', window.yaParams||{});
+
 } else {
     var rand = 2;
+    window.yaParams = {ab_test: "зеланая кнопка"};
+ ym(52045218, 'params', window.yaParams||{});
+
 }
 ;var ab_cookie = getCookie('ab_cookie');
 switch (ab_cookie) {
@@ -20,6 +26,7 @@ switch (ab_cookie) {
     default:
         if (rand == 1) {
             setCookie('ab_cookie', 'a', 3);
+
         } else {
             setCookie('ab_cookie', 'b', 3);
             redirectToB();
@@ -81,10 +88,7 @@ function getCookie(c_name) {
 	</style>
  
 	 <input type="button" onclick="ym(52045218, 'reachGoal', 'pushBtn', window.yaParams); return true;" value="Заказать" />
-     <script type="text/javascript">
-window.yaParams = {ab_test: "красная кнопка"};
- ym(52045218, 'params', window.yaParams||{});
-</script>
+ 
 
 </body>
 </html>
