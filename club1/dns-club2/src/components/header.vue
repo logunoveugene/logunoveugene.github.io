@@ -41,8 +41,32 @@
                         <div v-if="isAuth" class="header__user-nav">
                             <ul class="nav small">
                                 <li class="nav__link">
-                                    <a class="link link--color-grey link--dropdown" v-on:click="$emit('logout')"
-                                       href="#">Александр</a>
+                                    <v-popover offset="5">
+                                        <!--v-on:click="$emit('logout')"-->
+                                        <a class="link link--color-grey link--dropdown"
+                                           href="#">Александр</a>
+                                        <template slot="popover">
+                                            <div class="py-2 pt-3 text-left px-3 "><a href="" class="link link--color-grey">Личные сообщения</a></div>
+                                            <div class="py-2 text-left px-3 ">
+                                                <a href="" class="link link--color-grey">Мои статьи</a>
+                                            </div>
+                                            <div class="py-2 text-left px-3 ">
+                                                <a href="" class="link link--color-grey">Личные сообщения</a>
+                                            </div>
+                                            <div class="py-2 text-left px-3 ">
+                                                <a href="" class="link link--color-grey">Мои темы</a>
+                                            </div>
+                                            <div class="py-2 text-left px-3 ">
+                                                <a href="" class="link link--color-grey">Обратная связь</a>
+                                            </div>
+                                            <div class="py-2 pb-3 text-left px-3 bb-1">
+                                                <a href="" class="link link--color-grey">Профиль</a>
+                                            </div>
+                                            <div class="py-3 text-left px-3 ">
+                                                <a href="" class="link link--color-grey">Выход</a>
+                                            </div>
+                                        </template>
+                                    </v-popover>
                                 </li>
                                 <!--<li class="nav__link">-->
                                 <!--<a class="link link&#45;&#45;color-grey" v-on:click="$emit('logout')"  href="#">-->
@@ -168,6 +192,11 @@
                 <div @click="isMenu = false" class="h1 mb-0 px-2">×</div>
             </div>
             <div class="menu__scroll ">
+                <a href="#" class="link link--color-grey ">
+                    <div v-ripple class="p-3 bb-1" @click="isMenu = false">
+                        <div class="h4 mb-0">Войти в личный кабинет</div>
+                    </div>
+                </a>
                 <router-link to="/review" class="link link--color-grey">
                     <div v-ripple class="p-3 bb-1" @click="isMenu = false">
                         <div class="h4 mb-0">Дайджест</div>
@@ -211,6 +240,7 @@
 
 
             </div>
+
         </div>
     </div>
 

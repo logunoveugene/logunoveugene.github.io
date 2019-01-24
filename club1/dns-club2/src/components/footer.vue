@@ -20,13 +20,13 @@
             <!--</div>-->
             <div class="footer__row row pt-3">
                 <div class="footer__col col-12 col-lg">
-                    <div class="footer__col-head  ">Наше всё</div>
+                    <div class="footer__col-head  ">Статьи</div>
                     <ul class="footer__menu-list list-unstyled small d-none d-lg-block">
                         <li class="footer__menu-item">
-                            <a href="#" class="link link--color-white">Блоги</a>
+                            <a href="#" class="link link--color-white">Дайджест</a>
                         </li>
                         <li class="footer__menu-item">
-                            <a href="#" class="link link--color-white">Дайджест</a>
+                            <a href="#" class="link link--color-white">Обзоры</a>
                         </li>
                         <li class="footer__menu-item">
                             <a href="#" class="link link--color-white">Лайфхаки</a>
@@ -37,14 +37,15 @@
                 <div class="footer__col col-12 col-lg">
                     <div class="footer__col-head  ">Обсуждения</div>
                     <ul class="footer__menu-list list-unstyled small d-none d-lg-block">
-                        <li class="footer__menu-item">
-                            <a href="#" class="link link--color-white">Новые сообщения</a>
-                        </li>
+
                         <li class="footer__menu-item">
                             <a href="#" class="link link--color-white">Новые темы</a>
                         </li>
                         <li class="footer__menu-item">
-                            <a href="#" class="link link--color-white">Создать тему</a>
+                            <a href="#" class="link link--color-white">Лучшие</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Популярные</a>
                         </li>
                     </ul>
                 </div>
@@ -55,10 +56,10 @@
                             <a href="#" class="link link--color-white">О проекте</a>
                         </li>
                         <li class="footer__menu-item">
-                            <a href="#" class="link link--color-white">Обратная связь</a>
+                            <a href="#" class="link link--color-white">Тур по сайту</a>
                         </li>
                         <li class="footer__menu-item">
-                            <a href="#" class="link link--color-white">Сотрудничество</a>
+                            <a href="#" class="link link--color-white">Для авторов</a>
                         </li>
 
                     </ul>
@@ -71,21 +72,24 @@
                               </a>
                         </li>
                         <li class="footer__menu-item">
-                            <a href="#" class="link link--color-white">Написать обзор</a>
+                            <a href="#" class="link link--color-white">Написать статью</a>
+                        </li>
+                        <li class="footer__menu-item">
+                            <a href="#" class="link link--color-white">Создать тему</a>
                         </li>
                     </ul>
 
                 </div>
 
                 <div class="footer__col col-lg-3 col-12">
-                    <div class="footer__col-head  d-none d-lg-block">Нашли ошибку</div>
-                    <div class="d-block d-lg-none">
-                        <div class="h5 mt-4">Нашли ошибку</div>
-                    </div>
-                    <div class="footer__phone d-flex mb-4 align-items-center flex-wrap">
+                    <div class="footer__col-head  d-none d-lg-block">Мы в соцсетях</div>
+                    <!--<div class="d-block d-lg-none">-->
+                        <!--<div class="h5 mt-4">Нашли ошибку</div>-->
+                    <!--</div>-->
+                    <!--<div class="footer__phone d-flex mb-4 align-items-center flex-wrap">-->
 
-                        <div class="footer__phone-desc">Выделите ее и нажмите Ctrl + Enter</div>
-                    </div>
+                        <!--<div class="footer__phone-desc">Выделите ее и нажмите Ctrl + Enter</div>-->
+                    <!--</div>-->
 
 
 
@@ -111,9 +115,6 @@
                             </a>
                         </div>
                     </div>
-
-
-
                 </div>
                 <div class="col-12 mt-4">
                     <div class="footer__copyright  small">

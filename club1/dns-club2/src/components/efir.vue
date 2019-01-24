@@ -13,10 +13,11 @@
             <ul class="list-unstyled small">
                 <li class="media mb-4 " v-for="(live, index) in lives">
                     <div class="media-body">
-                        <div class="  mb-1">{{live.type}}</div>
+                        <div class="post-list-item__type mb-1">{{live.type}}</div>
                         <a href="" class="link link--color-blue">{{live.title}}</a>
-                        <div class="">{{live.desc}}
-                        </div>
+                        <br>
+                        <a href="" class="link link--color-grey">{{live.desc}}</a>
+
                         <div class="d-flex flex-row align-items-center justify-content-between mt-2">
                             <a class="link link--color-blue small " href="">Ответить</a>
                             <div class="text-secondary small"><a href="#"
@@ -65,6 +66,13 @@
 
 </script>
 
-<style scoped>
+<style >
 
+    .post-list-item__type{
+        font-size: 11px;
+        text-transform: uppercase;
+        display: flex;
+        margin-bottom: 0.5rem;
+        flex-wrap: wrap;
+    }
 </style>
