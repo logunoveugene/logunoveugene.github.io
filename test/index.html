@@ -31,14 +31,15 @@ if (random >= '0.5') {
 
 } else {
     var rand = 2;
-    window.yaParams = {ab_test: "зеланая кнопка"};
- ym(52045218, 'params', window.yaParams||{});
+
 
 }
 ;var ab_cookie = getCookie('ab_cookie');
 switch (ab_cookie) {
     case 'a':
         break;
+            window.yaParams = {ab_test: "красная кнопка"};
+ ym(52045218, 'params', window.yaParams||{});
     case 'b':
         redirectToB();
         break;
@@ -53,7 +54,10 @@ switch (ab_cookie) {
 }
 
 function redirectToB() {
+      window.yaParams = {ab_test: "зеланая кнопка"};
+ ym(52045218, 'params', window.yaParams||{});
     window.location = "./b.html"
+      
 }
 
 function setCookie(c_name, value, exdays) {
