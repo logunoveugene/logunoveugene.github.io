@@ -38,16 +38,38 @@
                 <div class="d-flex">
 
 
+                    <!--<v-popover offset="0">-->
+                        <!--<div class="comment__menu">-->
+                            <!--<div class="icon-dots-hor"></div>-->
+                        <!--</div>-->
+                        <!--<template slot="popover">-->
+                            <!--<div class="py-3 px-3 bb-1">Скопировать ссылку</div>-->
+                            <!--<div class="py-3 px-3 bb-1">Пожаловаться</div>-->
+                            <!--<div class="py-3 px-3  ">Заблокировать</div>-->
+                        <!--</template>-->
+                    <!--</v-popover>-->
+
+
                     <v-popover offset="0">
                         <div class="comment__menu">
                             <div class="icon-dots-hor"></div>
                         </div>
                         <template slot="popover">
-                            <div class="py-3 px-3 bb-1">Скопировать ссылку</div>
-                            <div class="py-3 px-3 bb-1">Пожаловаться</div>
-                            <div class="py-3 px-3  ">Заблокировать</div>
+                            <div class="py-2 pt-3 text-left px-3 ">
+                                <a href="" class="link link--color-grey">Скопировать ссылку</a>
+                            </div>
+                            <div class="py-2 text-left px-3 ">
+                                <a href="" class="link link--color-grey">Пожаловаться</a>
+                            </div>
+                            <div class="py-2 pb-3  text-left px-3 ">
+                                <a href="" class="link link--color-grey">Заблокировать</a>
+                            </div>
+
                         </template>
                     </v-popover>
+
+
+
                 </div>
 
             </div>

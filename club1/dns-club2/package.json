@@ -23,6 +23,7 @@
     "vue-axios": "^2.1.4",
     "vue-comment-grid": "^1.0.11",
     "vue-fixed-header": "^2.0.0",
+    "vue-flatpickr-component": "^8.1.1",
     "vue-froala-wysiwyg": "^2.8.5",
     "vue-goodshare": "^1.1.0",
     "vue-headroom": "^0.9.0",

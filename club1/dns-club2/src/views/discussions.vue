@@ -72,12 +72,12 @@
                                      @click="discussionsSearchResalt=!discussionsSearchResalt"></div>
                             </div>
                             <!--<div class="filter__item mr-3 mb-2">Бренд: Xiaomi-->
-                                <!--<div class="filter__item-icon icon-close"-->
-                                     <!--@click="discussionsSearchResalt=!discussionsSearchResalt"></div>-->
+                            <!--<div class="filter__item-icon icon-close"-->
+                            <!--@click="discussionsSearchResalt=!discussionsSearchResalt"></div>-->
                             <!--</div>-->
                             <!--<div class="filter__item mr-3 mb-2">Категория товара: Пылесосы-->
-                                <!--<div class="filter__item-icon icon-close"-->
-                                     <!--@click="discussionsSearchResalt=!discussionsSearchResalt"></div>-->
+                            <!--<div class="filter__item-icon icon-close"-->
+                            <!--@click="discussionsSearchResalt=!discussionsSearchResalt"></div>-->
                             <!--</div>-->
                         </div>
                     </div>
@@ -169,12 +169,34 @@
                                 <div class="link link--dropdown">За сегодня</div>
                             </div>
                             <template slot="popover">
-                                <div class="py-3 px-3 bb-1">За сегодня</div>
-                                <div class="py-3 px-3 bb-1">За неделю</div>
-                                <div class="py-3 px-3 bb-1">За месяц</div>
-                                <div class="py-3 px-3  bb-1 ">За все время</div>
-                                <div class="py-3 px-3">Выбрать период</div>
+                                <div class="py-2 pt-3 text-left px-3 ">
+                                    <a href="#" class="link link--color-grey">За сегодня</a>
+                                </div>
+                                <div class="py-2 text-left px-3 ">
+                                    <a href="#" class="link link--color-grey">За неделю</a>
+                                </div>
+                                <div class="py-2 text-left px-3 ">
+                                    <a href="#" class="link link--color-grey">За месяц</a>
+                                </div>
+                                <div class="py-2 text-left px-3 ">
+                                    <a href="#" class="link link--color-grey">За все время</a>
+                                </div>
+                                <div class="py-2 pb-3 text-left px-3 bb-1">
+                                    <flat-pickr
+                                            v-model="date"
+                                            :config="config"
 
+                                            class="form-control"
+                                            placeholder="Выбрать период"
+                                            name="date">
+                                    </flat-pickr>
+
+
+
+
+
+                                    <!--<a href="#" class="link link&#45;&#45;color-grey">Выбрать период</a>-->
+                                </div>
                             </template>
                         </v-popover>
                     </div>
@@ -182,7 +204,7 @@
                         <paginate
                                 name="discuss"
                                 :list="discussions"
-                                :per="1"
+                                :per="8"
                         >
                             <disc-list-item :post="post"
                                             v-for="(post, index) in paginated('discuss')"
@@ -340,11 +362,34 @@
                 error: [],
                 searchword: '',
                 initSelected: [],
-                stateLoad: false
+                stateLoad: false,
+
+
+                date: new Date(),
+                // Get more form https://chmln.github.io/flatpickr/options/
+                config: {
+                    wrap: true,
+                    // weekNumbers: true,
+                    mode: "range",
+                    maxDate: "today",
+                    dateFormat: "Y-m-d",
+                    defaultDate: "today",
+                    // inline: true,
+                    locale: "ru",
+
+
+                },
 
 
             }
         },
+        // computed: {
+        //     searchDateSumbit: function() {
+        //
+        //         let d= this.date.split(' — ');
+        //         return dayjs(d[0]).format('H:mm, DD MMM YYYY')+'–'+dayjs(d[1]).format('H:mm, DD MMM YYYY');
+        //     },
+        // },
         methods: {
             show() {
                 this.$modal.show('hello-world');
@@ -427,7 +472,8 @@
         color: #dddddd;
 
     }
-    .search-ext{
+
+    .search-ext {
         position: relative;
     }
 
@@ -647,6 +693,22 @@
         top: 7px;
         color: #fff;
     }
+
+    .form-control.flatpickr-input{
+        background-color: #ffffff;
+        border: none;
+        padding: 0;
+        font-size: 14px;
+        font-family: "PT Sans";
+        line-height: 12px;
+        display: block;
+        height: 21px;
+        outline: none;
+    }
+
+
+
+
 
 
 </style>

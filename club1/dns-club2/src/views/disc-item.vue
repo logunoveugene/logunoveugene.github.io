@@ -42,7 +42,7 @@
                         <div class="mb-4">
                             <div v-html="post.teaser"></div>
                         </div>
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-between align-items-center">
                             <div class="d-flex">
                                 <div class="comment__rate d-flex mr-4">
                                     <div class="comment__rate-up icon-thumb-up"></div>
@@ -50,7 +50,7 @@
                                     <div class="comment__rate-down icon-thumb-down"></div>
                                 </div>
 
-                                <div class="small mr-3">
+                                <div class="small mr-3 d-flex align-items-center">
                                     <div class="link link--color-blue" @click="focusqanswer">
                                         Ответить
                                     </div>
@@ -106,7 +106,7 @@
 
 
 
-                    <div class="mb-4" v-if="comments && comments.length>1">
+                    <div class="my-4" v-if="comments && comments.length>1">
 
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="h1 mb-0">

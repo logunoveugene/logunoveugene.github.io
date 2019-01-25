@@ -14,6 +14,13 @@ Vue.filter("fdate", function (value) {
 })
 
 
+
+Vue.filter("fromdate", function (value) {
+    let d= value.split(' to ');
+    return dayjs(d[0]).format('H:mm, DD MMM YYYY')+'–'+dayjs(d[1]).format('H:mm, DD MMM YYYY');
+})
+
+
 Vue.filter("fulldate", function (value) {
      dayjs().to(dayjs(value));
     return dayjs(value).format('H:mm, DD MMM YYYY');

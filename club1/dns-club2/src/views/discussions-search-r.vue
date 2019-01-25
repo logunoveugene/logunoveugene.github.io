@@ -191,11 +191,23 @@
                                 <div class="link link--dropdown">За все время</div>
                             </div>
                             <template slot="popover">
-                                <div class="py-3 px-3 bb-1">За сегодня</div>
-                                <div class="py-3 px-3 bb-1">За неделю</div>
-                                <div class="py-3 px-3 bb-1">За месяц</div>
-                                <div class="py-3 px-3  bb-1 ">За все время</div>
-                                <div class="py-3 px-3">Выбрать период</div>
+                                <template slot="popover">
+                                    <div class="py-2 pt-3 text-left px-3 ">
+                                        <a href="" class="link link--color-grey">За сегодня</a>
+                                    </div>
+                                    <div class="py-2 text-left px-3 ">
+                                        <a href="" class="link link--color-grey">За неделю</a>
+                                    </div>
+                                    <div class="py-2 text-left px-3 ">
+                                        <a href="" class="link link--color-grey">За месяц</a>
+                                    </div>
+                                    <div class="py-2 text-left px-3 ">
+                                        <a href="" class="link link--color-grey">За все время</a>
+                                    </div>
+                                    <div class="py-2 pb-3 text-left px-3 bb-1">
+                                        <a href="" class="link link--color-grey">Выбрать период</a>
+                                    </div>
+                                </template>
 
                             </template>
                         </v-popover>

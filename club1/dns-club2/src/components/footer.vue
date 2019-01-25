@@ -1,23 +1,24 @@
 <template>
     <div class="footer">
         <div class="footer__container container ">
-            <!--<div class="footer__project d-flex  flex-wrap justify-content-around justify-content-lg-between">-->
-                <!--<div class="footer__project-img-wrap">-->
-                    <!--<img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/dns.png" alt=""-->
-                         <!--class="footer__project-img">-->
-                <!--</div>-->
-                <!--<div class="footer__project-img-wrap">-->
-                    <!--<img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/tp.png" alt=""-->
-                         <!--class="footer__project-img">-->
-                <!--</div>-->
-                <!--<div class="footer__project-img-wrap">-->
-                    <!--<img src="https://i.snag.gy/PvDfIj.jpg" alt="" class="footer__project-img">-->
-                <!--</div>-->
-                <!--<div class="footer__project-img-wrap">-->
-                    <!--<img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/clubexp.png" alt=""-->
-                         <!--class="footer__project-img">-->
-                <!--</div>-->
-            <!--</div>-->
+
+            <div class="footer__project d-flex  flex-wrap justify-content-around justify-content-lg-between">
+                <div class="footer__project-img-wrap">
+                    <img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/dns.png" alt=""
+                         class="footer__project-img">
+                </div>
+                <div class="footer__project-img-wrap">
+                    <img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/tp.png" alt=""
+                         class="footer__project-img">
+                </div>
+                <div class="footer__project-img-wrap">
+                    <img src="https://i.snag.gy/PvDfIj.jpg" alt="" class="footer__project-img">
+                </div>
+                <div class="footer__project-img-wrap">
+                    <img src="https://i.snag.gy/SWcknL.jpg" alt=""
+                         class="footer__project-img">
+                </div>
+            </div>
             <div class="footer__row row pt-3">
                 <div class="footer__col col-12 col-lg">
                     <div class="footer__col-head  ">Статьи</div>
@@ -241,15 +242,17 @@
     }
 
     .footer__project-img {
-        opacity: .7;
+        opacity: 1;
         height: 14px;
         width: auto;
         margin-bottom: 1.5rem;
+        transition: .5s;
+        cursor: pointer;
 
     }
 
     .footer__project-img:hover {
-        opacity: 1;
+        opacity: .7;
     }
 
     .footer__project-img-wrap {

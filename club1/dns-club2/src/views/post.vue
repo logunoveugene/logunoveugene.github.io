@@ -12,6 +12,9 @@
                 </div>
                 <div class="col-12 col-lg-8">
                     <div class="page__title mb-4">{{post.title}}</div>
+                    <img class="img-fluid rounded mb-4" :src="post.img" alt="">
+
+
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
                         <div class="d-flex align-items-center mb-3">
                             <div class="mr-3">
@@ -108,7 +111,7 @@
                             Lenovo
                             расположена в
                             Пекине (КНР), а зарегистрирована компания в Гонконге.</p>
-                        <img :src="post.img" alt="">
+
                         <h1>Технические характеристики</h1>
                         <ul>
                             <li>Тип устройства: классический ноутбук</li>

@@ -17,12 +17,39 @@
                 </div>
             </div>
         </div>
-        <div class="pt-3" v-if="products && products.length>3">
-            <div class="d-flex align-items-center">
-                <div class="icon-add pt-1 mr-2"></div>
-                Смотерть все
+        <div class="mt-4" v-if="isFullList">
+            <div class="product-list__item " v-for="(product, index)  in products"
+                 :key="index"
+                 v-if="index>=3">
+                <div class="d-flex justify-content-between">
+                    <div class="d-flex flex-column">
+                        <div class="h4 mb-3">
+                            {{product.title}}
+                        </div>
+                        <div class="">
+                            <button type="button" class="btn btn--color-white ">Перейти в магазин</button>
+                        </div>
+                    </div>
+                    <div class="ml-3 product-list__item-img-wrap">
+                        <img class="product-list__item-img" :src="product.img" alt="">
+                    </div>
+                </div>
             </div>
         </div>
+
+        <div class="pt-3" v-if="products && products.length>3">
+            <div class="d-flex align-items-center">
+                <span v-if="!isFullList" class="icon-add pt-1 mr-2"></span>
+                <span v-if="isFullList" class="icon-remove pt-1 mr-2"></span>
+
+                <a @click="isFullList=!isFullList" href="#" class="link link--color-grey">
+                    <span v-if="!isFullList">Смотерть все</span>
+                    <span v-if="isFullList">Свернуть</span>
+                </a>
+            </div>
+        </div>
+
+
     </div>
 </template>
 
@@ -33,6 +60,11 @@
             products: {
                 type: null,
                 default: ""
+            }
+        },
+        data() {
+            return {
+                isFullList: false
             }
         }
     }

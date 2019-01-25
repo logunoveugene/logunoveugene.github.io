@@ -42,11 +42,13 @@
                             <ul class="nav small">
                                 <li class="nav__link">
                                     <v-popover offset="5">
-                                        <!--v-on:click="$emit('logout')"-->
+                                        <!---->
                                         <a class="link link--color-grey link--dropdown"
                                            href="#">Александр</a>
                                         <template slot="popover">
-                                            <div class="py-2 pt-3 text-left px-3 "><a href="" class="link link--color-grey">Личные сообщения</a></div>
+                                            <div class="py-2 pt-3 text-left px-3 ">
+                                                <a href="" class="link link--color-grey">Личные сообщения</a>
+                                            </div>
                                             <div class="py-2 text-left px-3 ">
                                                 <a href="" class="link link--color-grey">Мои статьи</a>
                                             </div>
@@ -63,7 +65,7 @@
                                                 <a href="" class="link link--color-grey">Профиль</a>
                                             </div>
                                             <div class="py-3 text-left px-3 ">
-                                                <a href="" class="link link--color-grey">Выход</a>
+                                                <a href="#" class="link link--color-grey" v-on:click="$emit('logout')">Выход</a>
                                             </div>
                                         </template>
                                     </v-popover>
@@ -248,7 +250,7 @@
 
 <script>
 
-    import {headroom} from 'vue-headroom'
+    import headroom from './headroom.vue'
 
     export default {
         components: {

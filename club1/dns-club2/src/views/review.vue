@@ -43,15 +43,18 @@
                                 </div>
                                 <div class=" d-flex">
                                     <div class="custom-control custom-checkbox mr-4">
-                                        <input type="checkbox" id="customCheck1" checked="checked" class="custom-control-input">
+                                        <input type="checkbox" id="customCheck1" checked="checked"
+                                               class="custom-control-input">
                                         <label for="customCheck1" class="custom-control-label">Текст</label>
                                     </div>
                                     <div class="custom-control custom-checkbox mr-4">
-                                        <input type="checkbox" id="customCheck1" checked="checked" class="custom-control-input">
+                                        <input type="checkbox" id="customCheck1" checked="checked"
+                                               class="custom-control-input">
                                         <label for="customCheck1" class="custom-control-label">Видео</label>
                                     </div>
                                     <div class="custom-control custom-checkbox mr-4">
-                                        <input type="checkbox" id="customCheck1" checked="checked" class="custom-control-input">
+                                        <input type="checkbox" id="customCheck1" checked="checked"
+                                               class="custom-control-input">
                                         <label for="customCheck1" class="custom-control-label">Фото</label>
                                     </div>
                                 </div>
@@ -61,28 +64,33 @@
                                 </div>
                                 <!--<div class="small d-flex flex-column">-->
 
-                                    <!--<div class="mr-3">-->
-                                        <!--<a href="#" class="link link&#45;&#45;color-grey">Любительские обзоры</a>-->
-                                    <!--</div>-->
-                                    <!--<div class="mr-3">-->
-                                        <!--<a href="#" class="link link&#45;&#45;color-grey">Профессиональные обзоры</a>-->
-                                    <!--</div>-->
-                                    <!--<div class="mr-3">-->
-                                        <!--<a href="#" class="link link&#45;&#45;color-grey">От производителей</a>-->
-                                    <!--</div>-->
+                                <!--<div class="mr-3">-->
+                                <!--<a href="#" class="link link&#45;&#45;color-grey">Любительские обзоры</a>-->
+                                <!--</div>-->
+                                <!--<div class="mr-3">-->
+                                <!--<a href="#" class="link link&#45;&#45;color-grey">Профессиональные обзоры</a>-->
+                                <!--</div>-->
+                                <!--<div class="mr-3">-->
+                                <!--<a href="#" class="link link&#45;&#45;color-grey">От производителей</a>-->
+                                <!--</div>-->
 
                                 <!--</div>-->
                                 <div class=" ">
                                     <div class="custom-control custom-checkbox mr-4">
-                                        <input type="checkbox" id="customCheck1" checked="checked" class="custom-control-input">
-                                        <label for="customCheck1" class="custom-control-label">Любительские обзоры</label>
+                                        <input type="checkbox" id="customCheck1" checked="checked"
+                                               class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">Любительские
+                                            обзоры</label>
                                     </div>
                                     <div class="custom-control custom-checkbox mr-4">
-                                        <input type="checkbox" id="customCheck1" checked="checked" class="custom-control-input">
-                                        <label for="customCheck1" class="custom-control-label">Профессиональные обзоры</label>
+                                        <input type="checkbox" id="customCheck1" checked="checked"
+                                               class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">Профессиональные
+                                            обзоры</label>
                                     </div>
                                     <div class="custom-control custom-checkbox mr-4">
-                                        <input type="checkbox" id="customCheck1" checked="checked" class="custom-control-input">
+                                        <input type="checkbox" id="customCheck1" checked="checked"
+                                               class="custom-control-input">
                                         <label for="customCheck1" class="custom-control-label">От производителей</label>
                                     </div>
                                 </div>
@@ -96,10 +104,30 @@
                             <a class="link link--pill link--color-black" href="#">Лучшее</a>
                         </nav>
 
-                        <div class="d-none d-md-flex  ">за сегодня
-                            <div class="small pt-1 ml-1 text-secondary">
-                                <div class="icon-down"></div>
-                            </div>
+                        <div class="d-none d-md-flex  ">
+                            <v-popover offset="0">
+
+                                <div class="d-none  d-md-flex">
+                                    <div class="link link--dropdown">За все время</div>
+                                </div>
+                                <template slot="popover">
+                                    <div class="py-2 pt-3 text-left px-3 ">
+                                        <a href="#" class="link link--color-grey">За сегодня</a>
+                                    </div>
+                                    <div class="py-2 text-left px-3 ">
+                                        <a href="#" class="link link--color-grey">За неделю</a>
+                                    </div>
+                                    <div class="py-2 text-left px-3 ">
+                                        <a href="#" class="link link--color-grey">За месяц</a>
+                                    </div>
+                                    <div class="py-2 text-left px-3 ">
+                                        <a href="#" class="link link--color-grey">За все время</a>
+                                    </div>
+                                    <div class="py-2 pb-3 text-left px-3 bb-1">
+                                        <a href="#" class="link link--color-grey">Выбрать период</a>
+                                    </div>
+                                </template>
+                            </v-popover>
                         </div>
                     </div>
                     <div class="posts">
@@ -125,15 +153,20 @@
 
                                             <div class=" ">
                                                 <div class="custom-control custom-checkbox mb-2">
-                                                    <input type="checkbox" id="customCheck1asdas"   class="custom-control-input">
-                                                    <label for="customCheck1asdas" class="custom-control-label">Текст</label>
+                                                    <input type="checkbox" id="customCheck1asdas"
+                                                           class="custom-control-input">
+                                                    <label for="customCheck1asdas"
+                                                           class="custom-control-label">Текст</label>
                                                 </div>
                                                 <div class="custom-control custom-checkbox mb-2">
-                                                    <input type="checkbox" id="customCheck1dsfsd"   class="custom-control-input">
-                                                    <label for="customCheck1dsfsd" class="custom-control-label">Видео</label>
+                                                    <input type="checkbox" id="customCheck1dsfsd"
+                                                           class="custom-control-input">
+                                                    <label for="customCheck1dsfsd"
+                                                           class="custom-control-label">Видео</label>
                                                 </div>
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" id="custosadasd"   class="custom-control-input">
+                                                    <input type="checkbox" id="custosadasd"
+                                                           class="custom-control-input">
                                                     <label for="custosadasd" class="custom-control-label">Фото</label>
                                                 </div>
                                             </div>
@@ -145,16 +178,19 @@
                                         </div>
                                         <div class=" ">
                                             <div class="custom-control custom-checkbox mb-2">
-                                                <input type="checkbox" id="customCheck1"   class="custom-control-input">
-                                                <label for="customCheck1" class="custom-control-label">Любительские обзоры</label>
+                                                <input type="checkbox" id="customCheck1" class="custom-control-input">
+                                                <label for="customCheck1" class="custom-control-label">Любительские
+                                                    обзоры</label>
                                             </div>
                                             <div class="custom-control custom-checkbox mb-2">
-                                                <input type="checkbox" id="customCheck1"  class="custom-control-input">
-                                                <label for="customCheck1" class="custom-control-label">Профессиональные обзоры</label>
+                                                <input type="checkbox" id="customCheck1" class="custom-control-input">
+                                                <label for="customCheck1" class="custom-control-label">Профессиональные
+                                                    обзоры</label>
                                             </div>
                                             <div class="custom-control custom-checkbox mb-2">
-                                                <input type="checkbox" id="customCheck1"   class="custom-control-input">
-                                                <label for="customCheck1" class="custom-control-label">От производителей</label>
+                                                <input type="checkbox" id="customCheck1" class="custom-control-input">
+                                                <label for="customCheck1" class="custom-control-label">От
+                                                    производителей</label>
                                             </div>
                                         </div>
                                     </div>

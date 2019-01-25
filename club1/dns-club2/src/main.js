@@ -61,6 +61,12 @@ Vue.use(SocialSharing);
 
 
 
+import VueFlatPickr from 'vue-flatpickr-component';
+// import 'flatpickr/dist/flatpickr.css';
+// import ru from './ru.js';
+Vue.use(VueFlatPickr);
+
+
 
 
 Vue.use(CripLoading,{

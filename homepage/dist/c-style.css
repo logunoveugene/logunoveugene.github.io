@@ -126,6 +126,13 @@ input:focus, button:focus {
     text-decoration: none;
 }
 
+.link--hover-opacity:hover {
+    color: inherit !important;
+    opacity: .7;
+    text-decoration: none;
+
+}
+
 .link--color-grey {
     color: #4E4E4E;
 }
@@ -880,7 +887,6 @@ h5, .h5 {
         margin-right: 1rem;
     }
 
-
     .benefit-list__item-title {
         font-size: 14px;
         text-align: left;
@@ -891,11 +897,9 @@ h5, .h5 {
 
     .benefit-list {
         background: none;
-        padding:  0;
+        padding: 0;
         margin-top: 2.5rem;
     }
-
-
 
     .benefit-list__item-title {
         font-size: 18px;
@@ -1029,3 +1033,158 @@ h5, .h5 {
     }
 }
 
+.new-product__image {
+    max-height: 110px;
+}
+
+.new-product__small-block {
+    height: calc(50% - 10px);
+    margin-bottom: 10px;
+}
+
+
+.mr--5 {
+
+    margin-right: -5px;
+}
+
+.ml--5 {
+    margin-left: -5px;
+}
+
+
+@media (min-width: 992px) {
+    .mr--5 {
+        margin-right: 0;
+    }
+
+    .ml--5 {
+        margin-left: 0;
+    }
+    .new-product__small-block {
+
+        margin-bottom: 20px;
+    }
+}
+
+.new-product__title {
+    max-height: 45px;
+    overflow: hidden;
+}
+
+/*.card {*/
+
+    /*box-shadow: 0 1px 13px 0 rgba(0, 0, 0, 0.03), 0 1px 3px 0 rgba(0, 0, 0, 0.03);*/
+/*}*/
+
+.w-20 {
+    width: 20%;
+    padding-right: 10px;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.news-shadow {
+    width: calc(100% - 20px);
+    position: absolute;
+    height: 100%;
+    border-radius: 8px;
+}
+
+.news-desc {
+    z-index: 20;
+    padding: 10px;
+    margin-top: -20px;
+}
+
+.benefit__shops {
+    background-image: linear-gradient(45deg, #2DDFF9 0%, #14BCF0 100%);
+    border-radius: 8px;
+    padding: 16px;
+    color: #FFFFFF;
+    text-align: center;
+    height: 100%;
+    margin-right: -5px;
+
+}
+
+.benefit__products {
+    background-image: linear-gradient(45deg, #FFCF35 0%, #FFA218 100%);
+    border-radius: 8px;
+    padding: 16px;
+    color: #FFFFFF;
+    text-align: center;
+    height: 100%;
+    margin-left: -5px;
+
+}
+
+.benefit__warranty {
+    background-image: linear-gradient(45deg, #A4D362 0%, #6BA833 100%);
+    border-radius: 8px;
+    padding: 16px;
+    color: #FFFFFF;
+    text-align: center;
+    height: 100%;
+    margin-right: -5px;
+
+}
+
+.benefit__payment {
+    background-image: linear-gradient(45deg, #2DDFF9 0%, #14BCF0 100%);
+    border-radius: 8px;
+    padding: 16px;
+    color: #FFFFFF;
+    text-align: center;
+    height: 100%;
+    margin-left: -5px;
+
+}
+
+@media (min-width: 992px) {
+    .benefit__shops {
+        margin-right: 0;
+    }
+
+    .benefit__products {
+        margin-left: 0;
+    }
+
+    .benefit__warranty {
+        margin-right: 0;
+    }
+
+    .benefit__payment {
+        margin-left: 0;
+
+    }
+}
+
+.popular-product__image {
+
+    width: 100px;
+    height: 60px;
+    text-align: center;
+    flex: 0 0 60px;
+}
+
+.popular-product__title {
+    height: 37px;
+    overflow: hidden;
+    line-height: 18px;
+    font-size: 14px;
+}
+
+.new-product__first-image {
+    max-height: 200px;
+}
+
+@media (min-width: 576px) {
+    .new-product__first-image {
+        max-height: none
+    }
+}
+
+.main-layout {
+    overflow: hidden;
+}
