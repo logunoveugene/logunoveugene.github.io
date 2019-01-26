@@ -22,7 +22,6 @@ import ActionButton from 'react-native-action-button';
 import MyLabels from './MyLabels';
 import Pie from 'react-native-fab-pie';
 
-
 import {NavigationEvents} from 'react-navigation';
 
 import ActionModal from './ActionModal'
@@ -73,9 +72,17 @@ export default class Main extends React.Component {
             dateFilterVisible: false,
             scrollY: new Animated.Value(0),
             filterVisible: false,
+
+
             date: null,
             nodeTypeList: null,
-            checked: false
+            checked: false,
+
+
+            filterIsActive: false,
+            filterDateRange: null,
+            filterSelectedTypeList: null,
+            filterSelectedSubTypeList: null,
 
 
         }
@@ -124,39 +131,63 @@ export default class Main extends React.Component {
             } else {
                 storedNote = JSON.parse(storedNote);
             }
-            console.log(storedNote);
+
             var years = _.keys(_.groupBy(storedNote, 'year'));
             var nodeTypeList = _.keys(_.groupBy(storedNote, 'typeSubCategoryTitle'));
+            var nodeTypeListArr = [];
+
+            nodeTypeList.map((i) => {
+                nodeTypeListArr.push({
+                    title: i,
+                    active: false
+                })
+            })
             this.setState({
                 fullNodeList: storedNote,
                 yearsList: years,
-                nodeTypeList: nodeTypeList
+                nodeTypeList: nodeTypeListArr
             });
         } catch (error) {
             alert("Что-то пошло не так...")
         }
 
         this.setMonthList()
-        this.filterData();
+        this.filterData("monthFilter");
         this._setNavigationParams();
         this.pie.current.animate();
     }
 
-    filterData() {
-        this.setState({
-                listls: _(this.state.fullNodeList).filter({
-                    'month': this.state.selectedMonth.id,
-                    'year': this.state.selectedYear
-                }).orderBy(['date', 'time'], ['desc', 'desc']).value(),
-            },
-            () => {
-                this.cartsData()
-            }
-        );
+    filterData(filterType) {
 
-        let B = ["Обед", "Фастфуд"]
-        let result = _.filter(this.state.fullNodeList, (item => B.indexOf(item.typeSubCategoryTitle) >= 0));
-        console.log(result)
+        if (filterType === "monthFilter") {
+            this.setState({
+                    listls: _(this.state.fullNodeList).filter({
+                        'month': this.state.selectedMonth.id,
+                        'year': this.state.selectedYear
+                    }).orderBy(['date', 'time'], ['desc', 'desc']).value(),
+                },
+                () => {
+                    this.cartsData()
+                }
+            );
+        }
+        if (filterType === "mainFilter") {
+            let a = [];
+            let B = _.filter(this.state.nodeTypeList, 'active');
+            B.map((i) => {
+                a.push(i.title)
+            });
+            this.setState({
+                    listls: _(this.state.fullNodeList)
+                        .filter((item => a.indexOf(item.typeSubCategoryTitle) >= 0))
+                        .orderBy(['date', 'time'], ['desc', 'desc']).value(),
+                },
+                () => {
+                    this.cartsData()
+                }
+            );
+        }
+        // let result = _.filter(this.state.fullNodeList, (item => B.indexOf(item.typeSubCategoryTitle) >= 0));
     }
 
     setModalActionVisible = (visible) => {
@@ -195,67 +226,68 @@ export default class Main extends React.Component {
     cartsData() {
         const {listls, chartData, selectedSlice} = this.state;
         this.setState({
-                chartData: _(this.state.listls).filter({
-                    'typeCategory': this.state.selectedType
-                }).value()
-            }, () => {
-                var colors = ["#96cd5e", "#ffda58", "#ff5935", "#74b5e9", "#eeeeee"]
-                var group3 = []
-                var group = _.groupBy(this.state.chartData, 'typeSubCategoryTitle');
-                var percent = _.sumBy(this.state.chartData, function (o) {
-                    return +o.sum
-                });
-                group = _.values(group);
-                group = _.orderBy(group, ['sum'], ['desc']);
-                // console.log(group)
-                _.map(group, ((i, index) => {
-                    group3.push(
-                        _.reduce(i, function (p, t) {
-                            return {
-                                sum: (p.sum) += +t.sum,
-                                color: p.color = t.typeSubCategoryColor,
-                                name: p.name = t.typeSubCategoryTitle,
-                            };
-                        }, {sum: 0, color: '', name: ''}))
-                }));
-                group3 = _.orderBy(group3, ['sum'], ['abc']);
-                _.map(group3, ((i, index) => {
-                    i.percent = (i.sum / percent) * 100
-                }));
-                _.map(group3, ((i, index, col) => {
-                    if (index > 4) {
-                        group3[4].sum += i.sum
-                        group3[4].percent += i.percent
-                        group3[4].name = 'Остальное'
-                    }
-                }));
-                group3 = group3.slice(0, 5);
+            chartData: _(this.state.listls).filter({
+                'typeCategory': this.state.selectedType
+            }).value()
+        }, () => {
+            var colors = ["#96cd5e", "#ffda58", "#ff5935", "#74b5e9", "#eeeeee"]
+            var group3 = []
+            var group = _.groupBy(this.state.chartData, 'typeSubCategoryTitle');
+            var percent = _.sumBy(this.state.chartData, function (o) {
+                return +o.sum
+            });
+            group = _.values(group);
+            group = _.orderBy(group, ['sum'], ['desc']);
+            // console.log(group)
+            _.map(group, ((i, index) => {
+                group3.push(
+                    _.reduce(i, function (p, t) {
+                        return {
+                            sum: (p.sum) += +t.sum,
+                            color: p.color = t.typeSubCategoryColor,
+                            name: p.name = t.typeSubCategoryTitle,
+                        };
+                    }, {sum: 0, color: '', name: ''}))
+            }));
+            group3 = _.orderBy(group3, ['sum'], ['abc']);
+            _.map(group3, ((i, index) => {
+                i.percent = (i.sum / percent) * 100
+            }));
+            _.map(group3, ((i, index, col) => {
+                if (index > 4) {
+                    group3[4].sum += i.sum
+                    group3[4].percent += i.percent
+                    group3[4].name = 'Остальное'
+                }
+            }));
+            group3 = group3.slice(0, 5);
 
-                this.setState({
-                        barData: group3.map((key, index) => {
-                            return {
-                                value: key.percent,
-                                color: colors[index],
-                                title: key.name,
-                                // height: 10,
-                                // width: 10,
-                                key: index,
-                                // arc: {padAngle: 0.03},
-                                amount: Math.abs(key.sum)
-                            }
-                        })
-                    },
-                    () => {
-                        // this.animate();
-                        this.setState({
-                            isChartLoaded: true
-                        });
-
-
+            this.setState({
+                    barData: group3.map((key, index) => {
+                        return {
+                            value: key.percent,
+                            color: colors[index],
+                            title: key.name,
+                            // height: 10,
+                            // width: 10,
+                            key: index,
+                            // arc: {padAngle: 0.03},
+                            amount: Math.abs(key.sum)
+                        }
+                    })
+                },
+                () => {
+                    // this.animate();
+                    this.setState({
+                        isChartLoaded: true
+                    },()=>{
+                        this.pie.current.animate();
                     });
-            }
-        );
-        console.log(this.state.barData)
+
+
+                });
+        })
+
 
     }
 
@@ -264,7 +296,7 @@ export default class Main extends React.Component {
         this.setState({
                 selectedMonth: i
             }, () => {
-                this.filterData()
+                this.filterData("monthFilter")
             }
         );
     }
@@ -273,7 +305,7 @@ export default class Main extends React.Component {
         this.setState({
                 selectedYear: i
             }, () => {
-                this.filterData();
+                this.filterData("monthFilter");
                 this.setMonthList();
             }
         );
@@ -315,12 +347,12 @@ export default class Main extends React.Component {
             selectedMonth: _.filter(monthList, {id: ('0' + (new Date().getMonth() + 1)).slice(-2)})[0]
         });
 
-        console.log(_.filter(monthList, {id: ('0' + (new Date().getMonth() + 1)).slice(-2)})[0])
+
     }
 
     animate = () => {
         this.pie.current.reset().then(this.pie.current.animate);
-        console.log(this.pie)
+
     };
 
     _selectDate = async () => {
@@ -342,6 +374,22 @@ export default class Main extends React.Component {
             console.warn('Cannot open date picker', message);
         }
 
+    }
+
+    selectFilterType(type) {
+        this.setState({
+            isChartLoaded:false
+        })
+        let selectFilterTypeIndex = _.findIndex(this.state.nodeTypeList, function (o) {
+            return o.title === type.title;
+        });
+        let currentState = [...this.state.nodeTypeList];
+        currentState[selectFilterTypeIndex].active = !currentState[selectFilterTypeIndex].active
+        this.setState({
+            nodeTypeList: currentState
+        }, () => {
+            this.filterData("mainFilter")
+        });
     }
 
     render() {
@@ -626,22 +674,20 @@ export default class Main extends React.Component {
                                     <Text
                                         style={styles.datePickerButtonText}>{this.state.date && dayjs(this.state.date).locale('ru').format('D MMM')}</Text>
                                 </TouchableOpacity>
-
-
                             </View>
                             <View>
                                 <View
-                                    style={{flexDirection: 'column'}}
+                                    style={{flexDirection: 'row', flexWrap: 'wrap'}}
                                 >
                                     {this.state.nodeTypeList.map((i, index) => (
                                         <View
                                             key={index}
                                             style={{flexDirection: 'row'}}>
                                             <CheckBox
-                                                value={this.state.checked}
-                                                onValueChange={() => this.setState({checked: !this.state.checked})}
+                                                value={i.active}
+                                                onValueChange={() => this.selectFilterType(i)}
                                             />
-                                            <Text style={{marginTop: 5}}>{i}</Text>
+                                            <Text style={{marginTop: 5}}>{i.title}</Text>
                                         </View>
                                     ))}
                                 </View>
@@ -713,19 +759,15 @@ export default class Main extends React.Component {
                                 // marginBottom: 7,
 
                             }}>
-
-
                             {this.state.isChartLoaded &&
                             <View style={{flex: 1,}}>
                                 <Animated.View
                                     style={{
-
                                         height: this.state.scrollY.interpolate({
                                             inputRange: [0, 130],
                                             outputRange: [130, 0],
                                             extrapolate: 'clamp'
                                         }),
-
                                         width: '100%',
                                         zIndex: 19,
                                         // transform: [
