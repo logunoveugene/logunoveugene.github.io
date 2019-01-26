@@ -13,6 +13,7 @@ import {
     StatusBar,
     TouchableNativeFeedback,
     DatePickerAndroid,
+    CheckBox
 } from 'react-native'
 
 import firebase from 'react-native-firebase'
@@ -73,6 +74,9 @@ export default class Main extends React.Component {
             scrollY: new Animated.Value(0),
             filterVisible: false,
             date: null,
+            nodeTypeList: null,
+            checked: false
+
 
         }
     }
@@ -102,10 +106,6 @@ export default class Main extends React.Component {
         });
     }
 
-
-
-
-
     async componentDidMount() {
 
         this.setState({
@@ -114,9 +114,6 @@ export default class Main extends React.Component {
             date: new Date().getFullYear() + '-' + ('0' + (new Date().getMonth() + 1)).slice(-2) + '-' + ('0' + new Date().getDate()).slice(-2),
 
         })
-
-
-
 
         var group = _.groupBy(this.state.chartData, 'typeSubCategoryTitle');
 
@@ -129,9 +126,11 @@ export default class Main extends React.Component {
             }
             console.log(storedNote);
             var years = _.keys(_.groupBy(storedNote, 'year'));
+            var nodeTypeList = _.keys(_.groupBy(storedNote, 'typeSubCategoryTitle'));
             this.setState({
                 fullNodeList: storedNote,
-                yearsList: years
+                yearsList: years,
+                nodeTypeList: nodeTypeList
             });
         } catch (error) {
             alert("Что-то пошло не так...")
@@ -152,11 +151,12 @@ export default class Main extends React.Component {
             },
             () => {
                 this.cartsData()
-
             }
         );
-        console.log(this.state)
-        console.log()
+
+        let B = ["Обед", "Фастфуд"]
+        let result = _.filter(this.state.fullNodeList, (item => B.indexOf(item.typeSubCategoryTitle) >= 0));
+        console.log(result)
     }
 
     setModalActionVisible = (visible) => {
@@ -344,7 +344,6 @@ export default class Main extends React.Component {
 
     }
 
-
     render() {
         const {listls, chartData, selectedSlice} = this.state;
         const monthFormat = (i) => dayjs(i).locale('ru').format('MMM')
@@ -450,131 +449,131 @@ export default class Main extends React.Component {
                     </View>
                     {/*{this.state.dateFilterVisible &&*/}
                     {/*<BoxShadow*/}
-                        {/*setting={{*/}
-                            {/*width: +`${width}` - 40,*/}
-                            {/*height: 120,*/}
-                            {/*color: "#0c034c",*/}
-                            {/*border: 30,*/}
-                            {/*radius: 10,*/}
-                            {/*opacity: 0.05,*/}
-                            {/*x: 20,*/}
-                            {/*y: 20,*/}
-                            {/*style: {zIndex: 19, marginBottom: 15}*/}
-                        {/*}}>*/}
-                        {/*<View style={{*/}
-                            {/*width: +`${width}` - 20,*/}
-                            {/*height: 120,*/}
-                            {/*// flexDirection: 'column',*/}
-                            {/*// alignItems: "center",*/}
-                            {/*zIndex: 20,*/}
-                            {/*backgroundColor: '#ffffff',*/}
-                            {/*// borderBottomWidth: 1,*/}
-                            {/*marginHorizontal: 10,*/}
-                            {/*marginTop: 10,*/}
-                            {/*borderRadius: 10,*/}
-                            {/*padding: 15,*/}
-                            {/*// borderLeftColor: `${l.typeSubCategoryColor}`,*/}
-                            {/*// borderLeftWidth: 1,*/}
-                            {/*// // marginHorizontal: 10,*/}
-                            {/*// marginBottom: 7,*/}
-                            {/*// elevation: 1*/}
-                        {/*}}>*/}
-                            {/*<ScrollView*/}
-                                {/*horizontal={true}*/}
-                                {/*style={{*/}
-                                    {/*marginLeft: -4*/}
-                                {/*}}*/}
-                            {/*>*/}
+                    {/*setting={{*/}
+                    {/*width: +`${width}` - 40,*/}
+                    {/*height: 120,*/}
+                    {/*color: "#0c034c",*/}
+                    {/*border: 30,*/}
+                    {/*radius: 10,*/}
+                    {/*opacity: 0.05,*/}
+                    {/*x: 20,*/}
+                    {/*y: 20,*/}
+                    {/*style: {zIndex: 19, marginBottom: 15}*/}
+                    {/*}}>*/}
+                    {/*<View style={{*/}
+                    {/*width: +`${width}` - 20,*/}
+                    {/*height: 120,*/}
+                    {/*// flexDirection: 'column',*/}
+                    {/*// alignItems: "center",*/}
+                    {/*zIndex: 20,*/}
+                    {/*backgroundColor: '#ffffff',*/}
+                    {/*// borderBottomWidth: 1,*/}
+                    {/*marginHorizontal: 10,*/}
+                    {/*marginTop: 10,*/}
+                    {/*borderRadius: 10,*/}
+                    {/*padding: 15,*/}
+                    {/*// borderLeftColor: `${l.typeSubCategoryColor}`,*/}
+                    {/*// borderLeftWidth: 1,*/}
+                    {/*// // marginHorizontal: 10,*/}
+                    {/*// marginBottom: 7,*/}
+                    {/*// elevation: 1*/}
+                    {/*}}>*/}
+                    {/*<ScrollView*/}
+                    {/*horizontal={true}*/}
+                    {/*style={{*/}
+                    {/*marginLeft: -4*/}
+                    {/*}}*/}
+                    {/*>*/}
 
-                                {/*{this.state.yearsList.map((i, index) =>*/}
-                                    {/*<TouchableOpacity*/}
-                                        {/*key={index}*/}
-                                        {/*onPress={() => {*/}
-                                            {/*this.selectYear(i)*/}
-                                        {/*}}*/}
-                                        {/*style={{*/}
-                                            {/*textAlign: 'left',*/}
-                                            {/*padding: 3,*/}
-                                            {/*// width: "20%",*/}
-                                            {/*position: "relative"*/}
-                                        {/*}}*/}
-                                    {/*>*/}
+                    {/*{this.state.yearsList.map((i, index) =>*/}
+                    {/*<TouchableOpacity*/}
+                    {/*key={index}*/}
+                    {/*onPress={() => {*/}
+                    {/*this.selectYear(i)*/}
+                    {/*}}*/}
+                    {/*style={{*/}
+                    {/*textAlign: 'left',*/}
+                    {/*padding: 3,*/}
+                    {/*// width: "20%",*/}
+                    {/*position: "relative"*/}
+                    {/*}}*/}
+                    {/*>*/}
 
 
-                                        {/*{i === this.state.selectedYear &&*/}
-                                        {/*<View*/}
-                                            {/*style={{*/}
-                                                {/*backgroundColor: '#ffda3a',*/}
-                                                {/*position: 'absolute',*/}
-                                                {/*top: 4,*/}
-                                                {/*left: 0,*/}
-                                                {/*width: 50,*/}
-                                                {/*height: 25,*/}
-                                                {/*borderRadius: 12,*/}
-                                                {/*opacity: .5*/}
-                                            {/*}}*/}
-                                        {/*/>*/}
-                                        {/*}*/}
-                                        {/*<Text*/}
-                                            {/*style={{*/}
-                                                {/*fontSize: 16,*/}
-                                                {/*padding: 3,*/}
-                                            {/*}}*/}
-                                        {/*>*/}
-                                            {/*{i} </Text>*/}
-                                    {/*</TouchableOpacity>*/}
-                                {/*)}*/}
-                            {/*</ScrollView>*/}
-                            {/*<View*/}
-                                {/*style={{*/}
-                                    {/*flexDirection: "row",*/}
-                                    {/*flexWrap: 'wrap',*/}
-                                    {/*justifyContent: 'space-between'*/}
-                                {/*}}*/}
-                            {/*>*/}
-                                {/*{this.state.monthList.map((i, index) =>*/}
-                                    {/*<TouchableOpacity*/}
-                                        {/*key={index}*/}
-                                        {/*style={{*/}
-                                            {/*textAlign: 'left',*/}
-                                            {/*padding: 3,*/}
-                                            {/*width: "16%",*/}
-                                            {/*position: "relative"*/}
-                                        {/*}}*/}
-                                        {/*onPress={() => {*/}
-                                            {/*this.selectMonth(i)*/}
-                                        {/*}}*/}
-                                    {/*>*/}
-                                        {/*<View>*/}
+                    {/*{i === this.state.selectedYear &&*/}
+                    {/*<View*/}
+                    {/*style={{*/}
+                    {/*backgroundColor: '#ffda3a',*/}
+                    {/*position: 'absolute',*/}
+                    {/*top: 4,*/}
+                    {/*left: 0,*/}
+                    {/*width: 50,*/}
+                    {/*height: 25,*/}
+                    {/*borderRadius: 12,*/}
+                    {/*opacity: .5*/}
+                    {/*}}*/}
+                    {/*/>*/}
+                    {/*}*/}
+                    {/*<Text*/}
+                    {/*style={{*/}
+                    {/*fontSize: 16,*/}
+                    {/*padding: 3,*/}
+                    {/*}}*/}
+                    {/*>*/}
+                    {/*{i} </Text>*/}
+                    {/*</TouchableOpacity>*/}
+                    {/*)}*/}
+                    {/*</ScrollView>*/}
+                    {/*<View*/}
+                    {/*style={{*/}
+                    {/*flexDirection: "row",*/}
+                    {/*flexWrap: 'wrap',*/}
+                    {/*justifyContent: 'space-between'*/}
+                    {/*}}*/}
+                    {/*>*/}
+                    {/*{this.state.monthList.map((i, index) =>*/}
+                    {/*<TouchableOpacity*/}
+                    {/*key={index}*/}
+                    {/*style={{*/}
+                    {/*textAlign: 'left',*/}
+                    {/*padding: 3,*/}
+                    {/*width: "16%",*/}
+                    {/*position: "relative"*/}
+                    {/*}}*/}
+                    {/*onPress={() => {*/}
+                    {/*this.selectMonth(i)*/}
+                    {/*}}*/}
+                    {/*>*/}
+                    {/*<View>*/}
 
-                                            {/*{i.id === this.state.selectedMonth.id &&*/}
-                                            {/*<View*/}
-                                                {/*style={{*/}
-                                                    {/*backgroundColor: '#ffda3a',*/}
-                                                    {/*position: 'absolute',*/}
-                                                    {/*top: -3,*/}
-                                                    {/*left: -8,*/}
-                                                    {/*width: '100%',*/}
-                                                    {/*height: 24,*/}
-                                                    {/*borderRadius: 12,*/}
-                                                    {/*opacity: .5*/}
-                                                {/*}}*/}
-                                            {/*/>*/}
-                                            {/*}*/}
-                                            {/*{this.state.selectedMonth &&*/}
-                                            {/*<Text*/}
-                                                {/*style={{*/}
-                                                    {/*textAlign: 'left',*/}
-                                                    {/*fontSize: 14,*/}
-                                                    {/*color: (i.hasData) ? "#333" : "#999"*/}
-                                                {/*}}*/}
-                                            {/*>*/}
-                                                {/*{i.name} </Text>}*/}
-                                        {/*</View>*/}
-                                    {/*</TouchableOpacity>*/}
-                                {/*)}*/}
-                            {/*</View>*/}
-                        {/*</View>*/}
+                    {/*{i.id === this.state.selectedMonth.id &&*/}
+                    {/*<View*/}
+                    {/*style={{*/}
+                    {/*backgroundColor: '#ffda3a',*/}
+                    {/*position: 'absolute',*/}
+                    {/*top: -3,*/}
+                    {/*left: -8,*/}
+                    {/*width: '100%',*/}
+                    {/*height: 24,*/}
+                    {/*borderRadius: 12,*/}
+                    {/*opacity: .5*/}
+                    {/*}}*/}
+                    {/*/>*/}
+                    {/*}*/}
+                    {/*{this.state.selectedMonth &&*/}
+                    {/*<Text*/}
+                    {/*style={{*/}
+                    {/*textAlign: 'left',*/}
+                    {/*fontSize: 14,*/}
+                    {/*color: (i.hasData) ? "#333" : "#999"*/}
+                    {/*}}*/}
+                    {/*>*/}
+                    {/*{i.name} </Text>}*/}
+                    {/*</View>*/}
+                    {/*</TouchableOpacity>*/}
+                    {/*)}*/}
+                    {/*</View>*/}
+                    {/*</View>*/}
                     {/*</BoxShadow>*/}
                     {/*}*/}
                     {this.state.dateFilterVisible &&
@@ -602,7 +601,8 @@ export default class Main extends React.Component {
                         }}>
                             <View
                                 style={{
-                                    flexDirection: "row"
+                                    flexDirection: "row",
+                                    alignItems: "center"
                                 }}
                             >
                                 <TouchableOpacity
@@ -615,7 +615,7 @@ export default class Main extends React.Component {
                                     <Text
                                         style={styles.datePickerButtonText}>{this.state.date && dayjs(this.state.date).locale('ru').format('D MMM')}</Text>
                                 </TouchableOpacity>
-                                <Text>—</Text>
+                                <Text> —</Text>
                                 <TouchableOpacity
                                     style={styles.datePickerButton}
                                     onPress={() => this._selectDate()}
@@ -626,6 +626,25 @@ export default class Main extends React.Component {
                                     <Text
                                         style={styles.datePickerButtonText}>{this.state.date && dayjs(this.state.date).locale('ru').format('D MMM')}</Text>
                                 </TouchableOpacity>
+
+
+                            </View>
+                            <View>
+                                <View
+                                    style={{flexDirection: 'column'}}
+                                >
+                                    {this.state.nodeTypeList.map((i, index) => (
+                                        <View
+                                            key={index}
+                                            style={{flexDirection: 'row'}}>
+                                            <CheckBox
+                                                value={this.state.checked}
+                                                onValueChange={() => this.setState({checked: !this.state.checked})}
+                                            />
+                                            <Text style={{marginTop: 5}}>{i}</Text>
+                                        </View>
+                                    ))}
+                                </View>
                             </View>
                         </View>
                     </BoxShadow>
@@ -1052,5 +1071,16 @@ const styles = StyleSheet.create({
         height: 50,
 
         position: 'relative',
+    },
+
+    datePickerButton: {
+        width: "25%",
+        padding: 10,
+
+        flexDirection: 'row'
+    },
+    datePickerButtonIcon: {
+        color: "#999",
+        paddingRight: 5
     },
 });
