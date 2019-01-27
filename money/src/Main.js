@@ -79,8 +79,9 @@ export default class Main extends React.Component {
             checked: false,
 
 
-            filterIsActive: false,
-            filterDateRange: null,
+            filterPlateIsActive: false,
+            filterDateRangeFirst: null,
+            filterDateRangeLast: null,
             filterSelectedTypeList: null,
             filterSelectedSubTypeList: null,
 
@@ -114,6 +115,7 @@ export default class Main extends React.Component {
     }
 
     async componentDidMount() {
+
 
         this.setState({
             // selectedMonth: ('0' + (new Date().getMonth() + 1)).slice(-2),
@@ -151,7 +153,7 @@ export default class Main extends React.Component {
             alert("Что-то пошло не так...")
         }
 
-        this.setMonthList()
+        this.setMonthList();
         this.filterData("monthFilter");
         this._setNavigationParams();
         this.pie.current.animate();
@@ -280,7 +282,7 @@ export default class Main extends React.Component {
                     // this.animate();
                     this.setState({
                         isChartLoaded: true
-                    },()=>{
+                    }, () => {
                         this.pie.current.animate();
                     });
 
@@ -288,45 +290,77 @@ export default class Main extends React.Component {
                 });
         })
 
-
     }
 
     selectMonth(i) {
 
-        this.setState({
-                selectedMonth: i
+        if (this.state.selectedMonth === null) {
+
+            this.setState({
+                selectedMonth: _.filter(this.state.monthList, {id: ('0' + (new Date().getMonth() + 1)).slice(-2)})[0]
             }, () => {
-                this.filterData("monthFilter")
-            }
-        );
+                console.log(this.state)
+                let date = new Date();
+                let firstDay = new Date(this.state.selectedYear, this.state.selectedMonth.index, 1);
+                let lastDay = new Date(this.state.selectedYear, this.state.selectedMonth.index + 1, 0);
+                this.setState({
+                    filterDateRangeFirst: firstDay,
+                    filterDateRangeLast: lastDay
+                });
+
+            });
+
+        }
+
+        if (this.state.selectedMonth !== null) {
+            if(!!i){
+            this.setState({
+                    selectedMonth: i
+                }, () => {
+
+                    let firstDay = new Date(+this.state.selectedYear, +this.state.selectedMonth.index, 1);
+                    let lastDay = new Date(+this.state.selectedYear, +this.state.selectedMonth.index + 1, 0);
+                    this.setState({
+                        filterDateRangeFirst: firstDay,
+                        filterDateRangeLast: lastDay
+                    },()=>{
+                        console.log(this.state.selectedYear)
+                        console.log(this.state.selectedMonth)
+                    });
+                    this.filterData("monthFilter")
+                }
+            );
+
+        }
+        }
     }
 
     selectYear(i) {
         this.setState({
                 selectedYear: i
             }, () => {
-                this.filterData("monthFilter");
                 this.setMonthList();
+                this.filterData("monthFilter");
+
             }
         );
     }
 
     setMonthList() {
         const monthDataList = [
-            {id: '01', name: 'Янв', fullName: 'Январь', hasData: false},
-            {id: '02', name: 'Фев', fullName: 'Февраль', hasData: false},
-            {id: '03', name: 'Мар', fullName: 'Март', hasData: false},
-            {id: '04', name: 'Апр', fullName: 'Апррель', hasData: false},
-            {id: '05', name: 'Май', fullName: 'Май', hasData: false},
-            {id: '06', name: 'Июн', fullName: 'Июнь', hasData: false},
-            {id: '07', name: 'Июл', fullName: 'Июль', hasData: false},
-            {id: '08', name: 'Авг', fullName: 'Август', hasData: false},
-            {id: '09', name: 'Сен', fullName: 'Сентябрь', hasData: false},
-            {id: '10', name: 'Окт', fullName: 'Октябрь', hasData: false},
-            {id: '11', name: 'Ноя', fullName: 'Ноябрь', hasData: false},
-            {id: '12', name: 'Дек', fullName: 'Декабрь', hasData: false}
+            {id: '01', index: '0', name: 'Янв', fullName: 'Январь', hasData: false},
+            {id: '02', index: '1', name: 'Фев', fullName: 'Февраль', hasData: false},
+            {id: '03', index: '2', name: 'Мар', fullName: 'Март', hasData: false},
+            {id: '04', index: '3', name: 'Апр', fullName: 'Апррель', hasData: false},
+            {id: '05', index: '4', name: 'Май', fullName: 'Май', hasData: false},
+            {id: '06', index: '5', name: 'Июн', fullName: 'Июнь', hasData: false},
+            {id: '07', index: '6', name: 'Июл', fullName: 'Июль', hasData: false},
+            {id: '08', index: '7', name: 'Авг', fullName: 'Август', hasData: false},
+            {id: '09', index: '8', name: 'Сен', fullName: 'Сентябрь', hasData: false},
+            {id: '10', index: '9', name: 'Окт', fullName: 'Октябрь', hasData: false},
+            {id: '11', index: '10', name: 'Ноя', fullName: 'Ноябрь', hasData: false},
+            {id: '12', index: '11', name: 'Дек', fullName: 'Декабрь', hasData: false}
         ];
-
         let yearList = _(this.state.fullNodeList).filter({
             'year': this.state.selectedYear
         }).groupBy('month').keys().value();
@@ -334,6 +368,7 @@ export default class Main extends React.Component {
         function monthListUpdate(n) {
             return {
                 id: n.id,
+                index: n.index,
                 name: n.name,
                 fullName: n.fullName,
                 hasData: ((_.indexOf(yearList, n.id)) !== -1)
@@ -342,11 +377,13 @@ export default class Main extends React.Component {
 
         let monthList = _.map(monthDataList, monthListUpdate);
 
+        console.log(this.state);
+
         this.setState({
             monthList: monthList,
-            selectedMonth: _.filter(monthList, {id: ('0' + (new Date().getMonth() + 1)).slice(-2)})[0]
+        }, () => {
+            this.selectMonth();
         });
-
 
     }
 
@@ -355,30 +392,30 @@ export default class Main extends React.Component {
 
     };
 
-    _selectDate = async () => {
+    _selectDate = async (date, type) => {
+        console.log(this.state)
         try {
             const {action, year, month, day} = await DatePickerAndroid.open({
-                date: this.selectedDate
+                date: date
             });
             if (action !== DatePickerAndroid.dismissedAction) {
-
-                let selectedDate = year + '-' + ('0' + (month + 1)).slice(-2) + '-' + ('0' + day).slice(-2)
-                this.setState({
-                    date: selectedDate,
-
-
-                })
+                let selectedDate = year + '-' + ('0' + (month + 1)).slice(-2) + '-' + ('0' + day).slice(-2);
+                if (type === "firstDay") {
+                    this.setState({
+                        filterDateRangeFirst: selectedDate,
+                    })
+                }
 
             }
         } catch ({code, message}) {
             console.warn('Cannot open date picker', message);
         }
 
-    }
+    };
 
     selectFilterType(type) {
         this.setState({
-            isChartLoaded:false
+            isChartLoaded: false
         })
         let selectFilterTypeIndex = _.findIndex(this.state.nodeTypeList, function (o) {
             return o.title === type.title;
@@ -482,7 +519,7 @@ export default class Main extends React.Component {
                                 padding: 10,
                                 marginTop: 8
                             }}
-                            onPress={() => this.props.navigation.openDrawer()}>
+                            onPress={() => this.setState({filterPlateIsActive:!this.state.filterPlateIsActive})}>
                             <IconM name="filter"
                                    type="simple-line-icons"
                                    size={20}
@@ -495,135 +532,6 @@ export default class Main extends React.Component {
 
 
                     </View>
-                    {/*{this.state.dateFilterVisible &&*/}
-                    {/*<BoxShadow*/}
-                    {/*setting={{*/}
-                    {/*width: +`${width}` - 40,*/}
-                    {/*height: 120,*/}
-                    {/*color: "#0c034c",*/}
-                    {/*border: 30,*/}
-                    {/*radius: 10,*/}
-                    {/*opacity: 0.05,*/}
-                    {/*x: 20,*/}
-                    {/*y: 20,*/}
-                    {/*style: {zIndex: 19, marginBottom: 15}*/}
-                    {/*}}>*/}
-                    {/*<View style={{*/}
-                    {/*width: +`${width}` - 20,*/}
-                    {/*height: 120,*/}
-                    {/*// flexDirection: 'column',*/}
-                    {/*// alignItems: "center",*/}
-                    {/*zIndex: 20,*/}
-                    {/*backgroundColor: '#ffffff',*/}
-                    {/*// borderBottomWidth: 1,*/}
-                    {/*marginHorizontal: 10,*/}
-                    {/*marginTop: 10,*/}
-                    {/*borderRadius: 10,*/}
-                    {/*padding: 15,*/}
-                    {/*// borderLeftColor: `${l.typeSubCategoryColor}`,*/}
-                    {/*// borderLeftWidth: 1,*/}
-                    {/*// // marginHorizontal: 10,*/}
-                    {/*// marginBottom: 7,*/}
-                    {/*// elevation: 1*/}
-                    {/*}}>*/}
-                    {/*<ScrollView*/}
-                    {/*horizontal={true}*/}
-                    {/*style={{*/}
-                    {/*marginLeft: -4*/}
-                    {/*}}*/}
-                    {/*>*/}
-
-                    {/*{this.state.yearsList.map((i, index) =>*/}
-                    {/*<TouchableOpacity*/}
-                    {/*key={index}*/}
-                    {/*onPress={() => {*/}
-                    {/*this.selectYear(i)*/}
-                    {/*}}*/}
-                    {/*style={{*/}
-                    {/*textAlign: 'left',*/}
-                    {/*padding: 3,*/}
-                    {/*// width: "20%",*/}
-                    {/*position: "relative"*/}
-                    {/*}}*/}
-                    {/*>*/}
-
-
-                    {/*{i === this.state.selectedYear &&*/}
-                    {/*<View*/}
-                    {/*style={{*/}
-                    {/*backgroundColor: '#ffda3a',*/}
-                    {/*position: 'absolute',*/}
-                    {/*top: 4,*/}
-                    {/*left: 0,*/}
-                    {/*width: 50,*/}
-                    {/*height: 25,*/}
-                    {/*borderRadius: 12,*/}
-                    {/*opacity: .5*/}
-                    {/*}}*/}
-                    {/*/>*/}
-                    {/*}*/}
-                    {/*<Text*/}
-                    {/*style={{*/}
-                    {/*fontSize: 16,*/}
-                    {/*padding: 3,*/}
-                    {/*}}*/}
-                    {/*>*/}
-                    {/*{i} </Text>*/}
-                    {/*</TouchableOpacity>*/}
-                    {/*)}*/}
-                    {/*</ScrollView>*/}
-                    {/*<View*/}
-                    {/*style={{*/}
-                    {/*flexDirection: "row",*/}
-                    {/*flexWrap: 'wrap',*/}
-                    {/*justifyContent: 'space-between'*/}
-                    {/*}}*/}
-                    {/*>*/}
-                    {/*{this.state.monthList.map((i, index) =>*/}
-                    {/*<TouchableOpacity*/}
-                    {/*key={index}*/}
-                    {/*style={{*/}
-                    {/*textAlign: 'left',*/}
-                    {/*padding: 3,*/}
-                    {/*width: "16%",*/}
-                    {/*position: "relative"*/}
-                    {/*}}*/}
-                    {/*onPress={() => {*/}
-                    {/*this.selectMonth(i)*/}
-                    {/*}}*/}
-                    {/*>*/}
-                    {/*<View>*/}
-
-                    {/*{i.id === this.state.selectedMonth.id &&*/}
-                    {/*<View*/}
-                    {/*style={{*/}
-                    {/*backgroundColor: '#ffda3a',*/}
-                    {/*position: 'absolute',*/}
-                    {/*top: -3,*/}
-                    {/*left: -8,*/}
-                    {/*width: '100%',*/}
-                    {/*height: 24,*/}
-                    {/*borderRadius: 12,*/}
-                    {/*opacity: .5*/}
-                    {/*}}*/}
-                    {/*/>*/}
-                    {/*}*/}
-                    {/*{this.state.selectedMonth &&*/}
-                    {/*<Text*/}
-                    {/*style={{*/}
-                    {/*textAlign: 'left',*/}
-                    {/*fontSize: 14,*/}
-                    {/*color: (i.hasData) ? "#333" : "#999"*/}
-                    {/*}}*/}
-                    {/*>*/}
-                    {/*{i.name} </Text>}*/}
-                    {/*</View>*/}
-                    {/*</TouchableOpacity>*/}
-                    {/*)}*/}
-                    {/*</View>*/}
-                    {/*</View>*/}
-                    {/*</BoxShadow>*/}
-                    {/*}*/}
                     {this.state.dateFilterVisible &&
                     <BoxShadow
                         setting={{
@@ -640,7 +548,136 @@ export default class Main extends React.Component {
                         <View style={{
                             width: +`${width}` - 20,
                             height: 120,
+                            // flexDirection: 'column',
+                            // alignItems: "center",
                             zIndex: 20,
+                            backgroundColor: '#ffffff',
+                            // borderBottomWidth: 1,
+                            marginHorizontal: 10,
+                            marginTop: 10,
+                            borderRadius: 10,
+                            padding: 15,
+                            // borderLeftColor: `${l.typeSubCategoryColor}`,
+                            // borderLeftWidth: 1,
+                            // // marginHorizontal: 10,
+                            // marginBottom: 7,
+                            // elevation: 1
+                        }}>
+                            <ScrollView
+                                horizontal={true}
+                                style={{
+                                    marginLeft: -4
+                                }}
+                            >
+
+                                {this.state.yearsList.map((i, index) =>
+                                    <TouchableOpacity
+                                        key={index}
+                                        onPress={() => {
+                                            this.selectYear(i)
+                                        }}
+                                        style={{
+                                            textAlign: 'left',
+                                            padding: 3,
+                                            // width: "20%",
+                                            position: "relative"
+                                        }}
+                                    >
+
+
+                                        {i === this.state.selectedYear &&
+                                        <View
+                                            style={{
+                                                backgroundColor: '#ffda3a',
+                                                position: 'absolute',
+                                                top: 4,
+                                                left: 0,
+                                                width: 50,
+                                                height: 25,
+                                                borderRadius: 12,
+                                                opacity: .5
+                                            }}
+                                        />
+                                        }
+                                        <Text
+                                            style={{
+                                                fontSize: 16,
+                                                padding: 3,
+                                            }}
+                                        >
+                                            {i} </Text>
+                                    </TouchableOpacity>
+                                )}
+                            </ScrollView>
+                            <View
+                                style={{
+                                    flexDirection: "row",
+                                    flexWrap: 'wrap',
+                                    justifyContent: 'space-between'
+                                }}
+                            >
+                                {this.state.monthList.map((i, index) =>
+                                    <TouchableOpacity
+                                        key={index}
+                                        style={{
+                                            textAlign: 'left',
+                                            padding: 3,
+                                            width: "16%",
+                                            position: "relative"
+                                        }}
+                                        onPress={() => {
+                                            this.selectMonth(i)
+                                        }}
+                                    >
+                                        <View>
+
+                                            {i.id === this.state.selectedMonth.id &&
+                                            <View
+                                                style={{
+                                                    backgroundColor: '#ffda3a',
+                                                    position: 'absolute',
+                                                    top: -3,
+                                                    left: -8,
+                                                    width: '100%',
+                                                    height: 24,
+                                                    borderRadius: 12,
+                                                    opacity: .5
+                                                }}
+                                            />
+                                            }
+                                            {this.state.selectedMonth &&
+                                            <Text
+                                                style={{
+                                                    textAlign: 'left',
+                                                    fontSize: 14,
+                                                    color: (i.hasData) ? "#333" : "#999"
+                                                }}
+                                            >
+                                                {i.name} </Text>}
+                                        </View>
+                                    </TouchableOpacity>
+                                )}
+                            </View>
+                        </View>
+                    </BoxShadow>
+                    }
+                    {this.state.filterPlateIsActive &&
+                    <BoxShadow
+                        setting={{
+                            width: +`${width}` - 40,
+                            height: 120,
+                            color: "#0c034c",
+                            border: 30,
+                            radius: 10,
+                            opacity: 0.05,
+                            x: 20,
+                            y: 20,
+                            style: {zIndex: 19, marginBottom: 15}
+                        }}>
+                        <View style={{
+                            width: +`${width}` - 20,
+                            height: 120,
+                            zIndex: 1000,
                             backgroundColor: '#ffffff',
                             marginHorizontal: 10,
                             marginTop: 10,
@@ -655,24 +692,24 @@ export default class Main extends React.Component {
                             >
                                 <TouchableOpacity
                                     style={styles.datePickerButton}
-                                    onPress={() => this._selectDate()}
+                                    onPress={() => this._selectDate(this.state.filterDateRangeFirst, "firstDay")}
                                 >
                                     <IconM style={styles.datePickerButtonIcon} name="small-calendar"
                                            type="simple-line-icons"
                                            size={18}/>
                                     <Text
-                                        style={styles.datePickerButtonText}>{this.state.date && dayjs(this.state.date).locale('ru').format('D MMM')}</Text>
+                                        style={styles.datePickerButtonText}>{this.state.filterDateRangeFirst && dayjs(this.state.filterDateRangeFirst).locale('ru').format('D MMM')}</Text>
                                 </TouchableOpacity>
                                 <Text> —</Text>
                                 <TouchableOpacity
                                     style={styles.datePickerButton}
-                                    onPress={() => this._selectDate()}
+                                    onPress={() => this._selectDate(this.state.filterDateRangeLast, "lastDay")}
                                 >
                                     <IconM style={styles.datePickerButtonIcon} name="small-calendar"
                                            type="simple-line-icons"
                                            size={18}/>
                                     <Text
-                                        style={styles.datePickerButtonText}>{this.state.date && dayjs(this.state.date).locale('ru').format('D MMM')}</Text>
+                                        style={styles.datePickerButtonText}>{this.state.filterDateRangeLast && dayjs(this.state.filterDateRangeLast).locale('ru').format('D MMM')}</Text>
                                 </TouchableOpacity>
                             </View>
                             <View>
@@ -698,7 +735,7 @@ export default class Main extends React.Component {
                     <View
                         style={{
                             position: "absolute",
-                            top: this.state.dateFilterVisible ? 150 : 0
+                            top: this.state.dateFilterVisible|| this.state.filterPlateIsActive ? 150 : 0
                         }}
                     >
                         <Animated.View
