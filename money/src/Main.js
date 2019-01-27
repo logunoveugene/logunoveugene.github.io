@@ -13,7 +13,7 @@ import {
     StatusBar,
     TouchableNativeFeedback,
     DatePickerAndroid,
-    CheckBox
+    CheckBox, Modal, TouchableHighlight, TextInput, Picker
 } from 'react-native'
 
 import firebase from 'react-native-firebase'
@@ -37,6 +37,7 @@ const IconM = createIconSetFromIcoMoon(icoMoonConfig);
 import BoxShadow from './shadow'
 import dayjs from 'dayjs'
 import 'dayjs/locale/ru'
+import {currencyList} from "./data/base/BaseConstant";
 
 var width = Dimensions.get('window').width;
 export default class Main extends React.Component {
@@ -78,13 +79,12 @@ export default class Main extends React.Component {
             nodeTypeList: null,
             checked: false,
 
-
+            modalVisible: false,
             filterPlateIsActive: false,
             filterDateRangeFirst: null,
             filterDateRangeLast: null,
             filterSelectedTypeList: null,
             filterSelectedSubTypeList: null,
-
 
         }
     }
@@ -173,6 +173,22 @@ export default class Main extends React.Component {
                 }
             );
         }
+        if (filterType === "test") {
+            this.setState({
+                    listls: _(this.state.fullNodeList)
+                        .filter((o) => {
+                            return ((dayjs(o.date)).$d).getTime() >= ((dayjs(this.state.filterDateRangeFirst)).$d).getTime() && ((dayjs(o.date)).$d).getTime() <= ((dayjs(this.state.filterDateRangeLast)).$d).getTime()
+                        })
+                        .orderBy(['date', 'time'], ['desc', 'desc'])
+                        .value(),
+                },
+                () => {
+                    this.cartsData()
+                    console.log(this.state)
+                }
+            );
+        }
+
         if (filterType === "mainFilter") {
             let a = [];
             let B = _.filter(this.state.nodeTypeList, 'active');
@@ -313,25 +329,25 @@ export default class Main extends React.Component {
         }
 
         if (this.state.selectedMonth !== null) {
-            if(!!i){
-            this.setState({
-                    selectedMonth: i
-                }, () => {
+            if (!!i) {
+                this.setState({
+                        selectedMonth: i
+                    }, () => {
 
-                    let firstDay = new Date(+this.state.selectedYear, +this.state.selectedMonth.index, 1);
-                    let lastDay = new Date(+this.state.selectedYear, +this.state.selectedMonth.index + 1, 0);
-                    this.setState({
-                        filterDateRangeFirst: firstDay,
-                        filterDateRangeLast: lastDay
-                    },()=>{
-                        console.log(this.state.selectedYear)
-                        console.log(this.state.selectedMonth)
-                    });
-                    this.filterData("monthFilter")
-                }
-            );
+                        let firstDay = new Date(+this.state.selectedYear, +this.state.selectedMonth.index, 1);
+                        let lastDay = new Date(+this.state.selectedYear, +this.state.selectedMonth.index + 1, 0);
+                        this.setState({
+                            filterDateRangeFirst: firstDay,
+                            filterDateRangeLast: lastDay
+                        }, () => {
+                            console.log(this.state.selectedYear)
+                            console.log(this.state.selectedMonth)
+                        });
+                        this.filterData("monthFilter")
+                    }
+                );
 
-        }
+            }
         }
     }
 
@@ -400,9 +416,15 @@ export default class Main extends React.Component {
             });
             if (action !== DatePickerAndroid.dismissedAction) {
                 let selectedDate = year + '-' + ('0' + (month + 1)).slice(-2) + '-' + ('0' + day).slice(-2);
+
                 if (type === "firstDay") {
                     this.setState({
-                        filterDateRangeFirst: selectedDate,
+                        filterDateRangeFirst: ((dayjs(selectedDate)).$d),
+                    })
+                }
+                if (type === "lastDay") {
+                    this.setState({
+                        filterDateRangeFirst: ((dayjs(selectedDate)).$d),
                     })
                 }
 
@@ -410,6 +432,8 @@ export default class Main extends React.Component {
         } catch ({code, message}) {
             console.warn('Cannot open date picker', message);
         }
+
+        this.filterData("test");
 
     };
 
@@ -427,6 +451,10 @@ export default class Main extends React.Component {
         }, () => {
             this.filterData("mainFilter")
         });
+    }
+
+    setModalVisible(visible) {
+        this.setState({modalVisible: visible});
     }
 
     render() {
@@ -478,6 +506,7 @@ export default class Main extends React.Component {
                         </TouchableOpacity>
                         <TouchableOpacity
                             onPress={() => {
+
                                 this.setDateFilterVisible(!this.state.dateFilterVisible)
                             }}
                             style={{
@@ -519,7 +548,7 @@ export default class Main extends React.Component {
                                 padding: 10,
                                 marginTop: 8
                             }}
-                            onPress={() => this.setState({filterPlateIsActive:!this.state.filterPlateIsActive})}>
+                            onPress={() => this.setState({modalVisible: true})}>
                             <IconM name="filter"
                                    type="simple-line-icons"
                                    size={20}
@@ -684,58 +713,14 @@ export default class Main extends React.Component {
                             borderRadius: 10,
                             padding: 15,
                         }}>
-                            <View
-                                style={{
-                                    flexDirection: "row",
-                                    alignItems: "center"
-                                }}
-                            >
-                                <TouchableOpacity
-                                    style={styles.datePickerButton}
-                                    onPress={() => this._selectDate(this.state.filterDateRangeFirst, "firstDay")}
-                                >
-                                    <IconM style={styles.datePickerButtonIcon} name="small-calendar"
-                                           type="simple-line-icons"
-                                           size={18}/>
-                                    <Text
-                                        style={styles.datePickerButtonText}>{this.state.filterDateRangeFirst && dayjs(this.state.filterDateRangeFirst).locale('ru').format('D MMM')}</Text>
-                                </TouchableOpacity>
-                                <Text> —</Text>
-                                <TouchableOpacity
-                                    style={styles.datePickerButton}
-                                    onPress={() => this._selectDate(this.state.filterDateRangeLast, "lastDay")}
-                                >
-                                    <IconM style={styles.datePickerButtonIcon} name="small-calendar"
-                                           type="simple-line-icons"
-                                           size={18}/>
-                                    <Text
-                                        style={styles.datePickerButtonText}>{this.state.filterDateRangeLast && dayjs(this.state.filterDateRangeLast).locale('ru').format('D MMM')}</Text>
-                                </TouchableOpacity>
-                            </View>
-                            <View>
-                                <View
-                                    style={{flexDirection: 'row', flexWrap: 'wrap'}}
-                                >
-                                    {this.state.nodeTypeList.map((i, index) => (
-                                        <View
-                                            key={index}
-                                            style={{flexDirection: 'row'}}>
-                                            <CheckBox
-                                                value={i.active}
-                                                onValueChange={() => this.selectFilterType(i)}
-                                            />
-                                            <Text style={{marginTop: 5}}>{i.title}</Text>
-                                        </View>
-                                    ))}
-                                </View>
-                            </View>
+
                         </View>
                     </BoxShadow>
                     }
                     <View
                         style={{
                             position: "absolute",
-                            top: this.state.dateFilterVisible|| this.state.filterPlateIsActive ? 150 : 0
+                            top: this.state.dateFilterVisible || this.state.filterPlateIsActive ? 150 : 0
                         }}
                     >
                         <Animated.View
@@ -1096,16 +1081,12 @@ export default class Main extends React.Component {
                                                     fontSize: 16
                                                 }}>
                                                     {l.typeCategory === "Списание" ? '' : <Text>+</Text>}
-
                                                     {l.sum}</Text>
                                             </View>
                                         </TouchableNativeFeedback>
                                     </View>
-
                                 </View>
-
                             ])
-
                         }
 
                     </ScrollView>
@@ -1118,7 +1099,187 @@ export default class Main extends React.Component {
                         modalActionVisible={this.state.modalActionVisible}
                         removeItem={this.removeItem}
                     />
-                </View>}
+                    <Modal
+                        animationType="slide"
+                        transparent={true}
+                        visible={this.state.modalVisible}
+                        onRequestClose={() => {
+                            this.setModalVisible(!this.state.modalVisible);
+                        }}
+                    >
+                        <View
+                            style={{
+                                flex: 1,
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                position: "relative",
+                                backgroundColor: 'rgba(0,0,0,0)'
+                            }}
+                        >
+                            <BoxShadow
+                                setting={{
+                                    width: +`${width}` - 20,
+                                    height: 300,
+                                    color: "#0c034c",
+                                    border: 50,
+                                    radius: 20,
+                                    opacity: 0.1,
+                                    x: 0,
+                                    y: -10,
+                                    style: {position: 'absolute', bottom: 10}
+                                }} >
+                                <View
+                                    style={{
+                                        width: {width} - 20,
+                                        // position: "absolute",
+                                        // bottom: 0,
+                                        backgroundColor: "#ffffff",
+                                        height: 300,
+                                        borderRadius: 10,
+                                        // borderTopRightRadius: 20,
+                                        padding: 20,
+                                        // margin: 10
+                                    }}
+                                >
+                                    <View
+                                        style={{
+                                            flexDirection: "row",
+                                            position: 'relative',
+                                            paddingVertical: 5,
+                                            justifyContent: "space-between"
+                                        }}
+                                    >
+                                        <Text
+                                            style={{
+                                                fontSize: 20,
+                                                fontWeight: 'bold'
+                                            }}
+                                        >Добавление счета</Text>
+                                        <TouchableHighlight
+                                            style={{
+                                                height: 30,
+                                                width: 30,
+                                                top: -2,
+                                                right: -5,
+                                                position: "absolute"
+                                            }}
+
+                                            onPress={() => {
+                                                this.setModalVisible(!this.state.modalVisible)
+                                            }}
+                                        >
+                                            <Text style={{
+                                                fontSize: 30,
+                                                color: '#999999',
+                                                top: -1,
+
+                                            }}>×</Text>
+                                        </TouchableHighlight>
+                                    </View>
+                                    <View
+                                        style={{
+                                            flexDirection: "row",
+                                            alignItems: "center"
+                                        }}
+                                    >
+                                        <TouchableOpacity
+                                            style={styles.datePickerButton}
+                                            onPress={() => this._selectDate(this.state.filterDateRangeFirst, "firstDay")}
+                                        >
+                                            <IconM style={styles.datePickerButtonIcon} name="small-calendar"
+                                                   type="simple-line-icons"
+                                                   size={18}/>
+                                            <Text
+                                                style={styles.datePickerButtonText}>{this.state.filterDateRangeFirst && dayjs(this.state.filterDateRangeFirst).locale('ru').format('D MMM')}</Text>
+                                        </TouchableOpacity>
+                                        <Text> —</Text>
+                                        <TouchableOpacity
+                                            style={styles.datePickerButton}
+                                            onPress={() => this._selectDate(this.state.filterDateRangeLast, "lastDay")}
+                                        >
+                                            <IconM style={styles.datePickerButtonIcon} name="small-calendar"
+                                                   type="simple-line-icons"
+                                                   size={18}/>
+                                            <Text
+                                                style={styles.datePickerButtonText}>{this.state.filterDateRangeLast && dayjs(this.state.filterDateRangeLast).locale('ru').format('D MMM')}</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                    <View>
+                                        <View
+                                            style={{flexDirection: 'row', flexWrap: 'wrap'}}
+                                        >
+                                            {this.state.nodeTypeList.map((i, index) => (
+                                                <View
+                                                    key={index}
+                                                    style={{flexDirection: 'row'}}>
+                                                    <CheckBox
+                                                        value={i.active}
+                                                        onValueChange={() => this.selectFilterType(i)}
+                                                    />
+                                                    <Text style={{marginTop: 5}}>{i.title}</Text>
+                                                </View>
+                                            ))}
+                                        </View>
+                                    </View>
+                                    <View
+                                        style={{
+                                            width: '100%',
+                                            height: 100,
+                                            position: "relative"
+
+                                        }}
+                                    >
+                                        <BoxShadow
+                                            setting={{
+                                                width: +`${width}` - 80,
+                                                height: 40,
+                                                color: "#b07919",
+                                                border: 10,
+                                                radius: 20,
+                                                opacity: 0.2,
+                                                x: 10,
+                                                y: 10,
+                                                style: {position: 'absolute', bottom: 40}
+
+                                            }}>
+                                            <View style={{
+                                                width: '100%',
+                                                height: 20
+                                            }}>
+                                            </View>
+
+                                        </BoxShadow>
+                                        <TouchableHighlight
+                                            underlayColor={"#ffb316"}
+                                            style={{
+                                                width: '100%',
+                                                alignItems: 'center',
+
+                                                backgroundColor: "#ffda3a",
+                                                marginTop: 20,
+                                                padding: 15,
+                                                borderRadius: 30,
+                                                bottom: 30,
+                                                left: 0,
+                                                position: "absolute"
+
+                                            }} onPress={this.handlePostData}>
+                                            <Text
+                                                style={{
+                                                    fontSize: 18
+                                                }}
+                                            >Добавить</Text>
+                                        </TouchableHighlight>
+                                    </View>
+                                </View>
+                            </BoxShadow>
+                        </View>
+                    </Modal>
+                </View>
+
+                }
+
             </View>
         )
     }

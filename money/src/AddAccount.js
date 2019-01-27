@@ -267,8 +267,6 @@ export default class Main extends React.Component {
             modalActionVisible: visible,
             accountReadyForDel: data,
         });
-
-
     }
 
     removeItem = () => {
