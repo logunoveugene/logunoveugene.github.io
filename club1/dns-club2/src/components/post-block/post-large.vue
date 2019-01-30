@@ -1,15 +1,34 @@
 <template>
     <div class="post">
         <div class="post-large">
+
             <div class="post-large__title  mb-3">
                 <router-link class="link link--color-black" :to="{ name: 'post', params: { id: post.id }}">
                     {{post.title}}
                 </router-link>
             </div>
+            <div class="d-flex align-items-center justify-content-left mb-4" v-if="post.autor==='John Doe'">
+                <div class="mr-3">
+                    <div class="post-large__draft">Черновик</div>
+                </div>
+                <div class="d-flex">
+                    <div class="small mr-3">
+                        <a href="" class="link link--color-blue">Изменить</a>
+                    </div>
+                    <div class="small">
+                        <a href="" class="link link--color-blue">Опубликовать</a>
+                    </div>
+                </div>
+            </div>
             <div class="d-flex align-items-start align-items-md-center flex-column flex-md-row justify-content-between">
                 <div class="small mb-3 d-flex align-items-center  ">
                     <img :src="post.autorImg" alt="" class="post-large__author-img  rounded-circle">
-                    <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
+                    <div class="mr-2">
+                        <author :author="post.autor"
+
+                                linkTag="link--color-blue"/>
+                    </div>
+                    {{post.date | fdate}}
                 </div>
                 <post-tag-full class="mb-3"
                                :source="post.source"
@@ -37,12 +56,14 @@
     import postInfo from './parts/post-info.vue'
     import postTagFull from './parts/post-tag-full.vue'
     import postTeaser from './parts/post-teaser.vue'
+    import author from "./parts/author.vue"
 
     export default {
         components: {
             postInfo,
             postTagFull,
-            postTeaser
+            postTeaser,
+            author
         },
         props: {
             post: {
@@ -91,6 +112,15 @@
         background-size: cover;
     }
 
+    .post-large__draft {
+        background-color: #fff2bf;
+        display: inline-block;
+        padding: 2px 8px;
+
+        border-radius: 4px;
+        font-size: .875rem;
+    }
+
     .post-large__img-wrap {
         border-radius: 8px;
         overflow: hidden;
@@ -135,13 +165,12 @@
 
     }
 
-
-    .post-large__author-img{
+    .post-large__author-img {
         width: 20px;
         height: 20px;
         margin-right: .5rem;
         display: block;
-        border-radius: 50%!important;
+        border-radius: 50% !important;
     }
 
 

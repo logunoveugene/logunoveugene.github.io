@@ -29,6 +29,7 @@
                             </a>
                         </div>
                         <div v-if="!isAuth" class="header__user-nav">
+                            <img class="header__user-img mr-2" src="https://i.snag.gy/hamMgu.jpg" alt="">
                             <ul class="nav small">
                                 <li class="nav__link">
                                     <a class="link link--color-grey" v-on:click="$emit('auth')" href="#">Вход</a>
@@ -43,6 +44,7 @@
                                 <li class="nav__link">
                                     <v-popover offset="5">
                                         <!---->
+                                        <img class="header__user-img mr-2" src="https://i.snag.gy/z07FBT.jpg" alt="">
                                         <a class="link link--color-grey link--dropdown"
                                            href="#">Александр</a>
                                         <template slot="popover">
@@ -52,9 +54,9 @@
                                             <div class="py-2 text-left px-3 ">
                                                 <a href="" class="link link--color-grey">Мои статьи</a>
                                             </div>
-                                            <div class="py-2 text-left px-3 ">
-                                                <a href="" class="link link--color-grey">Личные сообщения</a>
-                                            </div>
+                                            <!--<div class="py-2 text-left px-3 ">-->
+                                                <!--<a href="" class="link link&#45;&#45;color-grey">Личные сообщения</a>-->
+                                            <!--</div>-->
                                             <div class="py-2 text-left px-3 ">
                                                 <a href="" class="link link--color-grey">Мои темы</a>
                                             </div>
@@ -166,6 +168,7 @@
                             <transition name="fademy">
                                 <div v-if="isSearchExtend" class="header__search-extend">
                                     <input placeholder="Поиск"
+                                           v-on:keyup.enter="submitSearch()"
                                            ref="headerSearchField"
                                            type="search"
                                            class="header__search-extend-field">
@@ -174,8 +177,10 @@
                                             <div class="header__search-extend-btn-icon icon-down"></div>
                                         </div>
                                         <template slot="popover">
-                                            <div class="py-3 px-3 bb-1">в статьях</div>
-                                            <div class="py-3 px-3 bb-1">в обсуждениях</div>
+                                            <div class="py-3 px-3 bb-1"><a href="" class="link link--color-grey">в дайджесте</a></div>
+                                            <div class="py-3 px-3 bb-1"><a href="" class="link link--color-grey">в обзорах</a></div>
+                                            <div class="py-3 px-3 bb-1"><a href="" class="link link--color-grey">в лайфхаках</a></div>
+                                            <div class="py-3 px-3"><a href="" class="link link--color-grey">в коммуникаторе</a></div>
                                         </template>
                                     </v-popover>
 
@@ -250,7 +255,7 @@
 
 <script>
 
-    import headroom from './headroom.vue'
+    import headroom from './fixedHeader/headroom.vue'
 
     export default {
         components: {
@@ -276,7 +281,11 @@
                 })
 
 
-            }
+            },
+            submitSearch() {
+                this.isSearchExtend = false
+                this.$router.push({path: '/search-r'})
+            },
         },
         data: function () {
             return {
@@ -363,6 +372,7 @@
         width: auto;
         background-color: #f6f6f6;
         padding: .5rem 0;
+        height: 46px;
 
     }
 
@@ -379,6 +389,7 @@
         justify-content: space-between;
         flex-direction: row;
         display: flex;
+        align-items: center;
     }
 
     .header__bottom-line {
@@ -391,7 +402,7 @@
         }
 
         .header {
-            height: 160px;
+            height: 180px;
         }
     }
 
@@ -407,6 +418,11 @@
         justify-content: flex-end;
 
         display: flex;
+    }
+
+    .header__user-img {
+        max-height: 30px;
+        width: auto;
     }
 
     .header__main-nav {

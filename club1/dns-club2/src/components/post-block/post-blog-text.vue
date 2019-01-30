@@ -10,8 +10,16 @@
                     {{post.title}}
                 </router-link>
             </div>
-            <div class="small mb-3">
-                Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
+            <div class="small mb-3 d-flex justify-content-center">
+                Автор:
+                <div class="ml-1 mr-2">
+                    <author :author="post.autor"
+
+                            linkTag="link--color-blue"/>
+                </div>
+
+                <!--<a class="link link&#45;&#45;color-blue mr-2" href="#">{{post.autor}}</a> -->
+                {{post.date | fdate}}
             </div>
             <post-teaser
                     :teaser="post.teaser">
@@ -32,7 +40,7 @@
     import postInfo from './parts/post-info.vue'
     import postTag from './parts/post-tag.vue'
     import postTeaser from './parts/post-teaser.vue'
-
+    import author from "./parts/author.vue"
 
     export default {
 
@@ -43,7 +51,8 @@
         components: {
             postInfo,
             postTag,
-            postTeaser
+            postTeaser,
+            author
         },
         props: {
             post: {

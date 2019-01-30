@@ -336,7 +336,7 @@
                                         <!-- <a class="pill-item link" href="#">Все время</a> -->
                                     </nav>
                                     <ul class="list-unstyled">
-                                        <li class="media mb-3" v-for="(user, index) in topusers" :key="index">
+                                        <li class="media mb-3" v-for="(user, index) in topusers" :key="index" v-if="index<5">
                                             <img class="mr-3 img-60 rounded-circle " :src="user.img">
                                             <div class="media-body align-self-center">
                                                 <div class="">
@@ -381,7 +381,7 @@
         </div>
 
     </div>
-    </div>
+
 </template>
 
 <script>

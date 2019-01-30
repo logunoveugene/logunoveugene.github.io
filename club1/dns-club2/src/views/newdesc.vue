@@ -182,18 +182,6 @@
                 <input type="text" class="field" placeholder="Укажите название или артикул">
                 <div class="btn btn--color-white ml-3">Добавить</div>
             </div>
-            <!--<div class="d-flex p-4">-->
-            <!--<div class="modal_list">-->
-            <!--<div class="modal_list-item">Выделите название товара в тексте.</div>-->
-            <!--<div class="modal_list-item">Во всплывающим меню выберите инструмент «добавления ссылки».</div>-->
-            <!--<div class="modal_list-item">Добавьте ссылку на товара из каталога DNS, либо укажите артикул этого-->
-            <!--товара.-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="ml-3">-->
-            <!--<img src="https://i.snag.gy/DSBE9Q.jpg" alt="">-->
-            <!--</div>-->
-            <!--</div>-->
             <div class="pb-4 px-4">
                 <div class="h4 mb-3">Добавленные товары</div>
                 <div class="modal_list">

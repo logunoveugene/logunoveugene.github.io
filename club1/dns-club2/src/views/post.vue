@@ -22,7 +22,8 @@
                             </div>
                             <div class="d-flex flex-column">
                                 <div class="post__author-name">
-                                    <a class="link link--color-black mr-2" href="#">{{post.autor}}</a>
+                                    <author :author="post.autor" :authorImg="post.autorImg" linkTag="link--color-black mr-2"/>
+
                                 </div>
 
                                 <div class="small text-muted ">опубликованно {{post.date | fdate}}</div>
@@ -325,7 +326,7 @@
                         <div class="comment-block__adding-box">
                             <froala :tag="'textarea'" :config="config" v-model="commentText"></froala>
                         </div>
-                        <button type="button" class="btn btn--color-white ">Добавить комментарий</button>
+                        <button type="button" v-on:click="showModalUserAuth" class="btn btn--color-white ">Добавить комментарий</button>
                     </div>
                     <comment-item v-for="comment in comments" :comment="comment" :key="comment.id"></comment-item>
                 </div>
@@ -369,7 +370,18 @@
             </div>
         </div>
 
-
+        <modal name="userAuth" :adaptive="true" width="600px" height="auto">
+            <div class="pt-4 px-4 d-flex align-items-center justify-content-between ">
+                <div class="h2 mb-0">Требуется авторизация</div>
+                <div class="" @click="hideModalUserAuth">
+                    ✕
+                </div>
+            </div>
+            <div class="p-4 d-flex">
+                <div class="btn btn--color-white">Войти</div>
+                <div class="btn btn--color-white ml-3">Зарегистрироваться</div>
+            </div>
+        </modal>
     </div>
 </template>
 
@@ -386,6 +398,7 @@
     import {swiper, swiperSlide} from 'vue-awesome-swiper'
     import 'swiper/dist/css/swiper.css'
     import ProductList from "../components/product-list";
+    import author from "@/components/post-block/parts/author.vue"
 
 
     export default {
@@ -398,7 +411,8 @@
             swiperSlide,
             commentItem,
             postImg,
-            productList
+            productList,
+            author
         },
         data() {
             return {
@@ -460,6 +474,15 @@
                 },
 
             }
+        },
+        methods: {
+
+            showModalUserAuth() {
+                this.$modal.show('userAuth');
+            },
+         hideModalUserAuth() {
+                this.$modal.hide('userAuth');
+            },
         },
         created() {
             this.axios.get('https://club-route.firebaseio.com/digest.json?orderBy=%22id%22&equalTo=' + this.$route.params.id)

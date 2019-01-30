@@ -7,14 +7,14 @@
                         <router-link class="link link--color-black" to="/">Клуб</router-link>
                         <div class="mx-2">/</div>
                         <router-link class="link link--color-black" to="/discussions">Коммуникатор</router-link>
-                        <div class="mx-2">/</div>
-                        <router-link v-if="post.source" class="link link--color-black" to="/discussions">
-                            {{post.source.parent.title}}
-                        </router-link>
-                        <div class="mx-2">/</div>
-                        <router-link v-if="post.source" class="link link--color-black" to="/discussions">
-                            {{post.source.title}}
-                        </router-link>
+                        <!--<div class="mx-2">/</div>-->
+                        <!--<router-link v-if="post.source" class="link link&#45;&#45;color-black" to="/discussions">-->
+                            <!--{{post.source.parent.title}}-->
+                        <!--</router-link>-->
+                        <!--<div class="mx-2">/</div>-->
+                        <!--<router-link v-if="post.source" class="link link&#45;&#45;color-black" to="/discussions">-->
+                            <!--{{post.source.title}}-->
+                        <!--</router-link>-->
                     </div>
                 </div>
                 <div class="col-12 col-lg-8 ">
@@ -31,7 +31,11 @@
                                 <div class="d-flex">
                                     <img :src="post.autorImg" alt=""
                                          class="comment__comment-author-img-mob rounded-circle">
-                                    <div class="">{{post.autor}}</div>
+                                    <div class="mr-2">
+                                        <author :author="post.autor"
+                                                linkTag="link--color-grey  "/>
+                                    </div>
+                                    <!--<div class="">{{post.autor}}</div>-->
                                 </div>
                                 <div class="small  text-muted">{{post.date | fdate}}</div>
                             </div>
@@ -320,6 +324,7 @@
     import postImg from '@/components/post-block/post-img.vue'
     import commentItem from '@/components/comment-item.vue'
     import productList from '@/components/product-list.vue'
+    import author from "@/components/post-block/parts/author.vue"
 
     import {swiper, swiperSlide} from 'vue-awesome-swiper'
     import 'swiper/dist/css/swiper.css'
@@ -351,6 +356,7 @@
         // General Extensions
         HistoryExtension,
         PlaceholderExtension,
+
     } from 'tiptap-extensions'
 
 
@@ -363,7 +369,8 @@
             commentItem,
             postImg,
             Editor,
-            productList
+            productList,
+            author
         },
         data() {
             return {

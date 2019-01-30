@@ -43,7 +43,7 @@
                 <span v-if="isFullList" class="icon-remove pt-1 mr-2"></span>
 
                 <a @click="isFullList=!isFullList" href="#" class="link link--color-grey">
-                    <span v-if="!isFullList">Смотерть все</span>
+                    <span v-if="!isFullList">Смотреть все</span>
                     <span v-if="isFullList">Свернуть</span>
                 </a>
             </div>

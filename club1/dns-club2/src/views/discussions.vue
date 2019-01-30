@@ -21,10 +21,11 @@
                 <div class="col-12 col-md-12 col-lg-8">
                     <div class="discussions__search">
                         <div class="search-ext  mb-4 ">
-                            <input type="text" v-model="discussionsSearch" placeholder="Поиск по темам"
+                            <input v-model="discussionsSearch" placeholder="Поиск по темам"
                                    v-on:keyup.enter="submitSearch()"
+                                   type="search"
                                    class="field w-100 ">
-                            <div class="search-ext__btn-search icon-search"></div>
+                            <div v-bind:class="{'search-ext__btn-search--active': discussionsSearch}" class="search-ext__btn-search icon-search"></div>
                         </div>
                         <transition name="slide-fade">
                             <div class="suggestion-wrap" v-if="discussionsSearch!=false">
@@ -67,7 +68,6 @@
                         </transition>
                         <div class="mb-4" v-if="discussionsSearchResalt">
                             <div class="filter__item mr-3 mb-2">Товар: Телевизор LED Telefunken TF-LED19S62T2 черный
-
                                 <div class="filter__item-icon icon-close"
                                      @click="discussionsSearchResalt=!discussionsSearchResalt"></div>
                             </div>
@@ -138,18 +138,8 @@
                                                class="custom-control-input">
                                         <label class="custom-control-label" for="customRadioInline1">Без ответов</label>
                                     </div>
-                                    <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                        <input type="radio" id="customRadioInline2" name="customRadioInline1"
-                                               class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioInline2">Без моих
-                                            ответов</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline d-block">
-                                        <input type="radio" id="customRadioInline3" name="customRadioInline1"
-                                               class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioInline3">С моими
-                                            ответами</label>
-                                    </div>
+
+
 
                                 </div>
 
@@ -164,41 +154,7 @@
                             <a class="link link--pill link--color-black" href="#">Лучшие</a>
                             <a class="link link--pill link--color-black" href="#">Популярные</a>
                         </nav>
-                        <v-popover offset="0">
-                            <div class="d-none  d-md-flex">
-                                <div class="link link--dropdown">За сегодня</div>
-                            </div>
-                            <template slot="popover">
-                                <div class="py-2 pt-3 text-left px-3 ">
-                                    <a href="#" class="link link--color-grey">За сегодня</a>
-                                </div>
-                                <div class="py-2 text-left px-3 ">
-                                    <a href="#" class="link link--color-grey">За неделю</a>
-                                </div>
-                                <div class="py-2 text-left px-3 ">
-                                    <a href="#" class="link link--color-grey">За месяц</a>
-                                </div>
-                                <div class="py-2 text-left px-3 ">
-                                    <a href="#" class="link link--color-grey">За все время</a>
-                                </div>
-                                <div class="py-2 pb-3 text-left px-3 bb-1">
-                                    <flat-pickr
-                                            v-model="date"
-                                            :config="config"
-
-                                            class="form-control"
-                                            placeholder="Выбрать период"
-                                            name="date">
-                                    </flat-pickr>
-
-
-
-
-
-                                    <!--<a href="#" class="link link&#45;&#45;color-grey">Выбрать период</a>-->
-                                </div>
-                            </template>
-                        </v-popover>
+                        <date-range-select></date-range-select>
                     </div>
                     <div class="discussions">
                         <paginate
@@ -226,6 +182,38 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-4 d-none d-lg-block">
+
+                    <div v-if="isAuth" class="card-block card-block--shadow mb-4 ">
+                        <div class="">
+                            <div class="p-4 bb-1">
+                                <!--<div class="h2 mb-2 d-flex align-items-center">Меню пользователя</div>-->
+                                <div class="custom-control custom-radio custom-control-inline mb-1  d-block">
+                                    <input type="radio" id="customRadioInline12" name="userMenu"
+                                           class="custom-control-input" checked>
+                                    <label class="custom-control-label" for="customRadioInline12">Все темы</label>
+                                </div>
+
+                                <div class="custom-control custom-radio custom-control-inline mb-1  d-block">
+                                    <input type="radio" id="customRadioInline32" name="userMenu"
+                                           class="custom-control-input" >
+                                    <label class="custom-control-label" for="customRadioInline32">Мои темы</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline mb-1  d-block">
+                                    <input type="radio" id="customRadioInline3d" name="userMenu"
+                                           class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadioInline3d">С моими
+                                        ответами</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline d-block">
+                                    <input type="radio" id="customRadioInline2d" name="userMenu"
+                                           class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadioInline2d">Без моих
+                                        ответов</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="card-block card-block--shadow mb-4 ">
                         <div class="">
                             <div class="p-4 bb-1">
@@ -238,34 +226,22 @@
                             <!--</div>-->
                             <!--<product-category-brand-search></product-category-brand-search>-->
                             <!--</div>-->
-                            <div class="p-4 bb-1">
-                                <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Настройки
-                                    показа
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                    <input type="radio" id="customRadioInline00" name="customRadioInline1"
-                                           class="custom-control-input" checked>
-                                    <label class="custom-control-label" for="customRadioInline00">Все темы</label>
-                                </div>
+                            <!--<div class="p-4 bb-1">-->
+                                <!--<div class="h2 mb-3 d-flex align-items-center justify-content-between ">Настройки-->
+                                    <!--показа-->
+                                <!--</div>-->
+                                <!--<div class="custom-control custom-radio custom-control-inline mb-1 d-block">-->
+                                    <!--<input type="radio" id="customRadioInline00" name="customRadioInline1"-->
+                                           <!--class="custom-control-input" checked>-->
+                                    <!--<label class="custom-control-label" for="customRadioInline00">Все темы</label>-->
+                                <!--</div>-->
 
-                                <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                    <input type="radio" id="customRadioInline1" name="customRadioInline1"
-                                           class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadioInline1">Без ответов</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                    <input type="radio" id="customRadioInline2" name="customRadioInline1"
-                                           class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadioInline2">Без моих
-                                        ответов</label>
-                                </div>
-                                <div class="custom-control custom-radio custom-control-inline d-block">
-                                    <input type="radio" id="customRadioInline3" name="customRadioInline1"
-                                           class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadioInline3">С моими
-                                        ответами</label>
-                                </div>
-                            </div>
+                                <!--<div class="custom-control custom-radio custom-control-inline mb-1 d-block">-->
+                                    <!--<input type="radio" id="customRadioInline1" name="customRadioInline1"-->
+                                           <!--class="custom-control-input">-->
+                                    <!--<label class="custom-control-label" for="customRadioInline1">Без ответов</label>-->
+                                <!--</div>-->
+                            <!--</div>-->
                             <div v-if="allFilter" class="p-4 bb-1">
                                 <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Привязаны к
                                     теме
@@ -332,6 +308,21 @@
     import DiscListItem from "@//components/post-block/disc-list-item";
     import category from "@//components/category.vue";
     import productCategoryBrandSearch from "@//components/product-category-brand-search.vue"
+    import dateRangeSelect from "@//components/dateRangeSelect.vue"
+
+    import dayjs from 'dayjs'
+    import relativeTime from 'dayjs/plugin/relativeTime'
+    import 'dayjs/locale/ru'
+
+    dayjs.locale('ru')
+    dayjs.extend(relativeTime)
+
+
+
+
+
+
+
 
 
     export default {
@@ -340,8 +331,16 @@
             DiscListItem,
             postInfo,
             productCategoryBrandSearch,
-            category
+            category,
+            dateRangeSelect
         },
+        props:{
+            isAuth: {
+                type: false,
+                default: ""
+            }
+        },
+
         data: function () {
             return {
 
@@ -365,31 +364,39 @@
                 stateLoad: false,
 
 
-                date: new Date(),
+                date: '',
+                formatDateRange:null,
+                selectedRange:"За сегодня",
                 // Get more form https://chmln.github.io/flatpickr/options/
                 config: {
                     wrap: true,
                     // weekNumbers: true,
+
                     mode: "range",
                     maxDate: "today",
                     dateFormat: "Y-m-d",
                     defaultDate: "today",
                     // inline: true,
-                    locale: "ru",
-
+                    "locale": "ru"
 
                 },
 
 
             }
         },
-        // computed: {
-        //     searchDateSumbit: function() {
-        //
-        //         let d= this.date.split(' — ');
-        //         return dayjs(d[0]).format('H:mm, DD MMM YYYY')+'–'+dayjs(d[1]).format('H:mm, DD MMM YYYY');
-        //     },
-        // },
+        computed: {
+            searchDateSumbit: function() {
+                let d= this.date.split('to');
+                // let formatData = dayjs(d[0]).format('DD MMM YYYY')+'–'+ this.$dayjs(d[1]).format('DD MMM YYYY');
+                this.selectedRange = d[0]+' по '+d[1];
+                console.log( this.formatDateRange)
+                return d
+
+
+            },
+        },
+
+
         methods: {
             show() {
                 this.$modal.show('hello-world');
@@ -407,7 +414,13 @@
                 this.discussionsSearch = "";
                 this.discussionsSearchResalt = true
 
+            },
+            selectDate(){
+                let d= this.date.split('to');
+                // let formatData = dayjs(d[0]).format('DD MMM YYYY')+'–'+ this.$dayjs(d[1]).format('DD MMM YYYY');
+                this.formatDateRange = d[0]+' по '+d[1];
             }
+
         },
 
         created() {
@@ -464,14 +477,51 @@
     /*z-index: 1000000 !important;;*/
     /*}*/
 
+    /*.search-ext__btn-search {*/
+        /*position: absolute;*/
+        /*right: 10px;*/
+        /*top: 8px;*/
+        /*font-size: 22px;*/
+        /*color: #dddddd;*/
+    /*}*/
+
+
+
     .search-ext__btn-search {
         position: absolute;
-        right: 10px;
-        top: 8px;
+        right: 5px;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        top: 4px;
         font-size: 22px;
-        color: #dddddd;
-
+        color: #ccc;
+        background-color: #fff;
+        height: 32px;
+        border-radius: 8px;
+        z-index: 60000;
+        cursor: pointer;
+        transition: all .1s;
     }
+
+    .search-ext__btn-search--active {
+        position: absolute;
+        right: 5px;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        top: 4px;
+        font-size: 22px;
+        color: #fff;
+        background-color: #ff7e00;
+        box-shadow: inset 0 34px 25px -25px rgba(255, 188, 11, 0.5);
+        height: 32px;
+        border-radius: 8px;
+        z-index: 60000;
+        cursor: pointer;
+    }
+
+
 
     .search-ext {
         position: relative;
@@ -694,17 +744,6 @@
         color: #fff;
     }
 
-    .form-control.flatpickr-input{
-        background-color: #ffffff;
-        border: none;
-        padding: 0;
-        font-size: 14px;
-        font-family: "PT Sans";
-        line-height: 12px;
-        display: block;
-        height: 21px;
-        outline: none;
-    }
 
 
 

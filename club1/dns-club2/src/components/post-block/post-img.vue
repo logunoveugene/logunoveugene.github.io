@@ -37,11 +37,15 @@
                                 {{post.title}}
                             </router-link>
                         </div>
-                        <div class="small mb-3" v-bind:style="{ color: post.textColor }">
-                            Автор: <a v-bind:style="{ color: post.textColor }" class="link link--color-blue mr-2"
-                                      href="#">{{post.autor}}</a>
-                            {{post.date |
-                            fdate}}
+                        <div class="small mb-3 d-flex" v-bind:style="{ color: post.textColor }">
+                            Автор:
+                            <div class="ml-1 mr-2">
+                                <author :author="post.autor"
+                                        :fontColor="post.textColor"
+                                        linkTag="link--color-blue link--opacity-hover"/>
+                            </div>
+
+                            {{post.date | fdate}}
                         </div>
                         <div class="mt-auto">
                             <post-info
@@ -65,12 +69,13 @@
 
     import postInfo from './parts/post-info.vue'
     import postTag from './parts/post-tag.vue'
-
+    import author from "./parts/author.vue"
 
     export default {
         components: {
             postInfo,
-            postTag
+            postTag,
+            author
         },
         props: {
             post: {

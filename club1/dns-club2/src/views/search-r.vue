@@ -11,12 +11,12 @@
                     </div>
                     <div class="d-flex align-items-center justify-content-between mb-3">
                         <h1 class="page__title mb-0 ">Результаты поиска по запросу "Xiaomi"</h1>
-                        <router-link to="/newdesc" class=" link link--color-black new-discuss-btn d-lg-none d-block ">
-                            <div class="new-discuss-btn-icon">
-                                <div class=" text-success d-inline-block mr-2 icon-add"></div>
-                            </div>
-                            <div class="d-inline-block">Создать тему</div>
-                        </router-link>
+                        <!--<router-link to="/newdesc" class=" link link&#45;&#45;color-black new-discuss-btn d-lg-none d-block ">-->
+                            <!--<div class="new-discuss-btn-icon">-->
+                                <!--<div class=" text-success d-inline-block mr-2 icon-add"></div>-->
+                            <!--</div>-->
+                            <!--<div class="d-inline-block">Создать тему</div>-->
+                        <!--</router-link>-->
                     </div>
                 </div>
                 <div class="col-12 col-md-12 col-lg-8">
@@ -28,18 +28,7 @@
                             <div class="search-ext__detals">
                                 <div class="d-flex justify-content-between ">
                                     <div class="d-flex">
-                                        <div class="custom-control custom-radio custom-control-inline d-block">
-                                            <input type="radio" id="customRadioInline00" name="customRadioInline1"
-                                                   checked="checked" class="custom-control-input">
-                                            <label for="customRadioInline00" class="custom-control-label">Найденные
-                                                статьи – 45</label>
-                                        </div>
-                                        <div class="custom-control custom-radio custom-control-inline d-block">
-                                            <input type="radio" id="customRadioInline0044" name="customRadioInline1"
-                                                     class="custom-control-input">
-                                            <label for="customRadioInline0044" class="custom-control-label">Найденные темы
-                                                – 489</label>
-                                        </div>
+                                        Найдено 153 материалов
                                     </div>
                                     <div class="d-flex">
 
@@ -56,12 +45,14 @@
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="customCheck1"
                                                    checked>
-                                            <label class="custom-control-label" for="customCheck1">Искать в названиях статей</label>
+                                            <label class="custom-control-label" for="customCheck1">Искать в
+                                                названиях </label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="customCheck151"
                                                    checked>
-                                            <label class="custom-control-label" for="customCheck151">Искать в содердимом статьи</label>
+                                            <label class="custom-control-label" for="customCheck151">Искать в
+                                                содержимом</label>
                                         </div>
                                         <div class="custom-control custom-checkbox">
                                             <input type="checkbox" class="custom-control-input" id="customChe6565655"
@@ -152,44 +143,16 @@
                                     <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
                                     <category-cut></category-cut>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
-
                     <div class="d-none d-lg-flex  justify-content-between align-items-center ">
                         <nav class="nav nav-pills nav-justified">
                             <a class="link link--pill link--color-black link--pill-active  " href="#">Наиболее
                                 релевантные</a>
                             <a class="link link--pill link--color-black" href="#">Сначала свежие</a>
-                            <a class="link link--pill link--color-black" href="#">Обсуждаемые</a>
-                            <a class="link link--pill link--color-black" href="#">Лучшие</a>
-
                         </nav>
-                        <v-popover offset="0">
-
-                            <div class="d-none  d-md-flex">
-                                <div class="link link--dropdown">За все время</div>
-                            </div>
-                            <template slot="popover">
-                                <div class="py-2 pt-3 text-left px-3 ">
-                                    <a href="" class="link link--color-grey">За сегодня</a>
-                                </div>
-                                <div class="py-2 text-left px-3 ">
-                                    <a href="" class="link link--color-grey">За неделю</a>
-                                </div>
-                                <div class="py-2 text-left px-3 ">
-                                    <a href="" class="link link--color-grey">За месяц</a>
-                                </div>
-                                <div class="py-2 text-left px-3 ">
-                                    <a href="" class="link link--color-grey">За все время</a>
-                                </div>
-                                <div class="py-2 pb-3 text-left px-3 bb-1">
-                                    <a href="" class="link link--color-grey">Выбрать период</a>
-                                </div>
-                            </template>
-                        </v-popover>
+                        <date-range-select></date-range-select>
 
                     </div>
                     <div class="discussions">
@@ -198,43 +161,43 @@
                                 :list="searchArticle"
                                 :per="7"
                         >
-
                             <post-search-r :post="post"
-                                                   v-for="(post, index) in paginated('discuss')"
-                                                   :key="index">
+                                           v-for="(post, index) in paginated('discuss')"
+                                           :key="index">
                             </post-search-r>
                         </paginate>
 
-                        <!--<div class="btn paginate__button btn-block mb-4 ">Показать еще</div>-->
-
-                        <!--<paginate-links :limit="3"-->
-                        <!--for="discuss"-->
-                        <!--:show-step-links="true"-->
-                        <!--:step-links="{-->
-                        <!--next: 'h',-->
-                        <!--prev: 'g'-->
-                        <!--}">-->
-                        <!--</paginate-links>-->
-
+                        <div class="btn paginate__button btn-block mb-4 ">Показать еще</div>
+                        <paginate-links :limit="3"
+                        for="discuss"
+                        :show-step-links="true"
+                        :step-links="{
+                        next: 'h',
+                        prev: 'g'
+                        }">
+                        </paginate-links>
                     </div>
                 </div>
                 <div class="col-12 col-lg-4 d-none d-lg-block">
                     <div class="card-block card-block--shadow mb-4 ">
                         <div class="">
                             <div class="p-4 bb-1">
-
                                 <div class=" ">
                                     <div class="custom-control custom-checkbox mb-2">
-                                        <input type="checkbox" id="customCheck1"   class="custom-control-input">
+                                        <input type="checkbox" id="customCheck1" class="custom-control-input">
                                         <label for="customCheck1" class="custom-control-label">Дайджест</label>
                                     </div>
                                     <div class="custom-control custom-checkbox mb-2">
-                                        <input type="checkbox" id="customCheck1"  class="custom-control-input">
+                                        <input type="checkbox" id="customCheck1" class="custom-control-input">
                                         <label for="customCheck1" class="custom-control-label">Обзоры</label>
                                     </div>
-                                    <div class="custom-control custom-checkbox  ">
-                                        <input type="checkbox" id="customCheck1"   class="custom-control-input">
+                                    <div class="custom-control custom-checkbox mb-2">
+                                        <input type="checkbox" id="customCheck1" class="custom-control-input">
                                         <label for="customCheck1" class="custom-control-label">Лайфхаки</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox  ">
+                                        <input type="checkbox" id="customCheck1" class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">Коммуникатор</label>
                                     </div>
                                 </div>
                             </div>
@@ -250,55 +213,65 @@
 
                             <!--<product-category-brand-search></product-category-brand-search>-->
                             <!--</div>-->
-                            <div class="p-4 bb-1">
-                                <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Формат
-                                </div>
-                                <div class=" d-flex">
 
-                                    <div class=" ">
-                                        <div class="custom-control custom-checkbox mb-2">
-                                            <input type="checkbox" id="customCheck1asdas"   class="custom-control-input">
-                                            <label for="customCheck1asdas" class="custom-control-label">Текст</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox mb-2">
-                                            <input type="checkbox" id="customCheck1dsfsd"   class="custom-control-input">
-                                            <label for="customCheck1dsfsd" class="custom-control-label">Видео</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" id="custosadasd"   class="custom-control-input">
-                                            <label for="custosadasd" class="custom-control-label">Фото</label>
+
+                            <div v-if="allFilter" class="bb-1">
+                                <div class="p-4  bb-1">
+                                    <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Формат
+                                    </div>
+                                    <div class=" d-flex">
+
+                                        <div class=" ">
+                                            <div class="custom-control custom-checkbox mb-2">
+                                                <input type="checkbox" id="customCheck1asdas"
+                                                       class="custom-control-input">
+                                                <label for="customCheck1asdas"
+                                                       class="custom-control-label">Текст</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox mb-2">
+                                                <input type="checkbox" id="customCheck1dsfsd"
+                                                       class="custom-control-input">
+                                                <label for="customCheck1dsfsd"
+                                                       class="custom-control-label">Видео</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" id="custosadasd" class="custom-control-input">
+                                                <label for="custosadasd" class="custom-control-label">Фото</label>
+                                            </div>
                                         </div>
                                     </div>
+
                                 </div>
 
-                            </div>
+                                <div class="p-4">
 
-                            <div v-if="allFilter" class="p-4 bb-1">
-                                <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Привязаны к
-                                    статье
-                                </div>
+                                    <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Привязаны к
+                                        статье
+                                    </div>
 
-                                <div class="discussions__search">
+                                    <div class="discussions__search">
+                                        <div class="search-ext  mb-4 ">
+                                            <input type="text" v-model="discussionsSearchExt" placeholder="Товары"
+
+                                                   class="field w-100 ">
+                                            <div class="search-ext__btn-search icon-search"></div>
+                                        </div>
+
+                                    </div>
                                     <div class="search-ext  mb-4 ">
-                                        <input type="text" v-model="discussionsSearchExt" placeholder="Товары"
+                                        <input type="text" placeholder="Бренды"
 
                                                class="field w-100 ">
                                         <div class="search-ext__btn-search icon-search"></div>
                                     </div>
+                                    <div class="search-ext mb-1">
+                                        <input type="text" placeholder="Категории товаров"
 
+                                               class="field w-100 ">
+                                        <div class="search-ext__btn-search icon-search"></div>
+                                    </div>
                                 </div>
-                                <div class="search-ext  mb-4 ">
-                                    <input type="text" placeholder="Бренды"
 
-                                           class="field w-100 ">
-                                    <div class="search-ext__btn-search icon-search"></div>
-                                </div>
-                                <div class="search-ext mb-1">
-                                    <input type="text" placeholder="Категории товаров"
-
-                                           class="field w-100 ">
-                                    <div class="search-ext__btn-search icon-search"></div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -324,7 +297,7 @@
     import categoryCut from "@//components/category-cut.vue";
     import productCategoryBrandSearch from "@//components/product-category-brand-search.vue"
     import PostSearchR from "../components/post-block/post-search-r";
-
+    import dateRangeSelect from "@//components/dateRangeSelect.vue"
 
 
     export default {
@@ -334,7 +307,8 @@
             DiscListItemSearch,
             postInfo,
             productCategoryBrandSearch,
-            categoryCut
+            categoryCut,
+            dateRangeSelect
         },
         data: function () {
             return {
@@ -414,6 +388,9 @@
     }
 </script>
 <style lang="scss">
+
+
+
     .search-ext {
         background: #f2f2f2;
         border-radius: 8px;

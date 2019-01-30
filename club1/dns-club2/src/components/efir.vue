@@ -1,6 +1,6 @@
 <template>
     <div class="live" v-if="live == 'showlive'">
-        <div class="bg-light p-2">
+        <div class="header__top-line d-flex align-items-center p-2">
             <div class="d-flex small link link--color-grey" v-on:click="$emit('liveoff')">
                Скрыть
             </div>

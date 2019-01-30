@@ -1,7 +1,7 @@
 <template>
     <div class="post">
         <div class="post-half">
-            <router-link  :to="{ name: 'post', params: { id: post.id }}">
+            <router-link :to="{ name: 'post', params: { id: post.id }}">
                 <div @mouseover="isHovered = true" @mouseleave="isHovered = false" class="post-half__image-wrap"
 
                      :style="[isHovered ? { backgroundColor: post.bgColor,
@@ -9,7 +9,6 @@
                   boxShadow: '0 12px 40px -10px'+ post.bgColor +'80, 0 12px 30px -10px rgba(0,0,0,0.1)',
                     backgroundImage: 'url(' +  post.img + ')'} :
                      { backgroundColor: post.bgColor,  backgroundImage: 'url(' +  post.img + ')'}]"
-
 
                 >
 
@@ -39,8 +38,14 @@
                     {{post.title}}
                 </router-link>
             </div>
-            <div class="small mb-3">
-                Автор: <a class="link link--color-blue mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
+            <div class="small mb-3 d-flex">
+                Автор:
+                <div class="ml-1 mr-2">
+                    <author :author="post.autor"
+                            linkTag="link--color-blue  "/>
+                </div>
+
+                {{post.date | fdate}}
             </div>
             <post-info
                     :like="post.like"
@@ -56,11 +61,13 @@
 <script>
     import postInfo from './parts/post-info.vue'
     import postTag from './parts/post-tag.vue'
+    import author from "./parts/author.vue"
 
     export default {
         components: {
             postInfo,
-            postTag
+            postTag,
+            author
         },
         props: {
             post: {

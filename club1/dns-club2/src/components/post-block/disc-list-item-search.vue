@@ -15,8 +15,11 @@
                         <!--</div>-->
                         <div class="discussions-search__ d-flex align-items-center small mb-2 mr-4">
                             <img :src="post.autorImg" alt="" class="discussions-search__author-img  rounded-circle">
-                            <a class="link link--color-grey mr-2"
-                               href="#">{{post.autor}}</a>
+                            <div class=" mr-2">
+                                <author :author="post.autor"
+                                        :fontColor="post.textColor"
+                                        linkTag="link--color-blue link--opacity-hover"/>
+                            </div>
                             <div class=""> {{post.date | fulldate}}</div>
 
                         </div>
@@ -42,8 +45,13 @@
                 <div class="discussions-search__answer-item" v-for="answer in post.answers">
                     <div class="d-flex small">
                         <img :src="answer.autorImg" alt="" class="discussions-search__author-img  rounded-circle">
-                        <a class="link link--color-grey mr-2"
-                           href="#">{{answer.autor}}</a>
+                        <div class="mr-2">
+                            <author :author="answer.autor"
+                                    :fontColor="post.textColor"
+                                    linkTag="link--color-blue link--opacity-hover"/>
+                        </div>
+
+
                         <!--<div class=" d-inline-block mr-2 icon-reply"></div>-->
                         <!--<a class="link link&#45;&#45;color-grey mr-2" href="#">{{answer.replyAuthor}}</a>-->
                         <div class=""> {{answer.date | fulldate}}</div>
@@ -71,11 +79,12 @@
 
 <script>
     import postInfo from './parts/post-info.vue'
-
+    import author from "./parts/author.vue"
 
     export default {
         components: {
             postInfo,
+            author
 
         },
         props: {

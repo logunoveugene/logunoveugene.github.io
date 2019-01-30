@@ -5,20 +5,28 @@
             <div class="column">
                 <div class="subsubmenu__item" v-for="(subsubmenuItem, index) in submenuItem.child" :key="index">
 
-                    <v-popover trigger="hover"  placement="right">
-                        <a href="#"  class=" subsubmenu__link small link link--color-grey">{{subsubmenuItem.title}}
+
+                    <a v-if="subsubmenuItem.child.length <= 1" href="#"
+                       class=" subsubmenu__link small link link--color-grey">{{subsubmenuItem.title}}
+                        <span class="ml-1 text-muted">{{subsubmenuItem.amount}}</span>
+                        <span v-if="subsubmenuItem.child.length > 1"
+                              class="subsubmenu__arrow icon-arrow-right pt-1"></span>
+                    </a>
+
+
+                    <v-popover v-if="subsubmenuItem.child.length > 1" trigger="hover" placement="right">
+                        <a href="#" class=" subsubmenu__link small link link--color-grey">{{subsubmenuItem.title}}
                             <span class="ml-1 text-muted">{{subsubmenuItem.amount}}</span>
                             <span v-if="subsubmenuItem.child.length > 1"
                                   class="subsubmenu__arrow icon-arrow-right pt-1"></span>
                         </a>
 
                         <template slot="popover">
-                            <div class="" v-for="(dropItem, index) in subsubmenuItem.child" :key="index">
-                                <a href="" class="link link--color-grey small">{{dropItem.title}}</a>
+                            <div class="mb-2" v-for="(dropItem, index) in subsubmenuItem.child" :key="index">
+                                <a href="" class="link link--color-grey small ">{{dropItem.title}}</a>
                             </div>
                         </template>
                     </v-popover>
-
 
 
                 </div>
@@ -51,7 +59,6 @@
         background: white;
         box-shadow: 10px 0 20px 0 rgba(0, 0, 0, .2);
 
-
     }
 
     .submenu {
@@ -63,12 +70,12 @@
         .submenu {
             display: block;
             position: absolute;
-            width: calc(960px - 240px);
+            width: calc(960px - 245px);
             background: white;
-            left: 230px;
+            left: 235px;
             z-index: 90;
-            border-radius: 0 8px 8px 0;
-            box-shadow: inset 20px 0 20px -13px rgba(0, 0, 0, 0.1);
+            border-radius: 8px ;
+            box-shadow:  0px 10px 20px  rgba(0, 0, 0, 0.1);
             padding: 2rem;
             /*height: 100%;*/
             /*overflow-y: scroll;*/
@@ -81,13 +88,13 @@
         .submenu {
             display: block;
             position: absolute;
-            width: calc(1200px - 300px);
+            width: calc(1200px - 305px);
             background: white;
-            left: 289px;
+            left: 295px;
 
             z-index: 90;
-            border-radius: 0 8px 8px 0;
-            box-shadow: inset 20px 0 20px -13px rgba(0, 0, 0, 0.1);
+            border-radius: 8px ;
+            box-shadow:  0px 10px 20px  rgba(0, 0, 0, 0.1);
             padding: 2rem;
 
         }
@@ -126,14 +133,17 @@
         margin-bottom: .75rem;
     }
 
-
     .tooltip {
         display: block !important;
         z-index: 10000;
     }
 
+    .tooltip-inner .popover-inner {
+        background: white;
+    }
+
     .tooltip .tooltip-inner {
-        background: black;
+
         color: white;
         border-radius: 16px;
         padding: 5px 10px 4px;
@@ -233,6 +243,20 @@
         transition: opacity .15s;
     }
 
+    .tooltip.popover .popover-inner {
+        background: #fafafa;
+        color: black;
+        padding: 24px;
+        border-radius: 5px;
+        border: 0;
+        box-shadow: 0px 5px 20px rgba(0, 0, 0, .1);
+        text-align: left;
+        font-family: "PT Sans";
+    }
+
+    .tooltip.popover.vue-popover-theme {
+        border: 0;
+    }
 
 
 </style>

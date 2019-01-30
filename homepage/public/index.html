@@ -71,6 +71,7 @@
     <mainheader :catalogitem="mainNavs" :is-tp="isTp" :showcatalog="showCatalog"
                 v-on:tptodns="isTp =! isTp"></mainheader>
 
+
     <div class="main-layout" v-scroll="handleScroll">
         <div class="overflow-layout d-lg-none">
             <div class=" card--no-round">
@@ -166,11 +167,15 @@
 
                 </div>
 
-                <div class="col-12 col-lg-3 mb-lg-0 d-flex">
-                    <div class="card card-mobile align-self-stretch flex-fill ">
+                <div class="col-12 col-lg-3 mb-lg-0 d-flex"  @mouseover="submenuDesktopIsOpen = true" @mouseleave="submenuDesktopIsOpen = false" >
+                    <div class="card card-mobile align-self-stretch flex-fill">
                         <catalogmenu :catalog="mainNavs"></catalogmenu>
                     </div>
-                    <!--<submenu :mysubmenu="dropSubMenu"></submenu>-->
+
+
+                        <submenu v-if="submenuDesktopIsOpen" :mysubmenu="dropSubMenu"/>
+
+
 
                 </div>
                 <div class="col-12 col-lg-9">
@@ -748,11 +753,11 @@
             <div class="row  mb-4 mb-lg-5 d-none d-lg-flex">
                 <div class="col-12 col-md-6 col-lg-3 mb-3">
                     <div class="card p-4">
-                        <div class="d-flex mb-4">
+                        <div class="d-flex mb-4 justify-content-between">
                             <div class="h3 mb-0">Популярное</div>
                             <div class="d-flex">
-                                <div class="icon px-2 pt-1 icon-arrow-left"></div>
-                                <div class="icon px-2 pt-1 icon-arrow-right"></div>
+                                <div class="arrow-navigation icon-arrow-left"></div>
+                                <div class="arrow-navigation icon-arrow-right"></div>
                             </div>
                         </div>
                         <div class="d-flex mb-3 align-items-center">
@@ -801,11 +806,11 @@
                 <div class="col-12  col-md-6  col-lg-3 mb-3">
                     <div class="card p-4">
 
-                        <div class="d-flex mb-4  ">
+                        <div class="d-flex mb-4  justify-content-between">
                             <div class="h3 mb-0">Обсуждаемые</div>
                             <div class="d-flex">
-                                <div class="icon pt-1 px-2 icon-arrow-left"></div>
-                                <div class="icon pt-1 px-2 icon-arrow-right"></div>
+                                <div class="arrow-navigation icon-arrow-left"></div>
+                                <div class="arrow-navigation icon-arrow-right"></div>
                             </div>
                         </div>
                         <div class="d-flex mb-3 align-items-center">
@@ -853,11 +858,11 @@
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="card p-4">
-                        <div class="d-flex mb-4  ">
+                        <div class="d-flex mb-4 justify-content-between">
                             <div class="h3 mb-0">Хиты продаж</div>
                             <div class="d-flex">
-                                <div class="icon pt-1 px-2 icon-arrow-left"></div>
-                                <div class="icon pt-1 px-2 icon-arrow-right"></div>
+                                <div class="arrow-navigation icon-arrow-left"></div>
+                                <div class="arrow-navigation icon-arrow-right"></div>
                             </div>
                         </div>
 
@@ -913,11 +918,11 @@
                                 </div>
                             </div>
                             <div class="col-6 col-md-6 d-none d-md-block">
-                                <div class="d-flex flex-column align-items-center">
-                                    <div class="mb-3">
+                                <div class="d-flex flex-column align-items-left">
+                                    <div class="mb-3 text-center">
                                         <img src="https://i.snag.gy/ZtVFx9.jpg" alt="">
                                     </div>
-                                    <div class="h4 text-center">
+                                    <div class="h4 ">
                                         5.84" Смартфон Honor 10 128 ГБ синий
                                     </div>
                                     <div class="product-plate__price d-flex flex-column">

@@ -4,6 +4,11 @@ import router from './router'
 import "./filters"
 
 
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime'
+import 'dayjs/locale/ru'
+
+
 
 import CripLoading from "crip-vue-loading"
 import axios from 'axios'
@@ -61,10 +66,6 @@ Vue.use(SocialSharing);
 
 
 
-import VueFlatPickr from 'vue-flatpickr-component';
-// import 'flatpickr/dist/flatpickr.css';
-// import ru from './ru.js';
-Vue.use(VueFlatPickr);
 
 
 

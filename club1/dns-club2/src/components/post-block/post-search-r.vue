@@ -11,22 +11,23 @@
                     <img :src="post.autorImg" alt="" class="post-large-search__author-img  rounded-circle">
                     <a class="link link--color-blue link--opacity-hover mr-2" href="#">{{post.autor}}</a> {{post.date | fdate}}
                 </div>
-                <post-tag-full class="mb-3"
-                               :source="post.source"
-                               :format="post.format"
-                               :tags="post.tags"
-                               :fullSource="post.fullSource"
-                ></post-tag-full>
+                <div class="small mb-3"><a href="" class="link link--color-grey">{{post.fullSource}}</a></div>
+                <!--<post-tag-full class="mb-3"-->
+                               <!--:source="post.source"-->
+                               <!--:format="post.format"-->
+                               <!--:tags="post.tags"-->
+                               <!--:fullSource="post.fullSource"-->
+                <!--&gt;</post-tag-full>-->
             </div>
-            <div v-html="post.teaser" class="mb-3"></div>
+            <div v-html="post.teaser" class=""></div>
 
 
-            <post-info
-                    :like="post.like"
-                    :comment="post.comment"
-                    :view="post.view"
-                    border="false"
-            ></post-info>
+            <!--<post-info-->
+                    <!--:like="post.like"-->
+                    <!--:comment="post.comment"-->
+                    <!--:view="post.view"-->
+                    <!--border="false"-->
+            <!--&gt;</post-info>-->
         </div>
     </div>
 
@@ -36,12 +37,13 @@
     import postInfo from './parts/post-info.vue'
     import postTagFull from './parts/post-tag-full.vue'
     import postTeaser from './parts/post-teaser.vue'
-
+    import author from "./parts/author.vue"
     export default {
         components: {
             postInfo,
             postTagFull,
-            postTeaser
+            postTeaser,
+            author
         },
         props: {
             post: {
@@ -77,9 +79,9 @@
 
 <style>
 
-    /*.post-large-search .highlight{*/
-        /*background: #fff2bf;*/
-    /*}*/
+    .post-large-search .highlight{
+        background: #fff2bf;
+    }
 
 
     .post-large-search__title {

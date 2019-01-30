@@ -29,12 +29,13 @@
 <script>
     import postInfo from './parts/post-info.vue'
     import postTag from './parts/post-tag.vue'
-
+    import author from "./parts/author.vue"
 
     export default {
         components: {
             postInfo,
-            postTag
+            postTag,
+            author
 
         },
         props: {

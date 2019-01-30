@@ -12,6 +12,7 @@
     "axios": "^0.18.0",
     "crip-vue-loading": "^1.2.5",
     "dayjs": "^1.7.7",
+    "flatpickr": "^4.5.2",
     "quill-image-drop-module": "^1.0.3",
     "quill-image-resize-module": "^3.0.0",
     "tiptap": "^0.19.0",

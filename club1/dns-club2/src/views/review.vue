@@ -96,6 +96,12 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="px-4">
+                            <div v-if="!allFilter" @click="allFilter=true" class="link link--doted  link--color-grey">Все
+                                фильтры
+                            </div>
+
+                        </div>
                     </div>
                     <div class=" d-none d-lg-flex  justify-content-between align-items-center ">
                         <nav class="nav nav-pills nav-justified ">
@@ -105,29 +111,7 @@
                         </nav>
 
                         <div class="d-none d-md-flex  ">
-                            <v-popover offset="0">
-
-                                <div class="d-none  d-md-flex">
-                                    <div class="link link--dropdown">За все время</div>
-                                </div>
-                                <template slot="popover">
-                                    <div class="py-2 pt-3 text-left px-3 ">
-                                        <a href="#" class="link link--color-grey">За сегодня</a>
-                                    </div>
-                                    <div class="py-2 text-left px-3 ">
-                                        <a href="#" class="link link--color-grey">За неделю</a>
-                                    </div>
-                                    <div class="py-2 text-left px-3 ">
-                                        <a href="#" class="link link--color-grey">За месяц</a>
-                                    </div>
-                                    <div class="py-2 text-left px-3 ">
-                                        <a href="#" class="link link--color-grey">За все время</a>
-                                    </div>
-                                    <div class="py-2 pb-3 text-left px-3 bb-1">
-                                        <a href="#" class="link link--color-grey">Выбрать период</a>
-                                    </div>
-                                </template>
-                            </v-popover>
+                            <date-range-select></date-range-select>
                         </div>
                     </div>
                     <div class="posts">
@@ -140,39 +124,38 @@
                 <div class="col-12 col-lg-4 ">
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-12 mb-4 d-none d-lg-block ">
+                            <div v-if="isAuth" class="card-block card-block--shadow mb-4 ">
+                                <div class="">
+                                    <div class="p-4 bb-1">
+                                        <!--<div class="h2 mb-2 d-flex align-items-center">Меню пользователя</div>-->
+                                        <div class="custom-control custom-radio custom-control-inline mb-1  d-block">
+                                            <input type="radio" id="customRadioInline12" name="userMenu"
+                                                   class="custom-control-input" checked>
+                                            <label class="custom-control-label" for="customRadioInline12">Все статьи</label>
+                                        </div>
+
+                                        <div class="custom-control custom-radio custom-control-inline mb-1  d-block">
+                                            <input type="radio" id="customRadioInline32" name="userMenu"
+                                                   class="custom-control-input" >
+                                            <label class="custom-control-label" for="customRadioInline32">Мои статьи</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline  d-block">
+                                            <input type="radio" id="customRadioInlinee" name="userMenu"
+                                                   class="custom-control-input" >
+                                            <label class="custom-control-label" for="customRadioInlinee">Мои черновики</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="card-block card-block--shadow  mb-4">
                                 <div class="">
                                     <div class="p-4 bb-1">
                                         <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
                                         <category></category>
                                     </div>
-                                    <div class="p-4 bb-1">
-                                        <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Формат
-                                        </div>
-                                        <div class=" d-flex">
 
-                                            <div class=" ">
-                                                <div class="custom-control custom-checkbox mb-2">
-                                                    <input type="checkbox" id="customCheck1asdas"
-                                                           class="custom-control-input">
-                                                    <label for="customCheck1asdas"
-                                                           class="custom-control-label">Текст</label>
-                                                </div>
-                                                <div class="custom-control custom-checkbox mb-2">
-                                                    <input type="checkbox" id="customCheck1dsfsd"
-                                                           class="custom-control-input">
-                                                    <label for="customCheck1dsfsd"
-                                                           class="custom-control-label">Видео</label>
-                                                </div>
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" id="custosadasd"
-                                                           class="custom-control-input">
-                                                    <label for="custosadasd" class="custom-control-label">Фото</label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </div>
                                     <div class="p-4 bb-1">
                                         <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Рубрика
                                         </div>
@@ -194,6 +177,54 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div v-if="allFilter" class="">
+                                        <div class="p-4 bb-1">
+                                            <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Формат
+                                            </div>
+                                            <div class=" d-flex">
+
+                                                <div class=" ">
+                                                    <div class="custom-control custom-checkbox mb-2">
+                                                        <input type="checkbox" id="customCheck1asdas"
+                                                               class="custom-control-input">
+                                                        <label for="customCheck1asdas"
+                                                               class="custom-control-label">Текст</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox mb-2">
+                                                        <input type="checkbox" id="customCheck1dsfsd"
+                                                               class="custom-control-input">
+                                                        <label for="customCheck1dsfsd"
+                                                               class="custom-control-label">Видео</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox">
+                                                        <input type="checkbox" id="custosadasd"
+                                                               class="custom-control-input">
+                                                        <label for="custosadasd" class="custom-control-label">Фото</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--<div class="p-4 bb-1">-->
+                                            <!--<div class="h2 mb-2 d-flex align-items-center justify-content-between ">Настройки показа-->
+                                            <!--</div>-->
+                                            <!--<div class=" d-flex">-->
+                                                <!--<div class=" ">-->
+                                                    <!--<div class="custom-control custom-checkbox mb-2">-->
+                                                        <!--<input type="checkbox" id="customCheck1asdas"-->
+                                                               <!--class="custom-control-input">-->
+                                                        <!--<label for="customCheck1asdas"-->
+                                                               <!--class="custom-control-label">Мои статьи</label>-->
+                                                    <!--</div>-->
+
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="px-4 mb-4">
+                                <div v-if="!allFilter" @click="allFilter=true" class="link link--doted  link--color-grey">Все фильтры
                                 </div>
                             </div>
                         </div>
@@ -231,14 +262,22 @@
     import postTextShort from '@/components/post-block/post-text-short.vue'
     import postHalfImg from '@/components/post-block/post-half-img.vue'
     import category from "@//components/category.vue";
-
+    import dateRangeSelect from "@//components/dateRangeSelect.vue"
     export default {
         name: 'review',
         components: {
             postTextShort,
             postHalfImg,
             postLarge,
-            category
+            category,
+            dateRangeSelect
+
+        },
+        props:{
+            isAuth: {
+                type: false,
+                default: ""
+            }
         },
         data: function () {
             return {
@@ -248,6 +287,7 @@
                 brand: false,
                 review: [],
                 error: [],
+                allFilter:false,
                 searchword: '',
                 initSelected: [],
                 treeData1: [

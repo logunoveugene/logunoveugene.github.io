@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--Вариант не тру БЭМ -->
+<div class="activity-element">
+    <div class="activity-element__image">
+        <img src="https://c.dns-shop.ru/aba6b7120.jpg" alt="">
+    </div>
+    <div class="activity-element__text">
+        <a class="activity-element__title-link" href="#">Отзыв на товар «Твердотельный накопитель»</a>
+        <div class="activity-element__description">
+            Стабильно работает, скорости вполне хватает
+            <div class="activity-element__edit-link-container">
+                <a class="activity-element__edit-link" href="#">Редактировать</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--Вариант тру БЭМ -->
+<div class="activity-element">
+    <div class="activity-element__image">
+        <img src="https://c.dns-shop.ru/aba6b7120.jpg" alt="">
+    </div>
+    <div class="activity-element__text">
+        <div class="activity-element__title-link"> <!--Здесь позиционируем и задаем размер-->
+            <a class="link link link--color-blue" href="#">Отзыв на товар «Твердотельный накопитель»</a> <!--Наш независимый блок ссылок-->
+        </div>
+        <div class="activity-element__description">
+            Стабильно работает, скорости вполне хватает
+            <div class="activity-element__edit-link-container">
+                <div class="activity-element__edit-link-container-link"><!--Здесь позиционируем и задаем размер-->
+                    <a class="link link--color-blue" href="#">Редактировать</a><!--Наш независимый блок ссылок-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -9,19 +9,7 @@
                     <div class="d-flex">
                         <img :src="comment.autorImg" alt="" class="comment__comment-author-img-mob rounded-circle">
 
-
-
-                        <v-popover offset="0">
-                            <div class="link link--dropdown">{{comment.autor}}</div>
-                            <template slot="popover">
-                                <div class="p-3 text-left">
-                                    <div class="h4">{{comment.autor}}</div>
-                                    <div class="small mb-2">Был на сайте 12 ноя 2018г.</div>
-                                    <img src="https://i.snag.gy/wdxaL8.jpg" alt="">
-                                </div>
-
-                            </template>
-                        </v-popover>
+                        <author :author="comment.autor" />
 
 
                     </div>
@@ -39,14 +27,14 @@
 
 
                     <!--<v-popover offset="0">-->
-                        <!--<div class="comment__menu">-->
-                            <!--<div class="icon-dots-hor"></div>-->
-                        <!--</div>-->
-                        <!--<template slot="popover">-->
-                            <!--<div class="py-3 px-3 bb-1">Скопировать ссылку</div>-->
-                            <!--<div class="py-3 px-3 bb-1">Пожаловаться</div>-->
-                            <!--<div class="py-3 px-3  ">Заблокировать</div>-->
-                        <!--</template>-->
+                    <!--<div class="comment__menu">-->
+                    <!--<div class="icon-dots-hor"></div>-->
+                    <!--</div>-->
+                    <!--<template slot="popover">-->
+                    <!--<div class="py-3 px-3 bb-1">Скопировать ссылку</div>-->
+                    <!--<div class="py-3 px-3 bb-1">Пожаловаться</div>-->
+                    <!--<div class="py-3 px-3  ">Заблокировать</div>-->
+                    <!--</template>-->
                     <!--</v-popover>-->
 
 
@@ -67,7 +55,6 @@
 
                         </template>
                     </v-popover>
-
 
 
                 </div>
@@ -125,11 +112,13 @@
 
 <script>
     import commentItem from "./comment-item.vue"
+    import author from "./post-block/parts/author.vue"
 
     export default {
         name: "comment-item",
         components: {
-            commentItem
+            commentItem,
+            author
         },
         props: {
             comment: {
@@ -165,8 +154,9 @@
 
 <style lang="scss">
     .tooltip-inner {
-         max-width: 400px;
+        max-width: 400px;
     }
+
     .fr-box {
         position: relative;
         max-width: 100%;

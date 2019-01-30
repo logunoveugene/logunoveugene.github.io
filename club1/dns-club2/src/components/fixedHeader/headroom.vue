@@ -6,8 +6,8 @@
 
     <script>
 import raf from 'raf'
-import checkActions from './checkActions'
-import support3d from './support3d'
+import checkActions from '../checkActions'
+import support3d from '../support3d'
 
 const defaultCls = {
     pinned: 'headroom--pinned',

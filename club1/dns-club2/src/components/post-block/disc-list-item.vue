@@ -16,8 +16,13 @@
                     <!--</div>-->
                     <div class="discussions__ d-flex align-items-center small mb-2 mr-4">
                         <img :src="post.autorImg" alt="" class="discussions__author-img  rounded-circle">
-                        <a class="link link--color-grey mr-2"
-                           href="#">{{post.autor}}</a>
+                        <!--<a class="link link&#45;&#45;color-grey mr-2"-->
+                        <!--href="#">{{post.autor}}</a>-->
+                        <div class="mr-2">
+                            <author :author="post.autor" :authorImg="post.autorImg"/>
+                        </div>
+
+
                         <div class=""> {{post.date | fdate}}</div>
 
                     </div>
@@ -51,11 +56,12 @@
 
 <script>
     import postInfo from './parts/post-info.vue'
-
+    import author from "./parts/author.vue"
 
     export default {
         components: {
             postInfo,
+            author
 
         },
         props: {
@@ -154,6 +160,6 @@
     }
 
     /*.discussions__control, .discussions__teaser{*/
-        /*padding-left: 28px;*/
+    /*padding-left: 28px;*/
     /*}*/
 </style>

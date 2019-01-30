@@ -33,10 +33,12 @@
     import postInfo from './parts/post-info.vue'
     import postTag from './parts/post-tag.vue'
 
+
     export default {
         components: {
             postInfo,
             postTag
+
         },
         props: {
             post: {
