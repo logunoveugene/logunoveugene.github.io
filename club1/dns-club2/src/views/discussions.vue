@@ -25,7 +25,8 @@
                                    v-on:keyup.enter="submitSearch()"
                                    type="search"
                                    class="field w-100 ">
-                            <div v-bind:class="{'search-ext__btn-search--active': discussionsSearch}" class="search-ext__btn-search icon-search"></div>
+                            <div v-bind:class="{'search-ext__btn-search--active': discussionsSearch}"
+                                 class="search-ext__btn-search icon-search"></div>
                         </div>
                         <transition name="slide-fade">
                             <div class="suggestion-wrap" v-if="discussionsSearch!=false">
@@ -140,7 +141,6 @@
                                     </div>
 
 
-
                                 </div>
 
                             </div>
@@ -183,19 +183,28 @@
                 </div>
                 <div class="col-12 col-lg-4 d-none d-lg-block">
 
-                    <div v-if="isAuth" class="card-block card-block--shadow mb-4 ">
+
+                    <div class="card-block card-block--shadow mb-4 ">
                         <div class="">
                             <div class="p-4 bb-1">
-                                <!--<div class="h2 mb-2 d-flex align-items-center">Меню пользователя</div>-->
+                                <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
+                                <category></category>
+                            </div>
+                            <div class="p-4 bb-1">
+                                <div class="h2 mb-3 d-flex align-items-center">Настройки показа</div>
                                 <div class="custom-control custom-radio custom-control-inline mb-1  d-block">
                                     <input type="radio" id="customRadioInline12" name="userMenu"
                                            class="custom-control-input" checked>
                                     <label class="custom-control-label" for="customRadioInline12">Все темы</label>
                                 </div>
-
+                                <div class="custom-control custom-radio custom-control-inline  mb-1  d-block">
+                                    <input type="radio" id="customRadioInline14" name="userMenu"
+                                           class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadioInline14">Без ответов</label>
+                                </div>
                                 <div class="custom-control custom-radio custom-control-inline mb-1  d-block">
                                     <input type="radio" id="customRadioInline32" name="userMenu"
-                                           class="custom-control-input" >
+                                           class="custom-control-input">
                                     <label class="custom-control-label" for="customRadioInline32">Мои темы</label>
                                 </div>
                                 <div class="custom-control custom-radio custom-control-inline mb-1  d-block">
@@ -204,21 +213,14 @@
                                     <label class="custom-control-label" for="customRadioInline3d">С моими
                                         ответами</label>
                                 </div>
-                                <div class="custom-control custom-radio custom-control-inline d-block">
+                                <div class="custom-control custom-radio custom-control-inline   d-block">
                                     <input type="radio" id="customRadioInline2d" name="userMenu"
                                            class="custom-control-input">
                                     <label class="custom-control-label" for="customRadioInline2d">Без моих
                                         ответов</label>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="card-block card-block--shadow mb-4 ">
-                        <div class="">
-                            <div class="p-4 bb-1">
-                                <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
-                                <category></category>
+
                             </div>
                             <!--<div class="p-4 bb-1">-->
                             <!--<div class="h2 mb-3 d-flex align-items-center justify-content-between ">Поиск по-->
@@ -227,20 +229,20 @@
                             <!--<product-category-brand-search></product-category-brand-search>-->
                             <!--</div>-->
                             <!--<div class="p-4 bb-1">-->
-                                <!--<div class="h2 mb-3 d-flex align-items-center justify-content-between ">Настройки-->
-                                    <!--показа-->
-                                <!--</div>-->
-                                <!--<div class="custom-control custom-radio custom-control-inline mb-1 d-block">-->
-                                    <!--<input type="radio" id="customRadioInline00" name="customRadioInline1"-->
-                                           <!--class="custom-control-input" checked>-->
-                                    <!--<label class="custom-control-label" for="customRadioInline00">Все темы</label>-->
-                                <!--</div>-->
+                            <!--<div class="h2 mb-3 d-flex align-items-center justify-content-between ">Настройки-->
+                            <!--показа-->
+                            <!--</div>-->
+                            <!--<div class="custom-control custom-radio custom-control-inline mb-1 d-block">-->
+                            <!--<input type="radio" id="customRadioInline00" name="customRadioInline1"-->
+                            <!--class="custom-control-input" checked>-->
+                            <!--<label class="custom-control-label" for="customRadioInline00">Все темы</label>-->
+                            <!--</div>-->
 
-                                <!--<div class="custom-control custom-radio custom-control-inline mb-1 d-block">-->
-                                    <!--<input type="radio" id="customRadioInline1" name="customRadioInline1"-->
-                                           <!--class="custom-control-input">-->
-                                    <!--<label class="custom-control-label" for="customRadioInline1">Без ответов</label>-->
-                                <!--</div>-->
+                            <!--<div class="custom-control custom-radio custom-control-inline mb-1 d-block">-->
+                            <!--<input type="radio" id="customRadioInline1" name="customRadioInline1"-->
+                            <!--class="custom-control-input">-->
+                            <!--<label class="custom-control-label" for="customRadioInline1">Без ответов</label>-->
+                            <!--</div>-->
                             <!--</div>-->
                             <div v-if="allFilter" class="p-4 bb-1">
                                 <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Привязаны к
@@ -318,13 +320,6 @@
     dayjs.extend(relativeTime)
 
 
-
-
-
-
-
-
-
     export default {
         name: 'discussions',
         components: {
@@ -334,7 +329,7 @@
             category,
             dateRangeSelect
         },
-        props:{
+        props: {
             isAuth: {
                 type: false,
                 default: ""
@@ -365,8 +360,8 @@
 
 
                 date: '',
-                formatDateRange:null,
-                selectedRange:"За сегодня",
+                formatDateRange: null,
+                selectedRange: "За сегодня",
                 // Get more form https://chmln.github.io/flatpickr/options/
                 config: {
                     wrap: true,
@@ -385,11 +380,11 @@
             }
         },
         computed: {
-            searchDateSumbit: function() {
-                let d= this.date.split('to');
+            searchDateSumbit: function () {
+                let d = this.date.split('to');
                 // let formatData = dayjs(d[0]).format('DD MMM YYYY')+'–'+ this.$dayjs(d[1]).format('DD MMM YYYY');
-                this.selectedRange = d[0]+' по '+d[1];
-                console.log( this.formatDateRange)
+                this.selectedRange = d[0] + ' по ' + d[1];
+                console.log(this.formatDateRange)
                 return d
 
 
@@ -415,10 +410,10 @@
                 this.discussionsSearchResalt = true
 
             },
-            selectDate(){
-                let d= this.date.split('to');
+            selectDate() {
+                let d = this.date.split('to');
                 // let formatData = dayjs(d[0]).format('DD MMM YYYY')+'–'+ this.$dayjs(d[1]).format('DD MMM YYYY');
-                this.formatDateRange = d[0]+' по '+d[1];
+                this.formatDateRange = d[0] + ' по ' + d[1];
             }
 
         },
@@ -478,14 +473,12 @@
     /*}*/
 
     /*.search-ext__btn-search {*/
-        /*position: absolute;*/
-        /*right: 10px;*/
-        /*top: 8px;*/
-        /*font-size: 22px;*/
-        /*color: #dddddd;*/
+    /*position: absolute;*/
+    /*right: 10px;*/
+    /*top: 8px;*/
+    /*font-size: 22px;*/
+    /*color: #dddddd;*/
     /*}*/
-
-
 
     .search-ext__btn-search {
         position: absolute;
@@ -520,8 +513,6 @@
         z-index: 60000;
         cursor: pointer;
     }
-
-
 
     .search-ext {
         position: relative;
@@ -743,11 +734,6 @@
         top: 7px;
         color: #fff;
     }
-
-
-
-
-
 
 
 </style>

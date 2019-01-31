@@ -2,23 +2,16 @@
     <div class="post">
         <div class="post-large">
 
-            <div class="post-large__title  mb-3">
+            <div class="post-large__title  mb-3 ">
+                <div class="h3 d-inline-block mb-0 mr-1"  v-if="post.autor==='John Doe'">
+                    <a href="#" class="link link--color-grey">
+                        <span class=" icon-pen"></span>
+                    </a>
+                </div>
                 <router-link class="link link--color-black" :to="{ name: 'post', params: { id: post.id }}">
+
                     {{post.title}}
                 </router-link>
-            </div>
-            <div class="d-flex align-items-center justify-content-left mb-4" v-if="post.autor==='John Doe'">
-                <div class="mr-3">
-                    <div class="post-large__draft">Черновик</div>
-                </div>
-                <div class="d-flex">
-                    <div class="small mr-3">
-                        <a href="" class="link link--color-blue">Изменить</a>
-                    </div>
-                    <div class="small">
-                        <a href="" class="link link--color-blue">Опубликовать</a>
-                    </div>
-                </div>
             </div>
             <div class="d-flex align-items-start align-items-md-center flex-column flex-md-row justify-content-between">
                 <div class="small mb-3 d-flex align-items-center  ">
