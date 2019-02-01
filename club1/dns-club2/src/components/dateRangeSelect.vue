@@ -1,6 +1,6 @@
 <template>
     <v-popover offset="0">
-        <div class="d-none  d-md-flex">
+        <div class="d-md-flex">
             <div class="link link--dropdown ">
                 <span class="" v-if="!formatDateRange">{{selectedRange}}</span>
                 <span class="d-inline-block" v-if="formatDateRange">За период {{searchDateSumbit[0]| date}}г. – {{searchDateSumbit[1]| date}}г. </span>

@@ -177,10 +177,9 @@
                                             <div class="header__search-extend-btn-icon icon-down"></div>
                                         </div>
                                         <template slot="popover">
-                                            <div class="py-3 px-3 bb-1"><a href="" class="link link--color-grey">в дайджесте</a></div>
-                                            <div class="py-3 px-3 bb-1"><a href="" class="link link--color-grey">в обзорах</a></div>
-                                            <div class="py-3 px-3 bb-1"><a href="" class="link link--color-grey">в лайфхаках</a></div>
-                                            <div class="py-3 px-3"><a href="" class="link link--color-grey">в коммуникаторе</a></div>
+                                            <div class="text-left pt-3 pb-2 px-3"><a href="" class="link link--color-grey">по всему сайту</a></div>
+                                            <div class="text-left pb-2 px-3 "><a href="" class="link link--color-grey">в статьях</a></div>
+                                            <div class="text-left pb-3 px-3 "><a href="" class="link link--color-grey">в темах</a></div>
                                         </template>
                                     </v-popover>
 

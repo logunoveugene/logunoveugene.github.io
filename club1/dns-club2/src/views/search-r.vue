@@ -185,27 +185,20 @@
                                 <div class=" ">
                                     <div class="custom-control custom-checkbox mb-2">
                                         <input type="checkbox" id="customCheck1" class="custom-control-input">
-                                        <label for="customCheck1" class="custom-control-label">Дайджест</label>
+                                        <label for="customCheck1" class="custom-control-label">Статьи</label>
                                     </div>
-                                    <div class="custom-control custom-checkbox mb-2">
-                                        <input type="checkbox" id="customCheck1" class="custom-control-input">
-                                        <label for="customCheck1" class="custom-control-label">Обзоры</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox mb-2">
-                                        <input type="checkbox" id="customCheck1" class="custom-control-input">
-                                        <label for="customCheck1" class="custom-control-label">Лайфхаки</label>
-                                    </div>
+
                                     <div class="custom-control custom-checkbox  ">
                                         <input type="checkbox" id="customCheck1" class="custom-control-input">
-                                        <label for="customCheck1" class="custom-control-label">Коммуникатор</label>
+                                        <label for="customCheck1" class="custom-control-label">Темы</label>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="p-4 bb-1">
-                                <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
-                                <category-cut></category-cut>
-                            </div>
+                            <!--<div class="p-4 bb-1">-->
+                                <!--<div class="h2 mb-2 d-flex align-items-center">Разделы</div>-->
+                                <!--<category-cut></category-cut>-->
+                            <!--</div>-->
                             <!--<div class="p-4 bb-1">-->
                             <!--<div class="h2 mb-3 d-flex align-items-center justify-content-between ">Поиск по-->
                             <!--упоминаниям-->
@@ -215,72 +208,72 @@
                             <!--</div>-->
 
 
-                            <div v-if="allFilter" class="bb-1">
-                                <div class="p-4  bb-1">
-                                    <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Формат
-                                    </div>
-                                    <div class=" d-flex">
+                            <!--<div v-if="allFilter" class="bb-1">-->
+                                <!--<div class="p-4  bb-1">-->
+                                    <!--<div class="h2 mb-2 d-flex align-items-center justify-content-between ">Формат-->
+                                    <!--</div>-->
+                                    <!--<div class=" d-flex">-->
 
-                                        <div class=" ">
-                                            <div class="custom-control custom-checkbox mb-2">
-                                                <input type="checkbox" id="customCheck1asdas"
-                                                       class="custom-control-input">
-                                                <label for="customCheck1asdas"
-                                                       class="custom-control-label">Текст</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox mb-2">
-                                                <input type="checkbox" id="customCheck1dsfsd"
-                                                       class="custom-control-input">
-                                                <label for="customCheck1dsfsd"
-                                                       class="custom-control-label">Видео</label>
-                                            </div>
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" id="custosadasd" class="custom-control-input">
-                                                <label for="custosadasd" class="custom-control-label">Фото</label>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        <!--<div class=" ">-->
+                                            <!--<div class="custom-control custom-checkbox mb-2">-->
+                                                <!--<input type="checkbox" id="customCheck1asdas"-->
+                                                       <!--class="custom-control-input">-->
+                                                <!--<label for="customCheck1asdas"-->
+                                                       <!--class="custom-control-label">Текст</label>-->
+                                            <!--</div>-->
+                                            <!--<div class="custom-control custom-checkbox mb-2">-->
+                                                <!--<input type="checkbox" id="customCheck1dsfsd"-->
+                                                       <!--class="custom-control-input">-->
+                                                <!--<label for="customCheck1dsfsd"-->
+                                                       <!--class="custom-control-label">Видео</label>-->
+                                            <!--</div>-->
+                                            <!--<div class="custom-control custom-checkbox">-->
+                                                <!--<input type="checkbox" id="custosadasd" class="custom-control-input">-->
+                                                <!--<label for="custosadasd" class="custom-control-label">Фото</label>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
 
-                                </div>
+                                <!--</div>-->
 
-                                <div class="p-4">
+                                <!--<div class="p-4">-->
 
-                                    <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Привязаны к
-                                        статье
-                                    </div>
+                                    <!--<div class="h2 mb-3 d-flex align-items-center justify-content-between ">Привязаны к-->
+                                        <!--статье-->
+                                    <!--</div>-->
 
-                                    <div class="discussions__search">
-                                        <div class="search-ext  mb-4 ">
-                                            <input type="text" v-model="discussionsSearchExt" placeholder="Товары"
+                                    <!--<div class="discussions__search">-->
+                                        <!--<div class="search-ext  mb-4 ">-->
+                                            <!--<input type="text" v-model="discussionsSearchExt" placeholder="Товары"-->
 
-                                                   class="field w-100 ">
-                                            <div class="search-ext__btn-search icon-search"></div>
-                                        </div>
+                                                   <!--class="field w-100 ">-->
+                                            <!--<div class="search-ext__btn-search icon-search"></div>-->
+                                        <!--</div>-->
 
-                                    </div>
-                                    <div class="search-ext  mb-4 ">
-                                        <input type="text" placeholder="Бренды"
+                                    <!--</div>-->
+                                    <!--<div class="search-ext  mb-4 ">-->
+                                        <!--<input type="text" placeholder="Бренды"-->
 
-                                               class="field w-100 ">
-                                        <div class="search-ext__btn-search icon-search"></div>
-                                    </div>
-                                    <div class="search-ext mb-1">
-                                        <input type="text" placeholder="Категории товаров"
+                                               <!--class="field w-100 ">-->
+                                        <!--<div class="search-ext__btn-search icon-search"></div>-->
+                                    <!--</div>-->
+                                    <!--<div class="search-ext mb-1">-->
+                                        <!--<input type="text" placeholder="Категории товаров"-->
 
-                                               class="field w-100 ">
-                                        <div class="search-ext__btn-search icon-search"></div>
-                                    </div>
-                                </div>
+                                               <!--class="field w-100 ">-->
+                                        <!--<div class="search-ext__btn-search icon-search"></div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
 
-                            </div>
+                            <!--</div>-->
                         </div>
                     </div>
-                    <div class="px-4">
-                        <div v-if="!allFilter" @click="allFilter=true" class="link link--doted  link--color-grey">Все
-                            фильтры
-                        </div>
+                    <!--<div class="px-4">-->
+                        <!--<div v-if="!allFilter" @click="allFilter=true" class="link link&#45;&#45;doted  link&#45;&#45;color-grey">Все-->
+                            <!--фильтры-->
+                        <!--</div>-->
 
-                    </div>
+                    <!--</div>-->
 
                 </div>
             </div>
@@ -397,13 +390,39 @@
         position: relative;
     }
 
+
     .search-ext__btn-search {
         position: absolute;
-        right: 10px;
-        top: 8px;
+        right: 5px;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        top: 4px;
         font-size: 22px;
-        color: #dddddd;
+        color: #ccc;
+        background-color: #fff;
+        height: 32px;
+        border-radius: 8px;
+        z-index: 60000;
+        cursor: pointer;
+        transition: all .1s;
+    }
 
+    .search-ext__btn-search--active {
+        position: absolute;
+        right: 5px;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        top: 4px;
+        font-size: 22px;
+        color: #fff;
+        background-color: #ff7e00;
+        box-shadow: inset 0 34px 25px -25px rgba(255, 188, 11, 0.5);
+        height: 32px;
+        border-radius: 8px;
+        z-index: 60000;
+        cursor: pointer;
     }
 
     .search-ext__detals {

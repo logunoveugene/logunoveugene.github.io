@@ -16,12 +16,24 @@
                                class="link link--pill link--color-grey"
                                href="#"
                                v-on:click="isUsersList=true, isUsersAwards=false"
-                            >Лидеры рейтинга</a>
+                            >Общий рейтинг</a>
                             <a v-bind:class="{'link--pill-active':isUsersAwards }"
                                class="link link--pill link--color-grey"
                                href="#"
                                v-on:click="isUsersList=false, isUsersAwards=true"
-                            >Награды</a>
+                            >По статьям</a>
+                            <a class="link link--pill link--color-grey"
+                               href="#"
+                               v-on:click="isUsersList=false, isUsersAwards=true"
+                            >По коммуникатору</a>
+                            <a class="link link--pill link--color-grey"
+                               href="#"
+                               v-on:click="isUsersList=false, isUsersAwards=true"
+                            >По отзывам к товарам</a>
+                            <a class="link link--pill link--color-grey"
+                               href="#"
+                               v-on:click="isUsersList=false, isUsersAwards=true"
+                            >По комментариям</a>
                         </nav>
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-3">

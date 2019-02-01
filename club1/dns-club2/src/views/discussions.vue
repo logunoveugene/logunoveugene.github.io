@@ -112,35 +112,103 @@
                         </div>
                         <div class="collapse-plate pt-4  d-block d-lg-none" v-if="searchPlate">
                             <div class="">
+
+
                                 <div class="pb-4 bb-1">
+                                    <nav class="nav nav-pills nav-justified">
+                                        <a class="link link--pill link--color-black link--pill-active  " href="#">Новые
+                                            темы</a>
+                                        <a class="link link--pill link--color-black" href="#">Лучшие</a>
+                                        <a class="link link--pill link--color-black" href="#">Популярные</a>
+                                    </nav>
+
+                                </div>
+                                <div class="py-4 bb-1">
+                                    <date-range-select></date-range-select>
+                                </div>
+
+
+                                <div class="py-4 bb-1">
                                     <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
                                     <category></category>
                                 </div>
-                                <!--<div class="py-4 bb-1">-->
-                                <!--<div class="h2 mb-3 d-flex align-items-center justify-content-between ">Поиск по-->
-                                <!--упоминаниям-->
-                                <!--</div>-->
-
-                                <!--<product-category-brand-search></product-category-brand-search>-->
-                                <!--</div>-->
                                 <div class="py-4 bb-1">
-                                    <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Настройки
-                                        показа
-                                    </div>
-
-                                    <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                        <input type="radio" id="customRadioInline00" name="customRadioInline1"
+                                    <div class="h2 mb-3 d-flex align-items-center">Настройки показа</div>
+                                    <div class="custom-control custom-radio custom-control-inline mb-1  d-block">
+                                        <input type="radio" id="customRadioInline12" name="userMenu"
                                                class="custom-control-input" checked>
-                                        <label class="custom-control-label" for="customRadioInline00">Все темы</label>
+                                        <label class="custom-control-label" for="customRadioInline12">Все темы</label>
                                     </div>
-
-                                    <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                        <input type="radio" id="customRadioInline1" name="customRadioInline1"
+                                    <div class="custom-control custom-radio custom-control-inline  mb-1  d-block">
+                                        <input type="radio" id="customRadioInline14" name="userMenu"
                                                class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioInline1">Без ответов</label>
+                                        <label class="custom-control-label" for="customRadioInline14">Без
+                                            ответов</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline mb-1  d-block">
+                                        <input type="radio" id="customRadioInline32" name="userMenu"
+                                               class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadioInline32">Мои темы</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline mb-1  d-block">
+                                        <input type="radio" id="customRadioInline3d" name="userMenu"
+                                               class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadioInline3d">С моими
+                                            ответами</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline   d-block">
+                                        <input type="radio" id="customRadioInline2d" name="userMenu"
+                                               class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadioInline2d">Без моих
+                                            ответов</label>
+                                    </div>
+                                </div>
+                                <div class="py-4 bb-1">
+                                    <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Привязаны к
+                                        теме
                                     </div>
 
+                                    <div class="discussions__search">
+                                        <div class="search-ext  mb-4 ">
+                                            <input type="text" v-model="discussionsSearchExt" placeholder="Товары"
 
+                                                   class="field w-100 ">
+                                            <div class="search-ext__btn-search icon-search"></div>
+                                        </div>
+                                        <transition name="slide-fade">
+                                            <div class="suggestion-wrap" v-if="discussionsSearchExt!=false">
+                                                <div class="suggestion">
+                                                    <div class="suggestion__group">
+                                                        <div class="suggestion__list">
+                                                            <div @click="discussionsSearchResalt=true"
+                                                                 class="suggestion__item">Телевизор LED Telefunken
+                                                                TF-LED19S62T2 черный
+                                                            </div>
+                                                            <div @click="discussionsSearchResalt=true"
+                                                                 class="suggestion__item">Телевизор LED Harper 20R470
+                                                                черный
+                                                            </div>
+                                                            <div @click="discussionsSearchResalt=true"
+                                                                 class="suggestion__item">Телевизор LED DEXP H20D7100E/W
+                                                                белый
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </transition>
+                                    </div>
+                                    <div class="search-ext  mb-4 ">
+                                        <input type="text" placeholder="Бренды"
+                                               class="field w-100 ">
+                                        <div class="search-ext__btn-search icon-search"></div>
+                                    </div>
+                                    <div class="search-ext mb-1">
+                                        <input type="text" placeholder="Категории товаров"
+
+                                               class="field w-100 ">
+                                        <div class="search-ext__btn-search icon-search"></div>
+                                    </div>
                                 </div>
 
                             </div>
@@ -219,8 +287,6 @@
                                     <label class="custom-control-label" for="customRadioInline2d">Без моих
                                         ответов</label>
                                 </div>
-
-
                             </div>
                             <!--<div class="p-4 bb-1">-->
                             <!--<div class="h2 mb-3 d-flex align-items-center justify-content-between ">Поиск по-->
@@ -327,7 +393,8 @@
             postInfo,
             productCategoryBrandSearch,
             category,
-            dateRangeSelect
+            dateRangeSelect,
+
         },
         props: {
             isAuth: {
@@ -338,6 +405,12 @@
 
         data: function () {
             return {
+
+
+
+
+
+
 
                 discussionsSearch: "",
                 discussionsSearchResalt: "",
@@ -455,30 +528,6 @@
 </script>
 <style lang="scss">
 
-
-    /*!*-----------анимация *!*/
-    /*.slide-fade-enter-active {*/
-    /*transition: all .1s ease;*/
-    /*z-index: 10000000!important;;*/
-    /*}*/
-    /*.slide-fade-leave-active {*/
-    /*transition: all .1s ease;*/
-    /*z-index: 10000000!important;;*/
-    /*}*/
-    /*.slide-fade-enter, .slide-fade-leave-to*/
-    /*!* .slide-fade-leave-active до версии 2.1.8 *! {*/
-
-    /*opacity: 0;*/
-    /*z-index: 1000000 !important;;*/
-    /*}*/
-
-    /*.search-ext__btn-search {*/
-    /*position: absolute;*/
-    /*right: 10px;*/
-    /*top: 8px;*/
-    /*font-size: 22px;*/
-    /*color: #dddddd;*/
-    /*}*/
 
     .search-ext__btn-search {
         position: absolute;

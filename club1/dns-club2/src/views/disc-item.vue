@@ -196,120 +196,7 @@
                         </div>
                     </div>
                 </div>
-                <editor class="editor" :extensions="extensions">
-                    <div class="editor__floating-menu" slot="floatingMenu" slot-scope="{ nodes }">
-                        <template v-if="nodes">
-                            <button class="menubar__button"
-                                    :class="{ 'is-active': nodes.heading.active({ level: 1 }) }"
-                                    @click="nodes.heading.command({ level: 1 })"
-                            >
-                                H1
-                            </button>
-
-                            <button
-                                    class="menubar__button"
-                                    :class="{ 'is-active': nodes.heading.active({ level: 2 }) }"
-                                    @click="nodes.heading.command({ level: 2 })"
-                            >
-                                H2
-                            </button>
-
-                            <button
-                                    class="menubar__button"
-                                    :class="{ 'is-active': nodes.heading.active({ level: 3 }) }"
-                                    @click="nodes.heading.command({ level: 3 })"
-                            >
-                                H3
-                            </button>
-
-                            <button
-                                    class="menubar__button"
-                                    :class="{ 'is-active': nodes.bullet_list.active() }"
-                                    @click="nodes.bullet_list.command"
-                            >
-                                ul
-                            </button>
-
-                            <button
-                                    class="menubar__button"
-                                    :class="{ 'is-active': nodes.ordered_list.active() }"
-                                    @click="nodes.ordered_list.command"
-                            >
-                                ol
-                            </button>
-
-                            <button
-                                    class="menubar__button"
-                                    :class="{ 'is-active': nodes.blockquote.active() }"
-                                    @click="nodes.blockquote.command"
-                            >
-                                quet
-                            </button>
-
-
-                            <button
-                                    class="menubar__button"
-                                    @click="showImagePrompt(nodes.image.command)"
-                            >
-                                img
-                            </button>
-
-
-                        </template>
-                    </div>
-
-
-                    <div class="menububble" slot="menububble" slot-scope="{ marks, focus }">
-
-
-                        <template v-if="marks">
-
-                            <form class="menububble__form" v-if="linkMenuIsActive"
-                                  @submit.prevent="setLinkUrl(linkUrl, marks.link, focus)">
-                                <input class="menububble__input" type="text" v-model="linkUrl"
-                                       placeholder="https://" ref="linkInput" @keydown.esc="hideLinkMenu"/>
-                                <button class="menububble__button" @click="setLinkUrl(null, marks.link, focus)"
-                                        type="button">
-                                    <icon name="remove"/>
-                                </button>
-                            </form>
-
-
-                            <template v-else>
-
-
-                                <button
-                                        class="menububble__button"
-                                        :class="{ 'is-active': marks.bold.active() }"
-                                        @click="marks.bold.command"
-                                >
-                                    B
-                                </button>
-
-                                <button
-                                        class="menububble__button"
-                                        :class="{ 'is-active': marks.italic.active() }"
-                                        @click="marks.italic.command"
-                                >
-                                    I
-                                </button>
-                                <button
-                                        class="menububble__button"
-                                        @click="showLinkMenu(marks.link)"
-                                        :class="{ 'is-active': marks.link.active() }"
-                                >
-                                    <span>Add Link</span>
-
-                                </button>
-
-
-                            </template>
-                        </template>
-                    </div>
-
-
-                    <div slot="content" ref="qanswer" :focus="true" slot-scope="props"></div>
-                </editor>
+                <input type="text">
             </div>
         </div>
     </div>
@@ -330,34 +217,6 @@
     import 'swiper/dist/css/swiper.css'
 
 
-    import {Editor} from 'tiptap'
-    import {
-        // Nodes
-        BlockquoteNode,
-        BulletListNode,
-        CodeBlockNode,
-        CodeBlockHighlightNode,
-        HardBreakNode,
-        HeadingNode,
-        ImageNode,
-        ListItemNode,
-        OrderedListNode,
-        TodoItemNode,
-        TodoListNode,
-
-        // Marks
-        BoldMark,
-        CodeMark,
-        ItalicMark,
-        LinkMark,
-        StrikeMark,
-        UnderlineMark,
-
-        // General Extensions
-        HistoryExtension,
-        PlaceholderExtension,
-
-    } from 'tiptap-extensions'
 
 
     export default {
@@ -368,33 +227,13 @@
             swiperSlide,
             commentItem,
             postImg,
-            Editor,
+
             productList,
             author
         },
         data() {
             return {
-                extensions: [
-                    new BlockquoteNode(),
-                    new BulletListNode(),
-                    new CodeBlockNode(),
-                    new HardBreakNode(),
-                    new HeadingNode({maxLevel: 3}),
-                    new ImageNode(),
-                    new ListItemNode(),
-                    new OrderedListNode(),
-                    new TodoItemNode(),
-                    new TodoListNode(),
-                    new BoldMark(),
-                    new ItalicMark(),
-                    new LinkMark(),
-                    new StrikeMark(),
-                    new UnderlineMark(),
-                    new HistoryExtension(),
-                    new PlaceholderExtension({
-                        emptyNodeClass: 'is-empty',
-                    }),
-                ],
+              
                 readyToPublic: false,
                 selected: [],
                 selectedRub: [],

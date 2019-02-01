@@ -76,14 +76,14 @@ export default new Router({
             // which is lazy-loaded when the route is visited.
             component: () => import(/* webpackChunkName: "about" */ './views/newdesc.vue')
         },
-        {
-            path: '/new',
-            name: 'new',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/new.vue')
-        },
+        // {
+        //     path: '/new',
+        //     name: 'new',
+        //     // route level code-splitting
+        //     // this generates a separate chunk (about.[hash].js) for this route
+        //     // which is lazy-loaded when the route is visited.
+        //     component: () => import(/* webpackChunkName: "about" */ './views/new.vue')
+        // },
 
         {
             path: '/users',
@@ -92,6 +92,14 @@ export default new Router({
             // this generates a separate chunk (about.[hash].js) for this route
             // which is lazy-loaded when the route is visited.
             component: () => import(/* webpackChunkName: "about" */ './views/users.vue')
+        },
+        {
+            path: '/awards',
+            name: 'awards',
+            // route level code-splitting
+            // this generates a separate chunk (about.[hash].js) for this route
+            // which is lazy-loaded when the route is visited.
+            component: () => import(/* webpackChunkName: "about" */ './views/awards.vue')
         },
 
     ],
