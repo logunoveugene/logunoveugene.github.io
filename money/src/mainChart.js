@@ -119,66 +119,73 @@ export default class MainChart extends React.Component {
                 <Animated.View
                     style={{
                         height: this.props.scrollY.interpolate({
-                            inputRange: [0, 130],
-                            outputRange: [130, 0],
+                            inputRange: [0,     33,     45,     135,    147],
+                            outputRange: [114,  114,    102,    12,    0],
                             extrapolate: 'clamp'
                         }),
                         width: '100%',
                         zIndex: 19,
-                        padding: 15,
+                        paddingTop: this.props.scrollY.interpolate({
+                            inputRange: [0, 33, 45 ],
+                            outputRange: [12 , 12, 0],
+                            extrapolate: 'clamp'
+                        }),
+
+
 
                     }}
                 >
                     <Animated.View
                         style={{
                             opacity: this.props.scrollY.interpolate({
-                                inputRange: [0, 50, 85],
+                                inputRange: [0, 45, 135],
                                 outputRange: [1, 1, 0],
                                 extrapolate: 'clamp'
                             }),
                             width: '100%',
                             zIndex: 19,
+                            // paddingTop: 15,
                             transform: [
                                 {
                                     scale: this.props.scrollY.interpolate({
-                                        inputRange: [0, 110],
-                                        outputRange: [1, 0],
+                                        inputRange: [0, 45, 135],
+                                        outputRange: [1, 1, 0],
                                         extrapolate: 'clamp'
                                     })
                                 }
                             ]
                         }}
                     >
-
                         <Pie
                             ref={this.pie}
                             containerStyle={{
                                 flex: 1,
-                                height: 130,
+                                height: 90,
+
                             }}
                             pieStyle={{
                                 width: "100%",
-                                height: 120,
+                                height: 90,
                             }}
-                            outerRadius={42}
-                            innerRadius={55}
+                            outerRadius={45}
+                            innerRadius={35}
                             data={this.state.barData}
                             animate
-                        >
-                        </Pie>
+                        />
+
                         <View
                             style={{
                                 width: '100%',
                                 textAlign: 'center',
                                 position: 'absolute',
-                                top: 63,
+                                top: 34,
                             }}
                         >
                             <Text
                                 style={{
                                     textAlign: 'center',
                                     lineHeight: 20,
-                                    fontSize: 20,
+                                    fontSize: 19,
                                 }}>{_.sumBy(this.state.barData, 'amount')}
                             </Text>
                             <Text
@@ -201,7 +208,8 @@ export default class MainChart extends React.Component {
                         // flexWrap: 'wrap',
                         // alignItems: 'center',
                         width: "100%",
-                        paddingTop: 20
+
+
                     }}
                 >
                     {this.state.barData.map((i, index) => (
@@ -217,11 +225,12 @@ export default class MainChart extends React.Component {
                             <View
                                 style={{
                                     position: 'absolute',
-                                    width: 10,
-                                    height: 10,
-                                    borderRadius: 10,
-                                    marginBottom: 5,
-                                    borderWidth: 3,
+                                    width: 20,
+
+                                    top: 21,
+                                    // borderRadius: 10,
+
+                                    borderWidth: 1,
                                     borderColor: `${i.color}`
                                 }}
                             />
@@ -229,7 +238,7 @@ export default class MainChart extends React.Component {
                                 style={{
                                     textAlign: 'center',
                                     fontSize: 15,
-                                    //
+                                    marginBottom: 4,
                                     // fontWeight:'bold'
                                 }}>{i.amount}</Text>
                             <Text

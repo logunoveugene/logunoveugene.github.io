@@ -19,7 +19,7 @@ import {
 import firebase from 'react-native-firebase'
 import ActionButton from 'react-native-action-button';
 
- import {NavigationEvents} from 'react-navigation';
+import {NavigationEvents} from 'react-navigation';
 
 import ActionModal from './ActionModal'
 
@@ -130,8 +130,6 @@ export default class Main extends React.Component {
             date: new Date().getFullYear() + '-' + ('0' + (new Date().getMonth() + 1)).slice(-2) + '-' + ('0' + new Date().getDate()).slice(-2),
 
         })
-
-        var group = _.groupBy(this.state.chartData, 'typeSubCategoryTitle');
 
         try {
             var storedNote = await AsyncStorage.getItem('nodeList');
@@ -760,7 +758,7 @@ export default class Main extends React.Component {
                     <ActivityIndicator
                         size="large"/>
                 </View>}
-                {this.state.listls.length>0 &&
+                {this.state.listls.length > 0 &&
                 <View
                     style={styles.container}>
                     <NavigationEvents
@@ -884,7 +882,7 @@ export default class Main extends React.Component {
                                     {
                                         scaleY: this.state.scrollY.interpolate({
                                             inputRange: [0, 130],
-                                            outputRange: [1, .5],
+                                            outputRange: [1, .4],
                                             extrapolate: 'clamp'
                                         })
                                     }
@@ -911,8 +909,8 @@ export default class Main extends React.Component {
                             style={{
                                 width: +`${width}` - 20,
                                 height: this.state.scrollY.interpolate({
-                                    inputRange: [0, 130],
-                                    outputRange: [220, 90],
+                                    inputRange: [0, 150],
+                                    outputRange: [220, 70],
                                     extrapolate: 'clamp'
                                 }),
                                 position: "absolute",
@@ -922,11 +920,25 @@ export default class Main extends React.Component {
                                 marginHorizontal: 10,
                                 marginTop: 10,
                                 borderRadius: 10,
+                                padding:15,
+
                             }}>
-                            <View
+                            <Animated.View
                                 style={{
                                     marginLeft: -4,
-                                    flexDirection: 'row'
+                                    flexDirection: 'row',
+
+
+                                    height: this.state.scrollY.interpolate({
+                                        inputRange: [0, 32],
+                                        outputRange: [32, 0],
+                                        extrapolate: 'clamp'
+                                    }),
+                                    opacity: this.state.scrollY.interpolate({
+                                        inputRange: [0, 32],
+                                        outputRange: [1, 0],
+                                        extrapolate: 'clamp'
+                                    }),
                                 }}
                             >
                                 {mainTabs.map((i, index) =>
@@ -967,8 +979,7 @@ export default class Main extends React.Component {
                                             {i}</Text>
                                     </TouchableOpacity>
                                 )}
-                            </View>
-                            {/*{(this.state.isChartLoaded && this.state.scrollY) &&*/}
+                            </Animated.View>
 
                             <MainChart scrollY={this.state.scrollY}
                                        selectedType={this.state.selectedType}
