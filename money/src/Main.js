@@ -491,18 +491,17 @@ export default class Main extends React.Component {
                             top: 0,
                             width: "100%",
                             height: "100%",
-                            backgroundColor: "rgba(0,0,0,.1)",
+                            backgroundColor: "rgba(221,225,232,.7)",
                             zIndex: 18
                         }}
                         onPress={() => this.setState({
-                         
                             dateFilterVisible: false
                         })}
                     />
                     <BoxShadow
                         setting={{
                             width: +`${width}` - 40,
-                            height: 120,
+                            height: 190,
                             color: "#0c034c",
                             border: 30,
                             radius: 10,
@@ -511,12 +510,12 @@ export default class Main extends React.Component {
                             y: 20,
                             style: {
                                 zIndex: 19, marginBottom: 15, position: "absolute",
-                                top: 50,
+                                top: '30%',
                             }
                         }}>
                         <View style={{
                             width: +`${width}` - 20,
-                            height: 120,
+                            height: 190,
                             zIndex: 20,
                             backgroundColor: '#ffffff',
                             marginHorizontal: 10,
@@ -526,84 +525,6 @@ export default class Main extends React.Component {
                             position: "relative"
 
                         }}>
-                            {this.state.filterByMonthPlate &&
-                            <View
-                                style={{
-                                    borderRadius: 25,
-                                    width: 140,
-                                    height: 30,
-                                    overflow: "hidden",
-                                    position: "absolute",
-                                    right: 10,
-                                    top: 17,
-                                    zIndex: 40
-
-                                }}
-                            >
-                                <TouchableNativeFeedback
-                                    style={{
-                                        padding: 5,
-                                        borderRadius: 25,
-                                    }}
-                                    background={TouchableNativeFeedback.SelectableBackground('#eeeeb9', true)}
-                                    onPress={() => this.setState({
-                                        filterByMonthPlate: false,
-                                        filterByDateRangePlate: true
-                                    })}
-                                >
-                                    <View style={{
-                                        borderRadius: 25,
-                                        width: 140,
-                                        height: 30,
-                                        backgroundColor: '#fff',
-                                        paddingTop: 5,
-                                        paddingLeft: 14,
-
-                                    }}>
-                                        <Text>Выбрать период</Text>
-                                    </View>
-                                </TouchableNativeFeedback>
-                            </View>
-                            }
-
-                            {this.state.filterByDateRangePlate &&
-                            <View
-                                style={{
-                                    borderRadius: 25,
-                                    width: 140,
-                                    height: 30,
-                                    overflow: "hidden",
-                                    position: "absolute",
-                                    right: 10,
-                                    top: 17
-
-                                }}
-                            >
-                                <TouchableNativeFeedback
-                                    style={{
-                                        padding: 5,
-                                        borderRadius: 25,
-                                    }}
-                                    background={TouchableNativeFeedback.SelectableBackground('#eeeeb9', true)}
-                                    onPress={() => this.setState({
-                                        filterByMonthPlate: true,
-                                        filterByDateRangePlate: false
-                                    })}
-                                >
-                                    <View style={{
-                                        borderRadius: 25,
-                                        width: 140,
-                                        height: 30,
-                                        backgroundColor: '#fff',
-                                        paddingTop: 5,
-                                        paddingLeft: 14,
-
-                                    }}>
-                                        <Text>Выбрать месяц</Text>
-                                    </View>
-                                </TouchableNativeFeedback>
-                            </View>
-                            }
 
 
                             {this.state.filterByMonthPlate &&
@@ -743,6 +664,144 @@ export default class Main extends React.Component {
                                 </TouchableOpacity>
                             </View>
                             }
+
+
+                            <View
+                                style={{
+
+                                    flexDirection: "row"
+
+                                }}
+
+                            >
+                                <View
+                                    style={{
+                                        width: 140,
+                                        height: 100,
+                                        position: "relative",
+                                        alignItems: 'center'
+
+                                    }}
+                                >
+                                    <BoxShadow
+                                        setting={{
+                                            width: 140,
+                                            height: 40,
+                                            color: "#b07919",
+                                            border: 10,
+                                            radius: 20,
+                                            opacity: 0.2,
+                                            x: 0,
+                                            y: 10,
+                                            style: {position: 'absolute', bottom: 40}
+
+                                        }}/>
+
+
+                                    <TouchableHighlight
+                                        underlayColor={"#ffb316"}
+                                        style={{
+                                            width: 160,
+                                            alignItems: 'center',
+
+                                            backgroundColor: "#ffda3a",
+                                            marginTop: 20,
+                                            padding: 15,
+                                            borderRadius: 30,
+                                            bottom: 5,
+
+
+                                        }} onPress={this.handlePostData}>
+                                        <Text
+                                            style={{
+                                                fontSize: 18
+                                            }}
+                                        >Применить</Text>
+                                    </TouchableHighlight>
+                                </View>
+                                <View>
+                                    {this.state.filterByMonthPlate &&
+                                    <View
+                                        style={{
+                                            borderRadius: 25,
+                                            width: 140,
+                                            height: 30,
+                                            overflow: "hidden",
+                                            // position: "absolute",
+                                            // right: 10,
+                                            // top: 17,
+                                            zIndex: 40
+
+                                        }}
+                                    >
+                                        <TouchableNativeFeedback
+                                            style={{
+                                                padding: 5,
+                                                borderRadius: 25,
+                                            }}
+                                            background={TouchableNativeFeedback.SelectableBackground('#eeeeb9', true)}
+                                            onPress={() => this.setState({
+                                                filterByMonthPlate: false,
+                                                filterByDateRangePlate: true
+                                            })}
+                                        >
+                                            <View style={{
+                                                borderRadius: 25,
+                                                width: 140,
+                                                height: 30,
+                                                backgroundColor: '#fff',
+                                                paddingTop: 5,
+                                                paddingLeft: 14,
+
+                                            }}>
+                                                <Text>Выбрать период</Text>
+                                            </View>
+                                        </TouchableNativeFeedback>
+                                    </View>
+                                    }
+
+                                    {this.state.filterByDateRangePlate &&
+                                    <View
+                                        style={{
+                                            borderRadius: 25,
+                                            width: 140,
+                                            height: 30,
+                                            overflow: "hidden",
+                                            // position: "absolute",
+                                            // right: 10,
+                                            // top: 17
+
+                                        }}
+                                    >
+                                        <TouchableNativeFeedback
+                                            style={{
+                                                padding: 5,
+                                                borderRadius: 25,
+                                            }}
+                                            background={TouchableNativeFeedback.SelectableBackground('#eeeeb9', true)}
+                                            onPress={() => this.setState({
+                                                filterByMonthPlate: true,
+                                                filterByDateRangePlate: false
+                                            })}
+                                        >
+                                            <View style={{
+                                                borderRadius: 25,
+                                                width: 140,
+                                                height: 30,
+                                                backgroundColor: '#fff',
+                                                paddingTop: 5,
+                                                paddingLeft: 14,
+
+                                            }}>
+                                                <Text>Выбрать месяц</Text>
+                                            </View>
+                                        </TouchableNativeFeedback>
+                                    </View>
+                                    }
+                                </View>
+                            </View>
+
+
                         </View>
                     </BoxShadow>
 
