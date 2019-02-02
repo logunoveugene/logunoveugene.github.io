@@ -237,12 +237,10 @@ export default class NonScrollPage extends Component {
                                 <TouchableOpacity
                                     key={index}
                                     onPress={() => {
-
                                         this._chooseType(i.title)
                                     }}
                                     style={{
                                         textAlign: 'left',
-
                                         paddingVertical: 3,
                                         // width: "20%",
                                         position: "relative"
