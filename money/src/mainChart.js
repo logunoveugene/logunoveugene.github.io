@@ -16,20 +16,24 @@ export default class MainChart extends React.Component {
 
     componentDidMount() {
         this.pie = React.createRef();
-        this.cartsData(this.props.listls)
+        this.cartsData(this.props.listls, this.props.selectedType )
     }
 
     componentWillUpdate(nextProps) {
         if (nextProps.listls !== this.props.listls) {
-            this.cartsData(nextProps.listls)
+            this.cartsData(nextProps.listls, this.props.selectedType )
         }
+        if (nextProps.selectedType !== this.props.selectedType) {
+            this.cartsData(this.props.listls, nextProps.selectedType)
+        }
+
     }
 
-    cartsData(list) {
+    cartsData(list, selectedType) {
 
         this.setState({
             chartData: _(list).filter({
-                'typeCategory': this.props.selectedType
+                'typeCategory': selectedType
             }).value()
         }, () => {
             var colors = ["#96cd5e", "#ffda58", "#ff5935", "#74b5e9", "#eeeeee"]
@@ -87,6 +91,7 @@ export default class MainChart extends React.Component {
                         this.transfer();
                         if (this.state.barData.length > 0) {
                             this.pie.current.animate();
+                            console.log(this.props)
                         }
                     });
                 });

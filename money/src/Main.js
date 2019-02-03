@@ -32,11 +32,16 @@ import icoMoonConfig from './font/selection';
 
 const IconM = createIconSetFromIcoMoon(icoMoonConfig);
 import BoxShadow from './shadow'
+
+
 import dayjs from 'dayjs'
 import 'dayjs/locale/ru'
 import {currencyList} from "./data/base/BaseConstant";
 
 import MainChart from './mainChart'
+
+
+import ExtrasExample from './lineChart'
 
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
@@ -61,7 +66,7 @@ export default class Main extends React.Component {
             modalActionVisible: false,
             selectedMonth: null,
             selectedYear: '',
-            selectedType: 'Списание',
+            selectedType: null,
             chartData: [],
 
 
@@ -89,8 +94,11 @@ export default class Main extends React.Component {
 
             filterByMonthPlate: true,
             filterByDateRangePlate: false,
+            selectedTab: "Сводка",
 
-            selectedTab: "Сводка"
+            mainIncome: null,
+            mainCost: null,
+            mainResult: null
 
 
         }
@@ -176,6 +184,7 @@ export default class Main extends React.Component {
                     this.setState({
                         isChartLoaded: true,
                     })
+                    this.calcMainInfo()
                 }
             );
         }
@@ -187,6 +196,8 @@ export default class Main extends React.Component {
                         })
                         .orderBy(['date', 'time'], ['desc', 'desc'])
                         .value(),
+                }, () => {
+                    this.calcMainInfo()
                 }
             );
         }
@@ -201,7 +212,9 @@ export default class Main extends React.Component {
                     listls: _(this.state.fullNodeList)
                         .filter((item => a.indexOf(item.typeSubCategoryTitle) >= 0))
                         .orderBy(['date', 'time'], ['desc', 'desc']).value(),
-                },
+                }, () => {
+                    this.calcMainInfo()
+                }
             );
         }
         // let result = _.filter(this.state.fullNodeList, (item => B.indexOf(item.typeSubCategoryTitle) >= 0));
@@ -393,13 +406,53 @@ export default class Main extends React.Component {
         this.setState({
             isChartLoaded: state,
         })
+    };
+
+    calcMainInfo() {
+        let income = _(this.state.listls)
+            .filter({
+                'typeCategory': "Пополнение"
+            })
+            .sumBy(function (o) {
+                return +o.sum;
+            })
+        let costs = _(this.state.listls)
+            .filter({
+                'typeCategory': "Списание"
+            })
+            .sumBy(function (o) {
+                return o.sum;
+            })
+        let result = income + +costs
+        this.setState({
+            mainIncome: income,
+            mainCost: costs,
+            mainResult: result
+        })
+
+    }
+
+    mainChart() {
+
     }
 
     render() {
         const {listls, chartData, selectedSlice} = this.state;
         const monthFormat = (i) => dayjs(i).locale('ru').format('MMM');
 
-        const mainTabs = ["Сводка", "Расходы", "Доходы"]
+        const mainTabs = [
+            {
+                title: "Сводка",
+                typeName: null
+            },
+            {
+                title: "Расходы",
+                typeName: "Списание"
+            },
+            {
+                title: "Доходы",
+                typeName: "Пополнение"
+            }]
 
         function capitalizeFirstLetter(string) {
             return string.charAt(0).toUpperCase() + string.slice(1);
@@ -758,7 +811,7 @@ export default class Main extends React.Component {
                     <ActivityIndicator
                         size="large"/>
                 </View>}
-                {this.state.listls.length > 0 &&
+
                 <View
                     style={styles.container}>
                     <NavigationEvents
@@ -865,7 +918,7 @@ export default class Main extends React.Component {
                     </BoxShadow>
                     }
 
-
+                    {this.state.listls.length > 0 &&
                     <View
                         style={{
                             position: "absolute",
@@ -920,15 +973,14 @@ export default class Main extends React.Component {
                                 marginHorizontal: 10,
                                 marginTop: 10,
                                 borderRadius: 10,
-                                padding:15,
+                                padding: 15,
+                                overflow: "hidden"
 
                             }}>
                             <Animated.View
                                 style={{
                                     marginLeft: -4,
                                     flexDirection: 'row',
-
-
                                     height: this.state.scrollY.interpolate({
                                         inputRange: [0, 32],
                                         outputRange: [32, 0],
@@ -945,9 +997,10 @@ export default class Main extends React.Component {
                                     <TouchableOpacity
                                         key={index}
                                         onPress={() => {
-                                            // this.setState({
-                                            //     selectedTab:i
-                                            // })
+                                            this.setState({
+                                                selectedType: i.typeName,
+                                                selectedTab: i.title
+                                            })
                                         }}
                                         style={{
                                             textAlign: 'left',
@@ -955,7 +1008,7 @@ export default class Main extends React.Component {
                                             position: "relative"
                                         }}
                                     >
-                                        {i === this.state.selectedTab &&
+                                        {i.title === this.state.selectedTab &&
                                         <View
                                             style={{
                                                 backgroundColor: '#ffda3a',
@@ -976,21 +1029,53 @@ export default class Main extends React.Component {
                                                 paddingVertical: 3,
                                             }}
                                         >
-                                            {i}</Text>
+                                            {i.title}</Text>
                                     </TouchableOpacity>
                                 )}
                             </Animated.View>
-
+                            {(this.state.selectedType !== null) &&
                             <MainChart scrollY={this.state.scrollY}
                                        selectedType={this.state.selectedType}
                                        listls={this.state.listls}
                                        updateData={this.setLoadingState}
                             />
+                            }
+                            {(this.state.selectedType === null) &&
+                            <View>
+                                <Animated.View
+                                    style={{
+                                        flexDirection: "row",
+                                        paddingTop: this.state.scrollY.interpolate({
+                                            inputRange: [0, 33, 45],
+                                            outputRange: [12, 12, 0],
+                                            extrapolate: 'clamp'
+                                        })
+                                    }}
+                                >
+                                    <Text
+                                        style={{
+                                            marginRight: 10,
+                                            color: "#ff5935"
+                                        }}
+                                    >Потрачено: {this.state.mainCost * -1} р.</Text>
+                                    <Text
+                                        style={{
+                                            color: "#96cd5e"
+                                        }}
+                                    >Заработано: {this.state.mainIncome} р.</Text>
+                                </Animated.View>
+                                <Text>По итогу: {this.state.mainResult} р.</Text>
+                                {this.state.listls.length > 1 &&
+                                < ExtrasExample list={this.state.listls}/>
+                                }
+                            </View>
+
+                            }
 
                         </Animated.View>
                     </View>
-
-
+                    }
+                    {this.state.listls.length > 0 &&
                     <ScrollView
                         scrollEventThrottle={16}
                         onScroll={Animated.event(
@@ -1099,6 +1184,7 @@ export default class Main extends React.Component {
                         }
 
                     </ScrollView>
+                    }
                     <ActionButton
                         onPress={() => this.props.navigation.navigate('AddNote')}
                         buttonColor="rgba(231,76,60,1)">
@@ -1108,6 +1194,7 @@ export default class Main extends React.Component {
                         modalActionVisible={this.state.modalActionVisible}
                         removeItem={this.removeItem}
                     />
+                    {this.state.nodeTypeList &&
                     <Modal
                         animationType="slide"
                         transparent={true}
@@ -1258,8 +1345,9 @@ export default class Main extends React.Component {
                             </BoxShadow>
                         </View>
                     </Modal>
+                    }
                 </View>
-                }
+
             </View>
         )
     }
