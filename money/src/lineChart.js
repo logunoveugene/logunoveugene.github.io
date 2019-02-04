@@ -1,111 +1,66 @@
-import React from 'react'
-import LineChart from "react-native-responsive-linechart";
-import {Dimensions} from "react-native";
-import _ from "lodash";
+import React, {Component} from 'react';
+import {Text, View, ScrollView} from 'react-native';
+// import Moment from 'moment';
+import Rheostat, {AreaRheostat, BarRheostat} from "react-native-rheostat";
 
-var width = Dimensions.get('window').width;
-export default class ExtrasExample extends React.Component {
-
-
-    state = {
-        offset: 0,
-        lineData: null
-    };
-
-    _onScroll(e) {
-        this.setState({offset: e.nativeEvent.contentOffset.x});
-    }
-
-    componentDidMount() {
-        this.cartData(this.props.list)
-    }
-
-    componentWillUpdate(nextProps) {
-        if (nextProps.list !== this.props.list) {
-            this.cartData(nextProps.list)
-        }
-
-    }
-
-
-    cartData(data) {
-        // let data = [...this.props.list]
-        let group3 = []
-        _.reduce(data, function (p, t) {
-            group3.push(p.sum)
-            return {
-                sum: (p.sum) += +t.sum
+const areaSvgData = [ 50, 10, 40, 85, 85, 91, 35,  53, 24,
+    50, 10, 40, 95, 85, 40,
+    24]
+const defaultProps = {
+    snapPoints: [0,60,120,180,240,300,330,360,420,480,540,570,600,630,660,690,
+        720,750,780,810,840,870,900,930,960,990,1020,1050,1080,1110,1140,1170,1200,
+        1260,1320,1380,
+        1440],
+    values: [
+        100,150
+    ],
+    svgData: [ 50, 50, 10, 10, 40, 40, 95,95, 85, 85, 91, 35, 53, 53, 24, 50,
+        50, 10, 40, 95, 85, 91, 35, 53,  24, 50,
+        50, 10, 40, 95, 85, 91, 35, 53,  50, 50,
+        50, 10, 40, 95, 91, 91, 24, 24,  50, 50,
+        10, 10,  ]
+};
+export default class ExtrasExample extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            scrollEnabled: true,
+            timeRange:{
+                values: [10]
             }
-        }, {sum: 0})
-
+        }
+    }
+    onRheostatValUpdated = (payload) => {
         this.setState({
-            lineData: group3
-        }, () => {
-            this.render()
-            console.log(this.state.lineData)
+            timeRange: payload
         })
     }
-
+    onSliderDragStart = () => {
+        this.setState({scrollEnabled:false})
+    }
+    onSliderDragEnd = () => {
+        this.setState({scrollEnabled:true})
+    }
     render() {
-        const data2 = [100000, 99940, 99840, 99800, 99240, 99100, 99000, 98800, 98500, 98320, 1529940, 1529840, 1529740, 1529240, 1529140, 1529040, 1522040, 1522000, 1521800];
-        const config2 = {
-            line: {
-                visible: false,
-                strokeWidth: 1,
-                strokeColor: "#216D99"
-            },
-            area: {
-                gradientFrom: "#2e86de",
-                gradientFromOpacity: 1,
-                gradientTo: "#87D3FF",
-                gradientToOpacity: 1
-            },
-            yAxis: {
-                visible: false,
-
-            },
-            xAxis: {
-                visible: false
-            },
-            grid: {
-                visible: false
-            },
-            // valuePoint: {
-            //     visible: true,
-            //     color: "#2e86de",
-            //     radius: 3
-            // },
-            tooltip: {
-                visible: false,
-                textFormatter: v => v.toFixed(0),
-                lineColor: "#eee",
-                lineWidth: 0,
-                circleColor: "#ff0010",
-                circleBorderColor: "#ff0010",
-                circleBorderWidth: 5,
-                boxColor: "#ffffff00",
-                boxBorderWidth: 0,
-                boxBorderColor: "#ffffff00",
-                boxBorderRadius: 5,
-                boxPaddingY: -10,
-                boxPaddingX: 0,
-                textColor: "black",
-                textFontSize: 15
-            },
-            insetY: 7,
-            insetX: 0,
-            interpolation: "spline"
-
-        };
         return (
-            <LineChart
-                style={{height: 140, width: width - 20, marginLeft: -15, marginBottom: -10}}
-                config={config2}
-                data={this.state.lineData}
-            />
+            <ScrollView contentContainerStyle={{paddingTop: 20, paddingHorizontal:15}} scrollEnabled={this.state.scrollEnabled}>
 
+                <View style={{flex:1, paddingTop: 0, paddingBottom: 80}}>
+                    <Text style={{marginTop: 15}}>
+                        {this.state.timeRange.values[0]}
+                        -
+                        {this.state.timeRange.values[1]}
+                    </Text>
+                    {/*<Rheostat values={this.props.values} min={0} max={1440}*/}
+                    {/*/>*/}
+                    <BarRheostat values={this.props.values} min={0} max={1440}
+                                 snap={true} snapPoints={this.props.snapPoints}
+                                 svgData = {this.props.svgData}
+                                 onValuesUpdated={this.onRheostatValUpdated}/>
+
+                </View>
+            </ScrollView>
         )
     }
-
 }
-
+ExtrasExample.defaultProps = defaultProps;

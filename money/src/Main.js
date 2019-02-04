@@ -432,9 +432,6 @@ export default class Main extends React.Component {
 
     }
 
-    mainChart() {
-
-    }
 
     render() {
         const {listls, chartData, selectedSlice} = this.state;
