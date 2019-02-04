@@ -5,19 +5,19 @@
         <editor-menu-bar :editor="editor">
             <div class="menubar" slot-scope="{ commands, isActive }">
                 <div class="toolbar">
-                    <button
-                            class="menubar__button"
-                            @click="commands.undo"
-                    >
-                        ←
-                    </button>
+                    <!--<button-->
+                            <!--class="menubar__button"-->
+                            <!--@click="commands.undo"-->
+                    <!--&gt;-->
+                        <!--←-->
+                    <!--</button>-->
 
-                    <button
-                            class="menubar__button"
-                            @click="commands.redo"
-                    >
-                        →
-                    </button>
+                    <!--<button-->
+                            <!--class="menubar__button"-->
+                            <!--@click="commands.redo"-->
+                    <!--&gt;-->
+                        <!--→-->
+                    <!--</button>-->
 
 
                     <span v-if="isActive.table()">
@@ -132,9 +132,8 @@
                         class="menubar__button"
                         @click="showImagePrompt(commands.image)"
                 >
-                  image
+                    image
                 </button>
-
 
 
                 <button
@@ -172,23 +171,23 @@
 
 
                 <!--<form class="menububble__form" v-if="linkMenuIsActive"-->
-                      <!--@submit.prevent="setLinkUrl(commands.link, linkUrl)">-->
-                    <!--<input class="menububble__input" type="text" v-model="linkUrl" placeholder="https://"-->
-                           <!--ref="linkInput" @keydown.esc="hideLinkMenu"/>-->
-                    <!--<button class="menububble__button" @click="setLinkUrl(commands.link, null)" type="button">-->
-                      <!--удалить-->
-                    <!--</button>-->
+                <!--@submit.prevent="setLinkUrl(commands.link, linkUrl)">-->
+                <!--<input class="menububble__input" type="text" v-model="linkUrl" placeholder="https://"-->
+                <!--ref="linkInput" @keydown.esc="hideLinkMenu"/>-->
+                <!--<button class="menububble__button" @click="setLinkUrl(commands.link, null)" type="button">-->
+                <!--удалить-->
+                <!--</button>-->
                 <!--</form>-->
 
                 <!--<template v-else>-->
-                    <!--<button-->
-                            <!--class="menububble__button"-->
-                            <!--@click="showLinkMenu(getMarkAttrs('link'))"-->
-                            <!--:class="{ 'is-active': isActive.link() }"-->
-                    <!--&gt;-->
-                        <!--<span>Ссылка</span>-->
+                <!--<button-->
+                <!--class="menububble__button"-->
+                <!--@click="showLinkMenu(getMarkAttrs('link'))"-->
+                <!--:class="{ 'is-active': isActive.link() }"-->
+                <!--&gt;-->
+                <!--<span>Ссылка</span>-->
 
-                    <!--</button>-->
+                <!--</button>-->
                 <!--</template>-->
 
 
@@ -196,7 +195,6 @@
 
 
         </editor-menu-bubble>
-
 
         <editor-content class="editor__content" :editor="editor"/>
     </div>
@@ -264,7 +262,7 @@
                         new History(),
                         new Placeholder({
                             emptyClass: 'is-empty',
-                            emptyNodeText: 'Что скажете?',
+                            emptyNodeText: 'Есть что спросить или обсудить? Просто начни писать...',
                         }),
 
                         new Image(),
@@ -274,7 +272,7 @@
                         new TableCell(),
                         new TableRow(),
                     ],
-                    content: ``,
+                    content: '',
                 }),
             }
         },
@@ -298,9 +296,9 @@
             // },
 
             showImagePrompt(command) {
-                const src = prompt('Enter the url of your image here')
+                const src = prompt('URL изображения')
                 if (src !== null) {
-                    command({ src })
+                    command({src})
                 }
             },
         },
@@ -317,7 +315,6 @@
     :focus {
         outline: none
     }
-
 
     blockquote, h1, h2, h3, ol, p, pre, ul {
         margin: 1rem 0
@@ -337,8 +334,6 @@
 
     .button {
         font-weight: 700;
-        display: -webkit-inline-box;
-        display: -ms-inline-flexbox;
         display: inline-flex;
         background: rgba(0, 0, 0, 0);
         border: 0;
@@ -494,8 +489,7 @@
 
     .menubar__button {
         font-weight: 700;
-        display: -webkit-inline-box;
-        display: -ms-inline-flexbox;
+
         display: inline-flex;
         background: rgba(0, 0, 0, 0);
         border: 0;
@@ -539,8 +533,7 @@
     }
 
     .menububble__button {
-        display: -webkit-inline-box;
-        display: -ms-inline-flexbox;
+
         display: inline-flex;
         background: rgba(0, 0, 0, 0);
         border: 0;
@@ -616,6 +609,7 @@
 
     .editor__floating-menu {
         position: absolute;
+        right: 0;
         margin-top: -.25rem;
         visibility: hidden;
         opacity: 0;
@@ -628,5 +622,13 @@
         visibility: visible
     }
 
+    .editor p.is-empty:first-child::before {
+        content: attr(data-empty-text);
+        float: left;
+        color: #aaa;
+        pointer-events: none;
+        height: 0;
+
+    }
 
 </style>

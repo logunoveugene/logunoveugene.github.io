@@ -14,16 +14,38 @@
                     </div>
                     <input class="w-100 new-post__title" type="text" placeholder="Введите заголовок">
                     <div class="new-content-box">
-                    <froala :tag="'textarea'" :config="config" v-model="model"></froala>
+                        <froala :tag="'textarea'" :config="config" v-model="model"></froala>
+
+                        <div class="new-post__tags tags-in-post mt-5 my-4">
+                            <multiselect v-model="selected"
+                                         tag-placeholder="Добавить новый тег"
+                                         placeholder="Добавить тег"
+                                         selectLabel="Выбрать"
+                                         selectedLabel="Выбран"
+                                         deselectLabel="Удалить"
+                                         label="name"
+                                         track-by="code"
+                                         open-direction="bottom"
+                                         :options="options"
+                                         :multiple="true"
+                                         :taggable="true"
+                                         @tag="addTag"
+                                         class="tags-in-post__input"
+                            >
+
+                            </multiselect>
+                        </div>
+
+
                     </div>
 
                 </div>
-                <div class="d-block d-lg-none">
-                    <div class="fixed-bottom">
-                        <div v-if="!readyToPublic" class="bg-orange text-white  mb-0 p-3" @click="showPublishModal">
+                <div class="d-block d-lg-none ">
+                    <div class="fixed-bottom p-2">
+                        <div v-if="!readyToPublic" class="btn btn--color-orange w-100" @click="showPublishModal">
                             Готовы опубликовать?
                         </div>
-                        <div v-if="readyToPublic" class="bg-orange text-white  mb-0 p-3" @click="showPublishModal">
+                        <div v-if="readyToPublic" class="btn btn--color-orange w-100" @click="showPublishModal">
                             Опубликовать
                         </div>
                     </div>
@@ -31,6 +53,52 @@
                 <div class="col-12 col-lg-4 d-none d-lg-block">
                     <div class="card-block p-4 mb-4">
                         <div class="">
+
+                            <div class="new-post__tags mb-4">
+                                <div class="small text-muted mb-1">Рубрика</div>
+                                <multiselect v-model="selectedRub"
+                                             tag-placeholder="Добавить новый тег"
+                                             placeholder="Выберите рубрику"
+                                             selectLabel="Выбрать"
+                                             selectedLabel="Выбран"
+                                             deselectLabel="Отменить выбор"
+                                             label="name"
+                                             track-by="name"
+                                             open-direction="bottom"
+
+
+                                             group-values="libs"
+                                             group-label="language"
+                                             :group-select="true"
+
+                                             :options="options2"
+                                             :multiple="true"
+                                             @tag="addTag">
+
+                                </multiselect>
+                            </div>
+                            <div class="new-post__tags mb-4">
+                                <div class="small text-muted mb-1">Раздел</div>
+                                <multiselect v-model="selectedlist"
+                                             tag-placeholder="Добавить новый тег"
+                                             placeholder="Выберите раздел"
+                                             selectLabel="Выбрать"
+                                             selectedLabel="Выбран"
+                                             deselectLabel="Отменить выбор"
+                                             label="name"
+                                             track-by="code"
+                                             open-direction="bottom"
+                                             :options="options"
+                                             :multiple="true"
+                                             @tag="addTag">
+
+                                </multiselect>
+                            </div>
+                            <div class="new-post__tags mb-4">
+                                <div class="small text-muted mb-1">Обложка статьи</div>
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            </div>
+
                             <div class="new-post__links mb-4">
                                 <div class="small text-muted mb-2">Упоминания</div>
                                 <div class="new-post__links-item d-flex justify-content-between">
@@ -52,64 +120,42 @@
                                         <div class="new-post__links-item-amount-add icon-add pt-2"></div>
                                     </div>
                                 </div>
-
                             </div>
-                            <div class="new-post__tags mb-4">
-                                <div class="small text-muted mb-1">Теги</div>
-                                <multiselect v-model="selected"
-                                             tag-placeholder="Добавить новый тег"
-                                             placeholder="Поиск по тегам"
-                                             selectLabel="Выбрать"
-                                             selectedLabel="Выбран"
-                                             deselectLabel="Удалить"
-                                             label="name"
-                                             track-by="code"
-                                             open-direction="bottom"
-                                             :options="options"
-                                             :multiple="true"
-                                             :taggable="true"
-                                             @tag="addTag">
-
-                                </multiselect>
-                            </div>
-                            <div class="new-post__tags mb-4">
-                                <div class="small text-muted mb-1">Раздел</div>
-                                <multiselect v-model="selectedRub"
-                                             tag-placeholder="Добавить новый тег"
-                                             placeholder="Выберите раздел"
-                                             selectLabel="Выбрать"
-                                             selectedLabel="Выбран"
-                                             deselectLabel="Отменить выбор"
-                                             label="name"
-                                             track-by="code"
-                                             open-direction="bottom"
-                                             :options="options"
-
-                                             @tag="addTag">
-
-                                </multiselect>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <div class="mr-3">
-                                    <div class="btn btn--color-orange">Опубликовать</div>
+                            <div class="">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="mr-3">
+                                        <div class="btn btn--color-orange">Опубликовать сейчас</div>
+                                    </div>
+                                    <div class="mr-3">
+                                        <div class="btn btn--color-white">Сохранить</div>
+                                    </div>
                                 </div>
-                                <div class="new-post__save-state small  ">
-                                    <span class="font-weight-bold">Черновик сохранен</span> <br>
-                                    только что
+                                <div class="new-post__save-state small text-secondary mb-3">
+                                    <div class="mb-2">Статья создана: 12 ноя 18г. (изм. 12 ноя 18г.)</div>
+                                    <div class="d-flex   mb-2">
+                                        <div class="mr-1">Будет опубликована</div>
+                                        <a href="#" class="link link--color-blue link--doted link--dropdown">не
+                                            выбрано</a>
+                                    </div>
+                                    <!--<div class=" ">Будет опубликована: 15 ноя 18г.</div>-->
+                                </div>
+
+                                <div class="small">
+                                    <a href="" class="link link--color-grey">Удалить</a>
                                 </div>
 
                             </div>
 
                         </div>
                     </div>
-                    <div class="small">
-                        <ul class=" pl-4 list-unstyled">
-                            <li><a href="#" class="link link--color-blue">Рекомендации по написанию и оформлению
-                                статей</a>
-                            </li>
-                            <li><a href="#" class="link link--color-blue">Как пользоваться редактором</a></li>
-                        </ul>
-                    </div>
+                    <!--<div class="small">-->
+                    <!--<ul class=" pl-4 list-unstyled">-->
+                    <!--<li><a href="#" class="link link&#45;&#45;color-blue">Рекомендации по написанию и оформлению-->
+                    <!--статей</a>-->
+                    <!--</li>-->
+                    <!--<li><a href="#" class="link link&#45;&#45;color-blue">Как пользоваться редактором</a></li>-->
+                    <!--</ul>-->
+                    <!--</div>-->
                 </div>
             </div>
         </div>
@@ -252,6 +298,7 @@
                 readyToPublic: false,
                 selected: [],
                 selectedRub: [],
+                selectedlist:[],
                 options: [
                     {name: 'Ноутбуки', code: '154'},
                     {name: 'Компьютеры', code: '49'},
@@ -259,6 +306,31 @@
                     {name: 'Lenovo', code: '17'},
                     {name: 'Смартфоны', code: '26'}
                 ],
+
+                options2: [
+                    {
+                        language: 'Дайджест',
+                        libs: [
+                            { name: 'Новости', category: 'Front-end' },
+                            { name: 'Интервью', category: 'Backend' }
+                        ]
+                    },
+                    {
+                        language: 'Обзоры',
+                        libs: [
+                            { name: 'Профессиональный', category: 'Backend' },
+                            { name: 'Любительский', category: 'Backend' }
+                        ]
+                    },
+                    {
+                        language: 'Лайфхаки',
+                        libs: [
+                            { name: 'Полезные советы', category: 'Backend' },
+                            { name: 'Гайды', category: 'Backend' }
+                        ]
+                    }
+                ],
+
                 config: {
                     toolbarInline: true,
                     minHeight: 500,
@@ -469,8 +541,26 @@
         color: #040404;
     }
 
-    .new-content-box{
+    .new-content-box {
         min-height: 400px;
     }
+
+    .tags-in-post__input .multiselect__select {
+        display: none;
+
+    }
+
+    .tags-in-post__input .multiselect__tags {
+        border: none;
+        padding: 0;
+    }
+
+
+
+    .tags-in-post__input  .multiselect__content-wrapper{
+        box-shadow: 0 5px  20px  rgba(0,0,0,0.1);
+        border-radius:8px 8px  8px 8px  ;
+    }
+
 </style>
 

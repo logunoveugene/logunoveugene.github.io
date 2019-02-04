@@ -320,8 +320,10 @@
                                             </div>
                                         </li>
                                     </ul>
+                                    <router-link to="/awards"  >
                                     <button type="button" class="btn btn--color-white btn-block">Все награды
                                     </button>
+                                    </router-link>
                                 </div>
                             </div>
                         </div>
@@ -347,8 +349,10 @@
                                             </div>
                                         </li>
                                     </ul>
+                                    <router-link to="/users"  >
                                     <button type="button" class="btn btn--color-white btn-block">Весь список
                                     </button>
+                                    </router-link>
                                 </div>
                             </div>
                         </div>
