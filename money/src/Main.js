@@ -66,7 +66,7 @@ export default class Main extends React.Component {
             modalActionVisible: false,
             selectedMonth: null,
             selectedYear: '',
-            selectedType: null,
+            selectedType: 'Списание',
             chartData: [],
 
 
@@ -94,7 +94,7 @@ export default class Main extends React.Component {
 
             filterByMonthPlate: true,
             filterByDateRangePlate: false,
-            selectedTab: "Сводка",
+            selectedTab: "Расходы",
 
             mainIncome: null,
             mainCost: null,
@@ -438,10 +438,10 @@ export default class Main extends React.Component {
         const monthFormat = (i) => dayjs(i).locale('ru').format('MMM');
 
         const mainTabs = [
-            {
-                title: "Сводка",
-                typeName: null
-            },
+            // {
+            //     title: "Сводка",
+            //     typeName: null
+            // },
             {
                 title: "Расходы",
                 typeName: "Списание"
@@ -978,6 +978,7 @@ export default class Main extends React.Component {
                                 style={{
                                     marginLeft: -4,
                                     flexDirection: 'row',
+                                    justifyContent:'center',
                                     height: this.state.scrollY.interpolate({
                                         inputRange: [0, 32],
                                         outputRange: [32, 0],
@@ -1037,37 +1038,36 @@ export default class Main extends React.Component {
                                        updateData={this.setLoadingState}
                             />
                             }
-                            {(this.state.selectedType === null) &&
-                            <View>
-                                <Animated.View
-                                    style={{
-                                        flexDirection: "row",
-                                        paddingTop: this.state.scrollY.interpolate({
-                                            inputRange: [0, 33, 45],
-                                            outputRange: [12, 12, 0],
-                                            extrapolate: 'clamp'
-                                        })
-                                    }}
-                                >
-                                    <Text
-                                        style={{
-                                            marginRight: 10,
-                                            color: "#ff5935"
-                                        }}
-                                    >Потрачено: {this.state.mainCost * -1} р.</Text>
-                                    <Text
-                                        style={{
-                                            color: "#96cd5e"
-                                        }}
-                                    >Заработано: {this.state.mainIncome} р.</Text>
-                                </Animated.View>
-                                <Text>По итогу: {this.state.mainResult} р.</Text>
-                                {this.state.listls.length > 1 &&
-                                < ExtrasExample list={this.state.listls}/>
-                                }
-                            </View>
-
-                            }
+                            {/*{(this.state.selectedType === null) &&*/}
+                            {/*<View>*/}
+                                {/*<Animated.View*/}
+                                    {/*style={{*/}
+                                        {/*flexDirection: "row",*/}
+                                        {/*paddingTop: this.state.scrollY.interpolate({*/}
+                                            {/*inputRange: [0, 33, 45],*/}
+                                            {/*outputRange: [12, 12, 0],*/}
+                                            {/*extrapolate: 'clamp'*/}
+                                        {/*})*/}
+                                    {/*}}*/}
+                                {/*>*/}
+                                    {/*<Text*/}
+                                        {/*style={{*/}
+                                            {/*marginRight: 10,*/}
+                                            {/*color: "#ff5935"*/}
+                                        {/*}}*/}
+                                    {/*>Потрачено: {this.state.mainCost * -1} р.</Text>*/}
+                                    {/*<Text*/}
+                                        {/*style={{*/}
+                                            {/*color: "#96cd5e"*/}
+                                        {/*}}*/}
+                                    {/*>Заработано: {this.state.mainIncome} р.</Text>*/}
+                                {/*</Animated.View>*/}
+                                {/*<Text>По итогу: {this.state.mainResult} р.</Text>*/}
+                                {/*{this.state.listls.length > 1 &&*/}
+                                {/*< ExtrasExample list={this.state.listls}/>*/}
+                                {/*}*/}
+                            {/*</View>*/}
+                            {/*}*/}
 
                         </Animated.View>
                     </View>
