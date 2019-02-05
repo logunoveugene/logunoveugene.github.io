@@ -70,6 +70,7 @@
                                              group-values="libs"
                                              group-label="language"
                                              :group-select="true"
+                                             deselectGroupLabel="Отменить выбор"
 
                                              :options="options2"
                                              :multiple="true"
@@ -150,10 +151,10 @@
                     </div>
                     <!--<div class="small">-->
                     <!--<ul class=" pl-4 list-unstyled">-->
-                    <!--<li><a href="#" class="link link&#45;&#45;color-blue">Рекомендации по написанию и оформлению-->
+                    <!--<li><a href="#" class="link link--color-blue">Рекомендации по написанию и оформлению-->
                     <!--статей</a>-->
                     <!--</li>-->
-                    <!--<li><a href="#" class="link link&#45;&#45;color-blue">Как пользоваться редактором</a></li>-->
+                    <!--<li><a href="#" class="link link--color-blue">Как пользоваться редактором</a></li>-->
                     <!--</ul>-->
                     <!--</div>-->
                 </div>
@@ -309,6 +310,13 @@
 
                 options2: [
                     {
+                        language: 'Песочница',
+                        libs: [
+                            { name: 'Личный блог', category: 'Front-end' },
+
+                        ]
+                    },
+                    {
                         language: 'Дайджест',
                         libs: [
                             { name: 'Новости', category: 'Front-end' },
@@ -459,6 +467,25 @@
         }
 
     }
+
+
+ 
+
+    .multiselect__option {
+
+        padding-left: 1.5rem;
+    }
+
+
+    .multiselect__option--group {
+         background: none;
+
+        font-weight: 700;
+        padding-left: .75rem;
+    }
+
+
+
 
     .multiselect__tags {
         min-height: 40px;
