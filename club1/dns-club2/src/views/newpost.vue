@@ -52,8 +52,31 @@
                 </div>
                 <div class="col-12 col-lg-4 d-none d-lg-block">
                     <div class="card-block p-4 mb-4">
+                        <div class=" ">
+                            <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Редакторские настройки
+                            </div>
+                            <div class=" ">
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" id="customCheckw3" class="custom-control-input">
+                                    <label for="customCheckw3" class="custom-control-label">Закрепленная статья</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" id="customCheck115" class="custom-control-input">
+                                    <label for="customCheck115" class="custom-control-label">Опубликовано на главной (Клуб)</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" id="customCheck231" class="custom-control-input">
+                                    <label for="customCheck231" class="custom-control-label">Опубликовано на главной (DNS)</label>
+                                </div>
+                                <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" id="customCheck1" class="custom-control-input">
+                                    <label for="customCheck1" class="custom-control-label">Запрет индексации</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-block p-4 mb-4">
                         <div class="">
-
                             <div class="new-post__tags mb-4">
                                 <div class="small text-muted mb-1">Рубрика</div>
                                 <multiselect v-model="selectedRub"
@@ -99,6 +122,10 @@
                                 <div class="small text-muted mb-1">Обложка статьи</div>
                                 <input type="file" class="form-control-file" id="exampleFormControlFile1">
                             </div>
+                            <div class="new-post__tags mb-4">
+                                <div class="small text-muted mb-1">Главное фото</div>
+                                <input type="file" class="form-control-file" id="exampleFormControlFile11">
+                            </div>
 
                             <div class="new-post__links mb-4">
                                 <div class="small text-muted mb-2">Упоминания</div>
@@ -135,7 +162,7 @@
                                     <div class="mb-2">Статья создана: 12 ноя 18г. (изм. 12 ноя 18г.)</div>
                                     <div class="d-flex   mb-2">
                                         <div class="mr-1">Будет опубликована</div>
-                                        <a href="#" class="link link--color-blue link--doted link--dropdown">не
+                                        <a href="#" class="link link--color-blue link--doted">не
                                             выбрано</a>
                                     </div>
                                     <!--<div class=" ">Будет опубликована: 15 ноя 18г.</div>-->
@@ -299,7 +326,7 @@
                 readyToPublic: false,
                 selected: [],
                 selectedRub: [],
-                selectedlist:[],
+                selectedlist: [],
                 options: [
                     {name: 'Ноутбуки', code: '154'},
                     {name: 'Компьютеры', code: '49'},
@@ -312,29 +339,29 @@
                     {
                         language: 'Песочница',
                         libs: [
-                            { name: 'Личный блог', category: 'Front-end' },
+                            {name: 'Личный блог', category: 'Front-end'},
 
                         ]
                     },
                     {
                         language: 'Дайджест',
                         libs: [
-                            { name: 'Новости', category: 'Front-end' },
-                            { name: 'Интервью', category: 'Backend' }
+                            {name: 'Новости', category: 'Front-end'},
+                            {name: 'Интервью', category: 'Backend'}
                         ]
                     },
                     {
                         language: 'Обзоры',
                         libs: [
-                            { name: 'Профессиональный', category: 'Backend' },
-                            { name: 'Любительский', category: 'Backend' }
+                            {name: 'Профессиональный', category: 'Backend'},
+                            {name: 'Любительский', category: 'Backend'}
                         ]
                     },
                     {
                         language: 'Лайфхаки',
                         libs: [
-                            { name: 'Полезные советы', category: 'Backend' },
-                            { name: 'Гайды', category: 'Backend' }
+                            {name: 'Полезные советы', category: 'Backend'},
+                            {name: 'Гайды', category: 'Backend'}
                         ]
                     }
                 ],
@@ -468,24 +495,17 @@
 
     }
 
-
- 
-
     .multiselect__option {
 
         padding-left: 1.5rem;
     }
 
-
     .multiselect__option--group {
-         background: none;
+        background: none;
 
         font-weight: 700;
         padding-left: .75rem;
     }
-
-
-
 
     .multiselect__tags {
         min-height: 40px;
@@ -582,11 +602,18 @@
         padding: 0;
     }
 
+    .tags-in-post__input .multiselect__content-wrapper {
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        border-radius: 8px 8px 8px 8px;
+    }
 
+    .tags-in-post__input .multiselect__input, .multiselect__single {
+        width: 100px !important;
+    }
 
-    .tags-in-post__input  .multiselect__content-wrapper{
-        box-shadow: 0 5px  20px  rgba(0,0,0,0.1);
-        border-radius:8px 8px  8px 8px  ;
+    .tags-in-post__input input::placeholder {
+        color: #999999;
+        margin-top: 10px;
     }
 
 </style>

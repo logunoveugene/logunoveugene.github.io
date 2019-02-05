@@ -1,312 +1,217 @@
 <template>
-    <div class="">
-        <div class="container">
-            <div class="row">
+    <div class="editor">
+        <editor-menu-bar :editor="editor">
+            <div class="menubar" slot-scope="{ commands, isActive }">
 
-                <div class="col-12 col-md-12 col-lg-8">
+                <button
+                        class="menubar__button"
+                        :class="{ 'is-active': isActive.bold() }"
+                        @click="commands.bold"
+                >
+                    b
+                </button>
 
+                <button
+                        class="menubar__button"
+                        :class="{ 'is-active': isActive.italic() }"
+                        @click="commands.italic"
+                >
+                    i
+                </button>
 
-                    <editor :extensions="extensions">
-                        <div class="editor__floating-menu" slot="floatingMenu" slot-scope="{ nodes }">
-                            <template v-if="nodes">
-                                <button class="menubar__button"
-                                        :class="{ 'is-active': nodes.heading.active({ level: 1 }) }"
-                                        @click="nodes.heading.command({ level: 1 })"
-                                >
-                                    H1
-                                </button>
+                <button
+                        class="menubar__button"
+                        :class="{ 'is-active': isActive.strike() }"
+                        @click="commands.strike"
+                >
+                    strike
+                </button>
 
-                                <button
-                                        class="menubar__button"
-                                        :class="{ 'is-active': nodes.heading.active({ level: 2 }) }"
-                                        @click="nodes.heading.command({ level: 2 })"
-                                >
-                                    H2
-                                </button>
+                <button
+                        class="menubar__button"
+                        :class="{ 'is-active': isActive.underline() }"
+                        @click="commands.underline"
+                >
+                    underline
+                </button>
 
-                                <button
-                                        class="menubar__button"
-                                        :class="{ 'is-active': nodes.heading.active({ level: 3 }) }"
-                                        @click="nodes.heading.command({ level: 3 })"
-                                >
-                                    H3
-                                </button>
+                <button
+                        class="menubar__button"
+                        :class="{ 'is-active': isActive.code() }"
+                        @click="commands.code"
+                >
+                    code
+                </button>
 
-                                <button
-                                        class="menubar__button"
-                                        :class="{ 'is-active': nodes.bullet_list.active() }"
-                                        @click="nodes.bullet_list.command"
-                                >
-                                    ul
-                                </button>
+                <button
+                        class="menubar__button"
+                        :class="{ 'is-active': isActive.paragraph() }"
+                        @click="commands.paragraph"
+                >
+                    paragraph
+                </button>
 
-                                <button
-                                        class="menubar__button"
-                                        :class="{ 'is-active': nodes.ordered_list.active() }"
-                                        @click="nodes.ordered_list.command"
-                                >
-                                    ol
-                                </button>
+                <button
+                        class="menubar__button"
+                        :class="{ 'is-active': isActive.heading({ level: 1 }) }"
+                        @click="commands.heading({ level: 1 })"
+                >
+                    H1
+                </button>
 
-                                <button
-                                        class="menubar__button"
-                                        :class="{ 'is-active': nodes.blockquote.active() }"
-                                        @click="nodes.blockquote.command"
-                                >
-                                    quet
-                                </button>
+                <button
+                        class="menubar__button"
+                        :class="{ 'is-active': isActive.heading({ level: 2 }) }"
+                        @click="commands.heading({ level: 2 })"
+                >
+                    H2
+                </button>
 
+                <button
+                        class="menubar__button"
+                        :class="{ 'is-active': isActive.heading({ level: 3 }) }"
+                        @click="commands.heading({ level: 3 })"
+                >
+                    H3
+                </button>
 
-                                <button
-                                        class="menubar__button"
-                                        @click="showImagePrompt(nodes.image.command)"
-                                >
-                                    img
-                                </button>
+                <button
+                        class="menubar__button"
+                        :class="{ 'is-active': isActive.bullet_list() }"
+                        @click="commands.bullet_list"
+                >
+                    ul
+                </button>
 
+                <button
+                        class="menubar__button"
+                        :class="{ 'is-active': isActive.ordered_list() }"
+                        @click="commands.ordered_list"
+                >
+                    ol
+                </button>
 
-                            </template>
-                        </div>
+                <button
+                        class="menubar__button"
+                        :class="{ 'is-active': isActive.blockquote() }"
+                        @click="commands.blockquote"
+                >
+                    quote
+                </button>
 
+                <button
+                        class="menubar__button"
+                        :class="{ 'is-active': isActive.code_block() }"
+                        @click="commands.code_block"
+                >
+                    code
+                </button>
 
-                        <div class="menububble" slot="menububble" slot-scope="{ marks, focus }">
+                <button
+                        class="menubar__button"
+                        @click="commands.horizontal_rule"
+                >
+                    hr
+                </button>
 
+                <button
+                        class="menubar__button"
+                        @click="commands.undo"
+                >
+                    undo
+                </button>
 
-                            <template v-if="marks">
-
-                                <form class="menububble__form" v-if="linkMenuIsActive"
-                                      @submit.prevent="setLinkUrl(linkUrl, marks.link, focus)">
-                                    <input class="menububble__input" type="text" v-model="linkUrl"
-                                           placeholder="https://" ref="linkInput" @keydown.esc="hideLinkMenu"/>
-                                    <button class="menububble__button" @click="setLinkUrl(null, marks.link, focus)"
-                                            type="button">
-                                        <icon name="remove"/>
-                                    </button>
-                                </form>
-
-
-                                <template v-else>
-
-
-                                    <button
-                                            class="menububble__button"
-                                            :class="{ 'is-active': marks.bold.active() }"
-                                            @click="marks.bold.command"
-                                    >
-                                        B
-                                    </button>
-
-                                    <button
-                                            class="menububble__button"
-                                            :class="{ 'is-active': marks.italic.active() }"
-                                            @click="marks.italic.command"
-                                    >
-                                        I
-                                    </button>
-                                    <button
-                                            class="menububble__button"
-                                            @click="showLinkMenu(marks.link)"
-                                            :class="{ 'is-active': marks.link.active() }"
-                                    >
-                                        <span>Add Link</span>
-
-                                    </button>
-
-
-
-                                </template>
-                            </template>
-                        </div>
-
-
-                        <div slot="content" slot-scope="props">
-                            <h1>Yay Headlines!</h1>
-                            <p>All these <strong>cool tags</strong> are working now.</p>
-                        </div>
-                    </editor>
-
-                </div>
-
+                <button
+                        class="menubar__button"
+                        @click="commands.redo"
+                >
+                    redo
+                </button>
 
             </div>
-        </div>
+        </editor-menu-bar>
 
+        <editor-content class="editor__content" :editor="editor" />
     </div>
 </template>
 
 <script>
-    import {Editor} from 'tiptap'
+
+    import { Editor, EditorContent, EditorMenuBar } from 'tiptap'
     import {
-        // Nodes
-        BlockquoteNode,
-        BulletListNode,
-        CodeBlockNode,
-        CodeBlockHighlightNode,
-        HardBreakNode,
-        HeadingNode,
-        ImageNode,
-        ListItemNode,
-        OrderedListNode,
-        TodoItemNode,
-        TodoListNode,
-
-        // Marks
-        BoldMark,
-        CodeMark,
-        ItalicMark,
-        LinkMark,
-        StrikeMark,
-        UnderlineMark,
-
-        // General Extensions
-        HistoryExtension,
-        PlaceholderExtension,
+        Blockquote,
+        CodeBlock,
+        HardBreak,
+        Heading,
+        HorizontalRule,
+        OrderedList,
+        BulletList,
+        ListItem,
+        TodoItem,
+        TodoList,
+        Bold,
+        Code,
+        Italic,
+        Link,
+        Strike,
+        Underline,
+        History,
     } from 'tiptap-extensions'
-
-
     export default {
         components: {
-            Editor,
+            EditorContent,
+            EditorMenuBar,
+
         },
         data() {
             return {
-                extensions: [
-                    new BlockquoteNode(),
-                    new BulletListNode(),
-                    new CodeBlockNode(),
-                    new HardBreakNode(),
-                    new HeadingNode({maxLevel: 3}),
-                    new ImageNode(),
-                    new ListItemNode(),
-                    new OrderedListNode(),
-                    new TodoItemNode(),
-                    new TodoListNode(),
-                    new BoldMark(),
-                    new ItalicMark(),
-                    new LinkMark(),
-                    new StrikeMark(),
-                    new UnderlineMark(),
-                    new HistoryExtension(),
-                    new PlaceholderExtension(),
-                ],
-                readyToPublic: false,
-                selected: [],
-                selectedRub: [],
-
-                linkUrl: null,
-                linkMenuIsActive: false,
-
-                model: ''
+                editor: new Editor({
+                    extensions: [
+                        new Blockquote(),
+                        new BulletList(),
+                        new CodeBlock(),
+                        new HardBreak(),
+                        new Heading({ levels: [1, 2, 3] }),
+                        new HorizontalRule(),
+                        new ListItem(),
+                        new OrderedList(),
+                        new TodoItem(),
+                        new TodoList(),
+                        new Bold(),
+                        new Code(),
+                        new Italic(),
+                        new Link(),
+                        new Strike(),
+                        new Underline(),
+                        new History(),
+                    ],
+                    content: `
+          <h2>
+            Hi there,
+          </h2>
+          <p>
+            this is a very <em>basic</em> example of tiptap.
+          </p>
+          <pre><code>body { display: none; }</code></pre>
+          <ul>
+            <li>
+              A regular list
+            </li>
+            <li>
+              With regular items
+            </li>
+          </ul>
+          <blockquote>
+            It's amazing 👏
+            <br />
+            – mom
+          </blockquote>
+        `,
+                }),
             }
         },
-
-        methods: {
-
-            showImagePrompt(command) {
-                const src = prompt('Enter the url of your image here')
-                if (src !== null) {
-                    command({src})
-                }
-            },
-            showLinkMenu(type) {
-                this.linkUrl = type.attrs.href
-                this.linkMenuIsActive = true
-                this.$nextTick(() => {
-                    this.$refs.linkInput.focus()
-                })
-            },
-            hideLinkMenu() {
-                this.linkUrl = null
-                this.linkMenuIsActive = false
-            },
-            setLinkUrl(url, type, focus) {
-                type.command({href: url})
-                this.hideLinkMenu()
-                focus()
-            },
-            showAddProoduct() {
-                this.$modal.show('addProduct');
-            },
-            hideAddProoduct() {
-                this.$modal.hide('addProduct');
-            },
-            showPublishModal() {
-                this.$modal.show('publish');
-                this.readyToPublic = true
-
-            },
-            hidePublishModal() {
-                this.$modal.hide('publish');
-                this.readyToPublic = false
-            },
-
-
-        }
+        beforeDestroy() {
+            this.editor.destroy()
+        },
     }
 </script>
-<style lang="scss">
-
-    .ProseMirror {
-        outline: none;
-    }
-    .editor {
-        position: relative;
-        &__floating-menu {
-            position: absolute;
-            margin-top: -0.25rem;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.2s, visibility 0.2s;
-        }
-    }
-
-    .menubar__button {
-        background: rgba(0, 0, 0, 0);
-        border: 0;
-        border-radius: 3px;
-        color: #000;
-        cursor: pointer;
-        display: -webkit-inline-box;
-        display: -ms-inline-flexbox;
-        display: inline-flex;
-        font-weight: 700;
-        margin-right: .2rem;
-        padding: .2rem .5rem;
-    }
-
-    .menububble {
-
-        background: #000;
-        border-radius: 5px;
-        display: flex;
-        margin-bottom: .5rem;
-        opacity: 0;
-        padding: .3rem;
-        position: absolute;
-        transform: translateX(-50%);
-        transition: opacity .2s,visibility .2s;
-        visibility: hidden;
-        z-index: 20;
-    }
-
-    .menububble__button {
-        background: rgba(0,0,0,0);
-        border: 0;
-        border-radius: 3px;
-        color: #fff;
-        cursor: pointer;
-        display: -webkit-inline-box;
-        display: -ms-inline-flexbox;
-        display: inline-flex;
-        margin-right: .2rem;
-        padding: .2rem .5rem;
-    }
-    blockquote:last-child, h1:last-child, h2:last-child, h3:last-child, ol:last-child, p:last-child, pre:last-child, ul:last-child {
-        margin-bottom: 0;
-    }
-
-    blockquote:first-child, h1:first-child, h2:first-child, h3:first-child, ol:first-child, p:first-child, pre:first-child, ul:first-child {
-        margin-top: 0;
-    }
-</style>
-
