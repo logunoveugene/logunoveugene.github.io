@@ -54,13 +54,17 @@
                     <div class="footer__col-head  ">Информация</div>
                     <ul class="footer__menu-list list-unstyled small d-none d-lg-block">
                         <li class="footer__menu-item">
-                            <a href="#" class="link link--color-white">О проекте</a>
+
+                            <router-link class="link link--color-white" to="/info-page">О проекте</router-link>
+
                         </li>
                         <li class="footer__menu-item">
-                            <a href="#" class="link link--color-white">Тур по сайту</a>
+                            <router-link class="link link--color-white" to="/info-page">Тур по сайту</router-link>
+
                         </li>
                         <li class="footer__menu-item">
-                            <a href="#" class="link link--color-white">Для авторов</a>
+                            <router-link class="link link--color-white" to="/info-page">Для авторов</router-link>
+
                         </li>
 
                     </ul>

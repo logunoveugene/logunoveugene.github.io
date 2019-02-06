@@ -1,5 +1,5 @@
 <template>
-    <div class="comment d-flex">
+    <div class="comment d-flex" :style="{opacity: (comment.rate>=0)?1:(comment.rate>-10)?.5: .25 }">
         <div class="mr-3 comment__comment-author-img-wrap">
             <img :src="comment.autorImg" alt="" class="comment__comment-author-img rounded-circle">
         </div>
@@ -9,7 +9,7 @@
                     <div class="d-flex">
                         <img :src="comment.autorImg" alt="" class="comment__comment-author-img-mob rounded-circle">
 
-                        <author :author="comment.autor" />
+                        <author :author="comment.autor"/>
 
 
                     </div>
@@ -24,18 +24,6 @@
                     </div>
                 </div>
                 <div class="d-flex">
-
-
-                    <!--<v-popover offset="0">-->
-                    <!--<div class="comment__menu">-->
-                    <!--<div class="icon-dots-hor"></div>-->
-                    <!--</div>-->
-                    <!--<template slot="popover">-->
-                    <!--<div class="py-3 px-3 bb-1">Скопировать ссылку</div>-->
-                    <!--<div class="py-3 px-3 bb-1">Пожаловаться</div>-->
-                    <!--<div class="py-3 px-3  ">Заблокировать</div>-->
-                    <!--</template>-->
-                    <!--</v-popover>-->
 
 
                     <v-popover offset="0">
@@ -64,9 +52,12 @@
             <div class="d-flex align-items-center">
                 <div class="comment__rate d-flex mr-4 align-items-center">
 
-                    <div class="comment__rate-up icon-thumb-up pt-1"></div>
-                    <div class="comment__rate-count small">+{{comment.rate}}</div>
-                    <div class="comment__rate-down icon-thumb-down "></div>
+                    <div class="comment__rate-up icon-thumb-up pt-1" @click="++comment.rate"></div>
+                    <div class="comment__rate-count small" :class="{'comment__rate-count--red': comment.rate<0 }">
+                        <span v-if="comment.rate>0">+</span>
+                        {{comment.rate}}
+                    </div>
+                    <div class="comment__rate-down icon-thumb-down " @click="--comment.rate"></div>
                 </div>
 
                 <div class="small mr-3">
@@ -74,11 +65,11 @@
 
                 </div>
                 <div class="small ml-auto">
-                    <div v-if="comment.child  && childExtend" class="link link--color-grey link--doted "
+                    <div v-if="comment.child.length>0   && childExtend" class="link link--color-grey link--doted "
                          @click="childExtend=!childExtend">Свернуть ответы
                         {{comment.child.length}}
                     </div>
-                    <div v-if="comment.child  && !childExtend" class=" link link--color-grey link--doted "
+                    <div v-if="comment.child.length>0  && !childExtend" class=" link link--color-grey link--doted "
                          @click="childExtend=!childExtend">Развернуть ответы
                         {{comment.child.length}}
                     </div>
@@ -101,7 +92,7 @@
                 </div>
             </div>
 
-            <div v-if="comment.child && childExtend" class="comment__child-wrap">
+            <div v-if="comment.child.length>0 && childExtend" class="comment__child-wrap">
                 <comment-item v-for="comment in comment.child" :comment="comment" :key="comment.id"></comment-item>
             </div>
 
@@ -173,6 +164,7 @@
 
     .comment {
         margin-bottom: 2rem;
+        transition: opacity 1s;
 
         &__reply-box {
             border: 1px solid #e8e3e3;
@@ -221,6 +213,12 @@
             border-radius: 8px;
             color: #6BA833;
             font-weight: 700;
+
+            &--red {
+                background: #f8e1eb;
+                border-radius: 8px;
+                color: #a81d00;
+            }
         }
 
         &__rate-down {

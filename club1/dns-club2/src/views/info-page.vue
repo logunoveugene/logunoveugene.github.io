@@ -1,104 +1,111 @@
 <template>
-    <div class="post-page">
+    <div class="about">
+
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="small mb-2 d-flex">
                         <router-link class="link link--color-black" to="/">Клуб</router-link>
                         <div class="mx-2">/</div>
-                        <router-link class="link link--color-black" to="/review"> Обзоры</router-link>
-
+                        <span class="text-muted">Информация</span>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <h1 class="page__title mb-0">Заголовок информационной страницы</h1>
+                        <router-link to="/newpost" class=" link link--color-black new-post-btn d-lg-none d-block ">
+                            <div class="new-post-btn-icon">
+                                <div class=" text-success d-inline-block mr-2 icon-add"></div>
+                            </div>
+                            <div class="d-inline-block">Добавить обзор</div>
+                        </router-link>
                     </div>
                 </div>
-                <div class="col-12 col-lg-8">
-                    <div class="page__title mb-4">{{post.title}}</div>
-                    <img class="img-fluid rounded mb-4" :src="post.img" alt="">
-
-
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="mr-3">
-                                <img class="post-item__author-img rounded-circle " :src="post.autorImg" alt="">
-                            </div>
-                            <div class="d-flex flex-column">
-                                <div class="post__author-name">
-                                    <author :author="post.autor" :authorImg="post.autorImg" linkTag="link--color-black mr-2"/>
-
-                                </div>
-
-                                <div class="small text-muted ">опубликованно {{post.date | fdate}}</div>
-                            </div>
-                        </div>
-                        <div class="mt-auto mb-2">
-                            <post-info
-                                    :like="post.like"
-                                    :comment="post.comment"
-                                    :view="post.view"
-                                    border="false"
-                            ></post-info>
-                        </div>
-                    </div>
-                    <div class=" d-none d-lg-block card-block  layout--bg-grey  p-4 mb-4">
-                        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center">
-                            <div class="d-flex flex-column">
-                                <div class="h2 mb-2">Содержание</div>
-                                <ul class="list-unstyled mb-0">
-                                    <li>
-                                        <a href="" class="link link--color-black">Упаковка и комплект поставки</a>
-                                    </li>
-                                    <li>
-                                        <a href="" class="link link--color-black">Внешний вид</a>
-                                    </li>
-                                    <li>
-                                        <a href="" class="link link--color-black">Технические характеристики</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-block d-lg-none ">
-                        <div v-ripple class="card-block  layout--bg-grey  card-block--full-mobile p-3 "
-                             @click="collapseHeadList=!collapseHeadList">
+                <div class="col-12 col-md-12 col-lg-8">
+                    <div class="d-block d-lg-none">
+                        <div v-ripple class="collapse-block card-block card-block--full-mobile "
+                             @click="searchPlate=!searchPlate">
                             <div class="d-flex justify-content-between align-items-center">
-                                <div class="">Содержание
-
+                                <div class="">Настройка показа</div>
+                                <div class="collapse-block__icon ">
+                                    <div v-if="!searchPlate" class="icon-down"></div>
+                                    <div v-if="searchPlate" class="icon-up"></div>
                                 </div>
-                                <div v-if="!collapseHeadList" class="icon-down"></div>
-                                <div v-if="collapseHeadList" class="icon-up"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="my-4" v-if="collapseHeadList">
-                        <ul class="list-unstyled mb-0">
-                            <li>
-                                <a href="" class="link link--color-black">Упаковка и комплект поставки</a>
-                            </li>
-                            <li>
-                                <a href="" class="link link--color-black">Внешний вид</a>
-                            </li>
-                            <li>
-                                <a href="" class="link link--color-black">Технические характеристики</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="d-block d-lg-none ">
-                        <div v-ripple class="card-block card-block--full-mobile p-3 "
-                             @click="collapseProduct=!collapseProduct">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="">Упоминание товаров
-                                    <span v-if="post.products" class="text-muted ml-2">{{post.products.length}}</span>
+                    <div class="collapse-plate pt-4  " v-if="searchPlate">
+                        <div class="">
+                            <div class="pb-4 bb-1">
+                                <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
+                                <category></category>
+                            </div>
+                            <div class="py-4 bb-1">
+                                <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Формат
                                 </div>
-                                <div v-if="!collapseProduct" class="icon-down"></div>
-                                <div v-if="collapseProduct" class="icon-up"></div>
+                                <div class=" d-flex">
+                                    <div class="custom-control custom-checkbox mr-4">
+                                        <input type="checkbox" id="customCheck1" checked="checked"
+                                               class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">Текст</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mr-4">
+                                        <input type="checkbox" id="customCheck1" checked="checked"
+                                               class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">Видео</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mr-4">
+                                        <input type="checkbox" id="customCheck1" checked="checked"
+                                               class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">Фото</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="py-4 bb-1">
+                                <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Рубрика
+                                </div>
+                                <!--<div class="small d-flex flex-column">-->
+
+                                <!--<div class="mr-3">-->
+                                <!--<a href="#" class="link link&#45;&#45;color-grey">Любительские обзоры</a>-->
+                                <!--</div>-->
+                                <!--<div class="mr-3">-->
+                                <!--<a href="#" class="link link&#45;&#45;color-grey">Профессиональные обзоры</a>-->
+                                <!--</div>-->
+                                <!--<div class="mr-3">-->
+                                <!--<a href="#" class="link link&#45;&#45;color-grey">От производителей</a>-->
+                                <!--</div>-->
+
+                                <!--</div>-->
+                                <div class=" ">
+                                    <div class="custom-control custom-checkbox mr-4">
+                                        <input type="checkbox" id="customCheck1" checked="checked"
+                                               class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">Любительские
+                                            обзоры</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mr-4">
+                                        <input type="checkbox" id="customCheck1" checked="checked"
+                                               class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">Профессиональные
+                                            обзоры</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mr-4">
+                                        <input type="checkbox" id="customCheck1" checked="checked"
+                                               class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">От производителей</label>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="my-4" v-if="collapseProduct">
-                        <product-list :products="post.products"></product-list>
+                        <div class="px-4">
+                            <div v-if="!allFilter" @click="allFilter=true" class="link link--doted  link--color-grey">
+                                Все
+                                фильтры
+                            </div>
+
+                        </div>
                     </div>
 
-
-                    <div class="article pt-3">
+                    <div class="article  ">
                         <p>Здравствуйте, уважаемые читатели! В этом обзоре мы рассмотрим ноутбук от
                             компании Lenovo. Среди главных особенностей модели стильный дизайн, Full HD дисплей, а также
                             дополнительный
@@ -271,329 +278,199 @@
                             Пекине (КНР), а зарегистрирована компания в Гонконге.</p>
 
                     </div>
-                    <post-tag-full class=" mb-4  "
-                                   :source="post.source"
-                                   :format="post.format"
-                                   :tags="post.tags"
-                    ></post-tag-full>
-                    <div class="d-flex justify-content-between ">
-                        <div class="d-flex">
-                            <div class="post__rate-up icon-thumb-up"></div>
-                            <div class="post__rate-count small">+{{post.like}}</div>
-                            <div class="post__rate-down icon-thumb-down"></div>
-                        </div>
-                        <div class="">
-                            <img src="https://i.snag.gy/vqCKB1.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4 d-none d-lg-block">
-                    <div class=" ">
-                        <div class="mb-3">Упомянутые товары</div>
-                        <product-list :products="post.products"></product-list>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="layout--hidden-content pt-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="h1 mb-4">Читайте также</div>
-                        <swiper class="livehack-slider" :options="lifehackOption">
-                            <swiper-slide v-for="(post, index) in posts" :key="index">
-                                <post-img :post="post"></post-img>
-                            </swiper-slide>
-                            <div class="swiper-pagination" slot="pagination"></div>
-                            <div class="sw-button-prev" slot="button-prev">
 
-                            </div>
-                            <div class="sw-button-next" slot="button-next">
-
-                            </div>
-                        </swiper>
-                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="container mt-4">
-            <div class="row">
-                <div class="col-12 col-lg-8">
-                    <div class="h1 mb-4">Комментарии
-                        <div class="d-inline text-muted">{{post.comment}}</div>
-                    </div>
-                    <div class="mb-5">
-                        <div class="comment-block__adding-box">
-                            <froala :tag="'textarea'" :config="config" v-model="commentText"></froala>
-                        </div>
-                        <button type="button" v-on:click="showModalUserAuth" class="btn btn--color-white ">Добавить комментарий</button>
-                    </div>
-                    <comment-item v-for="comment in comments" :comment="comment" :key="comment.id"></comment-item>
-                </div>
-            </div>
+                <div class="col-12 col-lg-4 ">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-12 mb-4 d-none d-lg-block ">
 
 
-        </div>
-        <div class="layout--hidden-content pt-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="row">
-                            <div class="col-8">
-                                <div class="d-flex mb-4 justify-content-between">
-                                    <div class="h1 mb-0">Самое популярное</div>
-                                    <div class="d-none d-md-flex  ">за сегодня
-                                        <div class="small pt-1 ml-1 text-secondary">
-                                            <div class="icon-down"></div>
-                                        </div>
+                            <div class="card-block card-block--shadow  mb-4">
+                                <div class="">
+                                    <div class="p-4 bb-1">
+                                        <div class="h2 mb-3 d-flex align-items-center">Информация</div>
+                                        <ul class="nav nav--vertical small">
+                                            <li class="nav__link"><a href="#" class="link link--color-grey">О проекте</a></li>
+                                            <li class="nav__link"><a href="#" class="link link--color-grey">Тур по сайту
+                                                </a></li>
+                                            <li class="nav__link"><a href="#" class="link link--color-grey">Для авторов
+                                                </a></li>
+                                        </ul>
+
+
                                     </div>
+
+
+
                                 </div>
                             </div>
+
                         </div>
 
-                        <swiper class="livehack-slider" :options="lifehackOption">
 
-                            <swiper-slide v-for="(post, index) in posts" :key="index">
-                                <post-img :post="post"></post-img>
-                            </swiper-slide>
-                            <div class="swiper-pagination" slot="pagination"></div>
-                            <div class="sw-button-prev" slot="button-prev">
 
-                            </div>
-                            <div class="sw-button-next" slot="button-next">
-
-                            </div>
-
-                        </swiper>
                     </div>
                 </div>
+
             </div>
         </div>
-
-        <modal name="userAuth" :adaptive="true" width="600px" height="auto">
-            <div class="pt-4 px-4 d-flex align-items-center justify-content-between ">
-                <div class="h2 mb-0">Требуется авторизация</div>
-                <div class="" @click="hideModalUserAuth">
-                    ✕
-                </div>
-            </div>
-            <div class="p-4 d-flex">
-                <div class="btn btn--color-white">Войти</div>
-                <div class="btn btn--color-white ml-3">Зарегистрироваться</div>
-            </div>
-        </modal>
     </div>
 </template>
-
 <script>
+    // @ is an alias to /src
 
-    import postInfo from '@/components/post-block/parts/post-info.vue'
-    import postTagFull from '@/components/post-block/parts/post-tag-full.vue'
-    import postImg from '@/components/post-block/post-img.vue'
-    import commentItem from '@/components/comment-item.vue'
-    import LightBox from 'vue-image-lightbox'
-    import productList from '@/components/product-list.vue'
-
-
-    import {swiper, swiperSlide} from 'vue-awesome-swiper'
-    import 'swiper/dist/css/swiper.css'
-    import ProductList from "../components/product-list";
-    import author from "@/components/post-block/parts/author.vue"
-
+    import postLarge from '@/components/post-block/post-large.vue'
+    import postTextShort from '@/components/post-block/post-text-short.vue'
+    import postHalfImg from '@/components/post-block/post-half-img.vue'
+    import category from "@//components/category.vue";
+    import dateRangeSelect from "@//components/dateRangeSelect.vue"
 
     export default {
+        name: 'review',
         components: {
-            ProductList,
-            postInfo,
-            LightBox,
-            postTagFull,
-            swiper,
-            swiperSlide,
-            commentItem,
-            postImg,
-            productList,
-            author
+            postTextShort,
+            postHalfImg,
+            postLarge,
+            category,
+            dateRangeSelect
+
         },
-        data() {
+        props: {
+            isAuth: {
+                type: false,
+                default: ""
+            }
+        },
+        data: function () {
             return {
-                name: 'register-modules-example',
-                post: {},
-                posts: {},
-                comments: {},
-                commentText: "",
-                collapseHeadList: false,
-                collapseProduct: false,
-                config: {
-                    toolbarInline: true,
-                    placeholderText: 'Вам слово...',
-                    heightMin: 80,
-                    charCounterMax: 140,
-                    quickInsertButtons: ['image', 'video', 'table'],
-                    toolbarButtons: ['bold', 'italic', 'quote', 'paragraphFormat', 'insertLink', 'underline', 'formatOL', 'formatUL'],
-
-                },
-                images: [
+                category: true,
+                searchPlate: false,
+                thame: false,
+                brand: false,
+                review: [],
+                error: [],
+                allFilter: false,
+                searchword: '',
+                initSelected: [],
+                treeData1: [
                     {
-                        thumb: 'https://via.placeholder.com/160x90',
-                        src: 'https://via.placeholder.com/1600x900',
-                        caption: 'Описание'
+                        title: 'Компьютеры, игры, комплектующие',
+                        expanded: false,
+                        children: [{
+                            title: 'Ноутбуки и планшеты',
+                            expanded: false
 
-                    },
-                    {
-                        thumb: 'https://via.placeholder.com/160x90',
-                        src: 'https://via.placeholder.com/1600x900',
-                        caption: 'Описание2'
-
-                    }
-                ],
-                lifehackOption: {
-                    slidesPerView: 3,
-                    spaceBetween: 40,
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true
-                    },
-                    breakpoints: {
-                        992: {
-                            slidesPerView: 2,
-                            spaceBetween: 40,
-                            pagination: {
-                                el: '.swiper-pagination',
-                            },
                         },
-                        768: {
-                            slidesPerView: "auto",
-                            spaceBetween: 40
-                        }
+                            {
+                                title: 'Компьютеры и периферия',
+                                expanded: false
+
+                            }, {
+                                title: 'Комплектующие для ПК',
+                                expanded: false
+
+                            }]
+                    }, {
+                        title: 'Цифровая техника',
+                        expanded: false,
+                        children: [{
+                            title: 'node 1-1',
+                            expanded: false
+
+                        }]
+                    }, {
+                        title: 'Бытовая техника',
+                        expanded: false,
+                        children: [{
+                            title: 'node 1-1',
+                            expanded: false
+
+                        }]
+                    }, {
+                        title: 'Красота и здоровье',
+                        expanded: false,
+                        children: [{
+                            title: 'node 1-1',
+                            expanded: false
+
+                        }]
+                    }, {
+                        title: 'Автотовары',
+                        expanded: false,
+                        children: [{
+                            title: 'node 1-1',
+                            expanded: false
+
+                        }]
+                    }, {
+                        title: 'Компьютеры, игры, комплектующие',
+                        expanded: false,
+                        children: [{
+                            title: 'node 1-1',
+                            expanded: false
+
+                        }]
                     },
-                    navigation: {
-                        nextEl: '.sw-button-next',
-                        prevEl: '.sw-button-prev'
-                    }
 
-                },
 
+                ],
             }
         },
         methods: {
+            show() {
+                this.$modal.show('filter');
+            },
+            hide() {
+                this.$modal.hide('filter');
+            },
 
-            showModalUserAuth() {
-                this.$modal.show('userAuth');
+
+            search() {
+                this.$refs.tree.searchNodes(this.searchword)
             },
-         hideModalUserAuth() {
-                this.$modal.hide('userAuth');
-            },
+            selectedNodes() {
+                this.initSelected = this.$refs.tree.getCheckedNodes()
+
+            }
         },
         created() {
-            this.axios.get('https://club-route.firebaseio.com/digest.json?orderBy=%22id%22&equalTo=' + this.$route.params.id)
-                .then(response => {
-                    this.post = Object.values(response.data)[0]
-                })
-                .catch(e => {
-                    this.error.push(e)
-                })
-
-            this.axios.get('https://club-route.firebaseio.com/comments.json?orderBy=%22postId%22&equalTo=' + this.$route.params.id)
-                .then(response => {
-                    this.comments = Object.values(response.data)
-                })
-                .catch(e => {
-                    this.error.push(e)
-                })
-
             this.axios.get('https://club-route.firebaseio.com/digest.json')
                 .then(response => {
-                    this.posts = response.data
+                    this.review = response.data
                 })
                 .catch(e => {
                     this.error.push(e)
                 })
 
-
         }
+
     }
 </script>
-
 <style>
-    .comment-block__adding-box {
-        border: 1px solid #e8e3e3;
-        border-radius: 8px;
-        padding: 1rem;
-        margin-bottom: 1rem;
-        max-width: 100%;
+    .posts {
+        padding-top: 1.5rem;
     }
 
-    .post-item__author-img {
-        width: 40px;
-        height: 40px;
-        background: #eee;
+    .discussions__source-icon-wrap {
+        border: 1px solid #eee;
+        width: 22px;
+        border-radius: 4px;
+        height: 22px;
+        margin-right: 9px;
+        padding: 2px 0 0 3px;
+        color: #999;
     }
 
-    .post__author-name {
-        line-height: 1.1;
+    .new-post-btn {
+        border: 1px solid #eee;
+        padding: 7px 12px 6px 35px;
+        border-radius: 50px;
+        position: relative;
     }
 
-
-
-    /*---------------------рейтинг*/
-
-    .product-plate__rating-wrap .Rate__star[data-v-59a74259] {
-        padding: 0;
+    .new-post-btn-icon {
+        position: absolute;
+        left: 11px;
+        top: 9px;
     }
-
-    .product-plate__rating-wrap .icon[data-v-59a74259] {
-        width: 11px;
-        height: 11px;
-        margin: 0 5px 0 0;
-    }
-
-    .product-plate__rating-wrap .Rate__star.filled[data-v-59a74259] {
-        color: #f48615;
-    }
-
-    .sticky-sidebar {
-        position: sticky !important;
-        top: 80px;
-    }
-
-    /*-----------------слайдер*/
-
-    .layout--hidden-content {
-        overflow: hidden;
-    }
-
-    .swiper-container.livehack-slider {
-        overflow: visible;
-    }
-
-    .swiper-container {
-        width: 100%;
-    }
-
-    .livehack-slider.swiper-container .swiper-slide {
-        width: 280px;
-
-    }
-
-    .post__rate-up {
-        font-size: 24px;
-        cursor: pointer;
-        color: #6BA833;
-        opacity: .7;
-    }
-
-    .post__rate-count {
-        margin: 0 14px;
-        font-size: 20px;
-    }
-
-    .post__rate-down {
-        font-size: 24px;
-        padding-top: 3px;
-        cursor: pointer;
-        color: #CC2E12;
-        opacity: .7;
-    }
-
-
 </style>

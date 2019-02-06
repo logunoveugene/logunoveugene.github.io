@@ -15,7 +15,6 @@
                     <input class="w-100 new-post__title" type="text" placeholder="Введите заголовок">
                     <div class="new-content-box">
                         <froala :tag="'textarea'" :config="config" v-model="model"></froala>
-
                         <div class="new-post__tags tags-in-post mt-5 my-4">
                             <multiselect v-model="selected"
                                          tag-placeholder="Добавить новый тег"
@@ -35,10 +34,7 @@
 
                             </multiselect>
                         </div>
-
-
                     </div>
-
                 </div>
                 <div class="d-block d-lg-none ">
                     <div class="fixed-bottom p-2">
@@ -53,20 +49,37 @@
                 <div class="col-12 col-lg-4 d-none d-lg-block">
                     <div class="card-block p-4 mb-4">
                         <div class=" ">
-                            <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Редакторские настройки
+                            <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Редакторские
+                                настройки
                             </div>
-                            <div class=" ">
+                            <div class="">
                                 <div class="custom-control custom-checkbox mb-2">
                                     <input type="checkbox" id="customCheckw3" class="custom-control-input">
                                     <label for="customCheckw3" class="custom-control-label">Закрепленная статья</label>
                                 </div>
                                 <div class="custom-control custom-checkbox mb-2">
-                                    <input type="checkbox" id="customCheck115" class="custom-control-input">
-                                    <label for="customCheck115" class="custom-control-label">Опубликовано на главной (Клуб)</label>
+                                    <input type="checkbox" id="customCheckw32342" class="custom-control-input">
+                                    <label for="customCheckw32342" class="custom-control-label">Редакторская
+                                        статья</label>
                                 </div>
                                 <div class="custom-control custom-checkbox mb-2">
+                                    <input type="checkbox" id="customCheck115" class="custom-control-input"
+                                           v-model="checkedPublishToHP">
+                                    <label for="customCheck115" class="custom-control-label">Опубликовано на главной
+                                        (Клуб)</label>
+                                </div>
+                                <div class="bg-light rounded p-2 mb-3" v-if="checkedPublishToHP">
+                                    <select class="custom-select custom-select-lg">
+                                        <option selected>Обычное размещение</option>
+                                        <option value="1">Спецфото</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="custom-control custom-checkbox mb-2">
                                     <input type="checkbox" id="customCheck231" class="custom-control-input">
-                                    <label for="customCheck231" class="custom-control-label">Опубликовано на главной (DNS)</label>
+                                    <label for="customCheck231" class="custom-control-label">Опубликовано на главной
+                                        (DNS)</label>
                                 </div>
                                 <div class="custom-control custom-checkbox mb-2">
                                     <input type="checkbox" id="customCheck1" class="custom-control-input">
@@ -95,6 +108,8 @@
                                              :group-select="true"
                                              deselectGroupLabel="Отменить выбор"
 
+                                             selectGroupLabel='Выбрать все'
+
                                              :options="options2"
                                              :multiple="true"
                                              @tag="addTag">
@@ -118,10 +133,39 @@
 
                                 </multiselect>
                             </div>
+
+
+
+
+                            <div class="new-post__tags mb-4">
+                                <div class="small text-muted mb-1">Формат статьи</div>
+                                <multiselect v-model="selectedType"
+                                             tag-placeholder="Добавить новый тег"
+                                             placeholder="Выберите формат"
+                                             selectLabel="Выбрать"
+                                             selectedLabel="Выбран"
+                                             deselectLabel="Отменить выбор"
+                                             label="name"
+                                             track-by="code"
+                                             open-direction="bottom"
+                                             :options="typeOptions"
+                                             :multiple="true"
+                                           >
+
+                                </multiselect>
+                            </div>
+
+
+
+
                             <div class="new-post__tags mb-4">
                                 <div class="small text-muted mb-1">Обложка статьи</div>
                                 <input type="file" class="form-control-file" id="exampleFormControlFile1">
                             </div>
+
+
+
+
                             <div class="new-post__tags mb-4">
                                 <div class="small text-muted mb-1">Главное фото</div>
                                 <input type="file" class="form-control-file" id="exampleFormControlFile11">
@@ -325,14 +369,23 @@
             return {
                 readyToPublic: false,
                 selected: [],
+                checkedPublishToHP: false,
                 selectedRub: [],
                 selectedlist: [],
+                selectedType:[],
                 options: [
                     {name: 'Ноутбуки', code: '154'},
                     {name: 'Компьютеры', code: '49'},
                     {name: 'Asus', code: '32'},
                     {name: 'Lenovo', code: '17'},
                     {name: 'Смартфоны', code: '26'}
+                ],
+
+
+                typeOptions: [
+                    {name: 'Текст', code: '154'},
+                    {name: 'Фото', code: '49'},
+                    {name: 'Видео', code: '32'},
                 ],
 
                 options2: [
@@ -347,13 +400,22 @@
                         language: 'Дайджест',
                         libs: [
                             {name: 'Новости', category: 'Front-end'},
-                            {name: 'Интервью', category: 'Backend'}
+                            {name: 'Интервью', category: 'Backend'},
+                            {name: 'Репортаж', category: 'Front-end'},
+                            {name: 'История технологий', category: 'Backend'},
+                            {name: 'Аналитика', category: 'Front-end'},
+                            {name: 'Рейтинги', category: 'Backend'},
+                            {name: 'Опрос', category: 'Front-end'},
+                            {name: 'Эксклюзив', category: 'Backend'},
+                            {name: 'Новинки', category: 'Front-end'},
+                            {name: 'Акции', category: 'Backend'}
                         ]
                     },
                     {
                         language: 'Обзоры',
                         libs: [
                             {name: 'Профессиональный', category: 'Backend'},
+                            {name: 'От производителя', category: 'Backend'},
                             {name: 'Любительский', category: 'Backend'}
                         ]
                     },

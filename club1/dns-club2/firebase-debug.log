@@ -1,0 +1,232 @@
+[debug] [2019-02-06T08:58:15.735Z] ----------------------------------------------------------------------
+[debug] [2019-02-06T08:58:15.737Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2019-02-06T08:58:15.737Z] CLI Version:   5.1.1
+[debug] [2019-02-06T08:58:15.737Z] Platform:      darwin
+[debug] [2019-02-06T08:58:15.737Z] Node Version:  v8.11.3
+[debug] [2019-02-06T08:58:15.738Z] Time:          Wed Feb 06 2019 18:58:15 GMT+1000 (+10)
+[debug] [2019-02-06T08:58:15.738Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-02-06T08:58:15.756Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-02-06T08:58:15.756Z] > authorizing via signed-in user
+[debug] [2019-02-06T08:58:15.756Z] [iam] checking project club-route for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-02-06T08:58:15.758Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-02-06T08:58:15.758Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-02-06T08:58:16.359Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-06T08:58:16.395Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/club-route:testIamPermissions  
+
+[debug] [2019-02-06T08:58:17.950Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-06T08:58:17.953Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/club-route  
+ 
+[debug] [2019-02-06T08:58:18.910Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'club-route'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-02-06T08:58:18.916Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/club-route/versions  
+
+[debug] [2019-02-06T08:58:20.651Z] <<< HTTP RESPONSE 500
+[debug] [2019-02-06T08:58:20.651Z] <<< HTTP RESPONSE BODY
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2019-02-06T08:58:21.167Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500,
+    "body": {
+      "error": {
+        "code": 500,
+        "message": "Internal error encountered.",
+        "status": "INTERNAL"
+      }
+    },
+    "headers": {
+      "vary": "X-Origin, Referer, Origin,Accept-Encoding",
+      "content-type": "application/json; charset=UTF-8",
+      "date": "Wed, 06 Feb 2019 08:58:20 GMT",
+      "server": "ESF",
+      "cache-control": "private",
+      "x-xss-protection": "1; mode=block",
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "alt-svc": "quic=\":443\"; ma=2592000; v=\"44,43,39\"",
+      "accept-ranges": "none",
+      "connection": "close"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "firebasehosting.googleapis.com",
+        "port": 443,
+        "hostname": "firebasehosting.googleapis.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v1beta1/sites/club-route/versions",
+        "path": "/v1beta1/sites/club-route/versions",
+        "href": "https://firebasehosting.googleapis.com/v1beta1/sites/club-route/versions"
+      },
+      "method": "POST"
+    }
+  }
+}
+[debug] [2019-02-06T08:59:36.108Z] ----------------------------------------------------------------------
+[debug] [2019-02-06T08:59:36.110Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2019-02-06T08:59:36.110Z] CLI Version:   5.1.1
+[debug] [2019-02-06T08:59:36.110Z] Platform:      darwin
+[debug] [2019-02-06T08:59:36.110Z] Node Version:  v8.11.3
+[debug] [2019-02-06T08:59:36.111Z] Time:          Wed Feb 06 2019 18:59:36 GMT+1000 (+10)
+[debug] [2019-02-06T08:59:36.111Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-02-06T08:59:36.121Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-02-06T08:59:36.121Z] > authorizing via signed-in user
+[debug] [2019-02-06T08:59:36.122Z] [iam] checking project club-route for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-02-06T08:59:36.123Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/club-route:testIamPermissions  
+
+[debug] [2019-02-06T08:59:37.584Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-06T08:59:37.586Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/club-route  
+ 
+[debug] [2019-02-06T08:59:38.358Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'club-route'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-02-06T08:59:38.361Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/club-route/versions  
+
+[debug] [2019-02-06T08:59:40.009Z] <<< HTTP RESPONSE 500
+[debug] [2019-02-06T08:59:40.009Z] <<< HTTP RESPONSE BODY
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2019-02-06T08:59:40.530Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500,
+    "body": {
+      "error": {
+        "code": 500,
+        "message": "Internal error encountered.",
+        "status": "INTERNAL"
+      }
+    },
+    "headers": {
+      "vary": "X-Origin, Referer, Origin,Accept-Encoding",
+      "content-type": "application/json; charset=UTF-8",
+      "date": "Wed, 06 Feb 2019 08:59:39 GMT",
+      "server": "ESF",
+      "cache-control": "private",
+      "x-xss-protection": "1; mode=block",
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "alt-svc": "quic=\":443\"; ma=2592000; v=\"44,43,39\"",
+      "accept-ranges": "none",
+      "connection": "close"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "firebasehosting.googleapis.com",
+        "port": 443,
+        "hostname": "firebasehosting.googleapis.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v1beta1/sites/club-route/versions",
+        "path": "/v1beta1/sites/club-route/versions",
+        "href": "https://firebasehosting.googleapis.com/v1beta1/sites/club-route/versions"
+      },
+      "method": "POST"
+    }
+  }
+}
+[debug] [2019-02-06T09:00:53.361Z] ----------------------------------------------------------------------
+[debug] [2019-02-06T09:00:53.363Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2019-02-06T09:00:53.364Z] CLI Version:   5.1.1
+[debug] [2019-02-06T09:00:53.364Z] Platform:      darwin
+[debug] [2019-02-06T09:00:53.364Z] Node Version:  v8.11.3
+[debug] [2019-02-06T09:00:53.364Z] Time:          Wed Feb 06 2019 19:00:53 GMT+1000 (+10)
+[debug] [2019-02-06T09:00:53.364Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-02-06T09:00:53.378Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-02-06T09:00:53.378Z] > authorizing via signed-in user
+[debug] [2019-02-06T09:00:53.378Z] [iam] checking project club-route for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-02-06T09:00:53.380Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/club-route:testIamPermissions  
+
+[debug] [2019-02-06T09:00:54.828Z] <<< HTTP RESPONSE 200
+[debug] [2019-02-06T09:00:54.830Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/club-route  
+ 
+[debug] [2019-02-06T09:00:55.563Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'club-route'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-02-06T09:00:55.567Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/club-route/versions  
+
+[debug] [2019-02-06T09:00:57.167Z] <<< HTTP RESPONSE 500
+[debug] [2019-02-06T09:00:57.167Z] <<< HTTP RESPONSE BODY
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2019-02-06T09:00:57.703Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500,
+    "body": {
+      "error": {
+        "code": 500,
+        "message": "Internal error encountered.",
+        "status": "INTERNAL"
+      }
+    },
+    "headers": {
+      "vary": "X-Origin, Referer, Origin,Accept-Encoding",
+      "content-type": "application/json; charset=UTF-8",
+      "date": "Wed, 06 Feb 2019 09:00:57 GMT",
+      "server": "ESF",
+      "cache-control": "private",
+      "x-xss-protection": "1; mode=block",
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "alt-svc": "quic=\":443\"; ma=2592000; v=\"44,43,39\"",
+      "accept-ranges": "none",
+      "connection": "close"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "firebasehosting.googleapis.com",
+        "port": 443,
+        "hostname": "firebasehosting.googleapis.com",
+        "hash": null,
+        "search": null,
+        "query": null,
+        "pathname": "/v1beta1/sites/club-route/versions",
+        "path": "/v1beta1/sites/club-route/versions",
+        "href": "https://firebasehosting.googleapis.com/v1beta1/sites/club-route/versions"
+      },
+      "method": "POST"
+    }
+  }
+}

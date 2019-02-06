@@ -162,8 +162,23 @@ textarea:focus, input:focus{
     align-items: center;
 }
 
+
 .nav__link:last-child {
     margin-right: 0;
+}
+
+.nav--vertical{
+    flex-direction: column;
+}
+
+.nav--vertical .nav__link {
+    margin-bottom: .75rem;
+}
+
+
+.nav--vertical .nav__link:last-child {
+    margin-bottom: 0rem;
+
 }
 
 /*типографика*/
@@ -852,3 +867,82 @@ ul {
     border-radius: .5rem !important;
 }
 
+
+
+
+
+
+
+
+
+.article blockquote {
+    padding-left: 20px;
+    border-left: 3px solid #ff8700;
+    padding-bottom: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+    font-size: 18px;
+}
+
+@media (min-width: 768px) {
+    .article p, .article h1, .article h2, .article ul, .article ol, .article .table__wrap {
+        margin-left: 0px;
+        margin-right: 80px;
+
+    }
+
+    .article p {
+
+        font-size: 18px;
+    }
+
+    .article blockquote {
+        padding-left: 40px;
+        border-left: 3px solid #ff8700;
+        padding-bottom: 0;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        font-style: italic;
+        font-size: 24px;
+    }
+
+}
+
+.article img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.article ul {
+    padding-left: 20px;
+    margin-bottom: 2rem;
+
+}
+
+.article ol {
+    padding-left: 20px;
+    margin-bottom: 2rem;
+
+}
+
+.article li {
+    margin-bottom: .5rem;
+
+}
+
+.article p {
+    margin-bottom: 2rem;
+
+}
+
+.article p:first-child {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    margin-left: 0;
+    margin-right: 0;
+}

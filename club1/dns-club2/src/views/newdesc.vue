@@ -32,6 +32,19 @@
                 </div>
                 <div class="col-12 col-lg-4 d-none d-lg-block">
                     <div class="card-block p-4 mb-4">
+                        <div class=" ">
+                            <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Редакторские
+                                настройки
+                            </div>
+                            <div class="">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" id="customCheckw3" class="custom-control-input">
+                                    <label for="customCheckw3" class="custom-control-label">Закрепленная тема</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-block p-4 mb-4">
                         <div class="">
                             <div class="new-post__tags mb-4">
                                 <div class="small text-muted mb-1">Раздел</div>
@@ -74,7 +87,10 @@
                             <div class="">
                                 <div class="d-flex align-items-center mb-4">
                                     <div class="mr-3">
-                                        <div class="btn btn--color-orange">Сохранить и опубликовать</div>
+                                        <div class="btn btn--color-orange">Опубликовать сейчас</div>
+                                    </div>
+                                    <div class="mr-3">
+                                        <div class="btn btn--color-white">Сохранить</div>
                                     </div>
                                 </div>
                                 <div class="new-post__save-state small text-secondary mb-3">

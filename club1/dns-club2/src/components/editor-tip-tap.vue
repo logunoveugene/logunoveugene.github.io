@@ -316,9 +316,9 @@
         outline: none
     }
 
-    blockquote, h1, h2, h3, ol, p, pre, ul {
-        margin: 1rem 0
-    }
+    /*blockquote, h1, h2, h3, ol, p, pre, ul {*/
+        /*margin: 1rem 0*/
+    /*}*/
 
     blockquote:first-child, h1:first-child, h2:first-child, h3:first-child, ol:first-child, p:first-child, pre:first-child, ul:first-child {
         margin-top: 0

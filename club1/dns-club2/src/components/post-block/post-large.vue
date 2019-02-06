@@ -3,14 +3,13 @@
         <div class="post-large">
 
             <div class="post-large__title  mb-3 ">
-                <div class="h3 d-inline-block mb-0 mr-1"  v-if="post.autor==='John Doe'">
+                <div class="h3 d-inline-block mb-0 mr-1"  v-if="post.autor==='1'">
                     <a href="#" class="link link--color-grey">
                         <span class=" icon-pen"></span>
                     </a>
                 </div>
                 <router-link class="link link--color-black" :to="{ name: 'post', params: { id: post.id }}">
-
-                    {{post.title}}
+                    <span class="text-warning" v-if="post.isDraft" >[Черновик]</span>  {{post.title}}
                 </router-link>
             </div>
             <div class="d-flex align-items-start align-items-md-center flex-column flex-md-row justify-content-between">

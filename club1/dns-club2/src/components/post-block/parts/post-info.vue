@@ -1,17 +1,17 @@
 <template>
   <div class="post-info" :class="{'post-info--no-border': border}">
-    <div class="post-info__rating">
+    <div class="post-info__rating" :class="{'post-info__rating--red': like<0 }" >
       <div class="post-info__icon">
         <div class="icon-thumb-up"></div>
       </div>
-      <div class="post-info__count">{{like}} </div>
+      <div class="post-info__count">{{like | formatNumber }} </div>
     </div>
     <div class="post-info__views">
       <div class="post-info__icon">
         <div class="icon-open-eye"></div>
       </div>
 
-      <div class="post-info__count">{{view}}</div>
+      <div class="post-info__count">{{view | formatNumber }}</div>
     </div>
     <br v-if="lastactivity" >
     <div class="post-info__comments">
@@ -19,7 +19,7 @@
         <div class="icon-chat-bubble"></div>
       </div>
 
-      <div class="post-info__count">{{comment}} </div>
+      <div class="post-info__count">{{comment | formatNumber }} </div>
       <!--<div class="post-info__activity d-none d-sm-block" v-if="lastactivity">ответов, последний {{lastactivity | fdate}}</div> -->
     </div>
   </div>
@@ -98,6 +98,12 @@
   color: #28a745;
   font-weight: 700;
 }
+
+.post-info__rating--red{
+  color: #ca1c1c;
+}
+
+
 .post-info__views{
   margin-right: 1.5rem;
   -ms-flex-align: center;
