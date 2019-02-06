@@ -71,8 +71,6 @@ export default class Main extends React.Component {
 
 
             isChartLoaded: false,
-
-
             barData: [],
             nodeIdReadyForAction: null,
 
@@ -1293,7 +1291,6 @@ export default class Main extends React.Component {
                                             width: '100%',
                                             height: 100,
                                             position: "relative"
-
                                         }}
                                     >
                                         <BoxShadow

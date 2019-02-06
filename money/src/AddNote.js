@@ -10,7 +10,7 @@ import {
     TouchableOpacity,
     InteractionManager,
     DatePickerAndroid,
-    Text
+    Text, TouchableNativeFeedback, Dimensions, TouchableHighlight
 } from 'react-native'
 import NumKeyboard from './addNote/numKeyboard'
 import {NavigationEvents} from 'react-navigation';
@@ -23,8 +23,10 @@ import dayjs from 'dayjs'
 import 'dayjs/locale/ru'
 import _ from "lodash";
 import {typeCategoryListDefault, bankAccountsListDefault} from "./data/base/BaseConstant";
+import BoxShadow from "./shadow";
 
 
+var width = Dimensions.get('window').width;
 export default class Main extends React.Component {
     state = {
         currentUser: null,
@@ -292,35 +294,139 @@ export default class Main extends React.Component {
                 <NavigationEvents
                     onDidFocus={() => this.componentDidMount()}
                 />
+
+
+
                 <View style={styles.fixedHeader}>
-                    <TouchableOpacity
-                        onPress={() => this.props.navigation.goBack()}>
-                        <IconM name="arrow-left" type="simple-line-icons" size={25}/>
-                    </TouchableOpacity>
+                    <TouchableNativeFeedback
+                        style={{
+                            padding: 10,
+                            marginTop: 8,
+                            borderRadius: 25,
+                        }}
+                        background={TouchableNativeFeedback.Ripple('#c3c7ce', true)}
+                        onPress={() => this.props.navigation.goBack()}
+                    >
+                        <View style={{
+                            borderRadius: 25,
+                            width: 35,
+                            height: 35,
+                            backgroundColor: '#f1f5fc',
+                            paddingTop: 5,
+                            paddingLeft: 4,
+                            marginLeft: 6,
+                            marginTop: 15
+                        }}>
 
+                            <IconM name="arrow-left" type="simple-line-icons" size={25}/>
+                        </View>
+                    </TouchableNativeFeedback>
+                    <Text
+                        style={{
+                            paddingVertical: 10,
+                            marginTop: 8,
 
-                    {(typeCategoryList !== null) &&
-                    <Picker
-                        mode="dropdown"
-                        selectedValue={typeCategoryTitleSelected}
-                        style={{height: 50, width: 130}}
-                        onValueChange={((itemValue) => this._chooseType(itemValue))}>
-                        {typeCategoryList.map((i) => (
-                            <Picker.Item key={i.title} label={i.title} value={i.title}/>
-                        ))}
-                    </Picker>}
-
-                    {(bankAccountsList !== null) && <Picker
-                        mode="dropdown"
-                        selectedValue={this.state.selectedAccount}
-                        style={{height: 50, width: 130}}
-                        onValueChange={((a) => this._chooseAccount(a))}>
-                        {bankAccountsList.map((a, index) => (
-                            <Picker.Item key={index} label={a.title} value={a}/>
-                        ))}
-                    </Picker>
-                    }
+                            fontSize: 20,
+                            height: 50
+                        }}
+                    >Добавление записи</Text>
                 </View>
+
+                {(typeCategoryList !== null) &&
+                <View>
+                    <View
+                        style={{
+                            width: "100%",
+                            position: "absolute",
+                            top: 50
+
+                        }}
+                    >
+                        <BoxShadow
+                            setting={{
+                                width: +`${width}` - 40,
+                                height: 13,
+                                color: "#0c034c",
+                                border: 30,
+                                radius: 10,
+                                opacity: 0.05,
+                                x: 20,
+                                y: 5,
+                                style: {zIndex: 19, marginBottom: 15}
+                            }}/>
+                    </View>
+                    <View
+                        style={{
+                        width: +`${width}` - 20,
+                        height: 63,
+                        // flexDirection: 'column',
+                        // alignItems: "center",
+                        zIndex: 50,
+                        backgroundColor: '#ffffff',
+                        // borderBottomWidth: 1,
+                        marginHorizontal: 10,
+                        marginTop: 10,
+                        borderRadius: 10,
+                        padding: 15,
+                        // borderLeftColor: `${l.typeSubCategoryColor}`,
+                        // borderLeftWidth: 1,
+                        // // marginHorizontal: 10,
+                        // marginBottom: 7,
+                        // elevation: 1
+                    }}
+                    >
+                        <View
+                            style={{
+                                marginLeft: -4,
+                                flexDirection: 'row'
+                            }}
+                        >
+
+                            {this.state.typeCategoryList.map((i, index) =>
+                                <TouchableOpacity
+                                    key={index}
+                                    onPress={() => {
+                                        this._chooseType(i.title)
+                                    }}
+                                    style={{
+                                        textAlign: 'left',
+                                        paddingVertical: 3,
+                                        // width: "20%",
+                                        position: "relative"
+                                    }}
+                                >
+                                    {i.title === this.state.typeCategoryTitleSelected &&
+                                    <View
+                                        style={{
+                                            backgroundColor: '#ffda3a',
+                                            position: 'absolute',
+                                            top: 1,
+                                            left: -1,
+                                            width: '100%',
+                                            height: 32,
+                                            borderRadius: 16,
+                                            opacity: .5
+                                        }}
+                                    />
+                                    }
+                                    <Text
+                                        style={{
+                                            fontSize: 16,
+                                            paddingHorizontal: 8,
+                                            paddingVertical: 3,
+                                        }}
+                                    >
+                                        {i.title} </Text>
+                                </TouchableOpacity>
+                            )}
+                        </View>
+
+                    </View>
+
+                </View>}
+
+
+
 
                 <ScrollView style={styles.nodeDescriptionWrapScroll}>
                     <View style={styles.nodeDescriptionWrap}>
@@ -354,7 +460,17 @@ export default class Main extends React.Component {
 
 
                 {this.state.typeSubCategoryIndex !== null &&
-                <View>
+                <View
+                    style={{
+                        margin: 10,
+                        width: +`${width}` - 20,
+                        borderRadius:10,
+                        overflow: "hidden",
+                        position:'relative',
+                        height:340,
+                        backgroundColor: '#fff'
+                    }}
+                >
                     <View style={styles.inputWrap}>
                         <TouchableOpacity
                             style={styles.datePickerButton}
@@ -382,11 +498,57 @@ export default class Main extends React.Component {
                     {!keyboardIsShown && <NumKeyboard money={this.state.sum} updateData={this.updateMoney}/>}
 
 
-                    <TouchableOpacity
-                        style={styles.fullButton}
-                        onPress={this.handlePostData}>
-                        <Text> Записать</Text>
-                    </TouchableOpacity>
+                    <View
+                        style={{
+                            width: '100%',
+                            position: "relative",
+                            height:60
+                        }}
+                    >
+                        <BoxShadow
+                            setting={{
+                                width: +`${width}` - 60,
+                                height: 40,
+                                color: "#b07919",
+                                border: 10,
+                                radius: 20,
+                                opacity: 0.2,
+                                x: 20,
+                                y: 20,
+                                style: {position: 'absolute', top: 10}
+
+                            }}>
+                            <View style={{
+                                width: '100%',
+                                height: 20
+                            }}>
+                            </View>
+
+                        </BoxShadow>
+                        <TouchableHighlight
+                            underlayColor={"#ffb316"}
+                            style={{
+                                width: +`${width}` - 40,
+                                alignItems: 'center',
+
+                                backgroundColor: "#ffda3a",
+                                margin: 10,
+                                padding: 15,
+                                borderRadius: 30,
+                                top: 10,
+                                left: 0,
+                                position: "absolute"
+
+                            }} onPress={this.handlePostData}>
+                            <Text
+                                style={{
+                                    fontSize: 18
+                                }}
+                            >Добавить</Text>
+                        </TouchableHighlight>
+                    </View>
+
+
 
                 </View>
                 }
@@ -398,20 +560,20 @@ export default class Main extends React.Component {
 }
 const styles = StyleSheet.create({
 
+    container: {
+        flex: 1,
+        // padding: 5,
+        backgroundColor: '#f1f5fc',
+
+    },
     fixedHeader: {
-        backgroundColor: 'rgba(255,255,255,1)',
-        elevation: 1,
+        // backgroundColor: 'rgba(255,255,255,1)',
+        // elevation: 1,
         flexDirection: 'row',
         width: '100%',
         height: 50,
 
         position: 'relative',
-    },
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        height: 50,
-
     },
     inputWrap: {
         alignItems: 'center',
