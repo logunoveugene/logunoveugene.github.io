@@ -90,13 +90,17 @@ export default class Main extends React.Component {
             filterSelectedTypeList: null,
             filterSelectedSubTypeList: null,
 
-            filterByMonthPlate: true,
+            filterByMonthPlate: false,
             filterByDateRangePlate: false,
             selectedTab: "Расходы",
 
             mainIncome: null,
             mainCost: null,
-            mainResult: null
+            mainResult: null,
+
+
+            modalFilterByMonthPlate: false,
+
 
 
         }
@@ -138,6 +142,7 @@ export default class Main extends React.Component {
         })
 
         try {
+            await AsyncStorage.removeItem('nodeList');
             var storedNote = await AsyncStorage.getItem('nodeList');
             if (storedNote == null) {
                 storedNote = sampleNodes
@@ -436,10 +441,7 @@ export default class Main extends React.Component {
         const monthFormat = (i) => dayjs(i).locale('ru').format('MMM');
 
         const mainTabs = [
-            // {
-            //     title: "Сводка",
-            //     typeName: null
-            // },
+
             {
                 title: "Расходы",
                 typeName: "Списание"
@@ -479,7 +481,7 @@ export default class Main extends React.Component {
                             height: "100%",
                             backgroundColor: "rgba(221,225,232,.7)",
                             zIndex: 18,
-                            opacity: +this.state.fadeAnim,
+
                         }}
                         onPress={() => this.setState({
                             dateFilterVisible: false
@@ -514,114 +516,9 @@ export default class Main extends React.Component {
                         }}>
 
 
-                            {this.state.filterByMonthPlate &&
-                            <View>
-                                <View
-                                    style={{
-                                        flexDirection: "row"
-                                    }}
-                                >
-                                    <ScrollView
-                                        horizontal={true}
-                                        style={{
-                                            marginLeft: -4
-                                        }}
-                                    >
-                                        {this.state.yearsList.map((i, index) =>
-                                            <TouchableOpacity
-                                                key={index}
-                                                onPress={() => {
-                                                    this.selectYear(i)
-                                                }}
-                                                style={{
-                                                    textAlign: 'left',
-                                                    padding: 3,
-                                                    // width: "20%",
-                                                    position: "relative"
-                                                }}
-                                            >
 
 
-                                                {i === this.state.selectedYear &&
-                                                <View
-                                                    style={{
-                                                        backgroundColor: '#ffda3a',
-                                                        position: 'absolute',
-                                                        top: 4,
-                                                        left: 0,
-                                                        width: 50,
-                                                        height: 25,
-                                                        borderRadius: 12,
-                                                        opacity: .5
-                                                    }}
-                                                />
-                                                }
-                                                <Text
-                                                    style={{
-                                                        fontSize: 16,
-                                                        padding: 3,
-                                                    }}
-                                                >
-                                                    {i} </Text>
-                                            </TouchableOpacity>
-                                        )}
-                                    </ScrollView>
 
-
-                                </View>
-                                <View
-                                    style={{
-                                        flexDirection: "row",
-                                        flexWrap: 'wrap',
-                                        justifyContent: 'space-between'
-                                    }}
-                                >
-                                    {this.state.monthList.map((i, index) =>
-                                        <TouchableOpacity
-                                            key={index}
-                                            style={{
-                                                textAlign: 'left',
-                                                padding: 3,
-                                                width: "16%",
-                                                position: "relative"
-                                            }}
-                                            onPress={() => {
-                                                this.selectMonth(i)
-                                            }}
-                                        >
-                                            <View>
-
-                                                {i.id === this.state.selectedMonth.id &&
-                                                <View
-                                                    style={{
-                                                        backgroundColor: '#ffda3a',
-                                                        position: 'absolute',
-                                                        top: -3,
-                                                        left: -8,
-                                                        width: '100%',
-                                                        height: 24,
-                                                        borderRadius: 12,
-                                                        opacity: .5
-                                                    }}
-                                                />
-                                                }
-                                                {this.state.selectedMonth &&
-                                                <Text
-                                                    style={{
-                                                        textAlign: 'left',
-                                                        fontSize: 14,
-                                                        color: (i.hasData) ? "#333" : "#999"
-                                                    }}
-                                                >
-                                                    {i.name} </Text>}
-                                            </View>
-                                        </TouchableOpacity>
-                                    )}
-                                </View>
-                            </View>
-                            }
-
-                            {this.state.filterByDateRangePlate &&
                             <View
                                 style={{
                                     flexDirection: "row",
@@ -650,7 +547,7 @@ export default class Main extends React.Component {
                                         style={styles.datePickerButtonText}>{this.state.filterDateRangeLast && dayjs(this.state.filterDateRangeLast).locale('ru').format('D MMM')}</Text>
                                 </TouchableOpacity>
                             </View>
-                            }
+
 
 
                             <View
@@ -794,6 +691,311 @@ export default class Main extends React.Component {
 
                 </View>
                 }
+
+                {this.state.modalFilterByMonthPlate &&
+                <View
+                    style={{
+                        position: "absolute",
+                        top: 0,
+                        width: "100%",
+                        height: "100%",
+
+                    }}
+                >
+                    <TouchableOpacity
+                        style={{
+                            position: "absolute",
+                            top: 0,
+                            width: "100%",
+                            height: "100%",
+                            backgroundColor: "rgba(221,225,232,.7)",
+                            zIndex: 18,
+
+                        }}
+                        onPress={() => this.setState({
+                            modalFilterByMonthPlate: false
+                        })}
+                    />
+                    <BoxShadow
+                        setting={{
+                            width: +`${width}` - 40,
+                            height: 190,
+                            color: "#0c034c",
+                            border: 30,
+                            radius: 10,
+                            opacity: 0.05,
+                            x: 20,
+                            y: 20,
+                            style: {
+                                zIndex: 19, marginBottom: 15, position: "absolute",
+                                top: '30%',
+                            }
+                        }}>
+                        <View style={{
+                            width: +`${width}` - 20,
+                            height: 190,
+                            zIndex: 20,
+                            backgroundColor: '#ffffff',
+                            marginHorizontal: 10,
+                            marginTop: 10,
+                            borderRadius: 10,
+                            padding: 15,
+                            position: "relative"
+
+                        }}>
+
+
+
+                            <View>
+                                <View
+                                    style={{
+                                        flexDirection: "row"
+                                    }}
+                                >
+                                    <ScrollView
+                                        horizontal={true}
+                                        style={{
+                                            marginLeft: -4
+                                        }}
+                                    >
+                                        {this.state.yearsList.map((i, index) =>
+                                            <TouchableOpacity
+                                                key={index}
+                                                onPress={() => {
+                                                    this.selectYear(i)
+                                                }}
+                                                style={{
+                                                    textAlign: 'left',
+                                                    padding: 3,
+                                                    // width: "20%",
+                                                    position: "relative"
+                                                }}
+                                            >
+
+
+                                                {i === this.state.selectedYear &&
+                                                <View
+                                                    style={{
+                                                        backgroundColor: '#ffda3a',
+                                                        position: 'absolute',
+                                                        top: 4,
+                                                        left: 0,
+                                                        width: 50,
+                                                        height: 25,
+                                                        borderRadius: 12,
+                                                        opacity: .5
+                                                    }}
+                                                />
+                                                }
+                                                <Text
+                                                    style={{
+                                                        fontSize: 16,
+                                                        padding: 3,
+                                                    }}
+                                                >
+                                                    {i} </Text>
+                                            </TouchableOpacity>
+                                        )}
+                                    </ScrollView>
+
+
+                                </View>
+                                <View
+                                    style={{
+                                        flexDirection: "row",
+                                        flexWrap: 'wrap',
+                                        justifyContent: 'space-between'
+                                    }}
+                                >
+                                    {this.state.monthList.map((i, index) =>
+                                        <TouchableOpacity
+                                            key={index}
+                                            style={{
+                                                textAlign: 'left',
+                                                padding: 3,
+                                                width: "16%",
+                                                position: "relative"
+                                            }}
+                                            onPress={() => {
+                                                this.selectMonth(i)
+                                            }}
+                                        >
+                                            <View>
+
+                                                {i.id === this.state.selectedMonth.id &&
+                                                <View
+                                                    style={{
+                                                        backgroundColor: '#ffda3a',
+                                                        position: 'absolute',
+                                                        top: -3,
+                                                        left: -8,
+                                                        width: '100%',
+                                                        height: 24,
+                                                        borderRadius: 12,
+                                                        opacity: .5
+                                                    }}
+                                                />
+                                                }
+                                                {this.state.selectedMonth &&
+                                                <Text
+                                                    style={{
+                                                        textAlign: 'left',
+                                                        fontSize: 14,
+                                                        color: (i.hasData) ? "#333" : "#999"
+                                                    }}
+                                                >
+                                                    {i.name} </Text>}
+                                            </View>
+                                        </TouchableOpacity>
+                                    )}
+                                </View>
+                            </View>
+
+
+                            <View
+                                style={{
+
+                                    flexDirection: "row"
+
+                                }}
+
+                            >
+                                <View
+                                    style={{
+                                        width: 140,
+                                        height: 100,
+                                        position: "relative",
+                                        alignItems: 'center'
+
+                                    }}
+                                >
+                                    <BoxShadow
+                                        setting={{
+                                            width: 140,
+                                            height: 40,
+                                            color: "#b07919",
+                                            border: 10,
+                                            radius: 20,
+                                            opacity: 0.2,
+                                            x: 0,
+                                            y: 10,
+                                            style: {position: 'absolute', bottom: 40}
+
+                                        }}/>
+
+
+                                    <TouchableHighlight
+                                        underlayColor={"#ffb316"}
+                                        style={{
+                                            width: 160,
+                                            alignItems: 'center',
+
+                                            backgroundColor: "#ffda3a",
+                                            marginTop: 20,
+                                            padding: 15,
+                                            borderRadius: 30,
+                                            bottom: 5,
+
+
+                                        }} onPress={this.handlePostData}>
+                                        <Text
+                                            style={{
+                                                fontSize: 18
+                                            }}
+                                        >Применить</Text>
+                                    </TouchableHighlight>
+                                </View>
+                                <View>
+                                    {this.state.filterByMonthPlate &&
+                                    <View
+                                        style={{
+                                            borderRadius: 25,
+                                            width: 140,
+                                            height: 30,
+                                            overflow: "hidden",
+                                            // position: "absolute",
+                                            // right: 10,
+                                            // top: 17,
+                                            zIndex: 40
+
+                                        }}
+                                    >
+                                        <TouchableNativeFeedback
+                                            style={{
+                                                padding: 5,
+                                                borderRadius: 25,
+                                            }}
+                                            background={TouchableNativeFeedback.SelectableBackground('#eeeeb9', true)}
+                                            onPress={() => this.setState({
+                                                filterByMonthPlate: false,
+                                                filterByDateRangePlate: true
+                                            })}
+                                        >
+                                            <View style={{
+                                                borderRadius: 25,
+                                                width: 140,
+                                                height: 30,
+                                                backgroundColor: '#fff',
+                                                paddingTop: 5,
+                                                paddingLeft: 14,
+
+                                            }}>
+                                                <Text>Выбрать период</Text>
+                                            </View>
+                                        </TouchableNativeFeedback>
+                                    </View>
+                                    }
+
+                                    {this.state.filterByDateRangePlate &&
+                                    <View
+                                        style={{
+                                            borderRadius: 25,
+                                            width: 140,
+                                            height: 30,
+                                            overflow: "hidden",
+                                            // position: "absolute",
+                                            // right: 10,
+                                            // top: 17
+
+                                        }}
+                                    >
+                                        <TouchableNativeFeedback
+                                            style={{
+                                                padding: 5,
+                                                borderRadius: 25,
+                                            }}
+                                            background={TouchableNativeFeedback.SelectableBackground('#eeeeb9', true)}
+                                            onPress={() => this.setState({
+                                                filterByMonthPlate: true,
+                                                filterByDateRangePlate: false
+                                            })}
+                                        >
+                                            <View style={{
+                                                borderRadius: 25,
+                                                width: 140,
+                                                height: 30,
+                                                backgroundColor: '#fff',
+                                                paddingTop: 5,
+                                                paddingLeft: 14,
+
+                                            }}>
+                                                <Text>Выбрать месяц</Text>
+                                            </View>
+                                        </TouchableNativeFeedback>
+                                    </View>
+                                    }
+                                </View>
+                            </View>
+
+
+                        </View>
+                    </BoxShadow>
+
+                </View>
+                }
+
+
+
                 {!this.state.isChartLoaded &&
                 <View
                     style={{
@@ -806,7 +1008,7 @@ export default class Main extends React.Component {
                     <ActivityIndicator
                         size="large"/>
                 </View>}
-
+                {this.state.isChartLoaded &&
                 <View
                     style={styles.container}>
                     <NavigationEvents
@@ -830,7 +1032,9 @@ export default class Main extends React.Component {
                         </TouchableOpacity>
                         <TouchableOpacity
                             onPress={() => {
-                                this.setModalVisible(!this.state.modalVisible);
+                                this.setState({
+                                  modalFilterByMonthPlate:true
+                                })
                             }}
                             style={{
                                 flexDirection: 'row',
@@ -871,11 +1075,11 @@ export default class Main extends React.Component {
                                 padding: 10,
                                 marginTop: 8
                             }}
-                            onPress={() => this.setState({modalVisible: true})}>
-                            <IconM name="filter"
+                            onPress={() => this.setState({dateFilterVisible: true})}>
+                            <IconM name="small-calendar"
                                    type="simple-line-icons"
                                    size={20}
-                                   color="#666"
+                                   color="#999"
                                    style={{
                                        marginRight: 5,
                                    }}
@@ -976,7 +1180,7 @@ export default class Main extends React.Component {
                                 style={{
                                     marginLeft: -4,
                                     flexDirection: 'row',
-                                    justifyContent:'center',
+                                    justifyContent:'space-between',
                                     height: this.state.scrollY.interpolate({
                                         inputRange: [0, 32],
                                         outputRange: [32, 0],
@@ -989,45 +1193,78 @@ export default class Main extends React.Component {
                                     }),
                                 }}
                             >
-                                {mainTabs.map((i, index) =>
-                                    <TouchableOpacity
-                                        key={index}
-                                        onPress={() => {
-                                            this.setState({
-                                                selectedType: i.typeName,
-                                                selectedTab: i.title
-                                            })
-                                        }}
-                                        style={{
-                                            textAlign: 'left',
-                                            paddingVertical: 3,
-                                            position: "relative"
-                                        }}
-                                    >
-                                        {i.title === this.state.selectedTab &&
-                                        <View
-                                            style={{
-                                                backgroundColor: '#ffda3a',
-                                                position: 'absolute',
-                                                top: 1,
-                                                left: -1,
-                                                width: '100%',
-                                                height: 32,
-                                                borderRadius: 16,
-                                                opacity: .5
+                                <View
+                                    style={{
+
+                                        flexDirection: 'row',
+                                        // justifyContent:'start',
+
+                                    }}
+                                >
+                                    {mainTabs.map((i, index) =>
+                                        <TouchableOpacity
+                                            key={index}
+                                            onPress={() => {
+                                                this.setState({
+                                                    selectedType: i.typeName,
+                                                    selectedTab: i.title
+                                                })
                                             }}
-                                        />
-                                        }
-                                        <Text
                                             style={{
-                                                fontSize: 16,
-                                                paddingHorizontal: 8,
+                                                textAlign: 'left',
                                                 paddingVertical: 3,
+                                                position: "relative"
                                             }}
                                         >
-                                            {i.title}</Text>
-                                    </TouchableOpacity>
-                                )}
+                                            {i.title === this.state.selectedTab &&
+                                            <View
+                                                style={{
+                                                    backgroundColor: '#ffda3a',
+                                                    position: 'absolute',
+                                                    top: 1,
+                                                    left: -1,
+                                                    width: '100%',
+                                                    height: 32,
+                                                    borderRadius: 16,
+                                                    opacity: .5
+                                                }}
+                                            />
+                                            }
+                                            <Text
+                                                style={{
+                                                    fontSize: 16,
+                                                    paddingHorizontal: 8,
+                                                    paddingVertical: 3,
+                                                }}
+                                            >
+                                                {i.title}</Text>
+                                        </TouchableOpacity>
+                                    )}
+                                </View>
+
+                                <TouchableOpacity
+                                    style={{
+                                        padding: 6,
+                                        // marginTop: 8
+                                    }}
+                                    onPress={() => this.setState({modalVisible: true})}>
+                                    {/*<IconM name="filter"*/}
+
+                                           {/*size={20}*/}
+                                           {/*color="#666"*/}
+                                           {/*style={{*/}
+                                               {/*marginRight: 5,*/}
+                                           {/*}}*/}
+                                    {/*/>*/}
+                                    <Text
+                                        style={{
+                                            fontSize: 16,
+                                            // paddingHorizontal: 8,
+                                            // paddingVertical: 3,
+                                        }}
+                                    >Фильтр</Text>
+                                </TouchableOpacity>
+
                             </Animated.View>
                             {(this.state.selectedType !== null) &&
                             <MainChart scrollY={this.state.scrollY}
@@ -1038,32 +1275,32 @@ export default class Main extends React.Component {
                             }
                             {/*{(this.state.selectedType === null) &&*/}
                             {/*<View>*/}
-                                {/*<Animated.View*/}
-                                    {/*style={{*/}
-                                        {/*flexDirection: "row",*/}
-                                        {/*paddingTop: this.state.scrollY.interpolate({*/}
-                                            {/*inputRange: [0, 33, 45],*/}
-                                            {/*outputRange: [12, 12, 0],*/}
-                                            {/*extrapolate: 'clamp'*/}
-                                        {/*})*/}
-                                    {/*}}*/}
-                                {/*>*/}
-                                    {/*<Text*/}
-                                        {/*style={{*/}
-                                            {/*marginRight: 10,*/}
-                                            {/*color: "#ff5935"*/}
-                                        {/*}}*/}
-                                    {/*>Потрачено: {this.state.mainCost * -1} р.</Text>*/}
-                                    {/*<Text*/}
-                                        {/*style={{*/}
-                                            {/*color: "#96cd5e"*/}
-                                        {/*}}*/}
-                                    {/*>Заработано: {this.state.mainIncome} р.</Text>*/}
-                                {/*</Animated.View>*/}
-                                {/*<Text>По итогу: {this.state.mainResult} р.</Text>*/}
-                                {/*{this.state.listls.length > 1 &&*/}
-                                {/*< ExtrasExample list={this.state.listls}/>*/}
-                                {/*}*/}
+                            {/*<Animated.View*/}
+                            {/*style={{*/}
+                            {/*flexDirection: "row",*/}
+                            {/*paddingTop: this.state.scrollY.interpolate({*/}
+                            {/*inputRange: [0, 33, 45],*/}
+                            {/*outputRange: [12, 12, 0],*/}
+                            {/*extrapolate: 'clamp'*/}
+                            {/*})*/}
+                            {/*}}*/}
+                            {/*>*/}
+                            {/*<Text*/}
+                            {/*style={{*/}
+                            {/*marginRight: 10,*/}
+                            {/*color: "#ff5935"*/}
+                            {/*}}*/}
+                            {/*>Потрачено: {this.state.mainCost * -1} р.</Text>*/}
+                            {/*<Text*/}
+                            {/*style={{*/}
+                            {/*color: "#96cd5e"*/}
+                            {/*}}*/}
+                            {/*>Заработано: {this.state.mainIncome} р.</Text>*/}
+                            {/*</Animated.View>*/}
+                            {/*<Text>По итогу: {this.state.mainResult} р.</Text>*/}
+                            {/*{this.state.listls.length > 1 &&*/}
+                            {/*< ExtrasExample list={this.state.listls}/>*/}
+                            {/*}*/}
                             {/*</View>*/}
                             {/*}*/}
 
@@ -1341,7 +1578,7 @@ export default class Main extends React.Component {
                     </Modal>
                     }
                 </View>
-
+                }
             </View>
         )
     }

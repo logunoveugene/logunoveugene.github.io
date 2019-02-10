@@ -345,9 +345,9 @@ export default class Main extends React.Component {
                         <BoxShadow
                             setting={{
                                 width: +`${width}` - 40,
-                                height: 13,
+                                height: 15,
                                 color: "#0c034c",
-                                border: 30,
+                                border: 15,
                                 radius: 10,
                                 opacity: 0.05,
                                 x: 20,
@@ -462,12 +462,12 @@ export default class Main extends React.Component {
                 {this.state.typeSubCategoryIndex !== null &&
                 <View
                     style={{
-                        margin: 10,
-                        width: +`${width}` - 20,
-                        borderRadius:10,
-                        overflow: "hidden",
+                        // margin: 10,
+                        // width: +`${width}` - 20,
+                        // borderRadius:10,
+                        // overflow: "hidden",
                         position:'relative',
-                        height:340,
+                        height:320,
                         backgroundColor: '#fff'
                     }}
                 >
@@ -507,7 +507,7 @@ export default class Main extends React.Component {
                     >
                         <BoxShadow
                             setting={{
-                                width: +`${width}` - 60,
+                                width: +`${width}` - 40,
                                 height: 40,
                                 color: "#b07919",
                                 border: 10,
@@ -515,7 +515,7 @@ export default class Main extends React.Component {
                                 opacity: 0.2,
                                 x: 20,
                                 y: 20,
-                                style: {position: 'absolute', top: 10}
+                                style: {position: 'absolute', top: 4}
 
                             }}>
                             <View style={{
@@ -528,14 +528,14 @@ export default class Main extends React.Component {
                         <TouchableHighlight
                             underlayColor={"#ffb316"}
                             style={{
-                                width: +`${width}` - 40,
+                                width: +`${width}` - 20,
                                 alignItems: 'center',
 
                                 backgroundColor: "#ffda3a",
                                 margin: 10,
                                 padding: 15,
                                 borderRadius: 30,
-                                top: 10,
+                                top: 0,
                                 left: 0,
                                 position: "absolute"
 
