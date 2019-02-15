@@ -49,13 +49,13 @@
                                            href="#">Александр</a>
                                         <template slot="popover">
                                             <div class="py-2 pt-3 text-left px-3 ">
-                                                <a href="" class="link link--color-grey">Личные сообщения</a>
+                                                <router-link to="/message" class="link link--color-grey">Личные сообщения</router-link>
                                             </div>
                                             <div class="py-2 text-left px-3 ">
                                                 <a href="" class="link link--color-grey">Мои статьи</a>
                                             </div>
                                             <!--<div class="py-2 text-left px-3 ">-->
-                                                <!--<a href="" class="link link&#45;&#45;color-grey">Личные сообщения</a>-->
+                                            <!--<a href="" class="link link&#45;&#45;color-grey">Личные сообщения</a>-->
                                             <!--</div>-->
                                             <div class="py-2 text-left px-3 ">
                                                 <a href="" class="link link--color-grey">Мои темы</a>
@@ -177,9 +177,13 @@
                                             <div class="header__search-extend-btn-icon icon-down"></div>
                                         </div>
                                         <template slot="popover">
-                                            <div class="text-left pt-3 pb-2 px-3"><a href="" class="link link--color-grey">по всему сайту</a></div>
-                                            <div class="text-left pb-2 px-3 "><a href="" class="link link--color-grey">в статьях</a></div>
-                                            <div class="text-left pb-3 px-3 "><a href="" class="link link--color-grey">в темах</a></div>
+                                            <div class="text-left pt-3 pb-2 px-3"><a href=""
+                                                                                     class="link link--color-grey">по
+                                                всему сайту</a></div>
+                                            <div class="text-left pb-2 px-3 "><a href="" class="link link--color-grey">в
+                                                статьях</a></div>
+                                            <div class="text-left pb-3 px-3 "><a href="" class="link link--color-grey">в
+                                                темах</a></div>
                                         </template>
                                     </v-popover>
 
@@ -220,7 +224,7 @@
                 </router-link>
                 <router-link to="/discussions" @click="isMenu = false" class="link link--color-grey">
                     <div v-ripple class="p-3 bb-1" @click="isMenu = false">
-                        <div class="h4 mb-0">Обсуждения</div>
+                        <div class="h4 mb-0">Коммуникатор</div>
                     </div>
                 </router-link>
                 <router-link to="/newpost" @click="isMenu = false" class="link link--color-grey">
@@ -229,7 +233,7 @@
                             <div class="header__create-controls-icon">
                                 <div class="icon-pen"></div>
                             </div>
-                            <div class="h4 mb-0">Написать</div>
+                            <div class="h4 mb-0">Написать статью</div>
                         </div>
                     </div>
                 </router-link>

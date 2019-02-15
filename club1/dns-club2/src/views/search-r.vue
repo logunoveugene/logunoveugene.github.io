@@ -11,12 +11,7 @@
                     </div>
                     <div class="d-flex align-items-center justify-content-between mb-3">
                         <h1 class="page__title mb-0 ">Результаты поиска по запросу "Xiaomi"</h1>
-                        <!--<router-link to="/newdesc" class=" link link&#45;&#45;color-black new-discuss-btn d-lg-none d-block ">-->
-                            <!--<div class="new-discuss-btn-icon">-->
-                                <!--<div class=" text-success d-inline-block mr-2 icon-add"></div>-->
-                            <!--</div>-->
-                            <!--<div class="d-inline-block">Создать тему</div>-->
-                        <!--</router-link>-->
+
                     </div>
                 </div>
                 <div class="col-12 col-md-12 col-lg-8">
@@ -54,32 +49,10 @@
                                             <label class="custom-control-label" for="customCheck151">Искать в
                                                 содержимом</label>
                                         </div>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customChe6565655"
-                                                   checked>
-                                            <label class="custom-control-label" for="customChe6565655">Искать в
-                                                привязанных товарах</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customChe54545"
-                                                   checked>
-                                            <label class="custom-control-label" for="customChe54545">Искать в
-                                                привязанных брендах</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customChec6565"
-                                                   checked>
-                                            <label class="custom-control-label" for="customChec6565">Искать в
-                                                привязанных категориях товара</label>
-                                        </div>
-
                                     </div>
                                     <div class="btn btn--color-white">Применить</div>
                                 </div>
-
-
                             </div>
-
                         </div>
 
                         <div class="suggestion-wrap"
@@ -113,7 +86,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                         <div class="mb-4" v-if="discussionsSearchResalt">
@@ -123,7 +95,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="">
                         <div class="d-block d-lg-none">
                             <div v-ripple class="collapse-block card-block card-block--full-mobile "
@@ -137,16 +108,35 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="collapse-plate pt-4  d-block d-lg-none" v-if="searchPlate">
+                        <div class="collapse-plate  d-block d-lg-none" v-if="searchPlate">
                             <div class="">
-                                <div class="pb-4 bb-1">
-                                    <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
-                                    <category-cut></category-cut>
+                                <div class="p-4 bb-1">
+                                    <div class=" ">
+                                        <div class="custom-control custom-checkbox mb-2">
+                                            <input type="checkbox" id="customCheck1" class="custom-control-input">
+                                            <label for="customCheck1" class="custom-control-label">Статьи</label>
+                                        </div>
+
+                                        <div class="custom-control custom-checkbox  ">
+                                            <input type="checkbox" id="customCheck1" class="custom-control-input">
+                                            <label for="customCheck1" class="custom-control-label">Темы</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" p-4 bb-1">
+                                    <nav class="nav nav-pills nav-justified">
+                                        <a class="link link--pill link--color-black link--pill-active  " href="#">Наиболее
+                                            релевантные</a>
+                                        <a class="link link--pill link--color-black" href="#">Сначала свежие</a>
+                                    </nav>
+                                </div>
+                                <div class="p-4">
+                                    <date-range-select></date-range-select>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="d-none d-lg-flex  justify-content-between align-items-center ">
+                    <div class="d-none d-lg-flex   justify-content-between align-items-center ">
                         <nav class="nav nav-pills nav-justified">
                             <a class="link link--pill link--color-black link--pill-active  " href="#">Наиболее
                                 релевантные</a>
@@ -156,26 +146,17 @@
 
                     </div>
                     <div class="discussions">
-                        <paginate
-                                name="discuss"
-                                :list="searchArticle"
-                                :per="7"
-                        >
+
                             <post-search-r :post="post"
-                                           v-for="(post, index) in paginated('discuss')"
+                                           v-for="(post, index) in searchArticle"
                                            :key="index">
                             </post-search-r>
-                        </paginate>
 
-                        <div class="btn paginate__button btn-block mb-4 ">Показать еще</div>
-                        <paginate-links :limit="3"
-                        for="discuss"
-                        :show-step-links="true"
-                        :step-links="{
-                        next: 'h',
-                        prev: 'g'
-                        }">
-                        </paginate-links>
+                            <disc-list-item-search-lite :post="post"
+                                                   v-for="(post, index) in discussions"
+                                                   :key="index">
+                            </disc-list-item-search-lite>
+
                     </div>
                 </div>
                 <div class="col-12 col-lg-4 d-none d-lg-block">
@@ -195,85 +176,9 @@
                                 </div>
                             </div>
 
-                            <!--<div class="p-4 bb-1">-->
-                                <!--<div class="h2 mb-2 d-flex align-items-center">Разделы</div>-->
-                                <!--<category-cut></category-cut>-->
-                            <!--</div>-->
-                            <!--<div class="p-4 bb-1">-->
-                            <!--<div class="h2 mb-3 d-flex align-items-center justify-content-between ">Поиск по-->
-                            <!--упоминаниям-->
-                            <!--</div>-->
-
-                            <!--<product-category-brand-search></product-category-brand-search>-->
-                            <!--</div>-->
-
-
-                            <!--<div v-if="allFilter" class="bb-1">-->
-                                <!--<div class="p-4  bb-1">-->
-                                    <!--<div class="h2 mb-2 d-flex align-items-center justify-content-between ">Формат-->
-                                    <!--</div>-->
-                                    <!--<div class=" d-flex">-->
-
-                                        <!--<div class=" ">-->
-                                            <!--<div class="custom-control custom-checkbox mb-2">-->
-                                                <!--<input type="checkbox" id="customCheck1asdas"-->
-                                                       <!--class="custom-control-input">-->
-                                                <!--<label for="customCheck1asdas"-->
-                                                       <!--class="custom-control-label">Текст</label>-->
-                                            <!--</div>-->
-                                            <!--<div class="custom-control custom-checkbox mb-2">-->
-                                                <!--<input type="checkbox" id="customCheck1dsfsd"-->
-                                                       <!--class="custom-control-input">-->
-                                                <!--<label for="customCheck1dsfsd"-->
-                                                       <!--class="custom-control-label">Видео</label>-->
-                                            <!--</div>-->
-                                            <!--<div class="custom-control custom-checkbox">-->
-                                                <!--<input type="checkbox" id="custosadasd" class="custom-control-input">-->
-                                                <!--<label for="custosadasd" class="custom-control-label">Фото</label>-->
-                                            <!--</div>-->
-                                        <!--</div>-->
-                                    <!--</div>-->
-
-                                <!--</div>-->
-
-                                <!--<div class="p-4">-->
-
-                                    <!--<div class="h2 mb-3 d-flex align-items-center justify-content-between ">Привязаны к-->
-                                        <!--статье-->
-                                    <!--</div>-->
-
-                                    <!--<div class="discussions__search">-->
-                                        <!--<div class="search-ext  mb-4 ">-->
-                                            <!--<input type="text" v-model="discussionsSearchExt" placeholder="Товары"-->
-
-                                                   <!--class="field w-100 ">-->
-                                            <!--<div class="search-ext__btn-search icon-search"></div>-->
-                                        <!--</div>-->
-
-                                    <!--</div>-->
-                                    <!--<div class="search-ext  mb-4 ">-->
-                                        <!--<input type="text" placeholder="Бренды"-->
-
-                                               <!--class="field w-100 ">-->
-                                        <!--<div class="search-ext__btn-search icon-search"></div>-->
-                                    <!--</div>-->
-                                    <!--<div class="search-ext mb-1">-->
-                                        <!--<input type="text" placeholder="Категории товаров"-->
-
-                                               <!--class="field w-100 ">-->
-                                        <!--<div class="search-ext__btn-search icon-search"></div>-->
-                                    <!--</div>-->
-                                <!--</div>-->
-
-                            <!--</div>-->
                         </div>
                     </div>
-                    <!--<div class="px-4">-->
-                        <!--<div v-if="!allFilter" @click="allFilter=true" class="link link&#45;&#45;doted  link&#45;&#45;color-grey">Все-->
-                            <!--фильтры-->
-                        <!--</div>-->
 
-                    <!--</div>-->
 
                 </div>
             </div>
@@ -286,25 +191,27 @@
 <script>
     // @ is an alias to /src
     import postInfo from '@/components/post-block/parts/post-info.vue'
-    import DiscListItemSearch from "@//components/post-block/disc-list-item-search";
+
     import categoryCut from "@//components/category-cut.vue";
     import productCategoryBrandSearch from "@//components/product-category-brand-search.vue"
     import PostSearchR from "../components/post-block/post-search-r";
     import dateRangeSelect from "@//components/dateRangeSelect.vue"
-
+    import DiscListItemSearchLite from "@//components/post-block/disc-list-item-search-lite";
 
     export default {
         name: 'discussions',
         components: {
             PostSearchR,
-            DiscListItemSearch,
+            DiscListItemSearchLite,
             postInfo,
             productCategoryBrandSearch,
             categoryCut,
-            dateRangeSelect
+            dateRangeSelect,
+
         },
         data: function () {
             return {
+                discussions:[],
                 searchExtPlate: false,
                 searchExtPlateFilter: false,
                 discussionsSearch: "Xiaomi",
@@ -346,7 +253,13 @@
         },
 
         created() {
-
+            this.axios.get('https://club-route.firebaseio.com/searchDisc.json')
+                .then(response => {
+                    this.discussions = response.data
+                })
+                .catch(e => {
+                    this.error.push(e)
+                });
 
             this.axios.get('https://club-route.firebaseio.com/searchArticle.json')
                 .then(response => {
@@ -383,13 +296,11 @@
 <style lang="scss">
 
 
-
     .search-ext {
         background: #f2f2f2;
         border-radius: 8px;
         position: relative;
     }
-
 
     .search-ext__btn-search {
         position: absolute;

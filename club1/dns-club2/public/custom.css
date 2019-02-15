@@ -1,11 +1,6 @@
 
-.fade-enter-active, .fade-leave-active {
-    transition: opacity .2s
-}
 
-.fade-enter, .fade-leave-to {
-    opacity: 0
-}
+
 
 .tree-search-input {
     width: 100%;
@@ -651,14 +646,6 @@ circle[data-v-e7743bdc]:nth-child(12n+12) {
     cursor: pointer
 }
 
-.fade-enter-active, .fade-leave-active {
-    transition: opacity .5s, transform .5s
-}
-
-.fade-enter, .fade-leave-active {
-    opacity: 0;
-    transform: translateY(-10px)
-}
 
 .box-checked.inputCheck {
     background: #ff8700;

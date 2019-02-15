@@ -51,7 +51,7 @@
                     </ul>
                 </div>
                 <div class="footer__col col-12 col-lg">
-                    <div class="footer__col-head  ">Информация</div>
+                    <div class="footer__col-head  ">О нашем клубе</div>
                     <ul class="footer__menu-list list-unstyled small d-none d-lg-block">
                         <li class="footer__menu-item">
 

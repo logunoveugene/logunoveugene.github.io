@@ -12,7 +12,7 @@
                  @mouseover="isHovered = true" @mouseleave="isHovered = false"
             >
                 <div class=" post-image__gradient-wrap"
-                     v-bind:style="{ boxShadow: '0px 250px 100px -60px inset ' + post.bgColor+'CC, 0px 220px 40px -60px inset' + post.bgColor}">
+                   :style="{ boxShadow: 'inset 0px 250px 100px -60px ' + post.bgColor+'CC, inset 0px 220px 40px -60px' + post.bgColor}">
                     <div class="post-image__info">
                         <div class="post__tags-wrap ">
                             <div class="post__fotmat-icon" v-bind:style="{ color: post.textColor }"

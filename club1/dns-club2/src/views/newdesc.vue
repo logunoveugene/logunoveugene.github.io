@@ -11,8 +11,7 @@
                         <div class="text-muted ">Cоздание темы</div>
 
                     </div>
-                    <div contenteditable="true" class="w-100 new-post__title" type="text"
-                         placeholder="Введите заголовок">Введите заголовок
+                    <div contenteditable="true" class="w-100 new-post__title">Введите заголовок
                     </div>
                     <div class="new-content-box">
                         <!--<froala :tag="'textarea'" :config="config" v-model="model"></froala>-->
@@ -62,6 +61,12 @@
                                              @tag="addTag">
                                 </multiselect>
                             </div>
+                            <div class="new-post__tags mb-4">
+                                <div class="small text-muted mb-1">Главное фото</div>
+                                <input type="file" class="form-control-file" id="exampleFormControlFile11">
+                            </div>
+
+
                             <div class="new-post__links mb-4">
                                 <div class="small text-muted mb-2">Упоминания</div>
                                 <div class="new-post__links-item d-flex justify-content-between">
@@ -89,9 +94,7 @@
                                     <div class="mr-3">
                                         <div class="btn btn--color-orange">Опубликовать сейчас</div>
                                     </div>
-                                    <div class="mr-3">
-                                        <div class="btn btn--color-white">Сохранить</div>
-                                    </div>
+
                                 </div>
                                 <div class="new-post__save-state small text-secondary mb-3">
                                     <div class="mb-2">Тема создана: 12 ноя 18г.</div>
@@ -99,22 +102,16 @@
                                     <!--<div class=" ">Будет опубликована: 15 ноя 18г.</div>-->
                                 </div>
 
-                                <div class="small">
-                                    <a href="" class="link link--color-grey">Удалить</a>
+                                <div class="small d-flex justify-content-between">
+                                    <a href="#" class="link link--color-grey">Удалить</a>
+                                    <span class="text-secondary">Черновик сохранен</span>
                                 </div>
 
                             </div>
 
                         </div>
                     </div>
-                    <!--<div class="small">-->
-                    <!--<ul class=" pl-4 list-unstyled">-->
-                    <!--<li>-->
-                    <!--<a href="#" class="link link&#45;&#45;color-blue">Рекомендации по созданию тем</a>-->
-                    <!--</li>-->
-                    <!--<li><a href="#" class="link link&#45;&#45;color-blue">Как пользоваться редактором</a></li>-->
-                    <!--</ul>-->
-                    <!--</div>-->
+
                 </div>
             </div>
         </div>
@@ -125,9 +122,21 @@
                     <div class="h1 mb-0 icon-close"></div>
                 </div>
             </div>
-            <div class="p-3 mb-4">
+            <div class=" p-3 mb-4">
+                <div class=" ">
+                    <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Редакторские
+                        настройки
+                    </div>
+                    <div class="">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" id="customCheckw3" class="custom-control-input">
+                            <label for="customCheckw3" class="custom-control-label">Закрепленная тема</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="  p-3 mb-4">
                 <div class="">
-
                     <div class="new-post__tags mb-4">
                         <div class="small text-muted mb-1">Раздел</div>
                         <multiselect v-model="selectedRub"
@@ -142,8 +151,11 @@
                                      :options="options"
                                      :multiple="true"
                                      @tag="addTag">
-
                         </multiselect>
+                    </div>
+                    <div class="new-post__tags mb-4">
+                        <div class="small text-muted mb-1">Главное фото</div>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile11">
                     </div>
                     <div class="new-post__links mb-4">
                         <div class="small text-muted mb-2">Упоминания</div>
@@ -166,7 +178,6 @@
                                 <div class="new-post__links-item-amount-add icon-add pt-2"></div>
                             </div>
                         </div>
-
                     </div>
                     <div class="">
 
@@ -176,16 +187,15 @@
                             <!--<div class=" ">Будет опубликована: 15 ноя 18г.</div>-->
                         </div>
 
-
-                        <div class="small">
-                            <a href="" class="link link--color-grey">Удалить</a>
+                        <div class="small d-flex justify-content-between">
+                            <a href="#" class="link link--color-grey">Удалить</a>
+                            <span class="text-secondary">Черновик сохранен</span>
                         </div>
 
                     </div>
 
                 </div>
             </div>
-
 
         </modal>
         <modal name="addProduct" :adaptive="true" width="600px" height="auto">
@@ -233,7 +243,7 @@
 
 <script>
 
-    import editorTipTap from "@//components/editor-tip-tap.vue"
+    import editorTipTap from "@//components/editor-tip-tap-disc.vue"
 
     export default {
 
@@ -244,7 +254,7 @@
         },
         data() {
             return {
-                readyToPublic:false,
+                readyToPublic: false,
                 selectedRub: [],
                 options: [
                     {name: 'Ноутбуки', code: '154'},
@@ -253,20 +263,8 @@
                     {name: 'Lenovo', code: '17'},
                     {name: 'Смартфоны', code: '26'}
                 ],
-                config: {
-                    toolbarInline: true,
-                    minHeight: 500,
-                    placeholderText: 'Добавьте описание...',
-                    quickInsertButtons: ['image', 'video', 'table'],
-                    toolbarButtons: ['bold', 'italic', 'quote', 'paragraphFormat', 'insertLink', 'underline', 'formatOL', 'formatUL'],
-                    events: {
-                        'froalaEditor.initialized': function () {
-                            console.log('initialized')
-                        }
-                    }
-                },
-                model: '',
 
+                model: '',
 
 
             }
@@ -469,16 +467,6 @@
     .new-content-box {
         min-height: 400px;
     }
-
-
-
-
-
-
-
-
-
-
 
     .editor {
         position: relative;

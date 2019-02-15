@@ -14,112 +14,85 @@ export default new Router({
         {
             path: '/discussions',
             name: 'discussions',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/discussions.vue')
+    
+            component: () => import(/* webpackChunkName: "discussions" */ './views/discussions.vue')
         },
 
         {
             path: '/discussions-search-r',
             name: 'discussionsSearchR',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/discussions-search-r.vue')
+    
+            component: () => import(/* webpackChunkName: "discussions-search-result" */ './views/discussions-search-r.vue')
         },
         {
             path: '/search-r',
             name: 'SearchR',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/search-r.vue')
+    
+            component: () => import(/* webpackChunkName: "global-search" */ './views/search-r.vue')
         },
         {
             path: '/review',
             name: 'review',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/review.vue')
+    
+            component: () => import(/* webpackChunkName: "article-list" */ './views/review.vue')
         },
         {
             path: '/post/:id',
             name: 'post',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/post.vue')
+    
+            component: () => import(/* webpackChunkName: "article-page" */ './views/post.vue')
         },
         {
             path: '/discussion/:id',
             name: 'discussion',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/disc-item.vue')
+    
+            component: () => import(/* webpackChunkName: "discussion-item" */ './views/disc-item.vue')
         },
         {
             path: '/newpost',
             name: 'newpost',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/newpost.vue')
+    
+            component: () => import(/* webpackChunkName: "create-article" */ './views/newpost.vue')
         },
         {
             path: '/newdesc',
             name: 'newdesc',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/newdesc.vue')
+    
+            component: () => import(/* webpackChunkName: "create-discussion" */ './views/newdesc.vue')
         },
-        {
-            path: '/new',
-            name: 'new',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/new.vue')
-        },
+  
 
         {
             path: '/users',
             name: 'users',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/users.vue')
+    
+            component: () => import(/* webpackChunkName: "users" */ './views/users.vue')
         },
         {
             path: '/awards',
             name: 'awards',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/awards.vue')
+    
+            component: () => import(/* webpackChunkName: "awards" */ './views/awards.vue')
         },
 
         {
             path: '/info-page',
             name: 'info-page',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/info-page.vue')
+    
+            component: () => import(/* webpackChunkName: "info-page" */ './views/info-page.vue')
         },
 
+        {
+            path: '/message',
+            name: 'message',
 
-
+            component: () => import(/* webpackChunkName: "message" */ './views/message.vue')
+        },
         {
             path: '/test',
             name: 'test',
-            // route level code-splitting
-            // this generates a separate chunk (about.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import(/* webpackChunkName: "about" */ './views/test.vue')
+    
+            component: () => import(/* webpackChunkName: "test" */ './views/test.vue')
         },
 
     ],

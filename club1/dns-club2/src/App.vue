@@ -3,7 +3,7 @@
         <mainheader :live="live" :isAuth="isAuth" v-on:liveon="liveon" v-on:auth="auth" v-on:logout="logout"></mainheader>
         <efir-bar :live="live" v-on:liveoff="liveoff"></efir-bar>
         <div class="main-layout" :class="live">
-            <transition name="fade">
+            <transition name="сfade">
 
                 <router-view :isAuth="isAuth" />
 
@@ -75,17 +75,19 @@
 </script>
 
 <style lang="scss">
-    .fade-enter-active, .fade-leave-active {
+    .сfade-enter-active, .сfade-leave-active {
         transition-property: opacity;
-        transition-duration: .25s;
+        transition-duration: .35s;
     }
 
-    .fade-enter-active {
-        transition-delay: .25s;
+    .сfade-enter-active {
+        transition-delay: .35s;
     }
 
-    .fade-enter, .fade-leave-active {
-        opacity: 0
+    .сfade-enter, .сfade-leave-active {
+        opacity: 0;
+
+
     }
 
     .tooltip {

@@ -305,7 +305,7 @@
                 <div class="col-12 col-lg-4">
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-12 order-2 order-lg-1">
-                            <div class="card-block mb-4">
+                            <div class="card-block card-block--shadow mb-4">
                                 <div class="p-4">
                                     <div class="h1 mb-3">Последние награды</div>
                                     <ul class="list-unstyled">
@@ -328,7 +328,7 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-6 col-lg-12 order-3 order-lg-2">
-                            <div class="card-block mb-4">
+                            <div class="card-block card-block--shadow mb-4">
                                 <div class="p-4">
                                     <div class="h1 mb-3">Лидеры</div>
                                     <nav class="nav nav-pills nav-justified mb-4 small">
@@ -357,7 +357,7 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-12 col-lg-12 order-1 order-lg-2">
-                            <div class="card-block mb-3">
+                            <div class="card-block card-block--shadow mb-4">
                                 <div class="p-4">
                                     <div class="h1 mb-2">Результаты опроса</div>
                                     <div class="small mb-1">от 12 июня 2018г.</div>

@@ -324,7 +324,7 @@
                     </div>
                     <div class="mb-5">
                         <div class="comment-block__adding-box">
-                            <froala :tag="'textarea'" :config="config" v-model="commentText"></froala>
+                            <editor-tip-tap></editor-tip-tap>
                         </div>
                         <button type="button" v-on:click="showModalUserAuth" class="btn btn--color-white ">Добавить комментарий</button>
                     </div>
@@ -401,6 +401,9 @@
     import author from "@/components/post-block/parts/author.vue"
 
 
+    import editorTipTap from "@//components/editor-tip-tap-comment.vue"
+
+
     export default {
         components: {
             ProductList,
@@ -412,7 +415,8 @@
             commentItem,
             postImg,
             productList,
-            author
+            author,
+            editorTipTap
         },
         data() {
             return {

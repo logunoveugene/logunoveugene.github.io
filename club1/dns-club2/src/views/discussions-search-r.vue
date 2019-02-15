@@ -77,7 +77,6 @@
                                 </div>
 
 
-
                             </div>
 
                         </div>
@@ -137,43 +136,92 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="collapse-plate pt-4  d-block d-lg-none" v-if="searchPlate">
-                            <div class="">
-                                <div class="pb-4 bb-1">
-                                    <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
-                                    <category-cut></category-cut>
+                        <div class="collapse-plate d-block d-lg-none" v-if="searchPlate">
+                            <div class="p-4 bb-1 ">
+                                <nav class="nav nav-pills nav-justified">
+                                    <a class="link link--pill link--color-black link--pill-active  " href="#">Наиболее
+                                        релевантные</a>
+                                    <a class="link link--pill link--color-black" href="#">Сначала свежие</a>
+                                </nav>
+                            </div>
+                            <div class="p-4 bb-1">
+                                <date-range-select></date-range-select>
+                            </div>
+
+
+                            <div class="mb-4 ">
+                                <div class="">
+                                    <div class="p-4 bb-1">
+                                        <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
+                                        <category-cut></category-cut>
+                                    </div>
+                                    <div class="p-4 bb-1">
+                                        <div class="h2 mb-3 d-flex align-items-center justify-content-between ">
+                                            Настройки
+                                            показа
+                                        </div>
+
+                                        <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
+                                            <input type="radio" id="customRadioInline0" name="customRadioInline1"
+                                                   class="custom-control-input" checked>
+                                            <label class="custom-control-label" for="customRadioInline0">Все
+                                                темы</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
+                                            <input type="radio" id="customRadioInline4" name="customRadioInline1"
+                                                   class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadioInline4">Без
+                                                ответов</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
+                                            <input type="radio" id="customRadioInline5" name="customRadioInline1"
+                                                   class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadioInline5">Без моих
+                                                ответов</label>
+                                        </div>
+                                        <div class="custom-control custom-radio custom-control-inline d-block">
+                                            <input type="radio" id="customRadioInline6" name="customRadioInline1"
+                                                   class="custom-control-input">
+                                            <label class="custom-control-label" for="customRadioInline6">С моими
+                                                ответами</label>
+                                        </div>
+                                    </div>
+                                    <div v-if="allFilter" class="p-4 bb-1">
+                                        <div class="h2 mb-3 d-flex align-items-center justify-content-between ">
+                                            Привязаны к
+                                            теме
+                                        </div>
+
+                                        <div class="discussions__search">
+                                            <div class="search-ext  mb-4 ">
+                                                <input type="text" v-model="discussionsSearchExt" placeholder="Товары"
+
+                                                       class="field w-100 ">
+                                                <div class="search-ext__btn-search icon-search"></div>
+                                            </div>
+
+                                        </div>
+                                        <div class="search-ext  mb-4 ">
+                                            <input type="text" placeholder="Бренды"
+
+                                                   class="field w-100 ">
+                                            <div class="search-ext__btn-search icon-search"></div>
+                                        </div>
+                                        <div class="search-ext mb-1">
+                                            <input type="text" placeholder="Категории товаров"
+
+                                                   class="field w-100 ">
+                                            <div class="search-ext__btn-search icon-search"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="px-4">
+                                <div v-if="!allFilter" @click="allFilter=true"
+                                     class="link link--doted  link--color-grey">Все
+                                    фильтры
                                 </div>
 
-                                <div class="py-4 bb-1">
-                                    <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Настройки
-                                        показа
-                                    </div>
-
-                                    <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                        <input type="radio" id="customRadioInline00" name="customRadioInline1"
-                                               class="custom-control-input" checked>
-                                        <label class="custom-control-label" for="customRadioInline00">Все темы</label>
-                                    </div>
-
-                                    <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                        <input type="radio" id="customRadioInline1" name="customRadioInline1"
-                                               class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioInline1">Без ответов</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline mb-1 d-block">
-                                        <input type="radio" id="customRadioInline2" name="customRadioInline1"
-                                               class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioInline2">Без моих
-                                            ответов</label>
-                                    </div>
-                                    <div class="custom-control custom-radio custom-control-inline d-block">
-                                        <input type="radio" id="customRadioInline3" name="customRadioInline1"
-                                               class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadioInline3">С моими
-                                            ответами</label>
-                                    </div>
-
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -185,32 +233,7 @@
                             <a class="link link--pill link--color-black" href="#">Сначала свежие</a>
 
                         </nav>
-                        <v-popover offset="0">
-
-                            <div class="d-none  d-md-flex">
-                                <div class="link link--dropdown">За все время</div>
-                            </div>
-                            <template slot="popover">
-                                <template slot="popover">
-                                    <div class="py-2 pt-3 text-left px-3 ">
-                                        <a href="" class="link link--color-grey">За сегодня</a>
-                                    </div>
-                                    <div class="py-2 text-left px-3 ">
-                                        <a href="" class="link link--color-grey">За неделю</a>
-                                    </div>
-                                    <div class="py-2 text-left px-3 ">
-                                        <a href="" class="link link--color-grey">За месяц</a>
-                                    </div>
-                                    <div class="py-2 text-left px-3 ">
-                                        <a href="" class="link link--color-grey">За все время</a>
-                                    </div>
-                                    <div class="py-2 pb-3 text-left px-3 bb-1">
-                                        <a href="" class="link link--color-grey">Выбрать период</a>
-                                    </div>
-                                </template>
-
-                            </template>
-                        </v-popover>
+                        <date-range-select></date-range-select>
 
                     </div>
                     <div class="discussions">
@@ -246,13 +269,6 @@
                                 <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
                                 <category-cut></category-cut>
                             </div>
-                            <!--<div class="p-4 bb-1">-->
-                            <!--<div class="h2 mb-3 d-flex align-items-center justify-content-between ">Поиск по-->
-                            <!--упоминаниям-->
-                            <!--</div>-->
-
-                            <!--<product-category-brand-search></product-category-brand-search>-->
-                            <!--</div>-->
                             <div class="p-4 bb-1">
                                 <div class="h2 mb-3 d-flex align-items-center justify-content-between ">Настройки
                                     показа
@@ -331,7 +347,7 @@
     import DiscListItemSearch from "@//components/post-block/disc-list-item-search";
     import categoryCut from "@//components/category-cut.vue";
     import productCategoryBrandSearch from "@//components/product-category-brand-search.vue"
-
+    import dateRangeSelect from "@//components/dateRangeSelect.vue"
 
     export default {
         name: 'discussions',
@@ -339,7 +355,8 @@
             DiscListItemSearch,
             postInfo,
             productCategoryBrandSearch,
-            categoryCut
+            categoryCut,
+            dateRangeSelect
         },
         data: function () {
             return {
@@ -424,7 +441,6 @@
         border-radius: 8px;
         position: relative;
     }
-
 
     .search-ext__btn-search {
         position: absolute;

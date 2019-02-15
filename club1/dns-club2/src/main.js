@@ -3,11 +3,11 @@ import App from './App.vue'
 import router from './router'
 import "./filters"
 
-
-import dayjs from 'dayjs'
-import relativeTime from 'dayjs/plugin/relativeTime'
-import 'dayjs/locale/ru'
-
+//
+// import dayjs from 'dayjs'
+// import relativeTime from 'dayjs/plugin/relativeTime'
+// import 'dayjs/locale/ru'
+//
 
 
 import CripLoading from "crip-vue-loading"
@@ -48,23 +48,12 @@ require('vue-image-lightbox/dist/vue-image-lightbox.min.css')
 
 require('vue-multiselect/dist/vue-multiselect.min.css')
 
-require('froala-editor/js/froala_editor.pkgd.min')
 
-// Require Froala Editor css files.
-require('froala-editor/css/froala_editor.pkgd.min.css')
-require('font-awesome/css/font-awesome.css')
-require('froala-editor/css/froala_style.min.css')
 
-// Import and use Vue Froala lib.
-import VueFroala from 'vue-froala-wysiwyg'
-
-Vue.use(VueFroala)
 
 import SocialSharing from 'vue-social-sharing';
 
 Vue.use(SocialSharing);
-
-
 
 
 
@@ -97,9 +86,12 @@ Vue.use(CripLoading,{
 
 Vue.config.productionTip = false
 
+import store from './store';
+
+
 new Vue({
     router,
-
+    store,
     render: h => h(App),
 
 }).$mount('#app')

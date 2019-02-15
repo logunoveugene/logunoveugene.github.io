@@ -7,7 +7,7 @@
                     <div class="small mb-2 d-flex">
                         <router-link class="link link--color-black" to="/">Клуб</router-link>
                         <div class="mx-2">/</div>
-                        <span class="text-muted">Информация</span>
+                        <span class="text-muted">О нашем клубе</span>
                     </div>
                     <div class="d-flex align-items-center justify-content-between mb-3">
                         <h1 class="page__title mb-0">Заголовок информационной страницы</h1>
@@ -288,7 +288,7 @@
                             <div class="card-block card-block--shadow  mb-4">
                                 <div class="">
                                     <div class="p-4 bb-1">
-                                        <div class="h2 mb-3 d-flex align-items-center">Информация</div>
+                                        <div class="h2 mb-3 d-flex align-items-center">О нашем клубе</div>
                                         <ul class="nav nav--vertical small">
                                             <li class="nav__link"><a href="#" class="link link--color-grey">О проекте</a></li>
                                             <li class="nav__link"><a href="#" class="link link--color-grey">Тур по сайту

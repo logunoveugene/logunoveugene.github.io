@@ -31,50 +31,51 @@
         data: function () {
             return {
                 value: null,
-                options: [{
-                    id: '1',
-                    label: 'Компьютеры и комплектующие',
-                    mcount: "34",
-                    children: [{
-                        id: '11',
-                        mcount: 48,
-                        label: 'Ноутбуки и аксессуары',
+                options: [
+                    {
+                        id: '1',
+                        label: 'Компьютеры и комплектующие',
+                        mcount: "34",
+                        children: [{
+                            id: '11',
+                            mcount: 48,
+                            label: 'Ноутбуки и аксессуары',
 
-                    }, {
-                        id: '12',
-                        mcount: 41,
-                        label: 'Планшеты, электронные книги ',
-                    }, {
-                        id: '13',
-                        mcount: "34К",
-                        label: 'Запчасти и ПО для ноутбуков',
-                    }, {
-                        id: '14',
-                        mcount: 21,
-                        label: 'Компьютерные системы',
-                    }, {
-                        id: '15',
-                        mcount: 14,
-                        label: 'Периферия',
-                    }, {
-                        id: '16',
-                        mcount: 10,
-                        label: 'ПО и аксессуары',
-                    }, {
-                        id: '17',
-                        mcount: 58,
-                        label: 'Основные комплектующие',
-                    }, {
-                        id: '18',
-                        mcount: 75,
-                        label: 'Хранение данных и охлаждение',
-                    }, {
-                        id: '19',
-                        mcount: 12,
-                        label: 'Устройства расширения и апгрейд',
-                    }
-                    ],
-                },
+                        }, {
+                            id: '12',
+                            mcount: 41,
+                            label: 'Планшеты, электронные книги ',
+                        }, {
+                            id: '13',
+                            mcount: "34К",
+                            label: 'Запчасти и ПО для ноутбуков',
+                        }, {
+                            id: '14',
+                            mcount: 21,
+                            label: 'Компьютерные системы',
+                        }, {
+                            id: '15',
+                            mcount: 14,
+                            label: 'Периферия',
+                        }, {
+                            id: '16',
+                            mcount: 10,
+                            label: 'ПО и аксессуары',
+                        }, {
+                            id: '17',
+                            mcount: 58,
+                            label: 'Основные комплектующие',
+                        }, {
+                            id: '18',
+                            mcount: 75,
+                            label: 'Хранение данных и охлаждение',
+                        }, {
+                            id: '19',
+                            mcount: 12,
+                            label: 'Устройства расширения и апгрейд',
+                        }
+                        ],
+                    },
                     {
                         id: '2',
                         mcount: 168,
@@ -226,12 +227,11 @@
     }
 </script>
 
-<style >
+<style>
     .vue-treeselect__control {
         display: none;
         border-radius: 8px;
     }
-
 
     .vue-treeselect--open.vue-treeselect--open-below .vue-treeselect__control {
         border-bottom-left-radius: 8px;
@@ -316,9 +316,11 @@
         border-color: #e68c00;
         background: #e68c00;
     }
-    .vue-treeselect__label-container{
+
+    .vue-treeselect__label-container {
         margin-left: 8px;
     }
+
     .vue-treeselect__label-container:hover .vue-treeselect__checkbox--indeterminate {
         border-color: #e67503;
         background: #e67503;
@@ -370,17 +372,18 @@
         font-weight: 600;
         border-radius: 4px;
     }
-    .category-list__amount{
+
+    .category-list__amount {
 
         border-radius: 50px;
         padding: 2px 6px 1px 6px;
-        box-shadow: 0 1px 4px rgba(0,0,0,.15);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .15);
         margin-left: 5px;
         background: #ffffff;
 
     }
 
-    .vue-treeselect__option-arrow-container{
+    .vue-treeselect__option-arrow-container {
         width: 8px;
     }
 </style>

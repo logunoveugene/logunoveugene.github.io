@@ -2,9 +2,8 @@
     <div class="users-list-page">
         <div class="container">
             <div class="row">
-
                 <div class="col-12">
-                    <div class="page__title mb-4">Награды</div>
+                    <div class="page__title mb-4">Последние награды за 24 часа</div>
 
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
 
@@ -62,31 +61,13 @@
 
 <script>
 
-    import postInfo from '@/components/post-block/parts/post-info.vue'
-    import postTagFull from '@/components/post-block/parts/post-tag-full.vue'
-    import postImg from '@/components/post-block/post-img.vue'
-    import commentItem from '@/components/comment-item.vue'
-    import LightBox from 'vue-image-lightbox'
-    import productList from '@/components/product-list.vue'
 
-
-    import {swiper, swiperSlide} from 'vue-awesome-swiper'
-    import 'swiper/dist/css/swiper.css'
-    import ProductList from "../components/product-list";
     import author from "@/components/post-block/parts/author.vue"
 
 
     export default {
         components: {
-            ProductList,
-            postInfo,
-            LightBox,
-            postTagFull,
-            swiper,
-            swiperSlide,
-            commentItem,
-            postImg,
-            productList,
+
             author
         },
         data() {

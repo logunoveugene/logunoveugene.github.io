@@ -4,7 +4,7 @@
         <div class="post-blog-img"
              v-bind:style="{  backgroundColor: post.bgColor}">
             <div class="post-blog-img__img-wrap">
-                <div v-bind:style="{ boxShadow: '0px -100px 60px -50px inset ' +  post.bgColor}"
+                <div v-bind:style="{ boxShadow: 'inset 0px -100px 60px -50px ' +  post.bgColor}"
                      class="post-blog-img__img-shadow"></div>
                 <img :src="post.img" class="post-blog-img__img" alt="">
             </div>
