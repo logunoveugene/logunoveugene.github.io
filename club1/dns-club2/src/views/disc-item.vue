@@ -9,11 +9,11 @@
                         <router-link class="link link--color-black" to="/discussions">Коммуникатор</router-link>
                         <!--<div class="mx-2">/</div>-->
                         <!--<router-link v-if="post.source" class="link link&#45;&#45;color-black" to="/discussions">-->
-                            <!--{{post.source.parent.title}}-->
+                        <!--{{post.source.parent.title}}-->
                         <!--</router-link>-->
                         <!--<div class="mx-2">/</div>-->
                         <!--<router-link v-if="post.source" class="link link&#45;&#45;color-black" to="/discussions">-->
-                            <!--{{post.source.title}}-->
+                        <!--{{post.source.title}}-->
                         <!--</router-link>-->
                     </div>
                 </div>
@@ -109,7 +109,6 @@
                     </div>
 
 
-
                     <div class="my-4" v-if="comments && comments.length>1">
 
                         <div class="d-flex justify-content-between align-items-center">
@@ -150,7 +149,7 @@
                     <div class="d-none d-md-block">
                         <div class="h1">Ваш ответ</div>
                         <div class="comment__reply-box">
-                            <froala :tag="'textarea'" :config="config" v-model="replyText"></froala>
+                            <editor-tip-tap></editor-tip-tap>
                         </div>
                         <button type="button" class="btn btn--color-white ">Опубликовать</button>
                     </div>
@@ -196,7 +195,9 @@
                         </div>
                     </div>
                 </div>
-                <input type="text">
+                <div class="pr-5">
+                    <editor-tip-tap/>
+                </div>
             </div>
         </div>
     </div>
@@ -213,10 +214,11 @@
     import productList from '@/components/product-list.vue'
     import author from "@/components/post-block/parts/author.vue"
 
+
+    import editorTipTap from "@//components/editor-tip-tap-comment.vue"
+
     import {swiper, swiperSlide} from 'vue-awesome-swiper'
     import 'swiper/dist/css/swiper.css'
-
-
 
 
     export default {
@@ -229,11 +231,12 @@
             postImg,
 
             productList,
-            author
+            author,
+            editorTipTap
         },
         data() {
             return {
-              
+
                 readyToPublic: false,
                 selected: [],
                 selectedRub: [],

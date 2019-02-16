@@ -123,7 +123,7 @@
         background-position: center center;
         background-repeat: no-repeat;
         background-size: 100%;
-        transition: transform .15s ease-in, box-shadow .2s ease-in;
+        transition: transform .15s ease-in, box-shadow .2s ease-in, background-color 1s;
         cursor: pointer;
 
     }

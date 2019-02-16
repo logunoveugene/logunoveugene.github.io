@@ -1,10 +1,10 @@
 <template>
-    <div class="comment d-flex" :style="{opacity: (comment.rate>=0)?1:(comment.rate>-10)?.5: .25 }">
-        <div class="mr-3 comment__comment-author-img-wrap">
+    <div class="comment d-flex" >
+        <div :style="{opacity: (comment.rate>=0)?1:(comment.rate>-10)?.5: .25 }" class="mr-3 comment__comment-author-img-wrap">
             <img :src="comment.autorImg" alt="" class="comment__comment-author-img rounded-circle">
         </div>
         <div class="w-100 d-flex flex-column">
-            <div class="d-flex justify-content-between">
+            <div :style="{opacity: (comment.rate>=0)?1:(comment.rate>-10)?.5: .25 }" class="d-flex justify-content-between">
                 <div class="d-flex flex-column">
                     <div class="d-flex">
                         <img :src="comment.autorImg" alt="" class="comment__comment-author-img-mob rounded-circle">
@@ -48,8 +48,8 @@
                 </div>
 
             </div>
-            <div class="mb-3" v-html="comment.comment"></div>
-            <div class="d-flex align-items-center">
+            <div :style="{opacity: (comment.rate>=0)?1:(comment.rate>-10)?.5: .25 }" class="mb-3" v-html="comment.comment"></div>
+            <div :style="{opacity: (comment.rate>=0)?1:(comment.rate>-10)?.5: .25 }" class="d-flex align-items-center">
                 <div class="comment__rate d-flex mr-4 align-items-center">
 
                     <div class="comment__rate-up icon-thumb-up pt-1" @click="++comment.rate"></div>
@@ -65,11 +65,11 @@
 
                 </div>
                 <div class="small ml-auto">
-                    <div v-if="comment.child.length>0   && childExtend" class="link link--color-grey link--doted "
+                    <div v-if="comment.child && comment.child.length>0   && childExtend" class="link link--color-grey link--doted "
                          @click="childExtend=!childExtend">Свернуть ответы
                         {{comment.child.length}}
                     </div>
-                    <div v-if="comment.child.length>0  && !childExtend" class=" link link--color-grey link--doted "
+                    <div v-if="comment.child && comment.child.length>0  && !childExtend" class=" link link--color-grey link--doted "
                          @click="childExtend=!childExtend">Развернуть ответы
                         {{comment.child.length}}
                     </div>
@@ -79,7 +79,7 @@
                 <div class="d-flex flex-column">
                     <div class="h2">Добавление ответа</div>
                     <div class="comment__reply-box">
-                        <froala :tag="'textarea'" :config="config" v-model="replyText"></froala>
+                        <editor-tip-tap-comment></editor-tip-tap-comment>
                     </div>
                     <div class=" d-flex align-items-center">
                         <button type="button" class="btn btn--color-white ">Опубликовать</button>
@@ -92,7 +92,7 @@
                 </div>
             </div>
 
-            <div v-if="comment.child.length>0 && childExtend" class="comment__child-wrap">
+            <div v-if="comment.child &&  comment.child.length>0 && childExtend" class="comment__child-wrap">
                 <comment-item v-for="comment in comment.child" :comment="comment" :key="comment.id"></comment-item>
             </div>
 
@@ -103,13 +103,15 @@
 
 <script>
     import commentItem from "./comment-item.vue"
+    import editorTipTapComment from "./editor-tip-tap-comment.vue"
     import author from "./post-block/parts/author.vue"
 
     export default {
         name: "comment-item",
         components: {
             commentItem,
-            author
+            author,
+            editorTipTapComment
         },
         props: {
             comment: {

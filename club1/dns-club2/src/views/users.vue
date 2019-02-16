@@ -10,7 +10,7 @@
                 <div class="col-12">
                     <div class="page__title mb-4">Пользователи</div>
 
-                    <div class="">
+                    <div class="d-flex justify-content-between">
                         <nav class="nav nav-pills nav-justified mb-4 ">
                             <a v-bind:class="{'link--pill-active':isUsersList}"
                                class="link link--pill link--color-grey"
@@ -25,7 +25,7 @@
                             <a class="link link--pill link--color-grey"
                                href="#"
                                v-on:click="isUsersList=false, isUsersAwards=true"
-                            >По коммуникатору</a>
+                            >По темам</a>
                             <a class="link link--pill link--color-grey"
                                href="#"
                                v-on:click="isUsersList=false, isUsersAwards=true"
@@ -35,6 +35,7 @@
                                v-on:click="isUsersList=false, isUsersAwards=true"
                             >По комментариям</a>
                         </nav>
+                        <date-range-select></date-range-select>
                     </div>
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
                         <div class="" v-if="isUsersList">
@@ -164,7 +165,7 @@
     import 'swiper/dist/css/swiper.css'
     import ProductList from "../components/product-list";
     import author from "@/components/post-block/parts/author.vue"
-
+    import dateRangeSelect from "@//components/dateRangeSelect.vue"
 
     export default {
         components: {
@@ -177,7 +178,8 @@
             commentItem,
             postImg,
             productList,
-            author
+            author,
+            dateRangeSelect,
         },
         data() {
             return {
