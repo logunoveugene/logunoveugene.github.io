@@ -10,7 +10,7 @@ import {
     TouchableOpacity,
     InteractionManager,
     DatePickerAndroid,
-    Text, TouchableNativeFeedback, Dimensions, TouchableHighlight
+    Text, TouchableNativeFeedback, Dimensions, TouchableHighlight, Animated
 } from 'react-native'
 import NumKeyboard from './addNote/numKeyboard'
 import {NavigationEvents} from 'react-navigation';
@@ -66,8 +66,9 @@ export default class Main extends React.Component {
         typeCategoryList: null,
         typeCategoryTitleSelected: 'Списание',
 
-        selectedAccount:null,
-
+        selectedAccount: null,
+        selectAccountPlate: false,
+        plateHeight: new Animated.Value(63),
 
     };
 
@@ -82,8 +83,10 @@ export default class Main extends React.Component {
             } else {
                 storeddAccounts = JSON.parse(storeddAccounts);
             }
-            this.setState({bankAccountsList: storeddAccounts,
-                selectedAccount:storeddAccounts[0]}, () => {
+            this.setState({
+                bankAccountsList: storeddAccounts,
+                selectedAccount: storeddAccounts[0]
+            }, () => {
                 this._chooseAccount(this.state.bankAccountsList[0])
             });
         } catch (error) {
@@ -240,7 +243,7 @@ export default class Main extends React.Component {
             bankAccountBgColor: account.bankBgColor,
             bankAccountTextColor: account.bankTextColor,
             currency: account.currencyCode,
-            selectedAccount:account
+            selectedAccount: account
         });
 
 
@@ -286,7 +289,7 @@ export default class Main extends React.Component {
     };
 
     render() {
-        const {bankAccountsList, typeCategoryList, typeCategoryTitleSelected, keyboardIsShown, type,bankAccountTitle} = this.state
+        const { typeCategoryList, keyboardIsShown} = this.state
 
         return (
 
@@ -294,7 +297,6 @@ export default class Main extends React.Component {
                 <NavigationEvents
                     onDidFocus={() => this.componentDidMount()}
                 />
-
 
 
                 <View style={styles.fixedHeader}>
@@ -355,77 +357,150 @@ export default class Main extends React.Component {
                                 style: {zIndex: 19, marginBottom: 15}
                             }}/>
                     </View>
-                    <View
+                    <Animated.View
                         style={{
-                        width: +`${width}` - 20,
-                        height: 63,
-                        // flexDirection: 'column',
-                        // alignItems: "center",
-                        zIndex: 50,
-                        backgroundColor: '#ffffff',
-                        // borderBottomWidth: 1,
-                        marginHorizontal: 10,
-                        marginTop: 10,
-                        borderRadius: 10,
-                        padding: 15,
-                        // borderLeftColor: `${l.typeSubCategoryColor}`,
-                        // borderLeftWidth: 1,
-                        // // marginHorizontal: 10,
-                        // marginBottom: 7,
-                        // elevation: 1
-                    }}
+                            width: +`${width}` - 20,
+                            height: this.state.plateHeight,
+                            // flexDirection: 'column',
+                            // alignItems: "center",
+                            zIndex: 50,
+                            backgroundColor: '#ffffff',
+                            // borderBottomWidth: 1,
+                            marginHorizontal: 10,
+                            marginTop: 10,
+                            borderRadius: 10,
+                            padding: 15,
+
+                        }}
                     >
+
                         <View
                             style={{
-                                marginLeft: -4,
-                                flexDirection: 'row'
+                                flexDirection: 'row',
+                                justifyContent: "space-between"
                             }}
-                        >
 
-                            {this.state.typeCategoryList.map((i, index) =>
-                                <TouchableOpacity
-                                    key={index}
-                                    onPress={() => {
-                                        this._chooseType(i.title)
-                                    }}
-                                    style={{
-                                        textAlign: 'left',
-                                        paddingVertical: 3,
-                                        // width: "20%",
-                                        position: "relative"
-                                    }}
-                                >
-                                    {i.title === this.state.typeCategoryTitleSelected &&
-                                    <View
-                                        style={{
-                                            backgroundColor: '#ffda3a',
-                                            position: 'absolute',
-                                            top: 1,
-                                            left: -1,
-                                            width: '100%',
-                                            height: 32,
-                                            borderRadius: 16,
-                                            opacity: .5
+                        >
+                            <View
+                                style={{
+                                    marginLeft: -4,
+                                    flexDirection: 'row'
+                                }}
+                            >
+
+                                {this.state.typeCategoryList.map((i, index) =>
+                                    <TouchableOpacity
+                                        key={index}
+                                        onPress={() => {
+                                            this._chooseType(i.title)
                                         }}
-                                    />
-                                    }
-                                    <Text
                                         style={{
-                                            fontSize: 16,
-                                            paddingHorizontal: 8,
+                                            textAlign: 'left',
                                             paddingVertical: 3,
+                                            // width: "20%",
+                                            position: "relative"
                                         }}
                                     >
-                                        {i.title} </Text>
-                                </TouchableOpacity>
-                            )}
-                        </View>
+                                        {i.title === this.state.typeCategoryTitleSelected &&
+                                        <View
+                                            style={{
+                                                backgroundColor: '#ffda3a',
+                                                position: 'absolute',
+                                                top: 1,
+                                                left: -1,
+                                                width: '100%',
+                                                height: 32,
+                                                borderRadius: 16,
+                                                opacity: .5
+                                            }}
+                                        />
+                                        }
+                                        <Text
+                                            style={{
+                                                fontSize: 16,
+                                                paddingHorizontal: 8,
+                                                paddingVertical: 3,
+                                            }}
+                                        >
+                                            {i.title} </Text>
+                                    </TouchableOpacity>
+                                )}
+                            </View>
+                            <TouchableOpacity
+                                style={{
+                                    padding: 6,
+                                    marginTop: 2
+                                }}
+                                onPress={() => this.setState({
+                                    selectAccountPlate: !this.state.selectAccountPlate,
+                                    plateHeight: (this.state.plateHeight === 63) ? 120 : 63
+                                })}>
 
-                    </View>
+                                {/*<Text*/}
+                                {/*style={{*/}
+                                {/*fontSize: 16,*/}
+                                {/*// paddingHorizontal: 8,*/}
+                                {/*// paddingVertical: 3,*/}
+                                {/*}}*/}
+                                {/*>{this.state.bankAccountTitle}</Text>*/}
+
+                                <IconM name="chevron-down" type="simple-line-icons" size={20}/>
+
+                            </TouchableOpacity>
+                        </View>
+                        {this.state.selectAccountPlate &&
+                        <View>
+                            <View
+                                style={{
+                                    marginLeft: -4,
+                                    flexDirection: 'row'
+                                }}
+                            >
+
+                                {this.state.bankAccountsList.map((i, index) =>
+                                    <TouchableOpacity
+                                        key={index}
+                                        onPress={() => {
+                                            this._chooseAccount(i)
+                                        }}
+                                        style={{
+                                            textAlign: 'left',
+                                            paddingVertical: 3,
+                                            // width: "20%",
+                                            position: "relative"
+                                        }}
+                                    >
+                                        {i.title === this.state.bankAccountTitle &&
+                                        <View
+                                            style={{
+                                                backgroundColor: '#ffda3a',
+                                                position: 'absolute',
+                                                top: 1,
+                                                left: -1,
+                                                width: '100%',
+                                                height: 32,
+                                                borderRadius: 16,
+                                                opacity: .5
+                                            }}
+                                        />
+                                        }
+                                        <Text
+                                            style={{
+                                                fontSize: 16,
+                                                paddingHorizontal: 8,
+                                                paddingVertical: 3,
+                                            }}
+                                        >
+                                            {i.title} </Text>
+                                    </TouchableOpacity>
+                                )}
+                            </View>
+                        </View>
+                        }
+
+                    </Animated.View>
 
                 </View>}
-
-
 
 
                 <ScrollView style={styles.nodeDescriptionWrapScroll}>
@@ -450,8 +525,8 @@ export default class Main extends React.Component {
                         }
                         <TouchableOpacity
                             style={styles.mynode}
-                            onPress={() =>  this.props.navigation.navigate('categoryList')}
-                           >
+                            onPress={() => this.props.navigation.navigate('categoryList')}
+                        >
                             <Text
                                 style={styles.mynodeText}>Изменить категории</Text>
                         </TouchableOpacity>
@@ -466,8 +541,8 @@ export default class Main extends React.Component {
                         // width: +`${width}` - 20,
                         // borderRadius:10,
                         // overflow: "hidden",
-                        position:'relative',
-                        height:320,
+                        position: 'relative',
+                        height: 320,
                         backgroundColor: '#fff'
                     }}
                 >
@@ -502,7 +577,7 @@ export default class Main extends React.Component {
                         style={{
                             width: '100%',
                             position: "relative",
-                            height:60
+                            height: 60
                         }}
                     >
                         <BoxShadow
@@ -547,7 +622,6 @@ export default class Main extends React.Component {
                             >Добавить</Text>
                         </TouchableHighlight>
                     </View>
-
 
 
                 </View>

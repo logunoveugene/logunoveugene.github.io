@@ -142,7 +142,7 @@ export default class Main extends React.Component {
         })
 
         try {
-            await AsyncStorage.removeItem('nodeList');
+            // await AsyncStorage.removeItem('nodeList');
             var storedNote = await AsyncStorage.getItem('nodeList');
             if (storedNote == null) {
                 storedNote = sampleNodes
