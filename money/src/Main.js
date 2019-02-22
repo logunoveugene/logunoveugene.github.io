@@ -102,7 +102,6 @@ export default class Main extends React.Component {
             modalFilterByMonthPlate: false,
 
 
-
         }
     }
 
@@ -142,7 +141,7 @@ export default class Main extends React.Component {
         })
 
         try {
-            await AsyncStorage.removeItem('nodeList');
+            // await AsyncStorage.removeItem('nodeList');
             var storedNote = await AsyncStorage.getItem('nodeList');
             if (storedNote == null) {
                 storedNote = sampleNodes
@@ -186,12 +185,13 @@ export default class Main extends React.Component {
                 () => {
                     this.setState({
                         isChartLoaded: true,
-                    })
+                    });
                     this.calcMainInfo()
                 }
             );
         }
         if (filterType === "test") {
+
             this.setState({
                     listls: _(this.state.fullNodeList)
                         .filter((o) => {
@@ -216,11 +216,15 @@ export default class Main extends React.Component {
                         .filter((item => a.indexOf(item.typeSubCategoryTitle) >= 0))
                         .orderBy(['date', 'time'], ['desc', 'desc']).value(),
                 }, () => {
-                    this.calcMainInfo()
+                    this.setState({
+                        isChartLoaded: true,
+                    });
+                    this.calcMainInfo();
+                    console.log(this.state)
                 }
             );
         }
-        // let result = _.filter(this.state.fullNodeList, (item => B.indexOf(item.typeSubCategoryTitle) >= 0));
+
     }
 
     setModalActionVisible = (visible) => {
@@ -516,9 +520,6 @@ export default class Main extends React.Component {
                         }}>
 
 
-
-
-
                             <View
                                 style={{
                                     flexDirection: "row",
@@ -547,7 +548,6 @@ export default class Main extends React.Component {
                                         style={styles.datePickerButtonText}>{this.state.filterDateRangeLast && dayjs(this.state.filterDateRangeLast).locale('ru').format('D MMM')}</Text>
                                 </TouchableOpacity>
                             </View>
-
 
 
                             <View
@@ -743,7 +743,6 @@ export default class Main extends React.Component {
                             position: "relative"
 
                         }}>
-
 
 
                             <View>
@@ -995,7 +994,6 @@ export default class Main extends React.Component {
                 }
 
 
-
                 {!this.state.isChartLoaded &&
                 <View
                     style={{
@@ -1033,7 +1031,7 @@ export default class Main extends React.Component {
                         <TouchableOpacity
                             onPress={() => {
                                 this.setState({
-                                  modalFilterByMonthPlate:true
+                                    modalFilterByMonthPlate: true
                                 })
                             }}
                             style={{
@@ -1180,7 +1178,7 @@ export default class Main extends React.Component {
                                 style={{
                                     marginLeft: -4,
                                     flexDirection: 'row',
-                                    justifyContent:'space-between',
+                                    justifyContent: 'space-between',
                                     height: this.state.scrollY.interpolate({
                                         inputRange: [0, 32],
                                         outputRange: [32, 0],
@@ -1250,11 +1248,11 @@ export default class Main extends React.Component {
                                     onPress={() => this.setState({modalVisible: true})}>
                                     {/*<IconM name="filter"*/}
 
-                                           {/*size={20}*/}
-                                           {/*color="#666"*/}
-                                           {/*style={{*/}
-                                               {/*marginRight: 5,*/}
-                                           {/*}}*/}
+                                    {/*size={20}*/}
+                                    {/*color="#666"*/}
+                                    {/*style={{*/}
+                                    {/*marginRight: 5,*/}
+                                    {/*}}*/}
                                     {/*/>*/}
                                     <Text
                                         style={{
@@ -1426,158 +1424,163 @@ export default class Main extends React.Component {
                         modalActionVisible={this.state.modalActionVisible}
                         removeItem={this.removeItem}
                     />
-                    {this.state.nodeTypeList &&
-                    <Modal
-                        animationType="slide"
-                        transparent={true}
-                        visible={this.state.modalVisible}
-                        onRequestClose={() => {
-                            this.setModalVisible(!this.state.modalVisible);
+
+                </View>
+                }
+                {this.state.nodeTypeList &&
+                <Modal
+                    animationType="slide"
+                    transparent={true}
+                    visible={this.state.modalVisible}
+                    onRequestClose={() => {
+                        this.setModalVisible(!this.state.modalVisible);
+                    }}
+                >
+                    <View
+                        style={{
+                            flex: 1,
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            position: "relative",
+                            backgroundColor: 'rgba(0,0,0,0)'
                         }}
                     >
-                        <View
-                            style={{
-                                flex: 1,
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                position: "relative",
-                                backgroundColor: 'rgba(0,0,0,0)'
-                            }}
-                        >
-                            <BoxShadow
-                                setting={{
-                                    width: +`${width}` - 20,
-                                    height: 400,
-                                    color: "#0c034c",
-                                    border: 50,
-                                    radius: 20,
-                                    opacity: 0.1,
-                                    x: 0,
-                                    y: -10,
-                                    style: {position: 'absolute', bottom: 10}
-                                }}>
+                        <BoxShadow
+                            setting={{
+                                width: +`${width}` - 20,
+                                height: 200,
+                                color: "#0c034c",
+                                border: 50,
+                                radius: 20,
+                                opacity: 0.1,
+                                x: 0,
+                                y: -10,
+                                style: {position: 'absolute', bottom: 10}
+                            }}>
+                            <View
+                                style={{
+                                    width: {width} - 20,
+                                    height: 200,
+                                    // position: "absolute",
+                                    // bottom: 0,
+                                    backgroundColor: "#ffffff",
+                                    borderRadius: 10,
+                                    // borderTopRightRadius: 20,
+                                    padding: 20,
+                                    // margin: 10
+                                }}
+                            >
                                 <View
                                     style={{
-                                        width: {width} - 20,
-                                        height: 400,
-                                        // position: "absolute",
-                                        // bottom: 0,
-                                        backgroundColor: "#ffffff",
-                                        borderRadius: 10,
-                                        // borderTopRightRadius: 20,
-                                        padding: 20,
-                                        // margin: 10
+                                        flexDirection: "row",
+                                        position: 'relative',
+                                        paddingVertical: 5,
+                                        justifyContent: "space-between"
                                     }}
                                 >
-                                    <View
+                                    <Text
                                         style={{
-                                            flexDirection: "row",
-                                            position: 'relative',
-                                            paddingVertical: 5,
-                                            justifyContent: "space-between"
+                                            fontSize: 20,
+                                            fontWeight: 'bold'
+                                        }}
+                                    >Фильтрация</Text>
+                                    <TouchableHighlight
+                                        style={{
+                                            height: 30,
+                                            width: 30,
+                                            top: -2,
+                                            right: -5,
+                                            position: "absolute"
+                                        }}
+
+                                        onPress={() => {
+                                            this.setModalVisible(!this.state.modalVisible)
                                         }}
                                     >
-                                        <Text
-                                            style={{
-                                                fontSize: 20,
-                                                fontWeight: 'bold'
-                                            }}
-                                        >Добавление счета</Text>
-                                        <TouchableHighlight
-                                            style={{
-                                                height: 30,
-                                                width: 30,
-                                                top: -2,
-                                                right: -5,
-                                                position: "absolute"
-                                            }}
+                                        <Text style={{
+                                            fontSize: 30,
+                                            color: '#999999',
+                                            top: -1,
 
-                                            onPress={() => {
-                                                this.setModalVisible(!this.state.modalVisible)
-                                            }}
-                                        >
-                                            <Text style={{
-                                                fontSize: 30,
-                                                color: '#999999',
-                                                top: -1,
+                                        }}>×</Text>
+                                    </TouchableHighlight>
+                                </View>
 
-                                            }}>×</Text>
-                                        </TouchableHighlight>
-                                    </View>
-
-                                    <View>
-                                        <View
-                                            style={{flexDirection: 'row', flexWrap: 'wrap'}}
-                                        >
-                                            {this.state.nodeTypeList.map((i, index) => (
-                                                <View
-                                                    key={index}
-                                                    style={{flexDirection: 'row'}}>
-                                                    <CheckBox
-                                                        value={i.active}
-                                                        onValueChange={() => this.selectFilterType(i)}
-                                                    />
-                                                    <Text style={{marginTop: 5}}>{i.title}</Text>
-                                                </View>
-                                            ))}
-                                        </View>
-                                    </View>
+                                <View>
                                     <View
-                                        style={{
-                                            width: '100%',
-                                            height: 100,
-                                            position: "relative"
-                                        }}
+                                        style={{flexDirection: 'row', flexWrap: 'wrap'}}
                                     >
-                                        <BoxShadow
-                                            setting={{
-                                                width: +`${width}` - 80,
-                                                height: 40,
-                                                color: "#b07919",
-                                                border: 10,
-                                                radius: 20,
-                                                opacity: 0.2,
-                                                x: 10,
-                                                y: 10,
-                                                style: {position: 'absolute', bottom: 40}
-
-                                            }}>
-                                            <View style={{
-                                                width: '100%',
-                                                height: 20
-                                            }}>
-                                            </View>
-
-                                        </BoxShadow>
-                                        <TouchableHighlight
-                                            underlayColor={"#ffb316"}
-                                            style={{
-                                                width: '100%',
-                                                alignItems: 'center',
-
-                                                backgroundColor: "#ffda3a",
-                                                marginTop: 20,
-                                                padding: 15,
-                                                borderRadius: 30,
-                                                bottom: 30,
-                                                left: 0,
-                                                position: "absolute"
-
-                                            }} onPress={this.handlePostData}>
-                                            <Text
+                                        {this.state.nodeTypeList.map((i, index) => (
+                                            <View
+                                                key={index}
                                                 style={{
-                                                    fontSize: 18
-                                                }}
-                                            >Добавить</Text>
-                                        </TouchableHighlight>
+                                                    flexDirection: 'row',
+                                                    marginLeft: -5,
+                                                    marginRight: 15
+                                                }}>
+                                                <CheckBox
+                                                    value={i.active}
+                                                    onValueChange={() => this.selectFilterType(i)}
+                                                />
+                                                <Text style={{marginTop: 5}}>{i.title}</Text>
+                                            </View>
+                                        ))}
                                     </View>
                                 </View>
-                            </BoxShadow>
-                        </View>
-                    </Modal>
-                    }
-                </View>
+                                {/*<View*/}
+                                {/*style={{*/}
+                                {/*width: '100%',*/}
+                                {/*height: 100,*/}
+                                {/*position: "relative"*/}
+                                {/*}}*/}
+                                {/*>*/}
+                                {/*<BoxShadow*/}
+                                {/*setting={{*/}
+                                {/*width: +`${width}` - 80,*/}
+                                {/*height: 40,*/}
+                                {/*color: "#b07919",*/}
+                                {/*border: 10,*/}
+                                {/*radius: 20,*/}
+                                {/*opacity: 0.2,*/}
+                                {/*x: 10,*/}
+                                {/*y: 10,*/}
+                                {/*style: {position: 'absolute', bottom: 40}*/}
+
+                                {/*}}>*/}
+                                {/*<View style={{*/}
+                                {/*width: '100%',*/}
+                                {/*height: 20*/}
+                                {/*}}>*/}
+                                {/*</View>*/}
+
+                                {/*</BoxShadow>*/}
+                                {/*<TouchableHighlight*/}
+                                {/*underlayColor={"#ffb316"}*/}
+                                {/*style={{*/}
+                                {/*width: '100%',*/}
+                                {/*alignItems: 'center',*/}
+
+                                {/*backgroundColor: "#ffda3a",*/}
+                                {/*marginTop: 20,*/}
+                                {/*padding: 15,*/}
+                                {/*borderRadius: 30,*/}
+                                {/*bottom: 30,*/}
+                                {/*left: 0,*/}
+                                {/*position: "absolute"*/}
+
+                                {/*}} onPress={this.handlePostData}>*/}
+                                {/*<Text*/}
+                                {/*style={{*/}
+                                {/*fontSize: 18*/}
+                                {/*}}*/}
+                                {/*>Применить</Text>*/}
+                                {/*</TouchableHighlight>*/}
+                                {/*</View>*/}
+                            </View>
+                        </BoxShadow>
+                    </View>
+                </Modal>
                 }
             </View>
         )
