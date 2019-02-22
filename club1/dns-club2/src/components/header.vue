@@ -49,7 +49,7 @@
                                            href="#">Александр</a>
                                         <template slot="popover">
                                             <div class="py-2 pt-3 text-left px-3 ">
-                                                <router-link to="/message" class="link link--color-grey">Личные сообщения</router-link>
+                                                <router-link to="/message-old" class="link link--color-grey">Личные сообщения</router-link>
                                             </div>
                                             <div class="py-2 text-left px-3 ">
                                                 <a href="" class="link link--color-grey">Мои статьи</a>

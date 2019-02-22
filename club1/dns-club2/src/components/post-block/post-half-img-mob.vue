@@ -4,6 +4,7 @@
 
             <div class="d-flex flex-column">
                 <div class="post-half-mob__title  mb-1 h4">
+
                     <router-link class="link link--color-black" :to="{ name: 'post', params: { id: post.id }}">
                         {{post.title}}
                     </router-link>

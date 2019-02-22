@@ -9,17 +9,33 @@
                       { backgroundImage: 'url(' +  post.img + ')',
                         backgroundColor: post.bgColor,
                         boxShadow: 'inset 360px 0px 100px -60px ' +  post.bgColor}
-                     ]" >
+                     ]">
 
             <div class="post-lock__info align-self-stretch">
-                <post-tag
-                        :source="post.source"
-                        :format="post.format"
-                        :tags="post.tags"
-                        :color="post.textColor"
-                ></post-tag>
+                <div class="d-flex align-items-center">
+                    <div class="post__fotmat-icon" v-bind:style="{ color: post.textColor }"
+                         v-if="post.format=='Видео'">
+                        <div class="icon-video"></div>
+                    </div>
+                    <div class="post__fotmat-icon" v-bind:style="{ color: post.textColor }"
+                         v-if="post.format=='Фото'">
+                        <div class="icon-photo"></div>
+                    </div>
+
+                    <post-tag
+                            :source="post.source"
+                            :format="post.format"
+                            :tags="post.tags"
+                            :color="post.textColor"
+                    ></post-tag>
+                </div>
 
                 <div class="post-lock__title">
+                    <div class="h3 d-inline-block mb-0 mr-1" v-if="post.autor==='1'">
+                        <a href="#" class="link link--opacity-hover" v-bind:style="{ color: post.textColor }">
+                            <span class=" icon-pen"></span>
+                        </a>
+                    </div>
                     <router-link class="link link--color-black link--opacity-hover"
                                  v-bind:style="{ color: post.textColor }"
                                  :to="{ name: 'post', params: { id: post.id }}">
@@ -54,6 +70,7 @@
     import postInfo from './parts/post-info.vue'
     import postTag from './parts/post-tag.vue'
     import author from "./parts/author.vue"
+
     export default {
         name: "post-wide",
         components: {
@@ -145,10 +162,11 @@
             background-image: none !important;
         }
     }
+
     @media (max-width: 1200px) {
         .post-lock {
 
-            background-size: cover ;
+            background-size: cover;
         }
     }
 

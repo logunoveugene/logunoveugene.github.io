@@ -34,18 +34,16 @@
 </script>
 
 <template>
-
-    <div v-if="currentId!==null" class="text">
+    <div v-if="currentId!==null" class="message-text-field">
         <input placeholder="Для отправки нажми Ctrl + Enter" v-model="content" @keyup="onKeyup" class="field"/>
         <div class="send-form-icon">
             <div class="icon-send" @click="content.length ? (SEND_MESSAGE(content),content = ''): null"></div>
         </div>
     </div>
-
 </template>
 
-<style lang="scss" scoped>
-    .text {
+<style lang="scss"  >
+    .message-text-field {
 
         display: flex;
         align-items: center;
@@ -53,6 +51,8 @@
         padding: 16px;
         background: #f2f2f2;
         border-radius: 0 0 8px 8px;
+        position: relative;
+   z-index: 500;
 
         textarea {
             padding: 10px;

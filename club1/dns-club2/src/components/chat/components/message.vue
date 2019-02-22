@@ -39,9 +39,35 @@
             <div class="h1 mb-1 ">Выберите диалог</div>
             <div class="">или воспользуйтесь поиском для создания нового</div>
         </div>
-        <ul class="message-list" v-if="session" v-scroll-bottom>
-            <li v-for="(item, index) in session.messages">
+        <div class="d-block d-md-none flex-fill bg-white mob-header" v-if="session">
+            <div class="d-flex justify-content-between">
 
+                <div class="d-flex align-items-center p-3">
+                    <img class="avatar" width="30" height="30" :alt="session.user.name" :src="session.user.img">
+                    <div class="font-weight-bold">
+                        {{session.user.name}}
+                    </div>
+                </div>
+
+                <v-popover offset="0">
+                    <div class="massage-icon-menu p-3">
+                        <div class="icon-menu pt-2"></div>
+                    </div>
+                    <template slot="popover">
+                        <div class="py-2 py-3 text-center px-3 bb-1">
+                            <a href="#" class="link link--color-grey">Удалить переписку</a>
+                        </div>
+                        <div class="py-2 py-3 text-center px-3">
+                            <a href="#" class="link link--color-grey">В черный список</a>
+                        </div>
+                    </template>
+                </v-popover>
+            </div>
+
+        </div>
+        <ul class="message-list" v-if="session" v-scroll-bottom>
+
+            <li v-for="(item, index) in session.messages">
                 <div v-if="index >= 1 && `${session.messages[index - 1].date}` !== `${item.date}` || index === 0"
                      class="time" :class="{ self: item.self }">
                     <span>{{ item.date | time }}</span>
@@ -148,5 +174,10 @@
         transform: translate(-50%, -50%);
         text-align: center;
         color: #999999;
+    }
+
+    .mob-header {
+        border: 1px solid #eee;
+        border-radius: 8px 8px 0 0;
     }
 </style>

@@ -72,7 +72,7 @@
     .list {
 
         li {
-            padding: 12px 15px;
+            padding: 12px 0;
             /*border-bottom: 1px solid #eeeeee;*/
             cursor: pointer;
             transition: background-color .1s;
@@ -108,4 +108,23 @@
         white-space: nowrap;
         max-width: 220px;
     }
+
+
+
+    @media(min-width: 768px) {
+
+
+        .list {
+
+            li {
+                padding: 12px 15px;
+                /*border-bottom: 1px solid #eeeeee;*/
+                cursor: pointer;
+                transition: background-color .1s;
+            }
+        }
+
+
+    }
+
 </style>

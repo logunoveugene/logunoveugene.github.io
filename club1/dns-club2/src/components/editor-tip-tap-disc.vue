@@ -1,210 +1,338 @@
 <template>
-    <div class="editor">
+    <div class="">
+        <div class="editor">
 
 
+            <editor-floating-menu :editor="editor">
+                <div
+                        slot-scope="{ commands, isActive, menu }"
+                        class="editor__floating-menu"
+                        :class="{ 'is-active': menu.isActive }"
+                        :style="`top: ${menu.top}px`"
+                >
 
-        <editor-floating-menu :editor="editor">
-            <div
-                    slot-scope="{ commands, isActive, menu }"
-                    class="editor__floating-menu"
-                    :class="{ 'is-active': menu.isActive }"
-                    :style="`top: ${menu.top}px`"
-            >
+                    <div
+                            class="menubar__button"
+                            :class="{ 'is-active': isActive.heading({ level: 1 }) }"
+                            @click="commands.heading({ level: 1 })"
+                    >
+                        <span class="editor-icon-text">H1</span>
+                    </div>
+
+                    <div
+                            class="menubar__button"
+                            :class="{ 'is-active': isActive.heading({ level: 2 }) }"
+                            @click="commands.heading({ level: 2 })"
+                    >
+                        <span class="editor-icon-text">H2</span>
+                    </div>
+
+                    <div
+                            class="menubar__button"
+                            :class="{ 'is-active': isActive.heading({ level: 3 }) }"
+                            @click="commands.heading({ level: 3 })"
+                    >
+                        <span class="editor-icon-text">H3</span>
+                    </div>
+
+                    <div
+                            class="menubar__button"
+                            :class="{ 'is-active': isActive.bullet_list() }"
+                            @click="commands.bullet_list"
+                    >
+                        <i class="editor-icon icon-ul"></i>
+                    </div>
+
+                    <div
+                            class="menubar__button"
+                            :class="{ 'is-active': isActive.ordered_list() }"
+                            @click="commands.ordered_list"
+                    >
+                        <i class="editor-icon icon-ol"></i>
+                    </div>
+
+                    <div
+                            class="menubar__button"
+                            :class="{ 'is-active': isActive.blockquote() }"
+                            @click="commands.blockquote"
+                    >
+                        <i class="editor-icon icon-quote"></i>
+                    </div>
+                    <div
+                            class="menubar__button"
+                            @click="showImagePrompt(commands.image)"
+                    >
+                        <i class="editor-icon icon-image"></i>
+                    </div>
+
+
+                    <div
+                            class="menubar__button"
+                            @click="commands.createTable({rowsCount: 3, colsCount: 3, withHeaderRow: false })"
+                    >
+                        <i class="editor-icon icon-table"></i>
+                    </div>
+
+                </div>
+            </editor-floating-menu>
+            <editor-menu-bubble :editor="editor">
 
                 <div
-                        class="menubar__button"
-                        :class="{ 'is-active': isActive.heading({ level: 1 }) }"
-                        @click="commands.heading({ level: 1 })"
+                        slot-scope="{ commands, isActive, getMarkAttrs, menu }"
+                        class="menububble"
+                        :class="{ 'is-active': menu.isActive || isActive.table()  }"
+                        :style="`left: ${menu.left}px; bottom: ${menu.bottom}px;`"
                 >
-                    <span class="editor-icon-text">H1</span>
+
+
+                    <v-popover v-if="!isActive.table()" offset="0">
+
+                        <div class="menububble__button">
+                            <span class="editor-icon-text">H</span>
+                        </div>
+                        <template slot="popover">
+                            <div v-if="!isActive.table()"
+                                 class="menububble__button"
+                                 :class="{ 'is-active': isActive.heading({ level: 1 }) }"
+                                 @click="commands.heading({ level: 1 })"
+                            >
+                                <span class="editor-icon-text">H2</span>
+                            </div>
+                            <div v-if="!isActive.table()"
+                                 class="menububble__button"
+                                 :class="{ 'is-active': isActive.heading({ level: 2 }) }"
+                                 @click="commands.heading({ level: 2 })"
+                            >
+                                <span class="editor-icon-text">H3</span>
+                            </div>
+
+
+                            <div v-if="!isActive.table()"
+                                 class="menububble__button"
+                                 :class="{ 'is-active': isActive.heading({ level: 2 }) }"
+                                 @click="commands.heading({ level: 3 })"
+                            >
+                                <span class="editor-icon-text">H4</span>
+                            </div>
+
+                        </template>
+                    </v-popover>
+
+                    <div v-if="!isActive.table()"
+                         class="menububble__button"
+                         :class="{ 'is-active': isActive.bold() }"
+                         @click="commands.bold"
+                    >
+                        <i class="editor-icon icon-bold"></i>
+                    </div>
+
+
+                    <v-popover v-if="!isActive.table()" offset="0">
+
+                        <div class="menububble__button">
+                            <i class="editor-icon icon-ul"></i>
+                        </div>
+                        <template slot="popover">
+                            <div v-if="!isActive.table()"
+                                 class="menububble__button"
+                                 :class="{ 'is-active': isActive.bullet_list() }"
+                                 @click="commands.bullet_list"
+                            >
+                                <i class="editor-icon icon-ul"></i>
+                            </div>
+                            <div v-if="!isActive.table()"
+                                 class="menububble__button"
+                                 :class="{ 'is-active': isActive.ordered_list() }"
+                                 @click="commands.ordered_list"
+                            >
+                                <i class="editor-icon icon-ol"></i>
+                            </div>
+                        </template>
+                    </v-popover>
+
+
+                    <v-popover offset="0" v-if="isActive.paragraph() && !isActive.table()"
+                               :style="`left: ${menu.left}px; bottom: ${menu.bottom}px;`">
+
+                        <div class="menububble__button">
+                            <i v-if="isActive.paragraph({ textAlign: 'left' })" class="editor-icon icon-left-align"></i>
+                            <i v-if="isActive.paragraph({ textAlign: 'center' })"
+                               class="editor-icon icon-center-align"></i>
+                            <i v-if="isActive.paragraph({ textAlign: 'right' })"
+                               class="editor-icon icon-right-align"></i>
+                        </div>
+                        <template slot="popover">
+
+                            <div
+                                    class="menububble__button"
+                                    :class="{ 'v-btn--active': isActive.paragraph({ textAlign: 'left' }) }"
+                                    @click="commands.paragraph({ textAlign: 'left' })">
+                                <i class="editor-icon icon-left-align"></i>
+
+                            </div>
+                            <div
+                                    class="menububble__button"
+                                    :class="{ 'v-btn--active': isActive.paragraph({ textAlign: 'center' }) }"
+                                    @click="commands.paragraph({ textAlign: 'center' })">
+                                <i class="editor-icon icon-center-align"></i>
+
+                            </div>
+                            <div
+                                    class="menububble__button"
+                                    :class="{ 'v-btn--active': isActive.paragraph({ textAlign: 'right' }) }"
+                                    @click="commands.paragraph({ textAlign: 'right' })">
+                                <i class="editor-icon icon-right-align"></i>
+
+                            </div>
+                        </template>
+                    </v-popover>
+
+
+                    <v-popover v-if="!isActive.table()" offset="0">
+
+                        <div class="menububble__button">
+                            <i class="editor-icon icon-dots-hor"></i>
+                        </div>
+                        <template slot="popover">
+                            <div v-if="!isActive.table()"
+                                 class="menububble__button"
+                                 :class="{ 'is-active': isActive.italic() }"
+                                 @click="commands.italic"
+                            >
+                                <i class="editor-icon icon-italic"></i>
+
+                            </div>
+
+                            <button
+                                    class="menububble__button"
+                                    :class="{ 'is-active': isActive.strike() }"
+                                    @click="commands.strike"
+                            >
+                                <i class="editor-icon icon-strike"></i>
+                            </button>
+
+                            <button
+                                    class="menububble__button"
+                                    :class="{ 'is-active': isActive.underline() }"
+                                    @click="commands.underline"
+                            >
+                                <i class="editor-icon icon-underline"></i>
+                            </button>
+
+                        </template>
+                    </v-popover>
+
+
+                    <v-popover offset="0" v-if="isActive.table()">
+
+                        <div class="menububble__button">
+                            <i class="editor-icon-text ">–</i>
+                        </div>
+                        <template slot="popover">
+
+                            <div v-if="isActive.table()"
+                                 class="menububble__button"
+                                 @click="commands.deleteColumn"
+                            >
+                                <i class="editor-icon icon-delete-col"> </i>
+                            </div>
+                            <div v-if="isActive.table()"
+                                 class="menububble__button"
+                                 @click="commands.deleteRow"
+                            >
+                                <i class="editor-icon icon-delete-row"></i>
+                            </div>
+
+                        </template>
+                    </v-popover>
+
+
+                    <v-popover offset="0" v-if="isActive.table()">
+
+                        <div class="menububble__button">
+                            <i class="editor-icon-text ">+</i>
+                        </div>
+                        <template slot="popover">
+
+                            <div v-if="isActive.table()"
+                                 class="menububble__button"
+                                 @click="commands.addColumnBefore"
+                            >
+                                <i class="editor-icon icon-add-col-before"> </i>
+                            </div>
+                            <div v-if="isActive.table()"
+                                 class="menububble__button"
+                                 @click="commands.addColumnAfter"
+                            >
+                                <i class="editor-icon icon-add-col-after"> </i>
+                            </div>
+
+                            <div v-if="isActive.table()"
+                                 class="menububble__button"
+                                 @click="commands.addRowBefore"
+                            >
+                                <i class="editor-icon icon-add-row-before"> </i>
+                            </div>
+                            <div v-if="isActive.table()"
+                                 class="menububble__button"
+                                 @click="commands.addRowAfter"
+                            >
+                                <i class="editor-icon icon-add-row-after"> </i>
+                            </div>
+
+                        </template>
+                    </v-popover>
+
+
+                    <div v-if="isActive.table()"
+                         class="menububble__button"
+                         @click="commands.deleteTable"
+                    >
+                        <i class="editor-icon icon-delete-table"> </i>
+                    </div>
+
+
+                    <div v-if="isActive.table()"
+                         class="menububble__button"
+                         @click="commands.toggleCellMerge"
+                    >
+                        <i class="editor-icon icon-combine-cells"></i>
+                    </div>
+
+
                 </div>
 
+
+            </editor-menu-bubble>
+
+
+            <editor-content class="editor__content" :editor="editor"/>
+        </div>
+        <div class="suggestion-list" v-show="showSuggestions" ref="suggestions">
+            <template v-if="hasResults">
                 <div
-                        class="menubar__button"
-                        :class="{ 'is-active': isActive.heading({ level: 2 }) }"
-                        @click="commands.heading({ level: 2 })"
+                        v-for="(user, index) in filteredUsers"
+                        :key="user.id"
+                        class="suggestion-list__item"
+                        :class="{ 'is-selected': navigatedUserIndex === index }"
+                        @click="selectUser(user)"
                 >
-                    <span class="editor-icon-text">H2</span>
+                    {{ user.name }}
                 </div>
-
-                <div
-                        class="menubar__button"
-                        :class="{ 'is-active': isActive.heading({ level: 3 }) }"
-                        @click="commands.heading({ level: 3 })"
-                >
-                    <span class="editor-icon-text">H3</span>
-                </div>
-
-                <div
-                        class="menubar__button"
-                        :class="{ 'is-active': isActive.bullet_list() }"
-                        @click="commands.bullet_list"
-                >
-                    <i class="editor-icon icon-ul"></i>
-                </div>
-
-                <div
-                        class="menubar__button"
-                        :class="{ 'is-active': isActive.ordered_list() }"
-                        @click="commands.ordered_list"
-                >
-                    <i class="editor-icon icon-ol"></i>
-                </div>
-
-                <div
-                        class="menubar__button"
-                        :class="{ 'is-active': isActive.blockquote() }"
-                        @click="commands.blockquote"
-                >
-                    <i class="editor-icon icon-quote"></i>
-                </div>
-                <div
-                        class="menubar__button"
-                        @click="showImagePrompt(commands.image)"
-                >
-                    <i class="editor-icon icon-image"></i>
-                </div>
-
-
-                <div
-                        class="menubar__button"
-                        @click="commands.createTable({rowsCount: 3, colsCount: 3, withHeaderRow: false })"
-                >
-                    <i class="editor-icon icon-table"></i>
-                </div>
-
+            </template>
+            <div v-else class="suggestion-list__item is-empty">
+               Товар не найден, попробуйте по артиклу.
             </div>
-        </editor-floating-menu>
-        <editor-menu-bubble :editor="editor">
-
-            <div
-                    slot-scope="{ commands, isActive, menu }"
-                    class="menububble"
-                    :class="{ 'is-active': menu.isActive || isActive.table()  }"
-                    :style="`left: ${menu.left}px; bottom: ${menu.bottom}px;`"
-            >
-
-                <div
-                        class="menububble__button"
-                        :class="{ 'is-active': isActive.bold() }"
-                        @click="commands.bold"
-                >
-                    <i class="editor-icon icon-bold"></i>
-                </div>
-                <div v-if="!isActive.table()"
-                        class="menububble__button"
-                        :class="{ 'is-active': isActive.italic() }"
-                        @click="commands.italic"
-                >
-                    <i class="editor-icon icon-italic"></i>
-
-                </div>
-                <div v-if="!isActive.table()"
-                        class="menububble__button"
-                        :class="{ 'is-active': isActive.heading({ level: 1 }) }"
-                        @click="commands.heading({ level: 1 })"
-                >
-                    <span class="editor-icon-text">H1</span>
-                </div>
-                <div v-if="!isActive.table()"
-                        class="menububble__button"
-                        :class="{ 'is-active': isActive.heading({ level: 2 }) }"
-                        @click="commands.heading({ level: 2 })"
-                >
-                    <span class="editor-icon-text">H2</span>
-                </div>
-                <div v-if="!isActive.table()"
-                        class="menububble__button"
-                        :class="{ 'is-active': isActive.heading({ level: 3 }) }"
-                        @click="commands.heading({ level: 3 })"
-                >
-                    <span class="editor-icon-text">H3</span>
-                </div>
-                <div v-if="!isActive.table()"
-                        class="menububble__button"
-                        :class="{ 'is-active': isActive.bullet_list() }"
-                        @click="commands.bullet_list"
-                >
-                    <i class="editor-icon icon-ul"></i>
-                </div>
-                <div v-if="!isActive.table()"
-                        class="menububble__button"
-                        :class="{ 'is-active': isActive.ordered_list() }"
-                        @click="commands.ordered_list"
-                >
-                    <i class="editor-icon icon-ol"></i>
-                </div>
-
-
-
-						<div v-if="isActive.table()"
-                                class="menubar__button"
-                                @click="commands.deleteTable"
-                        >
-							<i class="editor-icon icon-delete-table"> </i>
-						</div>
-						<div v-if="isActive.table()"
-                                class="menubar__button"
-                                @click="commands.addColumnBefore"
-                        >
-							<i class="editor-icon icon-add-col-before"> </i>
-						</div>
-						<div v-if="isActive.table()"
-                                class="menubar__button"
-                                @click="commands.addColumnAfter"
-                        >
-							<i class="editor-icon icon-add-col-after"> </i>
-						</div>
-						<div v-if="isActive.table()"
-                                class="menubar__button"
-                                @click="commands.deleteColumn"
-                        >
-							<i class="editor-icon icon-delete-col"> </i>
-						</div>
-						<div v-if="isActive.table()"
-                                class="menubar__button"
-                                @click="commands.addRowBefore"
-                        >
-							<i class="editor-icon icon-add-row-before"> </i>
-						</div>
-						<div v-if="isActive.table()"
-                                class="menubar__button"
-                                @click="commands.addRowAfter"
-                        >
-							<i class="editor-icon icon-add-row-after"> </i>
-						</div>
-						<div v-if="isActive.table()"
-                                class="menubar__button"
-                                @click="commands.deleteRow"
-                        >
-                            <i class="editor-icon icon-delete-row"></i>
-						</div>
-						<div v-if="isActive.table()"
-                                class="menubar__button"
-                                @click="commands.toggleCellMerge"
-                        >
-							<i class="editor-icon icon-combine-cells"></i>
-						</div>
-
-
-
-
-            </div>
-
-
-        </editor-menu-bubble>
-
-
-
-
-
-
-
-        <editor-content class="editor__content" :editor="editor"/>
+        </div>
     </div>
 </template>
 
 <script>
+
+
+    import Fuse from 'fuse.js'
+    import tippy from 'tippy.js'
+
 
     import {Editor, EditorContent, EditorMenuBar, EditorFloatingMenu, EditorMenuBubble} from 'tiptap'
     import {
@@ -221,11 +349,16 @@
 
         Image,
 
+
+        Strike,
+        Underline,
+
         Table,
         TableHeader,
         TableCell,
         TableRow,
 
+        Mention
 
     } from 'tiptap-extensions'
 
@@ -244,6 +377,12 @@
             return {
                 linkUrl: null,
                 linkMenuIsActive: false,
+                query: null,
+                suggestionRange: null,
+                filteredUsers: [],
+                navigatedUserIndex: 0,
+                insertMention: () => {
+                },
                 editor: new Editor({
                     extensions: [
                         new Blockquote(),
@@ -257,6 +396,10 @@
                         new Bold(),
 
                         new Italic(),
+
+
+                        new Strike(),
+                        new Underline(),
 
                         new History(),
                         new Placeholder({
@@ -272,8 +415,88 @@
                         new TableRow(),
 
 
+                        new Mention({
+                            // a list of all suggested items
+                            items: () => [
+                                {id: 1, name: 'Термопот DEXP THP-5900 черный'},
+                                {id: 2, name: 'Термопаста arctic cooling mx-4'},
+                                {id: 3, name: 'Телескоп Celestron PowerSeeker 127 EQ'},
+                                {id: 4, name: 'Телевизор QLED Haier LE65X7000U серый'},
+                            ],
+                            // is called when a suggestion starts
+                            onEnter: ({
+                                          items, query, range, command, virtualNode,
+                                      }) => {
+                                this.query = query
+                                this.filteredUsers = items
+                                this.suggestionRange = range
+                                this.renderPopup(virtualNode)
+                                // we save the command for inserting a selected mention
+                                // this allows us to call it inside of our custom popup
+                                // via keyboard navigation and on click
+                                this.insertMention = command
+                            },
+                            // is called when a suggestion has changed
+                            onChange: ({
+                                           items, query, range, virtualNode,
+                                       }) => {
+                                this.query = query
+                                this.filteredUsers = items
+                                this.suggestionRange = range
+                                this.navigatedUserIndex = 0
+                                this.renderPopup(virtualNode)
+                            },
+                            // is called when a suggestion is cancelled
+                            onExit: () => {
+                                // reset all saved values
+                                this.query = null
+                                this.filteredUsers = []
+                                this.suggestionRange = null
+                                this.navigatedUserIndex = 0
+                                this.destroyPopup()
+                            },
+                            // is called on every keyDown event while a suggestion is active
+                            onKeyDown: ({event}) => {
+                                // pressing up arrow
+                                if (event.keyCode === 38) {
+                                    this.upHandler()
+                                    return true
+                                }
+                                // pressing down arrow
+                                if (event.keyCode === 40) {
+                                    this.downHandler()
+                                    return true
+                                }
+                                // pressing enter
+                                if (event.keyCode === 13) {
+                                    this.enterHandler()
+                                    return true
+                                }
+
+                                return false
+                            },
+                            // is called when a suggestion has changed
+                            // this function is optional because there is basic filtering built-in
+                            // you can overwrite it if you prefer your own filtering
+                            // in this example we use fuse.js with support for fuzzy search
+                            onFilter: (items, query) => {
+                                if (!query) {
+                                    return items
+                                }
+
+                                const fuse = new Fuse(items, {
+                                    threshold: 0.2,
+                                    keys: ['name'],
+                                })
+
+                                return fuse.search(query)
+                            },
+                        }),
+
+
                     ],
                     content: '',
+
                 }),
             }
         },
@@ -303,6 +526,82 @@
                     command({src})
                 }
             },
+
+
+            // navigate to the previous item
+            // if it's the first item, navigate to the last one
+            upHandler() {
+                this.navigatedUserIndex = ((this.navigatedUserIndex + this.filteredUsers.length) - 1) % this.filteredUsers.length
+            },
+
+            // navigate to the next item
+            // if it's the last item, navigate to the first one
+            downHandler() {
+                this.navigatedUserIndex = (this.navigatedUserIndex + 1) % this.filteredUsers.length
+            },
+
+            enterHandler() {
+                const user = this.filteredUsers[this.navigatedUserIndex]
+
+                if (user) {
+                    this.selectUser(user)
+                }
+            },
+
+            // we have to replace our suggestion text with a mention
+            // so it's important to pass also the position of your suggestion text
+            selectUser(user) {
+                this.insertMention({
+                    range: this.suggestionRange,
+                    attrs: {
+                        id: user.id,
+                        label: user.name,
+                    },
+                })
+                this.editor.focus()
+            },
+
+            // renders a popup with suggestions
+            // tiptap provides a virtualNode object for using popper.js (or tippy.js) for popups
+            renderPopup(node) {
+                if (this.popup) {
+                    return
+                }
+
+                this.popup = tippy(node, {
+                    content: this.$refs.suggestions,
+                    trigger: 'mouseenter',
+                    interactive: true,
+                    theme: 'dark',
+                    placement: 'top-start',
+                    performance: true,
+                    inertia: true,
+                    duration: [400, 200],
+                    showOnInit: true,
+                    arrow: true,
+                    arrowType: 'round',
+                })
+            },
+
+            destroyPopup() {
+                if (this.popup) {
+                    this.popup.destroyAll()
+                    this.popup = null
+                }
+            },
+
+
+        },
+        computed: {
+
+            hasResults() {
+                return this.filteredUsers.length
+            },
+
+            showSuggestions() {
+                return this.query || this.hasResults
+            },
+
         },
 
 
@@ -313,6 +612,7 @@
 </script>
 
 <style lang="scss">
+
 
     :focus {
         outline: none
@@ -504,7 +804,7 @@
     .menubar {
         margin-bottom: 1rem;
         height: 0px;
-        top:10px;
+        top: 10px;
         -webkit-transition: visibility .2s .4s, opacity .2s .4s;
         transition: visibility .2s .4s, opacity .2s .4s
     }
@@ -692,4 +992,599 @@
         box-shadow: 0 0 0 2px #ff8d00;
     }
 
+    .mention {
+        background: rgba(0, 0, 0, 0.1);
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 0.8rem;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 0.2rem 0.5rem;
+        white-space: nowrap;
+    }
+
+    .mention-suggestion {
+        color: rgba(0, 0, 0, 0.6);
+    }
+
+    .suggestion-list {
+        padding: 0.2rem;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        font-size: 0.8rem;
+        font-weight: bold;
+
+        &__no-results {
+            padding: 0.2rem 0.5rem;
+        }
+
+        &__item {
+            border-radius: 5px;
+            padding: 0.2rem 0.5rem;
+            margin-bottom: 0.2rem;
+            cursor: pointer;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &.is-selected,
+            &:hover {
+                background-color: rgba(256, 256, 256, 0.2);
+            }
+
+            &.is-empty {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .tippy-tooltip.dark-theme {
+        background-color: #000000;
+        padding: 0;
+        font-size: 1rem;
+        text-align: inherit;
+        color: #ffffff;
+        border-radius: 5px;
+
+        .tippy-backdrop {
+            display: none;
+        }
+
+        .tippy-roundarrow {
+            fill: #000000;
+        }
+
+        .tippy-popper[x-placement^=top] & .tippy-arrow {
+            border-top-color: #000000;
+        }
+
+        .tippy-popper[x-placement^=bottom] & .tippy-arrow {
+            border-bottom-color: #000000;
+        }
+
+        .tippy-popper[x-placement^=left] & .tippy-arrow {
+            border-left-color: #000000;
+        }
+
+        .tippy-popper[x-placement^=right] & .tippy-arrow {
+            border-right-color: #000000;
+        }
+    }
+
+    .tippy-iOS {
+        cursor: pointer !important
+    }
+
+    .tippy-notransition {
+        transition: none !important
+    }
+
+    .tippy-popper {
+        -webkit-perspective: 700px;
+        perspective: 700px;
+        z-index: 9999;
+        outline: 0;
+        transition-timing-function: cubic-bezier(.165, .84, .44, 1);
+        pointer-events: none;
+        line-height: 1.4;
+        max-width: calc(100% - 10px)
+    }
+
+    .tippy-popper[x-placement^=top] .tippy-backdrop {
+        border-radius: 40% 40% 0 0
+    }
+
+    .tippy-popper[x-placement^=top] .tippy-roundarrow {
+        bottom: -8px;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0
+    }
+
+    .tippy-popper[x-placement^=top] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg)
+    }
+
+    .tippy-popper[x-placement^=top] .tippy-arrow {
+        border-top: 8px solid #333;
+        border-right: 8px solid transparent;
+        border-left: 8px solid transparent;
+        bottom: -7px;
+        margin: 0 6px;
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0
+    }
+
+    .tippy-popper[x-placement^=top] .tippy-backdrop {
+        -webkit-transform-origin: 0 25%;
+        transform-origin: 0 25%
+    }
+
+    .tippy-popper[x-placement^=top] .tippy-backdrop[data-state=visible] {
+        -webkit-transform: scale(1) translate(-50%, -55%);
+        transform: scale(1) translate(-50%, -55%)
+    }
+
+    .tippy-popper[x-placement^=top] .tippy-backdrop[data-state=hidden] {
+        -webkit-transform: scale(.2) translate(-50%, -45%);
+        transform: scale(.2) translate(-50%, -45%);
+        opacity: 0
+    }
+
+    .tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=visible] {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px)
+    }
+
+    .tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px)
+    }
+
+    .tippy-popper[x-placement^=top] [data-animation=perspective] {
+        -webkit-transform-origin: bottom;
+        transform-origin: bottom
+    }
+
+    .tippy-popper[x-placement^=top] [data-animation=perspective][data-state=visible] {
+        -webkit-transform: translateY(-10px) rotateX(0);
+        transform: translateY(-10px) rotateX(0)
+    }
+
+    .tippy-popper[x-placement^=top] [data-animation=perspective][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateY(0) rotateX(60deg);
+        transform: translateY(0) rotateX(60deg)
+    }
+
+    .tippy-popper[x-placement^=top] [data-animation=fade][data-state=visible] {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px)
+    }
+
+    .tippy-popper[x-placement^=top] [data-animation=fade][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px)
+    }
+
+    .tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=visible] {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px)
+    }
+
+    .tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    .tippy-popper[x-placement^=top] [data-animation=scale][data-state=visible] {
+        -webkit-transform: translateY(-10px) scale(1);
+        transform: translateY(-10px) scale(1)
+    }
+
+    .tippy-popper[x-placement^=top] [data-animation=scale][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateY(0) scale(.5);
+        transform: translateY(0) scale(.5)
+    }
+
+    .tippy-popper[x-placement^=bottom] .tippy-backdrop {
+        border-radius: 0 0 30% 30%
+    }
+
+    .tippy-popper[x-placement^=bottom] .tippy-roundarrow {
+        top: -8px;
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%
+    }
+
+    .tippy-popper[x-placement^=bottom] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(0);
+        transform: rotate(0)
+    }
+
+    .tippy-popper[x-placement^=bottom] .tippy-arrow {
+        border-bottom: 8px solid #333;
+        border-right: 8px solid transparent;
+        border-left: 8px solid transparent;
+        top: -7px;
+        margin: 0 6px;
+        -webkit-transform-origin: 50% 100%;
+        transform-origin: 50% 100%
+    }
+
+    .tippy-popper[x-placement^=bottom] .tippy-backdrop {
+        -webkit-transform-origin: 0 -50%;
+        transform-origin: 0 -50%
+    }
+
+    .tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=visible] {
+        -webkit-transform: scale(1) translate(-50%, -45%);
+        transform: scale(1) translate(-50%, -45%)
+    }
+
+    .tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=hidden] {
+        -webkit-transform: scale(.2) translate(-50%);
+        transform: scale(.2) translate(-50%);
+        opacity: 0
+    }
+
+    .tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=visible] {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px)
+    }
+
+    .tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px)
+    }
+
+    .tippy-popper[x-placement^=bottom] [data-animation=perspective] {
+        -webkit-transform-origin: top;
+        transform-origin: top
+    }
+
+    .tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=visible] {
+        -webkit-transform: translateY(10px) rotateX(0);
+        transform: translateY(10px) rotateX(0)
+    }
+
+    .tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateY(0) rotateX(-60deg);
+        transform: translateY(0) rotateX(-60deg)
+    }
+
+    .tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=visible] {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px)
+    }
+
+    .tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px)
+    }
+
+    .tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=visible] {
+        -webkit-transform: translateY(10px);
+        transform: translateY(10px)
+    }
+
+    .tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    .tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=visible] {
+        -webkit-transform: translateY(10px) scale(1);
+        transform: translateY(10px) scale(1)
+    }
+
+    .tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateY(0) scale(.5);
+        transform: translateY(0) scale(.5)
+    }
+
+    .tippy-popper[x-placement^=left] .tippy-backdrop {
+        border-radius: 50% 0 0 50%
+    }
+
+    .tippy-popper[x-placement^=left] .tippy-roundarrow {
+        right: -16px;
+        -webkit-transform-origin: 33.33333333% 50%;
+        transform-origin: 33.33333333% 50%
+    }
+
+    .tippy-popper[x-placement^=left] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg)
+    }
+
+    .tippy-popper[x-placement^=left] .tippy-arrow {
+        border-left: 8px solid #333;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        right: -7px;
+        margin: 3px 0;
+        -webkit-transform-origin: 0 50%;
+        transform-origin: 0 50%
+    }
+
+    .tippy-popper[x-placement^=left] .tippy-backdrop {
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0
+    }
+
+    .tippy-popper[x-placement^=left] .tippy-backdrop[data-state=visible] {
+        -webkit-transform: scale(1) translate(-50%, -50%);
+        transform: scale(1) translate(-50%, -50%)
+    }
+
+    .tippy-popper[x-placement^=left] .tippy-backdrop[data-state=hidden] {
+        -webkit-transform: scale(.2) translate(-75%, -50%);
+        transform: scale(.2) translate(-75%, -50%);
+        opacity: 0
+    }
+
+    .tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=visible] {
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px)
+    }
+
+    .tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateX(-20px);
+        transform: translateX(-20px)
+    }
+
+    .tippy-popper[x-placement^=left] [data-animation=perspective] {
+        -webkit-transform-origin: right;
+        transform-origin: right
+    }
+
+    .tippy-popper[x-placement^=left] [data-animation=perspective][data-state=visible] {
+        -webkit-transform: translateX(-10px) rotateY(0);
+        transform: translateX(-10px) rotateY(0)
+    }
+
+    .tippy-popper[x-placement^=left] [data-animation=perspective][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateX(0) rotateY(-60deg);
+        transform: translateX(0) rotateY(-60deg)
+    }
+
+    .tippy-popper[x-placement^=left] [data-animation=fade][data-state=visible] {
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px)
+    }
+
+    .tippy-popper[x-placement^=left] [data-animation=fade][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px)
+    }
+
+    .tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=visible] {
+        -webkit-transform: translateX(-10px);
+        transform: translateX(-10px)
+    }
+
+    .tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+
+    .tippy-popper[x-placement^=left] [data-animation=scale][data-state=visible] {
+        -webkit-transform: translateX(-10px) scale(1);
+        transform: translateX(-10px) scale(1)
+    }
+
+    .tippy-popper[x-placement^=left] [data-animation=scale][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateX(0) scale(.5);
+        transform: translateX(0) scale(.5)
+    }
+
+    .tippy-popper[x-placement^=right] .tippy-backdrop {
+        border-radius: 0 50% 50% 0
+    }
+
+    .tippy-popper[x-placement^=right] .tippy-roundarrow {
+        left: -16px;
+        -webkit-transform-origin: 66.66666666% 50%;
+        transform-origin: 66.66666666% 50%
+    }
+
+    .tippy-popper[x-placement^=right] .tippy-roundarrow svg {
+        position: absolute;
+        left: 0;
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg)
+    }
+
+    .tippy-popper[x-placement^=right] .tippy-arrow {
+        border-right: 8px solid #333;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        left: -7px;
+        margin: 3px 0;
+        -webkit-transform-origin: 100% 50%;
+        transform-origin: 100% 50%
+    }
+
+    .tippy-popper[x-placement^=right] .tippy-backdrop {
+        -webkit-transform-origin: -50% 0;
+        transform-origin: -50% 0
+    }
+
+    .tippy-popper[x-placement^=right] .tippy-backdrop[data-state=visible] {
+        -webkit-transform: scale(1) translate(-50%, -50%);
+        transform: scale(1) translate(-50%, -50%)
+    }
+
+    .tippy-popper[x-placement^=right] .tippy-backdrop[data-state=hidden] {
+        -webkit-transform: scale(.2) translate(-25%, -50%);
+        transform: scale(.2) translate(-25%, -50%);
+        opacity: 0
+    }
+
+    .tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=visible] {
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px)
+    }
+
+    .tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateX(20px);
+        transform: translateX(20px)
+    }
+
+    .tippy-popper[x-placement^=right] [data-animation=perspective] {
+        -webkit-transform-origin: left;
+        transform-origin: left
+    }
+
+    .tippy-popper[x-placement^=right] [data-animation=perspective][data-state=visible] {
+        -webkit-transform: translateX(10px) rotateY(0);
+        transform: translateX(10px) rotateY(0)
+    }
+
+    .tippy-popper[x-placement^=right] [data-animation=perspective][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateX(0) rotateY(60deg);
+        transform: translateX(0) rotateY(60deg)
+    }
+
+    .tippy-popper[x-placement^=right] [data-animation=fade][data-state=visible] {
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px)
+    }
+
+    .tippy-popper[x-placement^=right] [data-animation=fade][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px)
+    }
+
+    .tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=visible] {
+        -webkit-transform: translateX(10px);
+        transform: translateX(10px)
+    }
+
+    .tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateX(0);
+        transform: translateX(0)
+    }
+
+    .tippy-popper[x-placement^=right] [data-animation=scale][data-state=visible] {
+        -webkit-transform: translateX(10px) scale(1);
+        transform: translateX(10px) scale(1)
+    }
+
+    .tippy-popper[x-placement^=right] [data-animation=scale][data-state=hidden] {
+        opacity: 0;
+        -webkit-transform: translateX(0) scale(.5);
+        transform: translateX(0) scale(.5)
+    }
+
+    .tippy-tooltip {
+        position: relative;
+        color: #fff;
+        border-radius: 4px;
+        font-size: .9rem;
+        padding: .3rem .6rem;
+        max-width: 350px;
+        text-align: center;
+        will-change: transform;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: #333
+    }
+
+    .tippy-tooltip[data-size=small] {
+        padding: .2rem .4rem;
+        font-size: .75rem
+    }
+
+    .tippy-tooltip[data-size=large] {
+        padding: .4rem .8rem;
+        font-size: 1rem
+    }
+
+    .tippy-tooltip[data-animatefill] {
+        overflow: hidden;
+        background-color: transparent
+    }
+
+    .tippy-tooltip[data-interactive], .tippy-tooltip[data-interactive] path {
+        pointer-events: auto
+    }
+
+    .tippy-tooltip[data-inertia][data-state=visible] {
+        transition-timing-function: cubic-bezier(.54, 1.5, .38, 1.11)
+    }
+
+    .tippy-tooltip[data-inertia][data-state=hidden] {
+        transition-timing-function: ease
+    }
+
+    .tippy-arrow, .tippy-roundarrow {
+        position: absolute;
+        width: 0;
+        height: 0
+    }
+
+    .tippy-roundarrow {
+        width: 24px;
+        height: 8px;
+        fill: #333;
+        pointer-events: none
+    }
+
+    .tippy-backdrop {
+        position: absolute;
+        will-change: transform;
+        background-color: #333;
+        border-radius: 50%;
+        width: calc(110% + 2rem);
+        left: 50%;
+        top: 50%;
+        z-index: -1;
+        transition: all cubic-bezier(.46, .1, .52, .98);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden
+    }
+
+    .tippy-backdrop:after {
+        content: "";
+        float: left;
+        padding-top: 100%
+    }
+
+    .tippy-backdrop + .tippy-content {
+        transition-property: opacity;
+        will-change: opacity
+    }
+
+    .tippy-backdrop + .tippy-content[data-state=visible] {
+        opacity: 1
+    }
+
+    .tippy-backdrop + .tippy-content[data-state=hidden] {
+        opacity: 0
+    }
 </style>

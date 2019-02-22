@@ -88,11 +88,30 @@ export default new Router({
 
             component: () => import(/* webpackChunkName: "message" */ './views/message.vue')
         },
+
+        {
+            path: '/message-old',
+            name: 'message',
+
+            component: () => import(/* webpackChunkName: "message-old" */ './views/message-old.vue')
+        },
         {
             path: '/test',
             name: 'test',
     
             component: () => import(/* webpackChunkName: "test" */ './views/test.vue')
+        },
+        {
+            path: '/404',
+            name: '404',
+
+            component: () => import(/* webpackChunkName: "404" */ './views/404.vue')
+        },
+        {
+            path: '/403',
+            name: '403',
+
+            component: () => import(/* webpackChunkName: "403" */ './views/403.vue')
         },
 
     ],

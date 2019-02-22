@@ -8,6 +8,12 @@
             ></post-tag>
 
             <div class="post-text__title mb-2 h2">
+
+                <div class="h3 d-inline-block mb-0 mr-1"  v-if="post.autor==='1'">
+                    <a href="#" class="link link--color-grey">
+                        <span class=" icon-pen"></span>
+                    </a>
+                </div>
                 <router-link class="link link--color-black" :to="{ name: 'post', params: { id: post.id }}">
                     {{post.title}}
                 </router-link>

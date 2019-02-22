@@ -37,7 +37,7 @@
                                 <div class="dropzone-custom-content">
                                     <div class="" v-if="dropzoneIsEmpity">
                                         <h3 class="dropzone-custom-title">Добавьте главное фото статьи</h3>
-                                        <div class="subtitle">Перетащите изображение сюда<br> или нажмите и выберите на
+                                        <div class="subtitle d-none d-lg-block">Перетащите изображение сюда<br> или нажмите и выберите на
                                             компьютере
                                         </div>
                                     </div>
@@ -305,15 +305,30 @@
                                     (Клуб)</label>
                             </div>
                             <div class="bg-light rounded p-2 mb-3" v-if="checkedPublishToHP">
-                                <select class="custom-select ">
+                                <select class="custom-select mb-3">
                                     <option selected>Обычное размещение</option>
                                     <option value="1">Спецфото</option>
                                 </select>
-                                <div class="new-post__tags mb-4">
+                                <div class="new-post__tags mb-1">
                                     <div class="small text-muted mb-1">Обложка статьи</div>
-                                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                                </div>
+                                    <vue-dropzone ref="myVueDropzone"
+                                                  :options="dropzoneOptions"
+                                                  :useCustomSlot=true
+                                                  :include-styling="false"
+                                                  v-on:vdropzone-thumbnail="thumbnail"
+                                                  v-on:vdropzone-removed-file="dropzoneIsEmpity=true"
+                                                  v-on:vdropzone-file-added="dropzoneIsEmpity=false"
+                                                  id="customdropzone2">
 
+                                        <div class="dropzone-custom-content">
+                                            <div class="" v-if="dropzoneIsEmpity">
+                                                <div class="font-weight-bold">Загрузите обложку</div>
+
+                                            </div>
+                                        </div>
+                                    </vue-dropzone>
+
+                                </div>
 
                             </div>
 
@@ -323,10 +338,25 @@
                                 <label for="customCheck231" class="custom-control-label">Опубликовано на главной
                                     (DNS)</label>
                             </div>
-                            <div class="custom-control custom-checkbox mb-2">
+                            <div class="custom-control custom-checkbox mb-4">
                                 <input type="checkbox" id="customCheck1" class="custom-control-input">
                                 <label for="customCheck1" class="custom-control-label">Запрет индексации</label>
                             </div>
+
+
+                            <div class="small mb-4">
+                                <date-select></date-select>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="mr-4">
+                                    <div class="btn btn--color-orange">Сохранить</div>
+                                </div>
+                                <div class="">
+                                    <a href="#" class="link link--color-blue link--doted">Опубликовать</a>
+                                </div>
+                            </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -334,46 +364,46 @@
                     <div class="">
                         <div class="new-post__tags mb-4">
                             <div class="small text-muted mb-1">Рубрика</div>
-                            <multiselect v-model="selectedRub"
-                                         tag-placeholder="Добавить новый тег"
-                                         placeholder="Выберите рубрику"
-                                         selectLabel="Выбрать"
-                                         selectedLabel="Выбран"
-                                         deselectLabel="Отменить выбор"
-                                         label="name"
-                                         track-by="name"
-                                         open-direction="bottom"
+                            <treeselect v-model="value"
+                                        openDirection="bottom"
+                                        :clear-on-select="true"
+                                        :multiple="true"
+                                        :options="optionsTheme"
+                                        noResultsText="Ничего не найдено"
+                                        placeholder="Выберите раздел"
+                                        :max-height="400"
+                                        zIndex="996"
+                            >
+                                <label slot="option-label"
+                                       slot-scope="{ node, shouldShowCount,  labelClassName, countClassName }"
+                                       :class="labelClassName">
+                                    {{ node.label }} <span class="category-list__amount text-muted small"> {{ node.raw.mcount }}</span>
 
-
-                                         group-values="libs"
-                                         group-label="language"
-                                         :group-select="true"
-                                         deselectGroupLabel="Отменить выбор"
-
-                                         selectGroupLabel='Выбрать все'
-
-                                         :options="options2"
-                                         :multiple="true"
-                                         @tag="addTag">
-
-                            </multiselect>
+                                </label>
+                            </treeselect>
                         </div>
                         <div class="new-post__tags mb-4">
                             <div class="small text-muted mb-1">Раздел</div>
-                            <multiselect v-model="selectedlist"
-                                         tag-placeholder="Добавить новый тег"
-                                         placeholder="Выберите раздел"
-                                         selectLabel="Выбрать"
-                                         selectedLabel="Выбран"
-                                         deselectLabel="Отменить выбор"
-                                         label="name"
-                                         track-by="code"
-                                         open-direction="bottom"
-                                         :options="options"
-                                         :multiple="true"
-                                         @tag="addTag">
 
-                            </multiselect>
+                            <treeselect v-model="value"
+                                        openDirection="bottom"
+                                        :clear-on-select="true"
+                                        :multiple="true"
+                                        :options="optionsTheme"
+                                        noResultsText="Ничего не найдено"
+                                        placeholder="Выберите раздел"
+                                        :max-height="400"
+                                        zIndex="996"
+                            >
+                                <label slot="option-label"
+                                       slot-scope="{ node, shouldShowCount,  labelClassName, countClassName }"
+                                       :class="labelClassName">
+                                    {{ node.label }} <span class="category-list__amount text-muted small"> {{ node.raw.mcount }}</span>
+
+                                </label>
+                            </treeselect>
+
+
                         </div>
 
 
@@ -396,10 +426,10 @@
                         </div>
 
 
-                        <div class="new-post__tags mb-4">
-                            <div class="small text-muted mb-1">Обложка статьи</div>
-                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                        </div>
+                        <!--<div class="new-post__tags mb-4">-->
+                        <!--<div class="small text-muted mb-1">Обложка статьи</div>-->
+                        <!--<input type="file" class="form-control-file" id="exampleFormControlFile1">-->
+                        <!--</div>-->
 
 
                         <div class="new-post__links mb-4">
@@ -428,11 +458,7 @@
 
                             <div class="new-post__save-state small text-secondary mb-3">
                                 <div class="mb-2">Статья создана: 12 ноя 18г. (изм. 12 ноя 18г.)</div>
-                                <div class="d-flex   mb-2">
-                                    <div class="mr-1">Будет опубликована</div>
-                                    <a href="#" class="link link--color-blue link--doted">не
-                                        выбрано</a>
-                                </div>
+
                                 <!--<div class=" ">Будет опубликована: 15 ноя 18г.</div>-->
                             </div>
 
@@ -1107,14 +1133,36 @@
 
     #customdropzone {
         background-color: #f2f2f2;
-
         color: #777;
         transition: background-color .2s linear;
-        height: 350px;
+        height: 200px;
         padding: 0px;
         position: relative;
         cursor: pointer;
         border-radius: 8px;
+    }
+
+
+    #customdropzone .dz-preview .dz-image > div {
+        width: 100%;
+        height: 200px;
+        border-radius: 0;
+        background-size: 100%;
+        background-position: 50%;
+    }
+
+    @media (min-width: 768px) {
+        #customdropzone {
+            height: 350px;
+        }
+
+        #customdropzone .dz-preview .dz-image > div {
+
+            height: 350px;
+
+        }
+
+
     }
 
     #customdropzone .dz-preview {
@@ -1132,13 +1180,7 @@
 
     }
 
-    #customdropzone .dz-preview .dz-image > div {
-        width: 100%;
-        height: 350px;
-        border-radius: 0;
-        background-size: 100%;
-        background-position: 50%;
-    }
+
 
     #customdropzone .dz-preview .dz-image > img {
         width: 100%;

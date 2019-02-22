@@ -11,101 +11,14 @@
                     </div>
                     <div class="d-flex align-items-center justify-content-between mb-3">
                         <h1 class="page__title mb-0">Заголовок информационной страницы</h1>
-                        <router-link to="/newpost" class=" link link--color-black new-post-btn d-lg-none d-block ">
-                            <div class="new-post-btn-icon">
-                                <div class=" text-success d-inline-block mr-2 icon-add"></div>
-                            </div>
-                            <div class="d-inline-block">Добавить обзор</div>
-                        </router-link>
+
                     </div>
                 </div>
                 <div class="col-12 col-md-12 col-lg-8">
-                    <div class="d-block d-lg-none">
-                        <div v-ripple class="collapse-block card-block card-block--full-mobile "
-                             @click="searchPlate=!searchPlate">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="">Настройка показа</div>
-                                <div class="collapse-block__icon ">
-                                    <div v-if="!searchPlate" class="icon-down"></div>
-                                    <div v-if="searchPlate" class="icon-up"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="collapse-plate pt-4  " v-if="searchPlate">
-                        <div class="">
-                            <div class="pb-4 bb-1">
-                                <div class="h2 mb-2 d-flex align-items-center">Разделы</div>
-                                <category></category>
-                            </div>
-                            <div class="py-4 bb-1">
-                                <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Формат
-                                </div>
-                                <div class=" d-flex">
-                                    <div class="custom-control custom-checkbox mr-4">
-                                        <input type="checkbox" id="customCheck1" checked="checked"
-                                               class="custom-control-input">
-                                        <label for="customCheck1" class="custom-control-label">Текст</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox mr-4">
-                                        <input type="checkbox" id="customCheck1" checked="checked"
-                                               class="custom-control-input">
-                                        <label for="customCheck1" class="custom-control-label">Видео</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox mr-4">
-                                        <input type="checkbox" id="customCheck1" checked="checked"
-                                               class="custom-control-input">
-                                        <label for="customCheck1" class="custom-control-label">Фото</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="py-4 bb-1">
-                                <div class="h2 mb-2 d-flex align-items-center justify-content-between ">Рубрика
-                                </div>
-                                <!--<div class="small d-flex flex-column">-->
 
-                                <!--<div class="mr-3">-->
-                                <!--<a href="#" class="link link&#45;&#45;color-grey">Любительские обзоры</a>-->
-                                <!--</div>-->
-                                <!--<div class="mr-3">-->
-                                <!--<a href="#" class="link link&#45;&#45;color-grey">Профессиональные обзоры</a>-->
-                                <!--</div>-->
-                                <!--<div class="mr-3">-->
-                                <!--<a href="#" class="link link&#45;&#45;color-grey">От производителей</a>-->
-                                <!--</div>-->
 
-                                <!--</div>-->
-                                <div class=" ">
-                                    <div class="custom-control custom-checkbox mr-4">
-                                        <input type="checkbox" id="customCheck1" checked="checked"
-                                               class="custom-control-input">
-                                        <label for="customCheck1" class="custom-control-label">Любительские
-                                            обзоры</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox mr-4">
-                                        <input type="checkbox" id="customCheck1" checked="checked"
-                                               class="custom-control-input">
-                                        <label for="customCheck1" class="custom-control-label">Профессиональные
-                                            обзоры</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox mr-4">
-                                        <input type="checkbox" id="customCheck1" checked="checked"
-                                               class="custom-control-input">
-                                        <label for="customCheck1" class="custom-control-label">От производителей</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="px-4">
-                            <div v-if="!allFilter" @click="allFilter=true" class="link link--doted  link--color-grey">
-                                Все
-                                фильтры
-                            </div>
 
-                        </div>
-                    </div>
-
-                    <div class="article  ">
+                    <div class="article mb-5 ">
                         <p>Здравствуйте, уважаемые читатели! В этом обзоре мы рассмотрим ноутбук от
                             компании Lenovo. Среди главных особенностей модели стильный дизайн, Full HD дисплей, а также
                             дополнительный
@@ -278,35 +191,59 @@
                             Пекине (КНР), а зарегистрирована компания в Гонконге.</p>
 
                     </div>
+                    <div class="mb-5 bg-light rounded p-4">
+                        <div class="h1">Обратная связь</div>
+                        <div class="mb-3">
+                            Для связи с Администрацией клуба, заполните форму обратной связи
+                        </div>
+                        <form action="" class="">
+                            <div class="mb-3 w-50">
+                                <label class="mb-0" for="feedback">Тема</label>
+                                <select id="feedback" class="custom-select ">
+                                    <option selected>Тендеры клуба, авторский контент</option>
+                                    <option>Техническая поддержка</option>
+                                    <option>Жалобы и предложения</option>
+                                </select>
+                            </div>
+                            <div class="mb-3 w-50">
+                                <input type="text" placeholder="Имя" class="field">
+                            </div>
+                            <div class="mb-3 w-50">
+                                <input type="email" placeholder="Email" class="field">
+                            </div>
+                            <div class="mb-3 w-50">
+                                <input type="tel" placeholder="Телефон" class="field">
+                            </div>
+                            <div class="mb-3 w-75">
+                                <div class="form__new-message">
+                                    <editor-tip-tap-comment/>
+                                </div>
+                            </div>
+                            <div class="btn btn--color-orange">Отправить</div>
+                        </form>
+                    </div>
 
                 </div>
                 <div class="col-12 col-lg-4 ">
                     <div class="row">
                         <div class="col-12 col-md-6 col-lg-12 mb-4 d-none d-lg-block ">
-
-
                             <div class="card-block card-block--shadow  mb-4">
                                 <div class="">
                                     <div class="p-4 bb-1">
                                         <div class="h2 mb-3 d-flex align-items-center">О нашем клубе</div>
                                         <ul class="nav nav--vertical small">
-                                            <li class="nav__link"><a href="#" class="link link--color-grey">О проекте</a></li>
+                                            <li class="nav__link"><a href="#" class="link link--color-grey">О
+                                                проекте</a></li>
                                             <li class="nav__link"><a href="#" class="link link--color-grey">Тур по сайту
-                                                </a></li>
+                                            </a></li>
                                             <li class="nav__link"><a href="#" class="link link--color-grey">Для авторов
-                                                </a></li>
+                                            </a></li>
                                         </ul>
-
-
                                     </div>
-
-
-
                                 </div>
                             </div>
 
                         </div>
-
 
 
                     </div>
@@ -319,20 +256,16 @@
 <script>
     // @ is an alias to /src
 
-    import postLarge from '@/components/post-block/post-large.vue'
-    import postTextShort from '@/components/post-block/post-text-short.vue'
-    import postHalfImg from '@/components/post-block/post-half-img.vue'
-    import category from "@//components/category.vue";
+
     import dateRangeSelect from "@//components/dateRangeSelect.vue"
+
+
+    import editorTipTapComment from '@/components/editor-tip-tap-comment.vue'
 
     export default {
         name: 'review',
         components: {
-            postTextShort,
-            postHalfImg,
-            postLarge,
-            category,
-            dateRangeSelect
+            editorTipTapComment
 
         },
         props: {
@@ -416,33 +349,8 @@
                 ],
             }
         },
-        methods: {
-            show() {
-                this.$modal.show('filter');
-            },
-            hide() {
-                this.$modal.hide('filter');
-            },
 
 
-            search() {
-                this.$refs.tree.searchNodes(this.searchword)
-            },
-            selectedNodes() {
-                this.initSelected = this.$refs.tree.getCheckedNodes()
-
-            }
-        },
-        created() {
-            this.axios.get('https://club-route.firebaseio.com/digest.json')
-                .then(response => {
-                    this.review = response.data
-                })
-                .catch(e => {
-                    this.error.push(e)
-                })
-
-        }
 
     }
 </script>
@@ -472,5 +380,13 @@
         position: absolute;
         left: 11px;
         top: 9px;
+    }
+    .form__new-message{
+        border: 1px solid #e8e3e3;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        max-width: 100%;
+        background-color: #fff;
     }
 </style>

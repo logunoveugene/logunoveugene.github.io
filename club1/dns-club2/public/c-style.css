@@ -960,9 +960,7 @@ ul {
 
 
 .custom-select {
-
     height: 42px;
-
     border-radius: .5rem;
-
-    }
+    background: #fff url("https://i.snag.gy/5Gr0Zm.jpg") no-repeat right .75rem center;
+}

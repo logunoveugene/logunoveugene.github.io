@@ -31,6 +31,11 @@
                             ></post-tag>
                         </div>
                         <div class="post__title  mb-2 h2" v-bind:style="{ color: post.textColor }">
+                            <div class="h3 d-inline-block mb-0 mr-1"  v-if="post.autor==='1'">
+                                <a href="#" class="link link--opacity-hover"  v-bind:style="{ color: post.textColor }">
+                                    <span class=" icon-pen"></span>
+                                </a>
+                            </div>
                             <router-link class="link link--color-black link--opacity-hover"
                                          v-bind:style="{ color: post.textColor }"
                                          :to="{ name: 'post', params: { id: post.id }}">

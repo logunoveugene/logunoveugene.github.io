@@ -8,7 +8,6 @@
                 <div class="d-flex flex-column">
                     <div class="d-flex">
                         <img :src="comment.autorImg" alt="" class="comment__comment-author-img-mob rounded-circle">
-
                         <author :author="comment.autor"/>
 
 

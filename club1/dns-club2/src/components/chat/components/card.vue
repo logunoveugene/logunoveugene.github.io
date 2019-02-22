@@ -28,11 +28,10 @@
         <div class="d-flex align-items-center">
             <input class="field" type="text" placeholder="Найти пользователя..." @keyup="debounceOnKeyup">
             <v-popover offset="0">
-                <div class="massage-icon-menu  px-3">
+                <div class="massage-icon-menu  pl-3 pr-0 pr-md-3">
                     <div class="icon-menu"></div>
                 </div>
                 <template slot="popover">
-
                     <div class="py-2 py-3 text-center px-3">
                         <a href="#" class="link link--color-grey">Черный список</a>
                     </div>

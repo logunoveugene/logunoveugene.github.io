@@ -11,6 +11,7 @@
         components: {Card, List, TextInput, Message},
         methods: mapMutations([
             'INIT_DATA',
+            'SELECT_SESSION'
         ]),
         created() {
             this.INIT_DATA();
@@ -18,20 +19,26 @@
         computed: mapGetters([
             'currentId'
         ]),
+
     };
 </script>
 
 <template>
     <div id="chat">
-        <div class="sidebar">
+        <div class="sidebar" :class="{ 'mob-hidden-bar': currentId!=null }">
             <card></card>
             <list></list>
         </div>
-        <div class="main">
-            <message></message>
 
+        <div v-if="currentId!=null" @click="SELECT_SESSION(null)" class="pt-2 pb-3 d-block d-md-none">
+            <i class="icon-arrow-left"></i>
+            Выбрать диалог
+        </div>
+        <div class="main" :class="{ 'mob-hidden-body': currentId==null }">
+            <message></message>
             <text-input></text-input>
         </div>
+
     </div>
 </template>
 
@@ -45,6 +52,7 @@
         border-radius: 3px;
         position: relative;
         display: flex;
+        flex-direction: column;
 
         .sidebar, .main {
             height: 100%;
@@ -54,20 +62,28 @@
             display: flex;
             flex-direction: column;
             z-index: 10;
-            position: absolute;
-            top: 0;
-            left: 0;
+            /*position: absolute;*/
+            /*top: 0;*/
+            /*left: 0;*/
             width: 100%;
+        }
+        .main.mob-hidden-body {
+            display: none;
         }
         .sidebar {
             width: 100%;
             color: #333333;
             background-color: #ffffff;
-            margin-right: 20px;
+            margin-right: 0;
+        }
+
+        .sidebar.mob-hidden-bar {
+            display: none;
         }
 
         .message {
             height: calc(100% - 160px);
+            /*max-height: calc(100vh - 72px);*/
             background-color: #f2f2f2;
             border-radius: 8px 8px 0 0;
         }
@@ -81,6 +97,7 @@
 
             overflow: hidden;
             border-radius: 3px;
+            flex-direction: row;
 
             .sidebar, .main {
                 height: 100%;
@@ -95,12 +112,18 @@
                 width: 60%;
 
             }
+            .main.mob-hidden-body {
+                display: block;
+            }
             .sidebar {
                 float: left;
                 width: 40%;
                 color: #333333;
                 background-color: #ffffff;
                 margin-right: 20px;
+            }
+            .sidebar.mob-hidden-bar {
+                display: block;
             }
 
             .message {

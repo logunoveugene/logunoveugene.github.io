@@ -111,7 +111,7 @@
                             </div>
                         </div>
                         <div class="collapse-plate pt-4  d-block d-lg-none" v-if="searchPlate">
-                            <div class="">
+                            <div class="px-3">
 
 
                                 <div class="pb-4 bb-1">
