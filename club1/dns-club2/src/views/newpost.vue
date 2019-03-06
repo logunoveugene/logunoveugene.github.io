@@ -5,7 +5,7 @@
 
                 <div class="col-12">
                     <div class="row">
-                        <div class="col-lg-8">
+                        <div class=" col-10 col-lg-8">
                             <div class="small mb-2 d-flex">
                                 <router-link class="link link--color-black" to="/">Клуб</router-link>
                                 <div class="mx-2">/</div>
@@ -14,9 +14,32 @@
                                 <div class="text-muted d-inline-block">Создание статьи</div>
 
                             </div>
+
                             <div contenteditable @input="onInput"
                                  :class="{'new-post__title--placeholder': (pageHeader===null) }"
                                  class="w-100 new-post__title"></div>
+
+
+                        </div>
+                        <div class=" col-2 col-lg-4  mb-2  d-flex justify-content-end">
+                            <v-popover
+                                    offset="0"
+                                    trigger="hover"
+                                    class="mt-auto"
+                            >
+                                <!-- This will be the popover target (for the events and position) -->
+                                <div class=" draft-icon">
+                                    <div class="icon icon-check-round"></div>
+                                </div>
+
+                                <!-- This will be the content of the popover -->
+                                <template slot="popover">
+                                    <div class="py-2 small">
+                                        Черновик сохранен только что
+                                    </div>
+
+                                </template>
+                            </v-popover>
                         </div>
                     </div>
                 </div>
@@ -37,7 +60,8 @@
                                 <div class="dropzone-custom-content">
                                     <div class="" v-if="dropzoneIsEmpity">
                                         <h3 class="dropzone-custom-title">Добавьте главное фото статьи</h3>
-                                        <div class="subtitle d-none d-lg-block">Перетащите изображение сюда<br> или нажмите и выберите на
+                                        <div class="subtitle d-none d-lg-block">Перетащите изображение сюда<br> или
+                                            нажмите и выберите на
                                             компьютере
                                         </div>
                                     </div>
@@ -481,77 +505,124 @@
                     <div class="h1 mb-0 icon-close"></div>
                 </div>
             </div>
-            <div class="p-4 d-flex">
-                <!--<input type="text" class="field" placeholder="Поиск по названию или артиклу">-->
-                <div class="position-relative w-100">
-                    <div class="search-ext  mb-4 ">
-                        <input v-model="discussionsSearch" placeholder="Поиск по названию или артиклу"
-                               v-on:keyup.enter="submitSearch()"
-                               type="search"
-                               class="field ">
-                        <div
-                                class="search-ext__btn-search icon-search"></div>
-                    </div>
-                    <transition name="slide-fade">
-                        <div class="suggestion-wrap" v-if="discussionsSearch!==''">
-                            <div class="suggestion w-100">
-                                <div class="suggestion__group">
-                                    <div class="suggestion__list">
+            <div class="modal-scroll-inner">
+                <div class=" p-4 d-flex">
+                    <!--<input type="text" class="field" placeholder="Поиск по названию или артиклу">-->
+                    <div class="position-relative w-100">
+                        <div class="search-ext  mb-4 ">
+                            <input v-model="discussionsSearch" placeholder="Поиск по названию или артиклу"
+                                   v-on:keyup.enter="submitSearch()"
+                                   type="search"
+                                   class="field ">
+                            <div
+                                    class="search-ext__btn-search icon-search"></div>
+                        </div>
+                        <transition name="slide-fade">
+                            <div class="suggestion-wrap" v-if="discussionsSearch!==''">
+                                <div class="suggestion w-100">
+                                    <div class="suggestion__group">
+                                        <div class="suggestion__list">
 
-                                        <div class="suggestion__item">5.8" Смартфон Apple iPhone X 64 ГБ серый
-                                        </div>
-                                        <div class="suggestion__item">6.1" Смартфон Apple iPhone X 32 ГБ белый
-                                        </div>
-                                        <div class="suggestion__item">6.1" Смартфон Apple iPhone Xr 64 ГБ коралловый
-                                        </div>
+                                            <div class="suggestion__item">5.8" Смартфон Apple iPhone X 64 ГБ серый
+                                            </div>
+                                            <div class="suggestion__item">6.1" Смартфон Apple iPhone X 32 ГБ белый
+                                            </div>
+                                            <div class="suggestion__item">6.1" Смартфон Apple iPhone Xr 64 ГБ коралловый
+                                            </div>
 
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </transition>
-                </div>
+                        </transition>
+                    </div>
 
-            </div>
-            <!--<div class="d-flex p-4">-->
-            <!--<div class="modal_list">-->
-            <!--<div class="modal_list-item">Выделите название товара в тексте.</div>-->
-            <!--<div class="modal_list-item">Во всплывающим меню выберите инструмент «добавления ссылки».</div>-->
-            <!--<div class="modal_list-item">Добавьте ссылку на товара из каталога DNS, либо укажите артикул этого-->
-            <!--товара.-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="ml-3">-->
-            <!--<img src="https://i.snag.gy/DSBE9Q.jpg" alt="">-->
-            <!--</div>-->
-            <!--</div>-->
-            <div class="pb-4 px-4">
-                <div class="h4 mb-3">Добавленные товары</div>
-                <div class="modal_list">
-                    <div class="d-flex mb-4 align-items-center">
-                        <div class="mr-3">
-                            <img src="https://i.snag.gy/FbWIRr.jpg" alt="">
+                </div>
+                <!--<div class="d-flex p-4">-->
+                <!--<div class="modal_list">-->
+                <!--<div class="modal_list-item">Выделите название товара в тексте.</div>-->
+                <!--<div class="modal_list-item">Во всплывающим меню выберите инструмент «добавления ссылки».</div>-->
+                <!--<div class="modal_list-item">Добавьте ссылку на товара из каталога DNS, либо укажите артикул этого-->
+                <!--товара.-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="ml-3">-->
+                <!--<img src="https://i.snag.gy/DSBE9Q.jpg" alt="">-->
+                <!--</div>-->
+                <!--</div>-->
+                <div class="pb-4 px-4">
+                    <div class="h4 mb-3">Добавленные товары</div>
+                    <div class="modal_list">
+                        <div class="d-flex mb-4 align-items-center">
+                            <div class="mr-3">
+                                <img src="https://i.snag.gy/FbWIRr.jpg" alt="">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="">Видеокарта MSI AMD Radeon RX 580 ARMOR OC</div>
+                                <div class="small">
+                                    <div class="link link--color-grey">Удалить</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="d-flex flex-column">
-                            <div class="">Видеокарта MSI AMD Radeon RX 580 ARMOR OC</div>
-                            <div class="small">
-                                <div class="link link--color-grey">Удалить</div>
+                        <div class="d-flex  mb-4  align-items-center">
+                            <div class="mr-3 ">
+                                <img src="https://i.snag.gy/BpjCd5.jpg" alt="">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="">Процессор Intel Core i7-8700K OEM</div>
+                                <div class="small">
+                                    <div class="link link--color-grey">Удалить</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex mb-4 align-items-center">
+                            <div class="mr-3">
+                                <img src="https://i.snag.gy/FbWIRr.jpg" alt="">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="">Видеокарта MSI AMD Radeon RX 580 ARMOR OC</div>
+                                <div class="small">
+                                    <div class="link link--color-grey">Удалить</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex  mb-4  align-items-center">
+                            <div class="mr-3 ">
+                                <img src="https://i.snag.gy/BpjCd5.jpg" alt="">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="">Процессор Intel Core i7-8700K OEM</div>
+                                <div class="small">
+                                    <div class="link link--color-grey">Удалить</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex mb-4 align-items-center">
+                            <div class="mr-3">
+                                <img src="https://i.snag.gy/FbWIRr.jpg" alt="">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="">Видеокарта MSI AMD Radeon RX 580 ARMOR OC</div>
+                                <div class="small">
+                                    <div class="link link--color-grey">Удалить</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex  mb-4  align-items-center">
+                            <div class="mr-3 ">
+                                <img src="https://i.snag.gy/BpjCd5.jpg" alt="">
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="">Процессор Intel Core i7-8700K OEM</div>
+                                <div class="small">
+                                    <div class="link link--color-grey">Удалить</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex align-items-center">
-                        <div class="mr-3 ">
-                            <img src="https://i.snag.gy/BpjCd5.jpg" alt="">
-                        </div>
-                        <div class="d-flex flex-column">
-                            <div class="">Процессор Intel Core i7-8700K OEM</div>
-                            <div class="small">
-                                <div class="link link--color-grey">Удалить</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
+                </div>
             </div>
         </modal>
     </div>
@@ -930,6 +1001,7 @@
 
     .modal_list {
         counter-reset: list1;
+     
     }
 
     .modal_list-item {
@@ -1142,7 +1214,6 @@
         border-radius: 8px;
     }
 
-
     #customdropzone .dz-preview .dz-image > div {
         width: 100%;
         height: 200px;
@@ -1162,7 +1233,6 @@
 
         }
 
-
     }
 
     #customdropzone .dz-preview {
@@ -1179,8 +1249,6 @@
         height: 100%;
 
     }
-
-
 
     #customdropzone .dz-preview .dz-image > img {
         width: 100%;
@@ -1533,6 +1601,9 @@
         background: #ffeec3;
     }
 
-
+    .draft-icon {
+        font-size: 25px;
+        color: #ccc;
+    }
 </style>
 

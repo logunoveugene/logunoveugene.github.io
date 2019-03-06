@@ -125,6 +125,55 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="p-4 bb-1">
+                                        <div class="h2 mb-3 d-flex align-items-center justify-content-between ">
+                                            Привязаны к
+                                            теме
+                                        </div>
+
+                                        <div class="discussions__search">
+                                            <div class="search-ext  mb-4 ">
+                                                <input type="text" v-model="discussionsSearchExt" placeholder="Товары"
+
+                                                       class="field w-100 ">
+                                                <div class="search-ext__btn-search icon-search"></div>
+                                            </div>
+                                            <transition name="slide-fade">
+                                                <div class="suggestion-wrap" v-if="discussionsSearchExt!==''">
+                                                    <div class="suggestion">
+                                                        <div class="suggestion__group">
+                                                            <div class="suggestion__list">
+                                                                <div @click="discussionsSearchResalt=true"
+                                                                     class="suggestion__item">Телевизор LED Telefunken
+                                                                    TF-LED19S62T2 черный
+                                                                </div>
+                                                                <div @click="discussionsSearchResalt=true"
+                                                                     class="suggestion__item">Телевизор LED Harper
+                                                                    20R470 черный
+                                                                </div>
+                                                                <div @click="discussionsSearchResalt=true"
+                                                                     class="suggestion__item">Телевизор LED DEXP
+                                                                    H20D7100E/W
+                                                                    белый
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </transition>
+                                        </div>
+                                        <div class="search-ext  mb-4 ">
+                                            <input type="text" placeholder="Бренды"
+                                                   class="field w-100 ">
+                                            <div class="search-ext__btn-search icon-search"></div>
+                                        </div>
+                                        <div class="search-ext mb-1">
+                                            <input type="text" placeholder="Категории товаров"
+
+                                                   class="field w-100 ">
+                                            <div class="search-ext__btn-search icon-search"></div>
+                                        </div>
+                                    </div>
                                     <!--<div class="p-4 bb-1">-->
                                     <!--<div class="h2 mb-2 d-flex align-items-center justify-content-between ">Настройки показа-->
                                     <!--</div>-->
@@ -253,6 +302,57 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="p-4 bb-1">
+                                            <div class="h2 mb-3 d-flex align-items-center justify-content-between ">
+                                                Привязаны к
+                                                теме
+                                            </div>
+
+                                            <div class="discussions__search">
+                                                <div class="search-ext  mb-4 ">
+                                                    <input type="text" v-model="discussionsSearchExt"
+                                                           placeholder="Товары"
+
+                                                           class="field w-100 ">
+                                                    <div class="search-ext__btn-search icon-search"></div>
+                                                </div>
+                                                <transition name="slide-fade">
+                                                    <div class="suggestion-wrap" v-if="discussionsSearchExt!=false">
+                                                        <div class="suggestion">
+                                                            <div class="suggestion__group">
+                                                                <div class="suggestion__list">
+                                                                    <div @click="discussionsSearchResalt=true"
+                                                                         class="suggestion__item">Телевизор LED
+                                                                        Telefunken
+                                                                        TF-LED19S62T2 черный
+                                                                    </div>
+                                                                    <div @click="discussionsSearchResalt=true"
+                                                                         class="suggestion__item">Телевизор LED Harper
+                                                                        20R470 черный
+                                                                    </div>
+                                                                    <div @click="discussionsSearchResalt=true"
+                                                                         class="suggestion__item">Телевизор LED DEXP
+                                                                        H20D7100E/W
+                                                                        белый
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </transition>
+                                            </div>
+                                            <div class="search-ext  mb-4 ">
+                                                <input type="text" placeholder="Бренды"
+                                                       class="field w-100 ">
+                                                <div class="search-ext__btn-search icon-search"></div>
+                                            </div>
+                                            <div class="search-ext mb-1">
+                                                <input type="text" placeholder="Категории товаров"
+
+                                                       class="field w-100 ">
+                                                <div class="search-ext__btn-search icon-search"></div>
+                                            </div>
+                                        </div>
                                         <!--<div class="p-4 bb-1">-->
                                         <!--<div class="h2 mb-2 d-flex align-items-center justify-content-between ">Настройки показа-->
                                         <!--</div>-->
@@ -338,6 +438,7 @@
                 brand: false,
                 review: [],
                 error: [],
+                discussionsSearchExt: '',
                 allFilter: false,
                 searchword: '',
                 initSelected: [],
@@ -462,4 +563,82 @@
         left: 11px;
         top: 9px;
     }
+
+
+    .discussions__search {
+        position: relative;
+    }
+    .search-ext__btn-search {
+        position: absolute;
+        right: 5px;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        top: 4px;
+        font-size: 22px;
+        color: #ccc;
+        background-color: #fff;
+        height: 32px;
+        border-radius: 8px;
+        z-index: 60000;
+        cursor: pointer;
+        transition: all .1s;
+    }
+
+    .search-ext__btn-search--active {
+        position: absolute;
+        right: 5px;
+        padding-top: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        top: 4px;
+        font-size: 22px;
+        color: #fff;
+        background-color: #ff7e00;
+        box-shadow: inset 0 34px 25px -25px rgba(255, 188, 11, 0.5);
+        height: 32px;
+        border-radius: 8px;
+        z-index: 60000;
+        cursor: pointer;
+    }
+
+    .search-ext {
+        position: relative;
+    }
+
+    .suggestion {
+        position: absolute;
+        z-index: 997;
+        background: white;
+        border: 1px solid #ddd;
+        border-top: 0;
+        box-shadow: 20px 29px 40px -20px rgba(0, 0, 0, 0.08), -20px 29px 40px -20px rgba(0, 0, 0, 0.08), 0 25px 30px -20px rgba(0, 0, 0, 0.04);
+        border-radius: 0 0 8px 8px;
+        max-width: 100%;
+        top: 35px;
+        padding: 8px 0;
+        z-index: 99999;
+    }
+
+    .suggestion__item {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        padding: 8px 10px;
+        cursor: pointer;
+    }
+
+    .suggestion__item:hover {
+        background: #ffeec3;
+    }
+
+    .suggestion__group-title {
+        font-size: 14px;
+        border-bottom: 1px solid #eee;
+        padding: 16px 15px;
+        box-shadow: inset 0 13px 10px -10px rgba(0, 0, 0, 0.1);
+
+    }
+
 </style>

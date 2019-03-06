@@ -151,6 +151,11 @@
                                         <label class="custom-control-label" for="customRadioInline32">Мои темы</label>
                                     </div>
                                     <div class="custom-control custom-radio custom-control-inline mb-1  d-block">
+                                        <input type="radio" id="customRadioInline32" name="userMenu"
+                                               class="custom-control-input">
+                                        <label class="custom-control-label" for="customRadioInline32">Мои черновики</label>
+                                    </div>
+                                    <div class="custom-control custom-radio custom-control-inline mb-1  d-block">
                                         <input type="radio" id="customRadioInline3d" name="userMenu"
                                                class="custom-control-input">
                                         <label class="custom-control-label" for="customRadioInline3d">С моими
@@ -316,9 +321,8 @@
                                 </div>
 
                                 <div class="discussions__search">
-                                    <div class="search-ext  mb-4 ">
+                                    <div class="search-ext  mb-4">
                                         <input type="text" v-model="discussionsSearchExt" placeholder="Товары"
-
                                                class="field w-100 ">
                                         <div class="search-ext__btn-search icon-search"></div>
                                     </div>
@@ -331,13 +335,8 @@
                                                              class="suggestion__item">Телевизор LED Telefunken
                                                             TF-LED19S62T2 черный
                                                         </div>
-                                                        <div @click="discussionsSearchResalt=true"
-                                                             class="suggestion__item">Телевизор LED Harper 20R470 черный
-                                                        </div>
-                                                        <div @click="discussionsSearchResalt=true"
-                                                             class="suggestion__item">Телевизор LED DEXP H20D7100E/W
-                                                            белый
-                                                        </div>
+                                                        <div @click="discussionsSearchResalt=true" class="suggestion__item">Телевизор LED Harper 20R470 черный</div>
+                                                        <div @click="discussionsSearchResalt=true" class="suggestion__item">Телевизор LED DEXP H20D7100E/W белый</div>
                                                     </div>
                                                 </div>
                                             </div>

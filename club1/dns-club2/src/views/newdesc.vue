@@ -2,7 +2,7 @@
     <div class="new-disc-page">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-12 col-lg-8">
+                <div class="col-10 col-md-12 col-lg-8">
                     <div class="small mb-2 d-flex">
                         <router-link class="link link--color-black" to="/">Клуб</router-link>
                         <div class="mx-2">/</div>
@@ -11,14 +11,38 @@
                         <div class="text-muted ">Cоздание темы</div>
 
                     </div>
-                    <div contenteditable="true" class="w-100 new-post__title">Введите заголовок
+                    <div class="d-flex justify-content-between align-items-center">
+                    <div contenteditable="true" class="w-100 new-post__title">Введите заголовок </div>
+
+                        <v-popover
+                                offset="0"
+                                trigger="hover"
+                        >
+                            <!-- This will be the popover target (for the events and position) -->
+                            <div class="mt-auto draft-icon">
+                                <div class="icon icon-check-round"></div>
+                            </div>
+
+                            <!-- This will be the content of the popover -->
+                            <template slot="popover">
+                                <div class="py-2 small">
+                                    Черновик сохранен только что
+                                </div>
+
+                            </template>
+                        </v-popover>
+
+
                     </div>
+
+
                     <div class="new-content-box">
                         <!--<froala :tag="'textarea'" :config="config" v-model="model"></froala>-->
                         <editor-tip-tap></editor-tip-tap>
                         <!--<editor-tip-tap></editor-tip-tap>-->
                     </div>
                 </div>
+
                 <div class="d-block d-lg-none">
                     <div class="fixed-bottom p-2">
                         <div v-if="!readyToPublic" class="btn btn--color-orange w-100" @click="showPublishModal">
@@ -47,7 +71,7 @@
                     <div class="card-block card-block--shadow p-4 mb-4">
                         <div class="">
                             <div class="new-post__tags mb-4">
-                                <div class="small text-muted mb-1">Рубрика</div>
+                                <div class="small text-muted mb-1">Раздел</div>
                                 <treeselect v-model="value"
                                             openDirection="bottom"
                                             :clear-on-select="true"
@@ -65,24 +89,6 @@
 
                                     </label>
                                 </treeselect>
-                            </div>
-                            <div class="new-post__tags mb-4">
-                                <vue-dropzone ref="myVueDropzone"
-                                              :options="dropzoneOptions"
-                                              :useCustomSlot=true
-                                              :include-styling="false"
-                                              v-on:vdropzone-thumbnail="thumbnail"
-                                              v-on:vdropzone-removed-file="dropzoneIsEmpity=true"
-                                              v-on:vdropzone-file-added="dropzoneIsEmpity=false"
-                                              id="customdropzone2">
-
-                                    <div class="dropzone-custom-content">
-                                        <div class="" v-if="dropzoneIsEmpity">
-                                            <div class="small">Загрузите основное фото</div>
-
-                                        </div>
-                                    </div>
-                                </vue-dropzone>
                             </div>
 
 
@@ -123,7 +129,7 @@
 
                                 <div class="small d-flex justify-content-between">
                                     <a href="#" class="link link--color-grey">Удалить</a>
-                                    <span class="text-secondary">Черновик сохранен</span>
+
                                 </div>
 
                             </div>
@@ -230,7 +236,7 @@
 
                             <div class="small d-flex justify-content-between">
                                 <a href="#" class="link link--color-grey">Удалить</a>
-                                <span class="text-secondary">Черновик сохранен</span>
+
                             </div>
 
                         </div>
@@ -965,9 +971,16 @@
         text-align: center;
 
     }
-
     .dz-details {
         display: none;
+    }
+
+    .draft-icon{
+        font-size: 25px;
+        color: #ccc;
+    }
+    .draft-icon:hover{
+        color: #999;
     }
 </style>
 

@@ -5,6 +5,7 @@
 
                 <div class="col-12">
                     <div class="d-flex flex-column flex-md-row ">
+
                         <div class="">
                             <div class="page__title ">Страница не найдена</div>
                             <div class="h3 mb-4">
@@ -36,8 +37,9 @@
 
 
                         </div>
-                        <img class="ml-auto img-fluid"
-                             src="https://thumbs.gfycat.com/WellinformedRealisticGoat-size_restricted.gif" alt="">
+                        <div class="ml-auto">
+                            <img class=" img-fluid img-error" src="https://i.snag.gy/zicl5t.jpg" alt="">
+                        </div>
                     </div>
                 </div>
 
@@ -65,5 +67,9 @@
 
 <style lang="scss">
 
+    .img-error {
+        height: auto;
+        width: 450px;
+    }
 
 </style>

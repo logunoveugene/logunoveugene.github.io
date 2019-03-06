@@ -54,11 +54,14 @@
                                             <div class="py-2 text-left px-3 ">
                                                 <a href="" class="link link--color-grey">Мои статьи</a>
                                             </div>
-                                            <!--<div class="py-2 text-left px-3 ">-->
-                                            <!--<a href="" class="link link&#45;&#45;color-grey">Личные сообщения</a>-->
-                                            <!--</div>-->
+                                            <div class="py-2 text-left px-3 ">
+                                            <a href="" class="link link--color-grey">Черновики статей</a>
+                                            </div>
                                             <div class="py-2 text-left px-3 ">
                                                 <a href="" class="link link--color-grey">Мои темы</a>
+                                            </div>
+                                            <div class="py-2 text-left px-3 ">
+                                                <a href="" class="link link--color-grey">Черновики тем</a>
                                             </div>
                                             <div class="py-2 text-left px-3 ">
                                                 <a href="" class="link link--color-grey">Обратная связь</a>

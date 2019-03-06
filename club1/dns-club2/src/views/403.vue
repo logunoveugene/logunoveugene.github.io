@@ -24,8 +24,10 @@
 
 
                         </div>
-                        <img class="ml-auto img-fluid"
-                             src="" alt="">
+                        <div class="ml-auto mb-5">
+                            <img class="img-error img-fluid"
+                                 src="https://i.snag.gy/mQHuYR.jpg" alt="">
+                        </div>
                     </div>
                 </div>
 
@@ -52,6 +54,9 @@
 </script>
 
 <style lang="scss">
-
+    .img-error {
+        height: auto;
+        width: 450px;
+    }
 
 </style>

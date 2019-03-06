@@ -953,7 +953,7 @@ ul {
 
 
 .modal-scroll-inner{
-    overflow: scroll;
+    overflow-y:  scroll;
     max-height: calc(100vh - 50px);
     padding-bottom: 40px;
 }
