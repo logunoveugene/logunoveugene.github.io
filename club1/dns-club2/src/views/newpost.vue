@@ -1001,7 +1001,7 @@
 
     .modal_list {
         counter-reset: list1;
-     
+
     }
 
     .modal_list-item {

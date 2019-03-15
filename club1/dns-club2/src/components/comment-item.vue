@@ -23,8 +23,6 @@
                     </div>
                 </div>
                 <div class="d-flex">
-
-
                     <v-popover offset="0">
                         <div class="comment__menu">
                             <div class="icon-dots-hor"></div>
@@ -42,10 +40,7 @@
 
                         </template>
                     </v-popover>
-
-
                 </div>
-
             </div>
             <div :style="{opacity: (comment.rate>=0)?1:(comment.rate>-10)?.5: .25 }" class="mb-3" v-html="comment.comment"></div>
             <div :style="{opacity: (comment.rate>=0)?1:(comment.rate>-10)?.5: .25 }" class="d-flex align-items-center">
@@ -61,7 +56,6 @@
 
                 <div class="small mr-3">
                     <div v-if="!replyBox" class="link link--color-blue" @click="replyBox=!replyBox">Ответить</div>
-
                 </div>
                 <div class="small ml-auto">
                     <div v-if="comment.child && comment.child.length>0   && childExtend" class="link link--color-grey link--doted "
@@ -90,11 +84,9 @@
                     </div>
                 </div>
             </div>
-
             <div v-if="comment.child &&  comment.child.length>0 && childExtend" class="comment__child-wrap">
                 <comment-item v-for="comment in comment.child" :comment="comment" :key="comment.id"></comment-item>
             </div>
-
         </div>
         <v-dialog/>
     </div>
@@ -104,7 +96,6 @@
     import commentItem from "./comment-item.vue"
     import editorTipTapComment from "./editor-tip-tap-comment.vue"
     import author from "./post-block/parts/author.vue"
-
     export default {
         name: "comment-item",
         components: {
@@ -118,7 +109,6 @@
                 default: ""
             }
         },
-
         data: function () {
             return {
                 childExtend: true,
@@ -137,7 +127,6 @@
                     }
                 },
                 replyText: ''
-
             }
         },
 
