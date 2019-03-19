@@ -49,13 +49,15 @@
                                            href="#">Александр</a>
                                         <template slot="popover">
                                             <div class="py-2 pt-3 text-left px-3 ">
-                                                <router-link to="/message-old" class="link link--color-grey">Личные сообщения</router-link>
+                                                <router-link to="/message-old" class="link link--color-grey">Личные
+                                                    сообщения
+                                                </router-link>
                                             </div>
                                             <div class="py-2 text-left px-3 ">
                                                 <a href="" class="link link--color-grey">Мои статьи</a>
                                             </div>
                                             <div class="py-2 text-left px-3 ">
-                                            <a href="" class="link link--color-grey">Черновики статей</a>
+                                                <a href="" class="link link--color-grey">Черновики статей</a>
                                             </div>
                                             <div class="py-2 text-left px-3 ">
                                                 <a href="" class="link link--color-grey">Мои темы</a>
@@ -170,11 +172,26 @@
                             </div>
                             <transition name="fademy">
                                 <div v-if="isSearchExtend" class="header__search-extend">
-                                    <input placeholder="Поиск"
-                                           v-on:keyup.enter="submitSearch()"
-                                           ref="headerSearchField"
-                                           type="search"
-                                           class="header__search-extend-field">
+                                    <!--<input placeholder="Поиск"-->
+                                    <!--v-on:keyup.enter="submitSearch()"-->
+                                    <!--ref="headerSearchField"-->
+                                    <!--type="search"-->
+                                    <!--class="header__search-extend-field">-->
+                                    <multiselect v-model="selectedType"
+                                                 class="header__search-extend-field"
+                                                 tag-placeholder="Добавить новый тег"
+                                                 placeholder="Поиск по сайту"
+                                                 selectLabel="Выбрать тег"
+                                                 selectedLabel="Выбран"
+                                                 deselectLabel="Отменить выбор"
+                                                 label="name"
+                                                 track-by="code"
+                                                 open-direction="bottom"
+                                                 :options="typeOptions"
+                                                 :multiple="true"
+                                    />
+
+
                                     <v-popover offset="5">
                                         <div class="header__search-extend-btn">по всему сайту
                                             <div class="header__search-extend-btn-icon icon-down"></div>
@@ -297,7 +314,13 @@
             return {
                 isFixed: false,
                 isSearchExtend: false,
-                isMenu: false
+                isMenu: false,
+                selectedType: '',
+                typeOptions: [
+                    {name: 'Смартфоны', code: '154'},
+                    {name: 'Телевизоры', code: '49'},
+                    {name: 'Процессоры', code: '32'},
+                ],
             }
         }
     }
@@ -619,6 +642,16 @@
 
     /*.headroom--not-bottom*/
 
+    .header__search-extend .multiselect__tags {
+        border: 0;
+    }
 
+    .header__search-extend .multiselect__select {
+        display: none;
+    }
+
+    .header__search-extend .multiselect.header__search-extend-field {
+        padding: 0;
+    }
 </style>
 

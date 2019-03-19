@@ -964,3 +964,8 @@ ul {
     border-radius: .5rem;
     background: #fff url("https://i.snag.gy/5Gr0Zm.jpg") no-repeat right .75rem center;
 }
+.sticky-detail-50{
+    position: sticky;
+    top: 50px;
+
+}

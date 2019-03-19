@@ -229,7 +229,7 @@
                         </nav>
                         <date-range-select></date-range-select>
                     </div>
-                    <div class="discussions">
+                    <div class="discussions mb-5">
                         <paginate
                                 name="discuss"
                                 :list="discussions"

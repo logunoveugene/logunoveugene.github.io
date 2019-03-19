@@ -14,23 +14,21 @@
                     <div class="d-flex justify-content-between align-items-center">
                     <div contenteditable="true" class="w-100 new-post__title">Введите заголовок </div>
 
-                        <v-popover
-                                offset="0"
-                                trigger="hover"
-                        >
-                            <!-- This will be the popover target (for the events and position) -->
-                            <div class="mt-auto draft-icon">
-                                <div class="icon icon-check-round"></div>
-                            </div>
-
-                            <!-- This will be the content of the popover -->
-                            <template slot="popover">
-                                <div class="py-2 small">
-                                    Черновик сохранен только что
-                                </div>
-
-                            </template>
-                        </v-popover>
+                        <!--<v-popover-->
+                                <!--offset="0"-->
+                                <!--trigger="hover"-->
+                        <!--&gt;-->
+                            <!--&lt;!&ndash; This will be the popover target (for the events and position) &ndash;&gt;-->
+                            <!--<div class="mt-auto draft-icon">-->
+                                <!--<div class="icon icon-check-round"></div>-->
+                            <!--</div>-->
+                            <!--&lt;!&ndash; This will be the content of the popover &ndash;&gt;-->
+                            <!--<template slot="popover">-->
+                                <!--<div class="py-2 small">-->
+                                    <!--Черновик сохранен только что-->
+                                <!--</div>-->
+                            <!--</template>-->
+                        <!--</v-popover>-->
 
 
                     </div>
@@ -68,8 +66,20 @@
                             <div class="btn btn--color-orange">Сохранить</div>
                         </div>
                     </div>
-                    <div class="card-block card-block--shadow p-4 mb-4">
+                    <div class="card-block card-block--shadow p-4 mb-4 sticky-detail-50 ">
                         <div class="">
+                            <div class="new-post__save-state small text-secondary mb-2 mt-2">
+                                <div class="mb-2">Тема создана: 12 ноя 18г. (изм. 12 ноя 18г.)</div>
+
+                                <!--<div class=" ">Будет опубликована: 15 ноя 18г.</div>-->
+                            </div>
+
+                            <div class="small d-flex new-post__links mb-4">
+                            <span class="">
+                                          <span class="text-secondary mr-1">Черновик сохранен</span>
+                                          <span class="text-secondary">только что</span>
+                                   </span>
+                            </div>
                             <div class="new-post__tags mb-4">
                                 <div class="small text-muted mb-1">Раздел</div>
                                 <treeselect v-model="value"
@@ -119,21 +129,11 @@
                                     <div class="mr-3">
                                         <div class="btn btn--color-orange">Опубликовать сейчас</div>
                                     </div>
-
                                 </div>
-                                <div class="new-post__save-state small text-secondary mb-3">
-                                    <div class="mb-2">Тема создана: 12 ноя 18г.</div>
-                                    <div class="mb-2">Изменена и опубликована только что</div>
-                                    <!--<div class=" ">Будет опубликована: 15 ноя 18г.</div>-->
-                                </div>
-
-                                <div class="small d-flex justify-content-between">
+                               <div class="small d-flex justify-content-between">
                                     <a href="#" class="link link--color-grey">Удалить</a>
-
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
 
@@ -164,6 +164,18 @@
                 </div>
                 <div class="  p-3 mb-5">
                     <div class="">
+                        <div class="new-post__save-state small text-secondary mb-2 mt-2">
+                            <div class="mb-2">Тема создана: 12 ноя 18г. (изм. 12 ноя 18г.)</div>
+
+                            <!--<div class=" ">Будет опубликована: 15 ноя 18г.</div>-->
+                        </div>
+
+                        <div class="small d-flex new-post__links mb-4">
+                            <span class="">
+                                          <span class="text-secondary mr-1">Черновик сохранен</span>
+                                          <span class="text-secondary">только что</span>
+                                   </span>
+                        </div>
                         <div class="new-post__tags mb-4">
                             <div class="small text-muted mb-1">Рубрика</div>
                             <treeselect v-model="value"
@@ -184,26 +196,6 @@
                                 </label>
                             </treeselect>
                         </div>
-                        <div class="new-post__tags mb-4">
-                            <vue-dropzone ref="myVueDropzone"
-                                          :options="dropzoneOptions"
-                                          :useCustomSlot=true
-                                          :include-styling="false"
-                                          v-on:vdropzone-thumbnail="thumbnail"
-                                          v-on:vdropzone-removed-file="dropzoneIsEmpity=true"
-                                          v-on:vdropzone-file-added="dropzoneIsEmpity=false"
-                                          id="customdropzone2">
-
-                                <div class="dropzone-custom-content">
-                                    <div class="" v-if="dropzoneIsEmpity">
-                                        <div class="small">Загрузите основное фото</div>
-
-                                    </div>
-                                </div>
-                            </vue-dropzone>
-                        </div>
-
-
                         <div class="new-post__links mb-4">
                             <div class="small text-muted mb-2">Упоминания</div>
                             <div class="new-post__links-item d-flex justify-content-between">
@@ -228,11 +220,6 @@
                         </div>
                         <div class="">
 
-                            <div class="new-post__save-state small text-secondary mb-3">
-                                <div class="mb-2">Тема создана: 12 ноя 18г.</div>
-                                <div class="mb-2">Изменена и опубликована только что</div>
-                                <!--<div class=" ">Будет опубликована: 15 ноя 18г.</div>-->
-                            </div>
 
                             <div class="small d-flex justify-content-between">
                                 <a href="#" class="link link--color-grey">Удалить</a>

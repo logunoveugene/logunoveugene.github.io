@@ -21,26 +21,7 @@
 
 
                         </div>
-                        <div class=" col-2 col-lg-4  mb-2  d-flex justify-content-end">
-                            <v-popover
-                                    offset="0"
-                                    trigger="hover"
-                                    class="mt-auto"
-                            >
-                                <!-- This will be the popover target (for the events and position) -->
-                                <div class=" draft-icon">
-                                    <div class="icon icon-check-round"></div>
-                                </div>
 
-                                <!-- This will be the content of the popover -->
-                                <template slot="popover">
-                                    <div class="py-2 small">
-                                        Черновик сохранен только что
-                                    </div>
-
-                                </template>
-                            </v-popover>
-                        </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-12 col-lg-8">
@@ -179,8 +160,21 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-block card-block--shadow p-4 mb-4">
+                    <div class="card-block card-block--shadow p-4 mb-4 sticky-detail-50 ">
                         <div class="">
+                            <div class="new-post__save-state small text-secondary mb-2 mt-2">
+                                <div class="mb-2">Статья создана: 12 ноя 18г. (изм. 12 ноя 18г.)</div>
+
+                                <!--<div class=" ">Будет опубликована: 15 ноя 18г.</div>-->
+                            </div>
+
+                            <div class="small d-flex new-post__links mb-4">
+                                   <span class="">
+                                          <span class="text-secondary mr-1">Черновик сохранен</span>
+                                          <span class="text-secondary">только что</span>
+                                   </span>
+                            </div>
+
                             <div class="new-post__tags mb-4">
                                 <div class="small text-muted mb-1">Рубрика</div>
                                 <treeselect v-model="value"
@@ -274,22 +268,15 @@
                                 </div>
                             </div>
                             <div class="">
-                                <div class="d-flex align-items-center mb-4">
+
+                                <div class="d-flex align-items-center ">
                                     <div class="mr-3">
                                         <div class="btn btn--color-orange">Опубликовать</div>
                                     </div>
-
-                                </div>
-                                <div class="new-post__save-state small text-secondary mb-3">
-                                    <div class="mb-2">Статья создана: 12 ноя 18г. (изм. 12 ноя 18г.)</div>
-
-                                    <!--<div class=" ">Будет опубликована: 15 ноя 18г.</div>-->
-                                </div>
-
-                                <div class="small d-flex justify-content-between">
                                     <a href="#" class="link link--color-grey">Удалить</a>
-                                    <span class="text-secondary">Черновик сохранен</span>
+
                                 </div>
+
 
                             </div>
 
@@ -386,6 +373,18 @@
                 </div>
                 <div class=" p-3 mb-4">
                     <div class="">
+                        <div class="new-post__save-state small text-secondary mb-2 mt-2">
+                            <div class="mb-2">Статья создана: 12 ноя 18г. (изм. 12 ноя 18г.)</div>
+
+                            <!--<div class=" ">Будет опубликована: 15 ноя 18г.</div>-->
+                        </div>
+
+                        <div class="small d-flex new-post__links mb-4">
+                            <span class="">
+                                          <span class="text-secondary mr-1">Черновик сохранен</span>
+                                          <span class="text-secondary">только что</span>
+                                   </span>
+                        </div>
                         <div class="new-post__tags mb-4">
                             <div class="small text-muted mb-1">Рубрика</div>
                             <treeselect v-model="value"
@@ -445,7 +444,6 @@
                                          :options="typeOptions"
                                          :multiple="true"
                             >
-
                             </multiselect>
                         </div>
 
@@ -478,20 +476,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="">
 
-                            <div class="new-post__save-state small text-secondary mb-3">
-                                <div class="mb-2">Статья создана: 12 ноя 18г. (изм. 12 ноя 18г.)</div>
-
-                                <!--<div class=" ">Будет опубликована: 15 ноя 18г.</div>-->
-                            </div>
-
-                            <div class="small d-flex justify-content-between">
-                                <a href="#" class="link link--color-grey">Удалить</a>
-                                <span class="text-secondary">Черновик сохранен</span>
-                            </div>
-
-                        </div>
 
                     </div>
                 </div>

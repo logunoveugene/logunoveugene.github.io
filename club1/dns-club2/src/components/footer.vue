@@ -4,18 +4,18 @@
 
             <div class="footer__project d-flex  flex-wrap justify-content-around justify-content-lg-between">
                 <div class="footer__project-img-wrap">
-                    <img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/dns.png" alt=""
+                    <img src="../assets/dns.svg" alt=""
                          class="footer__project-img">
                 </div>
                 <div class="footer__project-img-wrap">
-                    <img src="https://as.dns-shop.ru/assets/80667e6a/images/theme/bridges/tp.png" alt=""
+                    <img src="../assets/tp.svg" alt=""
                          class="footer__project-img">
                 </div>
                 <div class="footer__project-img-wrap">
-                    <img src="https://i.snag.gy/PvDfIj.jpg" alt="" class="footer__project-img">
+                    <img src="../assets/service.svg" alt="" class="footer__project-img">
                 </div>
                 <div class="footer__project-img-wrap">
-                    <img src="https://i.snag.gy/SWcknL.jpg" alt=""
+                    <img src="../assets/club.svg" alt=""
                          class="footer__project-img">
                 </div>
             </div>
@@ -279,7 +279,7 @@
         }
 
         .footer__project-img {
-            height: 17px;
+            height: 20px;
         }
 
         .footer__project-img {
