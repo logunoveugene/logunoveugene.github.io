@@ -1,48 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-     <title>Тест</title>
+  <meta charset="UTF-8">
+  <title>Страница Б</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136836500-1"></script>
 
-        <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-   ym(52045218, "init", {
-        id:52045218,
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
+      gtag('config', 'UA-136836500-1');
 
-   
-    var pushBtnParams = {isAuth: false, url:'sdfdsfsdf'}
+// отправка данных о посещении страницы
+ga('send', {
+  hitType: 'pageview',
+  page: location.pathname
+});
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/52045218" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-
- 
 
 </head>
+
 <body>
 
-	<style>
-		input{
-			background-color: green
-		}
-	</style>
+<style>
+  input{
+   background-color: blue
+}
+</style>
 
-  <form action="">
-    <input type="text">
+<div class="form">
+    <form action="">
         <input type="text">
-            <input type="text">
-            <button type="submit">отправить форму</button>
+        <input type="text">
+        <input type="text">
+        <button type="submit">отправить форму</button>
     </form>
-     <input type="button" onclick="ym(52045218, 'reachGoal', 'pushBtn', pushBtnParams); return true;" value="Заказать" />
- 
+</div>
+
+<div class="">
+    <input type="button"  onclick="ga('send', {
+      hitType: 'event',
+      eventCategory: 'AddToCartButton',
+      eventAction: 'click',
+      eventLabel: event.target.href
+  });" value="Заказать" />
+</div>
+
+<div class="">
+    <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="a.html">Страница А</a></li>
+        <li><a href="b.html">Страница Б</a></li>
+        <li><a href="c.html">Страница С</a></li>
+    </ul>
+</div>
 
 </body>
 </html>
