@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Товар 2</title>
+    <title>Финальный экран</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136836500-1"></script>
-
     <script>
         window.dataLayer = window.dataLayer || [];
 
@@ -13,12 +12,8 @@
         }
 
         gtag('js', new Date());
-
         gtag('config', 'UA-136836500-1');
-
-
     </script>
-
 
     <!-- Google Analytics -->
     <script>
@@ -33,24 +28,41 @@
             a.src = g;
             m.parentNode.insertBefore(a, m)
         })(window, document, 'script', 'https://www.google-analytics.com/analytics_debug.js', 'ga');
-
         ga('create', 'UA-136836500-1', 'auto');
         ga('require', 'ec');
 
+        function checkout(cart) {
+            for (var i = 0; i < cart.length; i++) {
+                var product = cart[i];
+                ga('ec:addProduct', {
+                    'id': product.id,
+                    'name': product.name,
+                    'category': product.category,
+                    'brand': product.brand,
+                    'variant': product.variant,
+                    'price': product.price,
+                    'quantity': product.qty
+                });
+            }
+        }
 
-        ga('ec:addProduct', {
+        var cart = [{
             'id': 'P12345',
             'name': 'Товар 1',
             'category': 'Категория товара 1/Подкатегория товара 1',
             'brand': 'DEXP',
-            'variant': 'black'
+            'variant': 'black',
+            'price': 1000,
+            'quantity': 1
+        }];
 
+        checkout(cart);
+
+        ga('ec:setAction', 'checkout', {
+            'step': 6,
+            'option': ''
         });
-
-        ga('ec:setAction', 'detail');
-
         ga('send', 'pageview');
-
     </script>
     <!-- End Google Analytics -->
 
@@ -66,18 +78,8 @@
 </style>
 
 <div class="product">
-    <div class="product__title">Товар 1</div>
-    <div class="">Описание товара</div>
-    <div class="">Цена: 1000р</div>
-    <a href="product1.html" onclick="addToCart({
-  'id': 'P12345',                   
-  'name': 'Товар 1',
-  'category': 'Категория товара 1/Подкатегория товара 1',
-  'brand': 'DEXP',
-  'variant': 'black',
-  'price': 1000,
-  'quantity': 1                 
-  }); return !ga.loaded;">Купить</a>
+    <div class="product__title">1 Оформление получение</div>
+    <a href="checkout-3-pay.html">Продолжить</a>
 </div>
 
 
@@ -95,24 +97,6 @@
         <li><a href="checkout-final.html">4 Финальный экран</a></li>
     </ul>
 </div>
-
-
-<script>
-    function addToCart(product) {
-        ga('ec:addProduct', {
-            'id': product.id,
-            'name': product.name,
-            'category': product.category,
-            'brand': product.brand,
-            'variant': product.variant,
-            'price': product.price,
-            'quantity': product.qty
-        });
-        ga('ec:setAction', 'add');
-        ga('send', 'event', 'UX', 'click', 'add to cart');     // Send data using an event.
-    }
-
-</script>
 
 </body>
 </html>

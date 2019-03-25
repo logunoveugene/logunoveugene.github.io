@@ -1,64 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Товар 2</title>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136836500-1"></script>
+    <meta charset="UTF-8">
+    <title>Товар 2</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136836500-1"></script>
 
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'UA-136836500-1');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
+        gtag('js', new Date());
 
-  </script>
-
-
-  <!-- Google Analytics -->
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics_debug.js','ga');
-
-ga('create', 'UA-136836500-1', 'auto');
-ga('require', 'ec');
+        gtag('config', 'UA-136836500-1');
 
 
-ga('ec:addProduct',{
-  'id': 'P12345',                   
-  'name': 'Товар 1',
-  'category': 'Категория товара 1/Подкатегория товара 1',
-  'brand': 'DEXP',
-  'variant': 'black'
-                
-});
+    </script>
 
-ga('ec:setAction', 'detail');
 
-ga('send', 'pageview');
+    <!-- Google Analytics -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics_debug.js', 'ga');
 
-</script>
-<!-- End Google Analytics -->
+        ga('create', 'UA-136836500-1', 'auto');
+        ga('require', 'ec');
+
+
+        ga('ec:addProduct', {
+            'id': 'P12345',
+            'name': 'Товар 1',
+            'category': 'Категория товара 1/Подкатегория товара 1',
+            'brand': 'DEXP',
+            'variant': 'black'
+
+        });
+
+        ga('ec:setAction', 'detail');
+
+        ga('send', 'pageview');
+
+    </script>
+    <!-- End Google Analytics -->
 
 
 </head>
 
 <body>
 
-  <style>
-  input{
-    background-color: red
-  }
+<style>
+    input {
+        background-color: red
+    }
 </style>
 
 <div class="product">
-  <div class="product__title">Товар 2</div>
-  <div class="">Описание товара</div>
-  <div class="">Цена: 1000р</div>
-  <a href="product1.html" onclick="addToCart({
+    <div class="product__title">Товар 2</div>
+    <div class="">Описание товара</div>
+    <div class="">Цена: 1000р</div>
+    <a href="product1.html" onclick="addToCart({
   'id': 'P12345',                   
   'name': 'Товар 2',
   'category': 'Категория товара 2/Подкатегория товара 2',
@@ -71,34 +82,35 @@ ga('send', 'pageview');
 
 
 <div class="">
-  <ul>
-    <li><a href="index.html">Главная</a></li>
-    <li><a href="catalog.html">Каталог</a></li>
-    <li><a href="product1.html">Страница товара 1</a></li>
-    <li><a href="product2.html">Страница товара 2</a></li>
-    <li><a href="car.html">Корзина</a></li>
-    <li><a href="checkout-1-delivery.html">1 Оформление получение</a></li>
-    <li><a href="checkout-2-user-info.html">2 Оформление данные покупателя</a></li>
-    <li><a href="checkout-3-pay.html">3 Оформление оплата</a></li>
-    <li><a href="checkout-final.html">4 Финальный экран</a></li>
-  </ul>
+    <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="catalog.html">Каталог</a></li>
+        <li><a href="product1.html">Страница товара 1</a></li>
+        <li><a href="product2.html">Страница товара 2</a></li>
+        <li><a href="cart.html">Корзина</a></li>
+        <li><a href="checkout-1-delivery.html">1 Оформление получение</a></li>
+        <li><a href="checkout-2-user-info.html">2 Оформление данные покупателя</a></li>
+        <li><a href="checkout-3-pay.html">3 Оформление оплата</a></li>
+        <li><a href="payment.html">Страница оплаты</a></li>
+        <li><a href="checkout-final.html">4 Финальный экран</a></li>
+    </ul>
 </div>
 
 
 <script>
-  function addToCart(product) {
-    ga('ec:addProduct', {
-      'id': product.id,
-      'name': product.name,
-      'category': product.category,
-      'brand': product.brand,
-      'variant': product.variant,
-      'price': product.price,
-      'quantity': product.qty
-    });
-    ga('ec:setAction', 'add');
-  ga('send', 'event', 'UX', 'click', 'add to cart');     // Send data using an event.
-}
+    function addToCart(product) {
+        ga('ec:addProduct', {
+            'id': product.id,
+            'name': product.name,
+            'category': product.category,
+            'brand': product.brand,
+            'variant': product.variant,
+            'price': product.price,
+            'quantity': product.qty
+        });
+        ga('ec:setAction', 'add');
+        ga('send', 'event', 'UX', 'click', 'add to cart');     // Send data using an event.
+    }
 
 </script>
 
