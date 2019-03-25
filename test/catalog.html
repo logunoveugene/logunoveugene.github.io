@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Главная</title>
+	<title>Каталог</title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136836500-1"></script>
 
     <script>
@@ -33,7 +33,7 @@ ga('ec:addImpression', {
   'category': 'Категория товара 1/Подкатегория товара 1',
   'brand': 'DEXP',
   'variant': 'black',
-  'list': 'Главная',
+  'list': 'Каталог',
   'position': 1                     // 'position' indicates the product position in the list.
 });
 
@@ -43,7 +43,7 @@ ga('ec:addImpression', {
   'category': 'Категория товара 2/Подкатегория товара 2',
   'brand': 'DEXP',
   'variant': 'gray',
-  'list': 'Главная',
+  'list': 'Каталог',
   'position': 2
 });
 
@@ -74,6 +74,7 @@ ga('send', 'pageview');
 
 
 
+
 <div class="">
     <ul>
         <li><a href="index.html">Главная</a></li>
@@ -90,6 +91,7 @@ ga('send', 'pageview');
 
 
 
+
 <script>
   function onProductClick1() {
   ga('ec:addProduct', {
@@ -98,13 +100,13 @@ ga('send', 'pageview');
   'category': 'Категория товара 1/Подкатегория товара 1',
   'brand': 'DEXP',
   'variant': 'black',
-  'list': 'Главная',
+  'list': 'Каталог',
   'position': 1   
   });
-  ga('ec:setAction', 'Клик', {list: 'Главная'});
+  ga('ec:setAction', 'Клик', {list: 'Каталог'});
 
   // Send click with an event, then send user to product page.
-  ga('send', 'event', 'Просмотр товара', 'Клик', 'Главная', {
+  ga('send', 'event', 'Просмотр товара', 'Клик', 'Каталог', {
     hitCallback: function() {
       document.location = '/product1.html';
     }
@@ -118,13 +120,13 @@ ga('send', 'pageview');
   'category': 'Категория товара 2/Подкатегория товара 2',
   'brand': 'DEXP',
   'variant': 'gray',
-  'list': 'Главная',
+  'list': 'Каталог',
   'position': 2
   });
-  ga('ec:setAction', 'Клик', {list: 'Главная'});
+  ga('ec:setAction', 'Клик', {list: 'Каталог'});
 
   // Send click with an event, then send user to product page.
-  ga('send', 'event', 'Просмотр товара', 'Клик', 'Главная', {
+  ga('send', 'event', 'Просмотр товара', 'Клик', 'Каталог', {
     hitCallback: function() {
       document.location = '/product2.html';
     }
