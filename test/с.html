@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Страница C</title>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136836500-1"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136836500-1"></script>
 
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-      gtag('config', 'UA-136836500-1');
+    gtag('config', 'UA-136836500-1');
 
 // отправка данных о посещении страницы
-ga('send', {
+window.ga('send', {
   hitType: 'pageview',
   page: location.pathname
 });
@@ -23,37 +23,37 @@ ga('send', {
 
 <body>
 
-<style>
+  <style>
   input{
    background-color: yellow
-}
+ }
 </style>
 
 <div class="form">
-    <form action="">
-        <input type="text">
-        <input type="text">
-        <input type="text">
-        <button type="submit">отправить форму</button>
-    </form>
+  <form action="">
+    <input type="text">
+    <input type="text">
+    <input type="text">
+    <button type="submit">отправить форму</button>
+  </form>
 </div>
 
 <div class="">
-    <input type="button"  onclick="ga('send', {
-      hitType: 'event',
-      eventCategory: 'AddToCartButton',
-      eventAction: 'click',
-      eventLabel: event.target.href
+  <input type="button"  onclick="ga('send', {
+    hitType: 'event',
+    eventCategory: 'AddToCartButton',
+    eventAction: 'click',
+    eventLabel: event.target.href
   });" value="Заказать" />
 </div>
 
 <div class="">
-    <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="a.html">Страница А</a></li>
-        <li><a href="b.html">Страница Б</a></li>
-        <li><a href="c.html">Страница С</a></li>
-    </ul>
+  <ul>
+    <li><a href="index.html">Главная</a></li>
+    <li><a href="a.html">Страница А</a></li>
+    <li><a href="b.html">Страница Б</a></li>
+    <li><a href="c.html">Страница С</a></li>
+  </ul>
 </div>
 
 </body>
