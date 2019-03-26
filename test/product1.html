@@ -76,7 +76,7 @@
   'brand': 'DEXP',
   'variant': 'black',
   'price': 1000,
-  'quantity': 1                 
+  'qty': 1
   }); return !ga.loaded;">Купить</a>
 </div>
 
@@ -96,7 +96,6 @@
     </ul>
 </div>
 
-
 <script>
     function addToCart(product) {
         ga('ec:addProduct', {
@@ -108,7 +107,7 @@
             'price': product.price,
             'quantity': product.qty
         });
-        ga('ec:setAction', 'add');
+        ga('ec:setAction', 'add',  {list: 'Карточка товара : основной блок'});
         ga('send', 'event', 'UX', 'click', 'add to cart');     // Send data using an event.
     }
 

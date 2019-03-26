@@ -109,11 +109,9 @@
             'category': 'Категория товара 1/Подкатегория товара 1',
             'brand': 'DEXP',
             'variant': 'black',
-
             'position': 1
         });
         ga('ec:setAction', 'click', {list: 'Каталог'});
-
         ga('send', 'event', 'UX', 'click', 'Каталог', {
             hitCallback: function() {
                 document.location = 'product1.html';
