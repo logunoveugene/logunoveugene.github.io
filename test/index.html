@@ -108,6 +108,13 @@
         });
         ga('ec:setAction', 'Клик', {list: 'Главная'});
 
+        // Send click with an event, then send user to product page.
+        // Send click with an event, then send user to product page.
+        ga('send', 'event', 'UX', 'click', 'Главная', {
+            hitCallback: function() {
+                document.location = 'product1.html';
+            }
+        });
     }
 
     function onProductClick2() {
@@ -122,7 +129,12 @@
         });
         ga('ec:setAction', 'Клик', {list: 'Главная'});
 
- 
+        // Send click with an event, then send user to product page.
+        ga('send', 'event', 'UX', 'click', 'Главная', {
+            hitCallback: function() {
+                document.location = 'product2.html';
+            }
+        });
     }
 
 </script>

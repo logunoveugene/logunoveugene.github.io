@@ -113,7 +113,11 @@
             'position': 1
         });
         ga('ec:setAction', 'Клик', {list: 'Каталог'});
-
+        ga('send', 'event', 'UX', 'click', 'Каталог', {
+            hitCallback: function() {
+                document.location = 'product1.html';
+            }
+        });
     }
 
     function onProductClick2() {
@@ -127,7 +131,11 @@
             'position': 2
         });
         ga('ec:setAction', 'Клик', {list: 'Каталог'});
-
+        ga('send', 'event', 'UX', 'click', 'Каталог', {
+            hitCallback: function() {
+                document.location = 'product2.html';
+            }
+        });
     }
 
 </script>
