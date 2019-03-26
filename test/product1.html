@@ -39,14 +39,12 @@
         ga('create', 'UA-136836500-1', 'auto');
         ga('require', 'ec');
 
-
         ga('ec:addProduct', {
             'id': 'P12345',
             'name': 'Товар 1',
             'category': 'Категория товара 1/Подкатегория товара 1',
             'brand': 'DEXP',
             'variant': 'black'
-
         });
 
         ga('ec:setAction', 'detail');
@@ -115,7 +113,7 @@
         });
         ga('send', 'event', 'UX', 'click', 'add to cart');
         ga('set', {
-            'isAuth': 'true'
+            'dimension1': 'true'
         });
     }
 
