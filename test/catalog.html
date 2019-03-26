@@ -111,7 +111,10 @@
             'variant': 'black',
             'position': 1
         });
-        ga('ec:setAction', 'click', {list: 'Каталог'});
+        ga('ec:setAction', 'click', {list: 'Каталог'},{
+            'dimension5': 'custom dimension data',
+
+        } );
         ga('send', 'event', 'UX', 'click', 'Каталог', {
             hitCallback: function() {
                 document.location = 'product1.html';

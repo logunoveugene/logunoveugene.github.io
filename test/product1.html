@@ -107,8 +107,14 @@
             'price': product.price,
             'quantity': product.qty
         });
-        ga('ec:setAction', 'add',  {list: 'Карточка товара : основной блок'});
-        ga('send', 'event', 'UX', 'click', 'add to cart');     // Send data using an event.
+        ga('ec:setAction', 'add',  {list: 'Карточка товара : основной блок'},{
+            'isAuth1': 'false',
+            'someOtherMetric': 'custom metric data'
+        });
+        ga('send', 'event', 'UX', 'click', 'add to cart', {
+            'isAuth1': 'false',
+            'someOtherMetric': 'custom metric data'
+        });
     }
 
 </script>
