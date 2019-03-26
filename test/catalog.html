@@ -109,17 +109,11 @@
             'category': 'Категория товара 1/Подкатегория товара 1',
             'brand': 'DEXP',
             'variant': 'black',
-            'list': 'Каталог',
+
             'position': 1
         });
         ga('ec:setAction', 'Клик', {list: 'Каталог'});
 
-        // Send click with an event, then send user to product page.
-        ga('send', 'event', 'Просмотр товара', 'Клик', 'Каталог', {
-            hitCallback: function () {
-                document.location = 'product1.html';
-            }
-        });
     }
 
     function onProductClick2() {
@@ -134,12 +128,6 @@
         });
         ga('ec:setAction', 'Клик', {list: 'Каталог'});
 
-        // Send click with an event, then send user to product page.
-        ga('send', 'event', 'Просмотр товара', 'Клик', 'Каталог', {
-            hitCallback: function () {
-                document.location = 'product2.html';
-            }
-        });
     }
 
 </script>
