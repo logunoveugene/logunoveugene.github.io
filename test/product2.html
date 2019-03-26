@@ -108,7 +108,7 @@
             'price': product.price,
             'quantity': product.qty
         });
-        ga('ec:setAction', 'add');
+        ga('ec:setAction', 'add', {list: 'Карточка товара : основной блок'});
         ga('send', 'event', 'UX', 'click', 'add to cart');     // Send data using an event.
     }
 
