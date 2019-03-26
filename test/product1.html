@@ -14,7 +14,9 @@
 
         gtag('js', new Date());
 
-        gtag('config', 'UA-136836500-1');
+        gtag('config', 'UA-136836500-1', {
+            'custom_map': {'dimension1': 'isAuth'}
+        });
 
 
     </script>
@@ -111,12 +113,9 @@
             'isAuth1': 'false',
             'someOtherMetric': 'custom metric data'
         });
-        ga('send', 'event', 'UX', 'click', 'add to cart', {
-            'isAuth1': 'false',
-            'someOtherMetric': 'custom metric data'
-        });
+        ga('send', 'event', 'UX', 'click', 'add to cart');
         ga('set', {
-            'dimension1': 'true'
+            'isAuth': 'true'
         });
     }
 

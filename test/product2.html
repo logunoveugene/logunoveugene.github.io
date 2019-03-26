@@ -14,7 +14,9 @@
 
         gtag('js', new Date());
 
-        gtag('config', 'UA-136836500-1');
+        gtag('config', 'UA-136836500-1', {
+            'custom_map': {'dimension1': 'isAuth'}
+        });
 
 
     </script>
@@ -110,6 +112,9 @@
         });
         ga('ec:setAction', 'add', {list: 'Карточка товара : основной блок'});
         ga('send', 'event', 'UX', 'click', 'add to cart');     // Send data using an event.
+        ga('set', {
+            'isAuth': 'true'
+        });
     }
 
 </script>
