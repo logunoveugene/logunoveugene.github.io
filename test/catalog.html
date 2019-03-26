@@ -112,7 +112,8 @@
 
             'position': 1
         });
-        ga('ec:setAction', 'Клик', {list: 'Каталог'});
+        ga('ec:setAction', 'click', {list: 'Каталог'});
+
         ga('send', 'event', 'UX', 'click', 'Каталог', {
             hitCallback: function() {
                 document.location = 'product1.html';
@@ -130,7 +131,7 @@
             'list': 'Каталог',
             'position': 2
         });
-        ga('ec:setAction', 'Клик', {list: 'Каталог'});
+        ga('ec:setAction', 'click', {list: 'Каталог'});
         ga('send', 'event', 'UX', 'click', 'Каталог', {
             hitCallback: function() {
                 document.location = 'product2.html';
