@@ -65,20 +65,27 @@
     <!-- End Google Analytics -->
 
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
         (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
         ym(52045218, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true,
-            ecommerce:"dataLayer"
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true,
+            ecommerce: "dataLayer"
         });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/52045218" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/52045218" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
     <!-- /Yandex.Metrika counter -->
 </head>
 
@@ -89,31 +96,85 @@
         background-color: red
     }
 </style>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="product">
+                <div class="product__title"><a href="product1.html" onclick="onProductClick1(); return !ga.loaded;">Товар
+                    1</a>
+                </div>
+                <a href="#"  onclick="ym(52045218, 'reachGoal', 'addToCart', {URL: document.location.href, isAccessoires: 'false', isAuth:'false'}); return true;">Купить</a>
+                <a href="#"
+                   onclick="ym(52045218, 'reachGoal', 'oneClick1',{URL: document.location.href,  isAuth:'false'} ); return true;"
+                   class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Купить в 1 клик</a>
 
-<div class="product">
-    <div class="product__title"><a href="product1.html" onclick="onProductClick1(); return !ga.loaded;">Товар 1</a>
+                <a href="#">Сравнить</a>
+                <a href="#">Добавить в избранное</a>
+            </div>
+            <div class="product">
+                <div class="product__title"><a href="product2.html" onclick="onProductClick2(); return !ga.loaded;">Товар
+                    2</a>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+
+            <div class="">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="product1.html">Страница товара 1</a></li>
+                    <li><a href="product2.html">Страница товара 2</a></li>
+                    <li><a href="cart.html">Корзина</a></li>
+                    <li><a href="checkout-1-delivery.html">1 Оформление получение</a></li>
+                    <li><a href="checkout-2-user-info.html">2 Оформление данные покупателя</a></li>
+                    <li><a href="checkout-3-pay.html">3 Оформление оплата</a></li>
+                    <li><a href="payment.html">Страница оплаты</a></li>
+                    <li><a href="checkout-final.html">4 Финальный экран</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary"
+                        onclick="ym(52045218, 'reachGoal', 'oneClick2', {URL: document.location.href}); return true;">
+                    Купить
+                </button>
+            </div>
+        </div>
     </div>
 </div>
-<div class="product">
-    <div class="product__title"><a href="product2.html" onclick="onProductClick2(); return !ga.loaded;">Товар 2</a>
-    </div>
-</div>
 
-
-<div class="">
-    <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="catalog.html">Каталог</a></li>
-        <li><a href="product1.html">Страница товара 1</a></li>
-        <li><a href="product2.html">Страница товара 2</a></li>
-        <li><a href="cart.html">Корзина</a></li>
-        <li><a href="checkout-1-delivery.html">1 Оформление получение</a></li>
-        <li><a href="checkout-2-user-info.html">2 Оформление данные покупателя</a></li>
-        <li><a href="checkout-3-pay.html">3 Оформление оплата</a></li>
-        <li><a href="payment.html">Страница оплаты</a></li>
-        <li><a href="checkout-final.html">4 Финальный экран</a></li>
-    </ul>
-</div>
 
 
 <script>
@@ -126,12 +187,12 @@
             'variant': 'black',
             'position': 1
         });
-        ga('ec:setAction', 'click', {list: 'Каталог'},{
+        ga('ec:setAction', 'click', {list: 'Каталог'}, {
             'dimension5': 'custom dimension data',
 
-        } );
+        });
         ga('send', 'event', 'UX', 'click', 'Каталог', {
-            hitCallback: function() {
+            hitCallback: function () {
                 document.location = 'product1.html';
             }
         });
@@ -149,7 +210,7 @@
         });
         ga('ec:setAction', 'click', {list: 'Каталог'});
         ga('send', 'event', 'UX', 'click', 'Каталог', {
-            hitCallback: function() {
+            hitCallback: function () {
                 document.location = 'product2.html';
             }
         });
