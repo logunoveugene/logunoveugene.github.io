@@ -101,28 +101,44 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <div class="product">
-                <div class="product__title"><a href="product1.html" onclick="onProductClick1(); return !ga.loaded;">Товар
+            <div class="h1">Каталог товара</div>
+            <div class="product mb-4">
+                <div class="product__title h4"><a href="product1.html" onclick="onProductClick1(); return !ga.loaded;">Товар
                     1</a>
                 </div>
-                <a href="#"  onclick="ym(52045218, 'reachGoal', 'addToCart', {URL: document.location.href, isAccessoires: 'false', isAuth:'false'}); return true;">Купить</a>
+                <div class="mb-2">
+                    <a href="#"
+                       onclick="ym(52045218, 'reachGoal', 'addToCompare',{URL: document.location.href,  isAuth:'false'} ); return true;"
+                    >Сравнить</a>
+                    <a href="#"
+                       onclick="ym(52045218, 'reachGoal', 'addToWishlist',{URL: document.location.href,  isAuth:'false'} ); return true;"
+                    >Добавить в избранное</a>
+                </div>
+                <a href="#" class="btn btn-primary"  onclick="ym(52045218, 'reachGoal', 'addToCart', {URL: document.location.href, isAccessoires: 'false', isAuth:'false'}); return true;">Купить</a>
                 <a href="#"
                    onclick="ym(52045218, 'reachGoal', 'oneClick1',{URL: document.location.href,  isAuth:'false'} ); return true;"
-                   class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Купить в 1 клик</a>
-
-                <a href="#">Сравнить</a>
-                <a href="#">Добавить в избранное</a>
+                   class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal">Купить в 1 клик</a>
             </div>
+
+
             <div class="product">
                 <div class="product__title"><a href="product2.html" onclick="onProductClick2(); return !ga.loaded;">Товар
                     2</a>
                 </div>
+                <div class="mb-2">
+                    <a href="#"
+                       onclick="ym(52045218, 'reachGoal', 'addToCompare',{URL: document.location.href,  isAuth:'false'} ); return true;"
+                    >Сравнить</a>
+                    <a href="#"
+                       onclick="ym(52045218, 'reachGoal', 'addToWishlist',{URL: document.location.href,  isAuth:'false'} ); return true;"
+                    >Добавить в избранное</a>
+                </div>
+                <a href="#" class="btn btn-primary"  onclick="ym(52045218, 'reachGoal', 'addToCart', {URL: document.location.href, isAccessoires: 'false', isAuth:'false'}); return true;">Купить</a>
+                <a href="#"
+                   onclick="ym(52045218, 'reachGoal', 'oneClick1',{URL: document.location.href,  isAuth:'false'} ); return true;"
+                   class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal">Купить в 1 клик</a>
 
             </div>
-
-
-
-
 
 
 
