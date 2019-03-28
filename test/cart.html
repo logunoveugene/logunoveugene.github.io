@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Корзина</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136836500-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
+
         function gtag() {
             dataLayer.push(arguments);
         }
+
         gtag('js', new Date());
         gtag('config', 'UA-136836500-1');
     </script>
@@ -67,20 +70,27 @@
 
 
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
         (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
         ym(52045218, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true,
-            ecommerce:"dataLayer"
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true,
+            ecommerce: "dataLayer"
         });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/52045218" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/52045218" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
     <!-- /Yandex.Metrika counter -->
 
 </head>
@@ -92,34 +102,49 @@
         background-color: red
     }
 </style>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="product mb-5">
+                <div class="product__title">Товар 1</div>
+                <div class="">1 шт</div>
+                <div class="">Цена: 1000р</div>
+                <a href="checkout-1-delivery.html">Оформить заказ</a>
+                <a href="#"
+                   onclick="ym(52045218, 'reachGoal', 'oneClick1',{URL: document.location.href,  isAuth:'false'} ); return true;"
+                   class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Купить в 1 клик</a>
+            </div>
+            <a href="#"
+               onclick="ym(52045218, 'reachGoal', 'addToCart',{URL: document.location.href, isAccessoires: 'true', isAuth:'false'}); return true;">Купить
+                Аксессуар</a>
+            <a href="#"
+               onclick="ym(52045218, 'reachGoal', 'addWarranty',{URL: document.location.href,isAuth:'false'}); return true;">Добавить
+                гарантию</a>
 
-<div class="product">
-    <div class="product__title">Товар 1</div>
-    <div class="">1 шт</div>
-    <div class="">Цена: 1000р</div>
-    <a href="checkout-1-delivery.html" >Оформить заказ</a>
-    <a href="#" onclick="ym(52045218, 'reachGoal', 'oneClick'); return true;" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Купить в 1 клик</a>
-</div>
 
+            <div class="pt-5">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="product1.html">Страница товара 1</a></li>
+                    <li><a href="product2.html">Страница товара 2</a></li>
+                    <li><a href="cart.html">Корзина</a></li>
+                    <li><a href="checkout-1-delivery.html">1 Оформление получение</a></li>
+                    <li><a href="checkout-2-user-info.html">2 Оформление данные покупателя</a></li>
+                    <li><a href="checkout-3-pay.html">3 Оформление оплата</a></li>
+                    <li><a href="payment.html">Страница оплаты</a></li>
+                    <li><a href="checkout-final.html">4 Финальный экран</a></li>
+                </ul>
+            </div>
 
-<div class="">
-    <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="catalog.html">Каталог</a></li>
-        <li><a href="product1.html">Страница товара 1</a></li>
-        <li><a href="product2.html">Страница товара 2</a></li>
-        <li><a href="cart.html">Корзина</a></li>
-        <li><a href="checkout-1-delivery.html">1 Оформление получение</a></li>
-        <li><a href="checkout-2-user-info.html">2 Оформление данные покупателя</a></li>
-        <li><a href="checkout-3-pay.html">3 Оформление оплата</a></li>
-        <li><a href="payment.html">Страница оплаты</a></li>
-        <li><a href="checkout-final.html">4 Финальный экран</a></li>
-    </ul>
+        </div>
+    </div>
 </div>
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -133,14 +158,23 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Купить</button>
+                <button type="button" class="btn btn-primary"
+                        onclick="ym(52045218, 'reachGoal', 'oneClick2', {URL: document.location.href}); return true;">
+                    Купить
+                </button>
             </div>
         </div>
     </div>
 </div>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 </html>
