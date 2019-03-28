@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Оформлене заказа Шаг1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136836500-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -67,22 +69,28 @@
     <!-- End Google Analytics -->
 
 
-
     <!-- Yandex.Metrika counter -->
-    <script type="text/javascript" >
-        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () {
+                (m[i].a = m[i].a || []).push(arguments)
+            };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
         (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
         ym(52045218, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true,
-            webvisor:true,
-            ecommerce:"dataLayer"
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: true,
+            ecommerce: "dataLayer"
         });
     </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/52045218" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/52045218" style="position:absolute; left:-9999px;" alt=""/></div>
+    </noscript>
     <!-- /Yandex.Metrika counter -->
 
 </head>
@@ -97,7 +105,9 @@
 
 <div class="product">
     <div class="product__title">1 Оформление получение</div>
-    <a href="checkout-2-user-info.html">Продолжить</a>
+    <a href="checkout-2-user-info.html"
+       onclick="ym(52045218, 'reachGoal', 'checkout1to2', {isInternetPrice: 'false', deliveryMethods: 'Самовывоз', isAuth:'false'} ); return true;"
+    >Продолжить</a>
 </div>
 
 

@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Товар 2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136836500-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -83,12 +85,16 @@
         background-color: red
     }
 </style>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="h1">Страница товара 1</div>
 
-<div class="product">
-    <div class="product__title">Товар 1</div>
-    <div class="">Описание товара</div>
-    <div class="">Цена: 1000р</div>
-    <a href="product1.html" onclick="addToCart({
+            <div class="product">
+                <div class="product__title">Товар 1</div>
+                <div class="">Описание товара</div>
+                <div class="">Цена: 1000р</div>
+                <a href="product1.html" onclick="addToCart({
   'id': 'P12345',                   
   'name': 'Товар 1',
   'category': 'Категория товара 1/Подкатегория товара 1',
@@ -97,23 +103,36 @@
   'price': 1000,
   'qty': 1
   }); return !ga.loaded;">Купить</a>
+                <div class="pb-4">
+                    <a href="#"
+                       onclick="ym(52045218, 'reachGoal', 'addToCart',{URL: document.location.href, isAccessoires: 'true', isAuth:'false'}); return true;">
+                        Купить аксессуар</a>
+                    <a href="#"
+                       class="pl-3"
+                       onclick="ym(52045218, 'reachGoal', 'addWarranty',{URL: document.location.href,isAuth:'false'}); return true;">Добавить
+                        гарантию</a>
+                </div>
+            </div>
+
+            <div class="">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="catalog.html">Каталог</a></li>
+                    <li><a href="product1.html">Страница товара 1</a></li>
+                    <li><a href="product2.html">Страница товара 2</a></li>
+                    <li><a href="cart.html">Корзина</a></li>
+                    <li><a href="checkout-1-delivery.html">1 Оформление получение</a></li>
+                    <li><a href="checkout-2-user-info.html">2 Оформление данные покупателя</a></li>
+                    <li><a href="checkout-3-pay.html">3 Оформление оплата</a></li>
+                    <li><a href="payment.html">Страница оплаты</a></li>
+                    <li><a href="checkout-final.html">4 Финальный экран</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
 </div>
 
-
-<div class="">
-    <ul>
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="catalog.html">Каталог</a></li>
-        <li><a href="product1.html">Страница товара 1</a></li>
-        <li><a href="product2.html">Страница товара 2</a></li>
-        <li><a href="cart.html">Корзина</a></li>
-        <li><a href="checkout-1-delivery.html">1 Оформление получение</a></li>
-        <li><a href="checkout-2-user-info.html">2 Оформление данные покупателя</a></li>
-        <li><a href="checkout-3-pay.html">3 Оформление оплата</a></li>
-        <li><a href="payment.html">Страница оплаты</a></li>
-        <li><a href="checkout-final.html">4 Финальный экран</a></li>
-    </ul>
-</div>
 
 <script>
     function addToCart(product) {
