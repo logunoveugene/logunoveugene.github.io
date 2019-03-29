@@ -47,7 +47,6 @@
                 });
             }
         }
-
         var cart = [{
             'id': 'P12345',
             'name': 'Товар 1',
@@ -112,18 +111,18 @@
                 <div class="mb-3">Цена: 1000р</div>
                 <div class="pb-4">
                     <a href="#"
-                       onclick="ym(52045218, 'reachGoal', 'addToCart',{URL: document.location.href, isAccessoires: 'true', isAuth:'false'}); return true;">
+                       onclick="ym(52045218, 'reachGoal', 'addToCart',{addToCartURL: document.location.href, isAccessoires: 'true', isAuth:'false'}); return true;">
                         Купить аксессуар</a>
                     <a href="#"
                        class="pl-3"
-                       onclick="ym(52045218, 'reachGoal', 'addWarranty',{URL: document.location.href,isAuth:'false'}); return true;">Добавить
+                       onclick="ym(52045218, 'reachGoal', 'addWarranty',{addWarrantyURL: document.location.href,isAuth:'false'}); return true;">Добавить
                         гарантию</a>
                 </div>
                 <a class="btn btn-primary" href="checkout-1-delivery.html"
 
                 >Оформить заказ</a>
                 <a href="#"
-                   onclick="ym(52045218, 'reachGoal', 'oneClick1',{URL: document.location.href,  isAuth:'false'} ); return true;"
+                   onclick="ym(52045218, 'reachGoal', 'oneClick1',{oneClickURL: document.location.href,  isAuth:'false'} ); return true;"
                    class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal">Купить в 1 клик</a>
             </div>
 
@@ -165,7 +164,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary"
-                        onclick="ym(52045218, 'reachGoal', 'oneClick2', {URL: document.location.href}); return true;">
+                        onclick="ym(52045218, 'reachGoal', 'oneClick2', {oneClickURL: document.location.href}); return true;">
                     Купить
                 </button>
             </div>
