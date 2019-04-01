@@ -89,20 +89,19 @@
     <div class="row">
         <div class="col-12">
             <div class="h1">Страница товара 1</div>
-
             <div class="product">
                 <div class="product__title">Товар 1</div>
                 <div class="">Описание товара</div>
                 <div class="">Цена: 1000р</div>
                 <a href="product1.html" onclick="addToCart({
-  'id': 'P12345',                   
-  'name': 'Товар 1',
-  'category': 'Категория товара 1/Подкатегория товара 1',
-  'brand': 'DEXP',
-  'variant': 'black',
-  'price': 1000,
-  'qty': 1
-  }); return !ga.loaded;">Купить</a>
+                      'id': 'P12345',
+                      'name': 'Товар 1',
+                      'category': 'Категория товара 1/Подкатегория товара 1',
+                      'brand': 'DEXP',
+                      'variant': 'black',
+                      'price': 1000,
+                      'qty': 1
+                      }); return !ga.loaded;">Купить</a>
                 <div class="pb-4">
                     <a href="#"
                        onclick="ym(52045218, 'reachGoal', 'addToCart',{addToCartURL: document.location.href, addToCartContainer: 'accessories', isAuth:'false'}); return true;">
@@ -153,8 +152,11 @@
         ga('set', {
             'dimension1': 'true'
         });
-
-        vm(52045218, 'reachGoal', 'addToCart', {addToCartURL: document.location.href, addToCartContainer: 'productMain', isAuth: 'false'});
+        vm(52045218, 'reachGoal', 'addToCart', {
+            addToCartURL: document.location.href,
+            addToCartContainer: 'productMain',
+            isAuth: 'false'
+        });
 
 
     }
