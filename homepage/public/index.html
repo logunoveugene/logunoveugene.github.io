@@ -46,7 +46,7 @@
     <link rel="stylesheet prefetch" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="c-style.css">
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
-    <link href="styles.css.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 
 </head>
 <body>
@@ -166,14 +166,14 @@
 
                 </div>
 
-                <div class="col-12 col-lg-3 mb-lg-0 d-flex"  @mouseover="submenuDesktopIsOpen = true" @mouseleave="submenuDesktopIsOpen = false" >
+                <div class="col-12 col-lg-3 mb-lg-0 d-flex" @mouseover="submenuDesktopIsOpen = true"
+                     @mouseleave="submenuDesktopIsOpen = false">
                     <div class="card card-mobile align-self-stretch flex-fill">
                         <catalogmenu :catalog="mainNavs"></catalogmenu>
                     </div>
 
 
-                        <submenu v-if="submenuDesktopIsOpen" :mysubmenu="dropSubMenu"/>
-
+                    <submenu v-if="submenuDesktopIsOpen" :mysubmenu="dropSubMenu"/>
 
 
                 </div>
@@ -503,7 +503,7 @@
 
                                 <div class="d-flex flex-row row">
                                     <div class="d-flex flex-column w-20 mb-3 position-relative"
-                                         v-for="newsitem in newslist"
+                                         v-for="(newsitem, index) in newslist" v-if="index<5"
                                     >
                                         <div class=" news-shadow position-absolute"
                                              :style="{ boxShadow: '0px -170px 60px -50px inset ' +  newsitem.color}"></div>
@@ -973,7 +973,7 @@
                         <div class="shop-logo-swiper__wrap">
                             <logo-swiper class="shop-logo-swiper" :options="shopLogoOption">
                                 <logo-slide v-for="(logo, index) in logos" :key="index">
-                                    <div   class="shop-logo d-flex align-items-center">
+                                    <div class="shop-logo d-flex align-items-center">
                                         <div class="shop-logo__image-wrap d-flex align-items-center">
                                             <img :src="logo.img" alt="" class="shop-logo__image">
                                         </div>
@@ -983,10 +983,10 @@
                                     </div>
                                 </logo-slide>
                                 <div class="sw-button-prev ml-4" slot="button-prev">
-                                <div class="icon-arrow-left "></div>
+                                    <div class="icon-arrow-left "></div>
                                 </div>
                                 <div class="sw-button-next mr-4" slot="button-next">
-                                <div class="icon-arrow-right "></div>
+                                    <div class="icon-arrow-right "></div>
                                 </div>
 
                                 <div class="swiper-scrollbar" slot="scrollbar"></div>
@@ -1009,24 +1009,37 @@
                         </div>
 
                         <div class="d-flex flex-row row">
-                            <div class="d-flex flex-column w-20 mb-3 position-relative"
-                                 v-for="newsitem in newslist"
-                            >
-                                <div class=" news-shadow position-absolute"
-                                     :style="{ boxShadow: '0px -170px 60px -50px inset ' +  newsitem.color}"></div>
-                                <div class="">
-                                    <img class="img-fluid" :src="newsitem.img" alt="">
+
+                            <local-swiper  :options="BlogOption">
+                                <local-slide class="d-flex flex-column w-20 mb-3 position-relative"
+                                            v-for="newsitem in newslist" :key="index">
+
+
+                                        <div class=" news-shadow position-absolute"
+                                             :style="{ boxShadow: '0px -170px 60px -50px inset ' +  newsitem.color}"></div>
+                                        <div class="">
+                                            <img class="img-fluid" :src="newsitem.img" alt="">
+                                        </div>
+                                        <div class="d-flex flex-column news-desc">
+                                            <div class="small mb-1 font-weight-bold"><a href="#"
+                                                                                        :style="{ color: newsitem.fontColor }"
+                                                                                        class=" link  link--color-grey">{{newsitem.title}}</a>
+                                            </div>
+                                            <div class="small  " :style="{ color: newsitem.fontColor }">
+                                                {{newsitem.date}}
+                                            </div>
+                                        </div>
+
+                                </local-slide>
+                                <div class="sw-button-prev ml-4" slot="button-prev">
+                                    <div class="icon-arrow-left "></div>
                                 </div>
-                                <div class="d-flex flex-column news-desc">
-                                    <div class="small mb-1 font-weight-bold"><a href="#"
-                                                                                :style="{ color: newsitem.fontColor }"
-                                                                                class=" link  link--color-grey">{{newsitem.title}}</a>
-                                    </div>
-                                    <div class="small  " :style="{ color: newsitem.fontColor }">
-                                        {{newsitem.date}}
-                                    </div>
+                                <div class="sw-button-next mr-4" slot="button-next">
+                                    <div class="icon-arrow-right "></div>
                                 </div>
-                            </div>
+
+
+                            </local-swiper>
                         </div>
                     </div>
 

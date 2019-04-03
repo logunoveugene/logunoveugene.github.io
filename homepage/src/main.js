@@ -516,6 +516,42 @@ new Vue({
             },
 
 
+
+            BlogOption: {
+                slidesPerView: 5,
+                spaceBetween: 0,
+                observer: true,
+                watchOverflow: true,
+                observeParents: true,
+                freeMode: true,
+                breakpoints: {
+
+                    1200: {
+                        slidesPerView: 5,
+                        spaceBetween: 0
+                    },
+                    992: {
+                        slidesPerView: 4,
+                        spaceBetween: 0
+                    },
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 0
+                    }
+                },
+                navigation: {
+                    nextEl: '.sw-button-next',
+                    prevEl: '.sw-button-prev'
+                },
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                    hide: false
+                }
+
+
+            },
+
+
             productOption: {
                 slidesPerView: 4,
                 spaceBetween: 30,

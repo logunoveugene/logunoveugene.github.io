@@ -41,10 +41,10 @@
     <link rel="stylesheet prefetch" href=https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css>
     <link rel=stylesheet href=c-style.css>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel=stylesheet>
-    <link href=https://file.myfontastic.com/7eFj9SBnsDF42ofvovPX5X/icons.css rel=stylesheet>
+    <link href=styles.css rel=stylesheet>
     <link as=style href=./css/app.9557d1b7.css rel=preload>
     <link as=style href=./css/chunk-vendors.480a134e.css rel=preload>
-    <link as=script href=./js/app.e8dc1a99.js rel=preload>
+    <link as=script href=./js/app.be8bf68a.js rel=preload>
     <link as=script href=./js/chunk-vendors.c0bbb375.js rel=preload>
     <link href=./css/chunk-vendors.480a134e.css rel=stylesheet>
     <link href=./css/app.9557d1b7.css rel=stylesheet>
@@ -420,7 +420,7 @@
                                 </div>
                                 <div class="d-flex flex-row row">
                                     <div class="d-flex flex-column w-20 mb-3 position-relative"
-                                         v-for="newsitem in newslist">
+                                         v-for="(newsitem, index) in newslist" v-if="index<5">
                                         <div class="news-shadow position-absolute"
                                              :style="{ boxShadow: '0px -170px 60px -50px inset ' +  newsitem.color}"></div>
                                         <div class=""><img class=img-fluid :src=newsitem.img alt=""></div>
@@ -803,18 +803,27 @@
                             блог <span class=news-block__title-button><span class=icon-arrow-right></span></span></a>
                         </div>
                         <div class="d-flex flex-row row">
-                            <div class="d-flex flex-column w-20 mb-3 position-relative" v-for="newsitem in newslist">
-                                <div class="news-shadow position-absolute"
-                                     :style="{ boxShadow: '0px -170px 60px -50px inset ' +  newsitem.color}"></div>
-                                <div class=""><img class=img-fluid :src=newsitem.img alt=""></div>
-                                <div class="d-flex flex-column news-desc">
-                                    <div class="small mb-1 font-weight-bold"><a href=#
-                                                                                :style="{ color: newsitem.fontColor }"
-                                                                                class="link link--color-grey">{{newsitem.title}}</a>
+                            <local-swiper :options=BlogOption>
+                                <local-slide class="d-flex flex-column w-20 mb-3 position-relative"
+                                             v-for="newsitem in newslist" :key=index>
+                                    <div class="news-shadow position-absolute"
+                                         :style="{ boxShadow: '0px -170px 60px -50px inset ' +  newsitem.color}"></div>
+                                    <div class=""><img class=img-fluid :src=newsitem.img alt=""></div>
+                                    <div class="d-flex flex-column news-desc">
+                                        <div class="small mb-1 font-weight-bold"><a href=#
+                                                                                    :style="{ color: newsitem.fontColor }"
+                                                                                    class="link link--color-grey">{{newsitem.title}}</a>
+                                        </div>
+                                        <div class=small :style="{ color: newsitem.fontColor }">{{newsitem.date}}</div>
                                     </div>
-                                    <div class=small :style="{ color: newsitem.fontColor }">{{newsitem.date}}</div>
+                                </local-slide>
+                                <div class="sw-button-prev ml-4" slot=button-prev>
+                                    <div class=icon-arrow-left></div>
                                 </div>
-                            </div>
+                                <div class="sw-button-next mr-4" slot=button-next>
+                                    <div class=icon-arrow-right></div>
+                                </div>
+                            </local-swiper>
                         </div>
                     </div>
                 </div>
@@ -895,6 +904,6 @@
     <myfooter></myfooter>
 </div>
 <script src=./js/chunk-vendors.c0bbb375.js></script>
-<script src=./js/app.e8dc1a99.js></script>
+<script src=./js/app.be8bf68a.js></script>
 </body>
 </html>
