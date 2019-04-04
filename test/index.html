@@ -10,10 +10,14 @@
 
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
-        gtag('config', 'UA-136836500-1', { 'optimize_id': 'GTM-5V8P2X3'});
+        gtag('config', 'UA-136836500-1', {'optimize_id': 'GTM-5V8P2X3'});
     </script>
 
     <script>
@@ -113,7 +117,7 @@
                 </div>
                 <div class="mb-2">
                     <a href="#"
-                       onclick="ym(52045218, 'reachGoal', 'addToCompare',{addToCompareURL: document.location.href,  isAuth:'false'} ); return true;"
+                       onclick="ym(52045218, 'reachGoal', 'addToCompare',{goalParams: {addToCompare: {addToCompareURL: document.location.href,  isAuth:'false'}}}); return true;"
                     >Сравнить</a>
                     <a href="#"
                        onclick="ym(52045218, 'reachGoal', 'addToWishlist',{addToWishlistURL: document.location.href,  isAuth:'false'} ); return true;"
