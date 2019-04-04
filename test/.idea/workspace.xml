@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8f390e52-78d9-48b7-9b06-401602dddb27" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dns/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dns/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -75,8 +75,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dns/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="-2184">
+              <caret line="64" column="12" lean-forward="true" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="19" />
               <folding>
                 <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
               </folding>
@@ -296,12 +296,12 @@
       <workItem from="1553648005401" duration="289000" />
       <workItem from="1553653307745" duration="13307000" />
       <workItem from="1554090685834" duration="3583000" />
-      <workItem from="1554253341790" duration="1828000" />
+      <workItem from="1554253341790" duration="2062000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26980000" />
+    <option name="totallyTimeSpent" value="27214000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="-21" width="1920" height="1057" extended-state="0" />
@@ -451,8 +451,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dns/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="-2184">
+          <caret line="64" column="12" lean-forward="true" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="19" />
           <folding>
             <element signature="n#style#0;n#iframe#0;n#!!top" expanded="true" />
           </folding>
