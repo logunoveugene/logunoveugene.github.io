@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('https://logunoveugene.github.io/icon/fonts/icomoon.eot?3z36cq');
-  src:  url('https://logunoveugene.github.io/icon/fonts/icomoon.eot?3z36cq#iefix') format('embedded-opentype'),
-    url('https://logunoveugene.github.io/icon/fonts/icomoon.ttf?3z36cq') format('truetype'),
-    url('https://logunoveugene.github.io/icon/fonts/icomoon.woff?3z36cq') format('woff'),
-    url('https://logunoveugene.github.io/icon/fonts/icomoon.svg?3z36cq#icomoon') format('svg');
+  src:  url('https://logunoveugene.github.io/icon/fonts/icomoon.eot?8uwbm4');
+  src:  url('https://logunoveugene.github.io/icon/fonts/icomoon.eot?8uwbm4#iefix') format('embedded-opentype'),
+    url('https://logunoveugene.github.io/icon/fonts/icomoon.ttf?8uwbm4') format('truetype'),
+    url('https://logunoveugene.github.io/icon/fonts/icomoon.woff?8uwbm4') format('woff'),
+    url('https://logunoveugene.github.io/icon/fonts/icomoon.svg?8uwbm4#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-less:before {
+  content: "\e908";
+}
+.icon-more:before {
+  content: "\e909";
+}
 .icon-add:before {
   content: "\e900";
 }
