@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?yyvwyc');
-  src:  url('fonts/icomoon.eot?yyvwyc#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?yyvwyc') format('truetype'),
-    url('fonts/icomoon.woff?yyvwyc') format('woff'),
-    url('fonts/icomoon.svg?yyvwyc#icomoon') format('svg');
+  src:  url('https://logunoveugene.github.io/icon/product/fonts/icomoon.eot?yyvwyc');
+  src:  url('https://logunoveugene.github.io/icon/product/fonts/icomoon.eot?yyvwyc#iefix') format('embedded-opentype'),
+    url('https://logunoveugene.github.io/icon/product/fonts/icomoon.ttf?yyvwyc') format('truetype'),
+    url('https://logunoveugene.github.io/icon/product/fonts/icomoon.woff?yyvwyc') format('woff'),
+    url('https://logunoveugene.github.io/icon/product/fonts/icomoon.svg?yyvwyc#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
