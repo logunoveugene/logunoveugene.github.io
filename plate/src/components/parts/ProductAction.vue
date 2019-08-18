@@ -1,0 +1,13 @@
+<template>
+    
+</template>
+
+<script>
+    export default {
+        name: "ProductAction"
+    }
+</script>
+
+<style scoped>
+
+</style>
