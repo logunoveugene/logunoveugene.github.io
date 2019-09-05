@@ -1,6 +1,7 @@
 <template>
     <div class="product-plate"
-         :class="'product-plate--direction-' + plateDirection">
+         v-if="options"
+         :class="'product-plate--direction-' + options.plateDirection">
         <div class="product-plate__img-container">
             <div class="product-plate__img">
                 <ProductImg/>
@@ -52,6 +53,30 @@
                     }
                 }
             },
+            productData:{
+                type: Object,
+                default: function () {
+                    return {
+                        stickers: 'column',
+                        image: 'medium',
+                        voblerList:[],
+                        title: 'medium',
+                        rating: false,
+                        opinionCount: 'medium',
+                        commentCount: false,
+                        price: 425,
+                        priceOld:545,
+                        availableStore:4,
+                        availableStoreDate: '2019-01-25',
+                        deliveryDate:'2019-01-25',
+                        deliveryCost:150,
+                        additionalBonus:0,
+                        additionalDiscount:0,
+
+
+                    }
+                }
+            },
         }
     }
 </script>
@@ -60,14 +85,14 @@
 <style lang="scss">
     .product-plate {
         display: flex;
-        &--decoration-column {
+        &--direction-column {
             flex-direction: column;
 
         }
         &__img-container {
             position: relative;
         }
-        &__img-overlay{
+        &__img-overlay {
             position: absolute;
             left: 0;
             top: 0;

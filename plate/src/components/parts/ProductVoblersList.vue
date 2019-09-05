@@ -1,5 +1,5 @@
 <template>
-    
+    <div class="vobler-list"></div>
 </template>
 
 <script>

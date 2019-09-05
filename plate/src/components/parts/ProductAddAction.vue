@@ -1,5 +1,5 @@
 <template>
-    
+    <div class="addaction"></div>
 </template>
 
 <script>

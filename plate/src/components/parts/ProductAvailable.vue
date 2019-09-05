@@ -1,5 +1,5 @@
 <template>
-    
+    <div class="available"></div>
 </template>
 
 <script>
