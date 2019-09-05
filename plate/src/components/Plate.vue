@@ -72,8 +72,6 @@
                         deliveryCost:150,
                         additionalBonus:0,
                         additionalDiscount:0,
-
-
                     }
                 }
             },
