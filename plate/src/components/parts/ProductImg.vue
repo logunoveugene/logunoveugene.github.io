@@ -1,16 +1,60 @@
 <template>
-    <div class="">
-        <img src="https://c.dns-shop.ru/thumb/st1/fit/190/190/1ec049a7b3ea1706918880796b77c5d6/de2b785b12722cbd2b448d627678afa822b310389b443eace6c2b62c48600809.jpg.webp"
+    <div class="product-img"
+         :class="'product-img--size-' + imgSize">
+
+        <img :src="img"
+             class="product-img__picture"
              alt="">
     </div>
 </template>
 
 <script>
     export default {
-        name: "ProductImg"
+        name: "ProductImg",
+        props: {
+            img: {
+                type: String,
+                default: null
+            },
+            imgSize: {
+                type: String,
+                default: 'medium'
+            }
+        }
     }
 </script>
 
 <style lang="scss">
+    .product-img {
+        height: 100%;
+        width: 100%;
+        position: relative;
 
+        &--size-small {
+            height: 90px;
+            width: 90px;
+        }
+        &--size-medium {
+            height: 200px;
+            width: 200px;
+        }
+
+        &--size-large {
+            height: 400px;
+            width: 400px;
+        }
+
+        &__picture {
+            height: auto;
+            width: auto;
+            max-height: 100%;
+            max-width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+
+    }
 </style>

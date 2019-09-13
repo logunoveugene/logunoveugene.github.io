@@ -1,5 +1,8 @@
 <template>
-    <div class="addaction"></div>
+    <div class="addaction">
+        <div class="">Сравнить</div>
+        <div class="">В избранное</div>
+    </div>
 </template>
 
 <script>
