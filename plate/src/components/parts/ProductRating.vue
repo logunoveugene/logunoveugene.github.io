@@ -1,6 +1,6 @@
 <template>
     <div class="rating">
-        ★  {{rating}}
+        ★ {{rating}}
     </div>
 </template>
 
@@ -10,19 +10,19 @@
         props: {
 
             rating: {
-                type: String,
+                type: Number,
                 default: null
             },
             opinionCount: {
-                type: String,
+                type: Number,
                 default: null
             },
             commentCount: {
-                type: String,
+                type: Number,
                 default: null
             },
             ratingStarsIsShort: {
-                type: String,
+                type: Boolean,
                 default: null
             },
 

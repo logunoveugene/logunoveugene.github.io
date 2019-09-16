@@ -98,6 +98,10 @@
                     <div class="">ratingStarsIsShort</div>
                     <input v-model="testOptionData.ratingStarsIsShort" type="text">
                 </div>
+                <div class="test-data__item">
+                    <div class="">ratingIsShown</div>
+                    <input v-model="testOptionData.ratingIsShown" type="text">
+                </div>
 
 
             </div>
@@ -120,7 +124,7 @@
                     stickers: 'Стикер',
                     image: 'https://c.dns-shop.ru/thumb/st1/fit/190/190/1ec049a7b3ea1706918880796b77c5d6/de2b785b12722cbd2b448d627678afa822b310389b443eace6c2b62c48600809.jpg.webp',
                     voblerList: [],
-                    title: 'Название товара',
+                    title: '6.8" Смартфон Samsung Galaxy Note 10+ 256 ГБ белый',
                     rating: 4,
                     opinionCount: 15,
                     commentCount: 15,
@@ -140,7 +144,8 @@
                     voblerListIsOneLine: false,
                     titleSize: 'medium',
                     titleIsOneLine: false,
-                    ratingStarsIsShort: false
+                    ratingStarsIsShort: false,
+                    ratingIsShown: true
                 }
             }
 

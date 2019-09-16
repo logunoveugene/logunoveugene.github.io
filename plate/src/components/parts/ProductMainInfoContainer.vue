@@ -80,7 +80,7 @@
                         titleSize: 'medium',
                         titleIsOneLine: false,
                         ratingIsShown:true,//todo в родителя
-                        ratingStarsIsShort: false
+                        ratingStarsIsShort: true
                     }
                 }
             },

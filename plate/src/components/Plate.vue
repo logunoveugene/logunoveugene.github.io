@@ -52,7 +52,8 @@
                         voblerListIsOneLine: false,
                         titleSize: 'medium',
                         titleIsOneLine: false,
-                        ratingStarsIsShort: false
+                        ratingStarsIsShort: false,
+                        ratingIsShown: true
                     }
                 }
             },
@@ -86,8 +87,15 @@
 <style lang="scss">
     .product-plate {
         display: flex;
+
         &--direction-column {
             flex-direction: column;
+            align-items: start;
+
+        }
+        &--direction-row {
+            flex-direction: row;
+            align-items: center;
 
         }
         &__img-container {
