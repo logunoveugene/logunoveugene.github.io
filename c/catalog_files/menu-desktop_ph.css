@@ -1,0 +1,1 @@
+.menu-desktop{display:none}@media (min-width: 62rem){.menu-desktop{border-radius:0.5rem;box-shadow:0 0.0625rem 0.125rem 0 rgba(0,0,0,0.16);border:solid 0.0625rem transparent;background-color:#fff;display:block;width:100%;min-height:40rem}}@media (min-width: 75rem){.menu-desktop{min-height:42.5rem}}
