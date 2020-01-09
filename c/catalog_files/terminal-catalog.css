@@ -9,6 +9,7 @@ html{
 
 
 
+	/*добавляем переносы в сортировках, группировках и тд*/
 	.top-filter.popover-wrapper{
 		display: flex;
 		flex-direction: column;
@@ -17,6 +18,8 @@ html{
 		display: flex;
 	}
 
+
+	/*задаем ширину колонки с фильтрами*/
 	@media (min-width: 75rem){
 		.products-page__left-block {
 			width: 13.375rem;
@@ -24,30 +27,34 @@ html{
 		}
 	}
 
-	.ui-input-small_list {
-		width: 40%;
-	}
 
+	/*задаем ширину колонки с товарами*/
 	@media (min-width: 75rem){
 		.products-page__list {
 			width: calc(100% - 13.375rem - 1.25rem);
 		}}
 
+	/*менеяем ширину инпутов */
+	.ui-input-small_list {
+		width: 40%;
+	}
 
+	/*задаем ширину для колонки с информацией по товаур*/
 	.catalog-items-list.view-simple .n-catalog-product .product-info__title {
 		max-width: 60%;
 		min-width: 68%;
 	}
 
-
+	/*сбрасываем высоту у названия товара*/
 	.catalog-items-list .catalog-item .n-catalog-product .n-catalog-product__info .product-info__title {
 		height: auto;
 	}
-
+	/*сбрасываем высоту у описания товара*/
 	.catalog-items-list.view-simple .n-catalog-product .n-catalog-product__info .product-info__title-description{
 		height: auto;
 	}
 
+	/*меняем отсуп у воблеров*/
 	.catalog-items-list.view-simple .n-catalog-product .n-catalog-product__info .product-info__voblers {
 		margin: 0.3125rem 0 0 0rem;
 		height: auto;
@@ -55,10 +62,10 @@ html{
 		align-items: center;
 	}
 
-	/*нужно удалить обертку у воблеров если их нет*/
 
 
 
+/*Скрываем звезды, оставляем 1*/
 	.product-info__rating i:not(:first-child){
 display: none;
 	}
@@ -67,33 +74,8 @@ display: none;
 	.top-filters__view-mode{
 		display: none;
 	}
-
-
 }
 
 
-
-
-
-/* cyrillic-ext */
-@font-face {
-	font-family: 'ui-icon';
-	font-style: normal;
-	font-display: swap;
-	src: url(https://as.dns-shop.ru/assets/55da5e68/fonts/icon-ui/icon-ui.woff2) format('woff2');
-}
-
-@font-face {
-	font-family: 'NEW-icon';
-	font-style: normal;
-	font-display: swap;
-	src: url(https://as.dns-shop.ru/assets/55da5e68/fonts/new-icons/new-icon.woff) format('woff');
-}
-
-@font-face {
-	font-family: 'DNS-icon';
-	font-style: normal;
-	font-display: swap;
-	src: url(https://as.dns-shop.ru/assets/55da5e68/fonts/dns-icons/dns-icon.woff2) format('woff2');
-}
+/*ДОПОЛНИТЕЛЬНО: нужно удалить обертку у воблеров если их нет*/
 
