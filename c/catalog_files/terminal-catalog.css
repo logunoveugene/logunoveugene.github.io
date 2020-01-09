@@ -45,10 +45,16 @@ html{
 		min-width: 68%;
 	}
 
-	/*сбрасываем высоту у названия товара*/
+	/*сбрасываем высоту у блока с инфой по товару*/
 	.catalog-items-list .catalog-item .n-catalog-product .n-catalog-product__info .product-info__title {
 		height: auto;
 	}
+	/*сбрасываем высоту у названия товара*/
+	.catalog-items-list.view-simple .n-catalog-product .n-catalog-product__info .product-info__title-link {
+		height: auto;
+	}
+
+
 	/*сбрасываем высоту у описания товара*/
 	.catalog-items-list.view-simple .n-catalog-product .n-catalog-product__info .product-info__title-description{
 		height: auto;
