@@ -71,3 +71,29 @@ display: none;
 
 }
 
+
+
+
+
+/* cyrillic-ext */
+@font-face {
+	font-family: 'ui-icon';
+	font-style: normal;
+	font-display: swap;
+	src: url(https://as.dns-shop.ru/assets/55da5e68/fonts/icon-ui/icon-ui.woff2) format('woff2');
+}
+
+@font-face {
+	font-family: 'NEW-icon';
+	font-style: normal;
+	font-display: swap;
+	src: url(https://as.dns-shop.ru/assets/55da5e68/fonts/new-icons/new-icon.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'DNS-icon';
+	font-style: normal;
+	font-display: swap;
+	src: url(https://as.dns-shop.ru/assets/55da5e68/fonts/dns-icons/dns-icon.woff2) format('woff2');
+}
+
