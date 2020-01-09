@@ -1,0 +1,49 @@
+.top-filter.popover-wrapper{
+	display: flex;
+	flex-direction: column;
+}
+
+
+.top-filters__wrap {
+	display: flex;
+}
+
+@media (min-width: 75rem){
+	.products-page__left-block {
+		width: 13.375rem;
+		margin-right: 1.25rem;
+	}
+}
+
+.ui-input-small_list {
+	width: 40%;
+}
+
+@media (min-width: 75rem){
+	.products-page__list {
+		width: calc(100% - 13.375rem - 1.25rem);
+	}}
+
+
+.catalog-items-list.view-simple .n-catalog-product .product-info__title {
+	max-width: 60%;
+	min-width: 68%;
+}
+
+
+.catalog-items-list .catalog-item .n-catalog-product .n-catalog-product__info .product-info__title {
+	height: auto;
+}
+
+.catalog-items-list.view-simple .n-catalog-product .n-catalog-product__info .product-info__title-description{
+	height: auto;
+}
+
+.catalog-items-list.view-simple .n-catalog-product .n-catalog-product__info .product-info__voblers {
+	margin: 0.3125rem 0 0 0rem;
+	height: auto;
+	display: flex;
+	align-items: center;
+}
+
+/*нужно удалить обертку у воблеров если их нет*/
