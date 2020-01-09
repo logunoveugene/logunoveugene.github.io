@@ -1,40 +1,41 @@
-html{
-	font-size:16px;
+html {
+	font-size: 16px;
 }
 
-@media (min-width: 1440px){
+@media (min-width: 1440px) {
 	html {
 		font-size: 32px;
 	}
 
 
-
 	/*добавляем переносы в сортировках, группировках и тд*/
-	.top-filter.popover-wrapper{
-		display: flex;
+	.top-filter.popover-wrapper {
+		display:        flex;
 		flex-direction: column;
 	}
+
 	.top-filters__wrap {
 		display: flex;
 	}
 
 
 	/*задаем ширину колонки с фильтрами*/
-	@media (min-width: 75rem){
+	@media (min-width: 75rem) {
 		.products-page__left-block {
-			width: 13.375rem;
+			width:        13.375rem;
 			margin-right: 1.25rem;
 		}
 	}
 
 
 	/*задаем ширину колонки с товарами*/
-	@media (min-width: 75rem){
+	@media (min-width: 75rem) {
 		.products-page__list {
 			width: calc(100% - 13.375rem - 1.25rem);
-		}}
+		}
+	}
 
-	/*менеяем ширину инпутов */
+	/*менеяем ширину инпутов в фильтрах */
 	.ui-input-small_list {
 		width: 40%;
 	}
@@ -49,6 +50,7 @@ html{
 	.catalog-items-list .catalog-item .n-catalog-product .n-catalog-product__info .product-info__title {
 		height: auto;
 	}
+
 	/*сбрасываем высоту у названия товара*/
 	.catalog-items-list.view-simple .n-catalog-product .n-catalog-product__info .product-info__title-link {
 		height: auto;
@@ -56,28 +58,26 @@ html{
 
 
 	/*сбрасываем высоту у описания товара*/
-	.catalog-items-list.view-simple .n-catalog-product .n-catalog-product__info .product-info__title-description{
+	.catalog-items-list.view-simple .n-catalog-product .n-catalog-product__info .product-info__title-description {
 		height: auto;
 	}
 
 	/*меняем отсуп у воблеров*/
 	.catalog-items-list.view-simple .n-catalog-product .n-catalog-product__info .product-info__voblers {
-		margin: 0.3125rem 0 0 0rem;
-		height: auto;
-		display: flex;
+		margin:      0.3125rem 0 0 0rem;
+		height:      auto;
+		display:     flex;
 		align-items: center;
 	}
 
 
-
-
-/*Скрываем звезды, оставляем 1*/
-	.product-info__rating i:not(:first-child){
-display: none;
+	/*Скрываем звезды, оставляем 1*/
+	.product-info__rating i:not(:first-child) {
+		display: none;
 	}
 
 	/*скрываем переключатель настроек отображеня*/
-	.top-filters__view-mode{
+	.top-filters__view-mode {
 		display: none;
 	}
 }
