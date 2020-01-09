@@ -60,5 +60,9 @@ html{
 
 
 
+	.product-info__rating i:not(:first-child){
+display: none;
+	}
+
 }
 
