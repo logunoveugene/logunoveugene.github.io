@@ -8,12 +8,11 @@ html{
 	}
 
 
+
 	.top-filter.popover-wrapper{
 		display: flex;
 		flex-direction: column;
 	}
-
-
 	.top-filters__wrap {
 		display: flex;
 	}
@@ -63,6 +62,12 @@ html{
 	.product-info__rating i:not(:first-child){
 display: none;
 	}
+
+	/*скрываем переключатель настроек отображеня*/
+	.top-filters__view-mode{
+		display: none;
+	}
+
 
 }
 
