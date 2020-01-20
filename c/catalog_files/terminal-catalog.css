@@ -71,8 +71,12 @@ html {
 	}
 
 
-	/*Скрываем звезды, оставляем 1*/
-	.product-info__rating i:not(:first-child) {
+	/*Скрываем доставку*/
+	.delivery-info-widget {
+		display: none;
+	}
+	/*Скрываем избарнное*/
+	.wishlist-btn{
 		display: none;
 	}
 
