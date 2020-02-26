@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <p>Форма</p>
-    <input type="text">
+    <p>Авторизуйтесь</p>
+    <button>готово</button>
   </div>
 </template>
 
