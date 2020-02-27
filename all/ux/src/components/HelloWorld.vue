@@ -33,7 +33,8 @@
       methods: {
 
         issueReady() {
-         window.ym(52268173, 'reachGoal','2020-02-27-test-ux', {'2020-02-27-test-ux':'003, ответ1, asdfsd 22222'});
+let userAgent = window.navigator.userAgent;
+window.ym(52268173, 'reachGoal','2020-02-27-test-ux', {'2020-02-27-test-ux':'003, ответ1, asdfsd 22222 '+userAgent});
         },
         stateLog(){
 
