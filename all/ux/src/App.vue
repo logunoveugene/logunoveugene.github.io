@@ -1,10 +1,12 @@
 <template>
   <div id="app">
     <div class="row">
-      <iframe src="https://club-route.firebaseapp.com/#/" style="overflow:hidden;height:100vh;width:85vw" width="1400" height="100%" >
+      <iframe src="https://club-route.firebaseapp.com/#/" style="overflow:hidden;height:100vh;width:100vw; border:none" width="100%" height="100%" >
         Ваш браузер не поддерживает плавающие фреймы!
       </iframe>
+      <div class="test-plate">
       <HelloWorld msg="Welcome to Your Vue.js App"/>
+      </div>
     </div>
 
 
@@ -28,10 +30,15 @@ export default {
     padding: 0;
   }
 #app {
-
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
   .row{
     display: flex;
+  }
+  .test-plate{
+    position: fixed;
+    right: 0;
+
   }
 </style>
