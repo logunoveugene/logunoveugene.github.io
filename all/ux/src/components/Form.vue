@@ -64,6 +64,8 @@
 		methods:    {
 			issueReady() {
 				let userAgent = window.navigator.userAgent;
+
+				window.ga('send', 'event', 'Videos', '2020-02-27-test-ux', this.answer[0] +  ' , '+ this.answer[1] +  ' , '+ this.answer[2] +  ' , '+ this.answer[3] +  ' , '+ this.answer[4] +  ' , '+ this.answer[5] +' , '+  userAgent);
 				window.ym(52268173, 'reachGoal', '2020-02-27-test-ux', {'2020-02-27-test-ux': this.answer[0] +  ' , '+ this.answer[1] +  ' , '+ this.answer[2] +  ' , '+ this.answer[3] +  ' , '+ this.answer[4] +  ' , '+ this.answer[5] +' , '+  userAgent });
 				alert("спасибо за участие");
 				},
