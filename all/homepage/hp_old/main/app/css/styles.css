@@ -1,9 +1,0 @@
-.promo__item {
-  background: #ccc;
-  width: 5em;
-  height: 100px;
-  display: block; }
-  .promo__item_large {
-    color: red; }
-    .promo__item_large:hover {
-      color: green; }
