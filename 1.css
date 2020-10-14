@@ -1,3 +1,218 @@
+@font-face {
+	font-family:  'icon-ui';
+	src:          url('fonts/icon-ui.eot?agz10r');
+	src:          url('fonts/icon-ui.eot?agz10r#iefix') format('embedded-opentype'),
+				  url('fonts/icon-ui.ttf?agz10r') format('truetype'),
+				  url('fonts/icon-ui.woff?agz10r') format('woff'),
+				  url('fonts/icon-ui.svg?agz10r#icon-ui') format('svg');
+	font-weight:  normal;
+	font-style:   normal;
+	font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family:             'icon-ui' !important;
+	speak:                   never;
+	font-style:              normal;
+	font-weight:             normal;
+	font-variant:            normal;
+	text-transform:          none;
+	line-height:             1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing:  antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-odnoklassniki:before {
+	content: "\e901";
+}
+
+.icon-delete-col:before {
+	content: "\21";
+}
+
+.icon-delete-row:before {
+	content: "\22";
+}
+
+.icon-align-left1:before {
+	content: "\23";
+}
+
+.icon-align-right1:before {
+	content: "\24";
+}
+
+.icon-align-center1:before {
+	content: "\25";
+}
+
+.icon-center-align:before {
+	content: "\26";
+}
+
+.icon-left-align:before {
+	content: "\27";
+}
+
+.icon-youtube-1:before {
+	content: "\28";
+}
+
+.icon-anchor-1:before {
+	content: "\29";
+}
+
+.icon-right-align:before {
+	content: "\2a";
+}
+
+.icon-undo:before {
+	content: "\30";
+}
+
+.icon-mention:before {
+	content: "\31";
+}
+
+.icon-checklist:before {
+	content: "\32";
+}
+
+.icon-hr:before {
+	content: "\33";
+}
+
+.icon-add-row-before:before {
+	content: "\34";
+}
+
+.icon-add-row-after:before {
+	content: "\35";
+}
+
+.icon-add-col-before:before {
+	content: "\36";
+}
+
+.icon-add-col-after:before {
+	content: "\37";
+}
+
+.icon-code:before {
+	content: "\38";
+}
+
+.icon-combine-cells:before {
+	content: "\39";
+}
+
+.icon-left:before {
+	content: "\41";
+}
+
+.icon-right:before {
+	content: "\42";
+}
+
+.icon-vk:before {
+	content: "\43";
+}
+
+.icon-facebook:before {
+	content: "\44";
+}
+
+.icon-twitter:before {
+	content: "\45";
+}
+
+.icon-youtube-play:before {
+	content: "\46";
+}
+
+.icon-send:before {
+	content: "\47";
+}
+
+.icon-settings-1:before {
+	content: "\48";
+}
+
+.icon-info:before {
+	content: "\49";
+}
+
+.icon-filter:before {
+	content: "\4a";
+}
+
+.icon-cart-1:before {
+	content: "\4b";
+}
+
+.icon-add:before {
+	content: "\4c";
+}
+
+.icon-remove:before {
+	content: "\4d";
+}
+
+.icon-delete-table:before {
+	content: "\4e";
+}
+
+.icon-image:before {
+	content: "\4f";
+}
+
+.icon-list-bullet:before {
+	content: "\50";
+}
+
+.icon-align-center:before {
+	content: "\51";
+}
+
+.icon-align-left:before {
+	content: "\52";
+}
+
+.icon-align-justify:before {
+	content: "\53";
+}
+
+.icon-align-right:before {
+	content: "\54";
+}
+
+.icon-redo:before {
+	content: "\55";
+}
+
+.icon-strike:before {
+	content: "\56";
+}
+
+.icon-remove-1:before {
+	content: "\57";
+}
+
+.icon-table:before {
+	content: "\58";
+}
+
+.icon-ul:before {
+	content: "\59";
+}
+
+.icon-underline:before {
+	content: "\5a";
+}
+
 .icon-chat-bubble:before {
 	content: "\61";
 }
@@ -82,6 +297,10 @@
 	content: "\75";
 }
 
+.icon-bold:before {
+	content: "\76";
+}
+
 .icon-thumb-down:before {
 	content: "\77";
 }
@@ -94,226 +313,14 @@
 	content: "\79";
 }
 
-.icon-left:before {
-	content: "\41";
-}
-
-.icon-right:before {
-	content: "\42";
-}
-
-.icon-vk:before {
-	content: "\43";
-}
-
-.icon-facebook:before {
-	content: "\44";
-}
-
-.icon-twitter:before {
-	content: "\45";
-}
-
-.icon-youtube-play:before {
-	content: "\46";
-}
-
-.icon-send:before {
-	content: "\47";
-}
-
-.icon-info:before {
-	content: "\49";
-}
-
 .icon-reply:before {
 	content: "\7a";
 }
 
-.icon-ya-dzen:before {
+.icon-dzen:before {
 	content: "\e900";
 }
 
-.icon-settings-1:before {
-	content: "\48";
-}
-
-.icon-filter:before {
-	content: "\4a";
-}
-
-.icon-cart-1:before {
-	content: "\4b";
-}
-
-.icon-add:before {
-	content: "\4c";
-}
-
-.icon-remove:before {
-	content: "\4d";
-}
-
-.icon-list-bullet:before {
-	content: "\50";
-}
-
-.icon-align-center:before {
-	content: "\51";
-}
-
-.icon-align-left:before {
-	content: "\52";
-}
-
-.icon-align-justify:before {
-	content: "\53";
-}
-
-.icon-align-right:before {
-	content: "\54";
-}
-
-.icon-bold:before {
-	content: "\76";
-}
-
-.icon-delete-table:before {
-	content: "\4e";
-}
-
-.icon-image:before {
-	content: "\4f";
-}
-
-.icon-italic:before {
-	content: "\50";
-}
-
-.icon-link:before {
-	content: "\51";
-}
-
-.icon-ol:before {
-	content: "\52";
-}
-
-.icon-quote:before {
-	content: "\53";
-}
-
-.icon-paragraph:before {
-	content: "\54";
-}
-
-.icon-redo:before {
-	content: "\55";
-}
-
-.icon-strike:before {
-	content: "\56";
-}
-
-.icon-remove-1:before {
-	content: "\57";
-}
-
-.icon-table:before {
-	content: "\58";
-}
-
-.icon-ul:before {
-	content: "\59";
-}
-
-.icon-underline:before {
-	content: "\5a";
-}
-
-.icon-undo:before {
-	content: "\30";
-}
-
-.icon-mention:before {
-	content: "\31";
-}
-
-.icon-checklist:before {
-	content: "\32";
-}
-
-.icon-hr:before {
-	content: "\33";
-}
-
-.icon-add-row-before:before {
-	content: "\34";
-}
-
-.icon-add-row-after:before {
-	content: "\35";
-}
-
-.icon-add-col-before:before {
-	content: "\36";
-}
-
-.icon-add-col-after:before {
-	content: "\37";
-}
-
-.icon-code:before {
-	content: "\38";
-}
-
-.icon-combine-cells:before {
-	content: "\39";
-}
-
-.icon-delete-col:before {
-	content: "\21";
-}
-
-.icon-delete-row:before {
-	content: "\22";
-}
-
-.icon-align-left:before {
-	content: "\23";
-}
-
-.icon-align-right:before {
-	content: "\24";
-}
-
-.icon-align-center:before {
-	content: "\25";
-}
-
-.icon-youtube-1:before {
-	content: "\28";
-}
-
-.icon-anchor-1:before {
-	content: "\29";
-}
-
-.icon-center-align:before {
-	content: "\26";
-}
-
-.icon-left-align:before {
-	content: "\27";
-}
-
-.icon-right-align:before {
-	content: "\2a";
-}
-
-.icon-view-settings-line:before {
-	content: "\24";
-}
-
-.icon-view-settings-plate:before {
-	content: "\25";
+.icon-Email-Line:before {
+	content: "\e909";
 }
