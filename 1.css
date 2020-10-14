@@ -130,10 +130,6 @@
 	content: "\7a";
 }
 
-.icon-ya-dzen:before {
-	content: "\e900";
-}
-
 .icon-settings-1:before {
 	content: "\48";
 }
@@ -278,18 +274,6 @@
 	content: "\22";
 }
 
-.icon-align-left:before {
-	content: "\23";
-}
-
-.icon-align-right:before {
-	content: "\24";
-}
-
-.icon-align-center:before {
-	content: "\25";
-}
-
 .icon-youtube-1:before {
 	content: "\28";
 }
@@ -310,10 +294,22 @@
 	content: "\2a";
 }
 
-.icon-view-settings-line:before {
+.icon-check-round:before {
+	content: "\23";
+}
+
+.icon-line:before {
 	content: "\24";
 }
 
-.icon-view-settings-plate:before {
+.icon-shape:before {
 	content: "\25";
+}
+
+.icon-odnokalssniki:before {
+	content: "\2b";
+}
+
+.icon-mail-full:before {
+	content: "\2c";
 }
