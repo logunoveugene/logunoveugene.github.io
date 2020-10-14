@@ -1,3 +1,43 @@
+/**
+ * Иконки клуба.
+ *
+ * @author Саин Евгений <sain.ei@dns-shop.ru>
+ */
+
+@font-face {
+	font-display:  swap;
+	font-family: "Club-Icons";
+	src: url("/fonts/club-icons/club-icons.eot") format('eot'), url("/fonts/club-icons/club-icons.woff") format("woff"), url("/fonts/club-icons/club-icons.ttf") format("truetype"), url("/fonts/club-icons/club-icons.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+[data-icon]:before {
+	@include club-icons-font;
+	content: attr(data-icon);
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+	@include club-icons-font;
+	font-style: normal !important;
+	font-weight: normal !important;
+	font-variant: normal !important;
+	text-transform: none !important;
+	speak: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 .icon-chat-bubble:before {
 	content: "\61";
 }
@@ -128,6 +168,10 @@
 
 .icon-reply:before {
 	content: "\7a";
+}
+
+.icon-ya-dzen:before {
+	content: "\e900";
 }
 
 .icon-settings-1:before {
@@ -274,6 +318,18 @@
 	content: "\22";
 }
 
+.icon-align-left:before {
+	content: "\23";
+}
+
+.icon-align-right:before {
+	content: "\24";
+}
+
+.icon-align-center:before {
+	content: "\25";
+}
+
 .icon-youtube-1:before {
 	content: "\28";
 }
@@ -294,22 +350,10 @@
 	content: "\2a";
 }
 
-.icon-check-round:before {
-	content: "\23";
-}
-
-.icon-line:before {
+.icon-view-settings-line:before {
 	content: "\24";
 }
 
-.icon-shape:before {
+.icon-view-settings-plate:before {
 	content: "\25";
-}
-
-.icon-odnokalssniki:before {
-	content: "\2b";
-}
-
-.icon-mail-full:before {
-	content: "\2c";
 }
