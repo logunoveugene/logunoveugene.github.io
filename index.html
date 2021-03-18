@@ -1,49 +1,52 @@
-!	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=">
-  <title>Заголовок страницы</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-  <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(73978813, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/73978813" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+    <script type='text/javascript'>
+        window.smartlook||(function(d) {
+          var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+          var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+          c.charset='utf-8';c.src='https://rec.smartlook.com/recorder.js';h.appendChild(c);
+          })(document);
+          smartlook('init', 'a1f75958f2b147e2f20a7d006201d4b08c71ed01');
+      </script>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-    }
-    /*задаем стили для тела страницы*/
-    body {
-      text-align: center;
-      background-color: rgb(246, 246, 246);
-    }
-     /*задаем стили для изображения*/
-    .main-img {
-      max-width: 100%;
-      width: 100%
-    }
-  </style>
+    <script>
+
+
+ 
+        function test() {
+          
+
+                var player = document.getElementById('myIframeId');
+                var iframeDocument = player.contentDocument || player.contentWindow.document;
+
+
+       
+                console.log(true);
+                console.log(true);console.log(true);console.log(true);console.log(true);
+                console.log(iframeDocument);
+                console.log(true);console.log(true);console.log(true);console.log(true);
+            
+            
+        }
+   
+    </script>
 </head>
+
 <body>
-<a href="#comment">
-   <img class="main-img" src="https://i.ibb.co/qnXq59q/club-dns-shop-1.png" alt="">
-</a> 
- <img class="main-img" src="https://i.ibb.co/Y7j9fYn/club-dns-shop-2.png" alt="">
-<div id="comment"><img id="comment" class="main-img" src="https://i.ibb.co/2s4hgKr/club-dns-shop-4.png" alt=""></div> 
-   <img class="main-img" src="https://i.ibb.co/9Hn2ZGr/club-dns-shop-3.png" alt="">
+
+    <iframe id="myIframeId" onload="test()" style="border: 1px solid rgba(0, 0, 0, 0.1);" width="100%" height="600"
+        src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FhpzmKcG0dXx5K614zspzzh%2FUntitled%3Fnode-id%3D1%253A7%26scaling%3Dscale-down"
+        allowfullscreen></iframe>
 
 </body>
+
 </html>
