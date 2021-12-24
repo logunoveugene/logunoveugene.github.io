@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[16],{556:function(e,n,t){"use strict";t.r(n);var l={nhostAuth:!0,layout:"service"},c=t(17),component=Object(c.a)(l,(function(){var e=this,n=e.$createElement;return(e._self._c||n)("div",{},[e._v("ревью")])}),[],!1,null,null,null);n.default=component.exports}}]);
