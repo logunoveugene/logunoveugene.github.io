@@ -1255,3 +1255,7 @@ yeahmobi.com,5135347,RESELLER
 yieldlab.net,2172218,RESELLER
 appodeal.com, 227990, DIRECT
 bidmachine.io, 227990, DIRECT
+yandex.com,302446435,reseller
+applovin.com,a97e4a2a60836795b8e1433cefd17f30,RESELLER
+
+
